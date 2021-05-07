@@ -1,9 +1,14 @@
+
+import Login from "./pages/login";
+
+//STYLES
 import "./styles/app.scss";
+
 
 function App() {
   return (
     <div className="App">
-     <h1>teste</h1>
+      <Login/>
     </div>
   );
 }
