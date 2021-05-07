@@ -4,18 +4,16 @@ function Login() {
             <div className="loginImg">
                 <h1>Imagem</h1>
             </div>
-            <section>
-
-                <div>
+            <form>
+                <section>
                     <span>Email</span>
                     <input required type="email"/>
-                </div>
-                <div>
+                </section>
+                <section>
                     <span>Password</span>
-                    <input required type="email"/>
-                </div>
-                
-            </section>
+                    <input required type="password"/>
+                </section>
+            </form>
         </div>
       );
     
