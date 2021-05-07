@@ -1,17 +1,21 @@
 const express = require('express');
-const mysql = require('mysql2')
-
+/* const mysql = require('mysql2') */
+const db = require('./config/db');
 const app = express();
 
+app.use(express.json());
 
 
-
-const db = mysql.createConnection({
+/* const db = mysql.createConnection({
     user: 'root',
     host: 'localhost',
     password: '',
     database: 'mydb'
-})
+}) */
+
+// Routes
+const usersRoute = require('./routes/Users')
+app.use('/auth', usersRoute);
 
 app.get('/', (req, res) => {
     res.send('We are on home')
