@@ -32,11 +32,10 @@ function Login() {
                     <section className="botaoSubmit">
                         <button type="submit">Login</button>
                     </section>
-                    
-                        
-            
-                        
-                   
+
+                    <section className="textoFim">
+                        <span>Ainda não tem conta? Registe-se aqui</span>
+                    </section>
                 
                 </form>
             </div>
