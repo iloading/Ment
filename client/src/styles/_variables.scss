@@ -1,12 +1,21 @@
-$font-size-m: 1rem;
+/*FONT-FAMILY*/
 $font_family: 'Roboto';
 
 
-
-$font-size-xxs:0.2rem;
-$font-size-xs:0.5rem;
+/*FONT-SIZE*/
+$font-size-xxxs:0.2rem;
+$font-size-xxs:0.5rem;
+$font-size-xs:0.8rem;
 $font-size-s:1rem;
 $font-size-m:1.2rem;
 $font-size-l:1.5rem;
 $font-size-xl:2rem;
 $font-size-xxl:2.2rem;
+
+/* FONT-WEIGHT*/
+$font-weight-lighter:100;
+$font-weight-light:200;
+$font-weight-normal:300;
+$font-weight-bold:400;
+$font-weight-bolder:500;
+

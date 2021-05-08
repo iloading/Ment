@@ -2,6 +2,11 @@
     text-align: center;
     background-color: #F5F5F5;
     border-radius: 4px;
+    height: 40vh;
+    img{
+        max-width: 100%;
+        max-height: 100%;
+    }
 }
 
 .formatoForm{
@@ -20,7 +25,7 @@
     }
 
     section{
-        margin-top: 5%;
+        margin-top: 8%;
     }
     
 }
@@ -44,6 +49,9 @@
         color: lightgray;
         padding-left: 5%;
     }
+    input:focus{
+        outline: 0;
+    }
 
     
 }
@@ -51,13 +59,14 @@
 
 .formatoLables{
     font-size: $font-size-s;
+    font-weight: $font-weight-normal;
     color: #AAAAAA;
 }
 
 .formatoTitulo{
     font-size: $font-size-l;
     color:#AAAAAA;
-    font-weight: 400;
+    font-weight: $font-weight-bold;
 }
 
 .botaoSubmit{
@@ -72,6 +81,16 @@
         background-color: #F5F5F5;
         font-size: $font-size-l;
         color:#AAAAAA;
-        font-weight: 500;
+        font-weight: $font-weight-bolder;
+    }
+}
+
+.textoFim{
+    font-size: $font-size-s;
+    text-align: center;
+    color: #AAAAAA;
+    font-weight: $font-weight-lighter;
+    span{
+        font-size: $font-size-xs;
     }
 }
