@@ -17,11 +17,11 @@ app.use(express.json());
 const usersRoute = require('./routes/Users')
 app.use('/auth', usersRoute);
 
-app.get('/', (req, res) => {
-    res.send('We are on home')
+app.get('/', async (req, res) => {
+    await res.send('We are on home')
 })
-app.get('/insert', (req, res) => {
-    db.query('INSERT INTO user (email, password, name, school, role_idrole) VALUES ("teste123", "123", "sam", "abel botelho", 0)', (err, result) => {
+app.get('/insert', async (req, res) => {
+    await db.query('INSERT INTO user (email, password, name, school, role_idrole) VALUES ("teste123", "123", "sam", "abel botelho", 0)', (err, result) => {
         if (err) {
             console.log(err);
         }
