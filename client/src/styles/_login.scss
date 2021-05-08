@@ -1,17 +1,77 @@
 .loginImg{
     text-align: center;
-    background-color: rgb(230, 230, 230);
+    background-color: #F5F5F5;
+    border-radius: 4px;
 }
 
 .formatoForm{
     padding: 5%;
 
-    .formatoSecoes{
+    input{
+        border:none;
+        border-radius: 4px;
+        height: 40px;
+        /*MUDAR A COR PARA VARIAVEIS*/
+        background-color: rgb(245, 245, 245);
+    }
+
+    form{
         display: grid;
     }
 
+    section{
+        margin-top: 5%;
+    }
+    
+}
+
+.formatoInput{
+    display: flex;
+    position: relative;
+    align-items: center;
+    margin-top: 4%;
+
+    img{
+        position: absolute;
+        right: 5%;
+    }
+
     input{
-        border: 2px solid red;
-        border-radius: 4px;
+        width: 100%;
+    }
+
+    input::placeholder{
+        color: lightgray;
+        padding-left: 5%;
+    }
+
+    
+}
+
+
+.formatoLables{
+    font-size: $font-size-s;
+    color: #AAAAAA;
+}
+
+.formatoTitulo{
+    font-size: $font-size-l;
+    color:#AAAAAA;
+    font-weight: 400;
+}
+
+.botaoSubmit{
+    display: flex;
+    justify-content: center;
+    button{
+        margin-top: 5%;
+        border-radius: 5px;
+        border: none;
+        width: 70%;
+        padding: 5%;
+        background-color: #F5F5F5;
+        font-size: $font-size-l;
+        color:#AAAAAA;
+        font-weight: 500;
     }
 }
