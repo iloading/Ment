@@ -1,3 +1,17 @@
 .loginImg{
-    color: red;
+    text-align: center;
+    background-color: rgb(230, 230, 230);
+}
+
+.formatoForm{
+    padding: 5%;
+
+    .formatoSecoes{
+        display: grid;
+    }
+
+    input{
+        border: 2px solid red;
+        border-radius: 4px;
+    }
 }
