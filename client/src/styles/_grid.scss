@@ -1,0 +1,31 @@
+.cssgridteste{
+
+  display: grid;
+  grid-template-rows:8% 1fr 8%;
+  height: 100vh;
+
+  section:nth-child(2){
+    display: grid;
+
+    div:first-child{
+        background-color: blue;
+    }
+
+    div:last-child{
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        background-color: red;
+    }
+
+
+  }
+
+  section:last-child{
+      display: grid;
+      background-color: lightgreen;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+  
+
+}
