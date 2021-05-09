@@ -1,25 +1,4 @@
-/*
 
-
-
-
-  .botaoSubmit {
-    display: flex;
-    justify-content: center;
-    button {
-      margin-top: 5%;
-      border-radius: 5px;
-      border: none;
-      width: 70%;
-      padding: 5%;
-      background-color: #f5f5f5;
-      font-size: $font-size-l;
-      color: #aaaaaa;
-      font-weight: $font-weight-bolder;
-    }
-  }
-
-*/
 
 article{
   display: grid;
@@ -43,7 +22,6 @@ article{
     height: 60vh;
 
     section{
-      margin-top: 8%;
       input {
         border: none;
         border-radius: 4px;
@@ -82,7 +60,7 @@ article{
     }
 
     section:first-child{
-
+      margin-top: 8%;
       span{
         font-size: $font-size-l;
         color: #aaaaaa;
@@ -97,8 +75,7 @@ article{
         margin-top: 5%;
         border-radius: 5px;
         border: none;
-        width: 70%;
-        padding: 5%;
+        width: 90%;
         background-color: #f5f5f5;
         font-size: $font-size-l;
         color: #aaaaaa;
@@ -118,8 +95,46 @@ article{
 
   }
 
-
-
-
 }
 
+
+@media (min-width: 1000px) {
+
+  article{
+    grid-template-columns:1fr 1fr;
+
+    form{
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+
+      section:first-child{
+        background-color: red;
+        grid-column-start: 1;
+        grid-column-end: 5;
+      }
+      section:nth-child(2){
+        background-color: green;
+        grid-column-start: 1;
+        grid-column-end: 3;
+      }
+      section:nth-child(3){
+        background-color: blue;
+        grid-column-start: 3;
+        grid-column-end: 5;
+      }
+      section:nth-child(4){
+        background-color: yellow;
+        grid-column-start: 3;
+        grid-column-end: 5;
+        grid-row-start: 3;
+        grid-row-end: 5;
+      }
+      section:last-child{
+        background-color: purple;
+        grid-area: 3 / 1 / span 3 / span 2;
+      }
+
+    }
+  }
+  
+}
