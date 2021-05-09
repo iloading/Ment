@@ -1,11 +1,11 @@
 import loginImg from "../img/loginImg.png";
 import icon_mail from "../img/icon_mail.png";
 import icon_cadiado from "../img/icon_cadiado.png";
-
+//import { Formik, Form, Field, ErrorMessage } from 'formik';
 
 function Login() {
     return (
-        <div>
+        <article>
             <div className="loginImg">
                 <img src={loginImg} alt="" />
             </div>
@@ -15,17 +15,17 @@ function Login() {
                         <span className="formatoTitulo">Iniciar sessão</span>
                     </section>
                     <section>
-                        <span className="formatoLables">e-mail</span>
-                        <div className="formatoInput"> 
+                        <label className="formatoLables">e-mail</label>
+                        <div className="formatoInput">
                             <img src={icon_mail} alt="" />
-                            <input required type="email" placeholder="ex: joana.silva12@gmail.com"/>
+                            <input required type="email" placeholder="ex: joana.silva12@gmail.com" />
                         </div>
-                    </section>    
+                    </section>
                     <section>
-                        <span className="formatoLables">palavra-passe</span>
-                        <div className="formatoInput"> 
+                        <label className="formatoLables">palavra-passe</label>
+                        <div className="formatoInput">
                             <img src={icon_cadiado} alt="" />
-                            <input required type="email" placeholder="*********"/>
+                            <input required type="password" placeholder="*********" />
                         </div>
                     </section>
 
@@ -36,12 +36,13 @@ function Login() {
                     <section className="textoFim">
                         <span>Ainda não tem conta? Registe-se aqui</span>
                     </section>
-                
+
                 </form>
+
             </div>
-        </div>
-      );
-    
+        </article>
+    );
+
 }
 
 export default Login;

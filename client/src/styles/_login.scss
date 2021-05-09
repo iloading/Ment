@@ -1,96 +1,91 @@
-.loginImg{
-    text-align: center;
-    background-color: #F5F5F5;
+.loginImg {
+  text-align: center;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  height: 40vh;
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+.formatoForm {
+  margin: 0% 5%;
+  height: 60vh;
+  input {
+    border: none;
     border-radius: 4px;
-    height: 40vh;
-    img{
-        max-width: 100%;
-        max-height: 100%;
+    height: 40px;
+    padding: 0% 15% 0 5%;
+    /*MUDAR A COR PARA VARIAVEIS*/
+    background-color: rgb(245, 245, 245);
+  }
+
+  form {
+    display: grid;
+  }
+
+  section {
+    margin-top: 8%;
+  }
+  .textoFim {
+    font-size: $font-size-s;
+    text-align: center;
+    color: #aaaaaa;
+    font-weight: $font-weight-lighter;
+    margin-top: 0;
+    span {
+      font-size: $font-size-xs;
     }
-}
-
-.formatoForm{
-    padding: 5%;
-
-    input{
-        border:none;
-        border-radius: 4px;
-        height: 40px;
-        /*MUDAR A COR PARA VARIAVEIS*/
-        background-color: rgb(245, 245, 245);
-    }
-
-    form{
-        display: grid;
-    }
-
-    section{
-        margin-top: 8%;
-    }
-    
-}
-
-.formatoInput{
+  }
+  .formatoInput {
     display: flex;
     position: relative;
     align-items: center;
     margin-top: 4%;
 
-    img{
-        position: absolute;
-        right: 5%;
+    img {
+      position: absolute;
+      right: 5%;
     }
 
-    input{
-        width: 100%;
+    input {
+      width: 100%;
     }
 
-    input::placeholder{
-        color: lightgray;
-        padding-left: 5%;
+    input::placeholder {
+      color: lightgray;
     }
-    input:focus{
-        outline: 0;
+    input:focus {
+      outline: 0;
     }
+  }
 
-    
-}
-
-
-.formatoLables{
+  .formatoLables {
     font-size: $font-size-s;
     font-weight: $font-weight-normal;
-    color: #AAAAAA;
-}
+    color: #aaaaaa;
+  }
 
-.formatoTitulo{
+  .formatoTitulo {
     font-size: $font-size-l;
-    color:#AAAAAA;
+    color: #aaaaaa;
     font-weight: $font-weight-bold;
-}
+  }
 
-.botaoSubmit{
+  .botaoSubmit {
     display: flex;
     justify-content: center;
-    button{
-        margin-top: 5%;
-        border-radius: 5px;
-        border: none;
-        width: 70%;
-        padding: 5%;
-        background-color: #F5F5F5;
-        font-size: $font-size-l;
-        color:#AAAAAA;
-        font-weight: $font-weight-bolder;
+    button {
+      margin-top: 5%;
+      border-radius: 5px;
+      border: none;
+      width: 70%;
+      padding: 5%;
+      background-color: #f5f5f5;
+      font-size: $font-size-l;
+      color: #aaaaaa;
+      font-weight: $font-weight-bolder;
     }
-}
-
-.textoFim{
-    font-size: $font-size-s;
-    text-align: center;
-    color: #AAAAAA;
-    font-weight: $font-weight-lighter;
-    span{
-        font-size: $font-size-xs;
-    }
+  }
 }
