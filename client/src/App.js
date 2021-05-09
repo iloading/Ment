@@ -1,3 +1,4 @@
+import Grid from "./pages/cssgridteste";
 
 import Login from "./pages/login";
 
@@ -8,7 +9,7 @@ import "./styles/app.scss";
 function App() {
   return (
     <div className="App">
-      <Login />
+      <Grid />
     </div>
   );
 }

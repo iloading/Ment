@@ -5,7 +5,7 @@ import icon_cadiado from "../img/icon_cadiado.png";
 
 function Login() {
     return (
-        <article>
+        <article className="login">
            <div className="loginImg">
                <img src={loginImg} alt="" />
            </div>
