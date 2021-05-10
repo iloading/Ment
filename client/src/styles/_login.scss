@@ -19,6 +19,11 @@
     margin: 0% 5%;
     height: 60vh;
 
+    .error {
+      font-size: $font-size-xs;
+      color: red;
+    }
+
     section {
       input {
         border: none;
@@ -27,6 +32,8 @@
         padding: 0% 15% 0 5%;
         background-color: rgb(245, 245, 245);
       }
+
+      
 
       div {
         display: flex;
