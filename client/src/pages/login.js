@@ -18,7 +18,7 @@ function Login() {
     })
     const onSubmitLogin = (data) => {
         axios.post("http://localhost:3001/auth/login", data).then((res) => {
-            console.log(res.data);
+            console.log("Server Response:" + res.data);
         })
         console.log(data);
     }
