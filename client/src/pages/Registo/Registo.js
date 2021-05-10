@@ -11,10 +11,10 @@ import { Route, Switch, useLocation } from "react-router-dom";
 function Registo() {
     const location = useLocation();
     const path = parseInt(location.pathname.split("/")[2]);
-    console.log(location.pathname.split("/")[1]);
+    console.log(parseInt(location.pathname.split("/")[2]));
     return (
         <div>
-            {path === 1 && <RegistoEtapa1 />}
+            {(isNaN(path)) && <RegistoEtapa1 />}
             {path === 2 && <RegistoEtapa2 />}
 
         </div>

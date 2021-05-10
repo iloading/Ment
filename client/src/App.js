@@ -14,7 +14,7 @@ function App() {
     <div className="App">
 
       <Switch>
-        <Route path="/registo/:id">
+        <Route path={["/registo/:id", "/registo"]}>
           <Registo />
         </Route>
         <Route path="/login">
