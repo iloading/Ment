@@ -1,91 +1,133 @@
-.loginImg {
-  text-align: center;
-  background-color: #f5f5f5;
-  border-radius: 4px;
-  height: 40vh;
-  img {
-    max-width: 100%;
-    max-height: 100%;
-  }
-}
+.login {
+  display: grid;
+  grid-template-columns: 1fr;
 
-.formatoForm {
-  margin: 0% 5%;
-  height: 60vh;
-  input {
-    border: none;
+  .loginImg {
+    text-align: center;
+    background-color: #f5f5f5;
     border-radius: 4px;
-    height: 40px;
-    padding: 0% 15% 0 5%;
-    /*MUDAR A COR PARA VARIAVEIS*/
-    background-color: rgb(245, 245, 245);
+    height: 40vh;
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
   }
 
   form {
     display: grid;
-  }
+    grid-template-columns: 1fr;
+    margin: 0% 5%;
+    height: 60vh;
 
-  section {
-    margin-top: 8%;
-  }
-  .textoFim {
-    font-size: $font-size-s;
-    text-align: center;
-    color: #aaaaaa;
-    font-weight: $font-weight-lighter;
-    margin-top: 0;
-    span {
-      font-size: $font-size-xs;
+    section {
+      input {
+        border: none;
+        border-radius: 4px;
+        height: 40px;
+        padding: 0% 15% 0 5%;
+        background-color: rgb(245, 245, 245);
+      }
+
+      div {
+        display: flex;
+        position: relative;
+        align-items: center;
+        margin-top: 4%;
+
+        img {
+          position: absolute;
+          right: 5%;
+        }
+        input {
+          width: 100%;
+        }
+        input::placeholder {
+          color: lightgray;
+        }
+        input:focus {
+          outline: 0;
+        }
+      }
+
+      label {
+        font-size: $font-size-s;
+        font-weight: $font-weight-normal;
+        color: #aaaaaa;
+      }
     }
-  }
-  .formatoInput {
-    display: flex;
-    position: relative;
-    align-items: center;
-    margin-top: 4%;
 
-    img {
-      position: absolute;
-      right: 5%;
+    section:first-child {
+      margin-top: 8%;
+      span {
+        font-size: $font-size-l;
+        color: #aaaaaa;
+        font-weight: $font-weight-bold;
+      }
     }
-
-    input {
-      width: 100%;
+    section:nth-child(4) {
+      display: flex;
+      justify-content: center;
+      button {
+        margin-top: 5%;
+        border-radius: 5px;
+        border: none;
+        width: 90%;
+        background-color: #f5f5f5;
+        font-size: $font-size-l;
+        color: #aaaaaa;
+        font-weight: $font-weight-bolder;
+      }
     }
-
-    input::placeholder {
-      color: lightgray;
-    }
-    input:focus {
-      outline: 0;
-    }
-  }
-
-  .formatoLables {
-    font-size: $font-size-s;
-    font-weight: $font-weight-normal;
-    color: #aaaaaa;
-  }
-
-  .formatoTitulo {
-    font-size: $font-size-l;
-    color: #aaaaaa;
-    font-weight: $font-weight-bold;
-  }
-
-  .botaoSubmit {
-    display: flex;
-    justify-content: center;
-    button {
-      margin-top: 5%;
-      border-radius: 5px;
-      border: none;
-      width: 70%;
-      padding: 5%;
-      background-color: #f5f5f5;
-      font-size: $font-size-l;
+    section:last-child {
+      font-size: $font-size-s;
+      text-align: center;
       color: #aaaaaa;
-      font-weight: $font-weight-bolder;
+      font-weight: $font-weight-lighter;
+      margin-top: 0;
+      span {
+        font-size: $font-size-xs;
+      }
     }
   }
 }
+
+/* @media (min-width: 1000px) {
+
+  article{
+    grid-template-columns:1fr 1fr;
+
+    form{
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+
+      section:first-child{
+        background-color: red;
+        grid-column-start: 1;
+        grid-column-end: 5;
+      }
+      section:nth-child(2){
+        background-color: green;
+        grid-column-start: 1;
+        grid-column-end: 3;
+      }
+      section:nth-child(3){
+        background-color: blue;
+        grid-column-start: 3;
+        grid-column-end: 5;
+      }
+      section:nth-child(4){
+        background-color: yellow;
+        grid-column-start: 3;
+        grid-column-end: 5;
+        grid-row-start: 3;
+        grid-row-end: 5;
+      }
+      section:last-child{
+        background-color: purple;
+        grid-area: 3 / 1 / span 3 / span 2;
+      }
+
+    }
+  }
+  
+} */
