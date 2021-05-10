@@ -14,7 +14,7 @@ function App() {
     <div className="App">
 
       <Switch>
-        <Route path="/registo">
+        <Route path="/registo/:id">
           <Registo />
         </Route>
         <Route path="/login">
