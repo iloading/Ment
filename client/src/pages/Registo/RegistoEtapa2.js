@@ -1,6 +1,5 @@
 import registo2Img from "../../img/registo2Img.png";
 import icon_nome from "../../img/icon_nome.png";
-import icon_cargo from "../../img/icon_cargo.png";
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { useHistory } from 'react-router-dom';
 import * as Yup from 'yup';
@@ -11,22 +10,25 @@ function RegistoEtapa2() {
 
 
     const initialValues = {
-        name: "",
+        email: "",
+        password: "",
+        password_confirm: "",
     }
     const camposValidador = Yup.object().shape({
-        name: Yup.string().required("Name is required")
+        email: Yup.string().email("O conteúdo que introduziu não é um email").required(),
+        password: Yup.string().required("Password is required"),
+        password_confirm: Yup.string().required("Password is required")
     })
 
-   
 
     const history = useHistory();
 
-    const redireciona=()=> {
+    const redireciona = () => {
         let path = "/registo/3";
         history.push(path);
-      }
+    }
 
-   
+
     return (
         <article className="registoEtapa2">
             <div className="registoImg">
@@ -42,39 +44,39 @@ function RegistoEtapa2() {
                     </section>
                     <section>
 
-                        <label>Nome Completo</label>
+                        <label>Email</label>
                         {/* Falta meter estilos nestes erros */}
-                        <ErrorMessage name="name" component="p" />
+                        <ErrorMessage name="email" component="p" />
                         <div>
                             <img src={icon_nome} alt="" />
-                            <Field placeholder="ex: Joana Silva" name="name" id="inputName" type="text" />
+                            <Field placeholder="ex: joana.silva12@gmail.com" name="email" id="inputEmail" type="email" />
                         </div>
                     </section>
                     <section>
 
-                        <label>Nome Completo</label>
+                        <label>Password</label>
                         {/* Falta meter estilos nestes erros */}
-                        <ErrorMessage name="name" component="p" />
+                        <ErrorMessage name="password" component="p" />
                         <div>
                             <img src={icon_nome} alt="" />
-                            <Field placeholder="ex: Joana Silva" name="name" id="inputName" type="text" />
+                            <Field placeholder="*********" name="password" id="inputPassword" type="password" />
                         </div>
                     </section>
                     <section>
 
-                        <label>Nome Completo</label>
+                        <label>Confirmar Password</label>
                         {/* Falta meter estilos nestes erros */}
-                        <ErrorMessage name="name" component="p" />
+                        <ErrorMessage name="password_confirm" component="p" />
                         <div>
                             <img src={icon_nome} alt="" />
-                            <Field placeholder="ex: Joana Silva" name="name" id="inputName" type="text" />
+                            <Field placeholder="*********" name="password_confirm" id="inputPassword_confirm" type="password" />
                         </div>
                     </section>
-                    
+
                     <section>
-                    
+
                         <button onClick={redireciona}>Próxima Etapa</button>
-                    
+
                     </section>
                 </Form>
             </Formik>
