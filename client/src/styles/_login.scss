@@ -26,6 +26,7 @@
         height: 40px;
         padding: 0% 15% 0 5%;
         background-color: rgb(245, 245, 245);
+        width: 100%;
       }
 
       div {
@@ -37,9 +38,6 @@
         img {
           position: absolute;
           right: 5%;
-        }
-        input {
-          width: 100%;
         }
         input::placeholder {
           color: lightgray;

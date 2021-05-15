@@ -1,0 +1,143 @@
+.registoEtapa1 {
+    display: grid;
+    grid-template-columns: 1fr;
+  
+    .registoImg {
+      text-align: center;
+      background-color: #f5f5f5;
+      border-radius: 4px;
+      height: 35vh;
+      img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+  
+    form {
+      display: grid;
+      align-items: center;
+      grid-template-columns: 1fr;
+      grid-template-rows: 5% 30% 20% 20% 20%;
+      margin: 5% 5%;
+      height: 65vh;
+      margin-bottom: 2rem;
+  
+      section {
+        input {
+          border: none;
+          border-radius: 4px;
+          height: 40px;
+          padding: 0% 15% 0 5%;
+          background-color: rgb(245, 245, 245);
+          width: 100%;
+        }
+  
+        div {
+          display: flex;
+          position: relative;
+          align-items: center;
+          margin-top: 4%;
+  
+          img {
+            position: absolute;
+            right: 5%;
+          }
+          
+          input::placeholder {
+            color: lightgray;
+          }
+          input:focus {
+            outline: 0;
+          }
+        }
+  
+        label {
+          font-size: $font-size-s;
+          font-weight: $font-weight-normal;
+          color: #aaaaaa;
+        }
+
+
+        select{
+            border: none;
+            border-radius: 4px;
+            height: 40px;
+            padding: 0% 15% 0 5%;
+            background-color: rgb(245, 245, 245);
+            width: 100%;
+            color:rgb(211, 211, 211);
+        }
+      }
+  
+      section:first-child {
+        span {
+          font-size: $font-size-l;
+          color: #aaaaaa;
+          font-weight: $font-weight-bold;
+        }
+      }
+
+      section:nth-child(2) {
+        p{
+            color: rgb(211, 211, 211);
+        }
+      }
+      section:nth-child(5) {
+        display: flex;
+        justify-content: center;
+        button {
+          border-radius: 5px;
+          border: none;
+          width: 90%;
+          padding: 5%;
+          background-color: #f5f5f5;
+          font-size: $font-size-l;
+          color: #aaaaaa;
+          font-weight: $font-weight-bolder;
+        }
+      }
+
+    }
+  }
+  
+  /* @media (min-width: 1000px) {
+  
+    article{
+      grid-template-columns:1fr 1fr;
+  
+      form{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  
+        section:first-child{
+          background-color: red;
+          grid-column-start: 1;
+          grid-column-end: 5;
+        }
+        section:nth-child(2){
+          background-color: green;
+          grid-column-start: 1;
+          grid-column-end: 3;
+        }
+        section:nth-child(3){
+          background-color: blue;
+          grid-column-start: 3;
+          grid-column-end: 5;
+        }
+        section:nth-child(4){
+          background-color: yellow;
+          grid-column-start: 3;
+          grid-column-end: 5;
+          grid-row-start: 3;
+          grid-row-end: 5;
+        }
+        section:last-child{
+          background-color: purple;
+          grid-area: 3 / 1 / span 3 / span 2;
+        }
+  
+      }
+    }
+    
+  } */
+  
