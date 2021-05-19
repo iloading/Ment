@@ -2,7 +2,6 @@
 import "./styles/app.scss";
 
 //PAGES
-import Grid from "./pages/cssgridteste";
 import Login from "./pages/Login";
 import Registo from "./pages/Registo/Registo";
 import Homepage from "./pages/Homepage";
