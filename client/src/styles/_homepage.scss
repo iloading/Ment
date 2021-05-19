@@ -1,0 +1,71 @@
+.homepage {
+  display: grid;
+  grid-template-rows: 3rem 1fr 1fr 1fr 1fr;
+  grid-gap: 3rem;
+
+  nav {
+    display: grid;
+    grid-template-columns: 0.1fr 0.5fr 1fr 0.5fr 0.1fr;
+    grid-template-areas: ". logo . login .";
+    grid-row-gap: 5rem;
+
+    #logo {
+      justify-self: left;
+      align-self: center;
+      grid-area: logo;
+    }
+
+    #login {
+      justify-self: right;
+      align-self: center;
+      grid-area: login;
+    }
+
+    img {
+      max-width: 10%;
+      min-width: 32px;
+    }
+
+    .botaoLogin {
+      background-color: $button-type1-background;
+      color: $text-main-color;
+      border: none;
+      font-weight: $font-weight-boldest;
+      border-radius: 5px;
+      width: 50%;
+      min-width: 60px;
+      min-height: 24px;
+      padding: 0;
+    }
+  }
+
+  section {
+    display: grid;
+    margin: 0 2rem;
+    grid-gap: 2rem;
+    h1 {
+      text-align: center;
+      color: $text-main-color;
+    }
+    #texto1 {
+      text-align: center;
+      color: $text-second-color;
+      font-weight: $font-weight-bold;
+    }
+    img {
+      justify-self: center;
+      align-self: center;
+    }
+    .botaoRegisto {
+      color: white;
+      background-color: $button-type2-background;
+      border: none;
+      font-weight: $font-weight-bold;
+      font-size: $font-size-s;
+      width: 60%;
+      height: 55px;
+      justify-self: center;
+      border-radius: 5px;
+    }
+  }
+}
