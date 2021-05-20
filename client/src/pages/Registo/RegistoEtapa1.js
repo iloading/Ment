@@ -2,7 +2,8 @@ import registoImg from "../../img/registoImg.png";
 import icon_nome from "../../img/icon_nome.png";
 import icon_dropdown from "../../img/icon_dropdown.png";
 import { Field, ErrorMessage } from 'formik';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
+
 
 
 
@@ -26,7 +27,7 @@ function RegistoEtapa1() {
 
             <div className="formulario">
                 <section className="tituloPrincipal">
-                    <label>Registo</label>
+                    <label>Registar</label>
                 </section>
                 <section className="paragrafo">
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab quos at nostrum nemo earum obcaecati voluptas consectetur, qui recusandae ut delectus harum nobis aliquid, odit ex deserunt laudantium, assumenda voluptatibus?</p>
@@ -53,6 +54,9 @@ function RegistoEtapa1() {
                 </section>
                 <section className="botao">
                     <button onClick={redireciona}>Próxima Etapa</button>
+                </section>
+                <section className="tituloFooter">
+                    <Link to="/">Já tem conta? Faça o login aqui</Link>
                 </section>
             </div>
 
