@@ -1,6 +1,6 @@
 .homepage {
   display: grid;
-  grid-template-rows: 3rem 1fr auto auto 1fr;
+  grid-template-rows: 3rem 1fr auto auto auto;
   grid-gap: 3rem;
 
   nav {
@@ -79,6 +79,7 @@
     a {
       text-align: center;
       font-weight: $font-weight-bolder;
+      margin-bottom: 3rem;
     }
     a:link {
       color: $text-main-color;
@@ -86,11 +87,36 @@
     a:visited {
       color: $text-main-color;
     }
+    li {
+      margin-bottom: 1rem;
+    }
+    .paragrafoComofunciona {
+      margin-bottom: 1rem;
+    }
+    .imageBox {
+      height: calc(50% + 50);
+      width: 100%;
+      background-color: #c1dee2;
+    }
+    /*
+    .angledShape {
+      transform: skew(0deg, -5deg);
+      background-color: #c1dee2;
+    }
+    .notangledShape {
+      transform: skew(0deg, 5deg);
+      bottom: 0;
+      padding: 3rem;
+    }
+    */
   }
   #apresentacaoBanco {
     grid-gap: 3rem;
   }
   #comoFunciona {
     grid-gap: 4rem;
+  }
+  #feedback {
+    grid-gap: 3rem;
   }
 }

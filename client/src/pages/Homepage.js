@@ -3,6 +3,7 @@ import navLogo from "../img/logo.png";
 import home1 from "../img/home1.png";
 import imgBanco from "../img/imgBanco.png";
 import comofuncionaHome from "../img/comofuncionaHome.png";
+import retangulo from "../img/Rectangle.png";
 import { useHistory, Link } from "react-router-dom"
 
 function Homepage() {
@@ -48,7 +49,7 @@ function Homepage() {
                     <img src={comofuncionaHome} alt="" />
 
                     <div id="texto2">
-                        <p>Na ment pode:</p>
+                        <p className="paragrafoComofunciona">Na ment pode:</p>
                         <ul>
                             <li>Visitar vários projetos de mentoria entre pares realizados em todo o país, de vários disciplinas, anos de escolaridade e até matérias específicas;</li>
                             <li>Agilizar processo de criação, com assistência em todas as etapas;</li>
@@ -60,6 +61,18 @@ function Homepage() {
 
 
                     <Link to="/123">Parece complicado? Veja como funciona passo-a-passo clicando aqui.</Link>
+
+                </section>
+                <section id="feedback">
+                    <h2>O que outros docentes dizem sobre nós:</h2>
+
+                    {/*<div className="angledShape">
+                        <div className="notangledShape"><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt, temporibus voluptas voluptatum dolorum eius unde ipsum provident. Blanditiis est quis aspernatur mollitia amet necessitatibus in ipsam accusantium officiis magnam! Quos.</p></div>
+                    </div>*/}
+
+                    <img src={retangulo} alt="" />
+
+
 
                 </section>
             </article>
