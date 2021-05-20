@@ -1,6 +1,6 @@
 .homepage {
   display: grid;
-  grid-template-rows: 3rem 1fr 1fr 1fr 1fr;
+  grid-template-rows: 3rem 1fr auto auto 1fr;
   grid-gap: 3rem;
 
   nav {
@@ -52,6 +52,11 @@
       color: $text-second-color;
       font-weight: $font-weight-bold;
     }
+    #texto2 {
+      text-align: left;
+      color: $text-second-color;
+      font-weight: $font-weight-bold;
+    }
     img {
       justify-self: center;
       align-self: center;
@@ -67,5 +72,25 @@
       justify-self: center;
       border-radius: 5px;
     }
+    h2 {
+      text-align: center;
+      color: $text-main-color;
+    }
+    a {
+      text-align: center;
+      font-weight: $font-weight-bolder;
+    }
+    a:link {
+      color: $text-main-color;
+    }
+    a:visited {
+      color: $text-main-color;
+    }
+  }
+  #apresentacaoBanco {
+    grid-gap: 3rem;
+  }
+  #comoFunciona {
+    grid-gap: 4rem;
   }
 }
