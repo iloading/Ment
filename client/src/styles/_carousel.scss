@@ -1,0 +1,30 @@
+.carousel {
+  width: 100vw;
+
+  .carouselCards {
+    background-color: rgba($color: #aaaaaa, $alpha: 0.2);
+    border-radius: 20px;
+    padding: 1.5rem;
+    height: 30vh;
+    display: grid !important;
+    grid-template-columns: 0.5fr 1fr;
+  }
+
+  .imgCard {
+    display: grid;
+    align-items: center;
+  }
+
+  .slick-slide > div {
+    margin: 0 10px 30px;
+  }
+  .slick-list {
+    margin: 0 -10px;
+  }
+
+  .teste {
+    display: grid;
+    align-items: center;
+    grid-template-rows: auto 1fr;
+  }
+}

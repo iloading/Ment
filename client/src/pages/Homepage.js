@@ -1,4 +1,5 @@
 import React from 'react'
+import Carousel from "./components/Carousel";
 import navLogo from "../img/logo.png";
 import home1 from "../img/home1.png";
 import imgBanco from "../img/imgBanco.png";
@@ -6,9 +7,13 @@ import comofuncionaHome from "../img/comofuncionaHome.png";
 import retangulo from "../img/Rectangle.png";
 import { useHistory, Link } from "react-router-dom"
 
+
+
+
 function Homepage() {
     let history = useHistory();
     const redirectLogin = () => { history.push("/login") }
+
     return (
         <>
             <article className="homepage">
@@ -72,6 +77,7 @@ function Homepage() {
 
                     <img src={retangulo} alt="" />
 
+                    <Carousel />
 
 
                 </section>
