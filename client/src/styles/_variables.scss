@@ -1,21 +1,31 @@
 /*FONT-FAMILY*/
-$font_family: 'Roboto';
-
+$font_family: "Roboto";
 
 /*FONT-SIZE*/
-$font-size-xxxs:0.2rem;
-$font-size-xxs:0.5rem;
-$font-size-xs:0.8rem;
-$font-size-s:1rem;
-$font-size-m:1.2rem;
-$font-size-l:1.5rem;
-$font-size-xl:2rem;
-$font-size-xxl:2.2rem;
+$font-size-xxxs: 0.2rem;
+$font-size-xxs: 0.5rem;
+$font-size-xs: 0.8rem;
+$font-size-s: 1rem;
+$font-size-m: 1.2rem;
+$font-size-l: 1.5rem;
+$font-size-xl: 2rem;
+$font-size-xxl: 2.2rem;
 
 /* FONT-WEIGHT*/
-$font-weight-lighter:100;
-$font-weight-light:200;
-$font-weight-normal:300;
-$font-weight-bold:400;
-$font-weight-bolder:500;
+$font-weight-lighter: 100;
+$font-weight-light: 200;
+$font-weight-normal: 300;
+$font-weight-bold: 400;
+$font-weight-bolder: 500;
+$font-weight-boldest: 600;
 
+/*BUTTON-COLORS*/
+/*type1 - botao de login homepage*/
+$button-type1-background: #e0eaff;
+
+/*type2 - botao de registo homepage*/
+$button-type2-background: #191847;
+
+/*TEXT-COLOR*/
+$text-main-color: #042454;
+$text-second-color: #9fbeff;
