@@ -1,6 +1,7 @@
 
 import { useHistory } from 'react-router-dom';
-import avatar_1 from "../../img/avatar/avatar_1.png";
+
+import Avatar from "../components/Avatar";
 
 
 
@@ -17,79 +18,18 @@ function RegistoEtapa4() {
 
     return (
         <>
-        <article className="avatar"> 
-            <h1>ola</h1>
-            <section className="avatarSelect">
-                    <div>
-                        <img src={avatar_1} alt="" />
-                    </div>
-                    <div>
-                        <img src={avatar_1} alt="" />
-                    </div>
-                    <div>
-                        <img src={avatar_1} alt="" />
-                    </div>
-                    <div>
-                        <img src={avatar_1} alt="" />
-                    </div>
-                    <div>
-                        <img src={avatar_1} alt="" />
-                    </div>
-                    <div>
-                        <img src={avatar_1} alt="" />
-                    </div>
-                    <div>
-                        <img src={avatar_1} alt="" />
-                    </div>
-                    <div>
-                        <img src={avatar_1} alt="" />
-                    </div>
-                    <div>
-                        <img src={avatar_1} alt="" />
-                    </div>
-                    <div>
-                        <img src={avatar_1} alt="" />
-                    </div>
-                    <div>
-                        <img src={avatar_1} alt="" />
-                    </div>
-                    <div>
-                        <img src={avatar_1} alt="" />
-                    </div>
-                    <div>
-                        <img src={avatar_1} alt="" />
-                    </div>
-                    <div>
-                        <img src={avatar_1} alt="" />
-                    </div>
-                    <div>
-                        <img src={avatar_1} alt="" />
-                    </div>
-                    <div>
-                        <img src={avatar_1} alt="" />
-                    </div>
-                    <div>
-                        <img src={avatar_1} alt="" />
-                    </div>
-                    <div>
-                        <img src={avatar_1} alt="" />
-                    </div>
-                    <div>
-                        <img src={avatar_1} alt="" />
-                    </div>
-                    <div>
-                        <img src={avatar_1} alt="" />
-                    </div>
-            </section>
+            <article className="avatar">
+                <h1>ola</h1>
+                <Avatar />
 
-            <section className="botao">
+                <section className="botao">
 
                     <button onClick={redireciona}>Escolher Avatar</button>
 
-            </section>
+                </section>
 
-        </article>
-            
+            </article>
+
 
         </>
 

@@ -29,7 +29,7 @@ function Login() {
             </div>
             <Formik initialValues={initialValues} onSubmit={onSubmitLogin} validationSchema={camposValidador}>
                 <Form>
-                    <section>
+                    <section className="tituloPrincipal">
                         <span>Iniciar sessão</span>
                     </section>
                     <section>
@@ -53,8 +53,8 @@ function Login() {
                     <section className="botaoSubmit">
                         <button type="submit">Login</button>
                     </section>
-                    <section>
-                        <span>Ainda não tem conta? Registe-se aqui</span>
+                    <section className="tituloFooter">
+                        <span>Necessita de criar conta? Carregue aqui</span>
                     </section>
                 </Form>
             </Formik>
