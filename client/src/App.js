@@ -6,6 +6,7 @@ import Login from "./pages/Login";
 import Registo from "./pages/Registo/Registo";
 import Homepage from "./pages/Homepage";
 
+
 //REACT ROUTER
 import { Route, Switch } from "react-router-dom";
 

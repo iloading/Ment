@@ -1,66 +1,54 @@
-import registoImg from "../../img/registoImg.png";
+import registo5Img from "../../img/registo5Img.png";
 import icon_nome from "../../img/icon_nome.png";
 import icon_dropdown from "../../img/icon_dropdown.png";
 import { Field, ErrorMessage } from 'formik';
-import { useHistory, Link } from 'react-router-dom';
 
 
 
+function RegistoEtapa5() {
 
-
-function RegistoEtapa1() {
-
-
-    const history = useHistory();
-
-    const redireciona = () => {
-        let path = "/registo/2";
-        history.push(path);
-    }
 
 
     return (
         <>
             <header className="registoImg">
-                <img src={registoImg} alt="" />
+                <img src={registo5Img} alt="" />
             </header>
-
             <div className="formulario">
                 <section className="tituloPrincipal">
-                    <label>Registar</label>
+                    <label>Informações</label>
                 </section>
                 <section className="paragrafo">
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab quos at nostrum nemo earum obcaecati voluptas consectetur, qui recusandae ut delectus harum nobis aliquid, odit ex deserunt laudantium, assumenda voluptatibus?</p>
                 </section>
                 <section className="inputFormulario">
 
-                    <label>Nome Completo</label>
+                    <label>Escola</label>
                     {/* Falta meter estilos nestes erros */}
-                    <ErrorMessage name="name" component="p" />
+                    <ErrorMessage name="email" component="p" />
                     <div>
                         <img src={icon_nome} alt="" />
-                        <Field placeholder="ex: Joana Silva" name="name" id="inputName" type="text" />
+                        <Field placeholder="ex: Escola Random Random" name="escola" id="inputEscola" type="text" />
                     </div>
                 </section>
                 <section className="selectFormulario">
                     <label>Cargo</label>
                     <div>
                         <img src={icon_dropdown} alt="" />
-                        <Field as="select" name="cargo">
-                            <option value="Professor">Professor</option>
-                            <option value="Aluno">Aluno</option>
+                        <Field as="select" name="disciplina">
+                            <option value="mat">Mat</option>
+                            <option value="ing">ING</option>
                         </Field>
                     </div>
                 </section>
+
+
                 <section className="botao">
-                    <button onClick={redireciona}>Próxima Etapa</button>
-                </section>
-                <section className="tituloFooter">
-                    <Link to="/">Já tem conta? Faça o login aqui</Link>
+
+                    <button>Criar</button>
+
                 </section>
             </div>
-
-
         </>
 
 
@@ -68,4 +56,4 @@ function RegistoEtapa1() {
 
 }
 
-export default RegistoEtapa1;
+export default RegistoEtapa5;

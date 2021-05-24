@@ -112,11 +112,21 @@
   }
   #apresentacaoBanco {
     grid-gap: 3rem;
+
+    img{
+      width: 100%;
+    }
   }
   #comoFunciona {
     grid-gap: 4rem;
   }
   #feedback {
     grid-gap: 3rem;
+    justify-items: center;
+  }
+
+  #carousel{
+    margin: 0;
+    justify-items: center;
   }
 }
