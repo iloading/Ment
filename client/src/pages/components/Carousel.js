@@ -8,6 +8,7 @@ import carouselCard1 from "../../img/carouselCards1.png";
 
 
 
+
 function Carousel() {
     var settings = {
         dots: true,
@@ -16,6 +17,7 @@ function Carousel() {
         slidesToShow: 4,
         slidesToScroll: 4,
         initialSlide: 0,
+        arrows: false,
         responsive: [
             {
                 breakpoint: 1024,
@@ -47,14 +49,15 @@ function Carousel() {
 
     return (
 
+
         <div className="carousel">
             <Slider {...settings}>
                 <div className="carouselCards">
                     <div className="imgCard">
                         <img src={carouselCard1} alt="" />
                     </div>
-                    <div className="teste">
-                        <p>Joana Silva, 34</p>
+                    <div className="texto">
+                        <label>Joana Silva, 34</label>
                         <p>Nunca pensei que fosse tão fácil, e a funcionalidade de poder ver outros projetos, incríbellllllll. </p>
                     </div>
 
@@ -83,6 +86,10 @@ function Carousel() {
                 </div>
             </Slider>
         </div >
+
+       
+
+
 
 
     );

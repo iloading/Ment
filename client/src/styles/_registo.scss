@@ -143,3 +143,19 @@
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr auto;
   }
 }
+
+
+.avatar{
+  display: grid;
+  height: 100vh;
+  grid-template-rows: 0.2fr 1fr 0.2fr;
+}
+
+.avatarSelect{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+  
+}

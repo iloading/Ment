@@ -4,6 +4,9 @@
 import RegistoEtapa1 from "./RegistoEtapa1";
 import RegistoEtapa2 from "./RegistoEtapa2";
 import RegistoEtapa3 from "./RegistoEtapa3";
+import RegistoEtapa4 from "./RegistoEtapa4";
+import RegistoEtapa5 from "./RegistoEtapa5";
+
 
 
 //REACT ROUTER
@@ -45,6 +48,8 @@ function Registo() {
                     {(isNaN(path)) && <RegistoEtapa1 />}
                     {path === 2 && <RegistoEtapa2 />}
                     {path === 3 && <RegistoEtapa3 />}
+                    {path === 4 && <RegistoEtapa4 />}
+                    {path === 5 && <RegistoEtapa5 />}
 
 
                 </Form>

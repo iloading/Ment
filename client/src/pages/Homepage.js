@@ -4,7 +4,7 @@ import navLogo from "../img/logo.png";
 import home1 from "../img/home1.png";
 import imgBanco from "../img/imgBanco.png";
 import comofuncionaHome from "../img/comofuncionaHome.png";
-import retangulo from "../img/Rectangle.png";
+
 import { useHistory, Link } from "react-router-dom"
 
 
@@ -47,6 +47,8 @@ function Homepage() {
                     <img src={imgBanco} alt="" />
 
                 </section>
+
+                 
                 <section id="comoFunciona">
                     <h2>Como funciona:</h2>
 
@@ -68,19 +70,19 @@ function Homepage() {
                     <Link to="/123">Parece complicado? Veja como funciona passo-a-passo clicando aqui.</Link>
 
                 </section>
+
+               
                 <section id="feedback">
                     <h2>O que outros docentes dizem sobre nós:</h2>
-
-                    {/*<div className="angledShape">
-                        <div className="notangledShape"><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt, temporibus voluptas voluptatum dolorum eius unde ipsum provident. Blanditiis est quis aspernatur mollitia amet necessitatibus in ipsam accusantium officiis magnam! Quos.</p></div>
-                    </div>*/}
-
-                    <img src={retangulo} alt="" />
-
-                    <Carousel />
-
-
                 </section>
+                <section id="carousel">
+                 
+                        <Carousel />
+                </section>
+
+
+            
+           
             </article>
         </>
     )
