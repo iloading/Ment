@@ -1,0 +1,79 @@
+.dashboard {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 3rem 1fr 3rem;
+  grid-gap: 3rem;
+
+  nav {
+    display: grid;
+    grid-template-columns: 0.1fr 0.5fr 1fr 0.5fr 0.1fr;
+    grid-template-areas: ". logo . perfil .";
+    grid-row-gap: 5rem;
+  }
+
+  #logo {
+    justify-self: left;
+    align-self: center;
+    grid-area: logo;
+  }
+
+  #perfil {
+    justify-self: right;
+    align-self: center;
+    grid-area: perfil;
+  }
+
+  img {
+    max-width: 10%;
+    min-width: 32px;
+  }
+
+  .iconPerfil {
+    max-width: 10%;
+    min-width: 25px;
+  }
+
+  /*MERDAS DO MEIO*/
+
+  footer {
+    display: grid;
+    grid-template-columns: 0.1fr 1fr 1fr 1fr 1fr 0.1fr;
+    grid-template-areas: ". banco home criar equipa .";
+    grid-row-gap: 5rem;
+  }
+
+  #banco {
+    justify-self: center;
+    align-self: center;
+    grid-area: banco;
+  }
+  #home {
+    justify-self: center;
+    align-self: center;
+    grid-area: home;
+  }
+  #criar {
+    justify-self: center;
+    align-self: center;
+    grid-area: criar;
+  }
+  #equipa {
+    justify-self: center;
+    align-self: center;
+    grid-area: equipa;
+  }
+
+  .iconFooter {
+    max-width: 10%;
+    min-width: 28px;
+  }
+  .iconFooterEquipa {
+    max-width: 10%;
+    min-width: 33px;
+  }
+
+  #carouselDashboard {
+    margin: 0;
+    justify-content: center;
+  }
+}
