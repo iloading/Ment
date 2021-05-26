@@ -1,0 +1,63 @@
+.tutorial {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 1.5rem;
+
+  nav {
+    display: grid;
+    grid-template-columns: 0.1fr 0.5fr 1fr 0.5fr 0.1fr;
+    grid-template-areas: ". seta tutorial . .";
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  #seta {
+    align-self: center;
+    grid-area: seta;
+  }
+
+  #tutorial {
+    align-self: center;
+    justify-self: center;
+    grid-area: tutorial;
+  }
+  h2 {
+    color: $text-main-color;
+    font-size: 1.375rem;
+  }
+
+  section {
+    display: grid;
+    margin: 0 2rem;
+    grid-template-columns: 0.1fr 1fr 0.3fr;
+    grid-template-areas: ". textoEsquerda setaDireita";
+    background-color: #e0eaff;
+    border: 1px solid #e0eaff;
+    border-radius: 0.3rem;
+
+    #textoEsquerda {
+      align-self: center;
+
+      grid-area: textoEsquerda;
+    }
+
+    #setaDireita {
+      align-self: center;
+      justify-self: center;
+      grid-area: setaDireita;
+    }
+
+    h4 {
+      font-size: 0.93rem;
+      font-weight: 700;
+      color: #858585;
+      margin-bottom: 0.2rem;
+    }
+    p {
+      font-size: 0.81rem;
+      font-weight: $font-weight-boldest;
+      font-style: italic;
+      color: #a9a9a9;
+    }
+  }
+}

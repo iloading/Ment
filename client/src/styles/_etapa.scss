@@ -1,0 +1,100 @@
+.etapa {
+  display: grid;
+  grid-template-rows: auto 1fr;
+
+  nav {
+    display: grid;
+    grid-template-columns: 0.1fr 0.5fr 1fr 0.5fr 0.1fr;
+    grid-template-areas: ". seta tutorial . .";
+    margin-top: 1.5rem;
+    margin-bottom: 3rem;
+    #seta {
+      align-self: center;
+      grid-area: seta;
+    }
+
+    #tutorial {
+      align-self: center;
+      justify-self: center;
+      grid-area: tutorial;
+    }
+    h2 {
+      color: white;
+      font-weight: 500;
+      font-size: 1.375rem;
+    }
+  }
+
+  .fundoAzul {
+    background-color: $text-main-color;
+  }
+  .principal {
+    display: grid;
+    margin: 0 2rem;
+
+    #titulo {
+      color: white;
+      margin-bottom: 3rem;
+    }
+    #texto1 {
+      color: $text-second-color;
+      margin-bottom: 1.5rem;
+    }
+    #texto2 {
+      color: $text-second-color;
+    }
+    li {
+      margin-bottom: 1.5rem;
+    }
+    #botao {
+      background-color: $button-type1-background;
+      margin-top: 3rem;
+      margin-bottom: 4rem;
+      border: 1px solid #e0eaff;
+      border-radius: 0.3rem;
+      display: grid;
+      grid-template-columns: 0.1fr 1fr 0.3fr;
+      grid-template-areas: ". textoEsquerda setaDownload";
+      padding-top: 0.7rem;
+      padding-bottom: 0.7rem;
+
+      #textoEsquerda {
+        align-self: center;
+        grid-area: textoEsquerda;
+        #textoBotao {
+          color: $text-main-color;
+          font-weight: $font-weight-bolder;
+          font-size: 0.81rem;
+        }
+      }
+      #setaDownload {
+        align-self: center;
+        justify-self: center;
+        grid-area: setaDownload;
+      }
+    }
+  }
+
+  #titulo2 {
+    color: $text-main-color;
+    margin-bottom: 3rem;
+    margin-top: 3rem;
+  }
+  #botao2 {
+    background-color: $text-main-color;
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+    margin-bottom: 1rem;
+    border: 1px solid #042454;
+    border-radius: 0.3rem;
+    width: 95%;
+    justify-self: center;
+
+    #textoBotao2 {
+      color: white;
+      text-align: center;
+      font-weight: $font-weight-bolder;
+      font-size: 1.3rem;
+    }
+  }
+}

@@ -6,6 +6,8 @@ import Login from "./pages/Login";
 import Registo from "./pages/Registo/Registo";
 import Homepage from "./pages/Homepage";
 import Dashboard from "./pages/Dashboard";
+import Tutorial from "./pages/Tutorial/Tutorial";
+import Etapa from "./pages/Tutorial/Etapa";
 
 
 //REACT ROUTER
@@ -25,8 +27,14 @@ function App() {
         <Route path="/login">
           <Login />
         </Route>
-        <Route path="/Dashboard">
+        <Route path="/dashboard">
           <Dashboard />
+        </Route>
+        <Route path="/tutorial" exact>
+          <Tutorial />
+        </Route>
+        <Route path="/tutorial/:id">
+          <Etapa />
         </Route>
       </Switch>
 
