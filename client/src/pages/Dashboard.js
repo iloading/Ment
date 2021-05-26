@@ -20,8 +20,23 @@ function Dashboard() {
                 <img src={iconPerfil} alt="" id="perfil" className="iconPerfil" />
             </nav>
 
+
+
+            <section className="titulo">
+                <img src={iconEquipa} alt="" id="iconTituloEquipa" />
+
+                <label id="tituloMain">As minhas equipas</label>
+            </section>
+
             <section id="carouselDashboard">
                 <CarouselDashboard />
+            </section>
+            <section className="titulo">
+
+                <img src={iconEquipa} alt="" id="" />
+
+                <label>As minhas equipas</label>
+
             </section>
 
             <footer>

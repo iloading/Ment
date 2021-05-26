@@ -1,16 +1,18 @@
 .carouselDashboard {
-  width: 90vw;
+  width: 95vw;
+  text-align: center;
 
   .carouselCards {
     background-color: rgba($color: #f30000, $alpha: 0.2);
     border-radius: 20px;
     padding: 1.5rem;
-    margin: 10px;
-    width: 20% !important;
+    margin: 10px 10px 10px 20px;
+    width: 150px !important;
+    height: 150px;
   }
 
   .slick-slide > div {
-    margin: 0 10px 30px 0;
+    margin: 0 10px 0 0;
   }
   .slick-list {
     margin: 0 -10px;

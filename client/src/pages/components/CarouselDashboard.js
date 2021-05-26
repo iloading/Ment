@@ -20,6 +20,7 @@ function CarouselDashboard() {
         rows: 2,
         slidesPerRow: 2,
 
+
     };
 
 
