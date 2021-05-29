@@ -60,7 +60,7 @@ function RegistoEtapa2({ setEtapa, dados, setDados }) {
                         <ErrorMessage name="name" component="p" />
                         <div>
                             {/* <img src={icon_nome} alt="" /> */}
-                            <Field placeholder="ex: Joana Silva" name="name" id="inputName" type="text" value={dados.name !== '' ? dados.name : ''} ></Field>
+                            <Field placeholder="ex: Joana Silva" name="name" id="inputName" type="text" ></Field>
                         </div>
                     </section>
                     <section className="selectFormulario">
