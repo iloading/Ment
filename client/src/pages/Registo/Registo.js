@@ -47,7 +47,6 @@ function Registo() {
     const location = useLocation();
     const path = parseInt(location.pathname.split("/")[2]);
 
-
     return (
         <div className="registo">
             <Formik initialValues={initialValues} validationSchema={camposValidador} onSubmit={onSubmit}>
