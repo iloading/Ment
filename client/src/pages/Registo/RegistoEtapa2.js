@@ -1,7 +1,7 @@
 import registo2Img from "../../img/registo2Img.png";
 import icon_nome from "../../img/icon_nome.png";
 import { Field, ErrorMessage } from 'formik';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 
 
 
@@ -63,6 +63,10 @@ function RegistoEtapa2() {
 
                     <button onClick={redireciona}>Próxima Etapa</button>
 
+                </section>
+
+                <section className="tituloFooter">
+                    <Link to="/">Já tem conta? Faça o login aqui</Link>
                 </section>
 
             </div>

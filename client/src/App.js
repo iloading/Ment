@@ -5,6 +5,8 @@ import "./styles/app.scss";
 import Login from "./pages/Login";
 import Registo from "./pages/Registo/Registo";
 import Homepage from "./pages/Homepage";
+import Dashboard from "./pages/Dashboard";
+
 
 //REACT ROUTER
 import { Route, Switch } from "react-router-dom";
@@ -22,6 +24,9 @@ function App() {
         </Route>
         <Route path="/login">
           <Login />
+        </Route>
+        <Route path="/Dashboard">
+          <Dashboard />
         </Route>
       </Switch>
 

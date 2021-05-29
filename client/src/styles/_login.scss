@@ -30,11 +30,9 @@
         border-radius: 4px;
         height: 40px;
         padding: 0% 15% 0 5%;
-        background-color: rgb(245, 245, 245);
+        background-color: $input-color-lightblue;
         width: 100%;
       }
-
-      
 
       div {
         display: flex;
@@ -56,20 +54,20 @@
 
       label {
         font-size: $font-size-s;
-        font-weight: $font-weight-normal;
-        color: #aaaaaa;
+        font-weight: $font-weight-bold;
+        color: $text-main-color;
       }
     }
 
-    section:first-child {
+    .tituloPrincipal {
       margin-top: 8%;
       span {
         font-size: $font-size-l;
-        color: #aaaaaa;
-        font-weight: $font-weight-bold;
+        color: $text-main-color;
+        font-weight: $font-weight-boldest;
       }
     }
-    section:nth-child(4) {
+    .botaoSubmit {
       display: flex;
       justify-content: center;
       button {
@@ -77,13 +75,15 @@
         border-radius: 5px;
         border: none;
         width: 90%;
-        background-color: #f5f5f5;
+        background-color: $button-type2-background;
         font-size: $font-size-l;
-        color: #aaaaaa;
+        color: white;
         font-weight: $font-weight-bolder;
       }
     }
-    section:last-child {
+    .tituloFooter {
+      display: grid;
+      align-items: center;
       font-size: $font-size-s;
       text-align: center;
       color: #aaaaaa;

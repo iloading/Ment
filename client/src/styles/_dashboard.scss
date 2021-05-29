@@ -1,0 +1,120 @@
+.dashboard {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 3rem auto 1fr auto 1fr 3rem;
+  grid-gap: 1rem;
+
+  nav {
+    display: grid;
+    grid-template-columns: 0.1fr 0.5fr 1fr 0.5fr 0.1fr;
+    grid-template-areas: ". logo . perfil .";
+    grid-row-gap: 5rem;
+
+    #logo {
+      justify-self: left;
+      align-self: center;
+      grid-area: logo;
+    }
+
+    #perfil {
+      justify-self: right;
+      align-self: center;
+      grid-area: perfil;
+    }
+
+    img {
+      max-width: 10%;
+      min-width: 32px;
+    }
+
+    .iconPerfil {
+      max-width: 10%;
+      min-width: 25px;
+    }
+  }
+
+  .titulo {
+    display: grid;
+    grid-template-columns: 0.1fr 0.1fr auto 0.1fr;
+    grid-template-areas: ". iconTituloEquipa tituloMain .";
+    align-items: center;
+
+    label {
+      font-size: $font-size-m;
+      font-weight: $font-weight-boldest;
+      color: $text-main-color;
+      margin-left: 0.5rem;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    #iconTituloEquipa {
+      grid-area: iconTituloEquipa;
+    }
+    #tituloMain {
+      grid-area: tituloMain;
+    }
+  }
+
+  .cardSessoes {
+    div {
+      background-color: rgb(36, 183, 202);
+      margin: 1rem;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+    }
+
+    .textoCards {
+      background-color: red;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr;
+    }
+  }
+
+  footer {
+    display: grid;
+    grid-template-columns: 0.1fr 1fr 1fr 1fr 1fr 0.1fr;
+    grid-template-areas: ". banco home criar equipa .";
+    grid-row-gap: 5rem;
+  }
+
+  #banco {
+    justify-self: center;
+    align-self: center;
+    grid-area: banco;
+  }
+  #home {
+    justify-self: center;
+    align-self: center;
+    grid-area: home;
+  }
+  #criar {
+    justify-self: center;
+    align-self: center;
+    grid-area: criar;
+  }
+  #equipa {
+    justify-self: center;
+    align-self: center;
+    grid-area: equipa;
+  }
+
+  .iconFooter {
+    max-width: 10%;
+    min-width: 28px;
+  }
+  .iconFooterEquipa {
+    max-width: 10%;
+    min-width: 33px;
+  }
+
+  #carouselDashboard {
+    display: grid;
+    margin: 0;
+    justify-content: center;
+  }
+}

@@ -26,8 +26,8 @@
       justify-content: center;
       label {
         font-size: $font-size-l;
-        color: #aaaaaa;
-        font-weight: $font-weight-bolder;
+        color: $text-main-color;
+        font-weight: $font-weight-boldest;
       }
     }
     .paragrafo {
@@ -142,4 +142,18 @@
   .f1 {
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr auto;
   }
+}
+
+.avatar {
+  display: grid;
+  height: 100vh;
+  grid-template-rows: 0.2fr 1fr 0.2fr;
+}
+
+.avatarSelect {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  justify-items: center;
+  align-items: center;
 }
