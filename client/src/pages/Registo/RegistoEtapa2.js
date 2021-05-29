@@ -21,7 +21,7 @@ function RegistoEtapa2() {
             <header className="registoImg">
                 <img src={registo2Img} alt="" />
             </header>
-            <div className="formulario f1">
+            <div className="formulario">
                 <section className="tituloPrincipal">
                     <label>Os Seus Dados</label>
                 </section>

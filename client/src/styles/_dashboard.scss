@@ -65,13 +65,18 @@
       display: grid;
       grid-template-columns: auto 1fr auto;
       align-items: center;
+
+      img {
+        margin: 1rem;
+      }
     }
 
     .textoCards {
       background-color: red;
       display: grid;
       grid-template-columns: 1fr;
-      grid-template-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      margin: 0;
     }
   }
 

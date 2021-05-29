@@ -44,6 +44,7 @@ function Dashboard() {
                     <div className="textoCards">
                         <h3>Os 3 porquinhos </h3>
                         <h5>Equipa Avila Crew</h5>
+                        <h5>8º ano | Past Tense</h5>
                     </div>
 
                     <img src={iconEquipa} alt="" id="iconTituloEquipa" />
