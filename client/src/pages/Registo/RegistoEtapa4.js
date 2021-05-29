@@ -1,37 +1,54 @@
 
-import { useHistory } from 'react-router-dom';
+
 
 import Avatar from "../components/Avatar";
 
+import { Formik, Form } from "formik";
+import * as Yup from 'yup';
+
+
+function RegistoEtapa4({ setEtapa, dados, setDados }) {
+
+    const initialValues = {
+
+    }
+    const camposValidador = Yup.object().shape({
+
+    })
+
+    const onSubmit = (data) => {
+
+        setEtapa(5)
 
 
 
-function RegistoEtapa4() {
-
-    const history = useHistory();
+    }
+    /* const history = useHistory();
 
     const redireciona = () => {
         let path = "/registo/5";
         history.push(path);
     }
-
+ */
 
     return (
-        <>
-            <article className="avatar">
-                <h1>ola</h1>
-                <Avatar />
+        <Formik initialValues={initialValues} validationSchema={camposValidador} onSubmit={onSubmit}>
+            <Form className="formularioRegisto">
+                <article className="avatar">
+                    <h1>ola</h1>
+                    <Avatar />
 
-                <section className="botao">
+                    <section className="botao">
 
-                    <button onClick={redireciona}>Escolher Avatar</button>
+                        <button>Escolher Avatar</button>
 
-                </section>
+                    </section>
 
-            </article>
+                </article>
 
 
-        </>
+            </Form>
+        </Formik>
 
 
     );

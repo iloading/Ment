@@ -22,9 +22,13 @@ router.post('/register', async (req, res) => {
             //Se der erro, devolver o mesmo
             if (err) {
                 console.log(err);
-                res.send(err);
+                res.send({
+                    error: err
+                });
             } else {
-                res.json("Conta criada com sucesso!")
+                res.json({
+                    success: "Conta criada com sucesso!"
+                })
             }
 
         })
@@ -50,7 +54,9 @@ router.post('/login', async (req, res) => {
                     })
                 } else {
                     //Se estiver correta, efetuar o login
-                    res.json("Log In")
+                    res.json({
+                        success: "Log In Efetuado com sucesso"
+                    })
                 }
             })
 

@@ -1,46 +1,64 @@
 import registo3Img from "../../img/registo3Img.png";
-import { useHistory, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+
+import { Formik, Form } from "formik";
+import * as Yup from 'yup';
 
 
+function RegistoEtapa3({ setEtapa, dados, setDados }) {
+    let initialValues
 
+    /* Desta forma se o utilizador voltar a tras durante o registo, os dados ficam guardados nos campos corretos */
 
-function RegistoEtapa3() {
+    dados.avatar ?
+        initialValues = {
+            avatar: dados.avatar,
 
-    const history = useHistory();
+        } : initialValues = {
+            avatar: "",
+        }
 
-    const redireciona = () => {
-        let path = "/registo/4";
-        history.push(path);
+    const camposValidador = Yup.object().shape({
+        /* Alterar os valores de min e max dependendo de quantos avatares temos */
+        avatar: Yup.string().required("Este campo é obrigatório").min(1).max(9),
+    })
+
+    const onSubmit = (data) => {
+        setDados({ ...dados, avatar: data.avatar })
+        setEtapa(4)
     }
 
 
+
     return (
-        <>
-            <header className="registoImg">
-                <img src={registo3Img} alt="" />
-            </header>
-            <div className="formulario f1">
-                <section className="tituloPrincipal">
-                    <label>Escolher avatar</label>
-                </section>
-                <section className="paragrafo">
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab quos at nostrum nemo earum obcaecati voluptas consectetur, qui recusandae ut delectus harum nobis aliquid, odit ex deserunt laudantium, assumenda voluptatibus?</p>
-                </section>
+        <Formik initialValues={initialValues} validationSchema={camposValidador} onSubmit={onSubmit}>
+            <Form className="formularioRegisto">
+                <header className="registoImg">
+                    <img src={registo3Img} alt="" />
+                </header>
+                <div className="formulario f1">
+                    <section className="tituloPrincipal">
+                        <label>Escolher avatar</label>
+                    </section>
+                    <section className="paragrafo">
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab quos at nostrum nemo earum obcaecati voluptas consectetur, qui recusandae ut delectus harum nobis aliquid, odit ex deserunt laudantium, assumenda voluptatibus?</p>
+                    </section>
 
 
-                <section className="botao">
+                    <section className="botao">
 
-                    <button onClick={redireciona}>Escolher Avatar</button>
+                        <button>Escolher Avatar</button>
 
-                </section>
+                    </section>
 
-                <section className="tituloFooter">
-                    <Link to="/">Já tem conta? Faça o login aqui</Link>
-                </section>
+                    <section className="tituloFooter">
+                        <Link to="/">Já tem conta? Faça o login aqui</Link>
+                    </section>
 
-            </div>
+                </div>
 
-        </>
+            </Form>
+        </Formik >
 
 
     );
