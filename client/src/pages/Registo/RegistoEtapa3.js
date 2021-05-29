@@ -36,7 +36,7 @@ function RegistoEtapa3({ setEtapa, dados, setDados }) {
                 <header className="registoImg">
                     <img src={registo3Img} alt="" />
                 </header>
-                <div className="formulario f1">
+                <div className="formulario">
                     <section className="tituloPrincipal">
                         <label>Escolher avatar</label>
                     </section>
