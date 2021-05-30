@@ -1,13 +1,11 @@
 
 import CarouselDashboard from "./components/CarouselDashboard";
-
-import navLogo from "../img/logo.png";
-import iconPerfil from "../img/icon_perfil.png";
-import iconHome from "../img/icon_home.png";
-import iconCriar from "../img/icon_criar.png";
-import iconBanco from "../img/icon_banco.png";
-import iconEquipa from "../img/icon_equipa.png";
-import iconSessoes from "../img/icon_sessoes.png";
+import Footer from "./components/Footer"
+import Navbar from "./components/Navbar"
+import iconEquipa from "../img/icons/icon_equipa.png";
+import iconSessoes from "../img/icons/icon_sessoes.png";
+import iconbanco from "../img/icons/icon_banco.png";
+import medalha from "../img/medalha.png";
 
 
 
@@ -16,46 +14,78 @@ function Dashboard() {
 
     return (
         <article className="dashboard">
-            <nav>
-                <img src={navLogo} alt="" id="logo" />
-                <img src={iconPerfil} alt="" id="perfil" className="iconPerfil" />
-            </nav>
 
+            <Navbar/>
+           
+            <section id="main"className="conteudoMain">
 
+              
 
-            <section className="titulo">
-                <img src={iconEquipa} alt="" id="iconTituloEquipa" />
-
-                <label id="tituloMain">As minhas equipas</label>
-            </section>
-
-            <section id="carouselDashboard">
-                <CarouselDashboard />
-            </section>
-            <section className="titulo">
-                <img src={iconEquipa} alt="" id="iconTituloEquipa" />
-
-                <label id="tituloMain">As minhas equipas</label>
-            </section>
-
-            <section className="cardSessoes">
-                <div>
-                    <img src={iconSessoes} alt="" id="iconTituloEquipa" />
-                    <div className="textoCards">
-                        <h3>Os 3 porquinhos </h3>
-                        <h5>Equipa Avila Crew</h5>
-                        <h5>8º ano | Past Tense</h5>
-                    </div>
-
+                <div className="titulo">
                     <img src={iconEquipa} alt="" id="iconTituloEquipa" />
+
+                    <label id="tituloMain">As minhas equipas</label>
                 </div>
+
+                <div className="carouselContent">
+                    <CarouselDashboard />
+                </div>
+                <div className="titulo">
+                    <img src={iconbanco} alt="" id="iconTituloEquipa" />
+
+                    <label id="tituloMain">Sessões em destaque</label>
+                </div>
+
+                <div className="cardSessoes">
+                    <div>
+                        <img src={iconSessoes} alt="" id="iconTituloEquipa" />
+                        <div className="textoCards">
+                            <label>Os 3 porquinhos </label>
+                            <p>Equipa Avila Crew</p>
+                            <span>8º ano | Past Tense</span>
+                        </div>
+
+                        <img src={medalha} alt="" id="iconTituloEquipa" />
+                    </div>
+                    <div>
+                        <img src={iconSessoes} alt="" id="iconTituloEquipa" />
+                        <div className="textoCards">
+                            <label>Os 3 porquinhos </label>
+                            <p>Equipa Avila Crew</p>
+                            <span>8º ano | Past Tense</span>
+                        </div>
+
+                        <img src={medalha} alt="" id="iconTituloEquipa" />
+                    </div>
+                    <div>
+                        <img src={iconSessoes} alt="" id="iconTituloEquipa" />
+                        <div className="textoCards">
+                            <label>Os 3 porquinhos </label>
+                            <p>Equipa Avila Crew</p>
+                            <span>8º ano | Past Tense</span>
+                        </div>
+
+                        <img src={medalha} alt="" id="iconTituloEquipa" />
+                    </div>
+                    <div>
+                        <img src={iconSessoes} alt="" id="iconTituloEquipa" />
+                        <div className="textoCards">
+                            <label>Os 3 porquinhos </label>
+                            <p>Equipa Avila Crew</p>
+                            <span>8º ano | Past Tense</span>
+                        </div>
+
+                        <img src={medalha} alt="" id="iconTituloEquipa" />
+                    </div>
+                </div>
+             
+
             </section>
-            <footer>
-                <img src={iconBanco} alt="" id="banco" className="iconFooter" />
-                <img src={iconHome} alt="" id="home" className="iconFooter" />
-                <img src={iconCriar} alt="" id="criar" className="iconFooter" />
-                <img src={iconEquipa} alt="" id="equipa" className="iconFooterEquipa" />
-            </footer>
+            
+            
+            <Footer />
+          
+          
 
 
         </article>

@@ -1,6 +1,6 @@
-import registo5Img from "../../img/registo5Img.png";
-import icon_nome from "../../img/icon_nome.png";
-import icon_dropdown from "../../img/icon_dropdown.png";
+import registo5Img from "../../img/registo/registo5Img.png";
+import icon_nome from "../../img/icons/icon_nome.png";
+import icon_dropdown from "../../img/icons/icon_dropdown.png";
 import { Field, ErrorMessage } from 'formik';
 
 import { Formik, Form } from "formik";

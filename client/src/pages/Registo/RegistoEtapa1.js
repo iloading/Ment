@@ -1,5 +1,5 @@
-import registo2Img from "../../img/registo2Img.png";
-import icon_nome from "../../img/icon_nome.png";
+import registo2Img from "../../img/registo/registo2Img.png";
+import icon_nome from "../../img/icons/icon_nome.png";
 import { Field, ErrorMessage } from 'formik';
 import { Link } from 'react-router-dom';
 

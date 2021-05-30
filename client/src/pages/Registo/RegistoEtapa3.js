@@ -1,4 +1,4 @@
-import registo3Img from "../../img/registo3Img.png";
+import registo3Img from "../../img/registo/registo3Img.png";
 import { Link } from 'react-router-dom';
 
 import { Formik, Form } from "formik";
