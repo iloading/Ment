@@ -12,7 +12,7 @@ import { useState } from 'react'
 
 
 function Registo() {
-
+    /* Global */
     const [etapa, setEtapa] = useState(1);
     const [dados, setDados] = useState({
         name: null,
@@ -24,6 +24,12 @@ function Registo() {
         school: null,
         disciplina: null,
     });
+    /* Etapa 1 */
+    /* Validade do Email | 0 = loading | 1 = erro | 2 = sucesso */
+    const [validadeEmail, setValidadeEmail] = useState(null);
+    const [validadeFormulario1, setvalidadeFormulario1] = useState(false);
+    /* Etapa 2 */
+
 
     /*  const initialValues = {
          name: "",
@@ -49,11 +55,11 @@ function Registo() {
         <>
 
 
-            {etapa === 1 && <RegistoEtapa1 setEtapa={setEtapa} dados={dados} setDados={setDados} />}
-            {etapa === 2 && <RegistoEtapa2 setEtapa={setEtapa} dados={dados} setDados={setDados} />}
-            {etapa === 3 && <RegistoEtapa3 setEtapa={setEtapa} dados={dados} setDados={setDados} />}
-            {etapa === 4 && <RegistoEtapa4 setEtapa={setEtapa} dados={dados} setDados={setDados} />}
-            {etapa === 5 && <RegistoEtapa5 dados={dados} setDados={setDados} />}
+            {etapa === 1 && <RegistoEtapa1 etapa={etapa} setEtapa={setEtapa} dados={dados} setDados={setDados} validadeEmail={validadeEmail} setValidadeEmail={setValidadeEmail} validadeFormulario1={validadeFormulario1} setvalidadeFormulario1={setvalidadeFormulario1} />}
+            {etapa === 2 && <RegistoEtapa2 etapa={etapa} setEtapa={setEtapa} dados={dados} setDados={setDados} />}
+            {etapa === 3 && <RegistoEtapa3 etapa={etapa} setEtapa={setEtapa} dados={dados} setDados={setDados} />}
+            {etapa === 4 && <RegistoEtapa4 etapa={etapa} setEtapa={setEtapa} dados={dados} setDados={setDados} />}
+            {etapa === 5 && <RegistoEtapa5 etapa={etapa} setEtapa={setEtapa} dados={dados} setDados={setDados} />}
 
 
 

@@ -48,14 +48,14 @@ function RegistoEtapa2({ setEtapa, dados, setDados }) {
 
                 <div className="formulario">
                     <section className="tituloPrincipal">
-                        <label>Registar</label>
+                        <label>Os seus dados</label>
                     </section>
                     <section className="paragrafo">
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab quos at nostrum nemo earum obcaecati voluptas consectetur, qui recusandae ut delectus harum nobis aliquid, odit ex deserunt laudantium, assumenda voluptatibus?</p>
                     </section>
                     <section className="inputFormulario">
 
-                        <label>Nome Completo</label>
+                        <label>Nome</label>
                         {/* Falta meter estilos nestes erros */}
                         <ErrorMessage name="name" component="p" />
                         <div>
