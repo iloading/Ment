@@ -1,9 +1,12 @@
 
 
 
-import Avatar from "../components/Avatar";
 
-import { Formik, Form } from "formik";
+import avatar_1 from "../../img/avatar/avatar_1.png";
+import setaAtras from "../../img/setaAtras.png";
+
+import { Formik, Form} from "formik";
+import { Link } from 'react-router-dom';
 import * as Yup from 'yup';
 
 
@@ -35,13 +38,85 @@ function RegistoEtapa4({ setEtapa, dados, setDados }) {
         <Formik initialValues={initialValues} validationSchema={camposValidador} onSubmit={onSubmit}>
             <Form className="formularioRegisto">
                 <article className="avatar">
-                    <h1>ola</h1>
-                    <Avatar />
 
-                    <section className="botao">
+                    <div className="titulo">
+                        <img src={setaAtras} alt="" />
+                        <label>Escolher avatar</label>
+                    </div>
+                   
+                    
+                    
+                    <section className="avatarSelect">
+                        <div>
+                            <img src={avatar_1} alt="" />
+                        </div>
+                        <div>
+                            <img src={avatar_1} alt="" />
+                        </div>
+                        <div>
+                            <img src={avatar_1} alt="" />
+                        </div>
+                        <div>
+                            <img src={avatar_1} alt="" />
+                        </div>
+                        <div>
+                            <img src={avatar_1} alt="" />
+                        </div>
+                        <div>
+                            <img src={avatar_1} alt="" />
+                        </div>
+                        <div>
+                            <img src={avatar_1} alt="" />
+                        </div>
+                        <div>
+                            <img src={avatar_1} alt="" />
+                        </div>
+                        <div>
+                            <img src={avatar_1} alt="" />
+                        </div>
+                        <div>
+                            <img src={avatar_1} alt="" />
+                        </div>
+                        <div>
+                            <img src={avatar_1} alt="" />
+                        </div>
+                        <div>
+                            <img src={avatar_1} alt="" />
+                        </div>
+                        <div>
+                            <img src={avatar_1} alt="" />
+                        </div>
+                        <div>
+                            <img src={avatar_1} alt="" />
+                        </div>
+                        <div>
+                            <img src={avatar_1} alt="" />
+                        </div>
+                        <div>
+                            <img src={avatar_1} alt="" />
+                        </div>
+                        <div>
+                            <img src={avatar_1} alt="" />
+                        </div>
+                        <div>
+                            <img src={avatar_1} alt="" />
+                        </div>
+                        <div>
+                            <img src={avatar_1} alt="" />
+                        </div>
+                        <div>
+                            <img src={avatar_1} alt="" />
+                        </div>
+                    </section>
 
-                        <button>Escolher Avatar</button>
+                     <section className="botao">
 
+                        <button type="submit" >Selecionar</button>
+
+                    </section>
+
+                    <section className="tituloFooter">
+                        <Link>Criar sem alunos. Pode adicionar noutra altura.</Link>
                     </section>
 
                 </article>

@@ -36,7 +36,7 @@ function RegistoEtapa3({ setEtapa, dados, setDados }) {
                 <header className="registoImg">
                     <img src={registo3Img} alt="" />
                 </header>
-                <div className="formulario">
+                <div className="formulario f2">
                     <section className="tituloPrincipal">
                         <label>Escolher avatar</label>
                     </section>
@@ -47,7 +47,7 @@ function RegistoEtapa3({ setEtapa, dados, setDados }) {
 
                     <section className="botao">
 
-                        <button>Escolher Avatar</button>
+                        <button type="submit">Escolher Avatar</button>
 
                     </section>
 

@@ -17,7 +17,7 @@
     display: grid;
     align-items: center;
     grid-template-columns: 1fr;
-    grid-template-rows: 0.5fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.5fr 1fr 1fr 1fr auto auto;
     margin: 1.5rem;
     margin-bottom: 2rem;
     row-gap: 10px;
@@ -32,7 +32,7 @@
     }
     .paragrafo {
       p {
-        color: rgb(211, 211, 211);
+        color: $text-main-color;
         font-weight: $font-weight-normal;
       }
     }
@@ -43,7 +43,7 @@
         border-radius: 4px;
         height: 40px;
         padding: 0 1rem 0 1rem;
-        background-color: rgb(245, 245, 245);
+        background-color: $input-color-lightblue;
         width: 100%;
       }
 
@@ -68,7 +68,7 @@
       label {
         font-size: $font-size-s;
         font-weight: $font-weight-normal;
-        color: #aaaaaa;
+        color: $text-main-color;
       }
     }
     .selectFormulario {
@@ -77,7 +77,7 @@
         border-radius: 4px;
         height: 40px;
         padding: 0 1rem 0 1rem;
-        background-color: rgb(245, 245, 245);
+        background-color: $input-color-lightblue;
         width: 100%;
       }
 
@@ -102,14 +102,14 @@
       label {
         font-size: $font-size-s;
         font-weight: $font-weight-normal;
-        color: #aaaaaa;
+        color: $text-main-color;
       }
       select {
         border: none;
         border-radius: 4px;
         height: 40px;
         padding: 0 1rem 0 1rem;
-        background-color: rgb(245, 245, 245);
+        background-color: $input-color-lightblue;
         width: 100%;
         color: rgb(211, 211, 211);
         -webkit-appearance: none;
@@ -124,36 +124,92 @@
         border: none;
         width: 90%;
         padding: 5%;
-        background-color: #f5f5f5;
+        background-color: $button-type2-background;
         font-size: $font-size-l;
-        color: #aaaaaa;
+        color: $text-third-color;
         font-weight: $font-weight-bolder;
       }
     }
     .tituloFooter {
       text-align: center;
       a {
-        color: #aaaaaa;
+        color: $text-main-color;
         text-decoration: none;
         font-size: $font-size-xs;
       }
     }
   }
+
   .f1 {
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr auto;
+    grid-template-rows: 0.5fr 1fr 1fr 1fr 1fr auto 0.1fr;
   }
+
+  .f2 {
+    grid-template-rows: 0.5fr 1fr 1fr 0.2fr;
+  }
+
+
+
+  .avatar {
+    display: grid;
+    height: 100vh;
+    grid-template-rows: 0.2fr 1fr 0.1fr 0.2fr;
+    grid-row-gap: 1rem;
+  
+  
+  
+    .avatarSelect {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+      justify-items: center;
+      align-items: center;
+    }
+  
+    .titulo{
+      display: grid;
+      grid-template-columns: 0.5fr 1fr 0.5fr;
+      justify-items: center;
+      align-items: center;
+       
+      label {
+          font-size: $font-size-l;
+          color: $text-main-color;
+          font-weight: $font-weight-boldest;
+      }
+    
+      
+    }
+
+  
+
+
+    .botao {
+      display: flex;
+      justify-content: center;
+      button {
+        border-radius: 5px;
+        border: none;
+        width: 90%;
+        padding: 5%;
+        background-color: $button-type2-background;
+        font-size: $font-size-l;
+        color: $text-third-color;
+        font-weight: $font-weight-bolder;
+      }
+    }
+    .tituloFooter {
+      text-align: center;
+      a {
+        color: $text-main-color;
+        text-decoration: none;
+        font-size: $font-size-xs;
+      }
+    }
+
+  }
+  
 }
 
-.avatar {
-  display: grid;
-  height: 100vh;
-  grid-template-rows: 0.2fr 1fr 0.2fr;
-}
 
-.avatarSelect {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-  justify-items: center;
-  align-items: center;
-}
+
