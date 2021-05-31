@@ -36,12 +36,19 @@
       color: white;
       margin-bottom: 3rem;
     }
-    #texto1 {
-      color: $text-second-color;
+    #texto1fundoAzul {
+      color: white;
       margin-bottom: 1.5rem;
     }
-    #texto2 {
-      color: $text-second-color;
+    #texto2fundoAzul {
+      color: white;
+    }
+    #texto1fundoClaro {
+      color: #003bb9;
+      margin-bottom: 1.5rem;
+    }
+    #texto2fundoClaro {
+      color: #003bb9;
     }
     li {
       margin-bottom: 1.5rem;
