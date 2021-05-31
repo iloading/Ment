@@ -57,11 +57,12 @@ function RegistoEtapa2({ setEtapa, dados, setDados }) {
 
                         <label>Nome Completo</label>
                         {/* Falta meter estilos nestes erros */}
-                        <ErrorMessage name="name" component="p" />
+
                         <div>
                             {/* <img src={icon_nome} alt="" /> */}
                             <Field placeholder="ex: Joana Silva" name="name" id="inputName" type="text" ></Field>
                         </div>
+                        <ErrorMessage name="name" component="p" />
                     </section>
                     <section className="selectFormulario">
                         <label>Cargo</label>

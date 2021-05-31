@@ -70,31 +70,34 @@ function RegistoEtapa1({ setEtapa, dados, setDados }) {
 
                         <label>Email</label>
                         {/* Falta meter estilos nestes erros */}
-                        <ErrorMessage name="email" component="p" />
+
                         <div>
                             <img src={icon_nome} alt="" />
                             <Field placeholder="ex: joana.silva12@gmail.com" name="email" id="inputEmail" type="email" />
                         </div>
+                        <ErrorMessage name="email" component="p" />
                     </section>
                     <section className="inputFormulario">
 
                         <label>Password</label>
                         {/* Falta meter estilos nestes erros */}
-                        <ErrorMessage name="password" component="p" />
+
                         <div>
                             {/* <img src={icon_nome} alt="" /> */}
                             <Field placeholder="*********" name="password" id="inputPassword" type="password" />
                         </div>
+                        <ErrorMessage name="password" component="p" />
                     </section>
                     <section className="inputFormulario">
 
                         <label>Confirmar Password</label>
                         {/* Falta meter estilos nestes erros */}
-                        <ErrorMessage name="password_confirm" component="p" />
+
                         <div>
                             {/* <img src={icon_nome} alt="" /> */}
                             <Field placeholder="*********" name="password_confirm" id="inputPassword_confirm" type="password" />
                         </div>
+                        <ErrorMessage name="password_confirm" component="p" />
                     </section>
 
                     <section className="botao">

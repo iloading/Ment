@@ -41,11 +41,12 @@ function RegistoEtapa5({ setEtapa, dados, setDados }) {
 
                         <label>Escola</label>
                         {/* Falta meter estilos nestes erros */}
-                        <ErrorMessage name="email" component="p" />
+
                         <div>
                             <img src={icon_nome} alt="" />
                             <Field placeholder="ex: Escola Random Random" name="escola" id="inputEscola" type="text" />
                         </div>
+                        <ErrorMessage name="email" component="p" />
                     </section>
                     <section className="selectFormulario">
                         <label>Disciplina --- temos que ver isto pq os alunos ao fazer o registo não vão ter de selecionar disciplina</label>

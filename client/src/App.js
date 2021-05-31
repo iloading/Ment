@@ -11,8 +11,6 @@ import Etapa from "./pages/Tutorial/Etapa";
 import Banco from "./pages/Banco";
 
 
-import Avatar from "./pages/Registo/RegistoEtapa4";
-
 
 
 //REACT ROUTER
@@ -44,9 +42,7 @@ function App() {
         <Route path="/banco">
           <Banco />
         </Route>
-        <Route path="/avatar">
-          <Avatar />
-        </Route>
+
       </Switch>
 
     </main>

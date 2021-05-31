@@ -70,6 +70,12 @@
         font-weight: $font-weight-normal;
         color: $text-main-color;
       }
+
+      p {
+        margin-top: 0.5rem;
+        color: red;
+        font-size: 0.8rem;
+      }
     }
     .selectFormulario {
       input {
@@ -148,16 +154,12 @@
     grid-template-rows: 0.5fr 1fr 1fr 0.2fr;
   }
 
-
-
   .avatar {
     display: grid;
     height: 100vh;
     grid-template-rows: 0.2fr 1fr 0.1fr 0.2fr;
     grid-row-gap: 1rem;
-  
-  
-  
+
     .avatarSelect {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -165,24 +167,19 @@
       justify-items: center;
       align-items: center;
     }
-  
-    .titulo{
+
+    .titulo {
       display: grid;
       grid-template-columns: 0.5fr 1fr 0.5fr;
       justify-items: center;
       align-items: center;
-       
+
       label {
-          font-size: $font-size-l;
-          color: $text-main-color;
-          font-weight: $font-weight-boldest;
+        font-size: $font-size-l;
+        color: $text-main-color;
+        font-weight: $font-weight-boldest;
       }
-    
-      
     }
-
-  
-
 
     .botao {
       display: flex;
@@ -206,10 +203,5 @@
         font-size: $font-size-xs;
       }
     }
-
   }
-  
 }
-
-
-
