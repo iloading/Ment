@@ -2,9 +2,9 @@ import registo2Img from "../../img/registo2Img.png";
 import icon_email_loading from "../../img/icon_email_loading.gif";
 import icon_email_success from "../../img/icon_email_success.png";
 import icon_email_error from "../../img/icon_email_error.png";
-import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom';
 
+import { Link } from 'react-router-dom';
+import { useEffect, useCallback } from 'react'
 //Verificação de Inputs
 import { Formik, Form } from "formik";
 import { Field, ErrorMessage } from 'formik';
@@ -53,32 +53,40 @@ function RegistoEtapa1({ validadeEmail, setValidadeEmail, validadeFormulario1, s
         email: Yup.string().email("O conteúdo que introduziu não é um email").required("Este campo é obrigatório"),
     })
 
-    const validar = () => {
-        //Quando todos os campos são devidamente preenchidos e válidos, o botão de próxima etapa fica disponível
 
-        console.log(123);
-        camposValidador.validate({
-            email: document.getElementById('inputEmail').value,
-            password: document.getElementById('inputPassword').value,
-            password_confirm: document.getElementById('inputPassword_confirm').value
-        }).then(function () {
-            console.log(validadeEmail);
-            if (validadeEmail === 2) {
-                console.log('done');
-                setvalidadeFormulario1(true)
-
-            } else if (validadeEmail === 1) {
-                setvalidadeFormulario1(false)
-                console.log('not done yet - email já em uso');
-            }
+    const validar = useCallback(
+        (validadeEmail) => {
+            //Quando todos os campos são devidamente preenchidos e válidos, o botão de próxima etapa fica disponível
 
 
-        }).catch((e) => {
-            setvalidadeFormulario1(false);
-            console.log('not done yet');
-        });
+            camposValidador.validate({
+                email: document.getElementById('inputEmail').value,
+                password: document.getElementById('inputPassword').value,
+                password_confirm: document.getElementById('inputPassword_confirm').value
+            }).then(function () {
 
-    }
+                if (validadeEmail === 2) {
+
+                    setvalidadeFormulario1(true)
+
+                } else if (validadeEmail === 1) {
+                    setvalidadeFormulario1(false)
+                    /* console.log('not done yet - email já em uso'); */
+                }
+
+
+            }).catch((e) => {
+                setvalidadeFormulario1(false);
+
+            });
+
+        },
+        [camposValidador, setvalidadeFormulario1],
+    )
+    useEffect(() => {
+        validar(validadeEmail)
+
+    }, [validadeEmail, validar])
 
     const validarEmail = () => {
 
@@ -87,19 +95,19 @@ function RegistoEtapa1({ validadeEmail, setValidadeEmail, validadeFormulario1, s
         }).then(async () => {
             setValidadeEmail(0)
             const response = await verifyEmailExists({ email: document.getElementById('inputEmail').value, })
-            console.log(response.data);
+
             let { success, error } = response.data
 
             if (success) {
                 setValidadeEmail(2)
+
             } else {
                 //Mostrar o erro somewhere
                 setValidadeEmail(1)
-                console.log(error);
 
             }
 
-        }).catch((e) => { setValidadeEmail(1) });
+        }).catch((e) => { setValidadeEmail(1); });
 
     }
 
@@ -158,9 +166,8 @@ function RegistoEtapa1({ validadeEmail, setValidadeEmail, validadeFormulario1, s
                             {validadeEmail === 1 && <><img src={icon_email_error} alt="Error Icon" /></>}
                             {validadeEmail === 2 && <img src={icon_email_success} alt="Success Icon" />}
 
-                            <Field placeholder="ex: joana.silva12@gmail.com" name="email" id="inputEmail" type="email" onInput={(e) => {
-                                validarEmail(e);
-                                validar()
+                            <Field placeholder="ex: joana.silva12@gmail.com" name="email" id="inputEmail" type="email" onInput={() => {
+                                validarEmail();
                             }} />
                         </div>
                     </section>

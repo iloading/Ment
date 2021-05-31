@@ -43,7 +43,7 @@ router.post('/verify-email', async (req, res) => {
     await db.query('SELECT email FROM user WHERE email = ?', [email], (err, result) => {
         //Se nao houver, o processo de registo continua
         if (result.length == 0) {
-            res.json({ success: 123123 });
+            res.json({ success: 1 });
         } else {
             //Se houver, devolver erro
             res.json({ error: 'O email já pertence a uma conta' });
