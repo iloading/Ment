@@ -1,6 +1,7 @@
 .etapa {
   display: grid;
   grid-template-rows: auto 1fr;
+  height: 100vh;
 
   nav {
     display: grid;
@@ -27,6 +28,17 @@
 
   .fundoAzul {
     background-color: $text-main-color;
+    padding-bottom: 4rem;
+  }
+  .fundoAzulEtapa3 {
+    background-color: $text-main-color;
+    padding-bottom: 1.5rem;
+  }
+  .fundoBranco {
+    padding-bottom: 4rem;
+  }
+  .fundoCinza {
+    background-color: #f9f9f9;
   }
   .principal {
     display: grid;
@@ -50,13 +62,15 @@
     #texto2fundoClaro {
       color: #003bb9;
     }
+    #textoSecundario {
+      margin-top: 1.5rem;
+    }
     li {
       margin-bottom: 1.5rem;
     }
     #botao {
       background-color: $button-type1-background;
       margin-top: 3rem;
-      margin-bottom: 4rem;
       border: 1px solid #e0eaff;
       border-radius: 0.3rem;
       display: grid;
@@ -91,6 +105,7 @@
     background-color: $text-main-color;
     padding-top: 0.7rem;
     padding-bottom: 0.7rem;
+    margin-top: 3rem;
     margin-bottom: 1rem;
     border: 1px solid #042454;
     border-radius: 0.3rem;
@@ -104,4 +119,26 @@
       font-size: 1.3rem;
     }
   }
+  #botao2fundoAzul {
+    background-color: $button-type1-background;
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+    margin-top: 3rem;
+    border: 1px solid #042454;
+    border-radius: 0.3rem;
+    width: 95%;
+    justify-self: center;
+
+    #textoBotao2fundoAzul {
+      color: $text-main-color;
+      text-align: center;
+      font-weight: $font-weight-bolder;
+      font-size: 1.3rem;
+    }
+  }
+}
+
+.f1 {
+  display: grid;
+  grid-template-rows: 1fr;
 }
