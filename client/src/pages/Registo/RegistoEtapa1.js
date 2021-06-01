@@ -1,7 +1,8 @@
-import registo2Img from "../../img/registo2Img.png";
+import registo2Img from "../../img/registo/registo2Img.png";
 import icon_email_loading from "../../img/icon_email_loading.gif";
 import icon_email_success from "../../img/icon_email_success.png";
 import icon_email_error from "../../img/icon_email_error.png";
+
 
 import { Link } from 'react-router-dom';
 import { useEffect, useCallback } from 'react'
@@ -15,11 +16,6 @@ import * as Yup from 'yup';
 import { verifyEmailExists } from '../../API';
 
 function RegistoEtapa1({ validadeEmail, setValidadeEmail, validadeFormulario1, setvalidadeFormulario1, setEtapa, etapa, dados, setDados }) {
-
-
-
-
-
 
 
     /* initialValues - Desta forma se o utilizador voltar a tras durante o registo, os dados ficam guardados nos campos corretos */
@@ -64,7 +60,7 @@ function RegistoEtapa1({ validadeEmail, setValidadeEmail, validadeFormulario1, s
                 password: document.getElementById('inputPassword').value,
                 password_confirm: document.getElementById('inputPassword_confirm').value
             }).then(function () {
-
+                console.log(validadeEmail);
                 if (validadeEmail === 2) {
 
                     setvalidadeFormulario1(true)
@@ -83,7 +79,9 @@ function RegistoEtapa1({ validadeEmail, setValidadeEmail, validadeFormulario1, s
         },
         [camposValidador, setvalidadeFormulario1],
     )
+
     useEffect(() => {
+
         validar(validadeEmail)
 
     }, [validadeEmail, validar])
@@ -159,7 +157,7 @@ function RegistoEtapa1({ validadeEmail, setValidadeEmail, validadeFormulario1, s
 
                         <label>Email</label>
                         {/* Falta meter estilos nestes erros */}
-                        <ErrorMessage name="email" component="p" />
+
                         <div>
                             {validadeEmail === null && <></>}
                             {validadeEmail === 0 && <img src={icon_email_loading} alt="gif loading" />}
@@ -170,26 +168,29 @@ function RegistoEtapa1({ validadeEmail, setValidadeEmail, validadeFormulario1, s
                                 validarEmail();
                             }} />
                         </div>
+                        <ErrorMessage name="email" component="p" />
                     </section>
                     <section className="inputFormulario">
 
                         <label>Password</label>
                         {/* Falta meter estilos nestes erros */}
-                        <ErrorMessage name="password" component="p" />
+
                         <div>
                             {/* <img src={icon_nome} alt="" /> */}
                             <Field placeholder="*********" name="password" id="inputPassword" type="password" onInput={validar} />
                         </div>
+                        <ErrorMessage name="password" component="p" />
                     </section>
                     <section className="inputFormulario">
 
                         <label>Confirmar Password</label>
                         {/* Falta meter estilos nestes erros */}
-                        <ErrorMessage name="password_confirm" component="p" />
+
                         <div>
                             {/* <img src={icon_nome} alt="" /> */}
                             <Field placeholder="*********" name="password_confirm" id="inputPassword_confirm" type="password" onInput={validar} />
                         </div>
+                        <ErrorMessage name="password_confirm" component="p" />
                     </section>
 
                     <section className="botao">

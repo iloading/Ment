@@ -1,6 +1,6 @@
-import registoImg from "../../img/registoImg.png";
+import registoImg from "../../img/registo/registoImg.png";
 /* import icon_nome from "../../img/icon_nome.png"; */
-import icon_dropdown from "../../img/icon_dropdown.png";
+import icon_dropdown from "../../img/icons/icon_dropdown.png";
 import { Field, ErrorMessage } from 'formik';
 import { Link } from 'react-router-dom';
 
@@ -21,7 +21,7 @@ function RegistoEtapa2({ setEtapa, dados, setDados }) {
 
         } : initialValues = {
             name: "",
-            cargo: "Aluno",
+            cargo: "Aluno Mentor",
         }
 
 
@@ -57,11 +57,12 @@ function RegistoEtapa2({ setEtapa, dados, setDados }) {
 
                         <label>Nome</label>
                         {/* Falta meter estilos nestes erros */}
-                        <ErrorMessage name="name" component="p" />
+
                         <div>
                             {/* <img src={icon_nome} alt="" /> */}
                             <Field placeholder="ex: Joana Silva" name="name" id="inputName" type="text" ></Field>
                         </div>
+                        <ErrorMessage name="name" component="p" />
                     </section>
                     <section className="selectFormulario">
                         <label>Cargo</label>
@@ -69,7 +70,7 @@ function RegistoEtapa2({ setEtapa, dados, setDados }) {
                             <img src={icon_dropdown} alt="" />
                             <Field as="select" name="cargo">
                                 <option value="Professor">Professor</option>
-                                <option value="Aluno">Aluno</option>
+                                <option value="Aluno Mentor">Aluno Mentor</option>
                             </Field>
                         </div>
                     </section>

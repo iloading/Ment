@@ -8,6 +8,9 @@ import Homepage from "./pages/Homepage";
 import Dashboard from "./pages/Dashboard";
 import Tutorial from "./pages/Tutorial/Tutorial";
 import Etapa from "./pages/Tutorial/Etapa";
+import Banco from "./pages/Banco";
+
+
 
 
 //REACT ROUTER
@@ -36,6 +39,10 @@ function App() {
         <Route path="/tutorial/:id">
           <Etapa />
         </Route>
+        <Route path="/banco">
+          <Banco />
+        </Route>
+
       </Switch>
 
     </main>

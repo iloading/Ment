@@ -1,0 +1,33 @@
+
+
+nav {
+    background-color: white;
+    display: grid;
+    grid-template-columns: 0.1fr 0.5fr 1fr 0.5fr 0.1fr;
+    grid-template-areas: ". logo . perfil .";
+    position: sticky;
+    top: 0;
+    z-index: 10;
+
+    #logo {
+      justify-self: left;
+      align-self: center;
+      grid-area: logo;
+    }
+
+    #perfil {
+      justify-self: right;
+      align-self: center;
+      grid-area: perfil;
+    }
+
+    img {
+      max-width: 10%;
+      min-width: 32px;
+    }
+
+    .iconPerfil {
+      max-width: 10%;
+      min-width: 25px;
+    }
+  }

@@ -1,6 +1,6 @@
 import loginImg from "../img/loginImg.png";
-import icon_mail from "../img/icon_mail.png";
-import icon_cadiado from "../img/icon_cadiado.png";
+import icon_mail from "../img/icons/icon_mail.png";
+import icon_cadiado from "../img/icons/icon_cadiado.png";
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';

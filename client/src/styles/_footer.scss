@@ -1,0 +1,45 @@
+
+
+    footer {
+        background-color: white;
+     display: grid;
+     grid-template-columns: 0.1fr 1fr 1fr 1fr 1fr 0.1fr;
+     grid-template-areas: ". banco home criar equipa .";
+     position: sticky;
+     bottom: 0;
+     z-index: 10;
+        
+        #banco {
+            justify-self: center;
+            align-self: center;
+            grid-area: banco;
+        }
+        #home {
+            justify-self: center;
+            align-self: center;
+            grid-area: home;
+        }
+        #criar {
+            justify-self: center;
+            align-self: center;
+            grid-area: criar;
+        }
+        #equipa {
+            justify-self: center;
+            align-self: center;
+            grid-area: equipa;
+        }
+    
+        .iconFooter {
+            max-width: 10%;
+            min-width: 28px;
+        }
+        .iconFooterEquipa {
+            max-width: 10%;
+            min-width: 33px;
+        }
+    
+    
+    }
+
+    
