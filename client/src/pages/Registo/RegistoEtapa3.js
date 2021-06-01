@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 import { Formik, Form } from "formik";
 import * as Yup from 'yup';
+import { useEffect } from "react"
 
 
 function RegistoEtapa3({ setEtapa, dados, setDados }) {
@@ -30,12 +31,18 @@ function RegistoEtapa3({ setEtapa, dados, setDados }) {
     }
     const redirectBack = () => { setEtapa(2) }
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [])
+
 
     return (
         <Formik initialValues={initialValues} validationSchema={camposValidador} onSubmit={onSubmit}>
             <Form className="formularioRegisto">
                 <header className="registoImg">
-                    <img src={setaAtras} alt="seta atras" className="setaTras" onClick={redirectBack} />
+                    <div className="setaTras" onClick={redirectBack}>
+                        <img src={setaAtras} alt="seta atras" />
+                    </div>
                     <img src={registo3Img} alt="registo terceira imagem" />
                 </header>
                 <div className="formulario f2">

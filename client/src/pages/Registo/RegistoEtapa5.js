@@ -25,11 +25,15 @@ function RegistoEtapa5({ setEtapa, dados, setDados }) {
 
     }
 
+    const redirectBack = () => { setEtapa(4) }
+
     return (
         <Formik initialValues={initialValues} validationSchema={camposValidador} onSubmit={onSubmit}>
             <Form className="formularioRegisto">
                 <header className="registoImg">
-                    <img src={setaAtras} alt="seta atras" className="setaTras" />
+                    <div className="setaTras" onClick={redirectBack}>
+                        <img src={setaAtras} alt="seta atras" />
+                    </div>
                     <img src={registo5Img} alt="registo quinta imagem" />
                 </header>
                 <div className="formulario">

@@ -8,6 +8,7 @@ import setaAtras from "../../img/setaAtras.png";
 import { Formik, Form } from "formik";
 import { Link } from 'react-router-dom';
 import * as Yup from 'yup';
+import { useEffect } from "react"
 
 
 function RegistoEtapa4({ setEtapa, dados, setDados }) {
@@ -37,6 +38,10 @@ function RegistoEtapa4({ setEtapa, dados, setDados }) {
         console.log(e.target.id);
 
     }
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [])
 
 
     return (
@@ -120,9 +125,6 @@ function RegistoEtapa4({ setEtapa, dados, setDados }) {
 
                     </section>
 
-                    <section className="tituloFooter">
-                        <Link>Criar sem alunos. Pode adicionar noutra altura.</Link>
-                    </section>
 
                 </article>
 
