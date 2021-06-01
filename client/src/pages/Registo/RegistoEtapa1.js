@@ -141,6 +141,9 @@ function RegistoEtapa1({ validadeEmail, setValidadeEmail, validadeFormulario1, s
 
 
 
+
+
+
     /* const history = useHistory();
     
     const redireciona = () => {
@@ -153,7 +156,10 @@ function RegistoEtapa1({ validadeEmail, setValidadeEmail, validadeFormulario1, s
         <Formik initialValues={initialValues} validationSchema={camposValidador} onSubmit={onSubmit}>
             <Form className="formularioRegisto">
                 <header className="registoImg">
-                    <img src={setaAtras} alt="" className="setaTras" onClick={redirectBack} />
+                    <div className="setaTras" onClick={redirectBack}>
+                        <img src={setaAtras} alt="" />
+                    </div>
+
                     <img src={registo2Img} alt="" />
 
                 </header>

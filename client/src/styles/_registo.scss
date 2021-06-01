@@ -15,8 +15,8 @@
 
     .setaTras {
       position: absolute;
-      top: 5%;
-      left: 2%;
+      padding: 1.5rem;
+      text-align: initial;
     }
   }
 
@@ -177,7 +177,7 @@
   .avatar {
     display: grid;
     height: 100vh;
-    grid-template-rows: 0.2fr 1fr 0.1fr 0.2fr;
+    grid-template-rows: 0.2fr 1fr 0.1fr 0.1fr;
     grid-row-gap: 1rem;
 
     .avatarSelect {
@@ -213,15 +213,6 @@
         font-size: $font-size-l;
         color: $text-third-color;
         font-weight: $font-weight-bolder;
-      }
-    }
-    .tituloFooter {
-      text-align: center;
-      a {
-        text-decoration: none;
-        font-size: $font-size-xs;
-        font-weight: $font-weight-bolder;
-        color: $text-main-color;
       }
     }
   }

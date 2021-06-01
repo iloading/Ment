@@ -10,31 +10,30 @@ import iconbanco from "../img/icons/icon_banco.png";
 
 
 
+
 function Dashboard() {
 
     return (
         <article className="dashboard">
 
-            <Navbar/>
-           
-            <section id="main"className="conteudoMain">
+            <Navbar />
 
-              
+            <section id="main" className="conteudoMain">
 
                 <div className="titulo">
-                    <img src={iconEquipa} alt="" id="iconTitulo" />
+                    <img src={iconEquipa} alt="" className="iconTitulo" />
 
-                    <label id="tituloMain">As minhas equipas</label>
-                    
+                    <label className="tituloMain">As minhas equipas</label>
+
                 </div>
 
                 <div className="carouselContent">
                     <CarouselDashboard />
                 </div>
                 <div className="titulo">
-                    <img src={iconbanco} alt="" id="iconTitulo" className="imgBanco" />
+                    <img src={iconbanco} alt="" className="imgBanco iconTitulo" />
 
-                    <label id="tituloMain">Sessões em destaque</label>
+                    <label className="tituloMain">Sessões em destaque</label>
                 </div>
 
                 <div className="cardSessoes">
@@ -43,16 +42,16 @@ function Dashboard() {
                     <CardSessoes />
                     <CardSessoes />
                     <CardSessoes />
-                    
+
                 </div>
-             
+
 
             </section>
-            
-            
+
+
             <Footer />
-          
-          
+
+
 
 
         </article>

@@ -113,7 +113,7 @@
   #apresentacaoBanco {
     grid-gap: 3rem;
 
-    img{
+    img {
       width: 100%;
     }
   }
@@ -125,8 +125,44 @@
     justify-items: center;
   }
 
-  #carousel{
+  #carousel {
     margin: 0;
     justify-items: center;
+  }
+
+  .carousel {
+    width: 90vw;
+
+    .carouselCards {
+      background-color: rgba($color: #aaaaaa, $alpha: 0.2);
+      border-radius: 20px;
+      padding: 1.5rem;
+      height: 30vh;
+      display: grid !important;
+      grid-template-columns: 0.5fr 1fr;
+    }
+
+    .imgCard {
+      display: grid;
+      align-items: center;
+    }
+
+    .slick-slide > div {
+      margin: 0 10px 30px;
+    }
+    .slick-list {
+      margin: 0 -10px;
+    }
+
+    .texto {
+      display: grid;
+      align-items: center;
+      grid-template-rows: auto 1fr;
+
+      label {
+        font-size: $font-size-l;
+        color: $text-main-color;
+      }
+    }
   }
 }
