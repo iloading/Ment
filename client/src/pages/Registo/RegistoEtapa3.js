@@ -1,4 +1,5 @@
 import registo3Img from "../../img/registo/registo3Img.png";
+import setaAtras from "../../img/setaAtras.png";
 import { Link } from 'react-router-dom';
 
 import { Formik, Form } from "formik";
@@ -27,13 +28,14 @@ function RegistoEtapa3({ setEtapa, dados, setDados }) {
         setDados({ ...dados, avatar: data.avatar })
         setEtapa(4)
     }
-
+    const redirectBack = () => { setEtapa(2) }
 
 
     return (
         <Formik initialValues={initialValues} validationSchema={camposValidador} onSubmit={onSubmit}>
             <Form className="formularioRegisto">
                 <header className="registoImg">
+                    <img src={setaAtras} alt="" className="setaTras" onClick={redirectBack} />
                     <img src={registo3Img} alt="" />
                 </header>
                 <div className="formulario f2">

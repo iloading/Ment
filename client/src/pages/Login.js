@@ -13,8 +13,7 @@ function Login() {
     }
     const camposValidador = Yup.object().shape({
         email: Yup.string().email("O conteúdo que introduziu não é um email").required("Este campo é obrigatório"),
-        password: Yup.string()
-            .required("Este campo é obrigatório")
+        password: Yup.string().required("Este campo é obrigatório")
     })
     const onSubmitLogin = (data) => {
         axios.post("http://localhost:3001/auth/login", data).then((res) => {
@@ -33,23 +32,25 @@ function Login() {
                     <section className="tituloPrincipal">
                         <span>Iniciar sessão</span>
                     </section>
-                    <section>
+                    <section className="campos">
 
                         <label>e-mail</label>
                         {/* Falta meter estilos nestes erros */}
-                        <ErrorMessage name="email" component="p" className="error" />
+
                         <div>
                             <img src={icon_mail} alt="" />
                             <Field placeholder="ex: joana.silva12@gmail.com" name="email" id="inputEmail" type="email" />
                         </div>
+                        <ErrorMessage name="email" component="p" className="error" />
                     </section>
-                    <section>
+                    <section className="campos">
                         <label>palavra-passe</label>
-                        <ErrorMessage name="password" component="p" className="error" />
+
                         <div>
                             <img src={icon_cadiado} alt="" />
                             <Field placeholder="*********" name="password" id="inputPassword" type="password" />
                         </div>
+                        <ErrorMessage name="password" component="p" className="error" />
                     </section>
                     <section className="botaoSubmit">
                         <button type="submit">Login</button>

@@ -16,15 +16,19 @@
   form {
     display: grid;
     grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr 1fr 1fr auto 1fr;
     margin: 1.5rem;
     height: 60vh;
 
     .error {
-      font-size: $font-size-xs;
+      margin-top: 0.5rem;
       color: red;
+      font-size: 0.8rem;
+      position: absolute;
     }
 
-    section {
+    .campos {
+      position: relative;
       input {
         border: none;
         border-radius: 4px;
@@ -60,7 +64,6 @@
     }
 
     .tituloPrincipal {
-      margin-top: 8%;
       span {
         font-size: $font-size-l;
         color: $text-main-color;
@@ -71,10 +74,10 @@
       display: flex;
       justify-content: center;
       button {
-        margin-top: 5%;
         border-radius: 5px;
         border: none;
         width: 90%;
+        padding: 1rem;
         background-color: $button-type2-background;
         font-size: $font-size-l;
         color: white;
@@ -84,13 +87,12 @@
     .tituloFooter {
       display: grid;
       align-items: center;
-      font-size: $font-size-s;
       text-align: center;
-      color: #aaaaaa;
-      font-weight: $font-weight-lighter;
       margin-top: 0;
       span {
         font-size: $font-size-xs;
+        font-weight: $font-weight-bolder;
+        color: $text-main-color;
       }
     }
   }

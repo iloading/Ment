@@ -2,9 +2,10 @@ import registo2Img from "../../img/registo/registo2Img.png";
 import icon_email_loading from "../../img/icon_email_loading.gif";
 import icon_email_success from "../../img/icon_email_success.png";
 import icon_email_error from "../../img/icon_email_error.png";
+import setaAtras from "../../img/setaAtras.png";
 
 
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { useEffect, useCallback } from 'react'
 //Verificação de Inputs
 import { Formik, Form } from "formik";
@@ -112,6 +113,7 @@ function RegistoEtapa1({ validadeEmail, setValidadeEmail, validadeFormulario1, s
 
     //Ao clicar no botao de proxima etapa
     const onSubmit = async (data) => {
+        console.log(validadeEmail, validadeFormulario1);
         if (validadeEmail === 2 && validadeFormulario1 === true) {
             setDados({
                 ...dados,
@@ -133,6 +135,12 @@ function RegistoEtapa1({ validadeEmail, setValidadeEmail, validadeFormulario1, s
 
     }
 
+    let history = useHistory();
+    const redirectBack = () => { history.goBack() }
+
+
+
+
     /* const history = useHistory();
     
     const redireciona = () => {
@@ -145,7 +153,9 @@ function RegistoEtapa1({ validadeEmail, setValidadeEmail, validadeFormulario1, s
         <Formik initialValues={initialValues} validationSchema={camposValidador} onSubmit={onSubmit}>
             <Form className="formularioRegisto">
                 <header className="registoImg">
+                    <img src={setaAtras} alt="" className="setaTras" onClick={redirectBack} />
                     <img src={registo2Img} alt="" />
+
                 </header>
                 <div className="formulario">
                     <section className="tituloPrincipal">
