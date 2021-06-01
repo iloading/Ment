@@ -96,7 +96,7 @@ function RegistoEtapa1({ validadeEmail, setValidadeEmail, validadeFormulario1, s
             setValidadeEmail(0)
             const response = await verifyEmailExists({ email: document.getElementById('inputEmail').value, })
 
-            let { success, error } = response.data
+            let { success,/*  error */ } = response.data
 
             if (success) {
                 setValidadeEmail(2)
@@ -165,13 +165,13 @@ function RegistoEtapa1({ validadeEmail, setValidadeEmail, validadeFormulario1, s
                     <img src={registo2Img} alt="registo segunda imagem" />
 
                 </header>
-                <div className="formulario">
+                <div className="formulario" id='etapa1'>
                     <section className="tituloPrincipal">
                         <label>Registo</label>
                     </section>
-                    <section className="paragrafo">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab quos at nostrum nemo earum obcaecati voluptas consectetur, qui recusandae ut delectus harum nobis aliquid, odit ex deserunt laudantium, assumenda voluptatibus?</p>
-                    </section>
+                    {/* <section className="paragrafo">
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab quos at nostrum nemo earum obcaecati voluptas consectetur.</p>
+                    </section> */}
                     <section className="inputFormulario">
 
                         <label>Email</label>
@@ -187,7 +187,10 @@ function RegistoEtapa1({ validadeEmail, setValidadeEmail, validadeFormulario1, s
                                 validarEmail();
                             }} />
                         </div>
-                        <ErrorMessage name="email" component="p" />
+                        <div className="error">
+                            <ErrorMessage name="email" component="p" />
+                        </div>
+
                     </section>
                     <section className="inputFormulario">
 
@@ -198,7 +201,9 @@ function RegistoEtapa1({ validadeEmail, setValidadeEmail, validadeFormulario1, s
                             {/* <img src={icon_nome} alt="" /> */}
                             <Field placeholder="*********" name="password" id="inputPassword" type="password" onInput={() => validar(validadeEmail)} />
                         </div>
-                        <ErrorMessage name="password" component="p" />
+                        <div className="error">
+                            <ErrorMessage name="password" component="p" />
+                        </div>
                     </section>
                     <section className="inputFormulario">
 
@@ -209,7 +214,9 @@ function RegistoEtapa1({ validadeEmail, setValidadeEmail, validadeFormulario1, s
                             {/* <img src={icon_nome} alt="" /> */}
                             <Field placeholder="*********" name="password_confirm" id="inputPassword_confirm" type="password" onInput={() => validar(validadeEmail)} />
                         </div>
-                        <ErrorMessage name="password_confirm" component="p" />
+                        <div className="error">
+                            <ErrorMessage name="password_confirm" component="p" />
+                        </div>
                     </section>
 
                     <section className="botao">
@@ -219,13 +226,13 @@ function RegistoEtapa1({ validadeEmail, setValidadeEmail, validadeFormulario1, s
                     </section>
 
                     <section className="tituloFooter">
-                        <Link to="/">Já tem conta? Faça o login aqui</Link>
+                        <Link to='/login'><span><u> Já está registado? Clique aqui</u></span></Link>
                     </section>
 
                 </div>
 
             </Form>
-        </Formik>
+        </Formik >
 
 
     );

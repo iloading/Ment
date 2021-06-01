@@ -3,7 +3,7 @@ import setaAtras from "../../img/setaAtras.png";
 /* import icon_nome from "../../img/icon_nome.png"; */
 import icon_dropdown from "../../img/icons/icon_dropdown.png";
 import { Field, ErrorMessage } from 'formik';
-import { Link } from 'react-router-dom';
+
 
 import { Formik, Form } from "formik";
 import * as Yup from 'yup';
@@ -49,7 +49,7 @@ function RegistoEtapa2({ setEtapa, dados, setDados }) {
 
     return (
         <Formik initialValues={initialValues} validationSchema={camposValidador} onSubmit={onSubmit}>
-            <Form className="formularioRegisto">
+            <Form className="formularioRegisto" >
                 <header className="registoImg">
                     <div className="setaTras" onClick={redirectBack}>
                         <img src={setaAtras} alt="seta atras" />
@@ -57,12 +57,12 @@ function RegistoEtapa2({ setEtapa, dados, setDados }) {
                     <img src={registoImg} alt=" registo imagem" />
                 </header>
 
-                <div className="formulario">
+                <div className="formulario" id='etapa2'>
                     <section className="tituloPrincipal">
                         <label>Os seus dados</label>
                     </section>
                     <section className="paragrafo">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab quos at nostrum nemo earum obcaecati voluptas consectetur, qui recusandae ut delectus harum nobis aliquid, odit ex deserunt laudantium, assumenda voluptatibus?</p>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab quos at nostrum nemo earum obcaecati voluptas consectetur.</p>
                     </section>
                     <section className="inputFormulario">
 
@@ -73,7 +73,10 @@ function RegistoEtapa2({ setEtapa, dados, setDados }) {
                             {/* <img src={icon_nome} alt="" /> */}
                             <Field placeholder="ex: Joana Silva" name="name" id="inputName" type="text" ></Field>
                         </div>
-                        <ErrorMessage name="name" component="p" />
+                        <div className="error">
+                            <ErrorMessage name="name" component="p" />
+                        </div>
+
                     </section>
                     <section className="selectFormulario">
                         <label>Cargo</label>
@@ -84,13 +87,14 @@ function RegistoEtapa2({ setEtapa, dados, setDados }) {
                                 <option value="Aluno Mentor">Aluno Mentor</option>
                             </Field>
                         </div>
+                        <div className="error">
+                            {/* <ErrorMessage name="name" component="p" /> */}
+                        </div>
                     </section>
                     <section className="botao">
                         <button type="submit">Próxima Etapa</button>
                     </section>
-                    <section className="tituloFooter">
-                        <Link to="/">Já tem conta? Faça o login aqui</Link>
-                    </section>
+
                 </div>
 
             </Form>

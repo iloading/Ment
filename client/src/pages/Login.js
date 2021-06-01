@@ -35,7 +35,7 @@ function Login() {
                     </section>
                     <section className="campos">
 
-                        <label>e-mail</label>
+                        <label>Email</label>
                         {/* Falta meter estilos nestes erros */}
 
                         <div>
@@ -47,7 +47,7 @@ function Login() {
                         </div>
                     </section>
                     <section className="campos">
-                        <label>palavra-passe</label>
+                        <label>Password</label>
 
                         <div>
                             <img src={icon_cadeado} alt="icon cadeado" />
@@ -62,7 +62,7 @@ function Login() {
                         <button type="submit">Login</button>
                     </section>
                     <section className="tituloFooter">
-                        <Link to='./Registo/Registo.js'><span><u> Necessita de criar conta? Carregue aqui</u></span></Link>
+                        <Link to='/registo'><span><u> Necessita de criar conta? Clique aqui</u></span></Link>
                     </section>
                 </Form>
             </Formik>
