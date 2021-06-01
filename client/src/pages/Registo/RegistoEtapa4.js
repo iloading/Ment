@@ -1,134 +1,77 @@
-
-
-
-
-import avatar_1 from "../../img/avatar/avatar_1.png";
+import registo5Img from "../../img/registo/registo5Img.png";
+import icon_nome from "../../img/icons/icon_nome.png";
+import icon_dropdown from "../../img/icons/icon_dropdown.png";
 import setaAtras from "../../img/setaAtras.png";
+import { Field, ErrorMessage } from 'formik';
 
 import { Formik, Form } from "formik";
-import { Link } from 'react-router-dom';
 import * as Yup from 'yup';
-import { useEffect } from "react"
-
 
 function RegistoEtapa4({ setEtapa, dados, setDados }) {
 
     const initialValues = {
-
+        school: "",
+        disciplina: "mat",
     }
     const camposValidador = Yup.object().shape({
-
+        school: Yup.string().required("Este campo é obrigatório"),
+        disciplina: Yup.string().required("Este campo é obrigatório"),
     })
-
     const onSubmit = (data) => {
 
-        setEtapa(5)
+        /* FINAL  */
 
 
 
     }
-    /* const history = useHistory();
 
-    const redireciona = () => {
-        let path = "/registo/5";
-        history.push(path);
-    }
- */
-    const avatarSelect = (e) => {
-        console.log(e.target.id);
-
-    }
-
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, [])
-
+    const redirectBack = () => { setEtapa(3) }
 
     return (
         <Formik initialValues={initialValues} validationSchema={camposValidador} onSubmit={onSubmit}>
             <Form className="formularioRegisto">
-                <article className="avatar">
-
-                    <div className="titulo">
+                <header className="registoImg">
+                    <div className="setaTras" onClick={redirectBack}>
                         <img src={setaAtras} alt="seta atras" />
-                        <label>Escolher avatar</label>
                     </div>
+                    <img src={registo5Img} alt="registo quinta imagem" />
+                </header>
+                <div className="formulario">
+                    <section className="tituloPrincipal">
+                        <label>Informações</label>
+                    </section>
+                    <section className="paragrafo">
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab quos at nostrum nemo earum obcaecati voluptas consectetur, qui recusandae ut delectus harum nobis aliquid, odit ex deserunt laudantium, assumenda voluptatibus?</p>
+                    </section>
+                    <section className="inputFormulario">
 
+                        <label>Escola</label>
+                        {/* Falta meter estilos nestes erros */}
 
-
-                    <section className="avatarSelect">
                         <div>
-                            <img src={avatar_1} alt="avatar_1" id="avatar_1" onClick={(e) => avatarSelect(e)} />
+                            <img src={icon_nome} alt="icone nome" />
+                            <Field placeholder="ex: Escola Random Random" name="escola" id="inputEscola" type="text" />
                         </div>
+                        <ErrorMessage name="email" component="p" />
+                    </section>
+                    <section className="selectFormulario">
+                        <label>Disciplina --- temos que ver isto pq os alunos ao fazer o registo não vão ter de selecionar disciplina</label>
                         <div>
-                            <img src={avatar_1} alt="avatar_2" id="avatar_2" onClick={(e) => avatarSelect(e)} />
-                        </div>
-                        <div>
-                            <img src={avatar_1} alt="avatar_3" id="avatar_3" onClick={(e) => avatarSelect(e)} />
-                        </div>
-                        <div>
-                            <img src={avatar_1} alt="avatar_4" id="avatar_4" onClick={(e) => avatarSelect(e)} />
-                        </div>
-                        <div>
-                            <img src={avatar_1} alt="avatar_5" id="avatar_5" onClick={(e) => avatarSelect(e)} />
-                        </div>
-                        <div>
-                            <img src={avatar_1} alt="avatar_6" id="avatar_6" onClick={(e) => avatarSelect(e)} />
-                        </div>
-                        <div>
-                            <img src={avatar_1} alt="avatar_7" id="avatar_7" onClick={(e) => avatarSelect(e)} />
-                        </div>
-                        <div>
-                            <img src={avatar_1} alt="avatar_8" id="avatar_8" onClick={(e) => avatarSelect(e)} />
-                        </div>
-                        <div>
-                            <img src={avatar_1} alt="avatar_9" id="avatar_9" onClick={(e) => avatarSelect(e)} />
-                        </div>
-                        <div>
-                            <img src={avatar_1} alt="avatar_10" id="avatar_10" onClick={(e) => avatarSelect(e)} />
-                        </div>
-                        <div>
-                            <img src={avatar_1} alt="avatar_11" id="avatar_11" onClick={(e) => avatarSelect(e)} />
-                        </div>
-                        <div>
-                            <img src={avatar_1} alt="avatar_12" id="avatar_12" onClick={(e) => avatarSelect(e)} />
-                        </div>
-                        <div>
-                            <img src={avatar_1} alt="avatar_13" id="avatar_13" onClick={(e) => avatarSelect(e)} />
-                        </div>
-                        <div>
-                            <img src={avatar_1} alt="avatar_14" id="avatar_14" onClick={(e) => avatarSelect(e)} />
-                        </div>
-                        <div>
-                            <img src={avatar_1} alt="avatar_15" id="avatar_15" onClick={(e) => avatarSelect(e)} />
-                        </div>
-                        <div>
-                            <img src={avatar_1} alt="avatar_16" id="avatar_16" onClick={(e) => avatarSelect(e)} />
-                        </div>
-                        <div>
-                            <img src={avatar_1} alt="avatar_17" id="avatar_17" onClick={(e) => avatarSelect(e)} />
-                        </div>
-                        <div>
-                            <img src={avatar_1} alt="avatar_18" id="avatar_18" onClick={(e) => avatarSelect(e)} />
-                        </div>
-                        <div>
-                            <img src={avatar_1} alt="avatar_19" id="avatar_19" onClick={(e) => avatarSelect(e)} />
-                        </div>
-                        <div>
-                            <img src={avatar_1} alt="avatar_20" id="avatar_20" onClick={(e) => avatarSelect(e)} />
+                            <img src={icon_dropdown} alt="icone dropdown" />
+                            <Field as="select" name="disciplina">
+                                <option value="mat">Mat</option>
+                                <option value="ing">ING</option>
+                            </Field>
                         </div>
                     </section>
+
 
                     <section className="botao">
 
-                        <button type="submit" >Selecionar</button>
+                        <button>Criar</button>
 
                     </section>
-
-
-                </article>
-
-
+                </div>
             </Form>
         </Formik>
 

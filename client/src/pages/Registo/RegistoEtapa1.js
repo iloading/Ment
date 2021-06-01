@@ -18,6 +18,9 @@ import { verifyEmailExists } from '../../API';
 
 function RegistoEtapa1({ validadeEmail, setValidadeEmail, validadeFormulario1, setvalidadeFormulario1, setEtapa, etapa, dados, setDados }) {
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [])
 
     /* initialValues - Desta forma se o utilizador voltar a tras durante o registo, os dados ficam guardados nos campos corretos */
     let initialValues
@@ -53,7 +56,7 @@ function RegistoEtapa1({ validadeEmail, setValidadeEmail, validadeFormulario1, s
 
     const validar = useCallback(
         (validadeEmail) => {
-            console.log(validadeEmail);
+
             //Quando todos os campos são devidamente preenchidos e válidos, o botão de próxima etapa fica disponível
 
 
@@ -62,7 +65,7 @@ function RegistoEtapa1({ validadeEmail, setValidadeEmail, validadeFormulario1, s
                 password: document.getElementById('inputPassword').value,
                 password_confirm: document.getElementById('inputPassword_confirm').value
             }).then(function () {
-                console.log(validadeEmail);
+
                 if (validadeEmail === 2) {
 
                     setvalidadeFormulario1(true)
@@ -113,7 +116,7 @@ function RegistoEtapa1({ validadeEmail, setValidadeEmail, validadeFormulario1, s
 
     //Ao clicar no botao de proxima etapa
     const onSubmit = async (data) => {
-        console.log(validadeEmail, validadeFormulario1);
+
         if (validadeEmail === 2 && validadeFormulario1 === true) {
             setDados({
                 ...dados,

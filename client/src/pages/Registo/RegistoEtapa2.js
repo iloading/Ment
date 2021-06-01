@@ -13,6 +13,11 @@ import { useEffect } from "react"
 
 
 function RegistoEtapa2({ setEtapa, dados, setDados }) {
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [])
+
     let initialValues
 
     /* Desta forma se o utilizador voltar a tras durante o registo, os dados ficam guardados nos campos corretos */
@@ -42,9 +47,6 @@ function RegistoEtapa2({ setEtapa, dados, setDados }) {
 
     const redirectBack = () => { setEtapa(1) }
 
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, [])
 
 
     return (

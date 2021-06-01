@@ -3,7 +3,7 @@ import RegistoEtapa1 from "./RegistoEtapa1";
 import RegistoEtapa2 from "./RegistoEtapa2";
 import RegistoEtapa3 from "./RegistoEtapa3";
 import RegistoEtapa4 from "./RegistoEtapa4";
-import RegistoEtapa5 from "./RegistoEtapa5";
+/* import RegistoEtapa5 from "./RegistoEtapa5"; */
 
 
 import { useState } from 'react'
@@ -59,8 +59,8 @@ function Registo() {
             {etapa === 2 && <RegistoEtapa2 etapa={etapa} setEtapa={setEtapa} dados={dados} setDados={setDados} />}
             {etapa === 3 && <RegistoEtapa3 etapa={etapa} setEtapa={setEtapa} dados={dados} setDados={setDados} />}
             {etapa === 4 && <RegistoEtapa4 etapa={etapa} setEtapa={setEtapa} dados={dados} setDados={setDados} />}
-            {etapa === 5 && <RegistoEtapa5 etapa={etapa} setEtapa={setEtapa} dados={dados} setDados={setDados} />}
-
+            {/* {etapa === 5 && <RegistoEtapa5 etapa={etapa} setEtapa={setEtapa} dados={dados} setDados={setDados} />}
+ */}
 
 
         </>
