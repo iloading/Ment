@@ -52,6 +52,7 @@ function RegistoEtapa1({ validadeEmail, setValidadeEmail, validadeFormulario1, s
 
     const validar = useCallback(
         (validadeEmail) => {
+            console.log(validadeEmail);
             //Quando todos os campos são devidamente preenchidos e válidos, o botão de próxima etapa fica disponível
 
 
@@ -177,7 +178,7 @@ function RegistoEtapa1({ validadeEmail, setValidadeEmail, validadeFormulario1, s
 
                         <div>
                             {/* <img src={icon_nome} alt="" /> */}
-                            <Field placeholder="*********" name="password" id="inputPassword" type="password" onInput={validar} />
+                            <Field placeholder="*********" name="password" id="inputPassword" type="password" onInput={() => validar(validadeEmail)} />
                         </div>
                         <ErrorMessage name="password" component="p" />
                     </section>
@@ -188,7 +189,7 @@ function RegistoEtapa1({ validadeEmail, setValidadeEmail, validadeFormulario1, s
 
                         <div>
                             {/* <img src={icon_nome} alt="" /> */}
-                            <Field placeholder="*********" name="password_confirm" id="inputPassword_confirm" type="password" onInput={validar} />
+                            <Field placeholder="*********" name="password_confirm" id="inputPassword_confirm" type="password" onInput={() => validar(validadeEmail)} />
                         </div>
                         <ErrorMessage name="password_confirm" component="p" />
                     </section>
