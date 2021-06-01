@@ -3,30 +3,32 @@
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 1.5rem;
 
-  nav {
+  .navTutorial {
     display: grid;
     grid-template-columns: 0.1fr 0.5fr 1fr 0.5fr 0.1fr;
     grid-template-areas: ". seta tutorial . .";
     margin-top: 1.5rem;
     margin-bottom: 1rem;
+    #seta {
+      align-self: center;
+      grid-area: seta;
+      height: auto;
+    }
+
+    #tutorial {
+      align-self: center;
+      justify-self: center;
+      grid-area: tutorial;
+    }
+    h2 {
+      color: $text-main-color;
+      font-weight: $font-weight-boldest;
+      font-size: 1.375rem;
+    }
   }
 
-  #seta {
-    align-self: center;
-    grid-area: seta;
-  }
-
-  #tutorial {
-    align-self: center;
-    justify-self: center;
-    grid-area: tutorial;
-  }
-  h2 {
-    color: $text-main-color;
-    font-size: 1.375rem;
-  }
-
-  section {
+  #linkCaixa {
+    text-decoration: none;
     display: grid;
     margin: 0 2rem;
     grid-template-columns: 0.1fr 1fr 0.3fr;
@@ -37,7 +39,8 @@
 
     #textoEsquerda {
       align-self: center;
-
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
       grid-area: textoEsquerda;
     }
 

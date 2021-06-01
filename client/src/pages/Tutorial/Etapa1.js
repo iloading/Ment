@@ -2,14 +2,16 @@ import React from 'react'
 import setaAtrasBranca from "../../img/setaAtrasBranca.png"
 import setaDownload from "../../img/setaDownload.png"
 
+import { Link } from "react-router-dom"
+
 function Etapa1() {
     return (
         <article className="etapa">
             <section className="fundoAzul">
-                <nav>
-                    <img src={setaAtrasBranca} alt="setaAtras" id="seta" />
+                <div className="navTutorial">
+                    <Link to="." id="seta"><img src={setaAtrasBranca} alt="setaAtras" /></Link>
                     <h2 id="tutorial">Etapa 1</h2>
-                </nav>
+                </div>
                 <div className="principal">
                     <h2 id="titulo">1. Conteúdos</h2>
                     <p id="texto1fundoAzul">Definição dos conteúdos programáticos</p>
@@ -36,10 +38,10 @@ function Etapa1() {
                             <img src={setaDownload} alt="" id="Download" />
                         </div>
                     </div>
-                    <div id="botao2">
+                    <Link to="./2"><div id="botao2">
                         <p id="textoBotao2">Próxima etapa</p>
 
-                    </div>
+                    </div></Link>
 
                 </div>
             </section>

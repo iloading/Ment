@@ -3,7 +3,7 @@
   grid-template-rows: auto 1fr;
   height: 100vh;
 
-  nav {
+  .navTutorial {
     display: grid;
     grid-template-columns: 0.1fr 0.5fr 1fr 0.5fr 0.1fr;
     grid-template-areas: ". seta tutorial . .";
@@ -101,39 +101,46 @@
     margin-bottom: 3rem;
     margin-top: 3rem;
   }
-  #botao2 {
-    background-color: $text-main-color;
-    padding-top: 0.7rem;
-    padding-bottom: 0.7rem;
-    margin-top: 3rem;
-    margin-bottom: 1rem;
-    border: 1px solid #042454;
-    border-radius: 0.3rem;
-    width: 95%;
+  a {
+    text-decoration: none;
+    display: grid;
+    width: 100%;
     justify-self: center;
 
-    #textoBotao2 {
-      color: white;
-      text-align: center;
-      font-weight: $font-weight-bolder;
-      font-size: 1.3rem;
+    #botao2 {
+      background-color: $text-main-color;
+      padding-top: 0.7rem;
+      padding-bottom: 0.7rem;
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+      border: 1px solid #042454;
+      border-radius: 0.3rem;
+      width: 95%;
+      justify-self: center;
+
+      #textoBotao2 {
+        color: white;
+        text-align: center;
+        font-weight: $font-weight-bolder;
+        font-size: 1.3rem;
+      }
     }
-  }
-  #botao2fundoAzul {
-    background-color: $button-type1-background;
-    padding-top: 0.7rem;
-    padding-bottom: 0.7rem;
-    margin-top: 3rem;
-    border: 1px solid #042454;
-    border-radius: 0.3rem;
-    width: 95%;
-    justify-self: center;
+    #botao2fundoAzul {
+      background-color: $button-type1-background;
+      padding-top: 0.7rem;
+      padding-bottom: 0.7rem;
+      margin-top: 3rem;
+      border: 1px solid #042454;
+      border-radius: 0.3rem;
+      width: 95%;
+      justify-self: center;
 
-    #textoBotao2fundoAzul {
-      color: $text-main-color;
-      text-align: center;
-      font-weight: $font-weight-bolder;
-      font-size: 1.3rem;
+      #textoBotao2fundoAzul {
+        color: $text-main-color;
+        text-align: center;
+        font-weight: $font-weight-bolder;
+        font-size: 1.3rem;
+      }
     }
   }
 }

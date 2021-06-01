@@ -2,17 +2,19 @@ import React from 'react'
 import setaAtrasBranca from "../../img/setaAtrasBranca.png"
 import setaDownload from "../../img/setaDownload.png"
 
+import { Link } from "react-router-dom"
+
 function Etapa2() {
     return (
         <article className="etapa">
             <section className="fundoAzul">
-                <nav>
-                    <img src={setaAtrasBranca} alt="setaAtras" id="seta" />
+                <div className="navTutorial">
+                    <Link to="." id="seta"><img src={setaAtrasBranca} alt="setaAtras" /></Link>
                     <h2 id="tutorial">Etapa 2</h2>
-                </nav>
+                </div>
                 <div className="principal">
                     <h2 id="titulo">1. Atividades</h2>
-                    <p id="texto1fundoAzul">Definição das atividades que permitiraão pôr em prática a narrativa criada, na sessão de mentoria:</p>
+                    <p id="texto1fundoAzul">Definição das atividades que permitirão pôr em prática a narrativa criada, na sessão de mentoria:</p>
                     <ul id="texto2fundoAzul">
                         <li>começar por <strong>estabelecer o fio condutor das atividades</strong>, em função do tempo disponível para a sessão de mentoria;</li>
                         <li>identificar, no âmbito de cada atividade, <strong>o que é esperado dos mentores e dos alunos mentorandos</strong>;</li>
@@ -79,10 +81,10 @@ function Etapa2() {
                             <img src={setaDownload} alt="" id="Download" />
                         </div>
                     </div>
-                    <div id="botao2">
+                    <Link to="./3"><div id="botao2">
                         <p id="textoBotao2">Próxima etapa</p>
 
-                    </div>
+                    </div></Link>
 
                 </div>
             </section>

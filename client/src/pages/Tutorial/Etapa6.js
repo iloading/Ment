@@ -1,15 +1,16 @@
 import React from 'react'
 import setaAtrasBranca from "../../img/setaAtrasBranca.png"
-import setaDownload from "../../img/setaDownload.png"
+
+import { Link } from "react-router-dom"
 
 function Etapa6() {
     return (
         <article className="etapa f1">
             <section className="fundoAzul">
-                <nav>
-                    <img src={setaAtrasBranca} alt="setaAtras" id="seta" />
+                <div className="navTutorial">
+                    <Link to="." id="seta"><img src={setaAtrasBranca} alt="setaAtras" /></Link>
                     <h2 id="tutorial">Etapa 6</h2>
-                </nav>
+                </div>
                 <div className="principal">
                     <h2 id="titulo">1. Final do projeto</h2>
                     <p id="texto1fundoAzul">No final do projeto, pedimos que regresse à plataforma “ment” e partilhe connosco o resultado final do trabalho produzido. Para tal, sugerimos que siga os seguintes passos:</p>
