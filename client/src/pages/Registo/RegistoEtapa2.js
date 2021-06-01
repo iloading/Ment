@@ -1,4 +1,5 @@
 import registoImg from "../../img/registo/registoImg.png";
+import setaAtras from "../../img/setaAtras.png";
 /* import icon_nome from "../../img/icon_nome.png"; */
 import icon_dropdown from "../../img/icons/icon_dropdown.png";
 import { Field, ErrorMessage } from 'formik';
@@ -37,12 +38,16 @@ function RegistoEtapa2({ setEtapa, dados, setDados }) {
         setEtapa(3)
     }
 
+    const redirectBack = () => { setEtapa(1) }
+
+
 
 
     return (
         <Formik initialValues={initialValues} validationSchema={camposValidador} onSubmit={onSubmit}>
             <Form className="formularioRegisto">
                 <header className="registoImg">
+                    <img src={setaAtras} alt="" className="setaTras" onClick={redirectBack} />
                     <img src={registoImg} alt="" />
                 </header>
 

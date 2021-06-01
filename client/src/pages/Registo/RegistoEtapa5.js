@@ -1,6 +1,7 @@
 import registo5Img from "../../img/registo/registo5Img.png";
 import icon_nome from "../../img/icons/icon_nome.png";
 import icon_dropdown from "../../img/icons/icon_dropdown.png";
+import setaAtras from "../../img/setaAtras.png";
 import { Field, ErrorMessage } from 'formik';
 
 import { Formik, Form } from "formik";
@@ -28,6 +29,7 @@ function RegistoEtapa5({ setEtapa, dados, setDados }) {
         <Formik initialValues={initialValues} validationSchema={camposValidador} onSubmit={onSubmit}>
             <Form className="formularioRegisto">
                 <header className="registoImg">
+                    <img src={setaAtras} alt="" className="setaTras" />
                     <img src={registo5Img} alt="" />
                 </header>
                 <div className="formulario">
