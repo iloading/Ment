@@ -18,7 +18,7 @@ function Homepage() {
         <>
             <article className="homepage">
                 <nav>
-                    <img src={navLogo} alt="" id="logo" />
+                    <img src={navLogo} alt="logo navbar" id="logo" />
 
                     <button type="button" className="botaoLogin" id="login" onClick={redirectLogin}>Entrar</button>
 
@@ -37,23 +37,23 @@ function Homepage() {
 
                     <button type="button" className="botaoRegisto">Quero-me registar!</button>
 
-                    <img src={home1} alt="" />
+                    <img src={home1} alt="imagem homepage" />
 
                 </section>
                 <section id="apresentacaoBanco">
                     <h2>Um banco de narrativas na sua mão</h2>
 
 
-                    <img src={imgBanco} alt="" />
+                    <img src={imgBanco} alt="imagem banco" />
 
                 </section>
 
-                 
+
                 <section id="comoFunciona">
                     <h2>Como funciona:</h2>
 
 
-                    <img src={comofuncionaHome} alt="" />
+                    <img src={comofuncionaHome} alt="imagem como funciona" />
 
                     <div id="texto2">
                         <p className="paragrafoComofunciona">Na ment pode:</p>
@@ -71,18 +71,18 @@ function Homepage() {
 
                 </section>
 
-               
+
                 <section id="feedback">
                     <h2>O que outros docentes dizem sobre nós:</h2>
                 </section>
                 <section id="carousel">
-                 
-                        <Carousel />
+
+                    <Carousel />
                 </section>
 
 
-            
-           
+
+
             </article>
         </>
     )

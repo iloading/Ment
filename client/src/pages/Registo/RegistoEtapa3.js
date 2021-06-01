@@ -35,8 +35,8 @@ function RegistoEtapa3({ setEtapa, dados, setDados }) {
         <Formik initialValues={initialValues} validationSchema={camposValidador} onSubmit={onSubmit}>
             <Form className="formularioRegisto">
                 <header className="registoImg">
-                    <img src={setaAtras} alt="" className="setaTras" onClick={redirectBack} />
-                    <img src={registo3Img} alt="" />
+                    <img src={setaAtras} alt="seta atras" className="setaTras" onClick={redirectBack} />
+                    <img src={registo3Img} alt="registo terceira imagem" />
                 </header>
                 <div className="formulario f2">
                     <section className="tituloPrincipal">

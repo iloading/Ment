@@ -35,7 +35,7 @@ function Etapa1() {
                             <p id="textoBotao">Para facilitar o processo de contrução da narrativa, disponibilizamos um modelo <i>template</i>.</p>
                         </div>
                         <div id="setaDownload">
-                            <img src={setaDownload} alt="" id="Download" />
+                            <img src={setaDownload} alt="icone download" id="Download" />
                         </div>
                     </div>
                     <Link to="./2"><div id="botao2">

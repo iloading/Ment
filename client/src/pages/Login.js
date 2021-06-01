@@ -1,6 +1,6 @@
 import loginImg from "../img/loginImg.png";
 import icon_mail from "../img/icons/icon_mail.png";
-import icon_cadiado from "../img/icons/icon_cadiado.png";
+import icon_cadeado from "../img/icons/icon_cadeado.png";
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
@@ -25,7 +25,7 @@ function Login() {
     return (
         <article className="login">
             <div className="loginImg">
-                <img src={loginImg} alt="" />
+                <img src={loginImg} alt="imagem login" />
             </div>
             <Formik initialValues={initialValues} onSubmit={onSubmitLogin} validationSchema={camposValidador}>
                 <Form>
@@ -38,7 +38,7 @@ function Login() {
                         {/* Falta meter estilos nestes erros */}
 
                         <div>
-                            <img src={icon_mail} alt="" />
+                            <img src={icon_mail} alt="icon email" />
                             <Field placeholder="ex: joana.silva12@gmail.com" name="email" id="inputEmail" type="email" />
                         </div>
                         <ErrorMessage name="email" component="p" className="error" />
@@ -47,7 +47,7 @@ function Login() {
                         <label>palavra-passe</label>
 
                         <div>
-                            <img src={icon_cadiado} alt="" />
+                            <img src={icon_cadeado} alt="icon cadeado" />
                             <Field placeholder="*********" name="password" id="inputPassword" type="password" />
                         </div>
                         <ErrorMessage name="password" component="p" className="error" />

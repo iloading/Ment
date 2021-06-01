@@ -47,8 +47,8 @@ function RegistoEtapa2({ setEtapa, dados, setDados }) {
         <Formik initialValues={initialValues} validationSchema={camposValidador} onSubmit={onSubmit}>
             <Form className="formularioRegisto">
                 <header className="registoImg">
-                    <img src={setaAtras} alt="" className="setaTras" onClick={redirectBack} />
-                    <img src={registoImg} alt="" />
+                    <img src={setaAtras} alt="seta atras" className="setaTras" onClick={redirectBack} />
+                    <img src={registoImg} alt=" registo imagem" />
                 </header>
 
                 <div className="formulario">
@@ -72,7 +72,7 @@ function RegistoEtapa2({ setEtapa, dados, setDados }) {
                     <section className="selectFormulario">
                         <label>Cargo</label>
                         <div>
-                            <img src={icon_dropdown} alt="" />
+                            <img src={icon_dropdown} alt="icone dropdown" />
                             <Field as="select" name="cargo">
                                 <option value="Professor">Professor</option>
                                 <option value="Aluno Mentor">Aluno Mentor</option>

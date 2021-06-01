@@ -25,7 +25,7 @@ function Etapa4() {
                             <p id="textoBotao">Disponibilizamos o <i>template</i> para o <strong>guião de sessão</strong>.</p>
                         </div>
                         <div id="setaDownload">
-                            <img src={setaDownload} alt="setaDownload" id="Download" />
+                            <img src={setaDownload} alt="icone download" id="Download" />
                         </div>
                     </div>
                     <Link to="./5"><div id="botao2fundoAzul">

@@ -45,7 +45,7 @@ function RegistoEtapa4({ setEtapa, dados, setDados }) {
                 <article className="avatar">
 
                     <div className="titulo">
-                        <img src={setaAtras} alt="" />
+                        <img src={setaAtras} alt="seta atras" />
                         <label>Escolher avatar</label>
                     </div>
 

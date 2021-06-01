@@ -24,7 +24,7 @@ function Etapa5() {
                             <p id="textoBotao">Disponibilizamos o <i>template</i> para os questionários de reflexão para os alunos (mentores e mentorandos).</p>
                         </div>
                         <div id="setaDownload">
-                            <img src={setaDownload} alt="setaDownload" id="Download" />
+                            <img src={setaDownload} alt="icone download" id="Download" />
                         </div>
                     </div>
                     <Link to="./6"><div id="botao2fundoAzul">

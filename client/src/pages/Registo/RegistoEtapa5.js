@@ -29,8 +29,8 @@ function RegistoEtapa5({ setEtapa, dados, setDados }) {
         <Formik initialValues={initialValues} validationSchema={camposValidador} onSubmit={onSubmit}>
             <Form className="formularioRegisto">
                 <header className="registoImg">
-                    <img src={setaAtras} alt="" className="setaTras" />
-                    <img src={registo5Img} alt="" />
+                    <img src={setaAtras} alt="seta atras" className="setaTras" />
+                    <img src={registo5Img} alt="registo quinta imagem" />
                 </header>
                 <div className="formulario">
                     <section className="tituloPrincipal">
@@ -45,7 +45,7 @@ function RegistoEtapa5({ setEtapa, dados, setDados }) {
                         {/* Falta meter estilos nestes erros */}
 
                         <div>
-                            <img src={icon_nome} alt="" />
+                            <img src={icon_nome} alt="icone nome" />
                             <Field placeholder="ex: Escola Random Random" name="escola" id="inputEscola" type="text" />
                         </div>
                         <ErrorMessage name="email" component="p" />
@@ -53,7 +53,7 @@ function RegistoEtapa5({ setEtapa, dados, setDados }) {
                     <section className="selectFormulario">
                         <label>Disciplina --- temos que ver isto pq os alunos ao fazer o registo não vão ter de selecionar disciplina</label>
                         <div>
-                            <img src={icon_dropdown} alt="" />
+                            <img src={icon_dropdown} alt="icone dropdown" />
                             <Field as="select" name="disciplina">
                                 <option value="mat">Mat</option>
                                 <option value="ing">ING</option>

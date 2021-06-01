@@ -37,14 +37,14 @@
     border: 1px solid #e0eaff;
     border-radius: 0.3rem;
 
-    #textoEsquerda {
+    .textoEsquerda {
       align-self: center;
       padding-top: 0.5rem;
       padding-bottom: 0.5rem;
       grid-area: textoEsquerda;
     }
 
-    #setaDireita {
+    .setaDireita {
       align-self: center;
       justify-self: center;
       grid-area: setaDireita;

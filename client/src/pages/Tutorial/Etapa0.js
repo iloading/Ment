@@ -43,7 +43,7 @@ function Etapa0() {
                             <p id="textoBotao">Lista de crit?</p>
                         </div>
                         <div id="setaDownload">
-                            <img src={setaDownload} alt="" id="Download" />
+                            <img src={setaDownload} alt="icone download" id="Download" />
                         </div>
                     </div>
                     <Link to="./1"><div id="botao2">

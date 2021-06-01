@@ -31,7 +31,7 @@ function Etapa2() {
                             <p id="textoBotao">Para facilitar o processo de contrução do guião, disponibilizamos um modelo <i>template</i>.</p>
                         </div>
                         <div id="setaDownload">
-                            <img src={setaDownload} alt="" id="Download" />
+                            <img src={setaDownload} alt="icone download" id="Download" />
                         </div>
                     </div>
                 </div>
@@ -51,7 +51,7 @@ function Etapa2() {
                             <p id="textoBotao">Para facilitar o processo de organização e distribuição de tarefas, disponibilizamos um modelo <i>template</i> que deverá ser partilhado entre todos.</p>
                         </div>
                         <div id="setaDownload">
-                            <img src={setaDownload} alt="" id="Download" />
+                            <img src={setaDownload} alt="icone download" id="Download" />
                         </div>
                     </div>
 
@@ -78,7 +78,7 @@ function Etapa2() {
                             <p id="textoBotao">Para facilitar o processo de preparação das tarefas, disponibilizamos um modelo <i>template</i> para que possam ser preenchidos colaborativamente.</p>
                         </div>
                         <div id="setaDownload">
-                            <img src={setaDownload} alt="" id="Download" />
+                            <img src={setaDownload} alt="icone download" id="Download" />
                         </div>
                     </div>
                     <Link to="./3"><div id="botao2">

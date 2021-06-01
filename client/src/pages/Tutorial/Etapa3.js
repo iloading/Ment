@@ -25,7 +25,7 @@ function Etapa3() {
                             <p id="textoBotao">Aqui pode encontrar recursos-modelo de preparação de tarefas.</p>
                         </div>
                         <div id="setaDownload">
-                            <img src={setaDownload} alt="setaDownload" id="Download" />
+                            <img src={setaDownload} alt="icone download" id="Download" />
                         </div>
                     </div>
                     <Link to="./4"><div id="botao2fundoAzul">
