@@ -1,6 +1,7 @@
 import loginImg from "../img/loginImg.png";
 import icon_mail from "../img/icons/icon_mail.png";
 import icon_cadeado from "../img/icons/icon_cadeado.png";
+import { Link } from 'react-router-dom'
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
@@ -41,7 +42,9 @@ function Login() {
                             <img src={icon_mail} alt="icon email" />
                             <Field placeholder="ex: joana.silva12@gmail.com" name="email" id="inputEmail" type="email" />
                         </div>
-                        <ErrorMessage name="email" component="p" className="error" />
+                        <div className="error">
+                            <ErrorMessage name="email" component="p" />
+                        </div>
                     </section>
                     <section className="campos">
                         <label>palavra-passe</label>
@@ -50,17 +53,20 @@ function Login() {
                             <img src={icon_cadeado} alt="icon cadeado" />
                             <Field placeholder="*********" name="password" id="inputPassword" type="password" />
                         </div>
-                        <ErrorMessage name="password" component="p" className="error" />
+                        <div className="error">
+                            <ErrorMessage name="password" component="p" />
+                        </div>
+
                     </section>
                     <section className="botaoSubmit">
                         <button type="submit">Login</button>
                     </section>
                     <section className="tituloFooter">
-                        <span>Necessita de criar conta? Carregue aqui</span>
+                        <Link to='./Registo/Registo.js'><span><u> Necessita de criar conta? Carregue aqui</u></span></Link>
                     </section>
                 </Form>
             </Formik>
-        </article>
+        </article >
 
 
     );
