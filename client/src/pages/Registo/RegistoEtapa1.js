@@ -1,5 +1,5 @@
 import registo2Img from "../../img/registo/registo2Img.png";
-import icon_email_loading from "../../img/icon_email_loading.gif";
+import icon_email_loading from "../../img/icon_email_loading.png";
 import icon_email_success from "../../img/icon_email_success.png";
 import icon_email_error from "../../img/icon_email_error.png";
 import setaAtras from "../../img/setaAtras.png";
@@ -101,22 +101,24 @@ function RegistoEtapa1({ validadeEmail, setValidadeEmail, validadeFormulario1, s
             const response = await verifyEmailExists({ email: document.getElementById('inputEmail').value, })
 
             let { success,/*  error */ } = response.data
+            //mensagemErro é aqui iniciada para que quando o email inserido já estamja registado, o feedback possa ser dado ao utilizador
             const mensagemErro = document.createElement('p');
             mensagemErro.id = 'mensagemErroEmail';
             mensagemErro.innerHTML = 'O email que inseriu já se encontra registado'
+
             if (success) {
                 setValidadeEmail(2)
+                //Se o email anterior já tivesse registado, retirar a mensagem de erro
                 try {
                     document.getElementById("mensagemErroEmail").remove();
                 } catch { }
             } else {
-                //Mostrar o erro somewhere
-                setValidadeEmail(1)
-
+                setValidadeEmail(1);
+                //Mostrar o erro 
                 erroEmail.current.appendChild(mensagemErro);
             }
 
-        }).catch((e) => { setValidadeEmail(1); });
+        }).catch((e) => { setValidadeEmail(0); });
 
     }
 
