@@ -1,49 +1,68 @@
 import Footer from "./components/Footer"
 import Navbar from "./components/Navbar"
-import CardSessoes from "./components/CardSessoes"
+
 import iconBanco from "../img/icons/icon_banco.png";
+
+import medalha from "../img/medalha.png";
+import iconSessoes from "../img/icons/icon_sessoes.png";
+import iconOrdenar from "../img/icons/icon_ordenar.png";
+import iconFiltro from "../img/icons/icon_filtro.png";
+import iconPesquisa from "../img/icons/icon_pesquisa.png";
+import linhaVertical from "../img/linhaVertical.png";
 
 
 function Banco() {
     return (
         <article className="banco">
 
-            <Navbar/>
-           
-            
+            <Navbar />
+
+
             <section id="main" className="conteudoMain">
 
-               <div className="searchBar">
-                    <img src={iconBanco} alt="" />
-                    <input placeholder="ex: joana.silva12@gmail.com" name="email" id="inputEmail" type="email" />
-               </div>
+                <div className="searchBar">
+                    <input placeholder="Pesquisar..." name="search" id="inputEmail" type="text" />
+
+                    <div>
+                        <img src={iconPesquisa} alt="" className="img1" />
+                        <img src={linhaVertical} alt="" className="img1" />
+                        <img src={iconFiltro} alt="" className="img2" />
+                    </div>
+                </div>
 
                 <div className="titulo">
                     <img src={iconBanco} alt="" id="iconTituloBanco" />
                     <label id="tituloMain">Banco</label>
-                    <img src={iconBanco} alt="" id="iconTituloBanco1" />
+                    <div>
+                        <img src={iconOrdenar} alt="" id="iconOrdenar" />
+                    </div>
+
                 </div>
-                
+
                 <div className="cardSessoes">
-                    <CardSessoes />
-                    <CardSessoes />
-                    <CardSessoes />
-                    <CardSessoes />
-                    <CardSessoes />
-                    <CardSessoes />
-                    <CardSessoes />
-                    <CardSessoes />
+
+                    <div>
+                        <img src={iconSessoes} alt="" />
+                        <div className="textoCards">
+                            <label>Os 3 porquinhos </label>
+                            <p>Equipa Avila Crew</p>
+                            <span>8º ano | Past Tense</span>
+                        </div>
+
+                        <img src={medalha} alt="" />
+                    </div>
+
                 </div>
-                    
+
             </section>
-            
+
             <Footer />
-          
-          
+
+
 
 
         </article>
     );
 }
-    
+
 export default Banco;
