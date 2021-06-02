@@ -157,9 +157,31 @@
         padding: 0 1rem 0 1rem;
         background-color: $input-color-lightblue;
         width: 100%;
-        color: rgb(211, 211, 211);
+
         -webkit-appearance: none;
         -moz-appearance: none;
+        &:focus-visible {
+          outline: 0;
+        }
+        &:invalid {
+          color: lightgray;
+        }
+        &:valid {
+          color: black;
+        }
+        [disabled] {
+          color: gray;
+        }
+        option {
+          &:first-of-type {
+            color: lightgray;
+          }
+          &:disabled {
+            color: lightgray;
+          }
+
+          color: black;
+        }
       }
     }
     .botao {

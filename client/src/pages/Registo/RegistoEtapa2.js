@@ -29,18 +29,18 @@ function RegistoEtapa2({ setEtapa, dados, setDados }) {
 
         } : initialValues = {
             name: "",
-            cargo: "Aluno Mentor",
+            cargo: "",
         }
 
 
     const camposValidador = Yup.object().shape({
         name: Yup.string().required("Este campo é obrigatório"),
-        cargo: Yup.string().required("Este campo é obrigatório"),
+        cargo: Yup.number().required("Este campo é obrigatório").positive('Selecione um cargo').integer('Selecione um cargo').min(0, 'Selecione um cargo').max(1, 'Selecione um cargo'),
 
     })
 
     const onSubmit = (data) => {
-
+        console.log(data);
         setDados({ ...dados, name: data.name, cargo: data.cargo })
         setEtapa(3)
     }
@@ -80,17 +80,19 @@ function RegistoEtapa2({ setEtapa, dados, setDados }) {
                         </div>
 
                     </section>
-                    <section className="selectFormulario">
+                    <section className="inputFormulario selectFormulario">
                         <label>Cargo</label>
                         <div>
                             <img src={icon_dropdown} alt="icone dropdown" />
-                            <Field as="select" name="cargo">
-                                <option value="Professor">Professor</option>
-                                <option value="Aluno Mentor">Aluno Mentor</option>
+                            <Field as="select" name="cargo" required>
+                                <option value="" disabled hidden selected>Selecionar Cargo</option>
+                                <option value="0">Aluno Mentor</option>
+                                <option value="1">Professor</option>
+
                             </Field>
                         </div>
                         <div className="error">
-                            {/* <ErrorMessage name="name" component="p" /> */}
+                            <ErrorMessage name="cargo" component="p" />
                         </div>
                     </section>
                     <section className="botao">
