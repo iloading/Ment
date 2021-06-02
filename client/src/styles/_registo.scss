@@ -45,6 +45,10 @@
   #etapa3 {
     padding-bottom: 1.5rem;
   }
+  #etapa4 {
+    grid-template-rows: 3rem auto 1fr 1fr auto;
+    padding-bottom: 1.5rem;
+  }
   .formulario {
     display: grid;
     grid-template-columns: 1fr;
@@ -171,16 +175,14 @@
         font-size: $font-size-l;
         color: white;
         font-weight: $font-weight-bolder;
-      }
-      button:disabled {
-        border-radius: 5px;
-        border: none;
-        width: 90%;
-        padding: 1rem;
-        background-color: #f5f5f5;
-        font-size: $font-size-l;
-        color: $text-third-color;
-        font-weight: $font-weight-bolder;
+        &:hover {
+          cursor: pointer;
+        }
+        &:disabled {
+          background-color: #f5f5f5;
+          cursor: not-allowed;
+          color: $text-third-color;
+        }
       }
     }
     .tituloFooter {

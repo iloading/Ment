@@ -6,7 +6,7 @@ import setaAtras from "../../img/setaAtras.png";
 
 
 import { Link, useHistory } from 'react-router-dom';
-import { useEffect, useCallback } from 'react'
+import { useEffect, useCallback, useRef } from 'react'
 //Verificação de Inputs
 import { Formik, Form } from "formik";
 import { Field, ErrorMessage } from 'formik';
@@ -22,6 +22,7 @@ function RegistoEtapa1({ validadeEmail, setValidadeEmail, validadeFormulario1, s
         window.scrollTo(0, 0);
     }, [])
 
+    const erroEmail = useRef()
     /* initialValues - Desta forma se o utilizador voltar a tras durante o registo, os dados ficam guardados nos campos corretos */
     let initialValues
     (dados.email || dados.password || dados.password_confirm) ?
@@ -100,14 +101,19 @@ function RegistoEtapa1({ validadeEmail, setValidadeEmail, validadeFormulario1, s
             const response = await verifyEmailExists({ email: document.getElementById('inputEmail').value, })
 
             let { success,/*  error */ } = response.data
-
+            const mensagemErro = document.createElement('p');
+            mensagemErro.id = 'mensagemErroEmail';
+            mensagemErro.innerHTML = 'O email que inseriu já se encontra registado'
             if (success) {
                 setValidadeEmail(2)
-
+                try {
+                    document.getElementById("mensagemErroEmail").remove();
+                } catch { }
             } else {
                 //Mostrar o erro somewhere
                 setValidadeEmail(1)
 
+                erroEmail.current.appendChild(mensagemErro);
             }
 
         }).catch((e) => { setValidadeEmail(1); });
@@ -190,7 +196,7 @@ function RegistoEtapa1({ validadeEmail, setValidadeEmail, validadeFormulario1, s
                                 validarEmail();
                             }} />
                         </div>
-                        <div className="error">
+                        <div className="error" ref={erroEmail}>
                             <ErrorMessage name="email" component="p" />
                         </div>
 
