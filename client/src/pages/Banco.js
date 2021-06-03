@@ -3,7 +3,7 @@ import Navbar from "./components/Navbar"
 
 import iconBanco from "../img/icons/icon_banco.png";
 
-import medalha from "../img/medalha.png";
+import setaDireita from "../img/setaDireita.png";
 import iconSessoes from "../img/icons/icon_sessoes.png";
 import iconOrdenar from "../img/icons/icon_ordenar.png";
 import iconFiltro from "../img/icons/icon_filtro.png";
@@ -49,7 +49,7 @@ function Banco() {
                             <span>8º ano | Past Tense</span>
                         </div>
 
-                        <img src={medalha} alt="" />
+                        <img src={setaDireita} alt="" />
                     </div>
 
                 </div>

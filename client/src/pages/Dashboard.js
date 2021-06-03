@@ -24,7 +24,10 @@ function Dashboard() {
             <section id="main" className="conteudoMain">
 
                 <div className="titulo">
+
                     <img src={iconEquipa} alt="" className="iconTitulo" />
+
+
 
                     <label className="tituloMain">As minhas equipas</label>
 
