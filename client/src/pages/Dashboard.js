@@ -3,9 +3,9 @@ import CarouselDashboard from "./components/CarouselDashboard";
 import Footer from "./components/Footer"
 import Navbar from "./components/Navbar"
 
-import iconEquipa from "../img/icons/icon_equipa.png";
+import iconEquipa from "../img/icons/icon_equipa.svg";
 
-import iconbanco from "../img/icons/icon_banco.png";
+import iconbanco from "../img/icons/icon_banco.svg";
 
 import medalha from "../img/medalha.png";
 import iconSessoes from "../img/icons/icon_sessoes.png";

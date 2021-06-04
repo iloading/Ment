@@ -23,7 +23,7 @@
     margin: 1rem;
     .titulo {
       display: grid;
-      grid-template-columns: 1.5rem auto 2rem;
+      grid-template-columns: 1.5rem auto 3rem;
       grid-template-areas: "iconTituloBanco tituloMain iconTituloBanco1";
       align-items: center;
 
@@ -35,7 +35,7 @@
       }
 
       img {
-        width: 70%;
+        width: 85%;
       }
 
       #iconTituloBanco {
@@ -50,6 +50,9 @@
 
       div {
         text-align: center;
+        img {
+          width: 50%;
+        }
       }
     }
 
@@ -62,8 +65,12 @@
         position: absolute;
         right: 0;
         display: grid;
-        grid-template-columns: 2rem auto 2rem;
+        grid-template-columns: 3rem auto 3rem;
         justify-items: center;
+
+        img {
+          width: 50%;
+        }
       }
       input {
         border: none;

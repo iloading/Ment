@@ -1,14 +1,14 @@
 import Footer from "./components/Footer"
 import Navbar from "./components/Navbar"
 
-import iconBanco from "../img/icons/icon_banco.png";
+import iconBanco from "../img/icons/icon_banco.svg";
 
 import setaDireita from "../img/setaDireita_cor.png";
 import iconSessoes from "../img/icons/icon_sessoes.png";
-import iconOrdenar from "../img/icons/icon_ordenar.png";
-import iconFiltro from "../img/icons/icon_filtro.png";
-import iconPesquisa from "../img/icons/icon_pesquisa.png";
-import linhaVertical from "../img/linhaVertical.png";
+import iconOrdenar from "../img/icons/icon_ordenar.svg";
+import iconFiltro from "../img/icons/icon_filtro.svg";
+import iconPesquisa from "../img/icons/icon_pesquisa.svg";
+import linhaVertical from "../img/linhaVertical.svg";
 
 
 function Banco() {

@@ -1,5 +1,5 @@
 
-import navLogo from "../../img/logo.png";
+import navLogo from "../../img/logo.svg";
 import iconPerfil from "../../img/icons/icon_perfil.png";
 
 
@@ -14,5 +14,5 @@ function Navbar() {
     );
 
 }
-    
+
 export default Navbar;
