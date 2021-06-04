@@ -72,13 +72,14 @@
         padding: 0 0 0 5%;
         background-color: $button-type1-background;
         width: 100%;
+        font-family: $font_family-type2;
       }
     }
 
     .cardSessoes {
       div {
-        background-color: #f1f6ff;
-        margin: 0 0 2rem 0;
+        background-color: $button-type3-background;
+        margin: 0 0 1rem 0;
         display: grid;
         grid-template-columns: auto 1fr auto;
         align-items: center;
@@ -97,20 +98,20 @@
 
         label {
           font-size: $font-size-s;
-          font-weight: $font-weight-boldest;
-          color: $text-type1-sessCard;
+          font-weight: $font-weight-more-bold;
+          color: $text-main-color;
         }
 
         p {
-          color: $text-type2-sessCard;
+          color: $text-fourth-color;
           font-size: $font-size-xs;
-          font-weight: $font-weight-bolder;
+          font-weight: $font-weight-boldest;
         }
 
         span {
-          color: $text-type3-sessCard;
+          color: $text-fifth-color;
           font-size: $font-size-xs;
-          font-weight: $font-weight-bold;
+          font-weight: $font-weight-boldest;
         }
       }
     }
