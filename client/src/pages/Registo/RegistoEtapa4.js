@@ -98,7 +98,7 @@ function RegistoEtapa4({ setEtapa, dados, setDados, validadeFormulario4, setvali
 
     const onSubmit = () => {
         register(dados).then((res) => {
-            console.log(res);
+
             console.log((res.data.success || res.data.error));
 
         })

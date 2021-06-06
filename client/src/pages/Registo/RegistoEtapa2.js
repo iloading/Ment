@@ -65,7 +65,7 @@ function RegistoEtapa2({ setEtapa, dados, setDados, validadeFormulario2, setvali
 
 
     const onSubmit = (data) => {
-        console.log(data);
+
         setDados({ ...dados, name: data.name, role: data.role })
         setEtapa(3)
     }

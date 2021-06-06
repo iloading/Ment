@@ -10,7 +10,22 @@ const db = require('../config/db');
 const bcrypt = require('bcryptjs');
 
 
+router.get('/avatares', async (req, res) => {
+    await db.query('SELECT * FROM avatar', (err, result) => {
+        //Se der erro, devolver o mesmo
+        if (err) {
+            res.json({
+                error: err
+            });
+        } else {
 
+            res.json({
+                success: result
+            })
+        }
+
+    })
+})
 router.post('/register', async (req, res) => {
     //Extrair o conteudo que vem no pedido de registo
     const { email, password, name, school, avatar, course, role } = req.body;
@@ -21,7 +36,7 @@ router.post('/register', async (req, res) => {
         await db.query('INSERT INTO user (email, password, name, school_idschool, role_idrole, course, avatar_idavatar) VALUES (?,?,?,?,?,?,?)', [email, hash, name, school, role, course, avatar], (err, result) => {
             //Se der erro, devolver o mesmo
             if (err) {
-                res.send({
+                res.json({
                     error: err
                 });
             } else {
