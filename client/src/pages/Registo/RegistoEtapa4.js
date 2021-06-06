@@ -6,28 +6,109 @@ import { Field, ErrorMessage } from 'formik';
 import { Formik, Form } from "formik";
 import * as Yup from 'yup';
 
-function RegistoEtapa4({ setEtapa, dados, setDados }) {
+import { useEffect, useCallback } from 'react';
+//BD
+import { register } from '../../API'
 
-    const initialValues = {
-        school: "",
-        disciplina: "mat",
-    }
-    const camposValidador = Yup.object().shape({
+function RegistoEtapa4({ setEtapa, dados, setDados, validadeFormulario4, setvalidadeFormulario4 }) {
+
+    let initialValues;
+
+    if (dados.role === '0' && dados.course) {
+        setDados({ ...dados, course: null })
+    };
+
+    (dados.school || dados.course) ?
+        initialValues = {
+            school: dados.school,
+            course: dados.course,
+
+        } : initialValues = {
+            school: "",
+            course: "",
+        }
+
+
+    let camposValidadorTeacher = Yup.object().shape({
         school: Yup.string().required("Este campo é obrigatório"),
-        disciplina: Yup.string().required("Este campo é obrigatório"),
+        course: Yup.string().required("Este campo é obrigatório"),
+
     })
-    const onSubmit = (data) => {
 
-        /* FINAL  */
+    let camposValidadorStudent = Yup.object().shape({
+        school: Yup.string().required("Este campo é obrigatório"),
+
+    })
 
 
+
+
+
+    const validar = useCallback(
+        () => {
+
+            if (dados.role === '0') {
+                camposValidadorStudent.validate({
+                    school: document.getElementById('inputEscola').value,
+
+
+                }).then(function () {
+                    setDados(
+                        {
+                            ...dados,
+                            school: document.getElementById('inputEscola').value,
+
+                        }
+                    );
+                    setvalidadeFormulario4(true)
+
+                }).catch((e) => {
+                    setvalidadeFormulario4(false);
+
+                });
+            } else {
+                camposValidadorTeacher.validate({
+                    school: document.getElementById('inputEscola').value,
+                    course: document.getElementById('inputDisciplina').value,
+
+                }).then(function () {
+                    setDados(
+                        {
+                            ...dados,
+                            school: document.getElementById('inputEscola').value,
+                            course: document.getElementById('inputDisciplina').value
+
+                        }
+                    );
+                    setvalidadeFormulario4(true)
+
+                }).catch((e) => {
+                    setvalidadeFormulario4(false);
+
+                });
+            }
+
+        }, [camposValidadorStudent, camposValidadorTeacher, dados, setDados, setvalidadeFormulario4],
+    )
+
+    useEffect(() => {
+        validar();
+    }, [])
+    //Fix this later if I have time 
+
+    const onSubmit = () => {
+        register(dados).then((res) => {
+            console.log(res);
+            console.log((res.data.success || res.data.error));
+
+        })
 
     }
 
     const redirectBack = () => { setEtapa(3) }
 
     return (
-        <Formik initialValues={initialValues} validationSchema={camposValidador} onSubmit={onSubmit}>
+        <Formik initialValues={initialValues} validationSchema={dados.role === '1' ? camposValidadorTeacher : camposValidadorStudent} onSubmit={onSubmit}>
             <Form className="formularioRegisto">
                 <header className="registoImg">
                     <div className="setaTras" onClick={redirectBack}>
@@ -35,7 +116,7 @@ function RegistoEtapa4({ setEtapa, dados, setDados }) {
                     </div>
                     <img src={registo5Img} alt="registo quinta imagem" />
                 </header>
-                <div className="formulario" id={"etapa4"}>
+                <div className="formulario" id={dados.role === "0" ? "etapa4_student" : "etapa4_teacher"}>
                     <section className="tituloPrincipal">
                         <label>Informações</label>
                     </section>
@@ -49,31 +130,39 @@ function RegistoEtapa4({ setEtapa, dados, setDados }) {
 
                         <div>
 
-                            <Field placeholder="ex: Escola Random Random" name="escola" id="inputEscola" type="text" />
+                            <Field placeholder="ex: Escola Abel Botelho" name="school" id="inputEscola" type="text" onInput={validar} />
                         </div>
                         <div className="error">
                             <ErrorMessage name="school" component="p" />
                         </div>
 
                     </section>
-                    <section className="selectFormulario">
-                        <label>Disciplina</label>
-                        <div>
-                            <img src={icon_dropdown} alt="icone dropdown" />
-                            <Field as="select" name="disciplina">
-                                <option value="mat">Mat</option>
-                                <option value="ing">ING</option>
-                            </Field>
-                        </div>
-                        <div className="error">
-                            <ErrorMessage name="school" component="p" />
-                        </div>
-                    </section>
+                    {dados.role === "1" &&
+                        <section className="selectFormulario">
+                            <label>Disciplina</label>
+                            <div>
+                                <img src={icon_dropdown} alt="icone dropdown" />
+
+                                <Field as="select" name="course" required id='inputDisciplina' onInput={validar}>
+                                    <option value="" disabled hidden selected>Selecionar Disciplina</option>
+                                    <option value="mat">Matemática</option>
+                                    <option value="fq">Física e Química</option>
+                                    <option value="ing">Inglês</option>
+                                    <option value="pt">Português</option>
+
+                                </Field>
+                            </div>
+                            <div className="error">
+                                <ErrorMessage name="course" component="p" />
+                            </div>
+                        </section>
+                    }
+
 
 
                     <section className="botao">
+                        {validadeFormulario4 ? <button type="submit" id='nextStep4'>Criar Conta</button> : <button type="submit" id='nextStep4' disabled>Criar Conta</button>}
 
-                        <button>Criar</button>
 
                     </section>
                 </div>

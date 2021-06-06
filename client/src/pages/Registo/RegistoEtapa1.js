@@ -10,11 +10,16 @@ import { useEffect, useCallback, useRef } from 'react'
 //Verificação de Inputs
 import { Formik, Form } from "formik";
 import { Field, ErrorMessage } from 'formik';
-import * as Yup from 'yup';
+
+
 
 
 //API REQUESTS
 import { verifyEmailExists } from '../../API';
+
+//Verificações Formulário
+const Yup = require('yup')
+require('yup-password')(Yup) // extend yup
 
 function RegistoEtapa1({ validadeEmail, setValidadeEmail, validadeFormulario1, setvalidadeFormulario1, setEtapa, etapa, dados, setDados }) {
 
@@ -44,7 +49,7 @@ function RegistoEtapa1({ validadeEmail, setValidadeEmail, validadeFormulario1, s
     const camposValidador = Yup.object().shape({
 
         email: Yup.string().email("O conteúdo que introduziu não é um email").required("Este campo é obrigatório"),
-        password: Yup.string().required("Este campo é obrigatório").max(20, 'A password não pode exceder 20 caracteres'),
+        password: Yup.string().required("Este campo é obrigatório").min(6, 'A password tem que ter um mínimo de 6 caracteres').max(50, 'A password não pode exceder 50 caracteres').minNumbers(1, 'A password tem que conter números').minUppercase(1, 'A password tem que conter letras maiúsculas'),
         password_confirm: Yup.string().oneOf([Yup.ref('password'), null], 'As passwords não são iguais'),
 
     })

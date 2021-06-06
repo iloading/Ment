@@ -22,8 +22,8 @@ function RegistoEtapa3({ setEtapa, dados, setDados }) {
 
     }
 
-    const avatarSelect = (e) => {
-        setDados({ ...dados, avatar: e.target.id });
+    const avatarSelect = (avatar) => {
+        setDados({ ...dados, avatar: avatar });
     }
     /* Simula a info que vem da BD RETIRAR MAIS TARDE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
     const idsDeAvataresNaBD = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
@@ -48,7 +48,7 @@ function RegistoEtapa3({ setEtapa, dados, setDados }) {
 
                 <section className="avatarSelect">
 
-                    {idsDeAvataresNaBD.map((avatar) => <img src={avatar_1} alt={`avatar_${avatar}`} className={dados.avatar === 'avatar_' + avatar ? 'selectedAvatar' : ''} id={`avatar_${avatar}`} onClick={(e) => avatarSelect(e)} key={avatar} />)}
+                    {idsDeAvataresNaBD.map((avatar) => <img src={avatar_1} alt={`avatar_${avatar}`} className={dados.avatar === avatar ? 'selectedAvatar' : ''} id={`avatar_${avatar}`} onClick={(e) => avatarSelect(avatar)} key={avatar} />)}
 
 
 
@@ -93,12 +93,12 @@ function RegistoEtapa3({ setEtapa, dados, setDados }) {
                 </section>
 
 
-                <section className="botao">
 
-                    <button type="submit" onClick={onSubmit}>Escolher Avatar</button>
+                <section className="botao">
+                    {dados.avatar ? <button type="submit" id='nextStep3' onClick={onSubmit}>Próxima Etapa</button> : <button type="submit" id='nextStep3' disabled>Próxima Etapa</button>}
+
 
                 </section>
-
 
             </div>
 

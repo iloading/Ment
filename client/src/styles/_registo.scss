@@ -45,7 +45,11 @@
   #etapa3 {
     padding-bottom: 1.5rem;
   }
-  #etapa4 {
+  #etapa4_student {
+    grid-template-rows: 3rem auto 1fr auto;
+    padding-bottom: 1.5rem;
+  }
+  #etapa4_teacher {
     grid-template-rows: 3rem auto 1fr 1fr auto;
     padding-bottom: 1.5rem;
   }

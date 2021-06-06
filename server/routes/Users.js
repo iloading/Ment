@@ -13,15 +13,14 @@ const bcrypt = require('bcryptjs');
 
 router.post('/register', async (req, res) => {
     //Extrair o conteudo que vem no pedido de registo
-    const { email, password, name, school } = req.body;
+    const { email, password, name, school, avatar, course, role } = req.body;
 
     //Codificar a password
     bcrypt.hash(password, 10).then(async (hash) => {
         //Mandar o INSERT para a BD
-        await db.query('INSERT INTO user (email, password, name, school, role_idrole) VALUES (?,?,?,?,?)', [email, hash, name, school, 0], (err, result) => {
+        await db.query('INSERT INTO user (email, password, name, school_idschool, role_idrole, course, avatar_idavatar) VALUES (?,?,?,?,?,?,?)', [email, hash, name, school, role, course, avatar], (err, result) => {
             //Se der erro, devolver o mesmo
             if (err) {
-                console.log(err);
                 res.send({
                     error: err
                 });

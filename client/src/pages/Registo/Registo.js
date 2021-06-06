@@ -16,18 +16,20 @@ function Registo() {
     const [etapa, setEtapa] = useState(1);
     const [dados, setDados] = useState({
         name: null,
-        cargo: null,
+        role: null,
         email: null,
         password: null,
         password_confirm: null,
         avatar: null,
         school: null,
-        disciplina: null,
+        course: null,
     });
     /* Etapa 1 */
     /* Validade do Email | 0 = loading | 1 = erro | 2 = sucesso */
     const [validadeEmail, setValidadeEmail] = useState(null);
     const [validadeFormulario1, setvalidadeFormulario1] = useState(false);
+    const [validadeFormulario2, setvalidadeFormulario2] = useState(false);
+    const [validadeFormulario4, setvalidadeFormulario4] = useState(false);
     /* Etapa 2 */
 
 
@@ -56,9 +58,9 @@ function Registo() {
 
 
             {etapa === 1 && <RegistoEtapa1 etapa={etapa} setEtapa={setEtapa} dados={dados} setDados={setDados} validadeEmail={validadeEmail} setValidadeEmail={setValidadeEmail} validadeFormulario1={validadeFormulario1} setvalidadeFormulario1={setvalidadeFormulario1} />}
-            {etapa === 2 && <RegistoEtapa2 etapa={etapa} setEtapa={setEtapa} dados={dados} setDados={setDados} />}
+            {etapa === 2 && <RegistoEtapa2 etapa={etapa} setEtapa={setEtapa} dados={dados} setDados={setDados} validadeFormulario2={validadeFormulario2} setvalidadeFormulario2={setvalidadeFormulario2} />}
             {etapa === 3 && <RegistoEtapa3 etapa={etapa} setEtapa={setEtapa} dados={dados} setDados={setDados} />}
-            {etapa === 4 && <RegistoEtapa4 etapa={etapa} setEtapa={setEtapa} dados={dados} setDados={setDados} />}
+            {etapa === 4 && <RegistoEtapa4 etapa={etapa} setEtapa={setEtapa} dados={dados} setDados={setDados} validadeFormulario4={validadeFormulario4} setvalidadeFormulario4={setvalidadeFormulario4} />}
             {/* {etapa === 5 && <RegistoEtapa5 etapa={etapa} setEtapa={setEtapa} dados={dados} setDados={setDados} />}
  */}
 

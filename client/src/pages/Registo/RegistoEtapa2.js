@@ -12,7 +12,7 @@ import { useEffect } from "react"
 
 
 
-function RegistoEtapa2({ setEtapa, dados, setDados }) {
+function RegistoEtapa2({ setEtapa, dados, setDados, validadeFormulario2, setvalidadeFormulario2 }) {
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -22,26 +22,51 @@ function RegistoEtapa2({ setEtapa, dados, setDados }) {
 
     /* Desta forma se o utilizador voltar a tras durante o registo, os dados ficam guardados nos campos corretos */
 
-    (dados.name || dados.cargo) ?
+    (dados.name || dados.role) ?
         initialValues = {
             name: dados.name,
-            cargo: dados.cargo,
+            role: dados.role,
 
         } : initialValues = {
             name: "",
-            cargo: "",
+            role: "",
         }
 
 
     const camposValidador = Yup.object().shape({
-        name: Yup.string().required("Este campo é obrigatório"),
-        cargo: Yup.number().required("Este campo é obrigatório").positive('Selecione um cargo').integer('Selecione um cargo').min(0, 'Selecione um cargo').max(1, 'Selecione um cargo'),
+        name: Yup.string().required("Este campo é obrigatório").min(3, 'Por favor insira o seu primeiro e último nomes, o número mínimo de carateres é 3').max(250, 'O número máximo de carateres é 250'),
+        role: Yup.number().required("Este campo é obrigatório").positive('Selecione um cargo').integer('Selecione um cargo').min(0, 'Selecione um cargo').max(1, 'Selecione um cargo'),
 
     })
 
+
+    const validar = () => {
+
+        camposValidador.validate({
+            name: document.getElementById('inputName').value,
+            role: document.getElementById('inputRole').value,
+
+        }).then(function () {
+
+            setvalidadeFormulario2(true)
+
+        }).catch((e) => {
+            setvalidadeFormulario2(false);
+
+        });
+    }
+
+    //Quando todos os campos são devidamente preenchidos e válidos, o botão de próxima etapa fica disponível
+
+
+
+
+
+
+
     const onSubmit = (data) => {
         console.log(data);
-        setDados({ ...dados, name: data.name, cargo: data.cargo })
+        setDados({ ...dados, name: data.name, role: data.role })
         setEtapa(3)
     }
 
@@ -73,7 +98,7 @@ function RegistoEtapa2({ setEtapa, dados, setDados }) {
 
                         <div>
                             {/* <img src={icon_nome} alt="" /> */}
-                            <Field placeholder="ex: Joana Silva" name="name" id="inputName" type="text" ></Field>
+                            <Field placeholder="ex: Joana Silva" name="name" id="inputName" type="text" onInput={validar}></Field>
                         </div>
                         <div className="error">
                             <ErrorMessage name="name" component="p" />
@@ -84,19 +109,20 @@ function RegistoEtapa2({ setEtapa, dados, setDados }) {
                         <label>Cargo</label>
                         <div>
                             <img src={icon_dropdown} alt="icone dropdown" />
-                            <Field as="select" name="cargo" required>
+                            <Field as="select" name="role" required id='inputRole' onInput={validar}>
                                 <option value="" disabled hidden selected>Selecionar Cargo</option>
-                                <option value="0">Aluno Mentor</option>
-                                <option value="1">Professor</option>
-
+                                <option value={0}>Aluno Mentor</option>
+                                <option value={1}>Professor</option>
                             </Field>
                         </div>
                         <div className="error">
-                            <ErrorMessage name="cargo" component="p" />
+                            <ErrorMessage name="role" component="p" />
                         </div>
                     </section>
                     <section className="botao">
-                        <button type="submit">Próxima Etapa</button>
+                        {validadeFormulario2 ? <button type="submit" id='nextStep2' >Próxima Etapa</button> : <button type="submit" id='nextStep2' disabled>Próxima Etapa</button>}
+
+
                     </section>
 
                 </div>
