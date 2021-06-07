@@ -1,7 +1,7 @@
-import iconHome from "../../img/icons/icon_home.png";
-import iconCriar from "../../img/icons/icon_criar.png";
-import iconBanco from "../../img/icons/icon_banco.png";
-import iconEquipa from "../../img/icons/icon_equipa.png";
+import iconHome from "../../img/icons/icon_home.svg";
+import iconCriar from "../../img/icons/icon_criar.svg";
+import iconBanco from "../../img/icons/icon_banco.svg";
+import iconEquipa from "../../img/icons/icon_equipa.svg";
 
 
 function Footer() {
@@ -17,5 +17,5 @@ function Footer() {
     );
 
 }
-    
+
 export default Footer;

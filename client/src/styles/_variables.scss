@@ -1,5 +1,6 @@
 /*FONT-FAMILY*/
 $font_family: "Roboto";
+$font_family-type2: "Inter";
 
 /*FONT-SIZE*/
 $font-size-xxxs: 0.2rem;
@@ -18,6 +19,7 @@ $font-weight-normal: 300;
 $font-weight-bold: 400;
 $font-weight-bolder: 500;
 $font-weight-boldest: 600;
+$font-weight-more-bold: 700;
 
 /*BUTTON-COLORS*/
 /*type1 - botao de login homepage*/
@@ -29,10 +31,15 @@ $button-type2-background: #191847;
 /*type2 - botao de login*/
 $button-type2-background: #042454;
 
+/*type2 - botao de login*/
+$button-type3-background: #f8faff;
+
 /*TEXT-COLOR*/
 $text-main-color: #042454;
 $text-second-color: #9fbeff;
 $text-third-color: #e0eaff;
+$text-fourth-color: #003bb9;
+$text-fifth-color: #0066ff;
 
 /*TEXT-COLOR-CARDS-SESSOES*/
 $text-type1-sessCard: #5b5b5b;

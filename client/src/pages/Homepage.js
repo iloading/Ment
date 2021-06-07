@@ -1,6 +1,6 @@
 import React from 'react'
 import Carousel from "./components/Carousel";
-import navLogo from "../img/logo.png";
+import navLogo from "../img/logo.svg";
 import home1 from "../img/home1.png";
 import imgBanco from "../img/imgBanco.png";
 import comofuncionaHome from "../img/comofuncionaHome.png";

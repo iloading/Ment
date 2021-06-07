@@ -2,10 +2,13 @@
 import CarouselDashboard from "./components/CarouselDashboard";
 import Footer from "./components/Footer"
 import Navbar from "./components/Navbar"
-import CardSessoes from "./components/CardSessoes"
-import iconEquipa from "../img/icons/icon_equipa.png";
 
-import iconbanco from "../img/icons/icon_banco.png";
+import iconEquipa from "../img/icons/icon_equipa.svg";
+
+import iconbanco from "../img/icons/icon_banco.svg";
+
+import medalha from "../img/medalha.png";
+import iconSessoes from "../img/icons/icon_sessoes.png";
 
 
 
@@ -21,7 +24,10 @@ function Dashboard() {
             <section id="main" className="conteudoMain">
 
                 <div className="titulo">
+
                     <img src={iconEquipa} alt="" className="iconTitulo" />
+
+
 
                     <label className="tituloMain">As minhas equipas</label>
 
@@ -38,10 +44,37 @@ function Dashboard() {
 
                 <div className="cardSessoes">
 
-                    <CardSessoes />
-                    <CardSessoes />
-                    <CardSessoes />
-                    <CardSessoes />
+                    <div>
+                        <img src={iconSessoes} alt="" />
+                        <div className="textoCards">
+                            <label>Os 3 porquinhos </label>
+                            <p>Equipa Avila Crew</p>
+                            <span>8º ano | Past Tense</span>
+                        </div>
+
+                        <img src={medalha} alt="" />
+                    </div>
+                    <div>
+                        <img src={iconSessoes} alt="" />
+                        <div className="textoCards">
+                            <label>Os 3 porquinhos </label>
+                            <p>Equipa Avila Crew</p>
+                            <span>8º ano | Past Tense</span>
+                        </div>
+
+                        <img src={medalha} alt="" />
+                    </div>
+
+                    <div>
+                        <img src={iconSessoes} alt="" />
+                        <div className="textoCards">
+                            <label>Os 3 porquinhos </label>
+                            <p>Equipa Avila Crew</p>
+                            <span>8º ano | Past Tense</span>
+                        </div>
+
+                        <img src={medalha} alt="" />
+                    </div>
 
                 </div>
 
