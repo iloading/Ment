@@ -1,6 +1,6 @@
 import registo3Img from "../../img/registo/registo3Img.png";
 import setaAtras from "../../img/setaAtras.png";
-import avatar_1 from "../../img/avatar/avatar_1.png";
+
 
 import { useEffect } from "react"
 
