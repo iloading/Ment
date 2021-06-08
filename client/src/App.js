@@ -9,6 +9,8 @@ import Dashboard from "./pages/Dashboard";
 import Tutorial from "./pages/Tutorial/Tutorial";
 import Etapa from "./pages/Tutorial/Etapa";
 import Banco from "./pages/Banco";
+import Favoritos from "./pages/Favoritos";
+import Perfil from "./pages/Perfil";
 
 
 
@@ -41,6 +43,12 @@ function App() {
         </Route>
         <Route path="/banco">
           <Banco />
+        </Route>
+        <Route path="/favoritos">
+          <Favoritos />
+        </Route>
+        <Route path="/perfil">
+          <Perfil />
         </Route>
 
       </Switch>
