@@ -20,6 +20,7 @@
 
     display: grid;
     grid-template-rows: 3rem 0.5fr 1fr;
+    overflow: hidden;
 
 
 
@@ -30,32 +31,32 @@
       }
     
       .navegacao{
-        
-
+    margin: 1rem;
 
         .carousel{
-            display: grid;
-            justify-content: center;
-            margin-bottom: 2rem;
-
-
-            .conteudoCarousel{
-                width: 95vw;
-
+            width: 95vw;
+          
                 .slick-list { 
                   overflow: visible; 
                 }
-                .slick-slide {
-                  
-                  margin-right:10px;
-                  margin-left:10px;
-              }
-            }
+                .slick-slide > div {
+                  margin: 0 5px 15px;
+                }
+
+                .slick-slide{
+                  width: 30% !important;
+                }
+                
+            
 
 
             .cards{
               background-color: red;
               padding:1rem 0 1rem 0;
+              width: 100% !important;
+              height: 8% !important;
+          
+
             }
         }
       }

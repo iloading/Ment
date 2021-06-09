@@ -25,7 +25,7 @@ function Sessao() {
                 <div className="navegacao">
                     <h1>titulo</h1>
 
-                    <div className="carousel">
+                    <div>
                         <Carousel/>
                     </div>
                    
