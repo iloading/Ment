@@ -13,4 +13,58 @@
     grid-area: main;
     display: grid;
   }
+
+
+
+.conteudoMain{
+
+    display: grid;
+    grid-template-rows: 3rem 0.5fr 1fr;
+
+
+
+    .barraSocial{
+        background-color: lightblue;
+        display: grid;
+        grid-template-columns: 1fr 0.2fr 0.2fr 0.2fr;
+      }
+    
+      .navegacao{
+        
+
+
+        .carousel{
+            display: grid;
+            justify-content: center;
+            margin-bottom: 2rem;
+
+
+            .conteudoCarousel{
+                width: 95vw;
+
+                .slick-list { 
+                  overflow: visible; 
+                }
+                .slick-slide {
+                  
+                  margin-right:10px;
+                  margin-left:10px;
+              }
+            }
+
+
+            .cards{
+              background-color: red;
+              padding:1rem 0 1rem 0;
+            }
+        }
+      }
+    
+      .conteudoMid{
+        background-color: lightgreen;
+      }
+}
+
+
+  
 }
