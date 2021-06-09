@@ -20,13 +20,14 @@
     display: grid;
     margin: 1rem;
     grid-template-rows: auto 0.5fr 1fr;
+    grid-row-gap: 1.5rem;
 
     .titulo {
       display: grid;
       grid-template-columns: 1.5rem auto;
       grid-template-areas: "iconTitulo tituloMain";
       align-items: center;
-      margin-bottom: 1rem;
+      
 
       label {
         font-size: $font-size-m;
@@ -36,7 +37,7 @@
       }
 
       img {
-        width: 100%;
+        width: 90%;
       }
       .imgBanco {
         width: 85%;
@@ -78,14 +79,15 @@
     .conteudoBotoes {
       display: grid;
       align-self: center;
-      grid-row-gap: 2rem;
+      grid-row-gap: 1.5rem;
 
       .titulo {
-        width: 80%;
+        width: 90%;
         justify-self: center;
 
         label {
-          color: red;
+          color:$text-main-color;
+          font-weight: $font-weight-normal;
           font-weight: 300;
         }
       }
@@ -98,7 +100,7 @@
         grid-template-columns: 0.1fr 0.1fr 1fr;
         grid-template-areas: ". imgEsquerda textoDireita";
         padding: 0.5rem 0.5rem 0.5rem 0.5rem;
-        width: 80%;
+        width: 90%;
         justify-self: center;
 
         #img_esquerda {

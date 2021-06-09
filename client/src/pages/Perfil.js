@@ -2,10 +2,13 @@
 
 import Footer from "./components/Footer"
 import Navbar from "./components/Navbar"
-import iconEquipa from "../img/icons/icon_equipa.svg";
+
 
 import avatar from "../img/avatar/avatar_1.png";
 import favorito from "../img/icons/icon_favorito_background.svg";
+import iconPerfil from "../img/icons/icon_perfil.svg";
+import iconSettings from "../img/icons/icon_settings.svg";
+import iconTerminar from "../img/icons/icon_terminarSessao.svg";
 
 
 
@@ -25,8 +28,8 @@ function Perfil() {
             <section id="main" className="conteudoMain">
 
                 <div className="titulo">
-                    <img src={iconEquipa} alt="" className="iconTitulo" />
-                    <label className="tituloMain">As minhas equipas</label>
+                    <img src={iconPerfil} alt="" className="iconTitulo" />
+                    <label className="tituloMain">O meu perfil</label>
                 </div>
 
                 <div className="infoPerfil">
@@ -58,10 +61,10 @@ function Perfil() {
 
                     <div className="botao">
                         <div id="img_esquerda">
-                            <img src={favorito} alt="" />
+                            <img src={iconSettings} alt="" />
                         </div>
                         <div id="texto_Direita">
-                            <label>Os meus favoritos</label>
+                            <label>Definições</label>
                         </div>
                     </div>
 
@@ -69,10 +72,10 @@ function Perfil() {
 
                     <div className="botao">
                         <div id="img_esquerda">
-                            <img src={favorito} alt="" />
+                            <img src={iconTerminar} alt="" />
                         </div>
                         <div id="texto_Direita">
-                            <label>Os meus favoritos</label>
+                            <label>Terminar sessão</label>
                         </div>
                     </div>
 
