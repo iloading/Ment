@@ -18,7 +18,6 @@
 
   .conteudoMain {
     display: grid;
-    grid-row-gap: 2.5rem;
     margin: 1rem;
     grid-template-rows: auto 0.5fr 1fr;
 
@@ -27,6 +26,7 @@
       grid-template-columns: 1.5rem auto;
       grid-template-areas: "iconTitulo tituloMain";
       align-items: center;
+      margin-bottom: 1rem;
 
       label {
         font-size: $font-size-m;
@@ -75,27 +75,35 @@
       }
     }
 
-    .conteudo {
+    .conteudoBotoes {
       display: grid;
       align-self: center;
+      grid-row-gap: 2rem;
+
+      .titulo {
+        width: 80%;
+        justify-self: center;
+
+        label {
+          color: red;
+          font-weight: 300;
+        }
+      }
 
       .botao {
-        background-color: $button-type1-background;
-        margin-top: 3rem;
-        border: 1px solid #e0eaff;
+        background-color: $button-type3-background;
+        border: 1px solid $button-type3-background;
         border-radius: 0.3rem;
         display: grid;
         grid-template-columns: 0.1fr 0.1fr 1fr;
         grid-template-areas: ". imgEsquerda textoDireita";
         padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+        width: 80%;
+        justify-self: center;
 
         #img_esquerda {
           grid-area: imgEsquerda;
           align-self: center;
-
-          img {
-            width: 100%;
-          }
         }
 
         #texto_Direita {

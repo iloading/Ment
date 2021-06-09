@@ -5,7 +5,7 @@ import Navbar from "./components/Navbar"
 import iconEquipa from "../img/icons/icon_equipa.svg";
 
 import avatar from "../img/avatar/avatar_1.png";
-import favorito from "../img/icons/icon_favorito.svg";
+import favorito from "../img/icons/icon_favorito_background.svg";
 
 
 
@@ -35,7 +35,11 @@ function Perfil() {
                     <span>joanasilva.12@gmail.com</span>
                 </div>
 
-                <div className="conteudo">
+                <div className="conteudoBotoes">
+
+                    <div className="titulo">
+                        <label>Conteúdo</label>
+                    </div>
 
 
                     <div className="botao">
@@ -46,6 +50,33 @@ function Perfil() {
                             <label>Os meus favoritos</label>
                         </div>
                     </div>
+
+
+                    <div className="titulo">
+                        <label>Gestão</label>
+                    </div>
+
+                    <div className="botao">
+                        <div id="img_esquerda">
+                            <img src={favorito} alt="" />
+                        </div>
+                        <div id="texto_Direita">
+                            <label>Os meus favoritos</label>
+                        </div>
+                    </div>
+
+
+
+                    <div className="botao">
+                        <div id="img_esquerda">
+                            <img src={favorito} alt="" />
+                        </div>
+                        <div id="texto_Direita">
+                            <label>Os meus favoritos</label>
+                        </div>
+                    </div>
+
+
                 </div>
 
             </section>
