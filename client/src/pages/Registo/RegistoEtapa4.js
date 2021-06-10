@@ -2,17 +2,27 @@ import registo5Img from "../../img/registo/registo5Img.png";
 import icon_dropdown from "../../img/icons/icon_dropdown.png";
 import setaAtras from "../../img/setaAtras.png";
 import { Field, ErrorMessage } from 'formik';
+import axios from 'axios';
+import { colourStyles } from './selectStyle';
+
+import AsyncCreatableSelect from 'react-select/async-creatable';
+import Select from 'react-select';
+import _ from 'lodash';
 
 import { Formik, Form } from "formik";
 import * as Yup from 'yup';
 
-import { useEffect, useCallback } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
 //BD
-import { register } from '../../API'
+import { register, listaEscolas } from '../../API'
 
 function RegistoEtapa4({ setEtapa, dados, setDados, validadeFormulario4, setvalidadeFormulario4 }) {
     const history = useHistory();
+    const [querySchool, setQuerySchool] = useState('')
+
+    const [schoolResults, setSchoolResults] = useState([])
+
     let initialValues;
 
     if (dados.role === '0' && dados.course) {
@@ -42,60 +52,24 @@ function RegistoEtapa4({ setEtapa, dados, setDados, validadeFormulario4, setvali
     })
 
 
+    let timerId = null
+    const loadOptions = (e) => {
+
+        clearTimeout(timerId);
+        var promise = new Promise(function (resolve, reject) {
+            timerId = setTimeout(async () => {
+                resolve(listaEscolas({ school: e }));
+            }, 1000);
+        });
+
+        return promise;
+    }
 
 
+    const handleChange = (e) => {
+        e === null ? setDados({ ...dados, school: null }) : setDados({ ...dados, school: e.idschool })
+    }
 
-    /* const validar = useCallback(
-        () => {
-
-            if (dados.role === '0') {
-                camposValidadorStudent.validate({
-                    school: document.getElementById('inputEscola').value,
-
-
-                }).then(function () {
-                    setDados(
-                        {
-                            ...dados,
-                            school: document.getElementById('inputEscola').value,
-
-                        }
-                    );
-                    setvalidadeFormulario4(true)
-
-                }).catch((e) => {
-                    setvalidadeFormulario4(false);
-
-                });
-            } else {
-                camposValidadorTeacher.validate({
-                    school: document.getElementById('inputEscola').value,
-                    course: document.getElementById('inputDisciplina').value,
-
-                }).then(function () {
-                    setDados(
-                        {
-                            ...dados,
-                            school: document.getElementById('inputEscola').value,
-                            course: document.getElementById('inputDisciplina').value
-
-                        }
-                    );
-                    setvalidadeFormulario4(true)
-
-                }).catch((e) => {
-                    setvalidadeFormulario4(false);
-
-                });
-            }
-
-        }, [camposValidadorStudent, camposValidadorTeacher, dados, setDados, setvalidadeFormulario4],
-    ) */
-
-    useEffect(() => {
-        /* validar(); */
-    }, [])
-    //Fix this later if I have time 
 
     const onSubmit = () => {
         register(dados).then((res) => {
@@ -109,7 +83,7 @@ function RegistoEtapa4({ setEtapa, dados, setDados, validadeFormulario4, setvali
     const redirectBack = () => { history.push('/registo/3'); setEtapa(3) }
 
     return (
-        <Formik initialValues={initialValues} validationSchema={dados.role === '1' ? camposValidadorTeacher : camposValidadorStudent} onSubmit={onSubmit}>
+        <Formik initialValues={initialValues} validationSchema={dados.role === 1 ? camposValidadorTeacher : camposValidadorStudent} onSubmit={onSubmit} >
             <Form className="formularioRegisto">
                 <header className="registoImg">
                     <div className="setaTras" onClick={redirectBack}>
@@ -117,17 +91,17 @@ function RegistoEtapa4({ setEtapa, dados, setDados, validadeFormulario4, setvali
                     </div>
                     <img src={registo5Img} alt="registo quinta imagem" />
                 </header>
-                <div className="formulario" id={dados.role === "0" ? "etapa4_student" : "etapa4_teacher"}>
+                <div className="formulario" id={dados.role === 0 ? "etapa4_student" : "etapa4_teacher"}>
                     <section className="tituloPrincipal">
                         <label>Informações</label>
                     </section>
                     <section className="paragrafo">
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab quos at nostrum nemo earum obcaecati voluptas consectetur.</p>
                     </section>
-                    <section className="inputFormulario selectFormulario">
+                    {/* <section className="inputFormulario selectFormulario">
 
                         <label>Escola</label>
-                        {/* Falta meter estilos nestes erros */}
+                       
 
                         <div>
                             <img src={icon_dropdown} alt="icone dropdown" />
@@ -139,8 +113,20 @@ function RegistoEtapa4({ setEtapa, dados, setDados, validadeFormulario4, setvali
                             <ErrorMessage name="school" component="p" />
                         </div>
 
+                    </section> */}
+                    <section className="">
+                        <label>Escola</label>
+
+
+                        {/* Só passei 12h nisto ... I'm fine */}
+                        <AsyncCreatableSelect onChange={(e) => handleChange(e)} cacheOptions={true} defaultOptions loadOptions={(e) => (e !== '' && e.length > 2) ? loadOptions(e).then((res) => res.data.success) : null} isClearable={true} noOptionsMessage={() => 'Não existem resultados'} loadingMessage={() => 'Escreva para procurar...'} getOptionLabel={e => e.agrupamento} getOptionValue={e => e.idschool} id='inputRole' className='react-select-form' styles={colourStyles} placeholder={'Pesquisar por Concelho | Agrupamento | Escola'} />
+
+
+                        <div className="error">
+                            <ErrorMessage name="role" component="p" />
+                        </div>
                     </section>
-                    {dados.role === "1" &&
+                    {dados.role === 1 &&
                         <section className="selectFormulario">
                             <label>Disciplina</label>
                             <div>

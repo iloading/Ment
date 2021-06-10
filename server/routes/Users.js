@@ -26,6 +26,27 @@ router.get('/avatares', async (req, res) => {
 
     })
 })
+router.post('/search/schools', async (req, res) => {
+
+
+    const school = ("%" + req.body.school + "%")
+
+    await db.query("SELECT idschool, agrupamento FROM school WHERE agrupamento LIKE ? ", [school], (err, result) => {
+        //Se der erro, devolver o mesmo
+        if (err) {
+            console.log(err);
+            res.json({
+                error: err
+            });
+        } else {
+
+            res.json({
+                success: result
+            })
+        }
+
+    })
+})
 router.post('/register', async (req, res) => {
     //Extrair o conteudo que vem no pedido de registo
     const { email, password, name, school, avatar, course, role } = req.body;
