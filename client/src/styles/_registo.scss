@@ -73,7 +73,20 @@
         font-weight: $font-weight-normal;
       }
     }
-
+    label {
+      font-size: $font-size-s;
+      font-weight: $font-weight-normal;
+      color: $text-main-color;
+    }
+    .react-select-form {
+      font-family: $font_family;
+      font-weight: 400;
+      font-size: 0.8rem;
+      margin-top: 1rem;
+      .css-g1d714-ValueContainer {
+        padding: 0;
+      }
+    }
     .inputFormulario {
       position: relative;
       input {
@@ -103,11 +116,6 @@
           outline: 0;
         }
       }
-      label {
-        font-size: $font-size-s;
-        font-weight: $font-weight-normal;
-        color: $text-main-color;
-      }
 
       .error {
         margin-top: 0.1rem;
@@ -121,7 +129,7 @@
         }
       }
     }
-    .selectFormulario {
+    /* .selectFormulario {
       input {
         border: none;
         border-radius: 4px;
@@ -187,7 +195,7 @@
           color: black;
         }
       }
-    }
+    } */
     .botao {
       display: flex;
       justify-content: center;
