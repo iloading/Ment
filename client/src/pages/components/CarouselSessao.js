@@ -3,44 +3,44 @@ import React from 'react'
 import Slider from "react-slick";
 
 function CarouselSessao() {
-  
-    var settings = {
-      dots: false,
-      infinite: false,
-      speed: 500,
-      slidesToShow: 2,
-      arrows: false,
+
+  var settings = {
+    dots: false,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 2,
+    arrows: false,
 
 
-    };
+  };
 
 
-    return (
-      <div className="carousel">
-        
-        <Slider {...settings}>
+  return (
+    <div className="carousel">
+
+      <Slider {...settings}>
         <div className="cards">
-            <h3>Resumo</h3>
-          </div>
-          <div className="cards">
-            <h3>Recursos</h3>
-          </div>
-          <div className="cards">
-            <h3>Detalhes</h3>
-          </div>
-         
-         
-         
-          
-          
-          
+          <label>Resumo</label>
+        </div>
+        <div className="cards">
+          <label>Recursos</label>
+        </div>
+        <div className="cards">
+          <label>Detalhes</label>
+        </div>
 
-         
-      
-        </Slider>
-      </div>
-    );
-  }
+
+
+
+
+
+
+
+
+      </Slider>
+    </div>
+  );
+}
 
 
 export default CarouselSessao;
