@@ -17,6 +17,8 @@ import Banco from "./pages/Banco";
 import { Route, Switch } from "react-router-dom";
 
 function App() {
+
+
   return (
     <main className="App">
 
@@ -24,7 +26,7 @@ function App() {
         <Route path="/" exact>
           <Homepage />
         </Route>
-        <Route path={["/registo/:id", "/registo"]}>
+        <Route path='/registo'>
           <Registo />
         </Route>
         <Route path="/login">

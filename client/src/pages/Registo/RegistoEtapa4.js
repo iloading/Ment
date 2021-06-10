@@ -7,11 +7,12 @@ import { Formik, Form } from "formik";
 import * as Yup from 'yup';
 
 import { useEffect, useCallback } from 'react';
+import { useHistory } from 'react-router-dom';
 //BD
 import { register } from '../../API'
 
 function RegistoEtapa4({ setEtapa, dados, setDados, validadeFormulario4, setvalidadeFormulario4 }) {
-
+    const history = useHistory();
     let initialValues;
 
     if (dados.role === '0' && dados.course) {
@@ -31,7 +32,7 @@ function RegistoEtapa4({ setEtapa, dados, setDados, validadeFormulario4, setvali
 
     let camposValidadorTeacher = Yup.object().shape({
         school: Yup.string().required("Este campo é obrigatório"),
-        course: Yup.string().required("Este campo é obrigatório"),
+        course: Yup.string('Este campo é obrigatório').required("Este campo é obrigatório"),
 
     })
 
@@ -44,7 +45,7 @@ function RegistoEtapa4({ setEtapa, dados, setDados, validadeFormulario4, setvali
 
 
 
-    const validar = useCallback(
+    /* const validar = useCallback(
         () => {
 
             if (dados.role === '0') {
@@ -89,10 +90,10 @@ function RegistoEtapa4({ setEtapa, dados, setDados, validadeFormulario4, setvali
             }
 
         }, [camposValidadorStudent, camposValidadorTeacher, dados, setDados, setvalidadeFormulario4],
-    )
+    ) */
 
     useEffect(() => {
-        validar();
+        /* validar(); */
     }, [])
     //Fix this later if I have time 
 
@@ -105,7 +106,7 @@ function RegistoEtapa4({ setEtapa, dados, setDados, validadeFormulario4, setvali
 
     }
 
-    const redirectBack = () => { setEtapa(3) }
+    const redirectBack = () => { history.push('/registo/3'); setEtapa(3) }
 
     return (
         <Formik initialValues={initialValues} validationSchema={dados.role === '1' ? camposValidadorTeacher : camposValidadorStudent} onSubmit={onSubmit}>
@@ -123,14 +124,16 @@ function RegistoEtapa4({ setEtapa, dados, setDados, validadeFormulario4, setvali
                     <section className="paragrafo">
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab quos at nostrum nemo earum obcaecati voluptas consectetur.</p>
                     </section>
-                    <section className="inputFormulario">
+                    <section className="inputFormulario selectFormulario">
 
                         <label>Escola</label>
                         {/* Falta meter estilos nestes erros */}
 
                         <div>
+                            <img src={icon_dropdown} alt="icone dropdown" />
+                            <Field as='select' placeholder="Pesquise por Concelho | Agrupamento | Escola" name="school" id="inputEscola" type="text">
 
-                            <Field placeholder="ex: Escola Abel Botelho" name="school" id="inputEscola" type="text" onInput={validar} />
+                            </Field>
                         </div>
                         <div className="error">
                             <ErrorMessage name="school" component="p" />
@@ -143,7 +146,7 @@ function RegistoEtapa4({ setEtapa, dados, setDados, validadeFormulario4, setvali
                             <div>
                                 <img src={icon_dropdown} alt="icone dropdown" />
 
-                                <Field as="select" name="course" required id='inputDisciplina' onInput={validar}>
+                                <Field as="select" name="course" required id='inputDisciplina' >
                                     <option value="" disabled hidden selected>Selecionar Disciplina</option>
                                     <option value="mat">Matemática</option>
                                     <option value="fq">Física e Química</option>
