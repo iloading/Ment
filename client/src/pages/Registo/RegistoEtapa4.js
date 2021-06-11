@@ -2,26 +2,22 @@ import registo5Img from "../../img/registo/registo5Img.png";
 import icon_dropdown from "../../img/icons/icon_dropdown.png";
 import setaAtras from "../../img/setaAtras.png";
 import { Field, ErrorMessage } from 'formik';
-import axios from 'axios';
+
 import { colourStyles } from './selectStyle';
 
 import AsyncCreatableSelect from 'react-select/async-creatable';
-import Select from 'react-select';
-import _ from 'lodash';
+
+
 
 import { Formik, Form } from "formik";
 import * as Yup from 'yup';
 
-import { useEffect, useState, useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
 //BD
 import { register, listaEscolas } from '../../API'
 
 function RegistoEtapa4({ setEtapa, dados, setDados, validadeFormulario4, setvalidadeFormulario4 }) {
     const history = useHistory();
-    const [querySchool, setQuerySchool] = useState('')
-
-    const [schoolResults, setSchoolResults] = useState([])
 
     let initialValues;
 
@@ -51,7 +47,7 @@ function RegistoEtapa4({ setEtapa, dados, setDados, validadeFormulario4, setvali
 
     })
 
-
+    //Escolas
     let timerId = null
     const loadOptions = (e) => {
 
@@ -65,7 +61,7 @@ function RegistoEtapa4({ setEtapa, dados, setDados, validadeFormulario4, setvali
         return promise;
     }
 
-
+    //Escolha de uma escola
     const handleChange = (e) => {
         e === null ? setDados({ ...dados, school: null }) : setDados({ ...dados, school: e.idschool })
     }
@@ -119,12 +115,38 @@ function RegistoEtapa4({ setEtapa, dados, setDados, validadeFormulario4, setvali
 
 
                         {/* Só passei 12h nisto ... I'm fine */}
-                        <AsyncCreatableSelect onChange={(e) => handleChange(e)} cacheOptions={true} defaultOptions loadOptions={(e) => (e !== '' && e.length > 2) ? loadOptions(e).then((res) => res.data.success) : null} isClearable={true} noOptionsMessage={() => 'Não existem resultados'} loadingMessage={() => 'Escreva para procurar...'} getOptionLabel={e => e.agrupamento} getOptionValue={e => e.idschool} id='inputRole' className='react-select-form' styles={colourStyles} placeholder={'Pesquisar por Concelho | Agrupamento | Escola'} />
+                        <AsyncCreatableSelect
+                            onChange={(e) => handleChange(e)}
+                            cacheOptions={true}
+                            defaultOptions={false}
+                            loadOptions={(e) => (e !== '' && e.length > 2) ? loadOptions(e).then((res) =>
+                                res.data.success.map(({ idschool, agrupamento }) => ({ label: agrupamento, value: idschool }))) : ''}
+                            isClearable={true}
+                            noOptionsMessage={() => 'Não existem resultados. Escreva o nome do seu concelho, escola ou agrupamento...'}
+                            loadingMessage={(e) => e.inputValue.length <= 2 ? 'Digite mais do que 2 carateres para pesquisar' : 'A Pesquisar...'}
+                            allowCreateWhileLoading={false}
+                            /* Criar uma nova escola caso a do utilizador não esteja na lista  */
+                            isValidNewOption={(inputValue, selectValue, selectOptions, accessors) => {
+                                if (inputValue.length > 2) {
+                                    if (selectValue.length === 0) {
+                                        if (selectOptions.length === 0) {
+                                            return true
+                                        }
+                                    }
+                                }
+                                return false
+                            }}
+                            /* getOptionLabel={e => e.agrupamento}
+                        getOptionValue={e => e.idschool} */
+                            id='inputRole'
+                            className='react-select-form'
+                            styles={colourStyles}
+                            placeholder={'Pesquisar por Concelho | Agrupamento | Escola'}
+                        />
 
-
-                        <div className="error">
+                        {/* <div className="error">
                             <ErrorMessage name="role" component="p" />
-                        </div>
+                        </div> */}
                     </section>
                     {dados.role === 1 &&
                         <section className="selectFormulario">
