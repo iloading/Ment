@@ -8,7 +8,7 @@ import { useHistory } from "react-router-dom"
 //BD
 import { avatares } from '../../API';
 
-function RegistoEtapa3({ setEtapa, dados, setDados, avataresBD, setAvataresBD }) {
+function RegistoEtapa3({ dados, setDados, avataresBD, setAvataresBD }) {
 
 
     const history = useHistory();
@@ -33,7 +33,7 @@ function RegistoEtapa3({ setEtapa, dados, setDados, avataresBD, setAvataresBD })
     const onSubmit = () => {
         if (dados.avatar) {
             history.push('/registo/4');
-            setEtapa(4)
+
         }
 
     }
@@ -43,7 +43,7 @@ function RegistoEtapa3({ setEtapa, dados, setDados, avataresBD, setAvataresBD })
     }
 
 
-    const redirectBack = () => { history.push('/registo/2'); setEtapa(2) }
+    const redirectBack = () => { history.push('/registo/2') }
 
 
 

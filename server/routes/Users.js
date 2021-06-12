@@ -31,7 +31,26 @@ router.post('/search/schools', async (req, res) => {
 
     const school = ("%" + req.body.school + "%")
 
-    await db.query("SELECT idschool, agrupamento FROM school WHERE agrupamento LIKE ? ", [school], (err, result) => {
+    await db.query("SELECT idschool, agrupamento FROM school WHERE verified = 1 AND agrupamento LIKE ? ", [school], (err, result) => {
+        //Se der erro, devolver o mesmo
+        if (err) {
+            console.log(err);
+            res.json({
+                error: err
+            });
+        } else {
+
+            res.json({
+                success: result
+            })
+        }
+
+    })
+})
+router.post('/courses', async (req, res) => {
+
+
+    await db.query("SELECT * FROM course", (err, result) => {
         //Se der erro, devolver o mesmo
         if (err) {
             console.log(err);
@@ -49,12 +68,31 @@ router.post('/search/schools', async (req, res) => {
 })
 router.post('/register', async (req, res) => {
     //Extrair o conteudo que vem no pedido de registo
-    const { email, password, name, school, avatar, course, role } = req.body;
+    let { email, password, name, school, avatar, course, role } = req.body;
+
+
+    if (isNaN(school)) {
+
+        await db.query('INSERT INTO school (agrupamento, verified) VALUES (?, 0)', [school], (err, result) => {
+            //Se der erro, devolver o mesmo
+            if (err) {
+                res.json({
+                    error: err
+                });
+            } else {
+                /* a var school passa a ser o novo id da school criada na BD */
+                school = { insertId: result.insertId }.insertId
+            }
+
+        })
+
+    }
 
     //Codificar a password
     bcrypt.hash(password, 10).then(async (hash) => {
         //Mandar o INSERT para a BD
-        await db.query('INSERT INTO user (email, password, name, school_idschool, role_idrole, course, avatar_idavatar) VALUES (?,?,?,?,?,?,?)', [email, hash, name, school, role, course, avatar], (err, result) => {
+        console.log(school);
+        await db.query('INSERT INTO user (email, password, name, school_idschool, role_idrole, course_idcourse, avatar_idavatar) VALUES (?,?,?,?,?,?,?)', [email, hash, name, school, role, course, avatar], (err, result) => {
             //Se der erro, devolver o mesmo
             if (err) {
                 res.json({

@@ -15,7 +15,7 @@ import { useHistory } from "react-router-dom"
 
 
 
-function RegistoEtapa2({ setEtapa, dados, setDados, validadeFormulario2, setvalidadeFormulario2 }) {
+function RegistoEtapa2({ dados, setDados, validadeFormulario2, setvalidadeFormulario2 }) {
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -87,13 +87,13 @@ function RegistoEtapa2({ setEtapa, dados, setDados, validadeFormulario2, setvali
     const onSubmit = (data) => {
         setDados({ ...dados, name: data.name })
         history.push('/registo/3')
-        setEtapa(3)
+
     }
 
 
 
 
-    const redirectBack = () => { history.push('/registo/1'); setEtapa(1) }
+    const redirectBack = () => { history.push('/registo/1') }
 
 
 

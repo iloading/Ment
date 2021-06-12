@@ -8,7 +8,9 @@ export const avatares = () => axios.get('http://localhost:3001/auth/avatares');
 
 
 //ETAPA 4 - Pedido de lista de Escolas
-export const listaEscolas = (pesquisa, cancelToken) => axios.post('http://localhost:3001/auth/search/schools', pesquisa, { cancelToken });
+export const listaEscolas = (pesquisa) => axios.post('http://localhost:3001/auth/search/schools', pesquisa);
+//ETAPA 4 - Pedido de lista de Grupos Disciplinares
+export const listaGruposDisciplinares = () => axios.post('http://localhost:3001/auth/courses');
 
 //ETAPA 4 - Pedido de Registo de nova conta
 export const register = (data) => axios.post('http://localhost:3001/auth/register', data);

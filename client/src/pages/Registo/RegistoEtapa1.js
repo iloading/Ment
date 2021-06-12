@@ -21,7 +21,7 @@ import { verifyEmailExists } from '../../API';
 const Yup = require('yup')
 require('yup-password')(Yup) // extend yup
 
-function RegistoEtapa1({ validadeEmail, setValidadeEmail, validadeFormulario1, setvalidadeFormulario1, setEtapa, etapa, dados, setDados }) {
+function RegistoEtapa1({ validadeEmail, setValidadeEmail, validadeFormulario1, setvalidadeFormulario1, dados, setDados }) {
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -139,7 +139,7 @@ function RegistoEtapa1({ validadeEmail, setValidadeEmail, validadeFormulario1, s
             })
             //Passar à próxima etapa
             history.push('/registo/2')
-            setEtapa(2)
+
         } else {
             //Dar feedback que o email já está em uso
         }

@@ -18,7 +18,7 @@ function Registo() {
 
 
     /* Global */
-    const [etapa, setEtapa] = useState(1);
+
     const [dados, setDados] = useState({
         name: null,
         role: null,
@@ -50,16 +50,14 @@ function Registo() {
 
             <Switch>
 
-                <Route path={['/registo/1', '/registo']} exact>{etapa === 1 && <RegistoEtapa1 etapa={etapa} setEtapa={setEtapa} dados={dados} setDados={setDados} validadeEmail={validadeEmail} setValidadeEmail={setValidadeEmail} validadeFormulario1={validadeFormulario1} setvalidadeFormulario1={setvalidadeFormulario1} />}</Route>
+                <Route path={['/registo/1', '/registo']} exact>{<RegistoEtapa1 dados={dados} setDados={setDados} validadeEmail={validadeEmail} setValidadeEmail={setValidadeEmail} validadeFormulario1={validadeFormulario1} setvalidadeFormulario1={setvalidadeFormulario1} />}</Route>
+                <Route path='/registo/2'>{<RegistoEtapa2 dados={dados} setDados={setDados} validadeFormulario2={validadeFormulario2} setvalidadeFormulario2={setvalidadeFormulario2} />}
+                </Route>
+                <Route path='/registo/3'>{<RegistoEtapa3 dados={dados} setDados={setDados} avataresBD={avataresBD} setAvataresBD={setAvataresBD} />}
+                </Route>
+                <Route path='/registo/4'>{<RegistoEtapa4 dados={dados} setDados={setDados} validadeFormulario4={validadeFormulario4} setvalidadeFormulario4={setvalidadeFormulario4} />}
+                </Route>
 
-                <Route path='/registo/2'>{etapa === 2 && <RegistoEtapa2 etapa={etapa} setEtapa={setEtapa} dados={dados} setDados={setDados} validadeFormulario2={validadeFormulario2} setvalidadeFormulario2={setvalidadeFormulario2} />}
-                </Route>
-                <Route path='/registo/3'>{etapa === 3 && <RegistoEtapa3 etapa={etapa} setEtapa={setEtapa} dados={dados} setDados={setDados} avataresBD={avataresBD} setAvataresBD={setAvataresBD} />}
-                </Route>
-                <Route path='/registo/4'>{etapa === 4 && <RegistoEtapa4 etapa={etapa} setEtapa={setEtapa} dados={dados} setDados={setDados} validadeFormulario4={validadeFormulario4} setvalidadeFormulario4={setvalidadeFormulario4} />}
-                </Route>
-                {/* {etapa === 5 && <RegistoEtapa5 etapa={etapa} setEtapa={setEtapa} dados={dados} setDados={setDados} />}
-                */}
             </Switch>
 
 
