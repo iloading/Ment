@@ -10,6 +10,9 @@ import Tutorial from "./pages/Tutorial/Tutorial";
 import Etapa from "./pages/Tutorial/Etapa";
 import Banco from "./pages/Banco";
 
+import { useContext } from 'react'
+
+import AuthContext from "./context/AuthContext";
 
 
 
@@ -17,21 +20,26 @@ import Banco from "./pages/Banco";
 import { Route, Switch } from "react-router-dom";
 
 function App() {
-
+  const { loggedIn } = useContext(AuthContext)
 
   return (
+
     <main className="App">
 
       <Switch>
         <Route path="/" exact>
           <Homepage />
         </Route>
-        <Route path='/registo'>
-          <Registo />
-        </Route>
-        <Route path="/login">
-          <Login />
-        </Route>
+        {loggedIn === false &&
+          <>
+            <Route path='/registo'>
+              <Registo />
+            </Route>
+            <Route path="/login">
+              <Login />
+            </Route>
+          </>}
+
         <Route path="/dashboard">
           <Dashboard />
         </Route>
@@ -48,6 +56,7 @@ function App() {
       </Switch>
 
     </main>
+
   );
 }
 

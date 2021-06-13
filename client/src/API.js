@@ -16,3 +16,5 @@ export const listaGruposDisciplinares = () => axios.post('http://localhost:3001/
 export const register = (data) => axios.post('http://localhost:3001/auth/register', data);
 
 //-----------REGISTO
+//-----------CONTEXT
+export const checkLoggedIn = () => axios.get('http://localhost:3001/auth/loggedIn');
