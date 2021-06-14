@@ -1,6 +1,6 @@
 
 import navLogo from "../../img/logo.svg";
-import iconPerfil from "../../img/icons/icon_perfil.png";
+import iconPerfil from "../../img/icons/icon_perfil.svg";
 
 
 function Navbar() {

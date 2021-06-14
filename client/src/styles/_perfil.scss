@@ -1,0 +1,125 @@
+.perfil {
+  display: grid;
+  grid-template-rows: 3rem 1fr 3rem;
+  grid-template-areas: "nav" "main" "footer";
+  grid-row-gap: 1rem;
+  height: 100vh;
+
+  #nav {
+    grid-area: nav;
+  }
+
+  #footer {
+    grid-area: footer;
+  }
+  #main {
+    grid-area: main;
+  }
+
+  .conteudoMain {
+    display: grid;
+    margin: 1rem;
+    grid-template-rows: auto 0.5fr 1fr;
+    grid-row-gap: 1.5rem;
+
+    .titulo {
+      display: grid;
+      grid-template-columns: 1.5rem auto;
+      grid-template-areas: "iconTitulo tituloMain";
+      align-items: center;
+      
+
+      label {
+        font-size: $font-size-m;
+        font-weight: $font-weight-boldest;
+        color: $text-main-color;
+        margin-left: 0.5rem;
+      }
+
+      img {
+        width: 90%;
+      }
+      .imgBanco {
+        width: 85%;
+      }
+
+      .iconTitulo {
+        grid-area: iconTitulo;
+      }
+      .tituloMain {
+        grid-area: tituloMain;
+      }
+    }
+
+    .infoPerfil {
+      display: grid;
+      justify-content: center;
+      align-self: center;
+      align-items: center;
+      justify-items: center;
+      grid-row-gap: 1rem;
+
+      img {
+        width: 70%;
+      }
+
+      label {
+        color: $text-main-color;
+        font-size: $font-size-l;
+        font-weight: $font-weight-more-bold;
+      }
+
+      span {
+        color: $text-fifth-color;
+        font-size: $font-size-s;
+        font-weight: $font-weight-normal;
+      }
+    }
+
+    .conteudoBotoes {
+      display: grid;
+      align-self: center;
+      grid-row-gap: 1.5rem;
+
+      .titulo {
+        width: 90%;
+        justify-self: center;
+
+        label {
+          color:$text-main-color;
+          font-weight: $font-weight-normal;
+          font-weight: 300;
+        }
+      }
+
+      .botao {
+        background-color: $button-type3-background;
+        border: 1px solid $button-type3-background;
+        border-radius: 0.3rem;
+        display: grid;
+        grid-template-columns: 0.1fr 0.1fr 1fr;
+        grid-template-areas: ". imgEsquerda textoDireita";
+        padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+        width: 90%;
+        justify-self: center;
+
+        #img_esquerda {
+          grid-area: imgEsquerda;
+          align-self: center;
+        }
+
+        #texto_Direita {
+          grid-area: textoDireita;
+          align-self: center;
+
+          label {
+            padding-left: 1rem;
+            font-weight: $font-weight-boldest;
+            font-size: $font-size-s;
+            color: $text-main-color;
+          }
+        }
+      }
+    }
+  }
+}
