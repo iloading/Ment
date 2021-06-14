@@ -103,9 +103,10 @@ router.post('/register', async (req, res) => {
                     error: err
                 });
             } else {
+
                 //Se estiver correta, efetuar o login
                 //Tokens
-                const accessToken = createTokens(result[0])
+                const accessToken = createTokens({ id: result.insertId })
 
                 /* maxAge = 365 dias */
                 res.cookie('Ment-login-token', accessToken, { maxAge: 60 * 60 * 24 * 365 * 1000, httpOnly: true })
