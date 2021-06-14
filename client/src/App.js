@@ -20,7 +20,7 @@ import AuthContext from "./context/AuthContext";
 
 
 //REACT ROUTER
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 
 function App() {
   const { loggedIn } = useContext(AuthContext)
@@ -33,15 +33,17 @@ function App() {
         <Route path="/" exact>
           <Homepage />
         </Route>
-        {loggedIn === false &&
-          <>
-            <Route path='/registo'>
-              <Registo />
-            </Route>
-            <Route path="/login">
-              <Login />
-            </Route>
-          </>}
+
+
+
+        <Route path='/registo'>
+          {loggedIn ? <Redirect to="/dashboard" /> : <Registo />}
+
+        </Route>
+        <Route path="/login">
+          {loggedIn ? <Redirect to="/dashboard" /> : <Login />}
+        </Route>
+
 
         <Route path="/dashboard">
           <Dashboard />
