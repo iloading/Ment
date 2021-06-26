@@ -11,7 +11,7 @@ function Navbar() {
 
     return (
         <section id="topNav">
-            <div className="barraSocial">
+            <div className="barraSocial" id="barraSocial">
                 <img src={setaAtras} alt="" />
                 <img src={iconShare} alt="" id="share" />
                 <img src={iconFavorito} alt="" id="favorito" />
@@ -19,11 +19,11 @@ function Navbar() {
             </div>
 
             <div className="navegacao">
-                <label className="titulo">London Culture</label>
+                <label className="titulo" id="titulo">London Culture</label>
 
-                {/*<div>
-                    <Carousel />
-                </div>*/}
+
+                <Carousel />
+
 
             </div>
         </section>

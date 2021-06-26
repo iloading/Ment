@@ -28,6 +28,7 @@
     position: sticky;
     top: 0;
     z-index: 10;
+    padding: 1rem;
 
     #share {
       justify-self: center;
@@ -42,9 +43,12 @@
 
   .navegacao {
     display: grid;
+    grid-template-rows: 1fr 1fr;
 
     .carousel {
-      width: 80vw;
+      width: 100vw;
+      overflow: hidden;
+      padding-left: 1rem;
 
       .slick-list {
         overflow: visible;
@@ -76,9 +80,8 @@
       color: $text-type6-color;
       font-weight: $font-weight-boldest;
       font-size: $font-size-l;
+      display: grid;
+      padding-left: 1rem;
     }
-  }
-
-  .conteudoMain {
   }
 }
