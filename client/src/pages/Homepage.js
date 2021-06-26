@@ -35,7 +35,7 @@ function Homepage() {
 
 
 
-                    <button type="button" className="botaoRegisto">Quero-me registar!</button>
+                    <button type="button" className="botaoRegisto">Como funciona?</button>
 
                     <img src={home1} alt="imagem homepage" />
 
