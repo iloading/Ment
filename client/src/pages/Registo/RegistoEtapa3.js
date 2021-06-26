@@ -3,18 +3,20 @@ import setaAtras from "../../img/setaAtras.png";
 
 
 import { useEffect } from "react"
+import { useHistory } from "react-router-dom"
 
 //BD
 import { avatares } from '../../API';
 
-function RegistoEtapa3({ setEtapa, dados, setDados, avataresBD, setAvataresBD }) {
+function RegistoEtapa3({ dados, setDados, avataresBD, setAvataresBD }) {
 
 
+    const history = useHistory();
 
     useEffect(() => {
         window.scrollTo(0, 0);
         if (avataresBD === null) {
-            console.log(123);
+
             avatares().then((res) => {
                 if (res.data.success) {
                     setAvataresBD(res.data.success)
@@ -30,7 +32,8 @@ function RegistoEtapa3({ setEtapa, dados, setDados, avataresBD, setAvataresBD })
 
     const onSubmit = () => {
         if (dados.avatar) {
-            setEtapa(4)
+            history.push('/registo/4');
+
         }
 
     }
@@ -40,7 +43,7 @@ function RegistoEtapa3({ setEtapa, dados, setDados, avataresBD, setAvataresBD })
     }
 
 
-    const redirectBack = () => { setEtapa(2) }
+    const redirectBack = () => { history.push('/registo/2') }
 
 
 

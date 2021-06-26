@@ -13,6 +13,9 @@ import Favoritos from "./pages/Favoritos";
 import Perfil from "./pages/Perfil";
 import Sessao from "./pages/Sessao";
 
+import { useContext } from 'react'
+
+import AuthContext from "./context/AuthContext";
 
 
 
@@ -20,19 +23,26 @@ import Sessao from "./pages/Sessao";
 import { Route, Switch } from "react-router-dom";
 
 function App() {
+  const { loggedIn } = useContext(AuthContext)
+
   return (
+
     <main className="App">
 
       <Switch>
         <Route path="/" exact>
           <Homepage />
         </Route>
-        <Route path={["/registo/:id", "/registo"]}>
-          <Registo />
-        </Route>
-        <Route path="/login">
-          <Login />
-        </Route>
+        {loggedIn === false &&
+          <>
+            <Route path='/registo'>
+              <Registo />
+            </Route>
+            <Route path="/login">
+              <Login />
+            </Route>
+          </>}
+
         <Route path="/dashboard">
           <Dashboard />
         </Route>
@@ -58,6 +68,7 @@ function App() {
       </Switch>
 
     </main>
+
   );
 }
 

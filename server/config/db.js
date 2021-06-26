@@ -11,14 +11,3 @@ connection.connect(function (err) {
 });
 
 module.exports = connection;
-
-
-
-/* const db = mysql.createConnection({
-    user: 'root',
-    host: 'localhost',
-    password: '',
-    database: 'mydb'
-})
-
-module.exports = db; */

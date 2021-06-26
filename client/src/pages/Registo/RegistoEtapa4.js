@@ -1,173 +1,200 @@
 import registo5Img from "../../img/registo/registo5Img.png";
-import icon_dropdown from "../../img/icons/icon_dropdown.png";
+/* import icon_dropdown from "../../img/icons/icon_dropdown.png"; */
 import setaAtras from "../../img/setaAtras.png";
-import { Field, ErrorMessage } from 'formik';
+/* import { Field, ErrorMessage } from 'formik'; */
 
-import { Formik, Form } from "formik";
-import * as Yup from 'yup';
+import { colourStyles } from './selectStyle';
 
-import { useEffect, useCallback } from 'react';
+import AsyncCreatableSelect from 'react-select/async-creatable';
+import Select from 'react-select';
+
+/* import * as Yup from 'yup'; */
+
+import { useHistory } from 'react-router-dom';
+import { useState, useEffect, useCallback } from 'react';
 //BD
-import { register } from '../../API'
+import { register, listaEscolas, listaGruposDisciplinares } from '../../API'
 
-function RegistoEtapa4({ setEtapa, dados, setDados, validadeFormulario4, setvalidadeFormulario4 }) {
+function RegistoEtapa4({ dados, setDados, validadeFormulario4, setvalidadeFormulario4 }) {
+    const history = useHistory();
+    const [courses, setCourses] = useState([])
 
-    let initialValues;
-
-    if (dados.role === '0' && dados.course) {
-        setDados({ ...dados, course: null })
-    };
-
-    (dados.school || dados.course) ?
-        initialValues = {
-            school: dados.school,
-            course: dados.course,
-
-        } : initialValues = {
-            school: "",
-            course: "",
-        }
-
-
-    let camposValidadorTeacher = Yup.object().shape({
-        school: Yup.string().required("Este campo é obrigatório"),
-        course: Yup.string().required("Este campo é obrigatório"),
-
-    })
-
-    let camposValidadorStudent = Yup.object().shape({
-        school: Yup.string().required("Este campo é obrigatório"),
-
-    })
-
-
-
-
-
-    const validar = useCallback(
-        () => {
-
-            if (dados.role === '0') {
-                camposValidadorStudent.validate({
-                    school: document.getElementById('inputEscola').value,
-
-
-                }).then(function () {
-                    setDados(
-                        {
-                            ...dados,
-                            school: document.getElementById('inputEscola').value,
-
-                        }
-                    );
-                    setvalidadeFormulario4(true)
-
-                }).catch((e) => {
-                    setvalidadeFormulario4(false);
-
-                });
-            } else {
-                camposValidadorTeacher.validate({
-                    school: document.getElementById('inputEscola').value,
-                    course: document.getElementById('inputDisciplina').value,
-
-                }).then(function () {
-                    setDados(
-                        {
-                            ...dados,
-                            school: document.getElementById('inputEscola').value,
-                            course: document.getElementById('inputDisciplina').value
-
-                        }
-                    );
-                    setvalidadeFormulario4(true)
-
-                }).catch((e) => {
-                    setvalidadeFormulario4(false);
-
+    //Grupos Disciplinares
+    const getCourses = useCallback(
+        async () => {
+            /* pedido à BD para todas as disciplinas */
+            const coursesResult = await listaGruposDisciplinares();
+            /* Do resultado da BD, extrair e criar um novo array apenas com os niveis de ensino (1o ciclo, 2ciclo , etc) */
+            const levelsArray = coursesResult.data.success.map((course) => ({ label: course.level }))
+            function uniqBy(a) {
+                let niveisDeEnsino = new Set();
+                return a.filter(item => {
+                    return niveisDeEnsino.has(item.label) ? false : niveisDeEnsino.add(item.label);
                 });
             }
-
-        }, [camposValidadorStudent, camposValidadorTeacher, dados, setDados, setvalidadeFormulario4],
+            const levelsArrayFiltrados = uniqBy(levelsArray)
+            /* Para cada nivel de ensino já no array, escolher as disciplinas que fazem parte desse mesmo nivel de ensino */
+            const courses = levelsArrayFiltrados.map((level) => ({ label: level.label, options: (coursesResult.data.success.filter((course) => course.level === level.label).map(({ name, idcourse, code }) => ({ label: `${code} - ${name}`, value: idcourse }))) }))
+            /* Definir o resultado para o state */
+            setCourses(courses);
+        },
+        [],
     )
 
+
+    /* Quando a pag carrega, pedir os grupos disciplinares à BD */
     useEffect(() => {
-        validar();
-    }, [])
-    //Fix this later if I have time 
+        getCourses();
 
-    const onSubmit = () => {
+    }, [getCourses])
+
+    //Escolas
+    let timerId = null
+    const loadOptions = (e) => {
+
+        clearTimeout(timerId);
+        var promise = new Promise(function (resolve, reject) {
+            timerId = setTimeout(async () => {
+                resolve(listaEscolas({ school: e }));
+            }, 1000);
+        });
+
+        return promise;
+    }
+
+    //Escolha de uma escola
+    const handleChange = (e) => {
+        e === null ? setDados({ ...dados, school: null }) : setDados({ ...dados, school: e.value })
+    }
+    //Escolha de um grupo disciplinar
+    const handleChangeCourse = (e) => {
+        e === null ? setDados({ ...dados, course: null }) : setDados({ ...dados, course: e.value })
+    }
+
+    //Verificar se está tudo preenchido
+    useEffect(() => {
+        if (dados.school !== null && dados.course !== null) {
+            setvalidadeFormulario4(true)
+        } else {
+            setvalidadeFormulario4(false)
+        }
+    }, [dados, setvalidadeFormulario4])
+
+    //Ao clicar no ultimo botão, efetuar o registo na BD
+    const onSubmit = (e) => {
+        e.preventDefault();
+        console.log(dados);
         register(dados).then((res) => {
-
             console.log((res.data.success || res.data.error));
+            if (res.data.success) {
+                history.push('/dashboard')
+            }
+
 
         })
 
     }
 
-    const redirectBack = () => { setEtapa(3) }
+    const redirectBack = () => { history.push('/registo/3') }
 
     return (
-        <Formik initialValues={initialValues} validationSchema={dados.role === '1' ? camposValidadorTeacher : camposValidadorStudent} onSubmit={onSubmit}>
-            <Form className="formularioRegisto">
-                <header className="registoImg">
-                    <div className="setaTras" onClick={redirectBack}>
-                        <img src={setaAtras} alt="seta atras" />
-                    </div>
-                    <img src={registo5Img} alt="registo quinta imagem" />
-                </header>
-                <div className="formulario" id={dados.role === "0" ? "etapa4_student" : "etapa4_teacher"}>
-                    <section className="tituloPrincipal">
-                        <label>Informações</label>
-                    </section>
-                    <section className="paragrafo">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab quos at nostrum nemo earum obcaecati voluptas consectetur.</p>
-                    </section>
-                    <section className="inputFormulario">
+
+        <form className="formularioRegisto">
+            <header className="registoImg">
+                <div className="setaTras" onClick={redirectBack}>
+                    <img src={setaAtras} alt="seta atras" />
+                </div>
+                <img src={registo5Img} alt="registo quinta imagem" />
+            </header>
+            <div className="formulario" id={dados.role === 0 ? "etapa4_student" : "etapa4_teacher"}>
+                <section className="tituloPrincipal">
+                    <label>Informações</label>
+                </section>
+                <section className="paragrafo">
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab quos at nostrum nemo earum obcaecati voluptas consectetur.</p>
+                </section>
+                {/* <section className="inputFormulario selectFormulario">
 
                         <label>Escola</label>
-                        {/* Falta meter estilos nestes erros */}
+                       
 
                         <div>
+                            <img src={icon_dropdown} alt="icone dropdown" />
+                            <Field as='select' placeholder="Pesquise por Concelho | Agrupamento | Escola" name="school" id="inputEscola" type="text">
 
-                            <Field placeholder="ex: Escola Abel Botelho" name="school" id="inputEscola" type="text" onInput={validar} />
+                            </Field>
                         </div>
                         <div className="error">
                             <ErrorMessage name="school" component="p" />
                         </div>
 
+                    </section> */}
+                <section className="">
+                    <label>Escola</label>
+
+
+                    {/* Só passei 12h nisto ... I'm fine */}
+                    <AsyncCreatableSelect
+                        onChange={(e) => handleChange(e)}
+                        cacheOptions={true}
+                        defaultOptions={false}
+                        loadOptions={(e) => (e !== '' && e.length > 2) ? loadOptions(e).then((res) =>
+                            res.data.success.map(({ idschool, agrupamento }) => ({ label: agrupamento, value: idschool }))) : ''}
+                        isClearable={true}
+                        noOptionsMessage={() => 'Não existem resultados. Escreva o nome do seu concelho, escola ou agrupamento...'}
+                        loadingMessage={(e) => e.inputValue.length <= 2 ? 'Digite mais do que 2 carateres para pesquisar' : 'A Pesquisar...'}
+                        allowCreateWhileLoading={false}
+                        /* Criar uma nova escola caso a do utilizador não esteja na lista  */
+                        isValidNewOption={(inputValue, selectValue, selectOptions, accessors) => {
+                            if (inputValue.length > 2) {
+                                if (selectValue.length === 0) {
+                                    if (selectOptions.length === 0) {
+                                        return true
+                                    }
+                                }
+                            }
+                            return false
+                        }}
+
+                        id='inputRole'
+                        className='react-select-form'
+                        styles={colourStyles}
+                        placeholder={'Pesquisar por Concelho | Agrupamento | Escola'}
+                    />
+                    <div className="error">
+
+                    </div>
+
+
+                </section>
+                {dados.role === 1 &&
+                    <section className="selectFormulario">
+                        <label>Grupo Disciplinar</label>
+                        <Select
+                            options={courses}
+                            className='react-select-form'
+                            styles={colourStyles}
+                            placeholder={'Selecione o seu Grupo Disciplinar'}
+                            isClearable={true}
+                            isSearchable={false}
+                            onChange={(e) => handleChangeCourse(e)}
+                        >
+
+                        </Select>
+
                     </section>
-                    {dados.role === "1" &&
-                        <section className="selectFormulario">
-                            <label>Disciplina</label>
-                            <div>
-                                <img src={icon_dropdown} alt="icone dropdown" />
-
-                                <Field as="select" name="course" required id='inputDisciplina' onInput={validar}>
-                                    <option value="" disabled hidden selected>Selecionar Disciplina</option>
-                                    <option value="mat">Matemática</option>
-                                    <option value="fq">Física e Química</option>
-                                    <option value="ing">Inglês</option>
-                                    <option value="pt">Português</option>
-
-                                </Field>
-                            </div>
-                            <div className="error">
-                                <ErrorMessage name="course" component="p" />
-                            </div>
-                        </section>
-                    }
+                }
 
 
 
-                    <section className="botao">
-                        {validadeFormulario4 ? <button type="submit" id='nextStep4'>Criar Conta</button> : <button type="submit" id='nextStep4' disabled>Criar Conta</button>}
+                <section className="botao">
+                    {validadeFormulario4 ? <button type="submit" id='nextStep4' onClick={onSubmit}>Criar Conta</button> : <button id='nextStep4' disabled>Criar Conta</button>}
 
 
-                    </section>
-                </div>
-            </Form>
-        </Formik>
+                </section>
+            </div>
+        </form>
+
 
 
     );

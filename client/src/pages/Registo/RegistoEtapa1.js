@@ -21,7 +21,7 @@ import { verifyEmailExists } from '../../API';
 const Yup = require('yup')
 require('yup-password')(Yup) // extend yup
 
-function RegistoEtapa1({ validadeEmail, setValidadeEmail, validadeFormulario1, setvalidadeFormulario1, setEtapa, etapa, dados, setDados }) {
+function RegistoEtapa1({ validadeEmail, setValidadeEmail, validadeFormulario1, setvalidadeFormulario1, dados, setDados }) {
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -49,7 +49,7 @@ function RegistoEtapa1({ validadeEmail, setValidadeEmail, validadeFormulario1, s
     const camposValidador = Yup.object().shape({
 
         email: Yup.string().email("O conteúdo que introduziu não é um email").required("Este campo é obrigatório"),
-        password: Yup.string().required("Este campo é obrigatório").min(6, 'A password tem que ter um mínimo de 6 caracteres').max(50, 'A password não pode exceder 50 caracteres').minNumbers(1, 'A password tem que conter números').minUppercase(1, 'A password tem que conter letras maiúsculas'),
+        password: Yup.string().required("Este campo é obrigatório").min(8, 'A password tem que ter um mínimo de 8 caracteres').max(50, 'A password não pode exceder 50 caracteres').minNumbers(1, 'A password tem que conter números').minUppercase(1, 'A password tem que conter letras maiúsculas'),
         password_confirm: Yup.string().oneOf([Yup.ref('password'), null], 'As passwords não são iguais'),
 
     })
@@ -138,7 +138,8 @@ function RegistoEtapa1({ validadeEmail, setValidadeEmail, validadeFormulario1, s
                 password_confirm: data.password_confirm,
             })
             //Passar à próxima etapa
-            setEtapa(2)
+            history.push('/registo/2')
+
         } else {
             //Dar feedback que o email já está em uso
         }
