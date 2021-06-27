@@ -2,7 +2,7 @@
   display: grid;
   grid-template-rows: auto 1fr 3rem;
   grid-template-areas: "topNav" "main" "footer";
-  grid-row-gap: 1rem;
+  overflow: auto;
   height: 100vh;
 
   #topNav {
@@ -11,6 +11,7 @@
     position: sticky;
     top: 0;
     background-color: white;
+    padding-bottom: 1rem;
   }
 
   #main {
@@ -25,7 +26,6 @@
     display: grid;
     grid-template-columns: 1fr 0.2fr 0.2fr 0.2fr;
     align-self: center;
-    position: sticky;
     top: 0;
     z-index: 10;
     padding: 1rem;
