@@ -12,6 +12,7 @@ import Banco from "./pages/Banco";
 import Favoritos from "./pages/Favoritos";
 import Perfil from "./pages/Perfil";
 import Sessao from "./pages/Sessao";
+import CriarSessao from "./pages/CriarSessao/CriarSessao";
 
 import { useContext } from 'react'
 
@@ -65,6 +66,9 @@ function App() {
         </Route>
         <Route path="/sessao">
           <Sessao />
+        </Route>
+        <Route path="/criarsessao">
+          <CriarSessao />
         </Route>
 
       </Switch>
