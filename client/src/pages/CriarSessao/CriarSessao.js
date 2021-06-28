@@ -3,6 +3,7 @@ import CriarSessao1 from "./CriarSessao1";
 import CriarSessao2 from "./CriarSessao2";
 import CriarSessao3 from "./CriarSessao3";
 import CriarSessao4 from "./CriarSessao4";
+import CriarSessao5 from "./CriarSessao5";
 
 import { Route, Switch } from 'react-router-dom'
 
@@ -15,6 +16,7 @@ function CriarSessao() {
                 <Route path='/criarsessao/2'>{<CriarSessao2 />}</Route>
                 <Route path='/criarsessao/3'>{<CriarSessao3 />}</Route>
                 <Route path='/criarsessao/4'>{<CriarSessao4 />}</Route>
+                <Route path='/criarsessao/5'>{<CriarSessao5 />}</Route>
 
             </Switch>
         </>

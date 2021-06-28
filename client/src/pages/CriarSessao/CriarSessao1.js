@@ -25,10 +25,10 @@ function CriarSessao1() {
 
                 <p id="texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
 
-                <div id="formulario">
-                    <label id="tituloFormulario">Nome da sessão</label>
+                <div className="formulario">
+                    <label className="tituloFormulario">Nome da sessão</label>
 
-                    <input type="text" id="inputTexto" placeholder="ex: Escape Room"></input>
+                    <input type="text" className="inputTexto" placeholder="ex: Escape Room"></input>
                 </div>
 
                 <div id="divBotao">
