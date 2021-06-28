@@ -1,6 +1,8 @@
 import React from 'react'
 import setaAtras from "../../img/setaAtras.png";
-import criarSessao1 from "../../img/criarSessoes/criarSessao1.svg";
+import criarSessao2 from "../../img/criarSessoes/criarSessao2.svg";
+
+import { Link } from 'react-router-dom';
 
 
 
@@ -14,19 +16,28 @@ function CriarSessao1() {
                     <img src={setaAtras} alt="seta atras" />
                 </div>
 
-                <img src={criarSessao1} alt="registo segunda imagem" />
+                <img src={criarSessao2} alt="criar sessao primeira imagem" />
 
             </header>
 
             <section id="corpo">
-                <label id="titulo">Associar Equipa</label>
+                <label id="titulo">Criar uma nova sessão</label>
 
-                <p id="texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p id="texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+
+                <div id="formulario">
+                    <label id="tituloFormulario">Nome da sessão</label>
+
+                    <input type="text" id="inputTexto" placeholder="ex: Escape Room"></input>
+                </div>
 
                 <div id="divBotao">
                     <div id="botao">
-                        <p id="textoBotao">Associar equipa</p>
+                        <p id="textoBotao">Próximo passo</p>
                     </div>
+                </div>
+                <div id="linkFooter">
+                    <Link to=''><span><u> Atribuia-me um nome aleatório.<br></br>Pode alterar o nome em qualquer altura</u></span></Link>
                 </div>
             </section>
 

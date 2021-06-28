@@ -54,5 +54,43 @@
         }
       }
     }
+
+    #formulario {
+      display: grid;
+      grid-gap: 2rem;
+
+      #tituloFormulario {
+        font-size: $font-size-s;
+        font-weight: $font-weight-normal;
+        color: $text-main-color;
+      }
+
+      #inputTexto {
+        border: none;
+        border-radius: 4px;
+        height: 40px;
+        padding: 0 1rem 0 1rem;
+        background-color: $input-color-lightblue;
+        width: 100%;
+      }
+      #inputTexto::placeholder {
+        color: lightgray;
+      }
+      #inputTexto:focus {
+        outline: 0;
+      }
+    }
+    #linkFooter {
+      display: grid;
+      align-items: center;
+      text-align: center;
+      margin-top: 0;
+      a {
+        text-decoration: none;
+        font-size: $font-size-xs;
+        font-weight: $font-weight-bolder;
+        color: $text-main-color;
+      }
+    }
   }
 }
