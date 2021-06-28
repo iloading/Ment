@@ -84,4 +84,32 @@
       padding-left: 1rem;
     }
   }
+
+  .conteudoMain {
+    display: grid;
+    grid-template-rows: auto 1fr;
+
+    .conteudoMid {
+      padding: 1rem;
+
+      .cardDescricao {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        padding: 1rem;
+
+        .topInfo {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+
+          .imgSessao {
+            justify-self: end;
+          }
+        }
+      }
+    }
+
+    .conteudoComents {
+      padding: 1rem;
+    }
+  }
 }
