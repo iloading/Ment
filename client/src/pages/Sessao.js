@@ -13,13 +13,7 @@ import SessionNav from "./components/SessionNav"
 function Sessao() {
     return (
         <article className="sessao">
-
             <SessionNav />
-
-
-
-
-
             <section id="main" className="conteudoMain">
                 <div className="conteudoMid">
                     <label>Descrição</label>
@@ -45,11 +39,7 @@ function Sessao() {
                     <h1>ola</h1>
                 </div>
             </section>
-
-
             <Footer />
-
-
         </article>
     );
 }
