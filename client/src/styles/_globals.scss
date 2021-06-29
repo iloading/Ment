@@ -14,5 +14,55 @@ h2 {
   font-size: 1.7rem;
 }
 
-* {
+#nav {
+  grid-area: nav;
+}
+
+#menu_principal {
+  grid-area: menu;
+}
+#menu_principal__Desktop {
+  display: none;
+}
+#main {
+  grid-area: main;
+}
+
+.layout {
+  display: grid;
+  grid-template-rows: 3rem 1fr 3rem;
+  grid-template-areas: "nav" "main" "menu";
+  grid-row-gap: 1rem;
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1400px) {
+  .layout {
+    grid-template-columns: 1.5fr 4fr;
+  }
+}
+
+@media only screen and (min-width: 1401px) {
+  .layout {
+    grid-template-columns: 1fr 4fr;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  #nav {
+    display: none;
+  }
+
+  .layout {
+    display: grid;
+    grid-template-rows: 100vh;
+    grid-template-areas: "menu main";
+    grid-row-gap: 0;
+    #menu_principal {
+      display: none;
+    }
+    #menu_principal__Desktop {
+      display: inherit;
+      grid-area: menu;
+    }
+  }
 }

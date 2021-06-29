@@ -2,13 +2,13 @@
 import CarouselDashboard from "./components/CarouselDashboard";
 import Footer from "./components/Footer"
 import Navbar from "./components/Navbar"
+import SessoesDestaque from "./components/sessoesDestaque";
 
 import iconEquipa from "../img/icons/icon_equipa.svg";
 
 import iconbanco from "../img/icons/icon_banco.svg";
 
-import medalha from "../img/medalha.png";
-import iconSessoes from "../img/icons/icon_sessoes.png";
+
 import iconDefinicoes from "../img/icons/icon_settings.svg";
 import minhasSessoes_desktop from "../img/minhasSessoes/minhasSessoes_desktop.png";
 
@@ -22,7 +22,7 @@ import minhasSessoes_desktop from "../img/minhasSessoes/minhasSessoes_desktop.pn
 function Dashboard() {
 
     return (
-        <article className="dashboard">
+        <article className="dashboard layout">
 
             <Navbar />
 
@@ -96,41 +96,7 @@ function Dashboard() {
                     <label className="tituloMain">Sessões em destaque</label>
                 </div>
 
-                <div className="cardSessoes">
-
-                    <div>
-                        <img src={iconSessoes} alt="" />
-                        <div className="textoCards">
-                            <label>Os 3 porquinhos </label>
-                            <p>Equipa Avila Crew</p>
-                            <span>8º ano | Past Tense</span>
-                        </div>
-
-                        <img src={medalha} alt="" />
-                    </div>
-                    <div>
-                        <img src={iconSessoes} alt="" />
-                        <div className="textoCards">
-                            <label>Os 3 porquinhos </label>
-                            <p>Equipa Avila Crew</p>
-                            <span>8º ano | Past Tense</span>
-                        </div>
-
-                        <img src={medalha} alt="" />
-                    </div>
-
-                    <div>
-                        <img src={iconSessoes} alt="" />
-                        <div className="textoCards">
-                            <label>Os 3 porquinhos </label>
-                            <p>Equipa Avila Crew</p>
-                            <span>8º ano | Past Tense</span>
-                        </div>
-
-                        <img src={medalha} alt="" />
-                    </div>
-
-                </div>
+                <SessoesDestaque />
 
 
             </section>

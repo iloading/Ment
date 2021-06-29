@@ -1,5 +1,6 @@
 import Footer from "./components/Footer"
 import Navbar from "./components/Navbar"
+import SessoesDestaque from "./components/sessoesDestaque";
 
 import iconBanco from "../img/icons/icon_banco.svg";
 
@@ -13,7 +14,7 @@ import linhaVertical from "../img/linhaVertical.svg";
 
 function Banco() {
     return (
-        <article className="banco">
+        <article className="banco layout">
 
             <Navbar />
 
@@ -39,70 +40,14 @@ function Banco() {
 
                 </div>
 
-                <div className="cardSection">
-
-                    <div className="cardSessoes">
-
-                        <div>
-                            <img src={iconSessoes} alt="" />
-                            <div className="textoCards">
-                                <label>Os 3 porquinhos </label>
-                                <p>Equipa Avila Crew</p>
-                                <span>8º ano | Past Tense</span>
-                            </div>
-
-                            <img src={setaDireita} alt="" />
-                        </div>
-
-                    </div>
-
-
-
-
-                    <div className="cardSessoes">
-
-                        <div>
-                            <img src={iconSessoes} alt="" />
-                            <div className="textoCards">
-                                <label>Os 3 porquinhos </label>
-                                <p>Equipa Avila Crew</p>
-                                <span>8º ano | Past Tense</span>
-                            </div>
-
-                            <img src={setaDireita} alt="" />
-                        </div>
-
-                    </div>
-                    <div className="cardSessoes">
-
-                        <div>
-                            <img src={iconSessoes} alt="" />
-                            <div className="textoCards">
-                                <label>Os 3 porquinhos </label>
-                                <p>Equipa Avila Crew</p>
-                                <span>8º ano | Past Tense</span>
-                            </div>
-
-                            <img src={setaDireita} alt="" />
-                        </div>
-
-                    </div>
-                    <div className="cardSessoes">
-
-                        <div>
-                            <img src={iconSessoes} alt="" />
-                            <div className="textoCards">
-                                <label>Os 3 porquinhos </label>
-                                <p>Equipa Avila Crew</p>
-                                <span>8º ano | Past Tense</span>
-                            </div>
-
-                            <img src={setaDireita} alt="" />
-                        </div>
-
-                    </div>
-
+                <div>
+                    <h1>TODAS AS SESSOES</h1>
                 </div>
+
+
+                <SessoesDestaque />
+
+
 
             </section>
 
