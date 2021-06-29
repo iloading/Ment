@@ -27,7 +27,6 @@
       grid-template-columns: 1.5rem auto;
       grid-template-areas: "iconTitulo tituloMain";
       align-items: center;
-      
 
       label {
         font-size: $font-size-m;
@@ -70,7 +69,7 @@
       }
 
       span {
-        color: $text-fifth-color;
+        color: $text-type5-color;
         font-size: $font-size-s;
         font-weight: $font-weight-normal;
       }
@@ -86,7 +85,7 @@
         justify-self: center;
 
         label {
-          color:$text-main-color;
+          color: $text-main-color;
           font-weight: $font-weight-normal;
           font-weight: 300;
         }

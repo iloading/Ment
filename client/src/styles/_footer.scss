@@ -1,45 +1,125 @@
+.menu_principal {
+  background-color: white;
+  display: grid;
+  grid-template-columns: 0.1fr 1fr 1fr 1fr 1fr 0.1fr;
+  grid-template-areas: ". banco home criar equipa .";
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
 
+  #banco {
+    justify-self: center;
+    align-self: center;
+    grid-area: banco;
+  }
+  #home {
+    justify-self: center;
+    align-self: center;
+    grid-area: home;
+  }
+  #criar {
+    justify-self: center;
+    align-self: center;
+    grid-area: criar;
+  }
+  #equipa {
+    justify-self: center;
+    align-self: center;
+    grid-area: equipa;
+  }
 
-    footer {
-        background-color: white;
-     display: grid;
-     grid-template-columns: 0.1fr 1fr 1fr 1fr 1fr 0.1fr;
-     grid-template-areas: ". banco home criar equipa .";
-     position: sticky;
-     bottom: 0;
-     z-index: 10;
-        
-        #banco {
-            justify-self: center;
-            align-self: center;
-            grid-area: banco;
-        }
-        #home {
-            justify-self: center;
-            align-self: center;
-            grid-area: home;
-        }
-        #criar {
-            justify-self: center;
-            align-self: center;
-            grid-area: criar;
-        }
-        #equipa {
-            justify-self: center;
-            align-self: center;
-            grid-area: equipa;
-        }
-    
-        .iconFooter {
-            max-width: 10%;
-            min-width: 28px;
-        }
-        .iconFooterEquipa {
-            max-width: 10%;
-            min-width: 33px;
-        }
-    
-    
+  .iconFooter {
+    label {
+      display: none;
+    }
+    img {
+      max-width: 10%;
+      min-width: 28px;
+    }
+  }
+  #equipa {
+    img {
+      min-width: 33px;
+    }
+  }
+
+  .asideLogo {
+    display: none;
+  }
+  .asidePerfil {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .menu_principal {
+    background-color: white;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas: "logo" "divBotoesMenu" "asidePerfil";
+
+    #logo {
+      grid-area: logo;
+    }
+    #divBotoesMenu {
+      grid-area: divBotoesMenu;
+      display: grid;
+      grid-template-columns: 0.1fr 1fr;
+      grid-template-areas: ". botoesMenu";
+      align-content: center;
+    }
+    #asidePerfil {
+      grid-area: asidePerfil;
     }
 
-    
+    #botoesMenu {
+      grid-area: botoesMenu;
+      display: grid;
+      grid-row-gap: 1rem;
+    }
+
+    #banco {
+      justify-self: unset;
+      grid-area: unset;
+    }
+    #home {
+      justify-self: unset;
+      grid-area: unset;
+    }
+    #criar {
+      justify-self: unset;
+      grid-area: unset;
+    }
+    #equipa {
+      justify-self: unset;
+      grid-area: unset;
+    }
+    .iconFooter {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      grid-column-gap: 1rem;
+      label {
+        display: block;
+        align-self: center;
+      }
+      img {
+        max-width: 10%;
+        min-width: 28px;
+      }
+    }
+
+    .asideLogo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        width: 30%;
+      }
+    }
+    .asidePerfil {
+      display: block;
+    }
+  }
+}

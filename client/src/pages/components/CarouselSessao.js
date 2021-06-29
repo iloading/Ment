@@ -16,7 +16,7 @@ function CarouselSessao() {
 
 
   return (
-    <div className="carousel">
+    <div className="carousel" id="carouselSessao">
 
       <Slider {...settings}>
         <div className="cards">

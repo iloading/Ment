@@ -1,13 +1,14 @@
 .homepage {
   display: grid;
   grid-template-rows: 3rem 1fr auto auto auto;
-  grid-gap: 3rem;
+  grid-gap: 4rem;
 
   nav {
     display: grid;
     grid-template-columns: 0.1fr 0.5fr 1fr 0.5fr 0.1fr;
     grid-template-areas: ". logo . login .";
     grid-row-gap: 5rem;
+    margin: 0;
 
     #logo {
       justify-self: left;
@@ -49,13 +50,22 @@
     }
     #texto1 {
       text-align: center;
-      color: $text-second-color;
+<<<<<<< HEAD
+      color: $text-type2-color;
       font-weight: $font-weight-bold;
+=======
+      color: $text-fourth-color;
+      font-weight: $font-weight-boldest;
+      margin-top: 3rem;
+>>>>>>> CriarSessão
     }
     #texto2 {
       text-align: left;
-      color: $text-second-color;
+      color: $text-type2-color;
       font-weight: $font-weight-bold;
+    }
+    .imagem1Homepage {
+      width: 100%;
     }
     img {
       justify-self: center;
@@ -118,11 +128,77 @@
     }
   }
   #comoFunciona {
-    grid-gap: 4rem;
+    grid-gap: 3rem;
+
+    #sectionComoFunciona {
+      display: grid;
+      grid-gap: 3.5rem;
+
+      #comoFuncionaTexto {
+        display: grid;
+        grid-template-columns: 0.8fr 0.4fr;
+        grid-template-areas: "texto imagem";
+
+        .textoCentroVertical {
+          align-self: center;
+        }
+
+        #textoComoFunciona {
+          grid-area: texto;
+          color: $text-main-color;
+        }
+
+        #textoComoFunciona2 {
+          grid-area: texto;
+          padding-top: 1.5rem;
+          color: $text-fourth-color;
+        }
+
+        #imagem {
+          grid-area: imagem;
+          justify-self: right;
+        }
+      }
+      #comoFuncionaTexto2 {
+        display: grid;
+        grid-template-columns: 0.4fr 0.8fr;
+        grid-template-areas: "imagem texto";
+
+        .textoCentroVertical {
+          align-self: center;
+        }
+
+        #textoComoFunciona {
+          grid-area: texto;
+          color: $text-main-color;
+          text-align: right;
+        }
+
+        #textoComoFunciona2 {
+          grid-area: texto;
+          padding-top: 1.5rem;
+          color: $text-fourth-color;
+          text-align: right;
+        }
+
+        #imagem {
+          grid-area: imagem;
+          justify-self: left;
+        }
+      }
+    }
   }
   #feedback {
     grid-gap: 3rem;
     justify-items: center;
+  }
+
+  .gapTexto {
+    margin-top: 2rem;
+  }
+
+  .gapBotao {
+    margin-top: 7rem;
   }
 
   #carousel {

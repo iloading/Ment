@@ -1,16 +1,18 @@
 .dashboard {
   display: grid;
   grid-template-rows: 3rem 1fr 3rem;
-  grid-template-areas: "nav" "main" "footer";
+  grid-template-areas: "nav" "main" "menu";
   grid-row-gap: 1rem;
-  height: 100vh;
 
   #nav {
     grid-area: nav;
   }
 
-  #footer {
-    grid-area: footer;
+  #menu_principal {
+    grid-area: menu;
+  }
+  #menu_principal__Desktop {
+    display: none;
   }
   #main {
     grid-area: main;
@@ -20,6 +22,13 @@
     display: grid;
     grid-row-gap: 1rem;
     margin: 1rem;
+
+    #bemvindo {
+      display: none;
+    }
+    #ajuda {
+      display: none;
+    }
 
     .titulo {
       display: grid;
@@ -93,16 +102,86 @@
       }
 
       p {
-        color: $text-fourth-color;
+        color: $text-type4-color;
         font-size: $font-size-xs;
         font-weight: $font-weight-boldest;
       }
 
       span {
-        color: $text-fifth-color;
+        color: $text-type5-color;
         font-size: $font-size-xs;
         font-weight: $font-weight-boldest;
       }
+    }
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .dashboard {
+    display: grid;
+    grid-template-columns: 0.2fr 1fr;
+    grid-template-rows: 100vh;
+    grid-template-areas: "menu main";
+    grid-row-gap: 0;
+
+    #main {
+      grid-area: main;
+    }
+    #nav {
+      display: none;
+    }
+
+    .conteudoMain {
+      display: grid;
+      grid-template-rows: 1fr 1fr 1fr 1fr;
+
+      #bemvindo {
+        display: grid;
+        grid-template-columns: 0.8fr 0.2fr;
+        background-color: rgb(240, 98, 98);
+      }
+      .icons {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+      #ajuda {
+        display: block;
+        background-color: rgb(111, 240, 111);
+      }
+
+      .titulo {
+        display: block;
+        align-self: center;
+        img {
+          display: none;
+        }
+        label {
+          margin: 0;
+        }
+      }
+
+      .carouselContent {
+        background-color: rgb(109, 109, 245);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+      .carouselDashboard {
+        width: 30vw;
+      }
+    }
+
+    .cardSessoes {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-column-gap: 1rem;
+    }
+
+    #menu_principal__Desktop {
+      display: inherit;
+      grid-area: menu;
+    }
+    #menu_principal {
+      display: none;
     }
   }
 }

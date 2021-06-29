@@ -7,12 +7,36 @@ import iconEquipa from "../../img/icons/icon_equipa.svg";
 function Footer() {
 
     return (
-        <footer id="footer">
-            <img src={iconBanco} alt="" id="banco" className="iconFooter" />
-            <img src={iconHome} alt="" id="home" className="iconFooter" />
-            <img src={iconCriar} alt="" id="criar" className="iconFooter" />
-            <img src={iconEquipa} alt="" id="equipa" className="iconFooterEquipa" />
-        </footer>
+        <>
+            <div className="iconFooter" id="banco">
+                <img src={iconBanco} alt="" />
+                <label >Banco</label>
+            </div>
+
+            <div id="home" className="iconFooter" >
+                <img src={iconHome} alt="" />
+                <label>Início</label>
+            </div>
+
+            <div id="criar" className="iconFooter" >
+                <img src={iconCriar} alt="" />
+                <label>Nova Sessão</label>
+            </div>
+            <div id="equipa" className=" iconFooter" >
+                <img src={iconEquipa} alt="" />
+                <label>As Minhas Equipas</label>
+            </div>
+
+
+
+
+
+
+
+
+
+
+        </>
 
     );
 
