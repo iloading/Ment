@@ -3,6 +3,8 @@ import iconCriar from "../../img/icons/icon_criar.svg";
 import iconBanco from "../../img/icons/icon_banco.svg";
 import iconEquipa from "../../img/icons/icon_equipa.svg";
 import navLogo from "../../img/logo.svg";
+import imgAvatar from "../../img/imgPerfil.svg";
+import iconTerminar from "../../img/icons/icon_terminarSessao.svg";
 
 export function FooterCore() {
     return (
@@ -54,7 +56,17 @@ function Footer() {
 
 
                 <div className="asidePerfil" id="asidePerfil">
-                    <h1>PERFIL</h1>
+                    <div className="infoPerfil">
+                        <div id="avatar">
+                            <img src={imgAvatar} className="imgAvatar" alt="" />
+                        </div>
+                        <div id="info">
+                            <h3>Joana Silva</h3>
+                        </div>
+                        <div id="sair">
+                            <img src={iconTerminar} alt="" />
+                        </div>
+                    </div>
                 </div>
             </aside>
             <footer className="menu_principal" id="menu_principal"> <FooterCore /></footer>
