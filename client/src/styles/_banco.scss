@@ -68,18 +68,6 @@
 
     .sessoesDestaque {
       display: none;
-      div {
-        background-color: $button-type3-background;
-        margin: 0 0 1rem 0;
-        display: grid;
-        grid-template-columns: auto 1fr auto;
-        align-items: center;
-        border-radius: 5px;
-
-        img {
-          margin: 1rem;
-        }
-      }
 
       .textoCards {
         display: grid;
@@ -106,21 +94,48 @@
         }
       }
     }
+
+    .narrativa {
+      .likes_coments {
+        display: none;
+      }
+    }
   }
 }
 
 @media only screen and (min-width: 1024px) {
   .banco {
     .conteudoMain {
-      .sessoesDestaque {
-        display: grid;
-      }
+      display: grid;
+      grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
       .searchBar {
         display: none;
       }
 
       .titulo {
         display: none;
+      }
+      .destaquesBanco {
+        .narrativa {
+          display: grid;
+          grid-template-columns: auto 1fr auto;
+
+          .likes_coments {
+            display: none;
+          }
+        }
+      }
+      .sessoesDestaque {
+        display: block;
+      }
+
+      .narrativa {
+        display: grid;
+        grid-template-columns: auto 1fr 1fr auto;
+
+        .likes_coments {
+          display: block;
+        }
       }
     }
   }

@@ -37,6 +37,44 @@ h2 {
   grid-row-gap: 1rem;
 }
 
+.narrativa {
+  background-color: $button-type3-background;
+  margin: 0 0 2rem 0;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  border-radius: 5px;
+
+  img {
+    margin: 1rem;
+  }
+
+  .textoCards {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    margin: 2rem 1rem;
+
+    label {
+      font-size: $font-size-s;
+      font-weight: $font-weight-more-bold;
+      color: $text-main-color;
+    }
+
+    p {
+      color: $text-type4-color;
+      font-size: $font-size-xs;
+      font-weight: $font-weight-boldest;
+    }
+
+    span {
+      color: $text-type5-color;
+      font-size: $font-size-xs;
+      font-weight: $font-weight-boldest;
+    }
+  }
+}
+
 @media only screen and (min-width: 1024px) and (max-width: 1400px) {
   .layout {
     grid-template-columns: 1.5fr 4fr;
