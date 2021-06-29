@@ -1,8 +1,5 @@
-
-
 import Footer from "./components/Footer"
 import Navbar from "./components/Navbar"
-
 
 import avatar from "../img/avatar/avatar_1.png";
 import favorito from "../img/icons/icon_favorito_background.svg";
@@ -10,15 +7,24 @@ import iconPerfil from "../img/icons/icon_perfil.svg";
 import iconSettings from "../img/icons/icon_settings.svg";
 import iconTerminar from "../img/icons/icon_terminarSessao.svg";
 
+import { useContext } from 'react'
+import { useHistory } from 'react-router-dom'
+import AuthContext from "../context/AuthContext";
 
-
-
-
+import { logout } from '../API'
 
 
 
 
 function Perfil() {
+    const { getLoggedIn } = useContext(AuthContext)
+    const history = useHistory();
+
+    const logOutButton = async () => {
+        await logout();
+        await getLoggedIn();
+        history.push('/login')
+    }
 
     return (
         <article className="perfil">
@@ -70,7 +76,7 @@ function Perfil() {
 
 
 
-                    <div className="botao">
+                    <div className="botao" onClick={logOutButton}>
                         <div id="img_esquerda">
                             <img src={iconTerminar} alt="" />
                         </div>

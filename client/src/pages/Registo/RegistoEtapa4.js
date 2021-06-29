@@ -11,11 +11,14 @@ import Select from 'react-select';
 /* import * as Yup from 'yup'; */
 
 import { useHistory } from 'react-router-dom';
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useContext } from 'react';
 //BD
 import { register, listaEscolas, listaGruposDisciplinares } from '../../API'
+import AuthContext from "../../context/AuthContext";
 
 function RegistoEtapa4({ dados, setDados, validadeFormulario4, setvalidadeFormulario4 }) {
+
+    const { getLoggedIn } = useContext(AuthContext)
     const history = useHistory();
     const [courses, setCourses] = useState([])
 
@@ -81,17 +84,16 @@ function RegistoEtapa4({ dados, setDados, validadeFormulario4, setvalidadeFormul
     }, [dados, setvalidadeFormulario4])
 
     //Ao clicar no ultimo botão, efetuar o registo na BD
-    const onSubmit = (e) => {
-        e.preventDefault();
-        console.log(dados);
-        register(dados).then((res) => {
-            console.log((res.data.success || res.data.error));
-            if (res.data.success) {
-                history.push('/dashboard')
-            }
+    const onSubmit = async (e) => {
+        try {
+            e.preventDefault();
+            const resposta = await register(dados);
+            console.log(resposta);
+            getLoggedIn();
+        } catch (error) {
 
+        }
 
-        })
 
     }
 
