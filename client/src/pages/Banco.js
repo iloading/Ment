@@ -12,6 +12,7 @@ import iconFiltro from "../img/icons/icon_filtro.svg";
 import iconPesquisa from "../img/icons/icon_pesquisa.svg";
 import linhaVertical from "../img/linhaVertical.svg";
 import medalha from "../img/medalha.png";
+import iconDefinicoes from "../img/icons/icon_settings.svg";
 
 
 function Banco() {
@@ -22,6 +23,20 @@ function Banco() {
 
 
             <section id="main" className="conteudoMain">
+
+                {/*DESKTOP*/}
+                <div id="bemvindo">
+
+                    <div className="bemvindo_titulos">
+
+                        <h1>Banco</h1>
+                    </div>
+                    <div className="icons">
+                        <img src={iconDefinicoes} alt="" />
+                    </div>
+
+                </div>
+                {/*DESKTOP*/}
 
                 <div className="searchBar">
                     <input placeholder="Pesquisar..." name="search" id="inputEmail" type="text" />
@@ -43,25 +58,37 @@ function Banco() {
                 </div>
 
 
-                <h1>DESTAQUE</h1>
 
-                <span className="destaquesBanco">
-                    <SessoesDestaque />
-                </span>
+                <div>
+                    <label>NARRATIVAS</label>
+
+                    <Narrativa />
+                    <Narrativa />
+                    <Narrativa />
+                    <Narrativa />
+                    <Narrativa />
+                    <Narrativa />
+                    <Narrativa />
+                    <Narrativa />
+                    <Narrativa />
+
+
+                </div>
 
 
 
-                <h1>NARRATIVAS</h1>
+                <div>
 
-                <Narrativa />
-                <Narrativa />
-                <Narrativa />
-                <Narrativa />
-                <Narrativa />
-                <Narrativa />
-                <Narrativa />
-                <Narrativa />
-                <Narrativa />
+                    <div>
+                        <h1>OLA</h1>
+                    </div>
+
+                    <label>DESTAQUE</label>
+
+                    <span className="destaquesBanco">
+                        <SessoesDestaque />
+                    </span>
+                </div>
 
 
 

@@ -4,9 +4,6 @@
     grid-row-gap: 1rem;
     margin: 1rem;
 
-    #bemvindo {
-      display: none;
-    }
     #ajuda {
       display: none;
     }
@@ -123,30 +120,6 @@
       grid-template-rows: 0.5fr 0.3fr 1.5fr 0.3fr 1fr;
       margin-right: 4rem;
 
-      #bemvindo {
-        display: grid;
-        grid-template-columns: 0.8fr 0.2fr;
-        align-self: center;
-
-        .bemvindo_titulos {
-          h3 {
-            font-size: 2.1rem;
-            font-weight: $font-weight-more-bold;
-            color: $text-main-color;
-          }
-          h1 {
-            font-size: 3.8rem;
-            color: $text-main-color;
-            font-weight: $font-weight-more-bold;
-          }
-        }
-      }
-      .icons {
-        display: grid;
-        grid-template-columns: 1fr;
-        align-self: center;
-        justify-self: right;
-      }
       #ajuda {
         display: block;
         background-color: rgb(111, 240, 111);
