@@ -9,7 +9,10 @@ import iconbanco from "../img/icons/icon_banco.svg";
 
 import medalha from "../img/medalha.png";
 import iconSessoes from "../img/icons/icon_sessoes.png";
-import navLogo from "../img/logo.svg";
+import iconDefinicoes from "../img/icons/icon_settings.svg";
+import minhasSessoes_desktop from "../img/minhasSessoes/minhasSessoes_desktop.png";
+
+
 
 
 
@@ -28,38 +31,66 @@ function Dashboard() {
             <section id="main" className="conteudoMain">
 
                 {/*DESKTOP*/}
-                <div id="bemvindo" className="bemvindo">
+                <div id="bemvindo">
 
-                    <div>
+                    <div className="bemvindo_titulos">
                         <h3>Bom dia,</h3>
                         <h1>Professora Joana</h1>
                     </div>
                     <div className="icons">
-                        <h1>icon</h1>
-                        <h1>icon</h1>
+                        <img src={iconDefinicoes} alt="" />
+
                     </div>
 
                 </div>
                 {/*DESKTOP*/}
 
-                <div className="titulo">
+                <div className="titulo_minhasSessoes">
 
                     <img src={iconEquipa} alt="" className="iconTitulo" />
 
-                    <label className="tituloMain">As minhas equipas</label>
+                    <label className="tituloMain" id="labelMinhasequipas">As Minhas Equipas</label>
+
+                    <label className="verMais" id="labelVermais">Ver Mais</label>
+
+                    <label className="tituloMain" id="labelAjuda">Precisa de ajuda?</label>
 
                 </div>
 
                 <div className="carouselContent">
-                    <CarouselDashboard />
+                    <span className="carouselDash__mobile">
+                        <CarouselDashboard ecra='mobile' />
+                    </span>
+                    {/*DESKTOP*/}
+
+                    <div className="minhasEquipasCard">
+                        <img src={minhasSessoes_desktop} alt="" className="iconTitulo" />
+                        <div className="cardInfo">
+                            <label id="labelAno">7ºA</label>
+                            <p id="disciplina">Biologia</p>
+                            <span id="escola">Escola Secundária Carlos Amarante</span>
+                        </div>
+                    </div>
+                    <div className="minhasEquipasCard">
+                        <img src={minhasSessoes_desktop} alt="" className="iconTitulo" />
+                        <div className="cardInfo">
+                            <label id="labelAno">7ºA</label>
+                            <p id="disciplina">Biologia</p>
+                            <span id="escola">Escola Secundária Carlos Amarante</span>
+                        </div>
+
+                    </div>
 
                     {/*DESKTOP*/}
-                    <div id="ajuda" className="desktop">
+
+
+                    {/*DESKTOP*/}
+                    <div id="ajuda">
                         <h1>ola</h1>
                     </div>
                     {/*DESKTOP*/}
                 </div>
-                <div className="titulo">
+                <div className="titulo_sessoesDestaque">
                     <img src={iconbanco} alt="" className="imgBanco iconTitulo" />
 
                     <label className="tituloMain">Sessões em destaque</label>
@@ -106,23 +137,8 @@ function Dashboard() {
 
 
 
-            <aside className="menu_principal" id="menu_principal__Desktop">
-                <div className="asideLogo" id="logo">
-                    <img src={navLogo} alt="" />
-                </div>
-                <div id="divBotoesMenu">
-                    <div id="botoesMenu">
-                        <Footer />
-                    </div>
-                </div>
 
-
-
-                <div className="asidePerfil" id="asidePerfil">
-                    <h1>PERFIL</h1>
-                </div>
-            </aside>
-            <footer className="menu_principal" id="menu_principal"> <Footer /></footer>
+            <Footer />
 
 
         </article>

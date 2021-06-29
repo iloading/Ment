@@ -55,7 +55,7 @@
   .menu_principal {
     background-color: white;
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 3fr 1fr;
     grid-template-columns: 1fr;
     grid-template-areas: "logo" "divBotoesMenu" "asidePerfil";
 
@@ -65,7 +65,7 @@
     #divBotoesMenu {
       grid-area: divBotoesMenu;
       display: grid;
-      grid-template-columns: 0.1fr 1fr;
+      grid-template-columns: 1fr 4fr;
       grid-template-areas: ". botoesMenu";
       align-content: center;
     }
@@ -76,24 +76,25 @@
     #botoesMenu {
       grid-area: botoesMenu;
       display: grid;
-      grid-row-gap: 1rem;
+      grid-row-gap: 2rem;
+      grid-template-areas: "inicio" "banco" "criar" "equipa";
     }
 
     #banco {
       justify-self: unset;
-      grid-area: unset;
+      grid-area: banco;
     }
     #home {
       justify-self: unset;
-      grid-area: unset;
+      grid-area: inicio;
     }
     #criar {
       justify-self: unset;
-      grid-area: unset;
+      grid-area: criar;
     }
     #equipa {
       justify-self: unset;
-      grid-area: unset;
+      grid-area: equipa;
     }
     .iconFooter {
       display: grid;
@@ -102,6 +103,8 @@
       label {
         display: block;
         align-self: center;
+        color: #042454;
+        font-weight: 600;
       }
       img {
         max-width: 10%;
