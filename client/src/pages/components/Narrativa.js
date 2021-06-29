@@ -18,7 +18,7 @@ function Narrativa({ destaque }) {
 
                 {/*DESKTOP*/}
                 <div className="likes_coments">
-                    <h1>LIKES</h1>
+                    <p>LIKES</p>
                 </div>
                 {/*DESKTOP*/}
 

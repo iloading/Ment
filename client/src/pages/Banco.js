@@ -28,7 +28,7 @@ function Banco() {
                 <div id="bemvindo">
 
                     <div className="bemvindo_titulos">
-
+                        <h3>Bom dia,</h3>
                         <h1>Banco</h1>
                     </div>
                     <div className="icons">
@@ -58,37 +58,46 @@ function Banco() {
                 </div>
 
 
-
-                <div>
-                    <label>NARRATIVAS</label>
-
-                    <Narrativa />
-                    <Narrativa />
-                    <Narrativa />
-                    <Narrativa />
-                    <Narrativa />
-                    <Narrativa />
-                    <Narrativa />
-                    <Narrativa />
-                    <Narrativa />
-
-
-                </div>
-
-
-
-                <div>
-
+                <div className="listaNarrativas">
                     <div>
-                        <h1>OLA</h1>
+                        <label className="labelNarrativas">NARRATIVAS</label>
+
+                        <Narrativa />
+                        <Narrativa />
+                        <Narrativa />
+                        <Narrativa />
+                        <Narrativa />
+                        <Narrativa />
+                        <Narrativa />
+                        <Narrativa />
+                        <Narrativa />
+
+
                     </div>
 
-                    <label>DESTAQUE</label>
 
-                    <span className="destaquesBanco">
-                        <SessoesDestaque />
-                    </span>
+
+                    <div>
+
+                        <div className="AreaEncontrarSessao">
+                            <label>PESQUISA</label>
+                            <div>
+                                <input type="text" />
+                                <input type="text" />
+                            </div>
+
+                        </div>
+                        <div className="AreaSessoesDestaque">
+                            <label>DESTAQUE</label>
+
+                            <span className="destaquesBanco">
+                                <SessoesDestaque />
+                            </span>
+                        </div>
+
+                    </div>
                 </div>
+
 
 
 
