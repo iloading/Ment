@@ -1,27 +1,8 @@
 .dashboard {
-  display: grid;
-  grid-template-rows: 3rem 1fr 3rem;
-  grid-template-areas: "nav" "main" "menu";
-  grid-row-gap: 1rem;
-
-  #nav {
-    grid-area: nav;
-  }
-
-  #menu_principal {
-    grid-area: menu;
-  }
-  #menu_principal__Desktop {
-    display: none;
-  }
-  #main {
-    grid-area: main;
-  }
-
   .conteudoMain {
     display: grid;
     grid-row-gap: 1rem;
-    margin: 1rem;
+    padding: 1rem;
 
     #bemvindo {
       display: none;
@@ -30,11 +11,19 @@
       display: none;
     }
 
-    .titulo {
+    .titulo_minhasSessoes {
       display: grid;
       grid-template-columns: 1.5rem auto;
       grid-template-areas: "iconTitulo tituloMain";
       align-items: center;
+
+      #labelVermais {
+        display: none;
+      }
+
+      #labelAjuda {
+        display: none;
+      }
 
       label {
         font-size: $font-size-m;
@@ -57,15 +46,66 @@
         grid-area: tituloMain;
       }
     }
+
+    .titulo_sessoesDestaque {
+      display: grid;
+      grid-template-columns: 1.5rem auto;
+      grid-template-areas: "iconTitulo tituloMain";
+      align-items: center;
+
+      #labelVermais {
+        display: none;
+      }
+
+      #labelAjuda {
+        display: none;
+      }
+
+      label {
+        font-size: $font-size-m;
+        font-weight: $font-weight-boldest;
+        color: $text-main-color;
+        margin-left: 0.5rem;
+      }
+
+      img {
+        width: 100%;
+      }
+      .imgBanco {
+        width: 85%;
+      }
+
+      .iconTitulo {
+        grid-area: iconTitulo;
+      }
+      .tituloMain {
+        grid-area: tituloMain;
+      }
+    }
+
+    .narrativa {
+      .likes_coments {
+        display: none;
+      }
+    }
   }
 
   .carouselContent {
     display: grid;
-    justify-content: center;
+
     margin-bottom: 2rem;
 
+    .minhasEquipasCard {
+      display: none;
+    }
+    .carouselDash__mobile {
+      display: block;
+      overflow: hidden;
+      align-items: center;
+    }
+
     .carouselDashboard {
-      width: 90vw;
+      width: 100%;
       text-align: center;
 
       img {
@@ -74,114 +114,169 @@
       }
     }
   }
-
-  .cardSessoes {
-    div {
-      background-color: $button-type3-background;
-      margin: 0 0 2rem 0;
-      display: grid;
-      grid-template-columns: auto 1fr auto;
-      align-items: center;
-      border-radius: 5px;
-
-      img {
-        margin: 1rem;
-      }
-    }
-
-    .textoCards {
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-template-rows: 1fr 1fr 1fr;
-      margin: 2rem 1rem;
-
-      label {
-        font-size: $font-size-s;
-        font-weight: $font-weight-more-bold;
-        color: $text-main-color;
-      }
-
-      p {
-        color: $text-type4-color;
-        font-size: $font-size-xs;
-        font-weight: $font-weight-boldest;
-      }
-
-      span {
-        color: $text-type5-color;
-        font-size: $font-size-xs;
-        font-weight: $font-weight-boldest;
-      }
-    }
-  }
 }
 
 @media only screen and (min-width: 1024px) {
   .dashboard {
-    display: grid;
-    grid-template-columns: 0.2fr 1fr;
-    grid-template-rows: 100vh;
-    grid-template-areas: "menu main";
-    grid-row-gap: 0;
-
-    #main {
-      grid-area: main;
-    }
-    #nav {
-      display: none;
-    }
-
     .conteudoMain {
       display: grid;
-      grid-template-rows: 1fr 1fr 1fr 1fr;
+      grid-template-rows: 0.5fr 0.3fr 1.5fr 0.3fr 1fr;
+      padding-right: 4rem;
+      padding-top: 2rem;
 
       #bemvindo {
         display: grid;
         grid-template-columns: 0.8fr 0.2fr;
-        background-color: rgb(240, 98, 98);
+        align-self: center;
+
+        .bemvindo_titulos {
+          h3 {
+            font-size: 2.1rem;
+            font-weight: $font-weight-more-bold;
+            color: $text-main-color;
+          }
+          h1 {
+            font-size: 3.8rem;
+            color: $text-main-color;
+            font-weight: $font-weight-more-bold;
+          }
+        }
       }
       .icons {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
+        align-self: center;
+        justify-self: right;
       }
       #ajuda {
         display: block;
         background-color: rgb(111, 240, 111);
+        margin-left: 2.5rem;
       }
 
-      .titulo {
-        display: block;
-        align-self: center;
+      .titulo_minhasSessoes {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1.5fr;
+        grid-template-areas: "minhasEquipas verMais ajuda";
+
+        #labelMinhasequipas {
+          display: block;
+          grid-area: minhasEquipas;
+        }
+        #labelVermais {
+          display: block;
+          grid-area: verMais;
+        }
+
+        #labelAjuda {
+          display: block;
+          grid-area: ajuda;
+          margin-left: 2.5rem;
+        }
+
         img {
           display: none;
         }
         label {
           margin: 0;
         }
+
+        .verMais {
+          color: $text-type4-color;
+          font-size: 1rem;
+          font-weight: $font-weight-normal;
+          justify-self: end;
+          margin-right: 2rem;
+        }
+      }
+
+      .titulo_sessoesDestaque {
+        display: block;
+        grid-template-areas: none;
+        grid-template-columns: none;
+        align-self: center;
+        label {
+          font-size: $font-size-m;
+          font-weight: $font-weight-boldest;
+          color: $text-main-color;
+          margin-left: 0.5rem;
+        }
+
+        img {
+          display: none;
+        }
       }
 
       .carouselContent {
-        background-color: rgb(109, 109, 245);
         display: grid;
-        grid-template-columns: 1fr 1fr;
-      }
-      .carouselDashboard {
-        width: 30vw;
+        grid-template-columns: 1fr 1fr 1.5fr;
+
+        .minhasEquipasCard {
+          display: grid;
+          grid-template-rows: auto 1fr;
+          border-radius: 10px;
+          margin-right: 2rem;
+
+          img {
+            width: 100%;
+          }
+
+          .cardInfo {
+            background-color: #f8faff;
+            display: grid;
+            grid-template-rows: 1fr 0.5fr 0.5fr 0.5fr;
+            grid-template-areas: "." "labelAno" "disciplina" "escola";
+            grid-row-gap: 1rem;
+            padding: 1rem;
+
+            #labelAno {
+              grid-area: labelAno;
+              font-weight: $font-weight-boldest;
+              color: $text-main-color;
+              font-size: 1.25rem;
+            }
+
+            #disciplina {
+              grid-area: disciplina;
+              font-weight: $font-weight-bolder;
+              color: $text-main-color;
+              font-size: $font-size-s;
+            }
+
+            #escola {
+              grid-area: escola;
+              font-weight: $font-weight-bold;
+              color: $text-main-color;
+              font-size: 0.875rem;
+            }
+          }
+        }
+
+        .carouselDash__mobile {
+          display: none;
+          overflow: hidden;
+        }
+        .slick-prev {
+          z-index: 1;
+          left: 5px;
+        }
+        .slick-next {
+          z-index: 1;
+          right: 5px;
+        }
       }
     }
 
-    .cardSessoes {
+    .sessoesDestaque {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       grid-column-gap: 1rem;
     }
 
-    #menu_principal__Desktop {
-      display: inherit;
-      grid-area: menu;
-    }
-    #menu_principal {
-      display: none;
+    .narrativa {
+      .likes_coments {
+        display: none;
+      }
     }
   }
 }

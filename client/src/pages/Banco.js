@@ -1,5 +1,7 @@
 import Footer from "./components/Footer"
 import Navbar from "./components/Navbar"
+import SessoesDestaque from "./components/sessoesDestaque";
+import Narrativa from "./components/Narrativa";
 
 import iconBanco from "../img/icons/icon_banco.svg";
 
@@ -9,11 +11,12 @@ import iconOrdenar from "../img/icons/icon_ordenar.svg";
 import iconFiltro from "../img/icons/icon_filtro.svg";
 import iconPesquisa from "../img/icons/icon_pesquisa.svg";
 import linhaVertical from "../img/linhaVertical.svg";
+import medalha from "../img/medalha.png";
 
 
 function Banco() {
     return (
-        <article className="banco">
+        <article className="banco layout">
 
             <Navbar />
 
@@ -39,70 +42,28 @@ function Banco() {
 
                 </div>
 
-                <div className="cardSection">
 
-                    <div className="cardSessoes">
+                <h1>DESTAQUE</h1>
 
-                        <div>
-                            <img src={iconSessoes} alt="" />
-                            <div className="textoCards">
-                                <label>Os 3 porquinhos </label>
-                                <p>Equipa Avila Crew</p>
-                                <span>8º ano | Past Tense</span>
-                            </div>
-
-                            <img src={setaDireita} alt="" />
-                        </div>
-
-                    </div>
+                <span className="destaquesBanco">
+                    <SessoesDestaque />
+                </span>
 
 
 
+                <h1>NARRATIVAS</h1>
 
-                    <div className="cardSessoes">
+                <Narrativa />
+                <Narrativa />
+                <Narrativa />
+                <Narrativa />
+                <Narrativa />
+                <Narrativa />
+                <Narrativa />
+                <Narrativa />
+                <Narrativa />
 
-                        <div>
-                            <img src={iconSessoes} alt="" />
-                            <div className="textoCards">
-                                <label>Os 3 porquinhos </label>
-                                <p>Equipa Avila Crew</p>
-                                <span>8º ano | Past Tense</span>
-                            </div>
 
-                            <img src={setaDireita} alt="" />
-                        </div>
-
-                    </div>
-                    <div className="cardSessoes">
-
-                        <div>
-                            <img src={iconSessoes} alt="" />
-                            <div className="textoCards">
-                                <label>Os 3 porquinhos </label>
-                                <p>Equipa Avila Crew</p>
-                                <span>8º ano | Past Tense</span>
-                            </div>
-
-                            <img src={setaDireita} alt="" />
-                        </div>
-
-                    </div>
-                    <div className="cardSessoes">
-
-                        <div>
-                            <img src={iconSessoes} alt="" />
-                            <div className="textoCards">
-                                <label>Os 3 porquinhos </label>
-                                <p>Equipa Avila Crew</p>
-                                <span>8º ano | Past Tense</span>
-                            </div>
-
-                            <img src={setaDireita} alt="" />
-                        </div>
-
-                    </div>
-
-                </div>
 
             </section>
 

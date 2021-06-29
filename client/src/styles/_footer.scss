@@ -55,7 +55,7 @@
   .menu_principal {
     background-color: white;
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 3fr 1fr;
     grid-template-columns: 1fr;
     grid-template-areas: "logo" "divBotoesMenu" "asidePerfil";
 
@@ -65,35 +65,82 @@
     #divBotoesMenu {
       grid-area: divBotoesMenu;
       display: grid;
-      grid-template-columns: 0.1fr 1fr;
-      grid-template-areas: ". botoesMenu";
-      align-content: center;
+      grid-template-columns: auto;
+      grid-template-areas: "botoesMenu";
+      align-content: start;
+      padding: 2rem;
+      margin: auto;
+      margin-top: 0;
     }
     #asidePerfil {
       grid-area: asidePerfil;
+      display: grid;
+      grid-template-columns: auto;
+      grid-template-areas: "infoPerfil";
+      margin: auto;
+      padding: 2rem;
+
+      .infoPerfil {
+        grid-area: infoPerfil;
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        grid-template-areas: "avatar info sair";
+
+        #avatar {
+          grid-area: avatar;
+          align-self: center;
+
+          text-align: center;
+          display: flex;
+          justify-content: center;
+        }
+        #info {
+          grid-area: info;
+          align-self: center;
+          justify-self: center;
+          padding-left: 1rem;
+          h3 {
+            font-weight: $font-weight-more-bold;
+            color: $text-main-color;
+            font-size: $font-size-s;
+          }
+          label {
+            font-weight: $font-weight-normal;
+            color: $text-type5-color;
+            font-size: 0.625rem;
+          }
+        }
+        #sair {
+          grid-area: sair;
+          align-self: center;
+          justify-self: center;
+          padding-left: 1rem;
+        }
+      }
     }
 
     #botoesMenu {
       grid-area: botoesMenu;
       display: grid;
-      grid-row-gap: 1rem;
+      grid-row-gap: 2rem;
+      grid-template-areas: "inicio" "banco" "criar" "equipa";
     }
 
     #banco {
       justify-self: unset;
-      grid-area: unset;
+      grid-area: banco;
     }
     #home {
       justify-self: unset;
-      grid-area: unset;
+      grid-area: inicio;
     }
     #criar {
       justify-self: unset;
-      grid-area: unset;
+      grid-area: criar;
     }
     #equipa {
       justify-self: unset;
-      grid-area: unset;
+      grid-area: equipa;
     }
     .iconFooter {
       display: grid;
@@ -102,6 +149,8 @@
       label {
         display: block;
         align-self: center;
+        color: #042454;
+        font-weight: 600;
       }
       img {
         max-width: 10%;
@@ -120,6 +169,16 @@
     }
     .asidePerfil {
       display: block;
+    }
+  }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1087px) {
+  #avatar {
+    padding-left: 1rem;
+    width: 90%;
+    .imgAvatar {
+      max-width: 2.5rem;
     }
   }
 }

@@ -16,22 +16,46 @@ const sessoaSelect = (e) => {
 
 
 
-function CarouselDashboard() {
-    var settings = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        initialSlide: 0,
-        arrows: false,
-        rows: 2,
-        slidesPerRow: 2,
-        autoplay: true,
-        autoplaySpeed: 5000,
+function CarouselDashboard({ ecra }) {
+    let settings;
+    if (ecra === 'mobile') {
+        settings = {
+            dots: true,
+            infinite: true,
+            speed: 500,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            initialSlide: 0,
+            arrows: false,
+            rows: 2,
+            slidesPerRow: 2,
+            autoplay: true,
+            autoplaySpeed: 5000,
+            accessibility: true,
 
 
-    };
+
+        };
+    } else {
+        settings = {
+            dots: true,
+            infinite: true,
+            speed: 500,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            initialSlide: 0,
+            arrows: true,
+            rows: 1,
+            slidesPerRow: 2,
+            autoplay: false,
+            autoplaySpeed: 5000,
+            accessibility: true,
+
+
+
+        };
+    }
+
 
 
     return (

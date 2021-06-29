@@ -50,14 +50,9 @@
     }
     #texto1 {
       text-align: center;
-<<<<<<< HEAD
-      color: $text-type2-color;
-      font-weight: $font-weight-bold;
-=======
-      color: $text-fourth-color;
+      color: $text-type4-color;
       font-weight: $font-weight-boldest;
       margin-top: 3rem;
->>>>>>> CriarSessão
     }
     #texto2 {
       text-align: left;
@@ -151,7 +146,7 @@
         #textoComoFunciona2 {
           grid-area: texto;
           padding-top: 1.5rem;
-          color: $text-fourth-color;
+          color: $text-type4-color;
         }
 
         #imagem {
@@ -177,7 +172,7 @@
         #textoComoFunciona2 {
           grid-area: texto;
           padding-top: 1.5rem;
-          color: $text-fourth-color;
+          color: $text-type4-color;
           text-align: right;
         }
 
