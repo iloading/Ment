@@ -58,11 +58,10 @@ function Footer() {
                 <div className="asidePerfil" id="asidePerfil">
                     <div className="infoPerfil">
                         <div id="avatar">
-                            <img src={imgAvatar} alt="" />
+                            <img src={imgAvatar} className="imgAvatar" alt="" />
                         </div>
                         <div id="info">
                             <h3>Joana Silva</h3>
-                            <label>joanasilva.12@gmail.com</label>
                         </div>
                         <div id="sair">
                             <img src={iconTerminar} alt="" />

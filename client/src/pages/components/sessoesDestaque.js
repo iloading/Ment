@@ -9,7 +9,9 @@
 
 
 
-import medalha from "../../img/medalha.png";
+import medalhaOuro from "../../img/medalhaOuro.svg";
+import medalhaPrata from "../../img/medalhaPrata.svg";
+import medalhaBronze from "../../img/medalhaBronze.svg";
 import iconSessoes from "../../img/icons/icon_sessoes.png";
 
 
@@ -29,7 +31,7 @@ function CarouselSessao() {
                     <span>8º ano | Past Tense</span>
                 </div>
 
-                <img src={medalha} alt="" />
+                <img src={medalhaOuro} alt="" />
             </div>
             <div>
                 <img src={iconSessoes} alt="" />
@@ -39,7 +41,7 @@ function CarouselSessao() {
                     <span>8º ano | Past Tense</span>
                 </div>
 
-                <img src={medalha} alt="" />
+                <img src={medalhaPrata} alt="" />
             </div>
 
             <div>
@@ -50,7 +52,7 @@ function CarouselSessao() {
                     <span>8º ano | Past Tense</span>
                 </div>
 
-                <img src={medalha} alt="" />
+                <img src={medalhaBronze} alt="" />
             </div>
 
         </div>

@@ -65,30 +65,40 @@
     #divBotoesMenu {
       grid-area: divBotoesMenu;
       display: grid;
-      grid-template-columns: 1fr 4fr;
-      grid-template-areas: ". botoesMenu";
-      align-content: center;
+      grid-template-columns: auto;
+      grid-template-areas: "botoesMenu";
+      align-content: start;
+      padding: 2rem;
+      margin: auto;
+      margin-top: 0;
     }
     #asidePerfil {
       grid-area: asidePerfil;
       display: grid;
-      grid-template-columns: 1fr 4fr;
-      grid-template-areas: ". infoPerfil";
+      grid-template-columns: auto;
+      grid-template-areas: "infoPerfil";
+      margin: auto;
+      padding: 2rem;
 
       .infoPerfil {
         grid-area: infoPerfil;
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: auto 1fr auto;
         grid-template-areas: "avatar info sair";
 
         #avatar {
           grid-area: avatar;
           align-self: center;
+
+          text-align: center;
+          display: flex;
+          justify-content: center;
         }
         #info {
           grid-area: info;
           align-self: center;
           justify-self: center;
+          padding-left: 1rem;
           h3 {
             font-weight: $font-weight-more-bold;
             color: $text-main-color;
@@ -104,6 +114,7 @@
           grid-area: sair;
           align-self: center;
           justify-self: center;
+          padding-left: 1rem;
         }
       }
     }
@@ -158,6 +169,16 @@
     }
     .asidePerfil {
       display: block;
+    }
+  }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1087px) {
+  #avatar {
+    padding-left: 1rem;
+    width: 90%;
+    .imgAvatar {
+      max-width: 2.5rem;
     }
   }
 }

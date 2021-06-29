@@ -156,6 +156,7 @@
       display: grid;
       grid-template-rows: 0.5fr 0.3fr 1.5fr 0.3fr 1fr;
       padding-right: 4rem;
+      padding-top: 2rem;
 
       #bemvindo {
         display: grid;
@@ -215,9 +216,9 @@
         }
 
         .verMais {
-          color: red;
+          color: $text-type4-color;
           font-size: 1rem;
-          font-weight: 400;
+          font-weight: $font-weight-normal;
           justify-self: end;
           margin-right: 2rem;
         }
@@ -264,14 +265,23 @@
 
             #labelAno {
               grid-area: labelAno;
+              font-weight: $font-weight-boldest;
+              color: $text-main-color;
+              font-size: 1.25rem;
             }
 
             #disciplina {
               grid-area: disciplina;
+              font-weight: $font-weight-bolder;
+              color: $text-main-color;
+              font-size: $font-size-s;
             }
 
             #escola {
               grid-area: escola;
+              font-weight: $font-weight-bold;
+              color: $text-main-color;
+              font-size: 0.875rem;
             }
           }
         }
