@@ -21,7 +21,7 @@
   .conteudoMain {
     display: grid;
     grid-row-gap: 1rem;
-    margin: 1rem;
+    padding: 1rem;
 
     #bemvindo {
       display: none;
@@ -187,7 +187,7 @@
     .conteudoMain {
       display: grid;
       grid-template-rows: 0.5fr 0.3fr 1.5fr 0.3fr 1fr;
-      margin-right: 4rem;
+      padding-right: 4rem;
 
       #bemvindo {
         display: grid;

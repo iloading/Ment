@@ -71,6 +71,41 @@
     }
     #asidePerfil {
       grid-area: asidePerfil;
+      display: grid;
+      grid-template-columns: 1fr 4fr;
+      grid-template-areas: ". infoPerfil";
+
+      .infoPerfil {
+        grid-area: infoPerfil;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: "avatar info sair";
+
+        #avatar {
+          grid-area: avatar;
+          align-self: center;
+        }
+        #info {
+          grid-area: info;
+          align-self: center;
+          justify-self: center;
+          h3 {
+            font-weight: $font-weight-more-bold;
+            color: $text-main-color;
+            font-size: $font-size-s;
+          }
+          label {
+            font-weight: $font-weight-normal;
+            color: $text-type5-color;
+            font-size: 0.625rem;
+          }
+        }
+        #sair {
+          grid-area: sair;
+          align-self: center;
+          justify-self: center;
+        }
+      }
     }
 
     #botoesMenu {
