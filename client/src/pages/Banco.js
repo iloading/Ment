@@ -2,6 +2,7 @@ import Footer from "./components/Footer"
 import Navbar from "./components/Navbar"
 import SessoesDestaque from "./components/sessoesDestaque";
 import Narrativa from "./components/Narrativa";
+import SearchBar from "./components/SearchBar";
 
 import iconBanco from "../img/icons/icon_banco.svg";
 
@@ -36,32 +37,40 @@ function Banco() {
                     </div>
 
                 </div>
+
+
                 {/*DESKTOP*/}
 
-                <div className="searchBar">
-                    <input placeholder="Pesquisar..." name="search" id="inputEmail" type="text" />
-
-                    <div>
-                        <img src={iconPesquisa} alt="" className="img1" />
-                        <img src={linhaVertical} alt="" className="img1" />
-                        <img src={iconFiltro} alt="" className="img2" />
-                    </div>
+                <div className="searchBarMobile">
+                    <SearchBar />
                 </div>
+
+
+
+
 
                 <div className="titulo">
                     <img src={iconBanco} alt="" id="iconTituloBanco" />
-                    <label id="tituloMain">Banco</label>
-                    <div>
+                    <div className="titulo_and_img" id="titulo_and_img">
+                        <label className="tituloBanco">Banco</label>
+                        <label className="tituloTodasSessoes">Todas as sessões</label>
+
                         <img src={iconOrdenar} alt="" id="iconOrdenar" />
                     </div>
+
+
+
+
+                    <div className="encontrarSessao" id="encontrarSessao">
+                        <label>Encontrar uma sessão</label>
+                    </div>
+
 
                 </div>
 
 
-                <div className="listaNarrativas">
-                    <div>
-                        <label className="labelNarrativas">NARRATIVAS</label>
-
+                <div className="conteudoBanco">
+                    <div className="listaNarrativas">
                         <Narrativa />
                         <Narrativa />
                         <Narrativa />
@@ -71,25 +80,24 @@ function Banco() {
                         <Narrativa />
                         <Narrativa />
                         <Narrativa />
-
-
                     </div>
 
 
 
-                    <div>
+                    <div className='coluna_Direita_Banco'>
 
                         <div className="AreaEncontrarSessao">
-                            <label>PESQUISA</label>
-                            <div>
-                                <input type="text" />
-                                <input type="text" />
-                            </div>
+
+                            <SearchBar />
+
+
 
                         </div>
                         <div className="AreaSessoesDestaque">
-                            <label>DESTAQUE</label>
 
+                            <div className="tituloDestaque">
+                                <label>Sessões em destaque</label>
+                            </div>
                             <span className="destaquesBanco">
                                 <SessoesDestaque />
                             </span>

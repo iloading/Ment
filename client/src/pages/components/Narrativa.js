@@ -9,7 +9,7 @@ function Narrativa({ destaque }) {
     return (
         <>
             <div className="narrativa">
-                <img src={iconSessoes} alt="" />
+                <img src={iconSessoes} alt="" className="iconSessoes" />
                 <div className="textoCards">
                     <label>Os 3 porquinhos </label>
                     <p>Equipa Avila Crew</p>
@@ -22,7 +22,7 @@ function Narrativa({ destaque }) {
                 </div>
                 {/*DESKTOP*/}
 
-                <img src={destaque ? medalha : seta} alt={destaque ? 'medalha' : 'seta'} />
+                <img src={destaque ? medalha : seta} className="iconMedalha" alt={destaque ? 'medalha' : 'seta'} />
             </div>
 
         </>
