@@ -269,6 +269,10 @@
         display: grid;
         grid-template-columns: 1fr 1fr 1.5fr;
 
+        .criarEquipa {
+          background-color: #f8faff;
+        }
+
         .minhasEquipasCard {
           display: grid;
           grid-template-rows: auto 1fr;

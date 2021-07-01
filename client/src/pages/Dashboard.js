@@ -4,6 +4,7 @@ import Footer from "./components/Footer"
 import Navbar from "./components/Navbar"
 import SessoesDestaque from "./components/sessoesDestaque";
 import CarouselAjuda from "./components/CarouselAjuda";
+import MinhaEquipa from "./components/MinhaEquipa";
 
 import iconEquipa from "../img/icons/icon_equipa.svg";
 
@@ -11,7 +12,7 @@ import iconbanco from "../img/icons/icon_banco.svg";
 
 
 import iconDefinicoes from "../img/icons/icon_settings.svg";
-import minhasSessoes_desktop from "../img/Equipas/1.png";
+
 
 import { useState, useEffect } from 'react'
 
@@ -30,8 +31,10 @@ function Dashboard() {
         information()
 
     }, [])
-    console.log(info);
-    /* console.log(info); */
+    if (info && info.length === 1) {
+
+    }
+
     return (
         <article className="dashboard layout">
 
@@ -46,7 +49,7 @@ function Dashboard() {
 
                     <div className="bemvindo_titulos">
                         <h3>Bom dia,</h3>
-                        <h1>Professora Joana</h1>
+                        <h1>Joana</h1>
                     </div>
                     <div className="icons">
                         <img src={iconDefinicoes} alt="" />
@@ -73,14 +76,23 @@ function Dashboard() {
                         <CarouselDashboard ecra='mobile' />
                     </span>
                     {/*DESKTOP*/}
-                    {info?.map(equipa => <div className="minhasEquipasCard">
-                        <img src={minhasSessoes_desktop} alt="" className="iconTitulo" />
-                        <div className="cardInfo">
-                            <label id="labelAno">{equipa.alias}</label>
-                            <p id="disciplina">{equipa.name}</p>
-                            <span id="escola">{equipa.school_name}</span>
-                        </div>
-                    </div>)}
+
+                    {/* {info && <h1>{info.length}</h1>} */}
+                    {info && (info.length === 2 ?
+                        info.map(equipa => <MinhaEquipa alias={equipa.alias} name={equipa.name} schoolName={equipa.school_name} />)
+                        :
+                        info.length === 1 ?
+                            <>
+                                <MinhaEquipa alias={info[0].alias} name={info[0].name} schoolName={info[0].school_name} />
+                                <div className="criarEquipa"></div>
+                            </>
+                            :
+                            <>
+                                <div className="criarEquipa"></div>
+                                <div className="criarEquipa"></div>
+                            </>
+                    )
+                    }
 
                     {/* <div className="minhasEquipasCard">
                         <img src={minhasSessoes_desktop} alt="" className="iconTitulo" />
@@ -93,6 +105,8 @@ function Dashboard() {
                     </div> */}
 
                     {/*DESKTOP*/}
+
+
 
 
                     {/*DESKTOP*/}
