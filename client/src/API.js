@@ -21,3 +21,7 @@ export const register = (data) => axios.post('http://localhost:3001/auth/registe
 export const login = (data) => axios.post("http://localhost:3001/auth/login", data);
 export const checkLoggedIn = () => axios.get('http://localhost:3001/auth/loggedIn');
 export const logout = () => axios.get('http://localhost:3001/auth/logout');
+
+
+//-----------DASHBOARD
+export const dashboardInfo = () => axios.post('http://localhost:3001/dashboardInfo');

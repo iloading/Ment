@@ -35,7 +35,7 @@ router.post('/search/schools', async (req, res) => {
 
     const school = ("%" + req.body.school + "%")
 
-    await db.query("SELECT idschool, agrupamento FROM school WHERE verified = 1 AND agrupamento LIKE ? ", [school], (err, result) => {
+    await db.query("SELECT id, name FROM school WHERE verified = 1 AND name LIKE ? ", [school], (err, result) => {
         //Se der erro, devolver o mesmo
         if (err) {
 
@@ -77,7 +77,7 @@ router.post('/register', async (req, res) => {
 
     if (isNaN(school)) {
 
-        await db.query('INSERT INTO school (agrupamento, verified) VALUES (?, 0)', [school], (err, result) => {
+        await db.query('INSERT INTO school (name, verified) VALUES (?, 0)', [school], (err, result) => {
             //Se der erro, devolver o mesmo
             if (err) {
                 res.json({
@@ -96,7 +96,7 @@ router.post('/register', async (req, res) => {
     bcrypt.hash(password, 10).then(async (hash) => {
         //Mandar o INSERT para a BD
 
-        await db.query('INSERT INTO user (email, password, name, school_idschool, role_idrole, course_idcourse, avatar_idavatar) VALUES (?,?,?,?,?,?,?)', [email, hash, name, school, role, course, avatar], (err, result) => {
+        await db.query('INSERT INTO user (email, password, name, school_id, role_id, course_id, avatar_id) VALUES (?,?,?,?,?,?,?)', [email, hash, name, school, role, course, avatar], (err, result) => {
             //Se der erro, devolver o mesmo
             if (err) {
                 res.status(400).json({
@@ -150,7 +150,7 @@ router.post('/login', async (req, res) => {
     const { email, password } = req.body;
 
     //Verificar se existe um email registado para essa conta
-    await db.query('SELECT iduser, password FROM user WHERE email = ?', [email], (err, result) => {
+    await db.query('SELECT id, password FROM user WHERE email = ?', [email], (err, result) => {
         //Se nao houver, devolver erro
         if (result.length == 0) {
             res.status(400).json({ error: "O email que inseriu não existe" });
@@ -185,7 +185,7 @@ router.post('/login', async (req, res) => {
 
 })
 
-router.get('/getUsers', validateToken, async (req, res) => {
+/* router.get('/getUsers', validateToken, async (req, res) => {
     try {
         const users = await db.query("SELECT * FROM user", (err, result) => {
             //Se der erro, devolver o mesmo
@@ -206,7 +206,7 @@ router.get('/getUsers', validateToken, async (req, res) => {
     } catch (error) {
 
     }
-})
+}) */
 
 /* Verificar se está logado */
 router.get('/loggedIn', (req, res) => {

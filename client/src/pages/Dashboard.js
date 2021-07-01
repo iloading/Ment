@@ -11,17 +11,27 @@ import iconbanco from "../img/icons/icon_banco.svg";
 
 
 import iconDefinicoes from "../img/icons/icon_settings.svg";
-import minhasSessoes_desktop from "../img/minhasSessoes/minhasSessoes_desktop.png";
+import minhasSessoes_desktop from "../img/Equipas/1.png";
 
+import { useState, useEffect } from 'react'
 
-
+import { dashboardInfo } from '../API'
 
 
 
 
 
 function Dashboard() {
+    const [info, setInfo] = useState(null)
+    const information = async () => {
+        setInfo(await (await dashboardInfo()).data.success);
+    }
+    useEffect(() => {
+        information()
 
+    }, [])
+    console.log(info);
+    /* console.log(info); */
     return (
         <article className="dashboard layout">
 
@@ -63,24 +73,24 @@ function Dashboard() {
                         <CarouselDashboard ecra='mobile' />
                     </span>
                     {/*DESKTOP*/}
+                    {info?.map(equipa => <div className="minhasEquipasCard">
+                        <img src={minhasSessoes_desktop} alt="" className="iconTitulo" />
+                        <div className="cardInfo">
+                            <label id="labelAno">{equipa.alias}</label>
+                            <p id="disciplina">{equipa.name}</p>
+                            <span id="escola">{equipa.school_name}</span>
+                        </div>
+                    </div>)}
 
-                    <div className="minhasEquipasCard">
+                    {/* <div className="minhasEquipasCard">
                         <img src={minhasSessoes_desktop} alt="" className="iconTitulo" />
                         <div className="cardInfo">
                             <label id="labelAno">7ºA</label>
                             <p id="disciplina">Biologia</p>
                             <span id="escola">Escola Secundária Carlos Amarante</span>
                         </div>
-                    </div>
-                    <div className="minhasEquipasCard">
-                        <img src={minhasSessoes_desktop} alt="" className="iconTitulo" />
-                        <div className="cardInfo">
-                            <label id="labelAno">7ºA</label>
-                            <p id="disciplina">Biologia</p>
-                            <span id="escola">Escola Secundária Carlos Amarante</span>
-                        </div>
 
-                    </div>
+                    </div> */}
 
                     {/*DESKTOP*/}
 

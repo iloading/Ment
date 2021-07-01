@@ -4,7 +4,8 @@ const { sign, verify } = require('jsonwebtoken')
 const JWT_SECRECT = process.env.JWT_SECRECT;
 
 const createTokens = (user) => {
-    const accessToken = sign({ id: user.iduser },
+
+    const accessToken = sign({ id: user.id },
         JWT_SECRECT
     );
     return accessToken
