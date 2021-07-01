@@ -3,6 +3,7 @@ import CarouselDashboard from "./components/CarouselDashboard";
 import Footer from "./components/Footer"
 import Navbar from "./components/Navbar"
 import SessoesDestaque from "./components/sessoesDestaque";
+import CarouselAjuda from "./components/CarouselAjuda";
 
 import iconEquipa from "../img/icons/icon_equipa.svg";
 
@@ -86,7 +87,11 @@ function Dashboard() {
 
                     {/*DESKTOP*/}
                     <div id="ajuda">
-                        <h1>ola</h1>
+                        <div className="subTitulos">
+                            <h2>Tutoriais</h2>
+                            <label>Ver todos</label>
+                        </div>
+                        <CarouselAjuda />
                     </div>
                     {/*DESKTOP*/}
                 </div>
