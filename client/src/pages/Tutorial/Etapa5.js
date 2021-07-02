@@ -9,7 +9,7 @@ function Etapa5() {
         <article className="etapa f1">
             <section className="fundoAzul">
                 <div className="navTutorial">
-                    <Link to="." id="seta"><img src={setaAtrasBranca} alt="setaAtras" /></Link>
+                    <Link to="../tutorial" id="seta"><img src={setaAtrasBranca} alt="setaAtras" /></Link>
                     <h2 id="tutorial">Etapa 5</h2>
                 </div>
                 <div className="principal">
