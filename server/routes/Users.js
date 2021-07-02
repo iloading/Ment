@@ -185,9 +185,9 @@ router.post('/login', async (req, res) => {
 
 })
 
-/* router.get('/getUsers', validateToken, async (req, res) => {
+router.post('/getLoggedUser', validateToken, async (req, res) => {
     try {
-        const users = await db.query("SELECT * FROM user", (err, result) => {
+        const users = await db.query("SELECT name, email, school_id, avatar.url FROM user INNER JOIN avatar ON avatar_id = avatar.id WHERE user.id = ?", [req.userid], (err, result) => {
             //Se der erro, devolver o mesmo
             if (err) {
 
@@ -206,7 +206,7 @@ router.post('/login', async (req, res) => {
     } catch (error) {
 
     }
-}) */
+})
 
 /* Verificar se está logado */
 router.get('/loggedIn', (req, res) => {
