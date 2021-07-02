@@ -6,13 +6,9 @@ import SearchBar from "./components/SearchBar";
 
 import iconBanco from "../img/icons/icon_banco.svg";
 
-import setaDireita from "../img/setaDireita_cor.png";
-import iconSessoes from "../img/icons/icon_sessoes.png";
+
 import iconOrdenar from "../img/icons/icon_ordenar.svg";
-import iconFiltro from "../img/icons/icon_filtro.svg";
-import iconPesquisa from "../img/icons/icon_pesquisa.svg";
-import linhaVertical from "../img/linhaVertical.svg";
-import medalha from "../img/medalha.png";
+
 import iconDefinicoes from "../img/icons/icon_settings.svg";
 
 

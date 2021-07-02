@@ -1,5 +1,5 @@
 
-import CarouselDashboard from "./components/CarouselDashboard";
+
 import Footer from "./components/Footer"
 import Navbar from "./components/Navbar"
 import SessoesDestaque from "./components/sessoesDestaque";
@@ -12,30 +12,40 @@ import iconbanco from "../img/icons/icon_banco.svg";
 
 
 import iconDefinicoes from "../img/icons/icon_settings.svg";
-import minhasSessoes_desktop from "../img/Equipas/1.png";
+
+//REDUX//
+import { loadDashboard } from "../actions/dashboardAction";
 
 
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 
-import { dashboardInfo } from '../API'
+
 
 
 
 
 
 function Dashboard() {
-    const [info, setInfo] = useState(null)
-    const information = async () => {
-        setInfo(await (await dashboardInfo()).data.success);
-    }
+    const dispatch = useDispatch()
     useEffect(() => {
-        information()
+        dispatch(loadDashboard())
 
-    }, [])
-    if (info && info.length === 1) {
+    }, [dispatch])
 
+    const { minhasEquipas: equipas, status } = useSelector(state => state.dashboard)
+
+
+    const user = useSelector(state => state.user.user)
+    let hora = new Date().getHours();
+    let boasVindas
+    if (hora < 12) {
+        boasVindas = 'Bom dia'
+    } else if (hora < 20) {
+        boasVindas = 'Boa tarde'
+    } else {
+        boasVindas = 'Boa noite'
     }
-
     return (
         <article className="dashboard layout">
 
@@ -49,8 +59,9 @@ function Dashboard() {
                 <div id="bemvindo">
 
                     <div className="bemvindo_titulos">
-                        <h3>Bom dia,</h3>
-                        <h1>Joana Castro</h1>
+                        <h3>{boasVindas},</h3>
+                        {status === 'completed' && <h1>{user.name}</h1>}
+
                     </div>
                     <div className="icons">
                         <img src={iconDefinicoes} alt="" />
@@ -71,15 +82,15 @@ function Dashboard() {
                     <label className="tituloMain" id="labelAjuda">Precisa de ajuda?</label>
 
                 </div>
-                {info &&
-                    <div className={'minhasEquipas ' + info.length === 4 ? `layout4` : info.length === 3 ? `layout3` : info.length === 2 ? `layout2` : info.length === 1 ? `layout1` : ''}>
+                {status === 'completed' &&
+                    <div className={`minhasEquipas layout${equipas.length}`}>
 
-                        {(info.length === 2 ?
-                            info.map(equipa => <MinhaEquipa alias={equipa.alias} name={equipa.name} schoolName={equipa.school_name} />)
+                        {(equipas.length === 2 ?
+                            equipas.map(equipa => <MinhaEquipa alias={equipa.alias} name={equipa.name} schoolName={equipa.school_name} key={equipa.id} />)
                             :
-                            info.length === 1 ?
+                            equipas.length === 1 ?
                                 <>
-                                    <MinhaEquipa alias={info[0].alias} name={info[0].name} schoolName={info[0].school_name} />
+                                    <MinhaEquipa alias={equipas[0].alias} name={equipas[0].name} schoolName={equipas[0].school_name} />
                                     <div className="criarEquipa"></div>
                                 </>
                                 :
