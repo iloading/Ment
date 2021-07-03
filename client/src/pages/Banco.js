@@ -11,8 +11,25 @@ import iconOrdenar from "../img/icons/icon_ordenar.svg";
 
 import iconDefinicoes from "../img/icons/icon_settings.svg";
 
+//REDUX//
+import { loadBanco } from "../actions/bancoAction";
+
+
+import { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+
 
 function Banco() {
+    const dispatch = useDispatch()
+    useEffect(() => {
+        dispatch(loadBanco())
+
+    }, [dispatch])
+
+    const { todasSessoes: sessoes, status } = useSelector(state => state.banco)
+
+
+
     return (
         <article className="banco layout">
 
@@ -67,15 +84,7 @@ function Banco() {
 
                 <div className="conteudoBanco">
                     <div className="listaNarrativas">
-                        <Narrativa />
-                        <Narrativa />
-                        <Narrativa />
-                        <Narrativa />
-                        <Narrativa />
-                        <Narrativa />
-                        <Narrativa />
-                        <Narrativa />
-                        <Narrativa />
+                        {status === "completed" && sessoes.map(sessao => <Narrativa key={sessao.id} sessao={sessao} status={status} />)}
                     </div>
 
 

@@ -15,10 +15,13 @@ app.use(cookieParser());
 
 // Routes
 const usersRoute = require('./routes/Users')
-
 app.use('/auth', usersRoute);
+
 const dashboardRoute = require('./routes/Dashboard')
 app.use('/dashboardInfo', dashboardRoute);
+
+const bancoRoute = require('./routes/Banco')
+app.use('/bancoInfo', bancoRoute);
 
 app.get('/', async (req, res) => {
     await res.send('We are on home')

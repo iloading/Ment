@@ -1,0 +1,36 @@
+const { validateToken } = require('../JWT')
+
+const express = require('express');
+
+//Isto é um Route
+const router = express.Router();
+
+//Conexao à BD
+const db = require('../config/db');
+
+router.post('/', validateToken, async (req, res) => {
+
+    /* console.log(req); */
+    try {
+        const banco = await db.query("SELECT narrative.id, narrative.name, subject, grade.year, team_id, team.name AS team_name, (SELECT COUNT(likes.narrative_id) FROM likes WHERE narrative.id = likes.narrative_id) AS likes FROM narrative INNER JOIN grade ON grade_id = grade.id INNER JOIN team ON team_id = team.id  ;", [req.userid], (err, result) => {
+            //Se der erro, devolver o mesmo
+            if (err) {
+                console.log(err);
+                res.json({
+                    error: err
+                });
+            } else {
+                console.log(result);
+                res.json({
+                    success: result
+                })
+            }
+
+        })
+
+    } catch (error) {
+
+    }
+})
+
+module.exports = router;

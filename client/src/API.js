@@ -26,3 +26,6 @@ export const logout = () => axios.get('http://localhost:3001/auth/logout');
 
 //-----------DASHBOARD
 export const dashboardInfo = () => axios.post('http://localhost:3001/dashboardInfo');
+
+//-----------BANCO
+export const bancoInfo = () => axios.post('http://localhost:3001/bancoInfo');
