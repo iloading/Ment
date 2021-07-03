@@ -29,3 +29,6 @@ export const dashboardInfo = () => axios.post('http://localhost:3001/dashboardIn
 
 //-----------BANCO
 export const bancoInfo = () => axios.post('http://localhost:3001/bancoInfo');
+
+//-----------SESSOES DE DESTAQUE
+export const destaqueInfo = () => axios.post('http://localhost:3001/destaqueInfo');

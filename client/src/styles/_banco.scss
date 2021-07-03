@@ -124,6 +124,18 @@
   }
 }
 
+@media only screen and (max-height: 900px) {
+  .conteudoMain {
+    .conteudoBanco {
+      .coluna_Direita_Banco {
+        .AreaSessoesDestaque {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
 @media only screen and (min-width: 1024px) and (max-width: 1180px) {
   .AreaSessoesDestaque {
     .destaquesBanco {

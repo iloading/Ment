@@ -1,8 +1,11 @@
 import React from 'react'
 
-import medalha from "../../img/medalha.png";
 import iconSessoes from "../../img/icons/icon_sessoes.png";
 import seta from "../../img/setaDireita_cor.png";
+
+import medalhaOuro from "../../img/medalhaOuro.svg";
+import medalhaPrata from "../../img/medalhaPrata.svg";
+import medalhaBronze from "../../img/medalhaBronze.svg";
 
 
 function Narrativa({ destaque, sessao, status }) {
@@ -23,8 +26,8 @@ function Narrativa({ destaque, sessao, status }) {
                         <p>{sessao.likes}</p>
                     </div>
                     {/*DESKTOP*/}
+                    {destaque ? <img src={destaque === 'ouro' ? medalhaOuro : destaque === 'prata' ? medalhaPrata : destaque === 'bronze' ? medalhaBronze : ""} className="iconMedalha" alt={'medalha'} /> : <img src={seta} className="iconMedalha" alt={'seta'} />}
 
-                    <img src={destaque ? medalha : seta} className="iconMedalha" alt={destaque ? 'medalha' : 'seta'} />
                 </div>
             }
         </>

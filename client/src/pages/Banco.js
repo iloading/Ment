@@ -13,6 +13,7 @@ import iconDefinicoes from "../img/icons/icon_settings.svg";
 
 //REDUX//
 import { loadBanco } from "../actions/bancoAction";
+import { loadDestaque } from "../actions/destaqueAction";
 
 
 import { useEffect } from 'react'
@@ -23,12 +24,13 @@ function Banco() {
     const dispatch = useDispatch()
     useEffect(() => {
         dispatch(loadBanco())
+        dispatch(loadDestaque())
 
     }, [dispatch])
 
     const { todasSessoes: sessoes, status } = useSelector(state => state.banco)
 
-
+    const { sessoesDestaque: destaques, status: statusDestaque } = useSelector(state => state.destaque)
 
     return (
         <article className="banco layout">
@@ -104,7 +106,9 @@ function Banco() {
                                 <label>Sessões em destaque</label>
                             </div>
                             <span className="destaquesBanco">
-                                <SessoesDestaque />
+
+                                {<SessoesDestaque destaques={destaques} status={statusDestaque} />}
+
                             </span>
                         </div>
 
