@@ -9,13 +9,13 @@ nav {
   margin: 0 1rem 0 1rem;
 
   #logo {
-    justify-self: center;
+    justify-self: baseline;
     align-self: center;
     grid-area: logo;
   }
 
   #perfil {
-    justify-self: center;
+    justify-self: end;
     align-self: center;
     grid-area: perfil;
   }
