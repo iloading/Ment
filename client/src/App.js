@@ -17,7 +17,7 @@ import CriarSessao from "./pages/CriarSessao/CriarSessao";
 import { useContext } from 'react'
 
 import AuthContext from "./context/AuthContext";
-
+import Feedback from './pages/components/Feedback'
 
 
 //REACT ROUTER
@@ -29,8 +29,9 @@ function App() {
   return (
 
     <main className="App">
-
+      <Feedback />
       <Switch>
+
         <Route path="/" exact>
           <Homepage />
         </Route>
