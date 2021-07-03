@@ -124,7 +124,7 @@
   }
 }
 
-@media only screen and (max-height: 900px) {
+@media only screen and (max-height: 899px) {
   .conteudoMain {
     .conteudoBanco {
       .coluna_Direita_Banco {
@@ -343,7 +343,51 @@
         grid-template-columns: auto 1fr 1fr auto;
 
         .likes_coments {
-          display: block;
+          display: grid;
+          grid-template-columns: 1fr 1rem 1fr;
+          grid-template-areas: "gostos linha comentarios";
+
+          #gostos {
+            grid-area: gostos;
+            justify-self: right;
+            align-self: center;
+            padding-right: 0.3rem;
+            p {
+              text-align: center;
+              font-size: 0.75rem;
+              font-weight: $font-weight-bold;
+              color: $text-type5-color;
+            }
+            label {
+              text-align: center;
+              font-size: 0.75rem;
+              font-weight: $font-weight-normal;
+              color: $text-type5-color;
+            }
+          }
+          #linha {
+            grid-area: linha;
+            justify-self: center;
+            align-self: center;
+          }
+          #comentarios {
+            grid-area: comentarios;
+            justify-self: left;
+            align-self: center;
+            padding-left: 0.3rem;
+            p {
+              text-align: center;
+              font-size: 0.75rem;
+              font-weight: $font-weight-bold;
+              color: $text-type5-color;
+            }
+            label {
+              text-align: center;
+              font-size: 0.75rem;
+              font-weight: $font-weight-normal;
+              color: $text-type5-color;
+            }
+          }
         }
       }
     }

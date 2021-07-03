@@ -2,6 +2,7 @@ import React from 'react'
 
 import iconSessoes from "../../img/icons/icon_sessoes.png";
 import seta from "../../img/setaDireita_cor.png";
+import iconSeparar from "../../img/icons/icon_separacao_linha.svg";
 
 import medalhaOuro from "../../img/medalhaOuro.svg";
 import medalhaPrata from "../../img/medalhaPrata.svg";
@@ -23,7 +24,17 @@ function Narrativa({ destaque, sessao, status }) {
 
                     {/*DESKTOP*/}
                     <div className="likes_coments">
-                        <p>{sessao.likes}</p>
+                        <div id="gostos">
+                            <p>{sessao.likes}</p>
+                            <label>Gostos</label>
+                        </div>
+                        <div id="linha">
+                            <img src={iconSeparar} alt="linha de separacao" id="" />
+                        </div>
+                        <div id="comentarios">
+                            <p>{sessao.comments}</p>
+                            <label>Comentários</label>
+                        </div>
                     </div>
                     {/*DESKTOP*/}
                     {destaque ? <img src={destaque === 'ouro' ? medalhaOuro : destaque === 'prata' ? medalhaPrata : destaque === 'bronze' ? medalhaBronze : ""} className="iconMedalha" alt={'medalha'} /> : <img src={seta} className="iconMedalha" alt={'seta'} />}
