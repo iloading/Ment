@@ -65,7 +65,7 @@ function App() {
         <Route path="/perfil">
           <Perfil />
         </Route>
-        <Route path="/sessao">
+        <Route path={["/sessao", "/sessao/:id"]}>
           <Sessao />
         </Route>
         <Route path="/criarsessao">
