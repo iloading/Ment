@@ -23,9 +23,9 @@ app.use('/dashboardInfo', dashboardRoute);
 const bancoRoute = require('./routes/Banco')
 app.use('/bancoInfo', bancoRoute);
 
-app.get('/', async (req, res) => {
+/* app.get('/', async (req, res) => {
     await res.send('We are on home')
-})
+}) */
 
 
 app.listen(3001, () => {
