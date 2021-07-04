@@ -9,17 +9,17 @@ function RecursosSessao() {
                 <div className="ficheirosPrincipais">
                     <label className="titulo1">Ficheiros principais</label>
                     <div className="ficheiros">
-                        <div className="factos">
-                            <label className="factos_nome">Narrativa - "London Culture"</label>
-                            <img src={iconDownload} alt="" className="factos_icon" />
+                        <div className="caixaFicheiros">
+                            <label className="ficheiro_nome">Narrativa - "London Culture"</label>
+                            <img src={iconDownload} alt="" className="ficheiro_icon" />
                         </div>
-                        <div className="factos">
-                            <label className="factos_nome">Guião dos Mentores</label>
-                            <img src={iconDownload} alt="" className="factos_icon" />
+                        <div className="caixaFicheiros">
+                            <label className="ficheiro_nome">Guião dos Mentores</label>
+                            <img src={iconDownload} alt="" className="ficheiro_icon" />
                         </div>
-                        <div className="factos">
-                            <label className="factos_nome">Material Multimédia</label>
-                            <img src={iconDownload} alt="" className="factos_icon" />
+                        <div className="caixaFicheiros">
+                            <label className="ficheiro_nome">Material Multimédia</label>
+                            <img src={iconDownload} alt="" className="ficheiro_icon" />
                         </div>
                     </div>
                 </div>
@@ -27,9 +27,9 @@ function RecursosSessao() {
 
                     <label className="titulo2">Conteúdo adicional</label>
                     <div className="ficheiros">
-                        <div className="factos">
-                            <label className="factos_nome">Exercícios Icebreakers</label>
-                            <img src={iconDownload} alt="" className="factos_icon" />
+                        <div className="caixaFicheiros">
+                            <label className="ficheiro_nome">Exercícios Icebreakers</label>
+                            <img src={iconDownload} alt="" className="ficheiro_icon" />
                         </div>
 
                     </div>
