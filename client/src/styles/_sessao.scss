@@ -55,6 +55,9 @@
 
       .slick-slide {
         width: 30% !important;
+        a {
+          text-decoration: none;
+        }
       }
 
       .cards {
@@ -83,30 +86,73 @@
 
   .conteudoMain {
     display: grid;
-    grid-template-rows: auto 1fr 1fr;
-    padding: 1rem;
+
+    grid-row-gap: 1.5rem;
+    padding: 0 1rem 1rem 1rem;
+
+    .titulo {
+      color: #042454;
+      font-weight: 400;
+    }
 
     .conteudoMid {
+      display: grid;
+      grid-row-gap: 1rem;
       .cardDescricao {
         display: grid;
         grid-template-rows: 1fr 1fr;
-        padding: 1rem;
+        grid-row-gap: 1rem;
+        background-color: #e0eaff;
+        border-radius: 5px;
+        padding: 2rem;
+        margin: 1rem;
 
         .topInfo {
           display: grid;
           grid-template-columns: 1fr 1fr;
 
+          .titulos {
+            display: grid;
+            label {
+              color: #042454;
+              font-weight: 700;
+              font-size: 1rem;
+            }
+            p {
+              color: #042454;
+              font-weight: 600;
+              font-style: italic;
+              font-size: 0.8rem;
+            }
+            span {
+              color: #042454;
+              font-weight: 600;
+              font-style: italic;
+              font-size: 0.6rem;
+            }
+          }
+
           .imgSessao {
             justify-self: end;
+          }
+        }
+
+        .bottomInfo {
+          p {
+            color: #042454;
+            font-weight: 400;
+            font-size: 0.8rem;
           }
         }
       }
     }
 
     .conteudoPlano {
+      display: grid;
+      grid-row-gap: 1rem;
       .factos {
         display: grid;
-        padding: 1.5rem;
+        padding: 2rem;
         margin: 1rem;
         grid-row-gap: 2.5rem;
         background-color: #e0eaff;
@@ -121,9 +167,119 @@
           display: grid;
           grid-row-gap: 1rem;
         }
+        .tituloFactos {
+          color: #042454;
+          font-weight: 500;
+        }
+        .textoFactos {
+          color: black;
+          font-weight: 400;
+        }
       }
     }
     .conteudoComents {
+      display: grid;
+      grid-row-gap: 1rem;
+
+      .ListaComentarios {
+        .cardComentario {
+          display: grid;
+          grid-template-columns: auto 1fr;
+          margin: 1rem;
+
+          img {
+            width: 70%;
+            align-self: center;
+          }
+
+          .cardInfo {
+            display: grid;
+            grid-template-rows: auto 1fr;
+            grid-row-gap: 0.5rem;
+
+            .autor {
+              display: grid;
+              grid-template-columns: 1fr auto;
+              p {
+                color: #bdbfcb;
+                font-weight: 700;
+                font-size: 0.8rem;
+              }
+            }
+
+            .comentario {
+              display: grid;
+              background-color: #e0eaff;
+              padding: 1rem;
+              align-items: center;
+              border-radius: 5px;
+              p {
+                color: #042454;
+                font-weight: 500;
+                font-size: 0.8rem;
+              }
+            }
+          }
+        }
+      }
+
+      .comentarioInput {
+        .cardComentario {
+          display: grid;
+          grid-template-columns: auto 1fr;
+          margin: 1rem;
+
+          img {
+            width: 70%;
+            align-self: center;
+          }
+
+          .cardInfo {
+            display: grid;
+            grid-template-rows: auto 1fr;
+            grid-row-gap: 0.5rem;
+
+            .autor {
+              display: grid;
+              grid-template-columns: 1fr auto;
+              p {
+                color: #bdbfcb;
+                font-weight: 700;
+                font-size: 0.8rem;
+              }
+            }
+
+            .comentario {
+              display: grid;
+              background-color: #e0eaff;
+              padding: 1rem;
+              align-items: center;
+              border-radius: 5px;
+
+              ::placeholder {
+                /* Chrome, Firefox, Opera, Safari 10.1+ */
+                color: #042454;
+                font-weight: 500;
+                font-size: 0.8rem;
+              }
+
+              :-ms-input-placeholder {
+                /* Internet Explorer 10-11 */
+                color: #042454;
+                font-weight: 500;
+                font-size: 0.8rem;
+              }
+
+              ::-ms-input-placeholder {
+                /* Microsoft Edge */
+                color: #042454;
+                font-weight: 500;
+                font-size: 0.8rem;
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
