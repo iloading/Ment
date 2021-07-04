@@ -85,196 +85,368 @@
   }
 
   .conteudoMain {
-    display: grid;
-
-    grid-row-gap: 1.5rem;
-    padding: 0 1rem 1rem 1rem;
-
-    .titulo {
-      color: #042454;
-      font-weight: 400;
-    }
-
-    .conteudoMid {
+    .conteudoResumo {
       display: grid;
-      grid-row-gap: 1rem;
-      .cardDescricao {
+      grid-row-gap: 1.5rem;
+      padding: 0 1rem 1rem 1rem;
+
+      .titulo {
+        color: #042454;
+        font-weight: 400;
+        font-size: 1.125rem;
+      }
+
+      .conteudoMid {
         display: grid;
-        grid-template-rows: 1fr 1fr;
         grid-row-gap: 1rem;
-        background-color: #e0eaff;
-        border-radius: 5px;
-        padding: 2rem;
-        margin: 1rem;
-
-        .topInfo {
+        .cardDescricao {
           display: grid;
-          grid-template-columns: 1fr 1fr;
+          grid-template-rows: 1fr 1fr;
+          grid-row-gap: 1rem;
+          background-color: #e0eaff;
+          border-radius: 5px;
+          padding: 2rem;
+          margin: 1rem;
 
-          .titulos {
+          .topInfo {
             display: grid;
-            label {
-              color: #042454;
-              font-weight: 700;
-              font-size: 1rem;
+            grid-template-columns: 1fr 1fr;
+
+            .titulos {
+              display: grid;
+              label {
+                color: #042454;
+                font-weight: 700;
+                font-size: 1rem;
+              }
+              p {
+                color: #042454;
+                font-weight: 600;
+                font-style: italic;
+                font-size: 0.8rem;
+              }
+              span {
+                color: #042454;
+                font-weight: 600;
+                font-style: italic;
+                font-size: 0.6rem;
+              }
             }
+
+            .imgSessao {
+              justify-self: end;
+            }
+          }
+
+          .bottomInfo {
             p {
               color: #042454;
-              font-weight: 600;
-              font-style: italic;
+              font-weight: 400;
               font-size: 0.8rem;
             }
-            span {
-              color: #042454;
-              font-weight: 600;
-              font-style: italic;
-              font-size: 0.6rem;
-            }
-          }
-
-          .imgSessao {
-            justify-self: end;
-          }
-        }
-
-        .bottomInfo {
-          p {
-            color: #042454;
-            font-weight: 400;
-            font-size: 0.8rem;
           }
         }
       }
-    }
 
-    .conteudoPlano {
-      display: grid;
-      grid-row-gap: 1rem;
-      .factos {
+      .conteudoPlano {
         display: grid;
-        padding: 2rem;
-        margin: 1rem;
-        grid-row-gap: 2.5rem;
-        background-color: #e0eaff;
-        border-radius: 5px;
-
-        .factos_reais {
+        grid-row-gap: 1rem;
+        .factos {
           display: grid;
-          grid-row-gap: 1rem;
+          padding: 2rem;
+          margin: 1rem;
+          grid-row-gap: 2.5rem;
+          background-color: #e0eaff;
+          border-radius: 5px;
+
+          .factos_reais {
+            display: grid;
+            grid-row-gap: 1rem;
+          }
+
+          .unidadeCurricolar {
+            display: grid;
+            grid-row-gap: 1rem;
+          }
+          .tituloFactos {
+            color: #042454;
+            font-weight: 500;
+          }
+          .textoFactos {
+            color: black;
+            font-weight: 400;
+          }
+        }
+      }
+      .conteudoComents {
+        display: grid;
+        grid-row-gap: 1rem;
+
+        .ListaComentarios {
+          .cardComentario {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            margin: 1rem;
+
+            img {
+              width: 70%;
+              align-self: center;
+            }
+
+            .cardInfo {
+              display: grid;
+              grid-template-rows: auto 1fr;
+              grid-row-gap: 0.5rem;
+
+              .autor {
+                display: grid;
+                grid-template-columns: 1fr auto;
+                p {
+                  color: #bdbfcb;
+                  font-weight: 700;
+                  font-size: 0.8rem;
+                }
+              }
+
+              .comentario {
+                display: grid;
+                background-color: #e0eaff;
+                padding: 1rem;
+                align-items: center;
+                border-radius: 5px;
+                p {
+                  color: #042454;
+                  font-weight: 500;
+                  font-size: 0.8rem;
+                }
+              }
+            }
+          }
         }
 
-        .unidadeCurricolar {
-          display: grid;
-          grid-row-gap: 1rem;
-        }
-        .tituloFactos {
-          color: #042454;
-          font-weight: 500;
-        }
-        .textoFactos {
-          color: black;
-          font-weight: 400;
+        .comentarioInput {
+          .cardComentario {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            margin: 1rem;
+
+            img {
+              width: 70%;
+              align-self: center;
+            }
+
+            .cardInfo {
+              display: grid;
+              grid-template-rows: auto 1fr;
+              grid-row-gap: 0.5rem;
+
+              .autor {
+                display: grid;
+                grid-template-columns: 1fr auto;
+                p {
+                  color: #bdbfcb;
+                  font-weight: 700;
+                  font-size: 0.8rem;
+                }
+              }
+
+              .comentario {
+                display: grid;
+                background-color: #e0eaff;
+                padding: 1rem;
+                align-items: center;
+                border-radius: 5px;
+
+                input {
+                  background-color: #e0eaff;
+                  padding: 0.2rem 0.8rem 0.2rem 0.8rem;
+                  border: none;
+                }
+
+                ::placeholder {
+                  /* Chrome, Firefox, Opera, Safari 10.1+ */
+                  color: #042454;
+                  font-weight: 500;
+                  font-size: 0.8rem;
+                }
+
+                :-ms-input-placeholder {
+                  /* Internet Explorer 10-11 */
+                  color: #042454;
+                  font-weight: 500;
+                  font-size: 0.8rem;
+                }
+
+                ::-ms-input-placeholder {
+                  /* Microsoft Edge */
+                  color: #042454;
+                  font-weight: 500;
+                  font-size: 0.8rem;
+                }
+              }
+            }
+          }
         }
       }
     }
-    .conteudoComents {
-      display: grid;
-      grid-row-gap: 1rem;
 
-      .ListaComentarios {
-        .cardComentario {
+    .conteudoRecursos {
+      .conteudoPlano {
+        display: grid;
+        grid-template-rows: auto auto;
+        grid-gap: 2rem;
+        padding: 0 1rem 1rem 1rem;
+
+        .ficheirosPrincipais {
           display: grid;
-          grid-template-columns: auto 1fr;
-          margin: 1rem;
-
-          img {
-            width: 70%;
-            align-self: center;
+          grid-row-gap: 1rem;
+          .titulo1 {
+            font-size: 1.125rem;
+            font-weight: $font-weight-bold;
+            color: $text-main-color;
           }
-
-          .cardInfo {
+          .ficheiros {
             display: grid;
-            grid-template-rows: auto 1fr;
-            grid-row-gap: 0.5rem;
-
-            .autor {
+            grid-row-gap: 1.5rem;
+            .caixaFicheiros {
               display: grid;
-              grid-template-columns: 1fr auto;
-              p {
-                color: #bdbfcb;
-                font-weight: 700;
-                font-size: 0.8rem;
+              grid-template-columns: auto 2rem;
+              background-color: #e0eaff;
+              padding: 1rem 1rem 1rem 1rem;
+              margin-top: 1rem;
+              margin-left: 1rem;
+              margin-right: 1rem;
+              border-radius: 5px;
+              .ficheiro_nome {
+                align-self: center;
+              }
+              .ficheiro_icon {
+                align-self: center;
+                justify-self: center;
               }
             }
-
-            .comentario {
+          }
+        }
+        .conteudosAdicionais {
+          display: grid;
+          grid-row-gap: 1rem;
+          .titulo2 {
+            font-size: 1.125rem;
+            font-weight: $font-weight-bold;
+            color: $text-main-color;
+          }
+          .ficheiros {
+            .caixaFicheiros {
               display: grid;
+              grid-template-columns: auto 2rem;
               background-color: #e0eaff;
-              padding: 1rem;
-              align-items: center;
+              padding: 1rem 1rem 1rem 1rem;
+              margin-top: 1rem;
+              margin-left: 1rem;
+              margin-right: 1rem;
               border-radius: 5px;
-              p {
-                color: #042454;
-                font-weight: 500;
-                font-size: 0.8rem;
+              .ficheiro_nome {
+                align-self: center;
+              }
+              .ficheiro_icon {
+                align-self: center;
+                justify-self: center;
+              }
+            }
+          }
+        }
+        .detalhesConteudo {
+          .titulo1 {
+            font-size: 1.125rem;
+            font-weight: $font-weight-bold;
+            color: $text-main-color;
+          }
+          .titulo2 {
+            margin-top: 2rem;
+            font-size: 1.125rem;
+            font-weight: $font-weight-bold;
+            color: $text-main-color;
+          }
+          .detalhes {
+            display: grid;
+            grid-row-gap: 0.2rem;
+            .caixaTexto {
+              display: grid;
+              grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+              padding: 0rem 1.5rem 1.5rem 1.5rem;
+              margin-top: 1rem;
+              margin-left: 1rem;
+              margin-right: 1rem;
+              background-color: #e0eaff;
+              border-radius: 5px;
+
+              .detalhes_titulo {
+                justify-self: left;
+                font-size: 1rem;
+                font-weight: $font-weight-bolder;
+                color: $text-main-color;
+                margin-top: 2rem;
+              }
+              .detalhes_texto {
+                justify-self: left;
+                font-size: 1rem;
+                font-weight: $font-weight-normal;
+                color: black;
+                margin-top: 1rem;
               }
             }
           }
         }
       }
+    }
 
-      .comentarioInput {
-        .cardComentario {
-          display: grid;
-          grid-template-columns: auto 1fr;
-          margin: 1rem;
+    .conteudoDetalhes {
+      display: grid;
+      grid-template-rows: auto 1fr 1fr;
+      padding: 0 1rem 1rem 1rem;
 
-          img {
-            width: 70%;
-            align-self: center;
+      .conteudoPlano {
+        display: grid;
+        grid-template-rows: auto auto;
+        grid-gap: 2rem;
+        .detalhesConteudo {
+          .titulo1 {
+            font-size: 1.125rem;
+            font-weight: $font-weight-bold;
+            color: $text-main-color;
           }
-
-          .cardInfo {
+          .titulo2 {
+            margin-top: 2rem;
+            font-size: 1.125rem;
+            font-weight: $font-weight-bold;
+            color: $text-main-color;
+          }
+          .detalhes {
             display: grid;
-            grid-template-rows: auto 1fr;
-            grid-row-gap: 0.5rem;
-
-            .autor {
+            grid-row-gap: 0.2rem;
+            .caixaTexto {
               display: grid;
-              grid-template-columns: 1fr auto;
-              p {
-                color: #bdbfcb;
-                font-weight: 700;
-                font-size: 0.8rem;
-              }
-            }
-
-            .comentario {
-              display: grid;
+              grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+              padding: 0rem 1.5rem 1.5rem 1.5rem;
+              margin-top: 1rem;
+              margin-left: 1rem;
+              margin-right: 1rem;
               background-color: #e0eaff;
-              padding: 1rem;
-              align-items: center;
               border-radius: 5px;
 
-              ::placeholder {
-                /* Chrome, Firefox, Opera, Safari 10.1+ */
-                color: #042454;
-                font-weight: 500;
-                font-size: 0.8rem;
+              .detalhes_titulo {
+                justify-self: left;
+                font-size: 1rem;
+                font-weight: $font-weight-bolder;
+                color: $text-main-color;
+                margin-top: 2rem;
               }
-
-              :-ms-input-placeholder {
-                /* Internet Explorer 10-11 */
-                color: #042454;
-                font-weight: 500;
-                font-size: 0.8rem;
-              }
-
-              ::-ms-input-placeholder {
-                /* Microsoft Edge */
-                color: #042454;
-                font-weight: 500;
-                font-size: 0.8rem;
+              .detalhes_texto {
+                justify-self: left;
+                font-size: 1rem;
+                font-weight: $font-weight-normal;
+                color: black;
+                margin-top: 1rem;
               }
             }
           }

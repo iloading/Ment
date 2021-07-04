@@ -4,7 +4,7 @@ import imgComentario from "../../img/avatar/avatar_11.png"
 
 function ResumoSessao() {
     return (
-        <>
+        <div className="conteudoResumo">
             <div className="conteudoMid">
                 <label className="titulo">Descrição</label>
                 <div className="cardDescricao">
@@ -84,7 +84,7 @@ function ResumoSessao() {
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 
