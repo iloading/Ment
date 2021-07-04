@@ -84,7 +84,7 @@
   .conteudoMain {
     display: grid;
     grid-template-rows: auto 1fr 1fr;
-    padding: 1rem;
+    padding: 0 1rem 1rem 1rem;
 
     .conteudoMid {
       .cardDescricao {
@@ -104,26 +104,51 @@
     }
 
     .conteudoPlano {
-      .factos {
-        display: grid;
-        padding: 1.5rem;
-        margin: 1rem;
-        grid-row-gap: 2.5rem;
-        background-color: #e0eaff;
-        border-radius: 5px;
-
-        .factos_reais {
-          display: grid;
-          grid-row-gap: 1rem;
+      display: grid;
+      grid-template-rows: auto auto;
+      grid-gap: 2rem;
+      .detalhesConteudo {
+        .titulo1 {
+          font-size: 1.125rem;
+          font-weight: $font-weight-bold;
+          color: $text-main-color;
         }
-
-        .unidadeCurricolar {
+        .titulo2 {
+          margin-top: 2rem;
+          font-size: 1.125rem;
+          font-weight: $font-weight-bold;
+          color: $text-main-color;
+        }
+        .detalhes {
           display: grid;
-          grid-row-gap: 1rem;
+          grid-row-gap: 0.2rem;
+          .caixaTexto {
+            display: grid;
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+            padding: 0rem 1.5rem 1.5rem 1.5rem;
+            margin-top: 1rem;
+            margin-left: 1rem;
+            margin-right: 1rem;
+            background-color: #e0eaff;
+            border-radius: 5px;
+
+            .detalhes_titulo {
+              justify-self: left;
+              font-size: 1rem;
+              font-weight: $font-weight-bolder;
+              color: $text-main-color;
+              margin-top: 2rem;
+            }
+            .detalhes_texto {
+              justify-self: left;
+              font-size: 1rem;
+              font-weight: $font-weight-normal;
+              color: black;
+              margin-top: 1rem;
+            }
+          }
         }
       }
-    }
-    .conteudoComents {
     }
   }
 }
