@@ -6,7 +6,7 @@ import Narrativa from "../components/Narrativa";
 function sessoesDestaque({ destaques, status }) {
 
 
-    console.log(status);
+
 
     return (
         <>

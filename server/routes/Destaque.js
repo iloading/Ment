@@ -20,7 +20,7 @@ router.post('/', validateToken, async (req, res) => {
                     error: err
                 });
             } else {
-                console.log(result);
+
                 res.json({
                     success: result
                 })
