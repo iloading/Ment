@@ -77,18 +77,21 @@
     .conteudoMid {
       .cardMinhasEquipas {
         display: grid;
-        grid-template-columns: auto 1fr auto;
-        background-color: #bdbfcb;
+        grid-template-columns: 3rem 1fr auto;
+        background-color: #d5eee8;
         border-radius: 10px;
         margin-bottom: 2rem;
         padding: 1rem;
         #iconEquipa {
           align-self: center;
         }
+        img {
+          width: 100%;
+        }
 
         .midInfo {
           display: grid;
-          grid-row-gap: 0.5rem;
+          grid-row-gap: 1rem;
           align-self: center;
           padding: 1rem;
 
@@ -226,12 +229,16 @@
           margin-right: 2rem;
           .cardMinhasEquipas {
             display: grid;
-            grid-template-columns: auto 1fr auto auto;
-            background-color: #bdbfcb;
+            grid-template-columns: 4rem 1fr auto auto;
+            background-color: #d5eee8;
             border-radius: 10px;
             margin-bottom: 2rem;
+            padding: 1.1rem;
             #iconEquipa {
               align-self: center;
+            }
+            img {
+              width: 100%;
             }
 
             .leftInfo {
@@ -270,6 +277,13 @@
               img {
                 align-self: center;
               }
+            }
+
+            .midInfo {
+              display: grid;
+              grid-row-gap: 1rem;
+              align-self: center;
+              padding: 2rem 1rem 2rem 2rem;
             }
           }
         }
