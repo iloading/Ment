@@ -29,9 +29,10 @@ app.use('/destaqueInfo', destaqueRoute);
 const perfilequipaRoute = require('./routes/PerfilEquipa')
 app.use('/perfilequipaInfo', perfilequipaRoute);
 
-app.get('/', async (req, res) => {
+
+/* app.get('/', async (req, res) => {
     await res.send('We are on home')
-})
+}) */
 
 
 app.listen(3001, () => {

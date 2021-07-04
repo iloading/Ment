@@ -4,6 +4,7 @@ import dashboardReducer from './dashboardReducer'
 import userReducer from './userReducer'
 import destaqueReducer from './destaqueReducer'
 import perfilequipaReducer from './perfilequipaReducer'
+import feedbackReducer from './feedbackReducer'
 
 const rootReducer = combineReducers({
     dashboard: dashboardReducer,
@@ -11,6 +12,7 @@ const rootReducer = combineReducers({
     banco: bancoReducer,
     destaque: destaqueReducer,
     perfilequipa: perfilequipaReducer,
+    feedback: feedbackReducer,
 })
 
 export default rootReducer;
