@@ -19,7 +19,7 @@ import { loadDashboard } from "../actions/dashboardAction";
 
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-
+import { showFeedback, hideFeedback } from "../actions/feedbackAction";
 
 
 
@@ -29,6 +29,8 @@ import { useDispatch, useSelector } from 'react-redux'
 function Dashboard() {
     const dispatch = useDispatch()
     useEffect(() => {
+
+        dispatch(showFeedback('Teste de erro', 'error'))
         dispatch(loadDashboard())
 
     }, [dispatch])

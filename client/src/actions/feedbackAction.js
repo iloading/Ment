@@ -1,9 +1,10 @@
 
-export const showFeedback = (message) => async (dispatch) => {
+export const showFeedback = (message, type) => async (dispatch) => {
     dispatch({
         type: "SHOW_FEEDBACK",
         payload: {
-            message: message
+            message: message,
+            type: type
         }
     })
 }
