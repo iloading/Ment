@@ -29,6 +29,8 @@ import { useDispatch, useSelector } from 'react-redux'
 function Dashboard() {
     const dispatch = useDispatch()
     useEffect(() => {
+
+
         dispatch(loadDashboard())
 
     }, [dispatch])

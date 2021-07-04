@@ -14,11 +14,12 @@ import Perfil from "./pages/Perfil";
 import Sessao from "./pages/Sessao";
 import CriarSessao from "./pages/CriarSessao/CriarSessao";
 import MinhasEquipas from "./pages/MinhasEquipas";
+import PerfilEquipa from "./pages/PerfilEquipa";
 
 import { useContext } from 'react'
 
 import AuthContext from "./context/AuthContext";
-
+import Feedback from './pages/components/Feedback'
 
 
 //REACT ROUTER
@@ -30,8 +31,9 @@ function App() {
   return (
 
     <main className="App">
-
+      <Feedback />
       <Switch>
+
         <Route path="/" exact>
           <Homepage />
         </Route>
@@ -73,6 +75,9 @@ function App() {
         </Route>
         <Route path="/minhasEquipas">
           <MinhasEquipas />
+        </Route>
+        <Route path="/perfilequipa">
+          <PerfilEquipa />
         </Route>
 
       </Switch>
