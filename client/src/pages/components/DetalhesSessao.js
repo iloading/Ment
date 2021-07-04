@@ -52,7 +52,16 @@ function DetalhesSessao() {
 
             </div>
 
+
+
+
+
+
+
         </div>
+
+
+
     )
 }
 
