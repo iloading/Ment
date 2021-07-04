@@ -13,7 +13,7 @@ function Narrativa({ destaque, sessao, sessaoEquipa, status }) {
 
     return (
         <>
-            {status === "completed" &&
+            {status === "completed" && sessao &&
                 <div className="narrativa">
                     <img src={iconSessoes} alt="" className="iconSessoes" />
                     <div className="textoCards">
