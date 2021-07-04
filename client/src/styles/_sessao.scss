@@ -107,6 +107,61 @@
       display: grid;
       grid-template-rows: auto auto;
       grid-gap: 2rem;
+
+      .ficheirosPrincipais {
+        .titulo1 {
+          font-size: 1.125rem;
+          font-weight: $font-weight-bold;
+          color: $text-main-color;
+        }
+        .ficheiros {
+          display: grid;
+          grid-row-gap: 1.5rem;
+          .caixaFicheiros {
+            display: grid;
+            grid-template-columns: auto 2rem;
+            background-color: #e0eaff;
+            padding: 1rem 1rem 1rem 1rem;
+            margin-top: 1rem;
+            margin-left: 1rem;
+            margin-right: 1rem;
+            border-radius: 5px;
+            .ficheiro_nome {
+              align-self: center;
+            }
+            .ficheiro_icon {
+              align-self: center;
+              justify-self: center;
+            }
+          }
+        }
+      }
+      .conteudosAdicionais {
+        .titulo2 {
+          font-size: 1.125rem;
+          font-weight: $font-weight-bold;
+          color: $text-main-color;
+        }
+        .ficheiros {
+          .caixaFicheiros {
+            display: grid;
+            grid-template-columns: auto 2rem;
+            background-color: #e0eaff;
+            padding: 1rem 1rem 1rem 1rem;
+            margin-top: 1rem;
+            margin-left: 1rem;
+            margin-right: 1rem;
+            border-radius: 5px;
+            .ficheiro_nome {
+              align-self: center;
+            }
+            .ficheiro_icon {
+              align-self: center;
+              justify-self: center;
+            }
+          }
+        }
+      }
       .detalhesConteudo {
         .titulo1 {
           font-size: 1.125rem;
