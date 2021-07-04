@@ -8,11 +8,11 @@ const router = express.Router();
 //Conexao à BD
 const db = require('../config/db');
 
-router.post('/', validateToken, async (req, res) => {
+router.post('/minhasEquipas', validateToken, async (req, res) => {
 
 
     try {
-        const users = await db.query("SELECT team.id, team.name, school.name AS school_name, descripton, school_id, url, is_archived, alias, created_at, updated_at FROM team INNER JOIN user_has_team ON team_id = team.id INNER JOIN school ON school.id = team.school_id WHERE user_id = ? AND is_owner = 1 AND is_archived = 0 LIMIT 4", [req.userid], (err, result) => {
+        const banco = await db.query("SELECT team.id, team.name, team.url, team.alias, school.name AS school_name FROM team INNER JOIN school ON team.school_id = school.id INNER JOIN user_has_team ON team.id = user_has_team.team_id  WHERE user_has_team.user_id = ? AND is_owner = 1 ORDER BY updated_at DESC;", [req.userid], (err, result) => {
             //Se der erro, devolver o mesmo
             if (err) {
                 console.log(err);
