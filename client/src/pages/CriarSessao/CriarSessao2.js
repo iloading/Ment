@@ -10,7 +10,7 @@ function CriarSessao2() {
     return (
         <section className="associarEquipa">
             <header className="headerAssociarEquipa">
-                <Link to="../" id="seta"><img src={setaAtras} alt="setaAtras" /></Link>
+                <Link to="/criarsessao/1" id="seta"><img src={setaAtras} alt="setaAtras" /></Link>
                 <h2 id="titulo">Associar equipa</h2>
                 <Link to="../" id="criarEquipa"><img src={criarEquipa} alt="criar nova equipa" /></Link>
 
