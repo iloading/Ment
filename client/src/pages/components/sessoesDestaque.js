@@ -1,36 +1,28 @@
 
-
-
-
-
-
-
-
-
-
-
-/* import medalhaOuro from "../../img/medalhaOuro.svg";
-import medalhaPrata from "../../img/medalhaPrata.svg";
-import medalhaBronze from "../../img/medalhaBronze.svg";
-import iconSessoes from "../../img/icons/icon_sessoes.png"; */
+/* import iconSessoes from "../../img/icons/icon_sessoes.png"; */
 import Narrativa from "../components/Narrativa";
 
 
-function CarouselSessao({ destaque }) {
+function sessoesDestaque({ destaques, status }) {
 
 
-
+    console.log(status);
 
     return (
-        <div className="sessoesDestaque">
+        <>
+            {status === "completed" &&
+                <div className="sessoesDestaque">
 
-            <Narrativa destaque={true} />
-            <Narrativa destaque={true} />
-            <Narrativa destaque={true} />
-        </div >
+                    <Narrativa destaque={'ouro'} sessao={destaques[0]} status={status} />
+                    <Narrativa destaque={'prata'} sessao={destaques[1]} status={status} />
+                    <Narrativa destaque={'bronze'} sessao={destaques[2]} status={status} />
+
+                </div >
+            }
+        </>
 
     );
 }
 
 
-export default CarouselSessao;
+export default sessoesDestaque;

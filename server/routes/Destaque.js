@@ -12,7 +12,7 @@ router.post('/', validateToken, async (req, res) => {
 
     /* console.log(req); */
     try {
-        const banco = await db.query("SELECT narrative.id, narrative.name, subject, grade.year, team_id, team.name AS team_name, (SELECT COUNT(likes.narrative_id) FROM likes WHERE narrative.id = likes.narrative_id) AS likes, (SELECT COUNT(comments.narrative_id) FROM comments WHERE narrative.id = comments.narrative_id) AS comments FROM narrative INNER JOIN grade ON grade_id = grade.id INNER JOIN team ON team_id = team.id  ;", [req.userid], (err, result) => {
+        const destaque = await db.query("SELECT narrative.name, subject, team.name AS team_name, grade.year, (SELECT COUNT(likes.narrative_id) FROM likes WHERE narrative.id = likes.narrative_id) AS likes FROM narrative INNER JOIN team ON team_id = team.id INNER JOIN grade ON grade_id = grade.id ORDER BY likes DESC LIMIT 3;", [req.userid], (err, result) => {
             //Se der erro, devolver o mesmo
             if (err) {
                 console.log(err);

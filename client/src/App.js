@@ -14,6 +14,7 @@ import Perfil from "./pages/Perfil";
 import Sessao from "./pages/Sessao";
 import CriarSessao from "./pages/CriarSessao/CriarSessao";
 import MinhasEquipas from "./pages/MinhasEquipas";
+import PerfilEquipa from "./pages/PerfilEquipa";
 
 import { useContext } from 'react'
 
@@ -73,6 +74,9 @@ function App() {
         </Route>
         <Route path="/minhasEquipas">
           <MinhasEquipas />
+        </Route>
+        <Route path="/perfilequipa">
+          <PerfilEquipa />
         </Route>
 
       </Switch>

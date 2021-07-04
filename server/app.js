@@ -23,6 +23,12 @@ app.use('/dashboardInfo', dashboardRoute);
 const bancoRoute = require('./routes/Banco')
 app.use('/bancoInfo', bancoRoute);
 
+const destaqueRoute = require('./routes/Destaque')
+app.use('/destaqueInfo', destaqueRoute);
+
+const perfilequipaRoute = require('./routes/PerfilEquipa')
+app.use('/perfilequipaInfo', perfilequipaRoute);
+
 app.get('/', async (req, res) => {
     await res.send('We are on home')
 })

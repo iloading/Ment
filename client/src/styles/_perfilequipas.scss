@@ -1,27 +1,14 @@
-.perfil {
-  height: 100vh;
-
-  #nav {
-    grid-area: nav;
-  }
-
-  #footer {
-    grid-area: footer;
-  }
-  #main {
-    grid-area: main;
-  }
-
+.perfilEquipas {
   .conteudoMain {
     display: grid;
     margin: 1rem;
-    grid-template-rows: auto 0.5fr 1fr;
+    grid-template-rows: auto auto 1fr;
     grid-row-gap: 1.5rem;
 
     .titulo {
       display: grid;
-      grid-template-columns: 1.5rem auto;
-      grid-template-areas: "iconTitulo tituloMain";
+      grid-template-columns: 1.5rem auto 3rem;
+      grid-template-areas: "iconTitulo tituloMain botaoManage";
       align-items: center;
 
       label {
@@ -44,6 +31,14 @@
       .tituloMain {
         grid-area: tituloMain;
       }
+      .botaoManage {
+        grid-area: botaoManage;
+        width: 50%;
+        display: flex;
+        justify-self: center;
+        align-items: center;
+        justify-content: center;
+      }
     }
 
     .infoPerfil {
@@ -55,19 +50,23 @@
       grid-row-gap: 1rem;
 
       img {
-        width: 70%;
+        width: 30%;
+        margin-top: 1rem;
       }
 
       label {
         color: $text-main-color;
         font-size: $font-size-l;
         font-weight: $font-weight-more-bold;
+        margin-top: 1rem;
       }
 
       span {
         color: $text-type5-color;
         font-size: $font-size-s;
         font-weight: $font-weight-normal;
+        width: 60%;
+        text-align: center;
       }
     }
 
@@ -77,13 +76,30 @@
       grid-row-gap: 1.5rem;
 
       .titulo {
-        width: 90%;
-        justify-self: center;
+        display: grid;
+        grid-template-columns: auto 3rem;
+        grid-template-areas: "tituloConteudo iconOrdenar";
 
-        label {
+        .tituloConteudo {
           color: $text-main-color;
           font-weight: $font-weight-normal;
           font-weight: 300;
+          grid-area: tituloConteudo;
+        }
+
+        .iconOrdenar {
+          width: 50%;
+          grid-area: iconOrdenar;
+          justify-self: center;
+        }
+      }
+      .listaNarrativas {
+        overflow: scroll;
+
+        .narrativa {
+          .likes_coments {
+            display: none !important;
+          }
         }
       }
 

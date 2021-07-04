@@ -2,8 +2,6 @@ import React from 'react'
 import setaAtras from "../../img/setaAtras.png";
 import criarSessao2 from "../../img/criarSessoes/criarSessao2.svg";
 
-import { Link } from 'react-router-dom';
-
 
 
 function CriarSessao1() {
@@ -23,22 +21,14 @@ function CriarSessao1() {
             <section id="corpo">
                 <label id="titulo">Criar uma nova sessão</label>
 
-                <p id="texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-
-                <div className="formulario">
-                    <label className="tituloFormulario">Nome da sessão</label>
-
-                    <input type="text" className="inputTexto" placeholder="ex: Escape Room"></input>
-                </div>
+                <p id="texto">Para criar uma nova sessão, é necessário ter pelo menos uma equipa criada anteriormente, daí ser impossível avançar deste passo.</p>
 
                 <div id="divBotao">
                     <div id="botao">
-                        <p id="textoBotao">Próximo passo</p>
+                        <p id="textoBotao">Associar Equipa</p>
                     </div>
                 </div>
-                <div id="linkFooter">
-                    <Link to=''><span><u> Atribuia-me um nome aleatório.<br></br>Pode alterar o nome em qualquer altura</u></span></Link>
-                </div>
+
             </section>
 
         </form>

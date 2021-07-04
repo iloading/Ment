@@ -27,7 +27,7 @@ function Perfil() {
     }
 
     return (
-        <article className="perfil">
+        <article className="perfil layout">
 
             <Navbar />
 
