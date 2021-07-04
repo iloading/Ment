@@ -12,7 +12,7 @@ import SessionNav from "./components/SessionNav"
 
 function Sessao() {
     return (
-        <article className="sessao">
+        <article className="sessao layout">
             <SessionNav />
             <section id="main" className="conteudoMain">
                 <div className="conteudoMid">
@@ -32,9 +32,27 @@ function Sessao() {
                     </div>
 
                 </div>
+                <div className="conteudoPlano">
+
+                    <label>Plano Geral</label>
+
+                    <div className="factos">
+
+                        <div className="factos_reais">
+                            <label>Factos Reais</label>
+                            <label>7 ano</label>
+                        </div>
+
+                        <div className="unidadeCurricolar">
+                            <label>Factos Reais</label>
+                            <label>7 ano</label>
+                        </div>
+                    </div>
+                </div>
+
                 <div className="conteudoComents">
-                    <div className="seccaoComents">
-                        <label>Descrição</label>
+                    <div className="seccaoPlano">
+                        <label>Plano Geral</label>
                     </div>
                     <h1>ola</h1>
                 </div>

@@ -1,20 +1,20 @@
 import Footer from "./components/Footer"
 import Navbar from "./components/Navbar"
+import MinhasEquipas from "./components/MinhasEquipas";
 
 
 import iconDefinicoes from "../img/icons/icon_settings.svg";
 
 
-import iconBanco from "../img/icons/icon_banco.svg";
+
 
 
 import iconOrdenar from "../img/icons/icon_ordenar.svg";
-import iconEquipa from "../img/Equipas/icon_equipa.svg";
-import icon3pontos from "../img/icons/icon_3pontos.svg";
-import iconParticipantes from "../img/icons/icon_equipa_branco.svg";
-import iconSeta from "../img/setaAtras.png"
+
+import iconSetaTras from "../img/setaAtras.png"
 import iconCriar from "../img/icons/icon_plus.svg"
 import iconTituloEquipa from "../img/icons/icon_equipa.svg"
+
 
 
 
@@ -48,7 +48,7 @@ function Banco() {
                 {/*DESKTOP*/}
 
                 <div className="goBack_criarEquipa">
-                    <img src={iconSeta} alt="" />
+                    <img src={iconSetaTras} alt="" />
                     <div>
                         <img src={iconCriar} alt="" />
                         <label>Nova equipa</label>
@@ -76,24 +76,14 @@ function Banco() {
                 <div className="conteudoMid">
 
                     <div className="listaMinhasEquipas">
-                        <div className="cardMinhasEquipas">
-                            <img src={iconEquipa} alt="" id="iconEquipa" />
-                            <div className="midInfo">
-                                <label>8ºD</label>
-                                <p>Inglês</p>
-                                <span>Escola Secundária Carlos Amarante</span>
-                            </div>
-                            <div className="leftInfo">
-                                <div className="botaoPontos" >
-                                    <img src={icon3pontos} alt="" id="botaoPontos" />
-                                </div>
+                        <MinhasEquipas />
+                        <MinhasEquipas />
+                        <MinhasEquipas />
+                        <MinhasEquipas />
+                        <MinhasEquipas />
+                        <MinhasEquipas />
+                        <MinhasEquipas />
 
-                                <div id="participantes">
-                                    <img src={iconParticipantes} alt="" />
-                                    <p>20</p>
-                                </div>
-                            </div>
-                        </div>
                     </div>
 
                     <div className="coluna_direita_desktop">
@@ -110,7 +100,17 @@ function Banco() {
 
                         </div>
 
-                        <div className="areaEquipasArquivadas">ola</div>
+                        <div className="areaEquipasArquivadas">
+                            <div className="tituloEquipasArquivadas">
+                                <label>Equipas arquivadas</label>
+                            </div>
+                            <MinhasEquipas />
+                            <MinhasEquipas />
+                            <MinhasEquipas />
+                            <MinhasEquipas />
+
+
+                        </div>
 
                     </div>
 

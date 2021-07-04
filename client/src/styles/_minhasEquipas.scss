@@ -81,9 +81,9 @@
         background-color: #bdbfcb;
         border-radius: 10px;
         margin-bottom: 2rem;
+        padding: 1rem;
         #iconEquipa {
           align-self: center;
-          margin-left: 1rem;
         }
 
         .midInfo {
@@ -113,7 +113,6 @@
         .leftInfo {
           display: grid;
           grid-template-rows: 1fr 1fr;
-          padding-right: 1rem;
 
           .botaoPontos {
             display: grid;
@@ -132,7 +131,14 @@
             grid-column-gap: 0.5rem;
             align-self: center;
             justify-self: end;
+            img {
+              align-self: center;
+            }
           }
+        }
+
+        .setaEntrar {
+          display: none;
         }
       }
 
@@ -178,7 +184,14 @@
 
         #criarEquipa {
           grid-area: criarEquipa;
+        }
+        .criarEquipa {
           display: block;
+          label {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #042454;
+          }
         }
 
         .titulo_and_img {
@@ -207,11 +220,64 @@
       .conteudoMid {
         display: grid;
         grid-template-columns: 1.5fr 1fr;
-        grid-column-gap: 2.5rem;
+        grid-column-gap: 1rem;
+
+        .listaMinhasEquipas {
+          margin-right: 2rem;
+          .cardMinhasEquipas {
+            display: grid;
+            grid-template-columns: auto 1fr auto auto;
+            background-color: #bdbfcb;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            #iconEquipa {
+              align-self: center;
+            }
+
+            .leftInfo {
+              display: grid;
+              grid-template-rows: 1fr;
+              padding-right: 1rem;
+
+              .botaoPontos {
+                display: none;
+              }
+
+              #botaoPontos {
+                grid-area: botaoPontos;
+              }
+              #participantes {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-column-gap: 0.5rem;
+                align-self: center;
+                justify-self: end;
+                img {
+                  align-self: center;
+                }
+              }
+            }
+
+            .setaEntrar {
+              display: grid;
+              grid-template-rows: 0.5fr auto 0.5fr;
+
+              #botaoPontos {
+                align-self: baseline;
+                justify-self: center;
+              }
+
+              img {
+                align-self: center;
+              }
+            }
+          }
+        }
 
         .coluna_direita_desktop {
           display: block;
           height: fit-content;
+          margin-left: 5%;
 
           .areaCriarEquipa {
             display: grid;
@@ -271,7 +337,39 @@
           }
 
           .areaEquipasArquivadas {
-            background-color: #a6a6a6;
+            .setaEntrar {
+              display: none;
+            }
+            .tituloEquipasArquivadas {
+              margin-top: 2rem;
+              margin-bottom: 2rem;
+              font-size: 1.2rem;
+              font-weight: 600;
+              color: #042454;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1999px) {
+  .conteudoMid {
+    .coluna_direita_desktop {
+      .areaEquipasArquivadas {
+        .cardMinhasEquipas {
+          .midInfo {
+            span {
+              display: none;
+            }
+          }
+          .setaEntrar {
+            display: grid;
+            grid-template-rows: 1fr;
+            #iconSetaEntrar {
+              display: none;
+            }
           }
         }
       }

@@ -1,12 +1,8 @@
 .sessao {
-  display: grid;
   grid-template-rows: auto 1fr 3rem;
-  grid-template-areas: "topNav" "main" "footer";
-  overflow: auto;
-  height: 100vh;
 
-  #topNav {
-    grid-area: topNav;
+  #nav {
+    grid-area: nav;
     z-index: 10;
     position: sticky;
     top: 0;
@@ -87,11 +83,10 @@
 
   .conteudoMain {
     display: grid;
-    grid-template-rows: auto 1fr;
+    grid-template-rows: auto 1fr 1fr;
+    padding: 1rem;
 
     .conteudoMid {
-      padding: 1rem;
-
       .cardDescricao {
         display: grid;
         grid-template-rows: 1fr 1fr;
@@ -108,8 +103,27 @@
       }
     }
 
+    .conteudoPlano {
+      .factos {
+        display: grid;
+        padding: 1.5rem;
+        margin: 1rem;
+        grid-row-gap: 2.5rem;
+        background-color: #e0eaff;
+        border-radius: 5px;
+
+        .factos_reais {
+          display: grid;
+          grid-row-gap: 1rem;
+        }
+
+        .unidadeCurricolar {
+          display: grid;
+          grid-row-gap: 1rem;
+        }
+      }
+    }
     .conteudoComents {
-      padding: 1rem;
     }
   }
 }

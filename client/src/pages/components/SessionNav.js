@@ -10,7 +10,7 @@ import Carousel from "../components/CarouselSessao"
 function Navbar() {
 
     return (
-        <section id="topNav">
+        <section id="nav">
             <div className="barraSocial" id="barraSocial">
                 <img src={setaAtras} alt="" />
                 <img src={iconShare} alt="" id="share" />
