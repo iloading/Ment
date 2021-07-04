@@ -1,70 +1,51 @@
 import React from 'react'
-import setaAtras from "../../img/setaAtras.png"
-import criarEquipa from "../../img/criarSessoes/criarEquipa.svg"
-import avatarEquipa from "../../img/criarSessoes/avatarEquipa.svg"
+import setaAtras from "../../img/setaAtras.png";
+import criarSessao3 from "../../img/criarSessoes/criarSessao3.svg";
 
-
-import { Link } from "react-router-dom"
 
 function CriarSessao3() {
     return (
-        <section className="associarEquipa">
-            <header className="headerAssociarEquipa">
-                <Link to="../" id="seta"><img src={setaAtras} alt="setaAtras" /></Link>
-                <h2 id="titulo">Associar equipa</h2>
-                <Link to="../" id="criarEquipa"><img src={criarEquipa} alt="criar nova equipa" /></Link>
+        <form className="formularioCriarSessao">
+            <header className="criarSessaoImg">
+
+
+                <div className="setaTras">
+                    <img src={setaAtras} alt="seta atras" />
+                </div>
+
+                <img src={criarSessao3} alt="criar sessao primeira imagem" />
 
             </header>
-            <div id="inputPesquisar">
-                <input type="text" id="inputPesquisa" placeholder="Pesquisar por nome, turma, ano..."></input>
-            </div>
-            <div id="id_titulo2">
-                <label id="titulo2">As suas equipas</label>
-            </div>
-            <div id="equipas">
-                <div id="equipa1">
-                    <img src={avatarEquipa} alt="avatar de equipa" className="avatarEquipa" />
-                    <div className="texto">
-                        <p className="tituloTexto">Os Aventureiros</p>
-                        <p className="escolaTexto">Secundária da Amadora</p>
-                        <p className="anoTexto">8ºB</p>
+
+            <section id="corpo">
+                <label id="titulo">Detalhes</label>
+
+                <div className="formulario">
+                    <label className="tituloFormulario">Nome da sessão</label>
+
+                    <input type="text" className="inputTexto" placeholder="ex: Escape Room"></input>
+                </div>
+
+                <div className="formulario">
+                    <label className="tituloFormulario">Disciplina</label>
+
+                    <input type="text" className="inputTexto" placeholder="ex: Inglês, Matemática, etc..."></input>
+                </div>
+
+                <div className="formulario">
+                    <label className="tituloFormulario">Counteúdos programáticos</label>
+
+                    <input type="text" className="inputTexto" placeholder="ex: Past tense, teorema de pitágoras"></input>
+                </div>
+
+                <div id="divBotao">
+                    <div id="botao">
+                        <p id="textoBotao">Próximo passo</p>
                     </div>
-                    <div className="checkbox"></div>
                 </div>
-                <div id="equipa2">
-                    <img src={avatarEquipa} alt="avatar de equipa" className="avatarEquipa" />
-                    <div className="texto">
-                        <p className="tituloTexto">Avila Crew</p>
-                        <p className="escolaTexto">Secundária do Restelo</p>
-                        <p className="anoTexto">5ºC</p>
-                    </div>
-                    <div className="checkbox"></div>
-                </div>
-                <div id="equipa3">
-                    <img src={avatarEquipa} alt="avatar de equipa" className="avatarEquipa" />
-                    <div className="texto">
-                        <p className="tituloTexto">Exploradores</p>
-                        <p className="escolaTexto">EB23 de Luanda</p>
-                        <p className="anoTexto">7ºX</p>
-                    </div>
-                    <div className="checkbox"></div>
-                </div>
-                <div id="equipa4">
-                    <img src={avatarEquipa} alt="avatar de equipa" className="avatarEquipa" />
-                    <div className="texto">
-                        <p className="tituloTexto">Pingados</p>
-                        <p className="escolaTexto">Secundária da Amadora</p>
-                        <p className="anoTexto">8ºB</p>
-                    </div>
-                    <div className="checkbox"></div>
-                </div>
-            </div>
-            <div id="divBotao">
-                <div id="botao">
-                    <p id="textoBotao">Próximo passo</p>
-                </div>
-            </div>
-        </section>
+            </section>
+
+        </form>
     )
 }
 

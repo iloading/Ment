@@ -2,7 +2,6 @@ import React from 'react'
 import setaAtras from "../../img/setaAtras.png";
 import criarSessao3 from "../../img/criarSessoes/criarSessao3.svg";
 
-
 function CriarSessao4() {
     return (
         <form className="formularioCriarSessao">
@@ -21,20 +20,20 @@ function CriarSessao4() {
                 <label id="titulo">Detalhes</label>
 
                 <div className="formulario">
-                    <label className="tituloFormulario">Disciplina</label>
+                    <label className="tituloFormulario">Ano dos mentorandos</label>
 
-                    <input type="text" className="inputTexto" placeholder="ex: Inglês, Matemática, etc..."></input>
+                    <input type="text" className="inputTexto" placeholder="ex: 6ºano"></input>
                 </div>
 
                 <div className="formulario">
-                    <label className="tituloFormulario">Counteúdos programáticos</label>
+                    <label className="tituloFormulario">Descrição</label>
 
-                    <input type="text" className="inputTexto" placeholder="ex: Past tense, teorema de pitágoras"></input>
+                    <textarea type="text" className="textareaTexto" placeholder="Descrição da equipa"></textarea>
                 </div>
 
                 <div id="divBotao">
                     <div id="botao">
-                        <p id="textoBotao">Próximo passo</p>
+                        <p id="textoBotao">Criar sessão!</p>
                     </div>
                 </div>
             </section>

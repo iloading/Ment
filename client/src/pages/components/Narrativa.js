@@ -9,7 +9,7 @@ import medalhaPrata from "../../img/medalhaPrata.svg";
 import medalhaBronze from "../../img/medalhaBronze.svg";
 
 
-function Narrativa({ destaque, sessao, status }) {
+function Narrativa({ destaque, sessao, sessaoEquipa, status }) {
 
     return (
         <>
@@ -40,6 +40,8 @@ function Narrativa({ destaque, sessao, status }) {
                     {destaque ? <img src={destaque === 'ouro' ? medalhaOuro : destaque === 'prata' ? medalhaPrata : destaque === 'bronze' ? medalhaBronze : ""} className="iconMedalha" alt={'medalha'} /> : <img src={seta} className="iconMedalha" alt={'seta'} />}
 
                 </div>
+
+
             }
         </>
 
