@@ -189,7 +189,7 @@
     grid-template-rows: 1fr 1fr 1fr 1fr;
     grid-template-areas: "equipa1" "equipa2" "equipa3" "equipa4";
     margin: 1.5rem;
-    grid-gap: 2rem;
+    grid-gap: 1rem;
 
     #equipa1 {
       grid-area: equipa1;
@@ -466,7 +466,7 @@
           .gridAdicionar {
             grid-area: conteudo;
             display: grid;
-            grid-template-columns: auto 5rem;
+            grid-template-columns: 24rem 5rem;
             grid-template-areas: "tituloCriarEquipas imgCriarEquipas";
             .tituloCriarEquipas {
               grid-area: tituloCriarEquipas;
@@ -513,9 +513,13 @@
       grid-template-columns: 1.5fr 1fr;
       grid-template-areas: "conteudoEsquerda conteudoDireita";
       grid-column-gap: 1rem;
+      overflow: hidden;
+      height: 100%;
 
       .conteudoEsquerda {
         grid-area: conteudoEsquerda;
+        overflow: hidden;
+        height: 100%;
         #corpo {
           margin: 1rem 2rem 0rem 2rem;
 
@@ -532,8 +536,14 @@
           }
         }
         .associarEquipa {
+          height: 100%;
           header {
             display: none;
+          }
+
+          #equipas {
+            height: 94%;
+            overflow: scroll;
           }
         }
       }

@@ -53,7 +53,7 @@ function CriarEquipa5() {
                                 <input type="text" id="inputPesquisa" placeholder="Pesquisar por email, username..."></input>
                             </div>
                             <div id="id_titulo2">
-                                <label id="titulo2">Sugeridos</label>
+                                <label id="titulo2">As suas equipas</label>
                             </div>
                             <div id="equipas">
                                 <div id="equipa1">
