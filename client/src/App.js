@@ -34,8 +34,10 @@ function App() {
 
     <main className="App layout">
       <Feedback />
-      <Navbar />
-      <Footer />
+      {loggedIn ? <> <Navbar /><Footer /> </> : <></>
+      }
+
+
       <Switch>
 
         <Route path="/" exact>

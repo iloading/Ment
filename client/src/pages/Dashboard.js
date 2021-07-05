@@ -58,7 +58,7 @@ function Dashboard() {
 
                     <div className="bemvindo_titulos">
                         <h3>{boasVindas},</h3>
-                        {status === 'completed' && <h1>{user.name}</h1>}
+                        {user.status === 'completed' && <h1>{user.name}</h1>}
 
                     </div>
                     <div className="icons">
