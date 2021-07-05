@@ -4,6 +4,9 @@
     grid-template-rows: auto auto 1fr;
     grid-row-gap: 2rem;
     padding: 1rem;
+    overflow-x: hidden;
+    overflow: initial;
+    height: 100%;
 
     .goBack_criarEquipa {
       display: grid;

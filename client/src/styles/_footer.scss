@@ -3,9 +3,11 @@
   display: grid;
   grid-template-columns: 0.1fr 1fr 1fr 1fr 1fr 0.1fr;
   grid-template-areas: ". banco home criar equipa .";
-  position: sticky;
+  position: fixed;
   bottom: 0;
   z-index: 10;
+  width: 100%;
+  padding: 1rem;
 
   #banco {
     justify-self: center;
