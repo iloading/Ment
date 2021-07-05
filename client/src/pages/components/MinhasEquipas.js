@@ -1,7 +1,7 @@
 import React from 'react'
 import iconEquipa from "../../img/Equipas/icon_equipa.svg";
 import icon3pontos from "../../img/icons/icon_3pontos.svg";
-import iconParticipantes from "../../img/icons/icon_equipa_branco.svg";
+import iconParticipantes from "../../img/icons/icon_equipa_azul.svg";
 import iconSetaEntrar from "../../img/setaDireita_cor.png"
 
 function MinhasEquipas() {
@@ -19,8 +19,8 @@ function MinhasEquipas() {
                 </div>
 
                 <div id="participantes">
-                    <img src={iconParticipantes} alt="" />
-                    <p>20</p>
+                    <img src={iconParticipantes} alt="" id="iconParticipantes" />
+                    <p className="numeroParticipantes">20</p>
                 </div>
             </div>
 
