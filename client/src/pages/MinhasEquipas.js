@@ -4,6 +4,7 @@ import MinhasEquipas from "./components/MinhasEquipas";
 
 
 import iconDefinicoes from "../img/icons/icon_settings.svg";
+import iconArquivar from "../img/icons/icon_arquivar.svg";
 
 
 
@@ -14,6 +15,8 @@ import iconOrdenar from "../img/icons/icon_ordenar.svg";
 import iconSetaTras from "../img/setaAtras.png"
 import iconCriar from "../img/icons/icon_plus.svg"
 import iconTituloEquipa from "../img/icons/icon_equipa.svg"
+import { useRef, useState } from "react";
+
 
 
 
@@ -22,7 +25,15 @@ import iconTituloEquipa from "../img/icons/icon_equipa.svg"
 
 
 function Banco() {
+    const [ocultadas, setOcultadas] = useState(true)
 
+
+    const toggleEquipas = (event) => {
+
+        setOcultadas(!ocultadas)
+
+
+    }
     return (
         <article className="minhasEquipas layout">
 
@@ -102,12 +113,21 @@ function Banco() {
 
                         <div className="areaEquipasArquivadas">
                             <div className="tituloEquipasArquivadas">
+
+                                <img src={iconArquivar} alt="" className="iconEquipasArquivadas" />
                                 <label>Equipas arquivadas</label>
+                                <button onClick={(event) => toggleEquipas(event)}>{`${ocultadas ? 'Mostrar' : 'Ocultar'}`}</button>
                             </div>
-                            <MinhasEquipas />
-                            <MinhasEquipas />
-                            <MinhasEquipas />
-                            <MinhasEquipas />
+                            <div className={`cardEquipasArquivadas ${ocultadas ? 'ocultarEquipas' : ''}`} >
+                                <MinhasEquipas />
+                                <MinhasEquipas />
+                                <MinhasEquipas />
+                                <MinhasEquipas />
+                                <MinhasEquipas />
+                                <MinhasEquipas />
+                                <MinhasEquipas />
+
+                            </div>
 
 
                         </div>

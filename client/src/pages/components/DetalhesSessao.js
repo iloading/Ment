@@ -2,7 +2,7 @@ import React from 'react'
 
 function DetalhesSessao() {
     return (
-        <>
+        <div className="conteudoDetalhes">
             <div className="conteudoPlano">
                 <div className="detalhesConteudo">
 
@@ -51,7 +51,17 @@ function DetalhesSessao() {
                 </div>
 
             </div>
-        </>
+
+
+
+
+
+
+
+        </div>
+
+
+
     )
 }
 

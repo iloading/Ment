@@ -87,8 +87,8 @@ function Dashboard() {
                 {status === 'completed' &&
                     <div className={`minhasEquipas layout${equipas.length}`}>
 
-                        {(equipas.length === 2 ?
-                            equipas.map(equipa => <MinhaEquipa alias={equipa.alias} name={equipa.name} schoolName={equipa.school_name} key={equipa.id} />)
+                        {(equipas.length >= 2 ?
+                            equipas.map(equipa => <MinhaEquipa numero={equipas.indexOf(equipa)} alias={equipa.alias} name={equipa.name} schoolName={equipa.school_name} key={equipa.id} />)
                             :
                             equipas.length === 1 ?
                                 <>

@@ -1,10 +1,9 @@
 import React from 'react'
 import iconDownload from "../../img/icons/icon_download.svg";
 
-
 function RecursosSessao() {
     return (
-        <>
+        <div className="conteudoRecursos">
             <div className="conteudoPlano">
                 <div className="ficheirosPrincipais">
                     <label className="titulo1">Ficheiros principais</label>
@@ -35,7 +34,7 @@ function RecursosSessao() {
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 
