@@ -181,11 +181,7 @@
     #equipa1 {
       grid-area: equipa1;
       display: grid;
-<<<<<<< HEAD
       grid-template-columns: 7rem 1fr 5.8rem;
-=======
-      grid-template-columns: 0.3fr 1fr 0.3fr;
->>>>>>> sessaoRecursos
       grid-template-areas: "imagem texto checkbox";
       border: 1px solid #f8faff;
       background-color: #f8faff;
@@ -202,15 +198,9 @@
         grid-area: texto;
         justify-self: left;
         align-self: center;
-<<<<<<< HEAD
         padding-top: 1rem;
         padding-bottom: 1rem;
         padding-left: 1rem;
-=======
-        padding-top: 0.5rem;
-        padding-bottom: 0.5rem;
-        padding-left: 0.5rem;
->>>>>>> sessaoRecursos
         .tituloTexto {
           color: #042454;
           font-size: 0.9375rem;
