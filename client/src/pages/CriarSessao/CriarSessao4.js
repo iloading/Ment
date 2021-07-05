@@ -19,11 +19,6 @@ function CriarSessao4() {
             <section id="corpo">
                 <label id="titulo">Detalhes</label>
 
-                <div className="formulario">
-                    <label className="tituloFormulario">Ano dos mentorandos</label>
-
-                    <input type="text" className="inputTexto" placeholder="ex: 6ºano"></input>
-                </div>
 
                 <div className="formulario">
                     <label className="tituloFormulario">Descrição</label>

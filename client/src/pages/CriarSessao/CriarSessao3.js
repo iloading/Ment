@@ -25,6 +25,11 @@ function CriarSessao3() {
 
                     <input type="text" className="inputTexto" placeholder="ex: Escape Room"></input>
                 </div>
+                <div className="formulario">
+                    <label className="tituloFormulario">Ano de Escolaridade</label>
+
+                    <input type="text" className="inputTexto" placeholder="ex: Escape Room"></input>
+                </div>
 
                 <div className="formulario">
                     <label className="tituloFormulario">Disciplina</label>

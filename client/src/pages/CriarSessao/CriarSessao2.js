@@ -55,11 +55,22 @@ function CriarSessao2() {
 
 
             </div>
-            <div id="divBotao">
-                <div id="botao">
-                    <p id="textoBotao">Próximo passo</p>
-                </div>
-            </div>
+            {equipaEscolhida.id ?
+                <Link to="/criarsessao/3" >
+                    <button id="divBotao">
+                        <div id="botao" >
+                            <p id="textoBotao">Próximo passo</p>
+                        </div>
+                    </button>
+                </Link>
+                :
+                <button id="divBotao" disabled>
+                    <div id="botao" >
+                        <p id="textoBotao">Próximo passo</p>
+                    </div>
+                </button>
+            }
+
         </section>
     )
 }
