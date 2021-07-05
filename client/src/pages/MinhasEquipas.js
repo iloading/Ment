@@ -114,7 +114,7 @@ function Banco() {
 
                                 <img src={iconArquivar} alt="" className="iconEquipasArquivadas" />
                                 <label>Equipas arquivadas</label>
-                                <button onClick={(event) => toggleEquipas(event)}>{`${ocultadas ? 'Mostrar' : 'Ocultar'}`}</button>
+                                <button className="botaoOcultar" onClick={(event) => toggleEquipas(event)}>{`${ocultadas ? 'Mostrar' : 'Ocultar'}`}</button>
                             </div>
                             <div className={`cardEquipasArquivadas ${ocultadas ? 'ocultarEquipas' : ''}`} >
                                 <MinhasEquipas />
