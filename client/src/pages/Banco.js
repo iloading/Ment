@@ -1,5 +1,3 @@
-import Footer from "./components/Footer"
-import Navbar from "./components/Navbar"
 import SessoesDestaque from "./components/sessoesDestaque";
 import Narrativa from "./components/Narrativa";
 import SearchBar from "./components/SearchBar";
@@ -33,9 +31,9 @@ function Banco() {
     const { sessoesDestaque: destaques, status: statusDestaque } = useSelector(state => state.destaque)
 
     return (
-        <article className="banco layout">
+        <article className="banco">
 
-            <Navbar />
+
 
 
             <section id="main" className="conteudoMain">
@@ -120,7 +118,7 @@ function Banco() {
 
             </section>
 
-            <Footer />
+
 
 
 

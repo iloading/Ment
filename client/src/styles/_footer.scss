@@ -31,7 +31,10 @@
   }
 
   .iconFooter {
+    cursor: pointer;
+    text-decoration: none;
     label {
+      cursor: pointer;
       display: none;
     }
     img {

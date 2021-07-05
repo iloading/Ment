@@ -1,5 +1,3 @@
-import Footer from "./components/Footer"
-import Navbar from "./components/Navbar"
 import MinhasEquipas from "./components/MinhasEquipas";
 
 
@@ -35,9 +33,9 @@ function Banco() {
 
     }
     return (
-        <article className="minhasEquipas layout">
+        <article className="minhasEquipas">
 
-            <Navbar />
+
 
 
             <section id="main" className="conteudoMain">
@@ -159,7 +157,7 @@ function Banco() {
 
             </section>
 
-            <Footer />
+
 
 
 
