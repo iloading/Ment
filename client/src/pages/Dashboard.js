@@ -15,6 +15,7 @@ import iconDefinicoes from "../img/icons/icon_settings.svg";
 
 //REDUX//
 import { loadDashboard } from "../actions/dashboardAction";
+import { loadDestaque } from "../actions/destaqueAction";
 
 
 import { useEffect } from 'react'
@@ -32,11 +33,13 @@ function Dashboard() {
 
 
         dispatch(loadDashboard())
+        dispatch(loadDestaque())
 
     }, [dispatch])
 
     const { minhasEquipas: equipas, status } = useSelector(state => state.dashboard)
 
+    const { sessoesDestaque: destaques, status: statusDestaque } = useSelector(state => state.destaque)
 
     const user = useSelector(state => state.user.user)
     let hora = new Date().getHours();
@@ -121,7 +124,8 @@ function Dashboard() {
                     <label className="tituloMain">Sessões em destaque</label>
                 </div>
 
-                <SessoesDestaque />
+                {<SessoesDestaque destaques={destaques} status={statusDestaque} />}
+
 
 
             </section>

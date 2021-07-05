@@ -10,10 +10,14 @@ import medalhaBronze from "../../img/medalhaBronze.svg";
 
 
 function Narrativa({ destaque, sessao, sessaoEquipa, status }) {
+    console.log(destaque, sessao, sessaoEquipa, status);
+
 
     return (
+
         <>
             {status === "completed" && sessao &&
+
                 <div className="narrativa">
                     <img src={iconSessoes} alt="" className="iconSessoes" />
                     <div className="textoCards">
