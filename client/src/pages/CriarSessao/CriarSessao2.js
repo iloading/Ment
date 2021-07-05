@@ -18,13 +18,13 @@ function CriarSessao2() {
 
     }, [dispatch])
 
-    const { minhasEquipas, equipaEscolhida } = useSelector(state => state.criarSessao)
+    const { minhasEquipas, dadosPreenchidos } = useSelector(state => state.criarSessao)
 
 
 
     const selectTeam = (e, id) => {
         /* dispatch(loadMinhasEquipas()) */
-        if (equipaEscolhida.id !== id) {
+        if (dadosPreenchidos.equipaEscolhida !== id) {
             dispatch(escolherEquipa(id))
         }
 
@@ -55,7 +55,7 @@ function CriarSessao2() {
 
 
             </div>
-            {equipaEscolhida.id ?
+            {dadosPreenchidos.equipaEscolhida ?
                 <Link to="/criarsessao/3" >
                     <button id="divBotao">
                         <div id="botao" >

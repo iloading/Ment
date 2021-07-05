@@ -3,8 +3,8 @@ import { useSelector } from 'react-redux'
 
 function MinhaEquipaCriarSessao({ equipa, selectTeam }) {
 
-    const { equipaEscolhida } = useSelector(state => state.criarSessao)
-    const escolhida = equipaEscolhida.id === equipa.id
+    const { equipaEscolhida } = useSelector(state => state.criarSessao.dadosPreenchidos)
+    const escolhida = equipaEscolhida === equipa.id
 
     return (
         <div key={equipa.id} onClick={(e) => selectTeam(e, equipa.id)} className={`equipas`}>

@@ -27,7 +27,7 @@ export function FooterCore() {
                 <label>Início</label>
             </Link>
 
-            <Link id="criar" className="iconFooter" >
+            <Link to='/criarsessao' id="criar" className="iconFooter" >
                 <img src={iconCriar} alt="" />
                 <label>Nova Sessão</label>
             </Link>
