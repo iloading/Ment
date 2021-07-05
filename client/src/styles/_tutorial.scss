@@ -1,69 +1,147 @@
 .tutorial {
-  display: grid;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-gap: 1.5rem;
+  .conteudoMain {
+    .navTutorial {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-column-gap: 2.5rem;
+      align-items: center;
 
-  .navTutorial {
-    display: grid;
-    grid-template-columns: 0.1fr 0.5fr 1fr 0.5fr 0.1fr;
-    grid-template-areas: ". seta tutorial . .";
-    margin-top: 1.5rem;
-    margin-bottom: 1rem;
-    #seta {
-      align-self: center;
-      grid-area: seta;
-      height: auto;
+      h2 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #042454;
+      }
+      .tituloEtapas {
+        display: none;
+      }
     }
+    .conteudoMid {
+      display: grid;
+      grid-template-rows: 1fr;
+      grid-template-columns: 1fr;
 
-    #tutorial {
-      align-self: center;
-      justify-self: center;
-      grid-area: tutorial;
-    }
-    h2 {
-      color: $text-main-color;
-      font-weight: $font-weight-boldest;
-      font-size: 1.375rem;
-    }
-  }
+      .listaEtapas {
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-gap: 1.5rem;
 
-  #linkCaixa {
-    text-decoration: none;
-    display: grid;
-    margin: 0 2rem;
-    grid-template-columns: 0.1fr 1fr 0.3fr;
-    grid-template-areas: ". textoEsquerda setaDireita";
-    background-color: #e0eaff;
-    border: 1px solid #e0eaff;
-    border-radius: 0.3rem;
+        .bemvindo_titulos {
+          h3 {
+            visibility: hidden;
+          }
+        }
+        .navTutorial {
+          display: grid;
+          grid-template-columns: 0.1fr 0.5fr 1fr 0.5fr 0.1fr;
+          grid-template-areas: ". seta tutorial . .";
+          margin-top: 1.5rem;
+          margin-bottom: 1rem;
+          #seta {
+            align-self: center;
+            grid-area: seta;
+            height: auto;
+          }
 
-    .textoEsquerda {
-      align-self: center;
-      padding-top: 0.5rem;
-      padding-bottom: 0.5rem;
-      grid-area: textoEsquerda;
-    }
+          #tutorial {
+            align-self: center;
+            justify-self: center;
+            grid-area: tutorial;
+          }
+          h2 {
+            color: $text-main-color;
+            font-weight: $font-weight-boldest;
+            font-size: 1.375rem;
+          }
+        }
 
-    .setaDireita {
-      align-self: center;
-      justify-self: center;
-      grid-area: setaDireita;
-    }
+        #linkCaixa {
+          text-decoration: none;
+          display: grid;
+          margin: 0 2rem;
+          grid-template-columns: 0.1fr 1fr 0.3fr;
+          grid-template-areas: ". textoEsquerda setaDireita";
+          background-color: #e0eaff;
+          border: 1px solid #e0eaff;
+          border-radius: 0.3rem;
 
-    h4 {
-      font-size: 0.93rem;
-      font-weight: 700;
-      color: #858585;
-      margin-bottom: 0.2rem;
-    }
-    p {
-      font-size: 0.81rem;
-      font-weight: $font-weight-boldest;
-      font-style: italic;
-      color: #a9a9a9;
+          .textoEsquerda {
+            align-self: center;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            grid-area: textoEsquerda;
+          }
+
+          .setaDireita {
+            align-self: center;
+            justify-self: center;
+            grid-area: setaDireita;
+          }
+
+          h4 {
+            font-size: 0.93rem;
+            font-weight: 700;
+            color: #858585;
+            margin-bottom: 0.2rem;
+          }
+          p {
+            font-size: 0.81rem;
+            font-weight: $font-weight-boldest;
+            font-style: italic;
+            color: #a9a9a9;
+          }
+        }
+      }
+
+      .Ajuda {
+        display: none;
+      }
     }
   }
 }
 
 @media only screen and (min-width: 1024px) {
+  .tutorial {
+    .conteudoMain {
+      display: grid;
+      grid-template-rows: auto 4rem 1fr;
+      padding-right: 4rem;
+      padding-top: 2rem;
+      margin: 0;
+      overflow: hidden;
+
+      .navTutorial {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+        grid-column-gap: 2.5rem;
+        align-items: center;
+        #seta {
+          display: none;
+        }
+        h2 {
+          font-size: 1.2rem;
+          font-weight: 600;
+          color: #042454;
+        }
+
+        .tituloEtapas {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      .conteudoMid {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+        grid-column-gap: 2rem;
+        .listaEtapas {
+          #linkCaixa {
+            margin: 0;
+          }
+        }
+        .Ajuda {
+          display: block;
+        }
+      }
+    }
+  }
 }

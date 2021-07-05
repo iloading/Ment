@@ -51,9 +51,6 @@ function Dashboard() {
         <article className="dashboard">
 
 
-
-
-
             <section id="main" className="conteudoMain">
 
                 {/*DESKTOP*/}
