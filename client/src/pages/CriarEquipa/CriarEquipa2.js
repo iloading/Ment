@@ -1,46 +1,86 @@
 import React from 'react'
 
-import setaAtras from "../../img/setaAtras.png"
+import setaAtras from "../../img/icons/icon_setaAtrasAzul.svg"
 import criarEquipa2 from "../../img/criarEquipas/criarEquipa2.svg"
+import criarEquipa2_semBack from "../../img/criarEquipas/criarEquipa2_semBack.svg"
+import iconDefinicoes from "../../img/icons/icon_settings.svg";
 
 import { Link } from "react-router-dom"
 
 function CriarEquipa2() {
     return (
-        <form className="formularioCriarSessao">
-            <header className="criarSessaoImg">
+        <article className="criarEquipa">
+            <section id="main" className="conteudoMain">
 
+                {/*DESKTOP*/}
+                <div id="bemvindo">
 
-                <div className="setaTras">
-                    <Link to="../" id="seta"><img src={setaAtras} alt="setaAtras" /></Link>
+                    <div className="bemvindo_titulos">
+                        <h3>Bom dia,</h3>
+                        <h1>Criar Equipa</h1>
+                    </div>
+                    <div className="icons">
+                        <img src={iconDefinicoes} alt="" />
+                    </div>
+
                 </div>
 
-                <img src={criarEquipa2} alt="criar equipa primeira imagem" />
+                <div className="titulo">
+                    <div className="tituloPag criarEquipaTitulo" id="tituloPag">
+                        <label className="tituloCriarEquipas desktop">Detalhes</label>
+                    </div>
 
-            </header>
 
-            <section id="corpo">
-                <label id="titulo">Definir um alias</label>
 
-                <div>
-                    <p id="texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
                 </div>
 
-                <div className="formulario">
-                    <label className="tituloFormulario">Nome do atalho</label>
+                <div className="conteudoMid">
+                    <div className="conteudoEsquerda">
+                        <form className="formularioCriarSessao">
+                            <header className="criarSessaoImg">
 
-                    <input type="text" className="inputTexto" placeholder="ex: Aquela turma do 7ºB"></input>
-                </div>
+
+                                <div className="setaTras">
+                                    <Link to="../" id="seta"><img src={setaAtras} alt="setaAtras" /></Link>
+                                </div>
+
+                                <img src={criarEquipa2} alt="criar equipa primeira imagem" />
+
+                            </header>
+
+                            <section id="corpo">
+                                <label id="titulo">Definir um alias</label>
+
+                                <div>
+                                    <p id="texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                                </div>
+
+                                <div className="formulario">
+                                    <label className="tituloFormulario">Nome do atalho</label>
+
+                                    <input type="text" className="inputTexto" placeholder="ex: Aquela turma do 7ºB"></input>
+                                </div>
 
 
-                <div id="divBotao">
-                    <div id="botao">
-                        <p id="textoBotao">Próximo passo</p>
+                                <div id="divBotao">
+                                    <div id="botao">
+                                        <p id="textoBotao">Próximo passo</p>
+                                    </div>
+                                </div>
+                            </section>
+
+                        </form>
+                    </div>
+                    <div className="conteudoDireita">
+                        <div className="botaoEtapaAnterior">
+                            <img src={setaAtras} className="iconSeta" alt="seta para retroceder" />
+                            <p className="textoBotao">Etapa anterior</p>
+                        </div>
+                        <img src={criarEquipa2_semBack} className="imgEquipa" alt="criar equipa segunda imagem" />
                     </div>
                 </div>
             </section>
-
-        </form>
+        </article>
     )
 }
 
