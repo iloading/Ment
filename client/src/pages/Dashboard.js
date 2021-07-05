@@ -1,7 +1,3 @@
-
-
-import Footer from "./components/Footer"
-import Navbar from "./components/Navbar"
 import SessoesDestaque from "./components/sessoesDestaque";
 import CarouselAjuda from "./components/CarouselAjuda";
 import MinhaEquipa from "./components/MinhaEquipa";
@@ -49,9 +45,9 @@ function Dashboard() {
         boasVindas = 'Boa noite'
     }
     return (
-        <article className="dashboard layout">
+        <article className="dashboard">
 
-            <Navbar />
+
 
 
 
@@ -129,7 +125,7 @@ function Dashboard() {
 
 
 
-            <Footer />
+
 
 
         </article>

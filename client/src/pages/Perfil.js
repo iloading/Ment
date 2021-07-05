@@ -1,6 +1,3 @@
-import Footer from "./components/Footer"
-import Navbar from "./components/Navbar"
-
 import avatar from "../img/avatar/avatar_1.png";
 import favorito from "../img/icons/icon_favorito_background.svg";
 import iconPerfil from "../img/icons/icon_perfil.svg";
@@ -27,9 +24,9 @@ function Perfil() {
     }
 
     return (
-        <article className="perfil layout">
+        <article className="perfil">
 
-            <Navbar />
+
 
             <section id="main" className="conteudoMain">
 
@@ -91,7 +88,7 @@ function Perfil() {
             </section>
 
 
-            <Footer />
+
 
 
 
