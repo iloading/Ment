@@ -14,4 +14,13 @@ export const loadMinhasEquipas = () => async (dispatch) => {
         }
     })
 }
+export const escolherEquipa = (id) => async (dispatch) => {
+
+    dispatch({
+        type: "ESCOLHER_EQUIPA",
+        payload: {
+            id: id
+        }
+    })
+}
 

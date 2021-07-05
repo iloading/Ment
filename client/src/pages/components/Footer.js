@@ -7,32 +7,34 @@ import navLogo from "../../img/logo.svg";
 import iconTerminar from "../../img/icons/icon_terminarSessao.svg";
 
 import { loadUser } from "../../actions/userAction";
-
+import { Link } from 'react-router-dom'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 export function FooterCore() {
+
+
     return (
         <>
 
-            <div className="iconFooter" id="banco">
+            <Link to='/banco' className="iconFooter" id="banco">
                 <img src={iconBanco} alt="" />
                 <label >Banco</label>
-            </div>
+            </Link>
 
-            <div id="home" className="iconFooter" >
+            <Link to='/dashboard' id="home" className="iconFooter" >
                 <img src={iconHome} alt="" />
                 <label>Início</label>
-            </div>
+            </Link>
 
-            <div id="criar" className="iconFooter" >
+            <Link id="criar" className="iconFooter" >
                 <img src={iconCriar} alt="" />
                 <label>Nova Sessão</label>
-            </div>
-            <div id="equipa" className=" iconFooter" >
+            </Link>
+            <Link to='/minhasEquipas' id="equipa" className=" iconFooter" >
                 <img src={iconEquipa} alt="" />
                 <label>As Minhas Equipas</label>
-            </div>
+            </Link>
         </>
     );
 
@@ -55,9 +57,9 @@ function Footer() {
 
 
             <aside className="menu_principal" id="menu_principal__Desktop">
-                <div className="asideLogo" id="logo">
+                <Link to='/dashboard' className="asideLogo" id="logo">
                     <img src={navLogo} alt="" />
-                </div>
+                </Link>
                 <div id="divBotoesMenu">
                     <div id="botoesMenu">
                         <FooterCore />

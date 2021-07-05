@@ -153,8 +153,8 @@
         .areaEquipasArquivadas {
           .tituloEquipasArquivadas {
             display: grid;
-            grid-template-columns: 1.5rem 1fr 0.5fr;
-
+            grid-template-columns: 1.5rem 1fr 10rem;
+            grid-template-areas: "icon label botao";
             margin-top: 2rem;
             margin-bottom: 2rem;
             font-size: 1.2rem;
@@ -164,9 +164,21 @@
             .iconEquipasArquivadas {
               width: 85%;
               align-self: center;
+              grid-area: icon;
             }
             label {
               margin-left: 0.5rem;
+              grid-area: label;
+            }
+            .botaoOcultar {
+              background-color: #e0eaff;
+              border: 1px solid #e0eaff;
+              border-radius: 4px;
+              width: 50%;
+              grid-area: botao;
+              justify-self: right;
+              color: $text-main-color;
+              font-weight: 600;
             }
           }
           .cardEquipasArquivadas {
@@ -394,8 +406,8 @@
           .areaEquipasArquivadas {
             .tituloEquipasArquivadas {
               display: grid;
-              grid-template-columns: auto 1fr;
-              grid-column-gap: 2rem;
+              grid-template-columns: 0rem auto 10rem;
+              grid-column-gap: 0;
               margin-top: 2rem;
               margin-bottom: 2rem;
               font-size: 1.2rem;

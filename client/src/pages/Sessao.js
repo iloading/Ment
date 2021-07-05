@@ -1,9 +1,3 @@
-
-import Footer from "./components/Footer"
-
-
-
-
 import SessionNav from "./components/SessionNav"
 import ResumoSessao from "./components/ResumoSessao"
 import RecursosSessao from "./components/RecursosSessao"
@@ -24,7 +18,7 @@ function Sessao() {
     let { path, url } = useRouteMatch();
 
     return (
-        <article className="sessao layout">
+        <article className="sessao">
             <SessionNav />
             <section id="main" className="conteudoMain">
 
@@ -41,7 +35,7 @@ function Sessao() {
                 </Switch>
 
             </section>
-            <Footer />
+
         </article>
     );
 }

@@ -1,8 +1,5 @@
 import React from 'react'
 
-import Footer from "./components/Footer"
-import Navbar from "./components/Navbar"
-
 import avatar from "../img/avatar/avatar_Equipas.svg";
 /* import iconPerfil from "../img/icons/icon_perfil.svg"; */
 
@@ -31,9 +28,9 @@ function PerfilEquipa() {
     const { sessoesEquipa: sessoes, status } = useSelector(state => state.perfilequipa)
 
     return (
-        <article className="perfilEquipas layout">
+        <article className="perfilEquipas">
 
-            <Navbar />
+
 
             <section id="main" className="conteudoMain">
 
@@ -74,7 +71,7 @@ function PerfilEquipa() {
             </section>
 
 
-            <Footer />
+
 
 
 

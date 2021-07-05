@@ -16,7 +16,8 @@ import CriarSessao from "./pages/CriarSessao/CriarSessao";
 import CriarEquipa from "./pages/CriarEquipa/CriarEquipa";
 import MinhasEquipas from "./pages/MinhasEquipas";
 import PerfilEquipa from "./pages/PerfilEquipa";
-
+import Navbar from "./pages/components/Navbar"
+import Footer from "./pages/components/Footer"
 import { useContext } from 'react'
 
 import AuthContext from "./context/AuthContext";
@@ -31,8 +32,10 @@ function App() {
 
   return (
 
-    <main className="App">
+    <main className="App layout">
       <Feedback />
+      <Navbar />
+      <Footer />
       <Switch>
 
         <Route path="/" exact>

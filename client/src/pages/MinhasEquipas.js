@@ -1,5 +1,3 @@
-import Footer from "./components/Footer"
-import Navbar from "./components/Navbar"
 import MinhasEquipas from "./components/MinhasEquipas";
 
 
@@ -35,9 +33,9 @@ function Banco() {
 
     }
     return (
-        <article className="minhasEquipas layout">
+        <article className="minhasEquipas">
 
-            <Navbar />
+
 
 
             <section id="main" className="conteudoMain">
@@ -116,7 +114,7 @@ function Banco() {
 
                                 <img src={iconArquivar} alt="" className="iconEquipasArquivadas" />
                                 <label>Equipas arquivadas</label>
-                                <button onClick={(event) => toggleEquipas(event)}>{`${ocultadas ? 'Mostrar' : 'Ocultar'}`}</button>
+                                <button className="botaoOcultar" onClick={(event) => toggleEquipas(event)}>{`${ocultadas ? 'Mostrar' : 'Ocultar'}`}</button>
                             </div>
                             <div className={`cardEquipasArquivadas ${ocultadas ? 'ocultarEquipas' : ''}`} >
                                 <MinhasEquipas />
@@ -159,7 +157,7 @@ function Banco() {
 
             </section>
 
-            <Footer />
+
 
 
 

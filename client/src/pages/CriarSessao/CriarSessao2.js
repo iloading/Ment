@@ -1,12 +1,12 @@
 import React from 'react'
 import setaAtras from "../../img/setaAtras.png"
 import criarEquipa from "../../img/criarSessoes/criarEquipa.svg"
-import avatarEquipa from "../../img/criarSessoes/avatarEquipa.svg"
 
+import MinhaEquipaCriarSessao from '../components/MinhaEquipaCriarSessao'
 
 import { Link } from "react-router-dom"
 //REDUX//
-import { loadMinhasEquipas } from "../../actions/criacaoSessaoAction";
+import { loadMinhasEquipas, escolherEquipa } from "../../actions/criacaoSessaoAction";
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
@@ -18,8 +18,18 @@ function CriarSessao2() {
 
     }, [dispatch])
 
-    const { minhasEquipas } = useSelector(state => state.criarSessao)
+    const { minhasEquipas, equipaEscolhida } = useSelector(state => state.criarSessao)
 
+
+
+    const selectTeam = (e, id) => {
+        /* dispatch(loadMinhasEquipas()) */
+        if (equipaEscolhida.id !== id) {
+            dispatch(escolherEquipa(id))
+        }
+
+
+    }
     return (
         <section className="associarEquipa">
             <header className="headerAssociarEquipa">
@@ -34,19 +44,11 @@ function CriarSessao2() {
             <div id="id_titulo2">
                 <label id="titulo2">As suas equipas</label>
             </div>
-            <div id="equipas">
+            <div className="listaEquipas">
                 {minhasEquipas.status === 'completed' &&
                     minhasEquipas.equipas.map(equipa =>
-                        /* no css a classa equipa está definida como id #equipa1 , 2, 3 ... FIX THIS */
-                        <div key={equipa.id} className={`equipa` /* FIX MUDEM O NOME DA CLASSE PARA N SER TAO VAGO*/}>
-                            <img src={avatarEquipa} alt="avatar de equipa" className="avatarEquipa" />
-                            <div className="texto">
-                                <p className="tituloTexto">{equipa.name}</p>
-                                <p className="escolaTexto">{equipa.school_name}</p>
-                                <p className="anoTexto">{equipa.alias}</p>
-                            </div>
-                            <div className="checkbox"></div>
-                        </div>
+                        <MinhaEquipaCriarSessao equipa={equipa} selectTeam={selectTeam} key={equipa.id} />
+
                     )
 
                 }

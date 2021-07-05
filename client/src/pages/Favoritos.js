@@ -1,6 +1,3 @@
-import Footer from "./components/Footer"
-import Navbar from "./components/Navbar"
-
 import iconFavorito from "../img/icons/icon_favorito.svg";
 
 import iconFavoritoPreenchido from "../img/icons/icon_favorito_preenchido.svg";
@@ -16,7 +13,7 @@ function Favoritos() {
 
         <article className="favoritos">
 
-            <Navbar />
+
 
 
             <section id="main" className="conteudoMain">
@@ -98,7 +95,7 @@ function Favoritos() {
 
             </section>
 
-            <Footer />
+
 
 
 

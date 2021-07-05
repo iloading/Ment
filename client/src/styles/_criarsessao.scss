@@ -33,6 +33,7 @@
       font-size: $font-size-m;
       font-weight: $font-weight-normal;
       color: $text-main-color;
+      margin-bottom: 6rem;
     }
     #divBotao {
       display: grid;
@@ -46,11 +47,13 @@
         border: 1px solid $button-type2-background;
         border-radius: 0.3rem;
         padding: 1rem;
+        text-decoration: none;
 
         #textoBotao {
           font-weight: $font-weight-more-bold;
           font-size: 1.375rem;
           color: white;
+          text-decoration: none;
         }
       }
     }
@@ -171,23 +174,21 @@
       color: $text-main-color;
     }
   }
-  #equipas {
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    grid-template-areas: "equipa1" "equipa2" "equipa3" "equipa4";
+  .listaEquipas {
     margin: 1.5rem;
-    grid-gap: 2rem;
 
-    #equipa1 {
+    .equipas {
       grid-area: equipa1;
       display: grid;
-      grid-template-columns: 0.3fr 1fr 0.3fr;
+      grid-template-columns: 7rem 1fr 6rem;
       grid-template-areas: "imagem texto checkbox";
       border: 1px solid #f8faff;
       background-color: #f8faff;
       border-radius: 4px;
+      margin-bottom: 2rem;
 
       .avatarEquipa {
+        width: 100%;
         grid-area: imagem;
         justify-self: center;
         align-self: center;
@@ -198,9 +199,9 @@
         grid-area: texto;
         justify-self: left;
         align-self: center;
-        padding-top: 0.5rem;
-        padding-bottom: 0.5rem;
-        padding-left: 0.5rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        padding-left: 1rem;
         .tituloTexto {
           color: #042454;
           font-size: 0.9375rem;
@@ -231,171 +232,9 @@
         background-color: #ffffff;
         border: 1px solid #cccccc;
         border-radius: 100%;
-      }
-    }
-    #equipa2 {
-      grid-area: equipa2;
-      display: grid;
-      grid-template-columns: 0.3fr 1fr 0.3fr;
-      grid-template-areas: "imagem texto checkbox";
-      border: 1px solid #f8faff;
-      background-color: #f8faff;
-      border-radius: 4px;
-
-      .avatarEquipa {
-        grid-area: imagem;
-        justify-self: center;
-        align-self: center;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-      }
-      .texto {
-        grid-area: texto;
-        justify-self: left;
-        align-self: center;
-        padding-top: 0.5rem;
-        padding-bottom: 0.5rem;
-        padding-left: 0.5rem;
-        .tituloTexto {
-          color: #042454;
-          font-size: 0.9375rem;
-          font-weight: $font-weight-more-bold;
-          margin: 0.2rem 0 0.2rem 0;
+        &.selected {
+          background-color: rgba(4, 36, 84, 0.5);
         }
-        .escolaTexto {
-          color: #003bb9;
-          font-size: 0.8125rem;
-          font-weight: $font-weight-boldest;
-          font-style: italic;
-          margin: 0.2rem 0 0.2rem 0;
-        }
-        .anoTexto {
-          color: #0066ff;
-          font-size: 0.625rem;
-          font-weight: $font-weight-boldest;
-          font-style: italic;
-          margin: 0.2rem 0 0.2rem 0;
-        }
-      }
-      .checkbox {
-        grid-area: checkbox;
-        justify-self: center;
-        align-self: center;
-        min-height: 35%;
-        min-width: 35%;
-        background-color: #ffffff;
-        border: 1px solid #cccccc;
-        border-radius: 100%;
-      }
-    }
-    #equipa3 {
-      grid-area: equipa3;
-      display: grid;
-      grid-template-columns: 0.3fr 1fr 0.3fr;
-      grid-template-areas: "imagem texto checkbox";
-      border: 1px solid #f8faff;
-      background-color: #f8faff;
-      border-radius: 4px;
-
-      .avatarEquipa {
-        grid-area: imagem;
-        justify-self: center;
-        align-self: center;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-      }
-      .texto {
-        grid-area: texto;
-        justify-self: left;
-        align-self: center;
-        padding-top: 0.5rem;
-        padding-bottom: 0.5rem;
-        padding-left: 0.5rem;
-        .tituloTexto {
-          color: #042454;
-          font-size: 0.9375rem;
-          font-weight: $font-weight-more-bold;
-          margin: 0.2rem 0 0.2rem 0;
-        }
-        .escolaTexto {
-          color: #003bb9;
-          font-size: 0.8125rem;
-          font-weight: $font-weight-boldest;
-          font-style: italic;
-          margin: 0.2rem 0 0.2rem 0;
-        }
-        .anoTexto {
-          color: #0066ff;
-          font-size: 0.625rem;
-          font-weight: $font-weight-boldest;
-          font-style: italic;
-          margin: 0.2rem 0 0.2rem 0;
-        }
-      }
-      .checkbox {
-        grid-area: checkbox;
-        justify-self: center;
-        align-self: center;
-        min-height: 35%;
-        min-width: 35%;
-        background-color: #ffffff;
-        border: 1px solid #cccccc;
-        border-radius: 100%;
-      }
-    }
-    #equipa4 {
-      grid-area: equipa4;
-      display: grid;
-      grid-template-columns: 0.3fr 1fr 0.3fr;
-      grid-template-areas: "imagem texto checkbox";
-      border: 1px solid #f8faff;
-      background-color: #f8faff;
-      border-radius: 4px;
-
-      .avatarEquipa {
-        grid-area: imagem;
-        justify-self: center;
-        align-self: center;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-      }
-      .texto {
-        grid-area: texto;
-        justify-self: left;
-        align-self: center;
-        padding-top: 0.5rem;
-        padding-bottom: 0.5rem;
-        padding-left: 0.5rem;
-        .tituloTexto {
-          color: #042454;
-          font-size: 0.9375rem;
-          font-weight: $font-weight-more-bold;
-          margin: 0.2rem 0 0.2rem 0;
-        }
-        .escolaTexto {
-          color: #003bb9;
-          font-size: 0.8125rem;
-          font-weight: $font-weight-boldest;
-          font-style: italic;
-          margin: 0.2rem 0 0.2rem 0;
-        }
-        .anoTexto {
-          color: #0066ff;
-          font-size: 0.625rem;
-          font-weight: $font-weight-boldest;
-          font-style: italic;
-          margin: 0.2rem 0 0.2rem 0;
-        }
-      }
-      .checkbox {
-        grid-area: checkbox;
-        justify-self: center;
-        align-self: center;
-        min-height: 35%;
-        min-width: 35%;
-        background-color: #ffffff;
-        border: 1px solid #cccccc;
-        border-radius: 100%;
       }
     }
   }
