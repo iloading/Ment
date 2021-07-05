@@ -219,7 +219,6 @@ router.get('/loggedIn', (req, res) => {
         res.send(true)
 
     } catch (e) {
-        console.log(3);
         return res.json(false)
     }
 })

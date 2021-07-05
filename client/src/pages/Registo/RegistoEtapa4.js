@@ -88,7 +88,7 @@ function RegistoEtapa4({ dados, setDados, validadeFormulario4, setvalidadeFormul
         try {
             e.preventDefault();
             const resposta = await register(dados);
-            console.log(resposta);
+
             getLoggedIn();
         } catch (error) {
 

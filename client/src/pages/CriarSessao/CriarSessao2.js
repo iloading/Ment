@@ -5,59 +5,53 @@ import avatarEquipa from "../../img/criarSessoes/avatarEquipa.svg"
 
 
 import { Link } from "react-router-dom"
+//REDUX//
+import { loadMinhasEquipas } from "../../actions/criacaoSessaoAction";
+import { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 
 function CriarSessao2() {
+    const dispatch = useDispatch()
+    useEffect(() => {
+
+        dispatch(loadMinhasEquipas())
+
+    }, [dispatch])
+
+    const { minhasEquipas } = useSelector(state => state.criarSessao)
+
     return (
         <section className="associarEquipa">
             <header className="headerAssociarEquipa">
-                <Link to="../" id="seta"><img src={setaAtras} alt="setaAtras" /></Link>
+                <Link to="/criarsessao/1" id="seta"><img src={setaAtras} alt="setaAtras" /></Link>
                 <h2 id="titulo">Associar equipa</h2>
                 <Link to="../" id="criarEquipa"><img src={criarEquipa} alt="criar nova equipa" /></Link>
 
             </header>
-            <div id="inputPesquisar">
+            {/*  <div id="inputPesquisar">
                 <input type="text" id="inputPesquisa" placeholder="Pesquisar por nome, turma, ano..."></input>
-            </div>
+            </div> */}
             <div id="id_titulo2">
                 <label id="titulo2">As suas equipas</label>
             </div>
             <div id="equipas">
-                <div id="equipa1">
-                    <img src={avatarEquipa} alt="avatar de equipa" className="avatarEquipa" />
-                    <div className="texto">
-                        <p className="tituloTexto">Os Aventureiros</p>
-                        <p className="escolaTexto">Secundária da Amadora</p>
-                        <p className="anoTexto">8ºB</p>
-                    </div>
-                    <div className="checkbox"></div>
-                </div>
-                <div id="equipa2">
-                    <img src={avatarEquipa} alt="avatar de equipa" className="avatarEquipa" />
-                    <div className="texto">
-                        <p className="tituloTexto">Avila Crew</p>
-                        <p className="escolaTexto">Secundária do Restelo</p>
-                        <p className="anoTexto">5ºC</p>
-                    </div>
-                    <div className="checkbox"></div>
-                </div>
-                <div id="equipa3">
-                    <img src={avatarEquipa} alt="avatar de equipa" className="avatarEquipa" />
-                    <div className="texto">
-                        <p className="tituloTexto">Exploradores</p>
-                        <p className="escolaTexto">EB23 de Luanda</p>
-                        <p className="anoTexto">7ºX</p>
-                    </div>
-                    <div className="checkbox"></div>
-                </div>
-                <div id="equipa4">
-                    <img src={avatarEquipa} alt="avatar de equipa" className="avatarEquipa" />
-                    <div className="texto">
-                        <p className="tituloTexto">Pingados</p>
-                        <p className="escolaTexto">Secundária da Amadora</p>
-                        <p className="anoTexto">8ºB</p>
-                    </div>
-                    <div className="checkbox"></div>
-                </div>
+                {minhasEquipas.status === 'completed' &&
+                    minhasEquipas.equipas.map(equipa =>
+                        /* no css a classa equipa está definida como id #equipa1 , 2, 3 ... FIX THIS */
+                        <div key={equipa.id} className={`equipa` /* FIX MUDEM O NOME DA CLASSE PARA N SER TAO VAGO*/}>
+                            <img src={avatarEquipa} alt="avatar de equipa" className="avatarEquipa" />
+                            <div className="texto">
+                                <p className="tituloTexto">{equipa.name}</p>
+                                <p className="escolaTexto">{equipa.school_name}</p>
+                                <p className="anoTexto">{equipa.alias}</p>
+                            </div>
+                            <div className="checkbox"></div>
+                        </div>
+                    )
+
+                }
+
+
             </div>
             <div id="divBotao">
                 <div id="botao">

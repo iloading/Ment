@@ -29,6 +29,12 @@ app.use('/destaqueInfo', destaqueRoute);
 const perfilequipaRoute = require('./routes/PerfilEquipa')
 app.use('/perfilequipaInfo', perfilequipaRoute);
 
+const criarSessao = require('./routes/CriarSessao')
+app.use('/criarSessao', criarSessao);
+
+const perfil = require('./routes/Perfil')
+app.use('/perfil', perfil);
+
 
 /* app.get('/', async (req, res) => {
     await res.send('We are on home')
