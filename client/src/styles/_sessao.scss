@@ -8,6 +8,8 @@
     top: 0;
     background-color: white;
     padding-bottom: 1rem;
+    display: grid;
+    grid-template-rows: auto 1fr;
   }
 
   #main {
@@ -227,12 +229,13 @@
         .comentarioInput {
           .cardComentario {
             display: grid;
-            grid-template-columns: auto 1fr;
+            grid-template-columns: 1fr auto;
             margin: 1rem;
 
             img {
               width: 70%;
-              align-self: center;
+              align-self: end;
+              justify-self: end;
             }
 
             .cardInfo {
@@ -291,109 +294,107 @@
     }
 
     .conteudoRecursos {
-      .conteudoPlano {
+      display: grid;
+      grid-template-rows: auto auto;
+      grid-gap: 2rem;
+      padding: 0 1rem 1rem 1rem;
+
+      .ficheirosPrincipais {
         display: grid;
-        grid-template-rows: auto auto;
-        grid-gap: 2rem;
-        padding: 0 1rem 1rem 1rem;
-
-        .ficheirosPrincipais {
+        grid-row-gap: 1rem;
+        .titulo1 {
+          font-size: 1.125rem;
+          font-weight: $font-weight-bold;
+          color: $text-main-color;
+        }
+        .ficheiros {
           display: grid;
-          grid-row-gap: 1rem;
-          .titulo1 {
-            font-size: 1.125rem;
-            font-weight: $font-weight-bold;
-            color: $text-main-color;
-          }
-          .ficheiros {
+          grid-row-gap: 1.5rem;
+          .caixaFicheiros {
             display: grid;
-            grid-row-gap: 1.5rem;
-            .caixaFicheiros {
-              display: grid;
-              grid-template-columns: auto 2rem;
-              background-color: #e0eaff;
-              padding: 1rem 1rem 1rem 1rem;
-              margin-top: 1rem;
-              margin-left: 1rem;
-              margin-right: 1rem;
-              border-radius: 5px;
-              .ficheiro_nome {
-                align-self: center;
-              }
-              .ficheiro_icon {
-                align-self: center;
-                justify-self: center;
-              }
+            grid-template-columns: auto 2rem;
+            background-color: #e0eaff;
+            padding: 1rem 1rem 1rem 1rem;
+            margin-top: 1rem;
+            margin-left: 1rem;
+            margin-right: 1rem;
+            border-radius: 5px;
+            .ficheiro_nome {
+              align-self: center;
+            }
+            .ficheiro_icon {
+              align-self: center;
+              justify-self: center;
             }
           }
         }
-        .conteudosAdicionais {
-          display: grid;
-          grid-row-gap: 1rem;
-          .titulo2 {
-            font-size: 1.125rem;
-            font-weight: $font-weight-bold;
-            color: $text-main-color;
-          }
-          .ficheiros {
-            .caixaFicheiros {
-              display: grid;
-              grid-template-columns: auto 2rem;
-              background-color: #e0eaff;
-              padding: 1rem 1rem 1rem 1rem;
-              margin-top: 1rem;
-              margin-left: 1rem;
-              margin-right: 1rem;
-              border-radius: 5px;
-              .ficheiro_nome {
-                align-self: center;
-              }
-              .ficheiro_icon {
-                align-self: center;
-                justify-self: center;
-              }
+      }
+      .conteudosAdicionais {
+        display: grid;
+        grid-row-gap: 1rem;
+        .titulo2 {
+          font-size: 1.125rem;
+          font-weight: $font-weight-bold;
+          color: $text-main-color;
+        }
+        .ficheiros {
+          .caixaFicheiros {
+            display: grid;
+            grid-template-columns: auto 2rem;
+            background-color: #e0eaff;
+            padding: 1rem 1rem 1rem 1rem;
+            margin-top: 1rem;
+            margin-left: 1rem;
+            margin-right: 1rem;
+            border-radius: 5px;
+            .ficheiro_nome {
+              align-self: center;
+            }
+            .ficheiro_icon {
+              align-self: center;
+              justify-self: center;
             }
           }
         }
-        .detalhesConteudo {
-          .titulo1 {
-            font-size: 1.125rem;
-            font-weight: $font-weight-bold;
-            color: $text-main-color;
-          }
-          .titulo2 {
-            margin-top: 2rem;
-            font-size: 1.125rem;
-            font-weight: $font-weight-bold;
-            color: $text-main-color;
-          }
-          .detalhes {
+      }
+      .detalhesConteudo {
+        .titulo1 {
+          font-size: 1.125rem;
+          font-weight: $font-weight-bold;
+          color: $text-main-color;
+        }
+        .titulo2 {
+          margin-top: 2rem;
+          font-size: 1.125rem;
+          font-weight: $font-weight-bold;
+          color: $text-main-color;
+        }
+        .detalhes {
+          display: grid;
+          grid-row-gap: 0.2rem;
+          .caixaTexto {
             display: grid;
-            grid-row-gap: 0.2rem;
-            .caixaTexto {
-              display: grid;
-              grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-              padding: 0rem 1.5rem 1.5rem 1.5rem;
-              margin-top: 1rem;
-              margin-left: 1rem;
-              margin-right: 1rem;
-              background-color: #e0eaff;
-              border-radius: 5px;
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+            padding: 0rem 1.5rem 1.5rem 1.5rem;
+            margin-top: 1rem;
+            margin-left: 1rem;
+            margin-right: 1rem;
+            background-color: #e0eaff;
+            border-radius: 5px;
 
-              .detalhes_titulo {
-                justify-self: left;
-                font-size: 1rem;
-                font-weight: $font-weight-bolder;
-                color: $text-main-color;
-                margin-top: 2rem;
-              }
-              .detalhes_texto {
-                justify-self: left;
-                font-size: 1rem;
-                font-weight: $font-weight-normal;
-                color: black;
-                margin-top: 1rem;
-              }
+            .detalhes_titulo {
+              justify-self: left;
+              font-size: 1rem;
+              font-weight: $font-weight-bolder;
+              color: $text-main-color;
+              margin-top: 2rem;
+            }
+            .detalhes_texto {
+              justify-self: left;
+              font-size: 1rem;
+              font-weight: $font-weight-normal;
+              color: black;
+              margin-top: 1rem;
             }
           }
         }
@@ -448,6 +449,141 @@
                 color: black;
                 margin-top: 1rem;
               }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .sessao {
+    #nav {
+      display: none;
+    }
+
+    .conteudoMain {
+      display: grid;
+      grid-template-rows: auto 4rem auto 1fr;
+      grid-row-gap: 3rem;
+      padding: 2rem 4rem 0 1rem;
+      .bemvindo_titulos {
+        h3 {
+          visibility: hidden;
+        }
+      }
+
+      .navegacao {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-column-gap: 2rem;
+        a {
+          display: grid;
+          align-items: center;
+          justify-items: center;
+          background-color: #042454;
+          border-radius: 10px;
+          padding: 1rem;
+          text-decoration: none;
+          div {
+            label {
+              color: white;
+              font-weight: 700;
+              font-size: 1.2rem;
+            }
+          }
+        }
+      }
+
+      .titulos_top {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+        label {
+          color: #042454;
+          font-weight: 700;
+          font-size: 1.2rem;
+        }
+      }
+      .conteudo {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+        grid-column-gap: 2.5rem;
+
+        .conteudoResumo {
+          .conteudoPlano {
+            .titulo {
+              color: #042454;
+              font-weight: 700;
+              font-size: 1.2rem;
+            }
+          }
+          .conteudoComents {
+            .seccaoPlano {
+              label {
+                color: #042454;
+                font-weight: 700;
+                font-size: 1.2rem;
+              }
+            }
+          }
+        }
+
+        .conteudoRecursos {
+          .ficheirosPrincipais {
+            .titulo1 {
+              display: none;
+            }
+            .ficheiros {
+              .caixaFicheiros {
+                label {
+                  color: #042454;
+                  font-weight: 500;
+                }
+              }
+            }
+          }
+          .conteudosAdicionais {
+            .titulo2 {
+              color: #042454;
+              font-weight: 700;
+              font-size: 1.2rem;
+            }
+          }
+        }
+        .conteudoDetalhes {
+          .conteudoPlano {
+            .detalhesConteudo {
+              .detalhes {
+                .titulo1 {
+                  display: none;
+                }
+                .titulo2 {
+                  color: #042454;
+                  font-weight: 700;
+                  font-size: 1.2rem;
+                }
+              }
+            }
+          }
+        }
+
+        .descarregar {
+          height: fit-content;
+          padding: 3rem;
+          border-radius: 10px;
+          background-color: #f8faff;
+          .download {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            background-color: white;
+            border-radius: 10px;
+            padding: 1rem;
+            align-items: center;
+            label {
+              color: #042454;
+              font-weight: 400;
             }
           }
         }
