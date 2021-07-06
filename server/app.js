@@ -35,6 +35,9 @@ app.use('/criarSessao', criarSessao);
 const perfil = require('./routes/Perfil')
 app.use('/perfil', perfil);
 
+const sessao = require('./routes/Sessao')
+app.use('/sessao', sessao);
+
 
 /* app.get('/', async (req, res) => {
     await res.send('We are on home')

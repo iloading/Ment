@@ -40,3 +40,7 @@ export const perfilequipaInfo = (dados) => axios.post('http://localhost:3001/per
 export const minhasEquipas = () => axios.post('http://localhost:3001/perfil/minhasEquipas');
 export const listaGrausEnsino = () => axios.post('http://localhost:3001/criarSessao/grausDeEnsino');
 export const criarSessao = (dados) => axios.post('http://localhost:3001/criarSessao/', dados);
+
+//-----------Sessao
+export const sessaoInfo = (id) => axios.post('http://localhost:3001/sessao/', id);
+

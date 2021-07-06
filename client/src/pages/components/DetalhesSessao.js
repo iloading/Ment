@@ -1,7 +1,8 @@
 import React from 'react'
 import iconDownload from "../../img/icons/icon_download.svg";
 
-function DetalhesSessao() {
+function DetalhesSessao({ sessao }) {
+    const { nome, descricao, subject, factos_ficcionais, factos_reais, situacao_problema, resultados_esperados, funcao_alunos_mentores, funcao_alunos_mentorandos, disciplina, ano } = sessao
     return (
         <>
             <div className="titulos_top">
@@ -13,20 +14,20 @@ function DetalhesSessao() {
                     <div className="conteudoPlano">
                         <div className="detalhesConteudo">
 
-                    <div className="detalhes">
-                        <label className="titulo1">Plano Geral</label>
-                        <div className="caixaTexto">
-                            <label className="detalhes_titulo">Factos Ficcionais</label>
-                            <span className="detalhes_texto">factos que nao existem</span>
-                            <label className="detalhes_titulo">Situação Problema</label>
-                            <span className="detalhes_texto">O problema desta situação é...</span>
-                            <label className="detalhes_titulo">Resultados Esperados</label>
-                            <span className="detalhes_texto">Que se acabe o projeto</span>
-                            <label className="detalhes_titulo">Papel dos Alunos Mentores</label>
-                            <span className="detalhes_texto">Ensinar meninos</span>
-                            <label className="detalhes_titulo">Papel dos Alunos Mentorandos</label>
-                            <span className="detalhes_texto">Aprender matéria</span>
-                        </div>
+                            <div className="detalhes">
+                                <label className="titulo1">Plano Geral</label>
+                                <div className="caixaTexto">
+                                    <label className="detalhes_titulo">Factos Ficcionais</label>
+                                    <span className="detalhes_texto">factos que nao existem</span>
+                                    <label className="detalhes_titulo">Situação Problema</label>
+                                    <span className="detalhes_texto">O problema desta situação é...</span>
+                                    <label className="detalhes_titulo">Resultados Esperados</label>
+                                    <span className="detalhes_texto">Que se acabe o projeto</span>
+                                    <label className="detalhes_titulo">Papel dos Alunos Mentores</label>
+                                    <span className="detalhes_texto">Ensinar meninos</span>
+                                    <label className="detalhes_titulo">Papel dos Alunos Mentorandos</label>
+                                    <span className="detalhes_texto">Aprender matéria</span>
+                                </div>
 
 
                             </div>

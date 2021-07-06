@@ -7,6 +7,7 @@ import iconSeparar from "../../img/icons/icon_separacao_linha.svg";
 import medalhaOuro from "../../img/medalhaOuro.svg";
 import medalhaPrata from "../../img/medalhaPrata.svg";
 import medalhaBronze from "../../img/medalhaBronze.svg";
+import { Link } from "react-router-dom";
 
 
 function Narrativa({ destaque, sessao, sessaoEquipa, status }) {
@@ -18,7 +19,7 @@ function Narrativa({ destaque, sessao, sessaoEquipa, status }) {
         <>
             {status === "completed" && sessao &&
 
-                <div className="narrativa">
+                <Link to={`/sessao/${sessao.id}`} className="narrativa">
                     <img src={iconSessoes} alt="" className="iconSessoes" />
                     <div className="textoCards">
                         <label>{sessao.name}</label>
@@ -43,7 +44,7 @@ function Narrativa({ destaque, sessao, sessaoEquipa, status }) {
                     {/*DESKTOP*/}
                     {destaque ? <img src={destaque === 'ouro' ? medalhaOuro : destaque === 'prata' ? medalhaPrata : destaque === 'bronze' ? medalhaBronze : ""} className="iconMedalha" alt={'medalha'} /> : <img src={seta} className="iconMedalha" alt={'seta'} />}
 
-                </div>
+                </Link>
 
 
             }

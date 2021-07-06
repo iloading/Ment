@@ -3,7 +3,8 @@ import iconSessoes from "../../img/icons/icon_sessoes.png";
 import imgComentario from "../../img/avatar/avatar_11.png"
 import iconDownload from "../../img/icons/icon_download.svg";
 
-function ResumoSessao() {
+function ResumoSessao({ sessao, status }) {
+    const { nome, descricao, subject, factos_ficcionais, factos_reais, situacao_problema, resultados_esperados, funcao_alunos_mentores, funcao_alunos_mentorandos, disciplina, ano } = sessao
     return (
         <>
             <div className="titulos_top">
@@ -19,14 +20,14 @@ function ResumoSessao() {
                         <div className="cardDescricao">
                             <div className="topInfo">
                                 <div className="titulos">
-                                    <label>Os 3 porquinhos </label>
+                                    <label>{nome}</label>
                                     <p>Past Tense</p>
                                     <span>8º ano</span>
                                 </div>
                                 <img className="imgSessao" src={iconSessoes} alt="" />
                             </div>
                             <div className="bottomInfo">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus temporibus consequuntur omnis. Veniam provident nam incidunt delectus dicta labore?</p>
+                                <p>{descricao}</p>
                             </div>
                         </div>
 
