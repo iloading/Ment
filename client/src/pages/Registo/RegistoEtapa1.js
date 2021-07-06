@@ -1,8 +1,10 @@
 import registo2Img from "../../img/registo/registo2Img.png";
+import registoImgDesktop from "../../img/criarSessoes/criarSessao1_semBack.svg";
 import icon_email_loading from "../../img/icon_email_loading.png";
 import icon_email_success from "../../img/icon_email_success.png";
 import icon_email_error from "../../img/icon_email_error.png";
-import setaAtras from "../../img/setaAtras.png";
+import setaAtras from "../../img/icons/icon_setaAtrasAzul.svg"
+import navLogo from "../../img/logo.svg";
 
 
 import { Link, useHistory } from 'react-router-dom';
@@ -10,8 +12,6 @@ import { useEffect, useCallback, useRef } from 'react'
 //Verificação de Inputs
 import { Formik, Form } from "formik";
 import { Field, ErrorMessage } from 'formik';
-
-
 
 
 //API REQUESTS
@@ -154,9 +154,7 @@ function RegistoEtapa1({ validadeEmail, setValidadeEmail, validadeFormulario1, s
 
     let history = useHistory();
     const redirectBack = () => { history.goBack() }
-
-
-
+    const redirectLogin = () => { history.push("/login") }
 
 
 
@@ -170,88 +168,133 @@ function RegistoEtapa1({ validadeEmail, setValidadeEmail, validadeFormulario1, s
 
 
     return (
+        <>
+            <div className="formularioRegisto_menu">
+                <aside className="menu_principal_registo">
+                    <div className="asideLogoRegisto">
+                        <img src={navLogo} alt="" />
+                    </div>
+                </aside>
+            </div>
+            <div id="main">
+                <section id="main" className="conteudoMain">
+                    {/*DESKTOP*/}
+                    <div id="bemvindo">
 
-        <Formik initialValues={initialValues} validationSchema={camposValidador} onSubmit={onSubmit}>
-            <Form className="formularioRegisto">
-                <header className="registoImg">
+                        <div className="bemvindo_titulos">
+                            <h3>Bom dia,</h3>
+                            <h1>Registar</h1>
+                        </div>
+                        <div className="icons">
+                            <button type="button" className="botaoLogin" onClick={redirectLogin}>Entrar</button>
+                        </div>
 
-
-                    <div className="setaTras" onClick={redirectBack}>
-                        <img src={setaAtras} alt="seta atras" />
                     </div>
 
-                    <img src={registo2Img} alt="registo segunda imagem" />
+                    <div className="titulo">
+                        <div className="tituloPag criarEquipaTitulo" id="tituloPag">
+                            <label className="tituloCriarEquipas desktop">Criar uma nova sessão</label>
+                        </div>
 
-                </header>
-                <div className="formulario" id='etapa1'>
-                    <section className="tituloPrincipal">
-                        <label>Registo</label>
-                    </section>
-                    {/* <section className="paragrafo">
+
+
+                    </div>
+
+                    <div className="conteudoMid">
+                        <div className="conteudoEsquerda">
+                            <Formik initialValues={initialValues} validationSchema={camposValidador} onSubmit={onSubmit}>
+                                <Form className="formularioRegisto">
+                                    <header className="registoImg">
+
+
+                                        <div className="setaTras" onClick={redirectBack}>
+                                            <img src={setaAtras} alt="seta atras" />
+                                        </div>
+
+                                        <img src={registo2Img} alt="registo segunda imagem" />
+
+                                    </header>
+                                    <div className="formulario" id='etapa1'>
+                                        <section className="tituloPrincipal">
+                                            <label>Detalhes da conta</label>
+                                        </section>
+
+                                        {/* <section className="paragrafo">
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab quos at nostrum nemo earum obcaecati voluptas consectetur.</p>
                     </section> */}
-                    <section className="inputFormulario">
+                                        <section className="inputFormulario">
 
-                        <label>Email</label>
-                        {/* Falta meter estilos nestes erros */}
+                                            <label>Email</label>
+                                            {/* Falta meter estilos nestes erros */}
 
-                        <div>
-                            {validadeEmail === null && <></>}
-                            {validadeEmail === 0 && <img src={icon_email_loading} alt="gif loading" />}
-                            {validadeEmail === 1 && <><img src={icon_email_error} alt="Error Icon" /></>}
-                            {validadeEmail === 2 && <img src={icon_email_success} alt="Success Icon" />}
+                                            <div>
+                                                {validadeEmail === null && <></>}
+                                                {validadeEmail === 0 && <img src={icon_email_loading} alt="gif loading" />}
+                                                {validadeEmail === 1 && <><img src={icon_email_error} alt="Error Icon" /></>}
+                                                {validadeEmail === 2 && <img src={icon_email_success} alt="Success Icon" />}
 
-                            <Field placeholder="ex: joana.silva12@gmail.com" name="email" id="inputEmail" type="email" onInput={() => {
-                                validarEmail();
-                            }} />
+                                                <Field placeholder="ex: joana.silva12@gmail.com" name="email" id="inputEmail" type="email" onInput={() => {
+                                                    validarEmail();
+                                                }} />
+                                            </div>
+                                            <div className="error" ref={erroEmail}>
+                                                <ErrorMessage name="email" component="p" />
+                                            </div>
+
+                                        </section>
+                                        <section className="inputFormulario">
+
+                                            <label>Password</label>
+                                            {/* Falta meter estilos nestes erros */}
+
+                                            <div>
+                                                {/* <img src={icon_nome} alt="" /> */}
+                                                <Field placeholder="*********" name="password" id="inputPassword" type="password" onInput={() => validar(validadeEmail)} />
+                                            </div>
+                                            <div className="error">
+                                                <ErrorMessage name="password" component="p" />
+                                            </div>
+                                        </section>
+                                        <section className="inputFormulario">
+
+                                            <label>Confirmar Password</label>
+                                            {/* Falta meter estilos nestes erros */}
+
+                                            <div>
+                                                {/* <img src={icon_nome} alt="" /> */}
+                                                <Field placeholder="*********" name="password_confirm" id="inputPassword_confirm" type="password" onInput={() => validar(validadeEmail)} />
+                                            </div>
+                                            <div className="error">
+                                                <ErrorMessage name="password_confirm" component="p" />
+                                            </div>
+                                        </section>
+
+                                        <section className="botao">
+                                            {validadeFormulario1 ? <button type="submit" id='nextStep1' >Próxima Etapa</button> : <button type="submit" id='nextStep1' disabled>Próxima Etapa</button>}
+
+
+                                        </section>
+
+                                        <section className="tituloFooter">
+                                            <Link to='/login'><span><u> Já está registado? Clique aqui</u></span></Link>
+                                        </section>
+
+                                    </div>
+
+                                </Form>
+                            </Formik >
                         </div>
-                        <div className="error" ref={erroEmail}>
-                            <ErrorMessage name="email" component="p" />
+                        <div className="conteudoDireitaDesktop">
+                            <div className="botaoEtapaAnterior">
+                                <img src={setaAtras} className="iconSeta" alt="seta para retroceder" />
+                                <p className="textoBotao">Etapa anterior</p>
+                            </div>
+                            <img src={registoImgDesktop} className="imgEquipa" alt="criar equipa primeira imagem" />
                         </div>
-
-                    </section>
-                    <section className="inputFormulario">
-
-                        <label>Password</label>
-                        {/* Falta meter estilos nestes erros */}
-
-                        <div>
-                            {/* <img src={icon_nome} alt="" /> */}
-                            <Field placeholder="*********" name="password" id="inputPassword" type="password" onInput={() => validar(validadeEmail)} />
-                        </div>
-                        <div className="error">
-                            <ErrorMessage name="password" component="p" />
-                        </div>
-                    </section>
-                    <section className="inputFormulario">
-
-                        <label>Confirmar Password</label>
-                        {/* Falta meter estilos nestes erros */}
-
-                        <div>
-                            {/* <img src={icon_nome} alt="" /> */}
-                            <Field placeholder="*********" name="password_confirm" id="inputPassword_confirm" type="password" onInput={() => validar(validadeEmail)} />
-                        </div>
-                        <div className="error">
-                            <ErrorMessage name="password_confirm" component="p" />
-                        </div>
-                    </section>
-
-                    <section className="botao">
-                        {validadeFormulario1 ? <button type="submit" id='nextStep1' >Próxima Etapa</button> : <button type="submit" id='nextStep1' disabled>Próxima Etapa</button>}
-
-
-                    </section>
-
-                    <section className="tituloFooter">
-                        <Link to='/login'><span><u> Já está registado? Clique aqui</u></span></Link>
-                    </section>
-
-                </div>
-
-            </Form>
-        </Formik >
-
+                    </div>
+                </section>
+            </div>
+        </>
 
     );
 
