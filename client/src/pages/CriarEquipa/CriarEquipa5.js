@@ -43,7 +43,7 @@ function CriarEquipa5() {
 
                 <div className="conteudoMid">
                     <div className="conteudoEsquerda">
-                        <section className="associarEquipa">
+                        <section className="associarEquipa criarEquipa">
                             <header className="headerAssociarEquipa">
                                 <Link to="../" id="seta"><img src={setaAtras} alt="setaAtras" /></Link>
                                 <h2 id="titulo">Adicionar alunos</h2>
