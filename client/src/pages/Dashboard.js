@@ -37,7 +37,7 @@ function Dashboard() {
 
     const { sessoesDestaque: destaques, status: statusDestaque } = useSelector(state => state.destaque)
 
-    const user = useSelector(state => state.user.user)
+    const { user, status: userStatus } = useSelector(state => state.user)
     let hora = new Date().getHours();
     let boasVindas
     if (hora < 12) {
@@ -58,7 +58,7 @@ function Dashboard() {
 
                     <div className="bemvindo_titulos">
                         <h3>{boasVindas},</h3>
-                        {status === 'completed' && <h1>{user.name}</h1>}
+                        {userStatus === 'completed' && <h1>{user.name}</h1>}
 
                     </div>
                     <div className="icons">

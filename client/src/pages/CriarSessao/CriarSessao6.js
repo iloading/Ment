@@ -1,15 +1,16 @@
 import React from 'react'
-
 import setaAtras from "../../img/icons/icon_setaAtrasAzul.svg"
-import criarEquipa3 from "../../img/criarEquipas/criarEquipa3.svg"
-import criarEquipa3_semBack from "../../img/criarEquipas/criarEquipa3_semBack.svg"
+import criarSessao3 from "../../img/criarSessoes/criarSessao3.svg";
+
+import criarSessao3_semBack from "../../img/criarSessoes/criarSessao3_semBack.svg"
+
 import iconDefinicoes from "../../img/icons/icon_settings.svg";
 
 import { Link } from "react-router-dom"
 
-function CriarEquipa3() {
+function CriarSessao6() {
     return (
-        <article className="criarEquipa">
+        <article className="criarSessao">
             <section id="main" className="conteudoMain">
 
                 {/*DESKTOP*/}
@@ -17,7 +18,7 @@ function CriarEquipa3() {
 
                     <div className="bemvindo_titulos">
                         <h3>Bom dia,</h3>
-                        <h1>Criar Equipa</h1>
+                        <h1>Criar Sessão</h1>
                     </div>
                     <div className="icons">
                         <img src={iconDefinicoes} alt="" />
@@ -27,13 +28,18 @@ function CriarEquipa3() {
 
                 <div className="titulo">
                     <div className="tituloPag criarEquipaTitulo" id="tituloPag">
-                        <label className="tituloCriarEquipas desktop">Definir um alias</label>
+                        <div className="gridAdicionar">
+                            <label className="tituloCriarEquipas desktop">Situação problema</label>
+                            {/* <div className="imgCriarEquipas">
+<img src={iconAdicionar} alt="" />
+</div> */}
+                        </div>
+
                     </div>
 
 
 
                 </div>
-
 
                 <div className="conteudoMid">
                     <div className="conteudoEsquerda">
@@ -41,38 +47,31 @@ function CriarEquipa3() {
                             <header className="criarSessaoImg">
 
 
-                                <div className="setaTras">
-                                    <Link to="../" id="seta"><img src={setaAtras} alt="setaAtras" /></Link>
-                                </div>
+                                <Link to='/criarsessao/5' className="setaTras">
+                                    <img src={setaAtras} alt="seta atras" />
+                                </Link>
 
-                                <img src={criarEquipa3} alt="criar equipa primeira imagem" />
+                                <img src={criarSessao3} alt="criar sessao primeira imagem" />
 
                             </header>
 
                             <section id="corpo">
-                                <label id="titulo">Detalhes</label>
+                                <label id="titulo">Situação problema</label>
 
                                 <div>
                                     <p id="texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
                                 </div>
 
                                 <div className="formulario">
-                                    <label className="tituloFormulario">Escola</label>
-
-                                    <input type="text" className="inputTexto" placeholder="ex: A melhor equipa..."></input>
-                                </div>
-
-                                <div className="formulario">
-
-                                    <label className="tituloFormulario">Descrição</label>
+                                    <label className="tituloFormulario">Situação problema</label>
 
                                     <textarea type="text" className="textareaTexto" placeholder="Descrição da equipa"></textarea>
                                 </div>
-
-
-                                <div id="divBotao">
-                                    <div id="botao">
-                                        <p id="textoBotao">Próximo passo</p>
+                                <div className="botaoAzul">
+                                    <div id="divBotao">
+                                        <div id="botao">
+                                            <p id="textoBotao">Próximo passo</p>
+                                        </div>
                                     </div>
                                 </div>
                             </section>
@@ -84,12 +83,13 @@ function CriarEquipa3() {
                             <img src={setaAtras} className="iconSeta" alt="seta para retroceder" />
                             <p className="textoBotao">Etapa anterior</p>
                         </div>
-                        <img src={criarEquipa3_semBack} className="imgEquipa" alt="criar equipa segunda imagem" />
+                        <img src={criarSessao3_semBack} className="imgEquipa" alt="criar equipa segunda imagem" />
                     </div>
+
                 </div>
             </section>
         </article>
     )
 }
 
-export default CriarEquipa3
+export default CriarSessao6

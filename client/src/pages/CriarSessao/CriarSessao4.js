@@ -1,44 +1,98 @@
 import React from 'react'
-import setaAtras from "../../img/setaAtras.png";
+import setaAtras from "../../img/icons/icon_setaAtrasAzul.svg"
 import criarSessao3 from "../../img/criarSessoes/criarSessao3.svg";
+
+import criarSessao3_semBack from "../../img/criarSessoes/criarSessao3_semBack.svg"
+
+import iconDefinicoes from "../../img/icons/icon_settings.svg";
+
+import { Link } from "react-router-dom"
 
 function CriarSessao4() {
     return (
-        <form className="formularioCriarSessao">
-            <header className="criarSessaoImg">
+        <article className="criarSessao">
+            <section id="main" className="conteudoMain">
 
+                {/*DESKTOP*/}
+                <div id="bemvindo">
 
-                <div className="setaTras">
-                    <img src={setaAtras} alt="seta atras" />
+                    <div className="bemvindo_titulos">
+                        <h3>Bom dia,</h3>
+                        <h1>Criar Sessão</h1>
+                    </div>
+                    <div className="icons">
+                        <img src={iconDefinicoes} alt="" />
+                    </div>
+
                 </div>
 
-                <img src={criarSessao3} alt="criar sessao primeira imagem" />
+                <div className="titulo">
+                    <div className="tituloPag criarEquipaTitulo" id="tituloPag">
+                        <div className="gridAdicionar">
+                            <label className="tituloCriarEquipas desktop">Criar uma nova sesssão</label>
+                            {/* <div className="imgCriarEquipas">
+            <img src={iconAdicionar} alt="" />
+        </div> */}
+                        </div>
 
-            </header>
+                    </div>
 
-            <section id="corpo">
-                <label id="titulo">Detalhes</label>
 
-                <div className="formulario">
-                    <label className="tituloFormulario">Ano dos mentorandos</label>
 
-                    <input type="text" className="inputTexto" placeholder="ex: 6ºano"></input>
                 </div>
 
-                <div className="formulario">
-                    <label className="tituloFormulario">Descrição</label>
+                <div className="conteudoMid">
+                    <div className="conteudoEsquerda">
+                        <form className="formularioCriarSessao">
 
-                    <textarea type="text" className="textareaTexto" placeholder="Descrição da equipa"></textarea>
-                </div>
+                            <header className="criarSessaoImg">
 
-                <div id="divBotao">
-                    <div id="botao">
-                        <p id="textoBotao">Criar sessão!</p>
+
+                                <Link to='/criarsessao/3' className="setaTras">
+                                    <img src={setaAtras} alt="seta atras" />
+                                </Link>
+
+                                <img src={criarSessao3} alt="criar sessao primeira imagem" />
+
+                            </header>
+
+                            <section id="corpo">
+                                <label id="titulo">Podemos avançar?</label>
+
+                                <div>
+                                    <p id="texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                                </div>
+
+
+                                <div className="botaoAzul">
+                                    <div id="divBotao">
+                                        <div id="botao">
+                                            <p id="textoBotao">Vamos preencher</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="botaoAzul">
+                                    <div id="divBotao">
+                                        <div id="botao">
+                                            <p id="textoBotao">Mais tarde</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+
+                        </form>
+                    </div>
+                    <div className="conteudoDireita">
+                        <div className="botaoEtapaAnterior">
+                            <img src={setaAtras} className="iconSeta" alt="seta para retroceder" />
+                            <p className="textoBotao">Etapa anterior</p>
+                        </div>
+                        <img src={criarSessao3_semBack} className="imgEquipa" alt="criar equipa segunda imagem" />
                     </div>
                 </div>
             </section>
+        </article>
 
-        </form>
     )
 }
 

@@ -6,7 +6,7 @@ import RegistoEtapa4 from "./RegistoEtapa4";
 /* import RegistoEtapa5 from "./RegistoEtapa5"; */
 
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Route, Switch } from 'react-router-dom'
 
 
@@ -40,6 +40,7 @@ function Registo() {
     const [avataresBD, setAvataresBD] = useState(null)
     /* Etapa 4 */
     const [validadeFormulario4, setvalidadeFormulario4] = useState(false);
+
 
 
 
