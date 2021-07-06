@@ -1,7 +1,9 @@
 import React from 'react'
 import setaAtras from "../../img/setaAtras.png"
 import setaDireita from "../../img/setaDireita.png";
+
 import iconDefinicoes from "../../img/icons/icon_settings.svg";
+import iconOrdenar from "../../img/icons/icon_ordenar.svg";
 
 import { Link } from "react-router-dom"
 
@@ -20,16 +22,31 @@ function Tutorial() {
                     </div>
                 </div>
 
+
+
+
                 <div className="navTutorial">
                     <Link to="../" id="seta">
                         <img src={setaAtras} alt="setaAtras" />
+
                     </Link>
-                    <div className="tituloEtapas">
-                        <h2 id="tituloEtapas">Tutorial</h2>
-                        <h2 id="iconEtapas">Tutorial</h2>
+
+                    <div className="tituloListaEtapas" id="tituloListaEtapas">
+
+                        <label className="tituloEtapas_desktop" id="tituloEtapas_desktop">Etapas</label>
+                        <label className="tituloEtapas_mobile" >Tutorial</label>
+
+
+                        <img src={iconOrdenar} alt="" id="iconOrdenar" />
                     </div>
 
-                    <h2 id="tutorial">Tutorial</h2>
+
+                    <div className="ajuda" id="ajuda">
+                        <label>O que posso aprender?</label>
+                    </div>
+
+                    <img src={iconOrdenar} alt="" id="iconOrdenar_mobile" />
+
 
                 </div>
 
@@ -37,7 +54,7 @@ function Tutorial() {
                     <div className="listaEtapas">
 
                         <section>
-                            <Link to="tutorial/0" id="linkCaixa">
+                            <Link to="/tutorial/0" id="linkCaixa">
                                 <div className="textoEsquerda">
                                     <h4>Etapa 0</h4>
                                     <p>Preparação e criação de uma equipa de mentores</p>
@@ -48,7 +65,7 @@ function Tutorial() {
                             </Link>
                         </section>
                         <section>
-                            <Link to="tutorial/1" id="linkCaixa">
+                            <Link to="/tutorial/1" id="linkCaixa">
                                 <div className="textoEsquerda">
                                     <h4>Etapa 1</h4>
                                     <p>Definição dos conteúdos programáticos e criação da narrativa</p>
@@ -59,7 +76,7 @@ function Tutorial() {
                             </Link>
                         </section>
                         <section>
-                            <Link to="tutorial/2" id="linkCaixa">
+                            <Link to="/tutorial/2" id="linkCaixa">
                                 <div className="textoEsquerda">
                                     <h4>Etapa 2</h4>
                                     <p>Construção do guião da sessão de mentoria (Atividades e Tarefas)</p>
@@ -70,7 +87,7 @@ function Tutorial() {
                             </Link>
                         </section>
                         <section>
-                            <Link to="tutorial/3" id="linkCaixa">
+                            <Link to="/tutorial/3" id="linkCaixa">
                                 <div className="textoEsquerda">
                                     <h4>Etapa 3</h4>
                                     <p>Preparação de tarefas e divulgação da sessão de mentoria</p>
@@ -81,7 +98,7 @@ function Tutorial() {
                             </Link>
                         </section>
                         <section>
-                            <Link to="tutorial/4" id="linkCaixa">
+                            <Link to="/tutorial/4" id="linkCaixa">
                                 <div className="textoEsquerda">
                                     <h4>Etapa 4</h4>
                                     <p>Implementação da sessão de mentoria com base no guião criado</p>
@@ -92,7 +109,7 @@ function Tutorial() {
                             </Link>
                         </section>
                         <section>
-                            <Link to="tutorial/5" id="linkCaixa">
+                            <Link to="/tutorial/5" id="linkCaixa">
                                 <div className="textoEsquerda">
                                     <h4>Etapa 5</h4>
                                     <p>Reflexão final através do preenchimento de questionários</p>
@@ -103,7 +120,7 @@ function Tutorial() {
                             </Link>
                         </section>
                         <section>
-                            <Link to="tutorial/6" id="linkCaixa">
+                            <Link to="/tutorial/6" id="linkCaixa">
                                 <div className="textoEsquerda">
                                     <h4>Etapa 6</h4>
                                     <p>Ajudar outros professores através da partilha do trabalho na plataforma</p>
@@ -115,8 +132,8 @@ function Tutorial() {
                         </section>
 
                     </div>
-                    <div className="Ajuda">
-                        <h1>ola</h1>
+                    <div className="ajuda">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus sint iure dignissimos libero ab accusamus. Qui harum incidunt aliquam a modi saepe dicta non? Assumenda minima vel aut delectus ullam?</p>
                     </div>
                 </div>
             </section>
