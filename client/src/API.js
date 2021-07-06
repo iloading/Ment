@@ -34,7 +34,7 @@ export const bancoInfo = () => axios.post('http://localhost:3001/bancoInfo');
 export const destaqueInfo = () => axios.post('http://localhost:3001/destaqueInfo');
 
 //-----------PERFIL DE EQUIPA
-export const perfilequipaInfo = () => axios.post('http://localhost:3001/perfilequipaInfo');
+export const perfilequipaInfo = (dados) => axios.post('http://localhost:3001/perfilequipaInfo', dados);
 
 //-----------CRIAR SESSAO
 export const minhasEquipas = () => axios.post('http://localhost:3001/perfil/minhasEquipas');

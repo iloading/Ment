@@ -6,6 +6,8 @@ import criarSessao3_semBack from "../../img/criarSessoes/criarSessao3_semBack.sv
 
 import iconDefinicoes from "../../img/icons/icon_settings.svg";
 
+import { Link } from "react-router-dom"
+
 function CriarSessao5() {
     return (
         <article className="criarSessao">
@@ -45,9 +47,9 @@ function CriarSessao5() {
                             <header className="criarSessaoImg">
 
 
-                                <div className="setaTras">
+                                <Link to='/criarsessao/4' className="setaTras">
                                     <img src={setaAtras} alt="seta atras" />
-                                </div>
+                                </Link>
 
                                 <img src={criarSessao3} alt="criar sessao primeira imagem" />
 

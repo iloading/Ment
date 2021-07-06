@@ -170,6 +170,7 @@ function RegistoEtapa1({ validadeEmail, setValidadeEmail, validadeFormulario1, s
 
 
     return (
+
         <Formik initialValues={initialValues} validationSchema={camposValidador} onSubmit={onSubmit}>
             <Form className="formularioRegisto">
                 <header className="registoImg">

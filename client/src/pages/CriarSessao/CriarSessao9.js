@@ -2,9 +2,11 @@ import React from 'react'
 import setaAtras from "../../img/icons/icon_setaAtrasAzul.svg"
 import criarSessao3 from "../../img/criarSessoes/criarSessao3.svg";
 
-import criarSessao3_semBack from "../../img/criarSessoes/criarSessao3_semBack.svg"
+import criarSessao9_semBack from "../../img/criarSessoes/criarSessao9_semBack.svg"
 
 import iconDefinicoes from "../../img/icons/icon_settings.svg";
+
+import { Link } from "react-router-dom"
 
 
 function CriarSessao9() {
@@ -46,9 +48,9 @@ function CriarSessao9() {
                             <header className="criarSessaoImg">
 
 
-                                <div className="setaTras">
+                                <Link to='/criarsessao/8' className="setaTras">
                                     <img src={setaAtras} alt="seta atras" />
-                                </div>
+                                </Link>
 
                                 <img src={criarSessao3} alt="criar sessao primeira imagem" />
 
@@ -82,7 +84,7 @@ function CriarSessao9() {
                             <img src={setaAtras} className="iconSeta" alt="seta para retroceder" />
                             <p className="textoBotao">Etapa anterior</p>
                         </div>
-                        <img src={criarSessao3_semBack} className="imgEquipa" alt="criar equipa segunda imagem" />
+                        <img src={criarSessao9_semBack} className="imgEquipa" alt="criar equipa segunda imagem" />
                     </div>
                 </div>
             </section>

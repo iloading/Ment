@@ -18,6 +18,7 @@
           position: absolute;
           padding: 1.5rem;
           text-align: initial;
+          left: 0;
         }
       }
 
@@ -438,11 +439,13 @@
           .formulario {
             margin-bottom: 1rem;
             grid-gap: 1rem;
+            .tituloFormulario {
+              margin-top: 0;
+            }
           }
-        }
-        .scrollConteudo {
-          overflow: scroll;
-          height: 90%;
+          #divBotao {
+            background-color: white;
+          }
         }
       }
       .conteudoDireita {

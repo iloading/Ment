@@ -1,5 +1,5 @@
 import React from 'react'
-import setaAtras from "../../img/setaAtras.png";
+import setaAtras from "../../img/icons/icon_setaAtrasAzul.svg"
 import criarSessao2 from "../../img/criarSessoes/criarSessao2.svg";
 
 import criarSessao1_semBack from "../../img/criarSessoes/criarSessao1_semBack.svg"
@@ -40,9 +40,9 @@ function CriarSessao1() {
                             <header className="criarSessaoImg">
 
 
-                                <div className="setaTras">
+                                <Link to='/dashboard' className="setaTras">
                                     <img src={setaAtras} alt="seta atras" />
-                                </div>
+                                </Link>
 
                                 <img src={criarSessao2} alt="criar sessao primeira imagem" />
 

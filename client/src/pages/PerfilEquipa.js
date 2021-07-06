@@ -14,16 +14,19 @@ import { loadPerfilEquipa } from "../actions/perfilequipaAction";
 
 
 import { useEffect } from 'react'
+import { useRouteMatch } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 
 
 
 function PerfilEquipa() {
+    let { path, url } = useRouteMatch()
+    let id = url.split("/")[2]
     const dispatch = useDispatch()
     useEffect(() => {
-        dispatch(loadPerfilEquipa())
+        dispatch(loadPerfilEquipa(id))
 
-    }, [dispatch])
+    }, [dispatch, id])
 
     const { sessoesEquipa: sessoes, status } = useSelector(state => state.perfilequipa)
 

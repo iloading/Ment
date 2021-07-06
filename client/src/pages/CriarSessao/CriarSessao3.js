@@ -12,6 +12,7 @@ import { Link } from "react-router-dom"
 import { loadInfo, escolherGrauEscolaridade, escolherDisciplina, preencherNome, preencherConteudos, criarNovaSessao } from "../../actions/criacaoSessaoAction";
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { colourStyles } from './selectStyle';
 
 function CriarSessao3() {
 
@@ -123,7 +124,7 @@ function CriarSessao3() {
                                         /* styles={colourStyles} */
                                         placeholder={'Ex: 7ºano'}
                                         isClearable={true}
-                                        isSearchable={false}
+                                        isSearchable={false} styles={colourStyles}
                                         onChange={(e) => selectGrauEscolaridade(e)}
                                         defaultValue={dadosPreenchidos.grauEscolhido}
                                     ></Select>
@@ -137,7 +138,7 @@ function CriarSessao3() {
                                     <Select
                                         options={gruposDisciplinares.map(grupo => ({ label: `${grupo.code} - ${grupo.name}`, value: grupo.id }))}
                                         className='react-select-form'
-                                        /* styles={colourStyles} */
+                                        styles={colourStyles}
                                         placeholder={'Ex: Inglês, Matemática, etc...'}
                                         isClearable={true}
                                         isSearchable={false}
