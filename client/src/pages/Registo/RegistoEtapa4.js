@@ -1,7 +1,9 @@
 import registo5Img from "../../img/registo/registo5Img.png";
 /* import icon_dropdown from "../../img/icons/icon_dropdown.png"; */
-import setaAtras from "../../img/setaAtras.png";
+import setaAtras from "../../img/icons/icon_setaAtrasAzul.svg"
 /* import { Field, ErrorMessage } from 'formik'; */
+import navLogo from "../../img/logo.svg";
+import registoImgDesktop from "../../img/registo/registoImg_desktop.svg";
 
 import { colourStyles } from './selectStyle';
 
@@ -20,6 +22,7 @@ function RegistoEtapa4({ dados, setDados, validadeFormulario4, setvalidadeFormul
 
     const { getLoggedIn } = useContext(AuthContext)
     const history = useHistory();
+    const redirectLogin = () => { history.push("/login") }
     const [courses, setCourses] = useState([])
 
     //Grupos Disciplinares
@@ -100,22 +103,56 @@ function RegistoEtapa4({ dados, setDados, validadeFormulario4, setvalidadeFormul
     const redirectBack = () => { history.push('/registo/3') }
 
     return (
+        <>
+            <div className="formularioRegisto_menu">
+                <aside className="menu_principal_registo">
+                    <div className="asideLogoRegisto">
+                        <img src={navLogo} alt="" />
+                    </div>
+                </aside>
+            </div>
+            <div id="main">
+                <section id="main" className="conteudoMain">
 
-        <form className="formularioRegisto">
-            <header className="registoImg">
-                <div className="setaTras" onClick={redirectBack}>
-                    <img src={setaAtras} alt="seta atras" />
-                </div>
-                <img src={registo5Img} alt="registo quinta imagem" />
-            </header>
-            <div className="formulario" id={dados.role === 0 ? "etapa4_student" : "etapa4_teacher"}>
-                <section className="tituloPrincipal">
-                    <label>Informações</label>
-                </section>
-                <section className="paragrafo">
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab quos at nostrum nemo earum obcaecati voluptas consectetur.</p>
-                </section>
-                {/* <section className="inputFormulario selectFormulario">
+                    {/*DESKTOP*/}
+                    <div id="bemvindo">
+
+                        <div className="bemvindo_titulos">
+                            <h3>Bom dia,</h3>
+                            <h1>Registar</h1>
+                        </div>
+                        <div className="icons">
+                            <button type="button" className="botaoLogin" onClick={redirectLogin}>Entrar</button>
+                        </div>
+
+                    </div>
+
+                    <div className="titulo">
+                        <div className="tituloPag criarEquipaTitulo" id="tituloPag">
+                            <label className="tituloCriarEquipas desktop">Criar uma nova sessão</label>
+                        </div>
+
+
+
+                    </div>
+
+                    <div className="conteudoMid">
+                        <div className="conteudoEsquerda">
+                            <form className="formularioRegisto">
+                                <header className="registoImg">
+                                    <div className="setaTras" onClick={redirectBack}>
+                                        <img src={setaAtras} alt="seta atras" />
+                                    </div>
+                                    <img src={registo5Img} alt="registo quinta imagem" />
+                                </header>
+                                <div className="formulario" id={dados.role === 0 ? "etapa4_student" : "etapa4_teacher"}>
+                                    <section className="tituloPrincipal">
+                                        <label>Informações</label>
+                                    </section>
+                                    <section className="paragrafo">
+                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab quos at nostrum nemo earum obcaecati voluptas consectetur.</p>
+                                    </section>
+                                    {/* <section className="inputFormulario selectFormulario">
 
                         <label>Escola</label>
                        
@@ -131,73 +168,83 @@ function RegistoEtapa4({ dados, setDados, validadeFormulario4, setvalidadeFormul
                         </div>
 
                     </section> */}
-                <section className="">
-                    <label>Escola</label>
+                                    <section className="">
+                                        <label>Escola</label>
 
 
-                    {/* Só passei 12h nisto ... I'm fine */}
-                    <AsyncCreatableSelect
-                        onChange={(e) => handleChange(e)}
-                        cacheOptions={true}
-                        defaultOptions={false}
-                        loadOptions={(e) => (e !== '' && e.length > 2) ? loadOptions(e).then((res) =>
-                            res.data.success.map(({ idschool, agrupamento }) => ({ label: agrupamento, value: idschool }))) : ''}
-                        isClearable={true}
-                        noOptionsMessage={() => 'Não existem resultados. Escreva o nome do seu concelho, escola ou agrupamento...'}
-                        loadingMessage={(e) => e.inputValue.length <= 2 ? 'Digite mais do que 2 carateres para pesquisar' : 'A Pesquisar...'}
-                        allowCreateWhileLoading={false}
-                        /* Criar uma nova escola caso a do utilizador não esteja na lista  */
-                        isValidNewOption={(inputValue, selectValue, selectOptions, accessors) => {
-                            if (inputValue.length > 2) {
-                                if (selectValue.length === 0) {
-                                    if (selectOptions.length === 0) {
-                                        return true
+                                        {/* Só passei 12h nisto ... I'm fine */}
+                                        <AsyncCreatableSelect
+                                            onChange={(e) => handleChange(e)}
+                                            cacheOptions={true}
+                                            defaultOptions={false}
+                                            loadOptions={(e) => (e !== '' && e.length > 2) ? loadOptions(e).then((res) =>
+                                                res.data.success.map(({ idschool, agrupamento }) => ({ label: agrupamento, value: idschool }))) : ''}
+                                            isClearable={true}
+                                            noOptionsMessage={() => 'Não existem resultados. Escreva o nome do seu concelho, escola ou agrupamento...'}
+                                            loadingMessage={(e) => e.inputValue.length <= 2 ? 'Digite mais do que 2 carateres para pesquisar' : 'A Pesquisar...'}
+                                            allowCreateWhileLoading={false}
+                                            /* Criar uma nova escola caso a do utilizador não esteja na lista  */
+                                            isValidNewOption={(inputValue, selectValue, selectOptions, accessors) => {
+                                                if (inputValue.length > 2) {
+                                                    if (selectValue.length === 0) {
+                                                        if (selectOptions.length === 0) {
+                                                            return true
+                                                        }
+                                                    }
+                                                }
+                                                return false
+                                            }}
+
+                                            id='inputRole'
+                                            className='react-select-form'
+                                            styles={colourStyles}
+                                            placeholder={'Pesquisar por Concelho | Agrupamento | Escola'}
+                                        />
+                                        <div className="error">
+
+                                        </div>
+
+
+                                    </section>
+                                    {dados.role === 1 &&
+                                        <section className="selectFormulario">
+                                            <label>Grupo Disciplinar</label>
+                                            <Select
+                                                options={courses}
+                                                className='react-select-form'
+                                                styles={colourStyles}
+                                                placeholder={'Selecione o seu Grupo Disciplinar'}
+                                                isClearable={true}
+                                                isSearchable={false}
+                                                onChange={(e) => handleChangeCourse(e)}
+                                            >
+
+                                            </Select>
+
+                                        </section>
                                     }
-                                }
-                            }
-                            return false
-                        }}
 
-                        id='inputRole'
-                        className='react-select-form'
-                        styles={colourStyles}
-                        placeholder={'Pesquisar por Concelho | Agrupamento | Escola'}
-                    />
-                    <div className="error">
 
+
+                                    <section className="botao">
+                                        {validadeFormulario4 ? <button type="submit" id='nextStep4' onClick={onSubmit}>Criar Conta</button> : <button id='nextStep4' disabled>Criar Conta</button>}
+
+
+                                    </section>
+                                </div>
+                            </form>
+                        </div>
+                        <div className="conteudoDireitaDesktop">
+                            <div className="botaoEtapaAnterior">
+                                <img src={setaAtras} className="iconSeta" alt="seta para retroceder" />
+                                <p className="textoBotao">Etapa anterior</p>
+                            </div>
+                            <img src={registoImgDesktop} className="imgEquipa" alt="criar equipa primeira imagem" />
+                        </div>
                     </div>
-
-
-                </section>
-                {dados.role === 1 &&
-                    <section className="selectFormulario">
-                        <label>Grupo Disciplinar</label>
-                        <Select
-                            options={courses}
-                            className='react-select-form'
-                            styles={colourStyles}
-                            placeholder={'Selecione o seu Grupo Disciplinar'}
-                            isClearable={true}
-                            isSearchable={false}
-                            onChange={(e) => handleChangeCourse(e)}
-                        >
-
-                        </Select>
-
-                    </section>
-                }
-
-
-
-                <section className="botao">
-                    {validadeFormulario4 ? <button type="submit" id='nextStep4' onClick={onSubmit}>Criar Conta</button> : <button id='nextStep4' disabled>Criar Conta</button>}
-
-
                 </section>
             </div>
-        </form>
-
-
+        </>
 
     );
 
