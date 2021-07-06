@@ -177,7 +177,7 @@ function RegistoEtapa1({ validadeEmail, setValidadeEmail, validadeFormulario1, s
                 </aside>
             </div>
             <div id="main">
-                <section id="main" className="conteudoMain">
+                <section id="main" className="conteudoMain registo">
                     {/*DESKTOP*/}
                     <div id="bemvindo">
 

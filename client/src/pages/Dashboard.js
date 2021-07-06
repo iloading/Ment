@@ -40,12 +40,12 @@ function Dashboard() {
     const { user, status: userStatus } = useSelector(state => state.user)
     let hora = new Date().getHours();
     let boasVindas
-    if (hora < 12) {
-        boasVindas = 'Bom dia'
-    } else if (hora < 20) {
-        boasVindas = 'Boa tarde'
-    } else {
+    if (hora >= 0 || hora >= 20) {
         boasVindas = 'Boa noite'
+    } else if (hora >= 7 && hora <= 12) {
+        boasVindas = 'Bom dia'
+    } else {
+        boasVindas = 'Boa tarde'
     }
     return (
         <article className="dashboard">

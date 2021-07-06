@@ -45,7 +45,7 @@ function Login() {
                     </div>
                 </aside>
             </div>
-            <div id="main">
+            <div className="login">
                 <section id="main" className="conteudoMain">
 
                     {/*DESKTOP*/}

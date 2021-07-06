@@ -76,10 +76,10 @@ function Sessao() {
                                 <ResumoSessao sessao={sessao} status={status} />
                             </Route>
                             <Route path={`${path}/recursos`}>
-                                <RecursosSessao />
+                                <RecursosSessao sessao={sessao} status={status} />
                             </Route>
                             <Route path={`${path}/detalhes`}>
-                                <DetalhesSessao />
+                                <DetalhesSessao sessao={sessao} status={status} />
                             </Route>
                         </Switch>
 
