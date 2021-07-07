@@ -35,6 +35,11 @@ app.use('/criarSessao', criarSessao);
 const perfil = require('./routes/Perfil')
 app.use('/perfil', perfil);
 
+const sessao = require('./routes/Sessao')
+app.use('/sessao', sessao);
+
+const minhasEquipas = require('./routes/MinhasEquipas')
+app.use('/minhasequipas', minhasEquipas);
 const criarEquipas = require('./routes/CriarEquipa')
 app.use('/criarEquipa', criarEquipas);
 

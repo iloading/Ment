@@ -60,7 +60,7 @@ function CriarSessao9() {
                                 <label id="titulo">Resultados</label>
 
                                 <div>
-                                    <p id="texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                                    <p id="texto">Último passo! O que espera desta sessão? Em termos de narrativa, o que conclui a sessão? (Por exemplo: os mentorandos descobrem o tesouro secreto)</p>
                                 </div>
 
                                 <div className="formulario">

@@ -59,7 +59,7 @@ function CriarSessao5() {
                                 <label id="titulo">Detalhes adicionais</label>
 
                                 <div>
-                                    <p id="texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                                    <p id="texto">Descreva de uma forma bastante breve sobre o que se trata a sua sessão.</p>
                                 </div>
 
                                 <div className="formulario">

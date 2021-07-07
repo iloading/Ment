@@ -6,6 +6,8 @@ import destaqueReducer from './destaqueReducer'
 import perfilequipaReducer from './perfilequipaReducer'
 import feedbackReducer from './feedbackReducer'
 import criarSessaoReducer from './criacaoSessaoReducer'
+import sessaoReducer from './sessaoReducer'
+import minhasEquipasReducer from './minhasEquipasReducer'
 import criarEquipaReducer from './criacaoEquipaReducer'
 
 const rootReducer = combineReducers({
@@ -16,6 +18,8 @@ const rootReducer = combineReducers({
     perfilequipa: perfilequipaReducer,
     feedback: feedbackReducer,
     criarSessao: criarSessaoReducer,
+    sessao: sessaoReducer,
+    minhasEquipas: minhasEquipasReducer,
     criarEquipa: criarEquipaReducer,
 })
 

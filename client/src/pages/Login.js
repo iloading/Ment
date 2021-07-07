@@ -45,7 +45,7 @@ function Login() {
                     </div>
                 </aside>
             </div>
-            <div id="main">
+            <div className="login">
                 <section id="main" className="conteudoMain">
 
                     {/*DESKTOP*/}
@@ -61,7 +61,7 @@ function Login() {
 
                     <div className="titulo">
                         <div className="tituloPag criarEquipaTitulo" id="tituloPag">
-                            <label className="tituloCriarEquipas desktop">Criar uma nova sessão</label>
+                            <label className="tituloCriarEquipas desktop"></label>
                         </div>
 
 

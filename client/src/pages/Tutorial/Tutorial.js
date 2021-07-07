@@ -2,92 +2,140 @@ import React from 'react'
 import setaAtras from "../../img/setaAtras.png"
 import setaDireita from "../../img/setaDireita.png";
 
+import iconDefinicoes from "../../img/icons/icon_settings.svg";
+import iconOrdenar from "../../img/icons/icon_ordenar.svg";
+
 import { Link } from "react-router-dom"
 
 function Tutorial() {
     return (
 
         <article className="tutorial">
-            <div className="navTutorial">
-                <Link to="../" id="seta"><img src={setaAtras} alt="setaAtras" /></Link>
-                <h2 id="tutorial">Tutorial</h2>
-            </div>
-            <section>
-                <Link to="tutorial/0" id="linkCaixa">
-                    <div className="textoEsquerda">
-                        <h4>Etapa 0</h4>
-                        <p>Preparação e criação de uma equipa de mentores</p>
+            <section id="main" className="conteudoMain">
+                <div id="bemvindo">
+                    <div className="bemvindo_titulos">
+                        <h3>Boas</h3>
+                        <h1>Tutorial</h1>
                     </div>
-                    <div className="setaDireita">
-                        <img src={setaDireita} alt="seta direita" id="seta" />
+                    <div className="icons">
+                        <img src={iconDefinicoes} alt="" />
                     </div>
-                </Link>
-            </section>
-            <section>
-                <Link to="tutorial/1" id="linkCaixa">
-                    <div className="textoEsquerda">
-                        <h4>Etapa 1</h4>
-                        <p>Definição dos conteúdos programáticos e criação da narrativa</p>
+                </div>
+
+
+
+
+                <div className="navTutorial">
+                    <Link to="../" id="seta">
+                        <img src={setaAtras} alt="setaAtras" />
+
+                    </Link>
+
+                    <div className="tituloListaEtapas" id="tituloListaEtapas">
+
+                        <label className="tituloEtapas_desktop" id="tituloEtapas_desktop">Etapas</label>
+                        <label className="tituloEtapas_mobile" >Tutorial</label>
+
+
+                        <img src={iconOrdenar} alt="" id="iconOrdenar" />
                     </div>
-                    <div className="setaDireita">
-                        <img src={setaDireita} alt="seta direita" id="seta" />
+
+
+                    <div className="ajuda" id="ajuda">
+                        <label>O que posso aprender?</label>
                     </div>
-                </Link>
-            </section>
-            <section>
-                <Link to="tutorial/2" id="linkCaixa">
-                    <div className="textoEsquerda">
-                        <h4>Etapa 2</h4>
-                        <p>Construção do guião da sessão de mentoria (Atividades e Tarefas)</p>
+
+                    <img src={iconOrdenar} alt="" id="iconOrdenar_mobile" />
+
+
+                </div>
+
+                <div className="conteudoMid">
+                    <div className="listaEtapas">
+
+                        <section>
+                            <Link to="/tutorial/0" id="linkCaixa">
+                                <div className="textoEsquerda">
+                                    <h4>Etapa 0</h4>
+                                    <p>Preparação e criação de uma equipa de mentores</p>
+                                </div>
+                                <div className="setaDireita">
+                                    <img src={setaDireita} alt="seta direita" id="seta" />
+                                </div>
+                            </Link>
+                        </section>
+                        <section>
+                            <Link to="/tutorial/1" id="linkCaixa">
+                                <div className="textoEsquerda">
+                                    <h4>Etapa 1</h4>
+                                    <p>Definição dos conteúdos programáticos e criação da narrativa</p>
+                                </div>
+                                <div className="setaDireita">
+                                    <img src={setaDireita} alt="seta direita" id="seta" />
+                                </div>
+                            </Link>
+                        </section>
+                        <section>
+                            <Link to="/tutorial/2" id="linkCaixa">
+                                <div className="textoEsquerda">
+                                    <h4>Etapa 2</h4>
+                                    <p>Construção do guião da sessão de mentoria (Atividades e Tarefas)</p>
+                                </div>
+                                <div className="setaDireita">
+                                    <img src={setaDireita} alt="seta direita" id="seta" />
+                                </div>
+                            </Link>
+                        </section>
+                        <section>
+                            <Link to="/tutorial/3" id="linkCaixa">
+                                <div className="textoEsquerda">
+                                    <h4>Etapa 3</h4>
+                                    <p>Preparação de tarefas e divulgação da sessão de mentoria</p>
+                                </div>
+                                <div className="setaDireita">
+                                    <img src={setaDireita} alt="seta direita" id="seta" />
+                                </div>
+                            </Link>
+                        </section>
+                        <section>
+                            <Link to="/tutorial/4" id="linkCaixa">
+                                <div className="textoEsquerda">
+                                    <h4>Etapa 4</h4>
+                                    <p>Implementação da sessão de mentoria com base no guião criado</p>
+                                </div>
+                                <div className="setaDireita">
+                                    <img src={setaDireita} alt="seta direita" id="seta" />
+                                </div>
+                            </Link>
+                        </section>
+                        <section>
+                            <Link to="/tutorial/5" id="linkCaixa">
+                                <div className="textoEsquerda">
+                                    <h4>Etapa 5</h4>
+                                    <p>Reflexão final através do preenchimento de questionários</p>
+                                </div>
+                                <div className="setaDireita">
+                                    <img src={setaDireita} alt="seta direita" id="seta" />
+                                </div>
+                            </Link>
+                        </section>
+                        <section>
+                            <Link to="/tutorial/6" id="linkCaixa">
+                                <div className="textoEsquerda">
+                                    <h4>Etapa 6</h4>
+                                    <p>Ajudar outros professores através da partilha do trabalho na plataforma</p>
+                                </div>
+                                <div className="setaDireita">
+                                    <img src={setaDireita} alt="seta direita" id="seta" />
+                                </div>
+                            </Link>
+                        </section>
+
                     </div>
-                    <div className="setaDireita">
-                        <img src={setaDireita} alt="seta direita" id="seta" />
+                    <div className="ajuda">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus sint iure dignissimos libero ab accusamus. Qui harum incidunt aliquam a modi saepe dicta non? Assumenda minima vel aut delectus ullam?</p>
                     </div>
-                </Link>
-            </section>
-            <section>
-                <Link to="tutorial/3" id="linkCaixa">
-                    <div className="textoEsquerda">
-                        <h4>Etapa 3</h4>
-                        <p>Preparação de tarefas e divulgação da sessão de mentoria</p>
-                    </div>
-                    <div className="setaDireita">
-                        <img src={setaDireita} alt="seta direita" id="seta" />
-                    </div>
-                </Link>
-            </section>
-            <section>
-                <Link to="tutorial/4" id="linkCaixa">
-                    <div className="textoEsquerda">
-                        <h4>Etapa 4</h4>
-                        <p>Implementação da sessão de mentoria com base no guião criado</p>
-                    </div>
-                    <div className="setaDireita">
-                        <img src={setaDireita} alt="seta direita" id="seta" />
-                    </div>
-                </Link>
-            </section>
-            <section>
-                <Link to="tutorial/5" id="linkCaixa">
-                    <div className="textoEsquerda">
-                        <h4>Etapa 5</h4>
-                        <p>Reflexão final através do preenchimento de questionários</p>
-                    </div>
-                    <div className="setaDireita">
-                        <img src={setaDireita} alt="seta direita" id="seta" />
-                    </div>
-                </Link>
-            </section>
-            <section>
-                <Link to="tutorial/6" id="linkCaixa">
-                    <div className="textoEsquerda">
-                        <h4>Etapa 6</h4>
-                        <p>Ajudar outros professores através da partilha do trabalho na plataforma</p>
-                    </div>
-                    <div className="setaDireita">
-                        <img src={setaDireita} alt="seta direita" id="seta" />
-                    </div>
-                </Link>
+                </div>
             </section>
         </article>
     )

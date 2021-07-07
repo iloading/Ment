@@ -13,6 +13,9 @@ import Narrativa from "./components/Narrativa";
 import { loadPerfilEquipa } from "../actions/perfilequipaAction";
 
 
+
+
+
 import { useEffect } from 'react'
 import { useRouteMatch } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
@@ -26,9 +29,15 @@ function PerfilEquipa() {
     useEffect(() => {
         dispatch(loadPerfilEquipa(id))
 
+
     }, [dispatch, id])
 
     const { sessoesEquipa: sessoes, status } = useSelector(state => state.perfilequipa)
+
+
+
+
+
 
     return (
         <article className="perfilEquipas">
@@ -39,7 +48,7 @@ function PerfilEquipa() {
 
                 <div className="titulo">
                     <img src={iconEquipa} alt="" className="iconTitulo" />
-                    <label className="tituloMain">Os Navegadores</label>
+                    <label className="tituloMain">NOME</label>
                     <div className="botaoManage">
                         <img src={iconTresPontos} alt="" />
                     </div>

@@ -9,6 +9,8 @@ import iconAdicionar from "../../img/icons/icon_adicionar.svg";
 import { Link } from "react-router-dom"
 import AsyncSelect from 'react-select/async';
 
+import { colourStyles } from './selectStyle';
+
 import { useDispatch, useSelector } from 'react-redux'
 import { selecionarMentor } from '../../actions/criacaoEquipaAction'
 import AsyncCreatableSelect from 'react-select/async-creatable';
@@ -58,7 +60,7 @@ function CriarEquipa5() {
                 <div className="titulo">
                     <div className="tituloPag criarEquipaTitulo" id="tituloPag">
                         <div className="gridAdicionar">
-                            <label className="tituloCriarEquipas desktop">Adicionar alunos</label>
+                            <label className="tituloCriarEquipas">Adicionar alunos</label>
                             <div className="imgCriarEquipas">
                                 <img src={iconAdicionar} alt="" />
                             </div>
@@ -89,6 +91,7 @@ function CriarEquipa5() {
                                         res.data.success.map(({ id, name, email, url, alt }) => ({ label: `${name} (${email})`, value: id, info: { id: id, email: email, name: name, url: url, alt: alt } }))) : ''}
                                     isClearable={false}
                                     noOptionsMessage={() => 'Não existem resultados. Escreva o nome do seu concelho, escola ou agrupamento...'}
+                                    styles={colourStyles}
                                     loadingMessage={(e) => e.inputValue.length <= 2 ? 'Digite mais do que 2 carateres para pesquisar' : 'A Pesquisar...'}
                                     allowCreateWhileLoading={false}
 
@@ -96,7 +99,7 @@ function CriarEquipa5() {
 
                                     id='inputRole'
                                     className='react-select-form'
-                                    placeholder={'Pesquisar por Concelho | Agrupamento | Escola'}
+                                    placeholder={'Pesquisar por Nome | Email'}
                                 /* value={dadosPreenchidos.school.map(school => ({ label: school.name, value: school.id }))} */
                                 />
                             </div>
@@ -107,7 +110,7 @@ function CriarEquipa5() {
                                 {dadosPreenchidos.mentores.length > 0 &&
                                     dadosPreenchidos.mentores.map(mentor =>
 
-                                        <div id="equipa1">
+                                        <div className="equipa1">
                                             <img src={require(`../../img/avatar/${mentor.info.url}`).default} alt={mentor.info.alt} className="avatarEquipa" />
                                             <div className="texto">
                                                 <p className="tituloTexto">{mentor.info.name}</p>
@@ -121,11 +124,16 @@ function CriarEquipa5() {
 
                                 }
                             </div>
-                            <div id="divBotao">
-                                <div id="botao">
-                                    <p id="textoBotao">Adicionar selecionados</p>
-                                </div>
-                            </div>
+
+                            <Link className="botaoAzul" to="/criarequipa/6" >
+                                <button id="divBotao">
+                                    <div id="botao" >
+                                        <p id="textoBotao">Próximo passo</p>
+                                    </div>
+                                </button>
+                            </Link>
+
+
                         </section>
                     </div>
                     <div className="conteudoDireita">

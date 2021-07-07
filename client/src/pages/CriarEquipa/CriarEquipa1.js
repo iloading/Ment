@@ -59,7 +59,7 @@ function CriarEquipa1() {
                                 <label id="titulo">Criar uma nova equipa</label>
 
                                 <div>
-                                    <p id="texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    <p id="texto">Vamos agora criar uma equipa de mentores para terem sessões atribuídas. As equipas servem para gerir facilmente as várias sessões e os alunos que podem ser associados às suas equipas.
                                     </p>
                                 </div>
 
@@ -70,7 +70,7 @@ function CriarEquipa1() {
                                 </div>
 
                                 {dadosPreenchidos.nome !== '' ?
-                                    <Link to="/criarequipa/2" >
+                                    <Link className="botaoAzul" to="/criarequipa/2" >
                                         <button id="divBotao">
                                             <div id="botao" >
                                                 <p id="textoBotao">Próximo passo</p>
@@ -78,7 +78,7 @@ function CriarEquipa1() {
                                         </button>
                                     </Link>
                                     :
-                                    <button id="divBotao" disabled>
+                                    <button id="botaoAzul" disabled>
                                         <div id="botao" >
                                             <p id="textoBotao">Próximo passo</p>
                                         </div>

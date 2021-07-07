@@ -11,6 +11,7 @@ import iconDefinicoes from "../img/icons/icon_settings.svg";
 
 //REDUX//
 import { loadDashboard } from "../actions/dashboardAction";
+import { loadDestaque } from "../actions/destaqueAction";
 
 
 import { useEffect } from 'react'
@@ -28,27 +29,26 @@ function Dashboard() {
 
 
         dispatch(loadDashboard())
+        dispatch(loadDestaque())
 
     }, [dispatch])
 
     const { minhasEquipas: equipas, status } = useSelector(state => state.dashboard)
 
+    const { sessoesDestaque: destaques, status: statusDestaque } = useSelector(state => state.destaque)
 
     const { user, status: userStatus } = useSelector(state => state.user)
     let hora = new Date().getHours();
     let boasVindas
-    if (hora < 12) {
-        boasVindas = 'Bom dia'
-    } else if (hora < 20) {
-        boasVindas = 'Boa tarde'
-    } else {
+    if (hora >= 0 || hora >= 20) {
         boasVindas = 'Boa noite'
+    } else if (hora >= 7 && hora <= 12) {
+        boasVindas = 'Bom dia'
+    } else {
+        boasVindas = 'Boa tarde'
     }
     return (
         <article className="dashboard">
-
-
-
 
 
             <section id="main" className="conteudoMain">
@@ -117,7 +117,8 @@ function Dashboard() {
                     <label className="tituloMain">Sessões em destaque</label>
                 </div>
 
-                <SessoesDestaque />
+                {<SessoesDestaque destaques={destaques} status={statusDestaque} />}
+
 
 
             </section>
