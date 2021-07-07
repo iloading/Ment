@@ -64,7 +64,7 @@ export const criarNovaSessao = (dados) => async (dispatch) => {
     const minhasEquipasDB = await criarSessao(dados);
     /* METER DISPATCH FEEDBACK DA BD */
     dispatch({
-        type: "CRIAR_NOVA_EQUIPA",
+        type: "CRIAR_NOVA_SESSAO",
         payload: {
             dados: dados
         }

@@ -6,8 +6,16 @@ import criarEquipa2_semBack from "../../img/criarEquipas/criarEquipa2_semBack.sv
 import iconDefinicoes from "../../img/icons/icon_settings.svg";
 
 import { Link } from "react-router-dom"
+import { preencherAlias } from '../../actions/criacaoEquipaAction'
+//REDUX//
 
+import { useDispatch, useSelector } from 'react-redux'
 function CriarEquipa2() {
+    const { dadosPreenchidos } = useSelector(state => state.criarEquipa)
+    const dispatch = useDispatch()
+    const aliasHandler = (e) => {
+        dispatch(preencherAlias(e.target.value))
+    }
     return (
         <article className="criarEquipa">
             <section id="main" className="conteudoMain">
@@ -58,15 +66,25 @@ function CriarEquipa2() {
                                 <div className="formulario">
                                     <label className="tituloFormulario">Nome do atalho</label>
 
-                                    <input type="text" className="inputTexto" placeholder="ex: Aquela turma do 7ºB"></input>
+                                    <input type="text" className="inputTexto" placeholder="ex: Aquela turma do 7ºB" onChange={aliasHandler} value={dadosPreenchidos.alias}></input>
                                 </div>
 
 
-                                <div id="divBotao">
-                                    <div id="botao">
-                                        <p id="textoBotao">Próximo passo</p>
-                                    </div>
-                                </div>
+                                {dadosPreenchidos.alias !== '' ?
+                                    <Link to="/criarequipa/3" >
+                                        <button id="divBotao">
+                                            <div id="botao" >
+                                                <p id="textoBotao">Próximo passo</p>
+                                            </div>
+                                        </button>
+                                    </Link>
+                                    :
+                                    <button id="divBotao" disabled>
+                                        <div id="botao" >
+                                            <p id="textoBotao">Próximo passo</p>
+                                        </div>
+                                    </button>
+                                }
                             </section>
 
                         </form>

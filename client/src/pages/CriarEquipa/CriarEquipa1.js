@@ -5,8 +5,17 @@ import criarEquipa1 from "../../img/criarEquipas/criarEquipa1.svg"
 import iconDefinicoes from "../../img/icons/icon_settings.svg";
 
 import { Link } from "react-router-dom"
+import { preencherNome } from '../../actions/criacaoEquipaAction'
+//REDUX//
 
+import { useDispatch, useSelector } from 'react-redux'
 function CriarEquipa1() {
+
+    const { dadosPreenchidos } = useSelector(state => state.criarEquipa)
+    const dispatch = useDispatch()
+    const nomeHandler = (e) => {
+        dispatch(preencherNome(e.target.value))
+    }
     return (
         <article className="criarEquipa">
             <section id="main" className="conteudoMain">
@@ -57,15 +66,25 @@ function CriarEquipa1() {
                                 <div className="formulario">
                                     <label className="tituloFormulario">Nome da equipa</label>
 
-                                    <input type="text" className="inputTexto" placeholder="ex: Os Aventureiros"></input>
+                                    <input type="text" className="inputTexto" placeholder="ex: Os Aventureiros" onChange={nomeHandler} value={dadosPreenchidos.nome}></input>
                                 </div>
 
+                                {dadosPreenchidos.nome !== '' ?
+                                    <Link to="/criarequipa/2" >
+                                        <button id="divBotao">
+                                            <div id="botao" >
+                                                <p id="textoBotao">Próximo passo</p>
+                                            </div>
+                                        </button>
+                                    </Link>
+                                    :
+                                    <button id="divBotao" disabled>
+                                        <div id="botao" >
+                                            <p id="textoBotao">Próximo passo</p>
+                                        </div>
+                                    </button>
+                                }
 
-                                <div id="divBotao">
-                                    <div id="botao">
-                                        <p id="textoBotao">Próximo passo</p>
-                                    </div>
-                                </div>
                             </section>
 
                         </form>

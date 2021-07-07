@@ -178,7 +178,7 @@ function RegistoEtapa4({ dados, setDados, validadeFormulario4, setvalidadeFormul
                                             cacheOptions={true}
                                             defaultOptions={false}
                                             loadOptions={(e) => (e !== '' && e.length > 2) ? loadOptions(e).then((res) =>
-                                                res.data.success.map(({ idschool, agrupamento }) => ({ label: agrupamento, value: idschool }))) : ''}
+                                                res.data.success.map(({ id, name }) => ({ label: name, value: id }))) : ''}
                                             isClearable={true}
                                             noOptionsMessage={() => 'Não existem resultados. Escreva o nome do seu concelho, escola ou agrupamento...'}
                                             loadingMessage={(e) => e.inputValue.length <= 2 ? 'Digite mais do que 2 carateres para pesquisar' : 'A Pesquisar...'}
