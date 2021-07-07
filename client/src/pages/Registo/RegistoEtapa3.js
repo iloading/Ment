@@ -61,7 +61,7 @@ function RegistoEtapa3({ dados, setDados, avataresBD, setAvataresBD }) {
                 </aside>
             </div>
             <div id="main">
-                <section id="main" className="conteudoMain">
+                <section id="main" className="conteudoMain registo">
 
                     {/*DESKTOP*/}
                     <div id="bemvindo">
@@ -78,7 +78,7 @@ function RegistoEtapa3({ dados, setDados, avataresBD, setAvataresBD }) {
 
                     <div className="titulo">
                         <div className="tituloPag criarEquipaTitulo" id="tituloPag">
-                            <label className="tituloCriarEquipas desktop">Criar uma nova sessão</label>
+                            <label className="tituloCriarEquipas desktop"></label>
                         </div>
 
 

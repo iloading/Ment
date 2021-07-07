@@ -1,5 +1,11 @@
 .criarSessao {
   .conteudoMain {
+    .titulo {
+      display: none;
+      .desktop {
+        display: none;
+      }
+    }
     .conteudoMid {
       .formularioCriarSessao {
         display: grid;
@@ -161,6 +167,9 @@
           }
         }
       }
+    }
+    .conteudoDireita {
+      display: none;
     }
   }
 

@@ -60,7 +60,7 @@ function CriarEquipa5() {
                 <div className="titulo">
                     <div className="tituloPag criarEquipaTitulo" id="tituloPag">
                         <div className="gridAdicionar">
-                            <label className="tituloAdicionarAlunos">Adicionar alunos</label>
+                            <label className="tituloCriarEquipas">Adicionar alunos</label>
                             <div className="imgCriarEquipas">
                                 <img src={iconAdicionar} alt="" />
                             </div>

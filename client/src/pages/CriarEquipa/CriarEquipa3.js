@@ -60,7 +60,7 @@ function CriarEquipa3() {
 
                 <div className="titulo">
                     <div className="tituloPag criarEquipaTitulo" id="tituloPag">
-                        <label className="tituloCriarEquipas desktop">Definir um alias</label>
+                        <label className="tituloCriarEquipas desktop">Detalhes</label>
                     </div>
 
 
