@@ -16,6 +16,7 @@ h2 {
 
 #nav {
   grid-area: nav;
+  padding: 1rem;
 }
 
 #menu_principal {
@@ -33,7 +34,7 @@ h2 {
 }
 .layout {
   display: grid;
-  grid-template-rows: 3rem 1fr 3rem;
+  grid-template-rows: auto 1fr;
   grid-template-areas: "nav" "main" "menu";
   /* grid-row-gap: 1rem; */
 }

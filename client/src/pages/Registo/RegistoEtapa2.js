@@ -1,5 +1,7 @@
 import registoImg from "../../img/registo/registoImg.png";
-import setaAtras from "../../img/setaAtras.png";
+import setaAtras from "../../img/icons/icon_setaAtrasAzul.svg"
+import navLogo from "../../img/logo.svg";
+import registoImgDesktop from "../../img/registo/registo2Img_desktop.svg";
 /* import icon_nome from "../../img/icon_nome.png"; */
 /* import icon_dropdown from "../../img/icons/icon_dropdown.png"; */
 import { Field, ErrorMessage } from 'formik';
@@ -73,6 +75,7 @@ function RegistoEtapa2({ dados, setDados, validadeFormulario2, setvalidadeFormul
 
 
     const history = useHistory();
+    const redirectLogin = () => { history.push("/login") }
 
     const handleChange = (e) => {
         setDados({ ...dados, role: e.value })
@@ -98,60 +101,105 @@ function RegistoEtapa2({ dados, setDados, validadeFormulario2, setvalidadeFormul
 
 
     return (
-        <Formik initialValues={initialValues} validationSchema={camposValidador} onSubmit={onSubmit}>
-            <Form className="formularioRegisto" >
-                <header className="registoImg">
-                    <div className="setaTras" onClick={redirectBack}>
-                        <img src={setaAtras} alt="seta atras" />
+        <>
+            <div className="formularioRegisto_menu">
+                <aside className="menu_principal_registo">
+                    <div className="asideLogoRegisto">
+                        <img src={navLogo} alt="" />
                     </div>
-                    <img src={registoImg} alt=" registo imagem" />
-                </header>
+                </aside>
+            </div>
+            <div id="main">
+                <section id="main" className="conteudoMain">
 
-                <div className="formulario" id='etapa2'>
-                    <section className="tituloPrincipal">
-                        <label>Os seus dados</label>
-                    </section>
-                    <section className="paragrafo">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab quos at nostrum nemo earum obcaecati voluptas consectetur.</p>
-                    </section>
-                    <section className="inputFormulario">
+                    {/*DESKTOP*/}
+                    <div id="bemvindo">
 
-                        <label>Nome</label>
-                        {/* Falta meter estilos nestes erros */}
-
-                        <div>
-                            {/* <img src={icon_nome} alt="" /> */}
-                            <Field placeholder="ex: Joana Silva" name="name" id="inputName" type="text" onInput={validar}></Field>
+                        <div className="bemvindo_titulos">
+                            <h3>Bom dia,</h3>
+                            <h1>Registar</h1>
                         </div>
-                        <div className="error">
-                            <ErrorMessage name="name" component="p" />
+                        <div className="icons">
+                            <button type="button" className="botaoLogin" onClick={redirectLogin}>Entrar</button>
                         </div>
 
-                    </section>
-                    <section className="">
-                        <label>Cargo</label>
+                    </div>
 
-                        {/* <img src={icon_dropdown} alt="icone dropdown" /> */}
-
-                        <Select options={options} required id='inputRole' className='react-select-form' isSearchable={false} styles={colourStyles} placeholder={'Selecionar Cargo'} onChange={handleChange} value={options.find(obj => obj.value === dados.role)}> </Select>
-
-
-                        <div className="error">
-                            <ErrorMessage name="role" component="p" />
+                    <div className="titulo">
+                        <div className="tituloPag criarEquipaTitulo" id="tituloPag">
+                            <label className="tituloCriarEquipas desktop">Criar uma nova sessão</label>
                         </div>
-                    </section>
-                    <section className="botao">
-                        {validadeFormulario2 ? <button type="submit" id='nextStep2' >Próxima Etapa</button> : <button type="submit" id='nextStep2' disabled>Próxima Etapa</button>}
 
 
-                    </section>
 
-                </div>
+                    </div>
 
-            </Form>
-        </Formik>
+                    <div className="conteudoMid">
+                        <div className="conteudoEsquerda">
+                            <Formik initialValues={initialValues} validationSchema={camposValidador} onSubmit={onSubmit}>
+                                <Form className="formularioRegisto" >
+                                    <header className="registoImg">
+                                        <div className="setaTras" onClick={redirectBack}>
+                                            <img src={setaAtras} alt="seta atras" />
+                                        </div>
+                                        <img src={registoImg} alt=" registo imagem" />
+                                    </header>
+
+                                    <div className="formulario" id='etapa2'>
+                                        <section className="tituloPrincipal">
+                                            <label>Os seus dados</label>
+                                        </section>
+                                        <section className="paragrafo">
+                                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab quos at nostrum nemo earum obcaecati voluptas consectetur.</p>
+                                        </section>
+                                        <section className="inputFormulario">
+
+                                            <label>Nome</label>
+                                            {/* Falta meter estilos nestes erros */}
+
+                                            <div>
+                                                {/* <img src={icon_nome} alt="" /> */}
+                                                <Field placeholder="ex: Joana Silva" name="name" id="inputName" type="text" onInput={validar}></Field>
+                                            </div>
+                                            <div className="error">
+                                                <ErrorMessage name="name" component="p" />
+                                            </div>
+
+                                        </section>
+                                        <section className="">
+                                            <label>Cargo</label>
+
+                                            {/* <img src={icon_dropdown} alt="icone dropdown" /> */}
+
+                                            <Select options={options} required id='inputRole' className='react-select-form' isSearchable={false} styles={colourStyles} placeholder={'Selecionar Cargo'} onChange={handleChange} value={options.find(obj => obj.value === dados.role)}> </Select>
 
 
+                                            <div className="error">
+                                                <ErrorMessage name="role" component="p" />
+                                            </div>
+                                        </section>
+                                        <section className="botao">
+                                            {validadeFormulario2 ? <button type="submit" id='nextStep2' >Próxima Etapa</button> : <button type="submit" id='nextStep2' disabled>Próxima Etapa</button>}
+
+
+                                        </section>
+
+                                    </div>
+
+                                </Form>
+                            </Formik>
+                        </div>
+                        <div className="conteudoDireitaDesktop">
+                            <div className="botaoEtapaAnterior">
+                                <img src={setaAtras} className="iconSeta" alt="seta para retroceder" />
+                                <p className="textoBotao">Etapa anterior</p>
+                            </div>
+                            <img src={registoImgDesktop} className="imgEquipa" alt="criar equipa primeira imagem" />
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </>
     );
 
 }

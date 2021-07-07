@@ -1,13 +1,18 @@
 import React from 'react'
-import setaAtras from "../../img/setaAtras.png";
+import setaAtras from "../../img/icons/icon_setaAtrasAzul.svg"
 import criarSessao3 from "../../img/criarSessoes/criarSessao3.svg";
 import Select from 'react-select';
+
+import criarSessao3_semBack from "../../img/criarSessoes/criarSessao3_semBack.svg"
+
+import iconDefinicoes from "../../img/icons/icon_settings.svg";
 
 import { Link } from "react-router-dom"
 //REDUX//
 import { loadInfo, escolherGrauEscolaridade, escolherDisciplina, preencherNome, preencherConteudos, criarNovaSessao } from "../../actions/criacaoSessaoAction";
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { colourStyles } from './selectStyle';
 
 function CriarSessao3() {
 
@@ -58,83 +63,126 @@ function CriarSessao3() {
         dispatch(criarNovaSessao(dadosPreenchidos))
     }
     return (
-        <form className="formularioCriarSessao">
-            <header className="criarSessaoImg">
+        <article className="criarSessao">
+            <section id="main" className="conteudoMain">
 
+                {/*DESKTOP*/}
+                <div id="bemvindo">
 
-                <Link to='/criarsessao/2' className="setaTras">
-                    <img src={setaAtras} alt="seta atras" />
-                </Link>
+                    <div className="bemvindo_titulos">
+                        <h3>Bom dia,</h3>
+                        <h1>Criar Sessão</h1>
+                    </div>
+                    <div className="icons">
+                        <img src={iconDefinicoes} alt="" />
+                    </div>
 
-                <img src={criarSessao3} alt="criar sessao primeira imagem" />
-
-            </header>
-
-            <section id="corpo">
-                <label id="titulo">Detalhes</label>
-
-                <div className="formulario">
-                    <label className="tituloFormulario">Nome da sessão</label>
-
-                    <input type="text" className="inputTexto" placeholder="ex: Escape Room" onChange={nomeHandler} value={dadosPreenchidos.nome}></input>
-                </div>
-                <div className="formulario">
-                    <label className="tituloFormulario">Ano de Escolaridade dos mentorandos</label>
-
-                    <Select
-                        options={grausDeEnsino.map(grau => ({ label: grau.year, value: grau.id }))}
-                        className='react-select-form'
-                        /* styles={colourStyles} */
-                        placeholder={'Ex: 7ºano'}
-                        isClearable={true}
-                        isSearchable={false}
-                        onChange={(e) => selectGrauEscolaridade(e)}
-                        defaultValue={dadosPreenchidos.grauEscolhido}
-                    ></Select>
                 </div>
 
-
-
-                <div className="formulario">
-                    <label className="tituloFormulario">Disciplina</label>
-
-                    <Select
-                        options={gruposDisciplinares.map(grupo => ({ label: `${grupo.code} - ${grupo.name}`, value: grupo.id }))}
-                        className='react-select-form'
-                        /* styles={colourStyles} */
-                        placeholder={'Ex: Inglês, Matemática, etc...'}
-                        isClearable={true}
-                        isSearchable={false}
-                        onChange={(e) => selectDisciplina(e)}
-                        defaultValue={dadosPreenchidos.DisciplinaEscolhida}
-                    >
-
-                    </Select>
-                </div>
-
-                <div className="formulario">
-                    <label className="tituloFormulario">Counteúdos programáticos</label>
-
-                    <input type="text" className="inputTexto" placeholder="ex: Past tense, teorema de pitágoras" onChange={conteudosHandler} value={dadosPreenchidos.conteudos}></input>
-                </div>
-                {(dadosPreenchidos.equipaEscolhida) && (dadosPreenchidos.grauEscolhido) && (dadosPreenchidos.DisciplinaEscolhida) && (dadosPreenchidos.nome) && (dadosPreenchidos.conteudos) ?
-                    <button to="/criarsessao/3" onClick={submitHandler}>
-                        <button id="divBotao">
-                            <div id="botao" >
-                                <p id="textoBotao">Próximo passo</p>
-                            </div>
-                        </button>
-                    </button>
-                    :
-                    <button id="divBotao" disabled>
-                        <div id="botao" >
-                            <p id="textoBotao">Próximo passo</p>
+                <div className="titulo">
+                    <div className="tituloPag criarEquipaTitulo" id="tituloPag">
+                        <div className="gridAdicionar">
+                            <label className="tituloCriarEquipas desktop">Detalhes</label>
+                            {/* <div className="imgCriarEquipas">
+                                <img src={iconAdicionar} alt="" />
+                            </div> */}
                         </div>
-                    </button>
-                }
-            </section>
 
-        </form>
+                    </div>
+
+
+
+                </div>
+                <div className="conteudoMid">
+                    <div className="conteudoEsquerda">
+                        <form className="formularioCriarSessao">
+                            <header className="criarSessaoImg">
+
+
+                                <Link to='/criarsessao/2' className="setaTras">
+                                    <img src={setaAtras} alt="seta atras" />
+                                </Link>
+
+                                <img src={criarSessao3} alt="criar sessao primeira imagem" />
+
+                            </header>
+
+                            <section id="corpo" className="scrollConteudo">
+                                <label id="titulo">Detalhes</label>
+
+                                <div className="formulario">
+                                    <label className="tituloFormulario">Nome da sessão</label>
+
+                                    <input type="text" className="inputTexto" placeholder="ex: Escape Room" onChange={nomeHandler} value={dadosPreenchidos.nome}></input>
+                                </div>
+                                <div className="formulario">
+                                    <label className="tituloFormulario">Ano de Escolaridade dos mentorandos</label>
+
+                                    <Select
+                                        options={grausDeEnsino.map(grau => ({ label: grau.year, value: grau.id }))}
+                                        className='react-select-form'
+                                        /* styles={colourStyles} */
+                                        placeholder={'Ex: 7ºano'}
+                                        isClearable={true}
+                                        isSearchable={false} styles={colourStyles}
+                                        onChange={(e) => selectGrauEscolaridade(e)}
+                                        defaultValue={dadosPreenchidos.grauEscolhido}
+                                    ></Select>
+                                </div>
+
+
+
+                                <div className="formulario">
+                                    <label className="tituloFormulario">Disciplina</label>
+
+                                    <Select
+                                        options={gruposDisciplinares.map(grupo => ({ label: `${grupo.code} - ${grupo.name}`, value: grupo.id }))}
+                                        className='react-select-form'
+                                        styles={colourStyles}
+                                        placeholder={'Ex: Inglês, Matemática, etc...'}
+                                        isClearable={true}
+                                        isSearchable={false}
+                                        onChange={(e) => selectDisciplina(e)}
+                                        defaultValue={dadosPreenchidos.DisciplinaEscolhida}
+                                    >
+
+                                    </Select>
+                                </div>
+
+                                <div className="formulario">
+                                    <label className="tituloFormulario">Counteúdos programáticos</label>
+
+                                    <input type="text" className="inputTexto" placeholder="ex: Past tense, teorema de pitágoras" onChange={conteudosHandler} value={dadosPreenchidos.conteudos}></input>
+                                </div>
+                                {(dadosPreenchidos.equipaEscolhida) && (dadosPreenchidos.grauEscolhido) && (dadosPreenchidos.DisciplinaEscolhida) && (dadosPreenchidos.nome) && (dadosPreenchidos.conteudos) ?
+                                    <button to="/criarsessao/3" className="botaoAzul" onClick={submitHandler}>
+                                        <button id="divBotao">
+                                            <div id="botao" >
+                                                <p id="textoBotao">Criar sessão</p>
+                                            </div>
+                                        </button>
+                                    </button>
+                                    :
+                                    <button id="divBotao" disabled>
+                                        <div id="botao" >
+                                            <p id="textoBotao">Criar sessão</p>
+                                        </div>
+                                    </button>
+                                }
+                            </section>
+
+                        </form>
+                    </div>
+                    <div className="conteudoDireita">
+                        <div className="botaoEtapaAnterior">
+                            <img src={setaAtras} className="iconSeta" alt="seta para retroceder" />
+                            <p className="textoBotao">Etapa anterior</p>
+                        </div>
+                        <img src={criarSessao3_semBack} className="imgEquipa" alt="criar equipa segunda imagem" />
+                    </div>
+                </div>
+            </section>
+        </article>
     )
 }
 

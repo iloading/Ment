@@ -85,7 +85,7 @@ function App() {
         <Route path="/minhasEquipas">
           <MinhasEquipas />
         </Route>
-        <Route path="/perfilequipa">
+        <Route path="/perfilequipa/:id">
           <PerfilEquipa />
         </Route>
 

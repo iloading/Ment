@@ -8,7 +8,7 @@ import iconDefinicoes from "../../img/icons/icon_settings.svg";
 
 import { Link } from "react-router-dom"
 
-function CriarSessao4() {
+function CriarSessao6() {
     return (
         <article className="criarSessao">
             <section id="main" className="conteudoMain">
@@ -29,10 +29,10 @@ function CriarSessao4() {
                 <div className="titulo">
                     <div className="tituloPag criarEquipaTitulo" id="tituloPag">
                         <div className="gridAdicionar">
-                            <label className="tituloCriarEquipas desktop">Criar uma nova sesssão</label>
+                            <label className="tituloCriarEquipas desktop">Situação problema</label>
                             {/* <div className="imgCriarEquipas">
-            <img src={iconAdicionar} alt="" />
-        </div> */}
+<img src={iconAdicionar} alt="" />
+</div> */}
                         </div>
 
                     </div>
@@ -44,11 +44,10 @@ function CriarSessao4() {
                 <div className="conteudoMid">
                     <div className="conteudoEsquerda">
                         <form className="formularioCriarSessao">
-
                             <header className="criarSessaoImg">
 
 
-                                <Link to='/criarsessao/3' className="setaTras">
+                                <Link to='/criarsessao/5' className="setaTras">
                                     <img src={setaAtras} alt="seta atras" />
                                 </Link>
 
@@ -57,24 +56,21 @@ function CriarSessao4() {
                             </header>
 
                             <section id="corpo">
-                                <label id="titulo">Podemos avançar?</label>
+                                <label id="titulo">Situação problema</label>
 
                                 <div>
                                     <p id="texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
                                 </div>
 
+                                <div className="formulario">
+                                    <label className="tituloFormulario">Situação problema</label>
 
-                                <div className="botaoAzul">
-                                    <div id="divBotao">
-                                        <div id="botao">
-                                            <p id="textoBotao">Vamos preencher</p>
-                                        </div>
-                                    </div>
+                                    <textarea type="text" className="textareaTexto" placeholder="Descrição da equipa"></textarea>
                                 </div>
                                 <div className="botaoAzul">
                                     <div id="divBotao">
                                         <div id="botao">
-                                            <p id="textoBotao">Mais tarde</p>
+                                            <p id="textoBotao">Próximo passo</p>
                                         </div>
                                     </div>
                                 </div>
@@ -89,11 +85,11 @@ function CriarSessao4() {
                         </div>
                         <img src={criarSessao3_semBack} className="imgEquipa" alt="criar equipa segunda imagem" />
                     </div>
+
                 </div>
             </section>
         </article>
-
     )
 }
 
-export default CriarSessao4
+export default CriarSessao6

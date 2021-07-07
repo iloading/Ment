@@ -8,7 +8,7 @@ import iconDefinicoes from "../../img/icons/icon_settings.svg";
 
 import { Link } from "react-router-dom"
 
-function CriarSessao4() {
+function CriarSessao8() {
     return (
         <article className="criarSessao">
             <section id="main" className="conteudoMain">
@@ -29,10 +29,10 @@ function CriarSessao4() {
                 <div className="titulo">
                     <div className="tituloPag criarEquipaTitulo" id="tituloPag">
                         <div className="gridAdicionar">
-                            <label className="tituloCriarEquipas desktop">Criar uma nova sesssão</label>
+                            <label className="tituloCriarEquipas desktop">Papéis</label>
                             {/* <div className="imgCriarEquipas">
-            <img src={iconAdicionar} alt="" />
-        </div> */}
+<img src={iconAdicionar} alt="" />
+</div> */}
                         </div>
 
                     </div>
@@ -44,11 +44,10 @@ function CriarSessao4() {
                 <div className="conteudoMid">
                     <div className="conteudoEsquerda">
                         <form className="formularioCriarSessao">
-
                             <header className="criarSessaoImg">
 
 
-                                <Link to='/criarsessao/3' className="setaTras">
+                                <Link to='/criarsessao/7' className="setaTras">
                                     <img src={setaAtras} alt="seta atras" />
                                 </Link>
 
@@ -57,24 +56,25 @@ function CriarSessao4() {
                             </header>
 
                             <section id="corpo">
-                                <label id="titulo">Podemos avançar?</label>
+                                <label id="titulo">Papéis</label>
 
                                 <div>
                                     <p id="texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
                                 </div>
 
+                                <div className="formulario">
+                                    <label className="tituloFormulario">Papel dos mentores</label>
 
-                                <div className="botaoAzul">
-                                    <div id="divBotao">
-                                        <div id="botao">
-                                            <p id="textoBotao">Vamos preencher</p>
-                                        </div>
-                                    </div>
+                                    <input type="text" className="inputTexto" placeholder="ex: Past tense, teorema de pitágoras"></input>
+
+                                    <label className="tituloFormulario">Papel dos mentorandos</label>
+
+                                    <input type="text" className="inputTexto" placeholder="ex: Past tense, teorema de pitágoras"></input>
                                 </div>
                                 <div className="botaoAzul">
                                     <div id="divBotao">
                                         <div id="botao">
-                                            <p id="textoBotao">Mais tarde</p>
+                                            <p id="textoBotao">Próximo passo</p>
                                         </div>
                                     </div>
                                 </div>
@@ -92,8 +92,7 @@ function CriarSessao4() {
                 </div>
             </section>
         </article>
-
     )
 }
 
-export default CriarSessao4
+export default CriarSessao8
