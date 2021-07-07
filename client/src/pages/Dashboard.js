@@ -25,6 +25,7 @@ import { Link } from 'react-router-dom'
 
 
 
+
 function Dashboard() {
     const dispatch = useDispatch()
     useEffect(() => {
@@ -77,7 +78,7 @@ function Dashboard() {
 
                     <label className="tituloMain" id="labelMinhasequipas">As Minhas Equipas</label>
 
-                    <Link to='/minhasequipas' className="decorationLinks">
+                    <Link to='/minhasequipas' className="decorationLinks linkDireita">
                         <label className="verMais" id="labelVermais">Ver Mais</label>
                     </Link>
 
