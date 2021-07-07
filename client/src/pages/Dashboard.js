@@ -17,6 +17,9 @@ import { loadDestaque } from "../actions/destaqueAction";
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
+import { Link } from 'react-router-dom'
+
+
 
 
 
@@ -75,7 +78,9 @@ function Dashboard() {
 
                     <label className="tituloMain" id="labelMinhasequipas">As Minhas Equipas</label>
 
-                    <label className="verMais" id="labelVermais">Ver Mais</label>
+                    <Link to='/minhasequipas' className="decorationLinks linkDireita">
+                        <label className="verMais" id="labelVermais">Ver Mais</label>
+                    </Link>
 
                     <label className="tituloMain" id="labelAjuda">Precisa de ajuda?</label>
 

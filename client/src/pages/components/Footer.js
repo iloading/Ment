@@ -70,13 +70,17 @@ function Footer() {
                 {status === 'completed' &&
                     <div className="asidePerfil" id="asidePerfil">
                         <div className="infoPerfil">
-                            <div id="avatar">
-                                <img src={require(`../../img/avatar/${user.url}`).default} className="imgAvatar" alt="" />
-                                {/* <img src={require('../../img/avatar/avatar_1.png')} className="imgAvatar" alt="" /> */}
-                            </div>
-                            <div id="info">
-                                <h3>{user.name}</h3>
-                            </div>
+                            <Link to='/perfil' className="decorationLinks">
+                                <div id="avatar">
+                                    <img src={require(`../../img/avatar/${user.url}`).default} className="imgAvatar" alt="" />
+                                    {/* <img src={require('../../img/avatar/avatar_1.png')} className="imgAvatar" alt="" /> */}
+                                </div>
+                            </Link>
+                            <Link to='/perfil' className="decorationLinks linkCentroVertical">
+                                <div id="info">
+                                    <h3>{user.name}</h3>
+                                </div>
+                            </Link>
                             <div id="sair">
                                 <img src={iconTerminar} alt="" />
                             </div>

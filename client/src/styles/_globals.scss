@@ -41,6 +41,18 @@ h2 {
 label {
   cursor: inherit;
 }
+
+.decorationLinks {
+  text-decoration: none;
+}
+
+.linkDireita {
+  justify-self: end;
+}
+.linkCentroVertical {
+  align-self: center;
+}
+
 .narrativa {
   background-color: $button-type3-background;
   margin: 0 0 2rem 0;
