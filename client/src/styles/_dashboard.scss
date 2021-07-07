@@ -92,82 +92,172 @@
         display: none;
       }
     }
-  }
-
-  .minhasEquipas {
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
-    margin-bottom: 2rem;
-    grid-column-gap: 1rem;
-
-    .minhasEquipasCard {
+    .minhasEquipas {
       display: grid;
-      grid-template-rows: auto 1fr;
-      border-radius: 10px;
+      grid-template-rows: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+      margin-bottom: 2rem;
+      grid-column-gap: 1rem;
 
-      img {
-        width: 100%;
-      }
-
-      .cardInfo {
-        background-color: #f8faff;
+      .minhasEquipasCard {
         display: grid;
-        grid-template-rows: 0.5fr 0.5fr;
-        grid-template-areas: "labelAno" "disciplina";
-        grid-row-gap: 1rem;
-        padding: 1rem;
+        grid-template-rows: auto 1fr;
+        border-radius: 10px;
 
-        #labelAno {
-          grid-area: labelAno;
-          font-weight: $font-weight-boldest;
-          color: $text-main-color;
-          font-size: 1.25rem;
+        img {
+          width: 100%;
         }
 
-        #disciplina {
-          grid-area: disciplina;
-          font-weight: $font-weight-bolder;
-          color: $text-main-color;
-          font-size: $font-size-s;
-        }
+        .cardInfo {
+          background-color: #f8faff;
+          display: grid;
+          grid-template-rows: 0.5fr 0.5fr;
+          grid-template-areas: "labelAno" "disciplina";
+          grid-row-gap: 1rem;
+          padding: 1rem;
 
-        #escola {
-          display: none;
+          #labelAno {
+            grid-area: labelAno;
+            font-weight: $font-weight-boldest;
+            color: $text-main-color;
+            font-size: 1.25rem;
+          }
+
+          #disciplina {
+            grid-area: disciplina;
+            font-weight: $font-weight-bolder;
+            color: $text-main-color;
+            font-size: $font-size-s;
+          }
+
+          #escola {
+            display: none;
+          }
         }
       }
     }
-  }
 
-  .layout1 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-    margin-bottom: 2rem;
-    grid-column-gap: 1rem;
-  }
-  .layout2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-    margin-bottom: 2rem;
-    grid-column-gap: 1rem;
-  }
-  .layout3 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
-    margin-bottom: 2rem;
-    grid-column-gap: 1rem;
-    grid-row-gap: 1rem;
-  }
-  .layout4 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
-    margin-bottom: 2rem;
-    grid-column-gap: 1rem;
-    grid-row-gap: 1rem;
+    .layout1 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr;
+      margin-bottom: 2rem;
+      grid-column-gap: 1rem;
+    }
+    .layout2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr;
+      margin-bottom: 2rem;
+      grid-column-gap: 1rem;
+    }
+    .layout3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+      margin-bottom: 2rem;
+      grid-column-gap: 1rem;
+      grid-row-gap: 1rem;
+    }
+    .layout4 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+      margin-bottom: 2rem;
+      grid-column-gap: 1rem;
+      grid-row-gap: 1rem;
+    }
+
+    #ajudaMobile {
+      display: grid;
+      background-color: $button-type3-background;
+
+      overflow: auto;
+      grid-template-rows: auto 1fr;
+      border-radius: 4px;
+      overflow: hidden;
+
+      .subTitulos {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 1rem 1.5rem 0rem 1.5rem;
+
+        h2 {
+          font-size: 1rem;
+          font-weight: $font-weight-boldest;
+          color: $text-main-color;
+        }
+        label {
+          font-size: 0.8rem;
+          font-weight: $font-weight-light;
+          color: $text-type4-color;
+          justify-self: right;
+        }
+      }
+
+      .carouselCards {
+        align-self: center;
+        height: 100%;
+
+        .slick-slide {
+          height: 100%;
+          padding-left: 0.5rem;
+          padding-right: 0.5rem;
+          div {
+            height: 45%;
+            margin-bottom: 2.5%;
+            margin-top: 2.5%;
+          }
+
+          .cards {
+            background-color: white;
+            margin-bottom: 1rem;
+            display: grid !important;
+            grid-template-columns: 1fr auto;
+            height: 100%;
+            border-radius: 4px;
+
+            img {
+              align-self: center;
+              padding-right: 1rem;
+            }
+            div {
+              align-self: center;
+              padding-left: 1rem;
+              label {
+                color: #042454;
+                font-size: 1rem;
+                font-weight: 500;
+              }
+              p {
+                color: #0066ff;
+                font-size: 0.8rem;
+                font-weight: 400;
+                padding-top: 0.5rem;
+              }
+            }
+          }
+        }
+      }
+
+      .slick-slider {
+        height: 100%;
+        padding: 1rem;
+        display: grid;
+        grid-template-rows: 1fr auto;
+        .slick-list {
+          height: 100%;
+        }
+        .slick-track {
+          height: 100%;
+        }
+      }
+
+      .slick-dots {
+        position: inherit;
+        bottom: 0;
+      }
+    }
   }
 }
 
@@ -380,6 +470,9 @@
         .equipa3 {
           display: none;
         }
+      }
+      #ajudaMobile {
+        display: none;
       }
     }
 

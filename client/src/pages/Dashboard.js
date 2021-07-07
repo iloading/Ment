@@ -117,7 +117,16 @@ function Dashboard() {
                     <label className="tituloMain">Sessões em destaque</label>
                 </div>
 
+
                 {<SessoesDestaque destaques={destaques} status={statusDestaque} />}
+
+                <div id="ajudaMobile">
+                    <div className="subTitulos">
+                        <h2>Tutoriais</h2>
+                        <label>Ver todos</label>
+                    </div>
+                    <CarouselAjuda />
+                </div>
 
 
 
