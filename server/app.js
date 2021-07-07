@@ -38,6 +38,9 @@ app.use('/perfil', perfil);
 const sessao = require('./routes/Sessao')
 app.use('/sessao', sessao);
 
+// const minhasEquipas = require('./routes/MinhasEquipas')
+// app.use('/minhasequipas', minhasEquipas);
+
 
 /* app.get('/', async (req, res) => {
     await res.send('We are on home')

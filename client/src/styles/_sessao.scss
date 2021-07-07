@@ -87,6 +87,12 @@
   }
 
   .conteudoMain {
+    .navegacao_desktop {
+      display: none;
+    }
+    .titulos_top {
+      display: none;
+    }
     .conteudoResumo {
       display: grid;
       grid-row-gap: 1.5rem;
@@ -454,6 +460,12 @@
         }
       }
     }
+
+    .conteudo {
+      .descarregar {
+        display: none;
+      }
+    }
   }
 }
 
@@ -474,7 +486,7 @@
         }
       }
 
-      .navegacao {
+      .navegacao_desktop {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 1fr;
@@ -499,7 +511,7 @@
 
       .titulos_top {
         display: grid;
-        grid-template-columns: 1.5fr 1fr;
+
         label {
           color: #042454;
           font-weight: 700;
@@ -510,8 +522,11 @@
         display: grid;
         grid-template-columns: 1.5fr 1fr;
         grid-column-gap: 2.5rem;
+        overflow: hidden;
 
         .conteudoResumo {
+          overflow: scroll;
+          overflow-x: hidden;
           .conteudoPlano {
             .titulo {
               color: #042454;
@@ -531,6 +546,12 @@
         }
 
         .conteudoRecursos {
+          display: grid;
+          grid-template-rows: auto auto;
+          grid-gap: 1.5rem;
+          padding: 0 1rem 1rem 1rem;
+          overflow: scroll;
+          overflow-x: hidden;
           .ficheirosPrincipais {
             .titulo1 {
               display: none;
@@ -553,6 +574,10 @@
           }
         }
         .conteudoDetalhes {
+          display: grid;
+          grid-row-gap: 1.5rem;
+          overflow: scroll;
+          overflow-x: hidden;
           .conteudoPlano {
             .detalhesConteudo {
               .detalhes {
@@ -569,21 +594,27 @@
           }
         }
 
-        .descarregar {
+        .areaDownload {
           height: fit-content;
-          padding: 3rem;
-          border-radius: 10px;
-          background-color: #f8faff;
-          .download {
-            display: grid;
-            grid-template-columns: 1fr auto;
-            background-color: white;
+          display: grid;
+          grid-row-gap: 2.5rem;
+          .descarregar {
+            display: block;
+
+            padding: 3rem;
             border-radius: 10px;
-            padding: 1rem;
-            align-items: center;
-            label {
-              color: #042454;
-              font-weight: 400;
+            background-color: #f8faff;
+            .download {
+              display: grid;
+              grid-template-columns: 1fr auto;
+              background-color: white;
+              border-radius: 10px;
+              padding: 1rem;
+              align-items: center;
+              label {
+                color: #042454;
+                font-weight: 400;
+              }
             }
           }
         }

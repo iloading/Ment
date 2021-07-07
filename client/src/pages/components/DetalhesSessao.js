@@ -8,12 +8,13 @@ function DetalhesSessao({ sessao, status }) {
 
             {status === 'completed' &&
                 <>
-                    <div className="titulos_top">
-                        <label>Plano Geral</label>
-                        <label>Descarregar recursos</label>
-                    </div>
+
                     <div className="conteudo">
                         <div className="conteudoDetalhes">
+                            <div className="titulos_top">
+                                <label>Plano Geral</label>
+
+                            </div>
                             <div className="conteudoPlano">
                                 <div className="detalhesConteudo">
 
@@ -23,13 +24,13 @@ function DetalhesSessao({ sessao, status }) {
                                             <label className="detalhes_titulo">Factos Ficcionais</label>
                                             <span className="detalhes_texto">{factos_ficcionais}</span>
                                             <label className="detalhes_titulo">Situação Problema</label>
-                                            <span className="detalhes_texto">O problema desta situação é...</span>
+                                            <span className="detalhes_texto">{situacao_problema}</span>
                                             <label className="detalhes_titulo">Resultados Esperados</label>
-                                            <span className="detalhes_texto">Que se acabe o projeto</span>
+                                            <span className="detalhes_texto">{resultados_esperados}</span>
                                             <label className="detalhes_titulo">Papel dos Alunos Mentores</label>
-                                            <span className="detalhes_texto">Ensinar meninos</span>
+                                            <span className="detalhes_texto">{funcao_alunos_mentores}</span>
                                             <label className="detalhes_titulo">Papel dos Alunos Mentorandos</label>
-                                            <span className="detalhes_texto">Aprender matéria</span>
+                                            <span className="detalhes_texto">{funcao_alunos_mentorandos}</span>
                                         </div>
 
 
@@ -39,9 +40,9 @@ function DetalhesSessao({ sessao, status }) {
                                         <label className="titulo2">Detalhes</label>
                                         <div className="caixaTexto">
                                             <label className="detalhes_titulo">Ano da escolaridade</label>
-                                            <span className="detalhes_texto">7º ano</span>
+                                            <span className="detalhes_texto">{ano}</span>
                                             <label className="detalhes_titulo">Unidade Curricular</label>
-                                            <span className="detalhes_texto">Inglês</span>
+                                            <span className="detalhes_texto">{subject}</span>
                                             <label className="detalhes_titulo">Matéria Abordada</label>
                                             <span className="detalhes_texto">Organizational structure of the British Isles </span>
                                             <label className="detalhes_titulo">Agrupamento</label>
@@ -70,15 +71,16 @@ function DetalhesSessao({ sessao, status }) {
 
 
                         </div>
-                        <div className="descarregar">
-
-
-                            <div className="download">
-                                <label>Descarregar a pasta</label>
-                                <img src={iconDownload} alt="" />
+                        <div className="areaDownload">
+                            <div className="titulos_top">
+                                <label>Descarregar</label>
                             </div>
-
-
+                            <div className="descarregar">
+                                <div className="download">
+                                    <label>Descarregar a pasta</label>
+                                    <img src={iconDownload} alt="" />
+                                </div>
+                            </div>
 
                         </div>
                     </div>

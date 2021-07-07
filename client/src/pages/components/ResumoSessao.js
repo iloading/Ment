@@ -9,22 +9,23 @@ function ResumoSessao({ sessao, status }) {
         <>
             {status === 'completed' &&
                 <>
-                    <div className="titulos_top">
-                        <label>Descrição</label>
-                        <label>Descarregar recursos</label>
-                    </div>
+
 
                     <div className="conteudo">
 
                         <div className="conteudoResumo">
+                            <div className="titulos_top">
+                                <label>Descrição</label>
+                            </div>
+
                             <div className="conteudoMid">
 
                                 <div className="cardDescricao">
                                     <div className="topInfo">
                                         <div className="titulos">
                                             <label>{nome}</label>
-                                            <p>Past Tense</p>
-                                            <span>8º ano</span>
+                                            <p>{subject}</p>
+                                            <span>{ano}</span>
                                         </div>
                                         <img className="imgSessao" src={iconSessoes} alt="" />
                                     </div>
@@ -42,12 +43,12 @@ function ResumoSessao({ sessao, status }) {
 
                                     <div className="factos_reais">
                                         <label className="tituloFactos">Factos Reais</label>
-                                        <label className="textoFactos">7 ano</label>
+                                        <label className="textoFactos">{factos_reais}</label>
                                     </div>
 
                                     <div className="unidadeCurricolar">
                                         <label className="tituloFactos">Unidade Curricular</label>
-                                        <label className="textoFactos">Inglês</label>
+                                        <label className="textoFactos">{subject}</label>
                                     </div>
                                 </div>
                             </div>
@@ -100,18 +101,20 @@ function ResumoSessao({ sessao, status }) {
 
 
                         </div>
-
-                        <div className="descarregar">
-
-
-                            <div className="download">
-                                <label>Descarregar a pasta</label>
-                                <img src={iconDownload} alt="" />
+                        <div className="areaDownload">
+                            <div className="titulos_top">
+                                <label>Descarregar</label>
+                            </div>
+                            <div className="descarregar">
+                                <div className="download">
+                                    <label>Descarregar a pasta</label>
+                                    <img src={iconDownload} alt="" />
+                                </div>
                             </div>
 
-
-
                         </div>
+
+
                     </div>
                 </>
             }

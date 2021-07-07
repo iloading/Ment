@@ -8,13 +8,14 @@ function RecursosSessao({ sessao, status }) {
 
             {status === 'completed' &&
                 <>
-                    <div className="titulos_top">
-                        <label>Ficheiros principais</label>
-                        <label>Descarregar recursos</label>
-                    </div>
+
                     <div className="conteudo">
 
                         <div className="conteudoRecursos">
+                            <div className="titulos_top">
+                                <label>Ficheiros principais</label>
+
+                            </div>
                             <div className="ficheirosPrincipais">
                                 <label className="titulo1">Ficheiros principais</label>
                                 <div className="ficheiros">
@@ -46,15 +47,16 @@ function RecursosSessao({ sessao, status }) {
                         </div>
 
 
-                        <div className="descarregar">
-
-
-                            <div className="download">
-                                <label>Descarregar a pasta</label>
-                                <img src={iconDownload} alt="" />
+                        <div className="areaDownload">
+                            <div className="titulos_top">
+                                <label>Descarregar</label>
                             </div>
-
-
+                            <div className="descarregar">
+                                <div className="download">
+                                    <label>Descarregar a pasta</label>
+                                    <img src={iconDownload} alt="" />
+                                </div>
+                            </div>
 
                         </div>
                     </div>

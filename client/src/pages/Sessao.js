@@ -51,7 +51,7 @@ function Sessao() {
 
                         </div>
 
-                        <div className="navegacao">
+                        <div className="navegacao_desktop">
                             <Link to={`${url}/resumo`}>
                                 <div className="cards">
                                     <label >Resumo</label>
