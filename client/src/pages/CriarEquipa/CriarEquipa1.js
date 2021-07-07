@@ -70,7 +70,7 @@ function CriarEquipa1() {
                                 </div>
 
                                 {dadosPreenchidos.nome !== '' ?
-                                    <Link to="/criarequipa/2" >
+                                    <Link className="botaoAzul" to="/criarequipa/2" >
                                         <button id="divBotao">
                                             <div id="botao" >
                                                 <p id="textoBotao">Próximo passo</p>
@@ -78,7 +78,7 @@ function CriarEquipa1() {
                                         </button>
                                     </Link>
                                     :
-                                    <button id="divBotao" disabled>
+                                    <button id="botaoAzul" disabled>
                                         <div id="botao" >
                                             <p id="textoBotao">Próximo passo</p>
                                         </div>
