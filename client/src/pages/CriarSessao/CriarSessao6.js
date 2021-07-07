@@ -59,7 +59,7 @@ function CriarSessao6() {
                                 <label id="titulo">Situação problema</label>
 
                                 <div>
-                                    <p id="texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                                    <p id="texto">Sobre que problema central a sessão gira à volta? (por exemplo: O aquecimento global)</p>
                                 </div>
 
                                 <div className="formulario">

@@ -60,7 +60,7 @@ function CriarSessao4() {
                                 <label id="titulo">Podemos avançar?</label>
 
                                 <div>
-                                    <p id="texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                                    <p id="texto">Chegamos agora a uma fase onde vamos preencher alguns detalhes técnicos sobre a sessão. Pode escolher avançar esta fase e preencher mais tarde, ou preencher apenas os campos que quiser, com possibilidade de alteração a qualquer momento!</p>
                                 </div>
 
 

@@ -51,7 +51,7 @@ function CriarSessao1() {
                             <section id="corpo">
                                 <label id="titulo">Criar uma nova sessão</label>
 
-                                <p id="texto">Para criar uma nova sessão, é necessário ter pelo menos uma equipa criada anteriormente, daí ser impossível avançar deste passo.</p>
+                                <p id="texto">Para criar uma nova sessão é necessário ter pelo menos uma equipa criada. A partir deste ecrã associar a uma nova sessão uma equipa existente ou criar uma nova equipa!</p>
                                 <div className="botaoAzul">
                                     <div id="divBotao">
                                         <Link id="botao" to='/criarEquipa'>

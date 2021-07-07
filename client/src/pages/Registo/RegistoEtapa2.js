@@ -150,7 +150,7 @@ function RegistoEtapa2({ dados, setDados, validadeFormulario2, setvalidadeFormul
                                             <label>Os seus dados</label>
                                         </section>
                                         <section className="paragrafo">
-                                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab quos at nostrum nemo earum obcaecati voluptas consectetur.</p>
+                                            <p>Nesta etapa por favor introduza o seu primeiro e último nome, e o seu cargo (professor ou aluno). Este último passo é permanente e influencia as funcionalidades disponíveis para si na aplicação. Por favor preencha cautelosamente.</p>
                                         </section>
                                         <section className="inputFormulario">
 

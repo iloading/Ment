@@ -150,7 +150,7 @@ function RegistoEtapa4({ dados, setDados, validadeFormulario4, setvalidadeFormul
                                         <label>Informações</label>
                                     </section>
                                     <section className="paragrafo">
-                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab quos at nostrum nemo earum obcaecati voluptas consectetur.</p>
+                                        <p>Por fim, precisamos apenas da sua Escola/Agrupamento de forma a melhorarmos a sua experiência!</p>
                                     </section>
                                     {/* <section className="inputFormulario selectFormulario">
 
