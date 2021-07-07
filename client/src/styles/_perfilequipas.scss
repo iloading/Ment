@@ -43,14 +43,13 @@
 
     .infoPerfil {
       display: grid;
-      justify-content: center;
+
       align-self: center;
       align-items: center;
       justify-items: center;
       grid-row-gap: 1rem;
 
       img {
-        width: 30%;
         margin-top: 1rem;
       }
 

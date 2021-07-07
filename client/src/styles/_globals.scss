@@ -38,7 +38,9 @@ h2 {
   height: 100vh;
   /* grid-row-gap: 1rem; */
 }
-
+label {
+  cursor: inherit;
+}
 .narrativa {
   background-color: $button-type3-background;
   margin: 0 0 2rem 0;

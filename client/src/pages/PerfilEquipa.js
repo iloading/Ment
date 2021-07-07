@@ -40,53 +40,55 @@ function PerfilEquipa() {
 
 
     return (
+
         <article className="perfilEquipas">
 
+            {status === 'completed' &&
 
-
-            <section id="main" className="conteudoMain">
-
-                <div className="titulo">
-                    <img src={iconEquipa} alt="" className="iconTitulo" />
-                    <label className="tituloMain">NOME</label>
-                    <div className="botaoManage">
-                        <img src={iconTresPontos} alt="" />
-                    </div>
-                </div>
-
-                <div className="infoPerfil">
-                    <img src={avatar} alt="" />
-                    <label>Descrição</label>
-                    <span>A melhor equipa de geografia e de história de portugal</span>
-                </div>
-
-                <div className="conteudoBotoes">
+                <section id="main" className="conteudoMain">
 
                     <div className="titulo">
-                        <label className="tituloConteudo">Sessões da equipa</label>
-                        <div className="iconOrdenar" >
-                            <img src={iconOrdenar} alt="" />
+                        <img src={iconEquipa} alt="" className="iconTitulo" />
+                        <label className="tituloMain">{sessoes[0].school}</label>
+                        <div className="botaoManage">
+                            <img src={iconTresPontos} alt="" />
                         </div>
                     </div>
 
+                    <div className="infoPerfil">
+                        <img src={avatar} alt="" />
+                        <label>{sessoes[0].team_name}</label>
+                        <span>{sessoes[0].descripton}</span>
 
-                    <div className="listaNarrativas">
-                        {status === "completed" && sessoes.map(sessao => <Narrativa key={sessao.id} sessao={sessao} status={status} />)}
                     </div>
 
+                    <div className="conteudoBotoes">
+
+                        <div className="titulo">
+                            <label className="tituloConteudo">Sessões da equipa</label>
+                            <div className="iconOrdenar" >
+                                <img src={iconOrdenar} alt="" />
+                            </div>
+                        </div>
+
+
+                        <div className="listaNarrativas">
+                            {status === "completed" && sessoes.map(sessao => <Narrativa key={sessao.id} sessao={sessao} status={status} />)}
+                        </div>
 
 
 
 
-                </div>
 
-            </section>
+                    </div>
 
-
-
+                </section>
 
 
 
+
+
+            }
 
         </article>
     )

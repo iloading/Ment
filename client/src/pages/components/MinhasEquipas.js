@@ -16,7 +16,7 @@ function MinhasEquipas({ equipa, status }) {
                 <img src={iconEquipa} alt="" id="iconEquipa" />
                 <div className="midInfo">
                     <label>{equipa.name}</label>
-                    <p>{equipa.escola}</p>
+                    <p>{equipa.alias}</p>
                     <span>{equipa.escola}</span>
                 </div>
                 <div className="leftInfo">
@@ -26,7 +26,7 @@ function MinhasEquipas({ equipa, status }) {
 
                     <div id="participantes">
                         <img src={iconParticipantes} alt="" id="iconParticipantes" />
-                        <p className="numeroParticipantes">20</p>
+                        <p className="numeroParticipantes">{equipa.numero_participantes}</p>
                     </div>
                 </div>
 
