@@ -63,7 +63,7 @@
       }
 
       .cards {
-        background-color: $button-type4-background;
+        background-color: $button-type2-background;
         padding: 1rem 0 1rem 0;
         border-radius: 5px;
         width: 100% !important;
@@ -78,7 +78,7 @@
     }
 
     .titulo {
-      color: $text-type6-color;
+      color: $text-main-color;
       font-weight: $font-weight-boldest;
       font-size: $font-size-l;
       display: grid;
@@ -93,6 +93,11 @@
     .titulos_top {
       display: none;
     }
+    .titulos_top_mobile {
+      color: #042454;
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
     .conteudoResumo {
       display: grid;
       grid-row-gap: 1.5rem;
@@ -100,8 +105,8 @@
 
       .titulo {
         color: #042454;
-        font-weight: 400;
-        font-size: 1.125rem;
+        font-weight: 700;
+        font-size: 1.2rem;
       }
 
       .conteudoMid {
@@ -125,19 +130,19 @@
               label {
                 color: #042454;
                 font-weight: 700;
-                font-size: 1rem;
+                font-size: 1.1875rem;
               }
               p {
-                color: #042454;
+                color: $text-type4-color;
                 font-weight: 600;
                 font-style: italic;
-                font-size: 0.8rem;
+                font-size: 1.0625rem;
               }
               span {
-                color: #042454;
+                color: $text-type5-color;
                 font-weight: 600;
                 font-style: italic;
-                font-size: 0.6rem;
+                font-size: 1rem;
               }
             }
 

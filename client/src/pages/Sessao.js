@@ -37,7 +37,7 @@ function Sessao() {
         <>
             {status === 'completed' &&
                 <article className="sessao">
-                    <SessionNav />
+                    <SessionNav sessao={sessao} status={status} />
                     <section id="main" className="conteudoMain">
                         <div id="bemvindo">
 
