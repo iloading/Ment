@@ -173,6 +173,8 @@
   .associarEquipa.criarEquipa {
     display: grid;
     grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr auto;
+    margin-top: 0.5rem;
 
     .headerAssociarEquipa {
       display: grid;
@@ -232,11 +234,11 @@
       }
     }
     #equipas {
-      display: grid;
-      grid-template-rows: 1fr 1fr 1fr 1fr;
-      grid-template-areas: "equipa1" "equipa2" "equipa3" "equipa4";
-      margin: 1.5rem;
-      grid-gap: 1rem;
+      // display: grid;
+      // grid-template-rows: 1fr 1fr 1fr 1fr;
+      // grid-template-areas: "equipa1" "equipa2" "equipa3" "equipa4";
+      // margin: 1.5rem;
+      // grid-gap: 1rem;
 
       .equipa1 {
         grid-area: equipa1;
@@ -246,6 +248,7 @@
         border: 1px solid #f8faff;
         background-color: #f8faff;
         border-radius: 4px;
+        margin-bottom: 1.5rem;
 
         .avatarEquipa {
           grid-area: imagem;
