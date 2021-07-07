@@ -9,8 +9,7 @@ import iconArquivar from "../img/icons/icon_arquivar.svg";
 
 
 import iconOrdenar from "../img/icons/icon_ordenar.svg";
-
-import iconSetaTras from "../img/setaAtras.png"
+import iconSetaTras from "../img/icons/icon_setaAtrasAzul.svg"
 import iconCriar from "../img/icons/icon_plus.svg"
 import iconTituloEquipa from "../img/icons/icon_equipa.svg"
 import { useRef, useState } from "react";
@@ -22,6 +21,8 @@ import { loadminhasEquipas } from "../actions/minhasEquipasAction";
 
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+
+import { Link } from 'react-router-dom'
 
 
 
@@ -79,11 +80,15 @@ function Banco() {
                 {/*DESKTOP*/}
 
                 <div className="goBack_criarEquipa">
-                    <img src={iconSetaTras} alt="" />
-                    <div>
-                        <img src={iconCriar} alt="" />
-                        <label>Nova equipa</label>
-                    </div>
+                    <Link to='./dashboard' className="decorationLinks">
+                        <img src={iconSetaTras} alt="" />
+                    </Link>
+                    <Link to='/criarequipa' className="decorationLinks">
+                        <div>
+                            <img src={iconCriar} alt="" />
+                            <label>Nova equipa</label>
+                        </div>
+                    </Link>
                 </div>
 
 
