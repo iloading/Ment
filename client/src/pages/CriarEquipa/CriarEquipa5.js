@@ -7,8 +7,39 @@ import iconDefinicoes from "../../img/icons/icon_settings.svg";
 import iconAdicionar from "../../img/icons/icon_adicionar.svg";
 
 import { Link } from "react-router-dom"
+import AsyncSelect from 'react-select/async';
+
+import { colourStyles } from './selectStyle';
+
+import { useDispatch, useSelector } from 'react-redux'
+import { selecionarMentor } from '../../actions/criacaoEquipaAction'
+import AsyncCreatableSelect from 'react-select/async-creatable';
+//BD
+import { carregarMentores } from '../../API'
 
 function CriarEquipa5() {
+    const { dadosPreenchidos } = useSelector(state => state.criarEquipa)
+
+    const dispatch = useDispatch()
+
+    //Lista de escolas
+    let timerId = null
+    const loadingMentores = (e) => {
+
+        clearTimeout(timerId);
+        var promise = new Promise(function (resolve, reject) {
+            timerId = setTimeout(async () => {
+
+                resolve(carregarMentores({ pesquisa: e }));
+            }, 1000);
+        });
+
+        return promise;
+    }
+    //Escolha de uma escola
+    const handleChange = (e) => {
+        dispatch(selecionarMentor(e))
+    }
     return (
         <article className="criarEquipa">
             <section id="main" className="conteudoMain">
@@ -29,7 +60,7 @@ function CriarEquipa5() {
                 <div className="titulo">
                     <div className="tituloPag criarEquipaTitulo" id="tituloPag">
                         <div className="gridAdicionar">
-                            <label className="tituloCriarEquipas desktop">Adicionar alunos</label>
+                            <label className="tituloCriarEquipas">Adicionar alunos</label>
                             <div className="imgCriarEquipas">
                                 <img src={iconAdicionar} alt="" />
                             </div>
@@ -49,55 +80,60 @@ function CriarEquipa5() {
                                 <h2 id="titulo">Adicionar alunos</h2>
 
                             </header>
-                            <div id="inputPesquisar">
-                                <input type="text" id="inputPesquisa" placeholder="Pesquisar por email, username..."></input>
+                            <div id="inputPesquisar" className="inputPesquisar">
+                                <AsyncSelect
+                                    onChange={(e) => handleChange(e)}
+                                    cacheOptions={true}
+                                    defaultOptions={dadosPreenchidos.mentores}
+                                    isMulti
+                                    closeMenuOnSelect={false}
+                                    loadOptions={(e) => (e !== '' && e.length > 2) ? loadingMentores(e).then((res) =>
+                                        res.data.success.map(({ id, name, email, url, alt }) => ({ label: `${name} (${email})`, value: id, info: { id: id, email: email, name: name, url: url, alt: alt } }))) : ''}
+                                    isClearable={false}
+                                    noOptionsMessage={() => 'Não existem resultados. Escreva o nome do seu concelho, escola ou agrupamento...'}
+                                    styles={colourStyles}
+                                    loadingMessage={(e) => e.inputValue.length <= 2 ? 'Digite mais do que 2 carateres para pesquisar' : 'A Pesquisar...'}
+                                    allowCreateWhileLoading={false}
+
+
+
+                                    id='inputRole'
+                                    className='react-select-form'
+                                    placeholder={'Pesquisar por Nome | Email'}
+                                /* value={dadosPreenchidos.school.map(school => ({ label: school.name, value: school.id }))} */
+                                />
                             </div>
                             <div id="id_titulo2">
-                                <label id="titulo2">As suas equipas</label>
+                                <label id="titulo2">A sua equipa de mentores</label>
                             </div>
                             <div id="equipas">
-                                <div id="equipa1">
-                                    <img src={avatarUser} alt="avatar do utilizador" className="avatarEquipa" />
-                                    <div className="texto">
-                                        <p className="tituloTexto">Felisberto Matias</p>
-                                        <p className="escolaTexto">Secundária da Amadora</p>
-                                        <p className="anoTexto">8ºB</p>
-                                    </div>
-                                    <div className="checkbox"></div>
-                                </div>
-                                <div id="equipa2">
-                                    <img src={avatarUser} alt="avatar do utilizador" className="avatarEquipa" />
-                                    <div className="texto">
-                                        <p className="tituloTexto">Felisberto Matias</p>
-                                        <p className="escolaTexto">Secundária da Amadora</p>
-                                        <p className="anoTexto">8ºB</p>
-                                    </div>
-                                    <div className="checkbox"></div>
-                                </div>
-                                <div id="equipa3">
-                                    <img src={avatarUser} alt="avatar do utilizador" className="avatarEquipa" />
-                                    <div className="texto">
-                                        <p className="tituloTexto">Felisberto Matias</p>
-                                        <p className="escolaTexto">Secundária da Amadora</p>
-                                        <p className="anoTexto">8ºB</p>
-                                    </div>
-                                    <div className="checkbox"></div>
-                                </div>
-                                <div id="equipa4">
-                                    <img src={avatarUser} alt="avatar do utilizador" className="avatarEquipa" />
-                                    <div className="texto">
-                                        <p className="tituloTexto">Felisberto Matias</p>
-                                        <p className="escolaTexto">Secundária da Amadora</p>
-                                        <p className="anoTexto">8ºB</p>
-                                    </div>
-                                    <div className="checkbox"></div>
-                                </div>
+                                {dadosPreenchidos.mentores.length > 0 &&
+                                    dadosPreenchidos.mentores.map(mentor =>
+
+                                        <div className="equipa1">
+                                            <img src={require(`../../img/avatar/${mentor.info.url}`).default} alt={mentor.info.alt} className="avatarEquipa" />
+                                            <div className="texto">
+                                                <p className="tituloTexto">{mentor.info.name}</p>
+                                                <p className="escolaTexto">{mentor.info.email}</p>
+
+                                            </div>
+                                            <div className="checkbox"></div>
+                                        </div>
+
+                                    )
+
+                                }
                             </div>
-                            <div id="divBotao">
-                                <div id="botao">
-                                    <p id="textoBotao">Adicionar selecionados</p>
-                                </div>
-                            </div>
+
+                            <Link className="botaoAzul" to="/criarequipa/6" >
+                                <button id="divBotao">
+                                    <div id="botao" >
+                                        <p id="textoBotao">Próximo passo</p>
+                                    </div>
+                                </button>
+                            </Link>
+
+
                         </section>
                     </div>
                     <div className="conteudoDireita">

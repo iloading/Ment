@@ -53,15 +53,19 @@ function CriarEquipa4() {
                                 <label id="titulo">Adicionar alunos</label>
 
                                 <div>
-                                    <p id="texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.   </p>
+                                    <p id="texto">Nesta etapa vamos simplesmente adicionar os alunos mentores que deseja à sua equipa. A qualquer altura esta listagem pode ser alterada, de forma a eliminar e adicionar novos alunos, se necessário.</p>
                                 </div>
 
 
-                                <div id="divBotao">
-                                    <div id="botao">
-                                        <p id="textoBotao">Adicionar alunos</p>
-                                    </div>
-                                </div>
+
+                                <Link className="botaoAzul" to="/criarequipa/5" >
+                                    <button id="divBotao">
+                                        <div id="botao" >
+                                            <p id="textoBotao">Adicionar alunos</p>
+                                        </div>
+                                    </button>
+                                </Link>
+
                             </section>
 
                         </form>

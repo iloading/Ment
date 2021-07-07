@@ -8,6 +8,7 @@ import feedbackReducer from './feedbackReducer'
 import criarSessaoReducer from './criacaoSessaoReducer'
 import sessaoReducer from './sessaoReducer'
 import minhasEquipasReducer from './minhasEquipasReducer'
+import criarEquipaReducer from './criacaoEquipaReducer'
 
 const rootReducer = combineReducers({
     dashboard: dashboardReducer,
@@ -19,6 +20,7 @@ const rootReducer = combineReducers({
     criarSessao: criarSessaoReducer,
     sessao: sessaoReducer,
     minhasEquipas: minhasEquipasReducer,
+    criarEquipa: criarEquipaReducer,
 })
 
 export default rootReducer;

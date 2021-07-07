@@ -112,7 +112,7 @@ function RegistoEtapa4({ dados, setDados, validadeFormulario4, setvalidadeFormul
                 </aside>
             </div>
             <div id="main">
-                <section id="main" className="conteudoMain">
+                <section id="main" className="conteudoMain registo">
 
                     {/*DESKTOP*/}
                     <div id="bemvindo">
@@ -129,7 +129,7 @@ function RegistoEtapa4({ dados, setDados, validadeFormulario4, setvalidadeFormul
 
                     <div className="titulo">
                         <div className="tituloPag criarEquipaTitulo" id="tituloPag">
-                            <label className="tituloCriarEquipas desktop">Criar uma nova sessão</label>
+                            <label className="tituloCriarEquipas desktop"></label>
                         </div>
 
 
@@ -150,7 +150,7 @@ function RegistoEtapa4({ dados, setDados, validadeFormulario4, setvalidadeFormul
                                         <label>Informações</label>
                                     </section>
                                     <section className="paragrafo">
-                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab quos at nostrum nemo earum obcaecati voluptas consectetur.</p>
+                                        <p>Por fim, precisamos apenas da sua Escola/Agrupamento de forma a melhorarmos a sua experiência!</p>
                                     </section>
                                     {/* <section className="inputFormulario selectFormulario">
 
@@ -178,7 +178,7 @@ function RegistoEtapa4({ dados, setDados, validadeFormulario4, setvalidadeFormul
                                             cacheOptions={true}
                                             defaultOptions={false}
                                             loadOptions={(e) => (e !== '' && e.length > 2) ? loadOptions(e).then((res) =>
-                                                res.data.success.map(({ idschool, agrupamento }) => ({ label: agrupamento, value: idschool }))) : ''}
+                                                res.data.success.map(({ id, name }) => ({ label: name, value: id }))) : ''}
                                             isClearable={true}
                                             noOptionsMessage={() => 'Não existem resultados. Escreva o nome do seu concelho, escola ou agrupamento...'}
                                             loadingMessage={(e) => e.inputValue.length <= 2 ? 'Digite mais do que 2 carateres para pesquisar' : 'A Pesquisar...'}

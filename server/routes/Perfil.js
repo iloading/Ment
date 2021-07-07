@@ -32,5 +32,29 @@ router.post('/minhasEquipas', validateToken, async (req, res) => {
 
     }
 })
+router.post('/minhaEscola', validateToken, async (req, res) => {
+
+
+    try {
+        const banco = await db.query("SELECT school.id, school.name FROM school INNER JOIN user ON school_id = school.id WHERE user.id = ?", [req.userid], (err, result) => {
+            //Se der erro, devolver o mesmo
+            if (err) {
+                console.log(err);
+                res.json({
+                    error: err
+                });
+            } else {
+
+                res.json({
+                    success: result
+                })
+            }
+
+        })
+
+    } catch (error) {
+
+    }
+})
 
 module.exports = router;

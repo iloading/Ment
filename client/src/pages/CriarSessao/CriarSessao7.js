@@ -60,7 +60,7 @@ function CriarSessao7() {
                                 <label id="titulo">Dados técnicos</label>
 
                                 <div>
-                                    <p id="texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                                    <p id="texto">Quais são os factos reais sobre esta sessão, e quais são apenas ficcionais?</p>
                                 </div>
 
                                 <div className="formulario">

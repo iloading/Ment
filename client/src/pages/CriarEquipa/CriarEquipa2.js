@@ -6,8 +6,16 @@ import criarEquipa2_semBack from "../../img/criarEquipas/criarEquipa2_semBack.sv
 import iconDefinicoes from "../../img/icons/icon_settings.svg";
 
 import { Link } from "react-router-dom"
+import { preencherAlias } from '../../actions/criacaoEquipaAction'
+//REDUX//
 
+import { useDispatch, useSelector } from 'react-redux'
 function CriarEquipa2() {
+    const { dadosPreenchidos } = useSelector(state => state.criarEquipa)
+    const dispatch = useDispatch()
+    const aliasHandler = (e) => {
+        dispatch(preencherAlias(e.target.value))
+    }
     return (
         <article className="criarEquipa">
             <section id="main" className="conteudoMain">
@@ -27,7 +35,7 @@ function CriarEquipa2() {
 
                 <div className="titulo">
                     <div className="tituloPag criarEquipaTitulo" id="tituloPag">
-                        <label className="tituloCriarEquipas desktop">Detalhes</label>
+                        <label className="tituloCriarEquipas desktop">Definir um alias</label>
                     </div>
 
 
@@ -52,21 +60,32 @@ function CriarEquipa2() {
                                 <label id="titulo">Definir um alias</label>
 
                                 <div>
-                                    <p id="texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                                    <p id="texto">Nesta etapa sugerimos que forneça à sua equipa um "cognome":
+                                        Quando tiver diversas equipas a funcionar,  pode ser difícil encontrar aquela que pretende rapidamente apenas pela turma ou pela escola. Para facilitar tal processo sugerimos um "nome de atalho", que apenas será visível para si. Pode deixar em branco, se assim preferir.</p>
                                 </div>
 
                                 <div className="formulario">
                                     <label className="tituloFormulario">Nome do atalho</label>
 
-                                    <input type="text" className="inputTexto" placeholder="ex: Aquela turma do 7ºB"></input>
+                                    <input type="text" className="inputTexto" placeholder="ex: Aquela turma do 7ºB" onChange={aliasHandler} value={dadosPreenchidos.alias}></input>
                                 </div>
 
 
-                                <div id="divBotao">
-                                    <div id="botao">
-                                        <p id="textoBotao">Próximo passo</p>
-                                    </div>
-                                </div>
+                                {dadosPreenchidos.alias !== '' ?
+                                    <Link className="botaoAzul" to="/criarequipa/3" >
+                                        <button id="divBotao">
+                                            <div id="botao" >
+                                                <p id="textoBotao">Próximo passo</p>
+                                            </div>
+                                        </button>
+                                    </Link>
+                                    :
+                                    <button id="divBotao" disabled>
+                                        <div id="botao" >
+                                            <p id="textoBotao">Próximo passo</p>
+                                        </div>
+                                    </button>
+                                }
                             </section>
 
                         </form>

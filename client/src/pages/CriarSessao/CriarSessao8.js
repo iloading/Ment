@@ -59,7 +59,7 @@ function CriarSessao8() {
                                 <label id="titulo">Papéis</label>
 
                                 <div>
-                                    <p id="texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                                    <p id="texto">Para uma sessão funcionar corretamente é necessário explicitar os papéis dos mentores e dos mentorandos. Lembre-se de depositar nos mentores tarefas que os valorizem e se sintam motivados!</p>
                                 </div>
 
                                 <div className="formulario">

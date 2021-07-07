@@ -121,7 +121,6 @@ function CriarSessao3() {
                                     <Select
                                         options={grausDeEnsino.map(grau => ({ label: grau.year, value: grau.id }))}
                                         className='react-select-form'
-                                        /* styles={colourStyles} */
                                         placeholder={'Ex: 7ºano'}
                                         isClearable={true}
                                         isSearchable={false} styles={colourStyles}

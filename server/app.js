@@ -40,6 +40,8 @@ app.use('/sessao', sessao);
 
 const minhasEquipas = require('./routes/MinhasEquipas')
 app.use('/minhasequipas', minhasEquipas);
+const criarEquipas = require('./routes/CriarEquipa')
+app.use('/criarEquipa', criarEquipas);
 
 
 /* app.get('/', async (req, res) => {
