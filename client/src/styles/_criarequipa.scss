@@ -1,60 +1,516 @@
-.conteudoMain {
-  overflow: hidden;
-  height: 100%;
-  .tituloCriarEquipas {
-    display: none;
+.criarEquipa {
+  .conteudoMain {
+    overflow: hidden;
+    height: 100%;
+    .tituloAdicionarAlunos {
+      display: none;
+    }
+    .imgCriarEquipas {
+      display: none;
+    }
+    .formularioCriarSessao {
+      display: grid;
+      grid-template-columns: 1fr;
+
+      .criarSessaoImg {
+        position: relative;
+        text-align: center;
+        background-color: #f5f5f5;
+        border-radius: 4px;
+        height: 35vh;
+        img {
+          max-width: 100%;
+          max-height: 100%;
+        }
+        .setaTras {
+          position: absolute;
+          padding: 1.5rem;
+          text-align: initial;
+        }
+      }
+      #corpo {
+        margin: 1.5rem;
+        margin-top: 4.5rem;
+        display: grid;
+        grid-gap: 2rem;
+
+        #titulo {
+          font-size: 1.375rem;
+          font-weight: $font-weight-more-bold;
+          color: $text-main-color;
+        }
+        #texto {
+          font-size: $font-size-m;
+          font-weight: $font-weight-normal;
+          color: $text-main-color;
+        }
+        .botaoAzul {
+          background-color: white;
+          border: none;
+          margin: 1rem;
+          text-decoration: none;
+
+          #divBotao {
+            display: grid;
+            padding: 0;
+            border: 0;
+            margin: auto;
+            width: 90%;
+            #botao {
+              color: $button-type1-background;
+              justify-self: center;
+              text-align: center;
+              background-color: $button-type2-background;
+              border: 1px solid $button-type2-background;
+              border-radius: 0.3rem;
+              padding: 1rem;
+              width: 100%;
+              text-decoration: none;
+              margin-top: 0;
+
+              #textoBotao {
+                font-weight: $font-weight-more-bold;
+                font-size: 1.375rem;
+                color: white;
+                text-decoration: none;
+              }
+            }
+          }
+        }
+        button {
+          &:disabled {
+            display: grid;
+            padding: 0;
+            border: 0;
+            margin: auto;
+            width: 82%;
+            margin-top: 1rem;
+            #botao {
+              color: $button-type1-background;
+              justify-self: center;
+              text-align: center;
+              background-color: $button-type2-background;
+              border: 1px solid $button-type2-background;
+              border-radius: 0.3rem;
+              padding: 1rem;
+              width: 100%;
+              opacity: 0.5;
+              margin-top: 0;
+
+              #textoBotao {
+                font-weight: $font-weight-more-bold;
+                font-size: 1.375rem;
+                color: white;
+              }
+            }
+          }
+        }
+
+        .formulario {
+          display: grid;
+          grid-gap: 2rem;
+
+          .tituloFormulario {
+            font-size: $font-size-s;
+            font-weight: $font-weight-normal;
+            color: $text-main-color;
+          }
+
+          .inputTexto {
+            border: none;
+            border-radius: 4px;
+            height: 40px;
+            padding: 0 1rem 0 1rem;
+            background-color: $input-color-lightblue;
+            width: 100%;
+          }
+
+          .inputTexto::placeholder {
+            color: lightgray;
+          }
+          .inputTexto:focus {
+            outline: 0;
+          }
+          .textareaTexto {
+            border: none;
+            border-radius: 4px;
+            height: 40px;
+            padding: 1rem;
+            background-color: $input-color-lightblue;
+            width: 100%;
+            height: 8rem;
+            resize: none;
+          }
+          .textareaTexto::placeholder {
+            color: lightgray;
+          }
+          .textareaTexto:focus {
+            outline: 0;
+          }
+        }
+        #linkFooter {
+          display: grid;
+          align-items: center;
+          text-align: center;
+          margin-top: 0;
+          a {
+            text-decoration: none;
+            font-size: $font-size-xs;
+            font-weight: $font-weight-bolder;
+            color: $text-main-color;
+          }
+        }
+      }
+    }
+    .conteudoDireita {
+      display: none;
+    }
+    .titulo {
+      display: none;
+    }
   }
-  .imgCriarEquipas {
-    display: none;
-  }
-  .formularioCriarSessao {
+
+  .associarEquipa.criarEquipa {
     display: grid;
     grid-template-columns: 1fr;
 
-    .criarSessaoImg {
-      position: relative;
-      text-align: center;
-      background-color: #f5f5f5;
-      border-radius: 4px;
-      height: 35vh;
-      img {
-        max-width: 100%;
-        max-height: 100%;
+    .headerAssociarEquipa {
+      display: grid;
+      grid-template-columns: 0.1fr 0.5fr 1fr 0.5fr 0.1fr;
+      grid-template-areas: ". seta associar criar .";
+      margin-top: 1.5rem;
+      margin-bottom: 3rem;
+      #seta {
+        align-self: center;
+        grid-area: seta;
+        justify-self: left;
       }
-      .setaTras {
-        position: absolute;
-        padding: 1.5rem;
-        text-align: initial;
+      #titulo {
+        align-self: center;
+        grid-area: associar;
+        justify-self: center;
+        color: $text-main-color;
+        font-weight: $font-weight-boldest;
+        font-size: 1.375rem;
+      }
+      #criarEquipa {
+        align-self: center;
+        grid-area: criar;
+        justify-self: right;
       }
     }
-    #corpo {
-      margin: 1.5rem;
-      margin-top: 4.5rem;
-      display: grid;
-      grid-gap: 2rem;
 
-      #titulo {
-        font-size: 1.375rem;
-        font-weight: $font-weight-more-bold;
-        color: $text-main-color;
+    .inputPesquisar {
+      display: grid;
+      grid-template-columns: 0.09fr auto 0.09fr;
+      grid-template-areas: ". input .";
+      #inputPesquisa {
+        border: none;
+        border-radius: 4px;
+        height: 40px;
+        padding: 0 1rem 0 1rem;
+        background-color: $input-color-lightblue;
+        width: 100%;
       }
-      #texto {
-        font-size: $font-size-m;
+      #inputRole {
+        grid-area: input;
+      }
+      #inputPesquisa::placeholder {
+        color: lightgray;
+      }
+      #inputPesquisa:focus {
+        outline: 0;
+      }
+    }
+    #id_titulo2 {
+      display: grid;
+      margin: 1.5rem;
+      #titulo2 {
+        font-size: $font-size-s;
         font-weight: $font-weight-normal;
         color: $text-main-color;
       }
+    }
+    #equipas {
+      display: grid;
+      grid-template-rows: 1fr 1fr 1fr 1fr;
+      grid-template-areas: "equipa1" "equipa2" "equipa3" "equipa4";
+      margin: 1.5rem;
+      grid-gap: 1rem;
+
+      .equipa1 {
+        grid-area: equipa1;
+        display: grid;
+        grid-template-columns: 7rem 1fr 5.8rem;
+        grid-template-areas: "imagem texto checkbox";
+        border: 1px solid #f8faff;
+        background-color: #f8faff;
+        border-radius: 4px;
+
+        .avatarEquipa {
+          grid-area: imagem;
+          justify-self: center;
+          align-self: center;
+          padding-top: 1rem;
+          padding-bottom: 1rem;
+        }
+        .texto {
+          grid-area: texto;
+          justify-self: left;
+          align-self: center;
+          padding-top: 1rem;
+          padding-bottom: 1rem;
+          padding-left: 1rem;
+          .tituloTexto {
+            color: #042454;
+            font-size: 0.9375rem;
+            font-weight: $font-weight-more-bold;
+            margin: 0.2rem 0 0.2rem 0;
+          }
+          .escolaTexto {
+            color: #003bb9;
+            font-size: 0.8125rem;
+            font-weight: $font-weight-boldest;
+            font-style: italic;
+            margin: 0.2rem 0 0.2rem 0;
+          }
+          .anoTexto {
+            color: #0066ff;
+            font-size: 0.625rem;
+            font-weight: $font-weight-boldest;
+            font-style: italic;
+            margin: 0.2rem 0 0.2rem 0;
+          }
+        }
+        .checkbox {
+          grid-area: checkbox;
+          justify-self: center;
+          align-self: center;
+          min-height: 35%;
+          min-width: 35%;
+          background-color: #ffffff;
+          border: 1px solid #cccccc;
+          border-radius: 100%;
+        }
+      }
+      #equipa2 {
+        grid-area: equipa2;
+        display: grid;
+        grid-template-columns: 7rem 1fr 5.8rem;
+        grid-template-areas: "imagem texto checkbox";
+        border: 1px solid #f8faff;
+        background-color: #f8faff;
+        border-radius: 4px;
+
+        .avatarEquipa {
+          grid-area: imagem;
+          justify-self: center;
+          align-self: center;
+          padding-top: 1rem;
+          padding-bottom: 1rem;
+        }
+        .texto {
+          grid-area: texto;
+          justify-self: left;
+          align-self: center;
+          padding-top: 0.5rem;
+          padding-bottom: 0.5rem;
+          padding-left: 0.5rem;
+          .tituloTexto {
+            color: #042454;
+            font-size: 0.9375rem;
+            font-weight: $font-weight-more-bold;
+            margin: 0.2rem 0 0.2rem 0;
+          }
+          .escolaTexto {
+            color: #003bb9;
+            font-size: 0.8125rem;
+            font-weight: $font-weight-boldest;
+            font-style: italic;
+            margin: 0.2rem 0 0.2rem 0;
+          }
+          .anoTexto {
+            color: #0066ff;
+            font-size: 0.625rem;
+            font-weight: $font-weight-boldest;
+            font-style: italic;
+            margin: 0.2rem 0 0.2rem 0;
+          }
+        }
+        .checkbox {
+          grid-area: checkbox;
+          justify-self: center;
+          align-self: center;
+          min-height: 35%;
+          min-width: 35%;
+          background-color: #ffffff;
+          border: 1px solid #cccccc;
+          border-radius: 100%;
+        }
+      }
+      #equipa3 {
+        grid-area: equipa3;
+        display: grid;
+        grid-template-columns: 7rem 1fr 5.8rem;
+        grid-template-areas: "imagem texto checkbox";
+        border: 1px solid #f8faff;
+        background-color: #f8faff;
+        border-radius: 4px;
+
+        .avatarEquipa {
+          grid-area: imagem;
+          justify-self: center;
+          align-self: center;
+          padding-top: 1rem;
+          padding-bottom: 1rem;
+        }
+        .texto {
+          grid-area: texto;
+          justify-self: left;
+          align-self: center;
+          padding-top: 0.5rem;
+          padding-bottom: 0.5rem;
+          padding-left: 0.5rem;
+          .tituloTexto {
+            color: #042454;
+            font-size: 0.9375rem;
+            font-weight: $font-weight-more-bold;
+            margin: 0.2rem 0 0.2rem 0;
+          }
+          .escolaTexto {
+            color: #003bb9;
+            font-size: 0.8125rem;
+            font-weight: $font-weight-boldest;
+            font-style: italic;
+            margin: 0.2rem 0 0.2rem 0;
+          }
+          .anoTexto {
+            color: #0066ff;
+            font-size: 0.625rem;
+            font-weight: $font-weight-boldest;
+            font-style: italic;
+            margin: 0.2rem 0 0.2rem 0;
+          }
+        }
+        .checkbox {
+          grid-area: checkbox;
+          justify-self: center;
+          align-self: center;
+          min-height: 35%;
+          min-width: 35%;
+          background-color: #ffffff;
+          border: 1px solid #cccccc;
+          border-radius: 100%;
+        }
+      }
+      #equipa4 {
+        grid-area: equipa4;
+        display: grid;
+        grid-template-columns: 7rem 1fr 5.8rem;
+        grid-template-areas: "imagem texto checkbox";
+        border: 1px solid #f8faff;
+        background-color: #f8faff;
+        border-radius: 4px;
+
+        .avatarEquipa {
+          grid-area: imagem;
+          justify-self: center;
+          align-self: center;
+          padding-top: 1rem;
+          padding-bottom: 1rem;
+        }
+        .texto {
+          grid-area: texto;
+          justify-self: left;
+          align-self: center;
+          padding-top: 0.5rem;
+          padding-bottom: 0.5rem;
+          padding-left: 0.5rem;
+          .tituloTexto {
+            color: #042454;
+            font-size: 0.9375rem;
+            font-weight: $font-weight-more-bold;
+            margin: 0.2rem 0 0.2rem 0;
+          }
+          .escolaTexto {
+            color: #003bb9;
+            font-size: 0.8125rem;
+            font-weight: $font-weight-boldest;
+            font-style: italic;
+            margin: 0.2rem 0 0.2rem 0;
+          }
+          .anoTexto {
+            color: #0066ff;
+            font-size: 0.625rem;
+            font-weight: $font-weight-boldest;
+            font-style: italic;
+            margin: 0.2rem 0 0.2rem 0;
+          }
+        }
+        .checkbox {
+          grid-area: checkbox;
+          justify-self: center;
+          align-self: center;
+          min-height: 35%;
+          min-width: 35%;
+          background-color: #ffffff;
+          border: 1px solid #cccccc;
+          border-radius: 100%;
+        }
+      }
+    }
+    .botaoAzul {
+      background-color: white;
+      border: none;
+      margin: 1rem;
+      text-decoration: none;
+
       #divBotao {
         display: grid;
+        padding: 0;
+        border: 0;
+        margin: auto;
+        width: 90%;
         #botao {
-          margin-top: 2rem;
           color: $button-type1-background;
           justify-self: center;
           text-align: center;
           background-color: $button-type2-background;
-          width: 90%;
           border: 1px solid $button-type2-background;
           border-radius: 0.3rem;
           padding: 1rem;
+          width: 100%;
+          text-decoration: none;
+          margin-top: 0;
+
+          #textoBotao {
+            font-weight: $font-weight-more-bold;
+            font-size: 1.375rem;
+            color: white;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+    button {
+      &:disabled {
+        display: grid;
+        padding: 0;
+        border: 0;
+        margin: auto;
+        width: 82%;
+        margin-top: 1rem;
+        #botao {
+          color: $button-type1-background;
+          justify-self: center;
+          text-align: center;
+          background-color: $button-type2-background;
+          border: 1px solid $button-type2-background;
+          border-radius: 0.3rem;
+          padding: 1rem;
+          width: 100%;
+          opacity: 0.5;
+          margin-top: 0;
 
           #textoBotao {
             font-weight: $font-weight-more-bold;
@@ -62,376 +518,6 @@
             color: white;
           }
         }
-      }
-
-      .formulario {
-        display: grid;
-        grid-gap: 2rem;
-
-        .tituloFormulario {
-          font-size: $font-size-s;
-          font-weight: $font-weight-normal;
-          color: $text-main-color;
-        }
-
-        .inputTexto {
-          border: none;
-          border-radius: 4px;
-          height: 40px;
-          padding: 0 1rem 0 1rem;
-          background-color: $input-color-lightblue;
-          width: 100%;
-        }
-
-        .inputTexto::placeholder {
-          color: lightgray;
-        }
-        .inputTexto:focus {
-          outline: 0;
-        }
-        .textareaTexto {
-          border: none;
-          border-radius: 4px;
-          height: 40px;
-          padding: 1rem;
-          background-color: $input-color-lightblue;
-          width: 100%;
-          height: 8rem;
-          resize: none;
-        }
-        .textareaTexto::placeholder {
-          color: lightgray;
-        }
-        .textareaTexto:focus {
-          outline: 0;
-        }
-      }
-      #linkFooter {
-        display: grid;
-        align-items: center;
-        text-align: center;
-        margin-top: 0;
-        a {
-          text-decoration: none;
-          font-size: $font-size-xs;
-          font-weight: $font-weight-bolder;
-          color: $text-main-color;
-        }
-      }
-    }
-  }
-  .conteudoDireita {
-    display: none;
-  }
-}
-
-.associarEquipa.criarEquipa {
-  display: grid;
-  grid-template-columns: 1fr;
-
-  .headerAssociarEquipa {
-    display: grid;
-    grid-template-columns: 0.1fr 0.5fr 1fr 0.5fr 0.1fr;
-    grid-template-areas: ". seta associar criar .";
-    margin-top: 1.5rem;
-    margin-bottom: 3rem;
-    #seta {
-      align-self: center;
-      grid-area: seta;
-      justify-self: left;
-    }
-    #titulo {
-      align-self: center;
-      grid-area: associar;
-      justify-self: center;
-      color: $text-main-color;
-      font-weight: $font-weight-boldest;
-      font-size: 1.375rem;
-    }
-    #criarEquipa {
-      align-self: center;
-      grid-area: criar;
-      justify-self: right;
-    }
-  }
-
-  .inputPesquisar {
-    display: grid;
-    grid-template-columns: 0.09fr auto 0.09fr;
-    grid-template-areas: ". input .";
-    #inputPesquisa {
-      border: none;
-      border-radius: 4px;
-      height: 40px;
-      padding: 0 1rem 0 1rem;
-      background-color: $input-color-lightblue;
-      width: 100%;
-    }
-    #inputRole {
-      grid-area: input;
-    }
-    #inputPesquisa::placeholder {
-      color: lightgray;
-    }
-    #inputPesquisa:focus {
-      outline: 0;
-    }
-  }
-  #id_titulo2 {
-    display: grid;
-    margin: 1.5rem;
-    #titulo2 {
-      font-size: $font-size-s;
-      font-weight: $font-weight-normal;
-      color: $text-main-color;
-    }
-  }
-  #equipas {
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    grid-template-areas: "equipa1" "equipa2" "equipa3" "equipa4";
-    margin: 1.5rem;
-    grid-gap: 1rem;
-
-    #equipa1 {
-      grid-area: equipa1;
-      display: grid;
-      grid-template-columns: 7rem 1fr 5.8rem;
-      grid-template-areas: "imagem texto checkbox";
-      border: 1px solid #f8faff;
-      background-color: #f8faff;
-      border-radius: 4px;
-
-      .avatarEquipa {
-        grid-area: imagem;
-        justify-self: center;
-        align-self: center;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-      }
-      .texto {
-        grid-area: texto;
-        justify-self: left;
-        align-self: center;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-        padding-left: 1rem;
-        .tituloTexto {
-          color: #042454;
-          font-size: 0.9375rem;
-          font-weight: $font-weight-more-bold;
-          margin: 0.2rem 0 0.2rem 0;
-        }
-        .escolaTexto {
-          color: #003bb9;
-          font-size: 0.8125rem;
-          font-weight: $font-weight-boldest;
-          font-style: italic;
-          margin: 0.2rem 0 0.2rem 0;
-        }
-        .anoTexto {
-          color: #0066ff;
-          font-size: 0.625rem;
-          font-weight: $font-weight-boldest;
-          font-style: italic;
-          margin: 0.2rem 0 0.2rem 0;
-        }
-      }
-      .checkbox {
-        grid-area: checkbox;
-        justify-self: center;
-        align-self: center;
-        min-height: 35%;
-        min-width: 35%;
-        background-color: #ffffff;
-        border: 1px solid #cccccc;
-        border-radius: 100%;
-      }
-    }
-    #equipa2 {
-      grid-area: equipa2;
-      display: grid;
-      grid-template-columns: 7rem 1fr 5.8rem;
-      grid-template-areas: "imagem texto checkbox";
-      border: 1px solid #f8faff;
-      background-color: #f8faff;
-      border-radius: 4px;
-
-      .avatarEquipa {
-        grid-area: imagem;
-        justify-self: center;
-        align-self: center;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-      }
-      .texto {
-        grid-area: texto;
-        justify-self: left;
-        align-self: center;
-        padding-top: 0.5rem;
-        padding-bottom: 0.5rem;
-        padding-left: 0.5rem;
-        .tituloTexto {
-          color: #042454;
-          font-size: 0.9375rem;
-          font-weight: $font-weight-more-bold;
-          margin: 0.2rem 0 0.2rem 0;
-        }
-        .escolaTexto {
-          color: #003bb9;
-          font-size: 0.8125rem;
-          font-weight: $font-weight-boldest;
-          font-style: italic;
-          margin: 0.2rem 0 0.2rem 0;
-        }
-        .anoTexto {
-          color: #0066ff;
-          font-size: 0.625rem;
-          font-weight: $font-weight-boldest;
-          font-style: italic;
-          margin: 0.2rem 0 0.2rem 0;
-        }
-      }
-      .checkbox {
-        grid-area: checkbox;
-        justify-self: center;
-        align-self: center;
-        min-height: 35%;
-        min-width: 35%;
-        background-color: #ffffff;
-        border: 1px solid #cccccc;
-        border-radius: 100%;
-      }
-    }
-    #equipa3 {
-      grid-area: equipa3;
-      display: grid;
-      grid-template-columns: 7rem 1fr 5.8rem;
-      grid-template-areas: "imagem texto checkbox";
-      border: 1px solid #f8faff;
-      background-color: #f8faff;
-      border-radius: 4px;
-
-      .avatarEquipa {
-        grid-area: imagem;
-        justify-self: center;
-        align-self: center;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-      }
-      .texto {
-        grid-area: texto;
-        justify-self: left;
-        align-self: center;
-        padding-top: 0.5rem;
-        padding-bottom: 0.5rem;
-        padding-left: 0.5rem;
-        .tituloTexto {
-          color: #042454;
-          font-size: 0.9375rem;
-          font-weight: $font-weight-more-bold;
-          margin: 0.2rem 0 0.2rem 0;
-        }
-        .escolaTexto {
-          color: #003bb9;
-          font-size: 0.8125rem;
-          font-weight: $font-weight-boldest;
-          font-style: italic;
-          margin: 0.2rem 0 0.2rem 0;
-        }
-        .anoTexto {
-          color: #0066ff;
-          font-size: 0.625rem;
-          font-weight: $font-weight-boldest;
-          font-style: italic;
-          margin: 0.2rem 0 0.2rem 0;
-        }
-      }
-      .checkbox {
-        grid-area: checkbox;
-        justify-self: center;
-        align-self: center;
-        min-height: 35%;
-        min-width: 35%;
-        background-color: #ffffff;
-        border: 1px solid #cccccc;
-        border-radius: 100%;
-      }
-    }
-    #equipa4 {
-      grid-area: equipa4;
-      display: grid;
-      grid-template-columns: 7rem 1fr 5.8rem;
-      grid-template-areas: "imagem texto checkbox";
-      border: 1px solid #f8faff;
-      background-color: #f8faff;
-      border-radius: 4px;
-
-      .avatarEquipa {
-        grid-area: imagem;
-        justify-self: center;
-        align-self: center;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-      }
-      .texto {
-        grid-area: texto;
-        justify-self: left;
-        align-self: center;
-        padding-top: 0.5rem;
-        padding-bottom: 0.5rem;
-        padding-left: 0.5rem;
-        .tituloTexto {
-          color: #042454;
-          font-size: 0.9375rem;
-          font-weight: $font-weight-more-bold;
-          margin: 0.2rem 0 0.2rem 0;
-        }
-        .escolaTexto {
-          color: #003bb9;
-          font-size: 0.8125rem;
-          font-weight: $font-weight-boldest;
-          font-style: italic;
-          margin: 0.2rem 0 0.2rem 0;
-        }
-        .anoTexto {
-          color: #0066ff;
-          font-size: 0.625rem;
-          font-weight: $font-weight-boldest;
-          font-style: italic;
-          margin: 0.2rem 0 0.2rem 0;
-        }
-      }
-      .checkbox {
-        grid-area: checkbox;
-        justify-self: center;
-        align-self: center;
-        min-height: 35%;
-        min-width: 35%;
-        background-color: #ffffff;
-        border: 1px solid #cccccc;
-        border-radius: 100%;
-      }
-    }
-  }
-  #divBotao {
-    display: grid;
-    #botao {
-      margin-top: 1rem;
-      margin-bottom: 1rem;
-      color: $button-type1-background;
-      justify-self: center;
-      text-align: center;
-      background-color: $button-type2-background;
-      width: 90%;
-      border: 1px solid $button-type2-background;
-      border-radius: 0.3rem;
-      padding: 1rem;
-
-      #textoBotao {
-        font-weight: $font-weight-more-bold;
-        font-size: 1.375rem;
-        color: white;
       }
     }
   }
@@ -470,7 +556,7 @@
             display: grid;
             grid-template-columns: 24rem 5rem;
             grid-template-areas: "tituloCriarEquipas imgCriarEquipas";
-            .tituloCriarEquipas {
+            .tituloAdicionarAlunos {
               grid-area: tituloCriarEquipas;
             }
             .imgCriarEquipas {
@@ -482,7 +568,8 @@
         }
         .criarEquipaTitulo {
           display: block;
-          .tituloCriarEquipas {
+          .tituloAdicionarAlunos {
+            display: block;
             font-size: 1.2rem;
             font-weight: 600;
             color: #042454;

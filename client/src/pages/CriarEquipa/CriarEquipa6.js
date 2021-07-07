@@ -53,15 +53,20 @@ function CriarEquipa6() {
                                 <label id="titulo">Escolher foto</label>
 
                                 <div>
-                                    <p id="textoUpload">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.   </p>
+                                    <p id="texto">A foto da equipa é a única identidade sobre a qual permitimos fazer o upload. A fotografia não é obrigatória, e caso o deseje, nós fornecemos uma automaticamente, apenas com as iniciais (prometemos que vai gostar). Se a sua equipa tiver uma identidade visual definida, pode fazer então o upload de um ficheiro. Ressalvamos apenas de novo a discrição necessária uma vez que estamos a lidar com alunos menores. Lembre-se de proteger a sua equipa acima de tudo.</p>
                                 </div>
 
 
-                                <div id="divBotao">
-                                    <div id="botao">
-                                        <p id="textoBotao">Upload</p>
-                                    </div>
-                                </div>
+
+                                <Link className="botaoAzul" to="/" >
+                                    <button id="divBotao">
+                                        <div id="botao" >
+                                            <p id="textoBotao">Upload</p>
+                                        </div>
+                                    </button>
+                                </Link>
+
+
                             </section>
 
                         </form>

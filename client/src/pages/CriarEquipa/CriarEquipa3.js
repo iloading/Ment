@@ -9,6 +9,7 @@ import { Link } from "react-router-dom"
 import { useDispatch, useSelector } from 'react-redux'
 import { preencherDescricao, loadEscolaOwner, mudarEscola } from '../../actions/criacaoEquipaAction'
 import AsyncCreatableSelect from 'react-select/async-creatable';
+import { colourStyles } from './selectStyle';
 //BD
 import { listaEscolas } from '../../API'
 function CriarEquipa3() {
@@ -85,7 +86,8 @@ function CriarEquipa3() {
                                 <label id="titulo">Detalhes</label>
 
                                 <div>
-                                    <p id="texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                                    <p id="texto">Uma equipa tem de obrigatoriamente estar associada a uma Escola!
+                                        De seguida, preencha uma breve descrição sobre a equipa! Esta descrição estará disponível publicamente, para tal aconselhamos brevidade e discrição de acordo com o RGPD em atuação.</p>
                                 </div>
 
                                 <div className="formulario">
@@ -116,7 +118,7 @@ function CriarEquipa3() {
 
                                             id='inputRole'
                                             className='react-select-form'
-                                            /* styles={colourStyles} */
+                                            styles={colourStyles}
                                             placeholder={'Pesquisar por Concelho | Agrupamento | Escola'}
                                             value={dadosPreenchidos.school.map(school => ({ label: school.name, value: school.id }))}
                                         />
@@ -131,11 +133,21 @@ function CriarEquipa3() {
                                 </div>
 
 
-                                <div id="divBotao">
-                                    <div id="botao">
-                                        <p id="textoBotao">Próximo passo</p>
-                                    </div>
-                                </div>
+                                {dadosPreenchidos.descricao !== '' ?
+                                    <Link className="botaoAzul" to="/criarequipa/4" >
+                                        <button id="divBotao">
+                                            <div id="botao" >
+                                                <p id="textoBotao">Próximo passo</p>
+                                            </div>
+                                        </button>
+                                    </Link>
+                                    :
+                                    <button id="divBotao" disabled>
+                                        <div id="botao" >
+                                            <p id="textoBotao">Próximo passo</p>
+                                        </div>
+                                    </button>
+                                }
                             </section>
 
                         </form>
