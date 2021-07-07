@@ -7,16 +7,17 @@ import { Link } from "react-router-dom";
 
 
 
-function MinhasEquipas(equipa, status) {
+function MinhasEquipas({ equipa, status }) {
+
     return (
 
         <Link to={`/perfilEquipa/${equipa.id}`}>
             <div className="cardMinhasEquipas">
                 <img src={iconEquipa} alt="" id="iconEquipa" />
                 <div className="midInfo">
-                    <label>8ºD</label>
-                    <p>Inglês</p>
-                    <span>Escola Secundária Carlos Amarante</span>
+                    <label>{equipa.name}</label>
+                    <p>{equipa.escola}</p>
+                    <span>{equipa.escola}</span>
                 </div>
                 <div className="leftInfo">
                     <div className="botaoPontos" >

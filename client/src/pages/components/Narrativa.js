@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 
 
 function Narrativa({ destaque, sessao, sessaoEquipa, status }) {
-    console.log(destaque, sessao, sessaoEquipa, status);
+
 
 
     return (
