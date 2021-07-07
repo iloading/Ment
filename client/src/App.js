@@ -28,11 +28,17 @@ import Feedback from './pages/components/Feedback'
 import { Route, Switch, Redirect } from "react-router-dom";
 
 function App() {
-  const { loggedIn } = useContext(AuthContext)
+  const { loggedIn } = useContext(AuthContext);
+
+
+
 
   return (
 
     <main className="App layout">
+
+
+
       <Feedback />
       {loggedIn ? <> <Navbar /><Footer /> </> : <></>
       }
@@ -73,7 +79,7 @@ function App() {
         <Route path="/perfil">
           <Perfil />
         </Route>
-        <Route path={["/sessao", "/sessao/:id"]}>
+        <Route path="/sessao/:id">
           <Sessao />
         </Route>
         <Route path="/criarsessao">

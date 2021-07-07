@@ -16,6 +16,14 @@ import iconTituloEquipa from "../img/icons/icon_equipa.svg"
 import { useRef, useState } from "react";
 
 
+import { loadminhasEquipas } from "../actions/minhasEquipasAction";
+
+
+
+import { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+
+
 
 
 
@@ -32,6 +40,20 @@ function Banco() {
 
 
     }
+
+
+
+    const dispatch = useDispatch()
+    useEffect(() => {
+        dispatch(loadminhasEquipas())
+
+
+    }, [dispatch])
+
+    const { minhasEquipas, status } = useSelector(state => state.minhasEquipas)
+
+
+
     return (
         <article className="minhasEquipas">
 
@@ -85,13 +107,8 @@ function Banco() {
                 <div className="conteudoMid">
 
                     <div className="listaMinhasEquipas">
-                        <MinhasEquipas />
-                        <MinhasEquipas />
-                        <MinhasEquipas />
-                        <MinhasEquipas />
-                        <MinhasEquipas />
-                        <MinhasEquipas />
-                        <MinhasEquipas />
+
+                        {status === "completed" && minhasEquipas.map(equipa => <MinhasEquipas key={equipa.id} equipa={equipa} status={status} />)}
 
                     </div>
 
@@ -117,13 +134,13 @@ function Banco() {
                                 <button className="botaoOcultar" onClick={(event) => toggleEquipas(event)}>{`${ocultadas ? 'Mostrar' : 'Ocultar'}`}</button>
                             </div>
                             <div className={`cardEquipasArquivadas ${ocultadas ? 'ocultarEquipas' : ''}`} >
+                                {/* <MinhasEquipas />
                                 <MinhasEquipas />
                                 <MinhasEquipas />
                                 <MinhasEquipas />
                                 <MinhasEquipas />
                                 <MinhasEquipas />
-                                <MinhasEquipas />
-                                <MinhasEquipas />
+                                <MinhasEquipas /> */}
 
                             </div>
 

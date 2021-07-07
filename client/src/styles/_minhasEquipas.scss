@@ -79,6 +79,9 @@
     }
 
     .conteudoMid {
+      a {
+        text-decoration: none;
+      }
       .cardMinhasEquipas {
         display: grid;
         grid-template-columns: 3rem 1fr auto;
@@ -207,6 +210,7 @@
       padding-top: 2rem;
       margin: 0;
       grid-row-gap: 1rem;
+      overflow: hidden;
       .bemvindo_titulos {
         h3 {
           visibility: hidden;
@@ -271,8 +275,11 @@
         display: grid;
         grid-template-columns: 1.5fr 1fr;
         grid-column-gap: 1rem;
+        overflow: hidden;
 
         .listaMinhasEquipas {
+          overflow: scroll;
+          overflow-x: hidden;
           margin-right: 2rem;
           .cardMinhasEquipas {
             display: grid;

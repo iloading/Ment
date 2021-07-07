@@ -41,5 +41,12 @@ export const minhasEquipas = () => axios.post('http://localhost:3001/perfil/minh
 export const carregarEscolaOwner = () => axios.post('http://localhost:3001/perfil/minhaEscola');
 export const listaGrausEnsino = () => axios.post('http://localhost:3001/criarSessao/grausDeEnsino');
 export const criarSessao = (dados) => axios.post('http://localhost:3001/criarSessao/', dados);
+
+//-----------Sessao
+export const sessaoInfo = (id) => axios.post('http://localhost:3001/sessao/', id);
+
+//-----------Minhas Equipas
+export const minhasEquipasInfo = (id) => axios.post('http://localhost:3001/minhasequipas/', id);
+
 //-----------CRIAR EQUIPA
 export const carregarMentores = (pesquisa) => axios.post('http://localhost:3001/criarEquipa/carregarMentores/', pesquisa);

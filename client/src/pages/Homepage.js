@@ -20,6 +20,8 @@ function Homepage() {
     return (
         <>
             <article className="homepage">
+
+
                 <nav>
                     <img src={navLogo} alt="logo navbar" id="logo" />
 
