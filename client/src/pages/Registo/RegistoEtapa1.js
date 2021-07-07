@@ -176,8 +176,8 @@ function RegistoEtapa1({ validadeEmail, setValidadeEmail, validadeFormulario1, s
                     </div>
                 </aside>
             </div>
-            <div id="main">
-                <section id="main" className="conteudoMain registo">
+            <div id="main" className="registo">
+                <section className="conteudoMain">
                     {/*DESKTOP*/}
                     <div id="bemvindo">
 
@@ -185,9 +185,7 @@ function RegistoEtapa1({ validadeEmail, setValidadeEmail, validadeFormulario1, s
                             <h3>Bom dia,</h3>
                             <h1>Registar</h1>
                         </div>
-                        <div className="icons">
-                            <button type="button" className="botaoLogin" onClick={redirectLogin}>Entrar</button>
-                        </div>
+
 
                     </div>
 
@@ -285,10 +283,6 @@ function RegistoEtapa1({ validadeEmail, setValidadeEmail, validadeFormulario1, s
                             </Formik >
                         </div>
                         <div className="conteudoDireitaDesktop">
-                            <div className="botaoEtapaAnterior">
-                                <img src={setaAtras} className="iconSeta" alt="seta para retroceder" />
-                                <p className="textoBotao">Etapa anterior</p>
-                            </div>
                             <img src={registoImgDesktop} className="imgEquipa" alt="criar equipa primeira imagem" />
                         </div>
                     </div>
