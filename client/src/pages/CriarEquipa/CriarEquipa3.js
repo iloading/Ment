@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import setaAtras from "../../img/icons/icon_setaAtrasAzul.svg"
 import criarEquipa3 from "../../img/criarEquipas/criarEquipa3.svg"
@@ -6,8 +6,40 @@ import criarEquipa3_semBack from "../../img/criarEquipas/criarEquipa3_semBack.sv
 import iconDefinicoes from "../../img/icons/icon_settings.svg";
 
 import { Link } from "react-router-dom"
-
+import { useDispatch, useSelector } from 'react-redux'
+import { preencherDescricao, loadEscolaOwner, mudarEscola } from '../../actions/criacaoEquipaAction'
+import AsyncCreatableSelect from 'react-select/async-creatable';
+//BD
+import { listaEscolas } from '../../API'
 function CriarEquipa3() {
+    const { dadosPreenchidos } = useSelector(state => state.criarEquipa)
+
+    const dispatch = useDispatch()
+    const descricaoHandler = (e) => {
+        dispatch(preencherDescricao(e.target.value))
+    }
+    //carregar escola registada ao professor 
+    useEffect(() => {
+        dispatch(loadEscolaOwner());
+    }, [dispatch])
+
+    //Lista de escolas
+    let timerId = null
+    const loadOptions = (e) => {
+
+        clearTimeout(timerId);
+        var promise = new Promise(function (resolve, reject) {
+            timerId = setTimeout(async () => {
+                resolve(listaEscolas({ school: e }));
+            }, 1000);
+        });
+
+        return promise;
+    }
+    //Escolha de uma escola
+    const handleChange = (e) => {
+        dispatch(mudarEscola(e))
+    }
     return (
         <article className="criarEquipa">
             <section id="main" className="conteudoMain">
@@ -58,15 +90,44 @@ function CriarEquipa3() {
 
                                 <div className="formulario">
                                     <label className="tituloFormulario">Escola</label>
+                                    {dadosPreenchidos.school &&
+                                        <AsyncCreatableSelect
+                                            onChange={(e) => handleChange(e)}
+                                            cacheOptions={true}
+                                            defaultOptions={dadosPreenchidos.school.map(school => ({ label: school.name, value: school.id }))}
 
-                                    <input type="text" className="inputTexto" placeholder="ex: A melhor equipa..."></input>
+                                            loadOptions={(e) => (e !== '' && e.length > 2) ? loadOptions(e).then((res) =>
+                                                res.data.success.map(({ id, name }) => ({ label: name, value: id }))) : ''}
+                                            isClearable={false}
+                                            noOptionsMessage={() => 'Não existem resultados. Escreva o nome do seu concelho, escola ou agrupamento...'}
+                                            loadingMessage={(e) => e.inputValue.length <= 2 ? 'Digite mais do que 2 carateres para pesquisar' : 'A Pesquisar...'}
+                                            allowCreateWhileLoading={false}
+                                            /* Criar uma nova escola caso a do utilizador não esteja na lista  */
+                                            isValidNewOption={(inputValue, selectValue, selectOptions, accessors) => {
+                                                if (inputValue.length > 2) {
+                                                    if (selectValue.length === 0) {
+                                                        if (selectOptions.length === 0) {
+                                                            return true
+                                                        }
+                                                    }
+                                                }
+                                                return false
+                                            }}
+
+                                            id='inputRole'
+                                            className='react-select-form'
+                                            /* styles={colourStyles} */
+                                            placeholder={'Pesquisar por Concelho | Agrupamento | Escola'}
+                                            value={dadosPreenchidos.school.map(school => ({ label: school.name, value: school.id }))}
+                                        />
+                                    }
                                 </div>
 
                                 <div className="formulario">
 
                                     <label className="tituloFormulario">Descrição</label>
 
-                                    <textarea type="text" className="textareaTexto" placeholder="Descrição da equipa"></textarea>
+                                    <textarea type="text" className="textareaTexto" placeholder="Descrição da equipa" onChange={descricaoHandler} value={dadosPreenchidos.descricao}></textarea>
                                 </div>
 
 

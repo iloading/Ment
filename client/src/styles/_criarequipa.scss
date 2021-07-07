@@ -155,7 +155,7 @@
     }
   }
 
-  #inputPesquisar {
+  .inputPesquisar {
     display: grid;
     grid-template-columns: 0.09fr auto 0.09fr;
     grid-template-areas: ". input .";
@@ -166,6 +166,8 @@
       padding: 0 1rem 0 1rem;
       background-color: $input-color-lightblue;
       width: 100%;
+    }
+    #inputRole {
       grid-area: input;
     }
     #inputPesquisa::placeholder {
