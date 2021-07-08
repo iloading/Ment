@@ -7,7 +7,7 @@ import MinhaEquipaCriarSessao from '../components/MinhaEquipaCriarSessao'
 import criarSessao1_semBack from "../../img/criarSessoes/criarSessao1_semBack.svg"
 
 import iconDefinicoes from "../../img/icons/icon_settings.svg";
-import iconAdicionar from "../../img/icons/icon_adicionar.svg";
+
 
 import { Link } from "react-router-dom"
 //REDUX//
@@ -56,9 +56,7 @@ function CriarSessao2() {
                     <div className="tituloPag criarEquipaTitulo" id="tituloPag">
                         <div className="gridAdicionar">
                             <label className="tituloCriarEquipas desktop">Associar equipa</label>
-                            <div className="imgCriarEquipas">
-                                <img src={iconAdicionar} alt="" />
-                            </div>
+
                         </div>
 
                     </div>
