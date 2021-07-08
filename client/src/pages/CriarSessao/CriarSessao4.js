@@ -75,22 +75,22 @@ function CriarSessao4() {
                                 </div>
 
                                 <Link to='/criarsessao/5' className="decorationLinks">
-                                    <button className="botaoAzul widthBotao">
+                                    <div className="botaoAzul widthBotao">
                                         <button id="divBotao">
                                             <div id="botao" >
                                                 <p id="textoBotao">Preencher agora</p>
                                             </div>
                                         </button>
-                                    </button>
+                                    </div>
                                 </Link>
                                 <Link to={`/perfilEquipa/${dadosPreenchidos.equipaEscolhida}`} className="decorationLinks">
-                                    <button className="botaoAzul widthBotao" onClick={submitHandler}>
+                                    <div className="botaoAzul widthBotao" onClick={submitHandler}>
                                         <button id="divBotao">
                                             <div id="botao" >
                                                 <p id="textoBotao">Mais tarde</p>
                                             </div>
                                         </button>
-                                    </button>
+                                    </div>
                                 </Link>
 
                             </section>
