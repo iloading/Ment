@@ -635,7 +635,7 @@
 
       .conteudoEsquerda {
         grid-area: conteudoEsquerda;
-        overflow: hidden;
+        /* overflow: hidden; */
         height: 100%;
         #corpo {
           margin: 1rem 2rem 0rem 2rem;
