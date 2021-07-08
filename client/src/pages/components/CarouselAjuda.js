@@ -13,7 +13,7 @@ function CarouselAjuda() {
         slidesToShow: 1,
         rows: 2,
         slidesToScroll: 1,
-        arrows: false
+
 
     };
     return (

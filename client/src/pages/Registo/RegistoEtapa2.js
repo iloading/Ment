@@ -109,8 +109,8 @@ function RegistoEtapa2({ dados, setDados, validadeFormulario2, setvalidadeFormul
                     </div>
                 </aside>
             </div>
-            <div id="main">
-                <section id="main" className="conteudoMain registo">
+            <div id="main" className="registo">
+                <section id="main" className="conteudoMain">
 
                     {/*DESKTOP*/}
                     <div id="bemvindo">
@@ -119,9 +119,7 @@ function RegistoEtapa2({ dados, setDados, validadeFormulario2, setvalidadeFormul
                             <h3>Bom dia,</h3>
                             <h1>Registar</h1>
                         </div>
-                        <div className="icons">
-                            <button type="button" className="botaoLogin" onClick={redirectLogin}>Entrar</button>
-                        </div>
+
 
                     </div>
 

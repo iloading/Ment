@@ -14,7 +14,7 @@ function ResumoSessao({ sessao, status }) {
                     <div className="conteudo">
 
                         <div className="conteudoResumo">
-                            <div className="titulos_top">
+                            <div className="titulos_top_mobile">
                                 <label>Descrição</label>
                             </div>
 
@@ -47,8 +47,8 @@ function ResumoSessao({ sessao, status }) {
                                     </div>
 
                                     <div className="unidadeCurricolar">
-                                        <label className="tituloFactos">Unidade Curricular</label>
-                                        <label className="textoFactos">{subject}</label>
+                                        <label className="tituloFactos">Factos Ficcionais</label>
+                                        <label className="textoFactos">{factos_ficcionais}</label>
                                     </div>
                                 </div>
                             </div>

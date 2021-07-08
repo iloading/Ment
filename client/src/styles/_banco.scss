@@ -168,6 +168,7 @@
 
 @media only screen and (min-width: 1024px) {
   .banco {
+    overflow: auto;
     aside.menu_principal {
       position: sticky;
       top: 0;
@@ -179,7 +180,8 @@
       padding-right: 4rem;
       padding-top: 2rem;
       margin: 0;
-      overflow: hidden;
+
+      height: 100%;
 
       .searchBarMobile {
         display: none;

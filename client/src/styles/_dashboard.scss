@@ -203,11 +203,6 @@
           height: 100%;
           padding-left: 0.5rem;
           padding-right: 0.5rem;
-          div {
-            height: 45%;
-            margin-bottom: 2.5%;
-            margin-top: 2.5%;
-          }
 
           .cards {
             background-color: white;
@@ -223,7 +218,7 @@
             }
             div {
               align-self: center;
-              padding-left: 1rem;
+              padding: 1rem;
               label {
                 color: #042454;
                 font-size: 1rem;
@@ -263,6 +258,7 @@
 
 @media only screen and (min-width: 1024px) {
   .dashboard {
+    overflow: auto;
     .conteudoMain {
       display: grid;
       grid-template-rows: 0.5fr 4rem 1.5fr 0.3fr 1fr;
@@ -274,7 +270,7 @@
         display: grid;
         background-color: $button-type3-background;
         margin-left: 5%;
-        overflow: auto;
+
         grid-template-rows: auto 1fr;
         border-radius: 4px;
 
@@ -304,11 +300,6 @@
             height: 100%;
             padding-left: 0.5rem;
             padding-right: 0.5rem;
-            div {
-              height: 45%;
-              margin-bottom: 2.5%;
-              margin-top: 2.5%;
-            }
 
             .cards {
               background-color: white;
@@ -324,7 +315,7 @@
               }
               div {
                 align-self: center;
-                padding-left: 1rem;
+                padding: 0.5rem;
                 label {
                   color: #042454;
                   font-size: 1rem;
@@ -351,6 +342,18 @@
           }
           .slick-track {
             height: 100%;
+          }
+          .slick-prev:before {
+            color: #042454;
+          }
+          .slick-next:before {
+            color: #042454;
+          }
+          .slick-next {
+            right: -35px;
+          }
+          .slick-prev {
+            left: -35px;
           }
         }
 

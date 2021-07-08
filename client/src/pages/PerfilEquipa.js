@@ -22,6 +22,7 @@ import { useDispatch, useSelector } from 'react-redux'
 
 
 
+
 function PerfilEquipa() {
     let { path, url } = useRouteMatch()
     let id = url.split("/")[2]
@@ -30,9 +31,10 @@ function PerfilEquipa() {
         dispatch(loadPerfilEquipa(id))
 
 
+
     }, [dispatch, id])
 
-    const { sessoesEquipa: sessoes, status } = useSelector(state => state.perfilequipa)
+    const { sessoesEquipa: sessoes, status_sessoes, status_equipa, equipa } = useSelector(state => state.perfilequipa)
 
 
 
@@ -43,13 +45,13 @@ function PerfilEquipa() {
 
         <article className="perfilEquipas">
 
-            {status === 'completed' &&
+            {status_equipa === 'completed' &&
 
                 <section id="main" className="conteudoMain">
 
                     <div className="titulo">
                         <img src={iconEquipa} alt="" className="iconTitulo" />
-                        <label className="tituloMain">{sessoes[0].school}</label>
+                        <label className="tituloMain">{equipa.escola}</label>
                         <div className="botaoManage">
                             <img src={iconTresPontos} alt="" />
                         </div>
@@ -57,8 +59,8 @@ function PerfilEquipa() {
 
                     <div className="infoPerfil">
                         <img src={avatar} alt="" />
-                        <label>{sessoes[0].team_name}</label>
-                        <span>{sessoes[0].descripton}</span>
+                        <label>{equipa.name}</label>
+                        <span>{equipa.descripton}</span>
 
                     </div>
 
@@ -73,7 +75,7 @@ function PerfilEquipa() {
 
 
                         <div className="listaNarrativas">
-                            {status === "completed" && sessoes.map(sessao => <Narrativa key={sessao.id} sessao={sessao} status={status} />)}
+                            {status_sessoes === "completed" && sessoes.map(sessao => <Narrativa key={sessao.id} sessao={sessao} status={status_sessoes} />)}
                         </div>
 
 

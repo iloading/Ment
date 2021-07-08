@@ -548,6 +548,7 @@
 
 @media only screen and (min-width: 1024px) {
   .criarEquipa {
+    overflow: auto;
     .conteudoMain {
       display: grid;
       grid-template-rows: auto 4rem 1fr;
@@ -625,7 +626,7 @@
       grid-template-columns: 1.5fr 1fr;
       grid-template-areas: "conteudoEsquerda conteudoDireita";
       grid-column-gap: 1rem;
-      overflow: hidden;
+      overflow: auto;
       height: 100%;
 
       .conteudoEsquerda {
