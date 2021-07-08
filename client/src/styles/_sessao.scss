@@ -1,7 +1,11 @@
 .sessao {
-  grid-template-rows: auto 1fr 3rem;
+  display: grid;
+  grid-template-rows: auto 1fr;
   overflow: hidden;
-
+  height: 100%;
+  .navbar {
+    margin: 1rem 0 1rem 1rem;
+  }
   #nav {
     grid-area: nav;
     z-index: 10;
@@ -477,6 +481,9 @@
 
 @media only screen and (min-width: 1024px) {
   .sessao {
+    .navbar {
+      display: none;
+    }
     #nav {
       display: none;
     }
@@ -552,7 +559,7 @@
         overflow: hidden;
 
         .conteudoResumo {
-          overflow: scroll;
+          overflow: auto;
           overflow-x: hidden;
           .conteudoPlano {
             .titulo {
@@ -577,7 +584,7 @@
           grid-template-rows: auto auto;
           grid-gap: 1.5rem;
           padding: 0 1rem 1rem 1rem;
-          overflow: scroll;
+          overflow: auto;
           overflow-x: hidden;
           .ficheirosPrincipais {
             .titulo1 {
@@ -603,7 +610,7 @@
         .conteudoDetalhes {
           display: grid;
           grid-row-gap: 1.5rem;
-          overflow: scroll;
+          overflow: auto;
           overflow-x: hidden;
           .conteudoPlano {
             .detalhesConteudo {

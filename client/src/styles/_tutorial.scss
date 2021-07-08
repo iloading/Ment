@@ -116,7 +116,7 @@
       margin: 0;
       overflow: hidden;
       grid-row-gap: 1rem;
-
+      height: 100%;
       .navTutorial {
         display: grid;
         grid-template-columns: 1.5fr 1fr;
@@ -174,7 +174,7 @@
         grid-column-gap: 2rem;
         overflow: hidden;
         .listaEtapas {
-          overflow: scroll;
+          overflow: auto;
           overflow-x: hidden;
           #linkCaixa {
             text-decoration: none;

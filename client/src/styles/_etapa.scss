@@ -1,5 +1,6 @@
 .etapa {
   .conteudoMain {
+    height: 100%;
     display: grid;
     .titulosTop {
       display: grid;
@@ -263,7 +264,7 @@
         overflow: hidden;
 
         .etapaLista {
-          overflow: scroll;
+          overflow: auto;
           overflow-x: hidden;
           .fundoAzul {
             border-radius: 10px;
@@ -319,7 +320,7 @@
         }
 
         .listaEtapas {
-          overflow: scroll;
+          overflow: auto;
         }
       }
     }

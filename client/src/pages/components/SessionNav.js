@@ -13,7 +13,7 @@ function Navbar({ sessao, status }) {
     return (
         <>
             {status === "completed" &&
-                <section section id="nav">
+                <section className='navbar'>
                     <div className="barraSocial" id="barraSocial">
                         <Link to='../dashboard' className="decorationLinks">
                             <img src={setaAtras} alt="" />

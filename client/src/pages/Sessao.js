@@ -39,9 +39,9 @@ function Sessao() {
     return (
         <>
             {status === 'completed' &&
-                <article className="sessao">
+                <article id="main" className="sessao">
                     <SessionNav sessao={sessao} status={status} />
-                    <section id="main" className="conteudoMain">
+                    <section className="conteudoMain">
                         <div id="bemvindo">
 
                             <div className="bemvindo_titulos">
