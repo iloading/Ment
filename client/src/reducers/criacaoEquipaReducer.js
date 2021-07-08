@@ -1,5 +1,6 @@
 const initState = {
     dadosPreenchidos: { nome: '', alias: '', descricao: '', school: [], mentores: [] },
+    novaEquipa: null,
 }
 
 const criarEquipaReducer = (state = initState, action) => {
@@ -23,6 +24,11 @@ const criarEquipaReducer = (state = initState, action) => {
         case 'ELIMINAR_MENTOR':
             state.dadosPreenchidos.mentores.splice(action.payload.mentor_eliminado, 1);
             return { ...state };
+        case 'EQUIPA_CRIADA':
+            return { ...state, novaEquipa: action.payload.idEquipa }
+        case 'CLEAR_CRIAR_EQUIPA':
+            return { ...state, novaEquipa: null, dadosPreenchidos: { nome: '', alias: '', descricao: '', school: [], mentores: [] } }
+
 
 
 

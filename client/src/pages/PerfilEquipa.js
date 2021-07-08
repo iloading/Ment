@@ -73,12 +73,12 @@ function PerfilEquipa() {
                             </div>
                         </div>
 
-
-                        <div className="listaNarrativas">
-                            {status_sessoes === "completed" && sessoes.map(sessao => <Narrativa key={sessao.id} sessao={sessao} status={status_sessoes} />)}
+                        {status_sessoes === "completed" && sessoes.length === 0 ? <div>ola teste</div> : <div className="listaNarrativas">
+                            {sessoes.map(sessao => <Narrativa key={sessao.id} sessao={sessao} status={status_sessoes} />)}
                         </div>
 
 
+                        }
 
 
 

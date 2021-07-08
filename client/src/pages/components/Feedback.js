@@ -17,10 +17,13 @@ function Feedback() {
         dispatch(hideFeedback())
     }
     useEffect(() => {
-        setTimeout(() => {
-            dispatch(hideFeedback());
-        }, 5000);
-    }, [dispatch])
+        if (status) {
+            setTimeout(() => {
+                dispatch(hideFeedback());
+            }, 5000);
+        }
+
+    }, [status, dispatch])
 
     return (
         <>

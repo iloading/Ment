@@ -103,7 +103,7 @@ function CriarEquipa5() {
 
                                     id='inputRole'
                                     className='react-select-form'
-                                    placeholder={'Pesquisar por Nome | Email'}
+                                    placeholder={'Pesquise pelo email completo dos mentores. '}
                                     value={dadosPreenchidos.mentores.map(mentor => ({ label: mentor.label, value: mentor.value, info: mentor.info }))}
                                 />
                             </div>

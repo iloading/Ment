@@ -13,9 +13,11 @@ const db = require('../config/db');
 router.post('/', validateToken, async (req, res) => {
 
     let { nome, alias, descricao, school, mentores } = req.body
-    if (nome !== '' && alias !== '' && descricao !== '' && school.length > 0 && mentores.length > 0) {
+    /* console.log(nome, alias, descricao, school, mentores); */
+    if (nome !== '' && alias !== '' && descricao !== '' && school.length > 0) {
         try {
-            await db.query("INSERT INTO team (name, descripton, school_id, url) VALUES (?, ?, ?, ?)", [], (err, result) => {
+
+            let nova_team_id = await db.query("INSERT INTO team (name, alias, descripton, school_id, url) VALUES (?, ?, ?, ?, '1.png')", [nome, alias, descricao, school[0].id], (err, result1) => {
                 //Se der erro, devolver o mesmo
                 if (err) {
                     console.log(err);
@@ -23,38 +25,63 @@ router.post('/', validateToken, async (req, res) => {
                         error: err
                     });
                 } else {
-                    console.log(result);
-                    res.json({
-                        success: result
-                    })
+                    try {
+                        db.query("INSERT INTO user_has_team (user_id, team_id, is_owner) VALUES (?, ?, 1)", [req.userid, result1.insertId], (err, result) => {
+                            //Se der erro, devolver o mesmo
+                            if (err) {
+                                console.log(err);
+                                res.json({
+                                    error: err
+                                });
+                            } else {
+                                if (mentores.length > 0) {
+                                    mentores.forEach(mentor => {
+                                        try {
+                                            db.query("INSERT INTO user_has_team (user_id, team_id, is_owner) VALUES (?, ?, 0)", [mentor.value, result.insertId], (err, result) => {
+                                                //Se der erro, devolver o mesmo
+                                                if (err) {
+                                                    console.log(err);
+                                                    res.json({
+                                                        error: err
+                                                    });
+                                                } else {
+
+
+                                                    res.json({
+                                                        success: 'A sua equipa foi criada com sucesso! O próximo passo é criar a primeira sessão.',
+                                                        idEquipa: result1.insertId
+                                                    })
+                                                }
+
+                                            })
+
+                                        } catch (error) {
+
+                                        }
+                                    });
+                                } else {
+                                    res.json({
+                                        success: 'A sua equipa foi criada com sucesso! O próximo passo é criar a primeira sessão.',
+                                        idEquipa: result1.insertId
+                                    })
+                                }
+
+                            }
+
+                        })
+
+                    } catch (error) {
+
+                    }
+
                 }
 
             })
 
         } catch (error) {
 
-        } mentores.forEach(mentor => {
-            try {
-                db.query("INSERT INTO user_has_team (user_id, team_id, is_owner) VALUES (?, ?, 0)", [mentor.value,], (err, result) => {
-                    //Se der erro, devolver o mesmo
-                    if (err) {
-                        console.log(err);
-                        res.json({
-                            error: err
-                        });
-                    } else {
-                        console.log(result);
-                        res.json({
-                            success: result
-                        })
-                    }
+        }
 
-                })
-
-            } catch (error) {
-
-            }
-        });
     }
 
 

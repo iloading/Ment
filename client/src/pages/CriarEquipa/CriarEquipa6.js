@@ -1,22 +1,31 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import setaAtras from "../../img/icons/icon_setaAtrasAzul.svg"
 import criarEquipa6 from "../../img/criarEquipas/criarEquipa6.svg"
 import criarEquipa6_semBack from "../../img/criarEquipas/criarEquipa6_semBack.svg"
 import iconDefinicoes from "../../img/icons/icon_settings.svg";
-
 import { Link } from "react-router-dom"
 import { useDispatch, useSelector } from 'react-redux'
-import { criarNovaEquipa } from "../../actions/criacaoEquipaAction";
+import { criarNovaEquipa, clearCriarEquipa } from "../../actions/criacaoEquipaAction";
+import { useHistory } from 'react-router';
+
 function CriarEquipa6() {
     const dispatch = useDispatch()
+    const history = useHistory();
 
-
-    const { dadosPreenchidos } = useSelector(state => state.criarEquipa)
+    const { dadosPreenchidos, novaEquipa } = useSelector(state => state.criarEquipa)
 
     const handleCriarEquipa = () => {
         dispatch(criarNovaEquipa(dadosPreenchidos))
     }
+
+    useEffect(() => {
+        if (novaEquipa !== null) {
+            history.push(`/perfilEquipa/${novaEquipa}`)
+            dispatch(clearCriarEquipa(dadosPreenchidos))
+        }
+    }, [novaEquipa, history])
+
     return (
 
         <article className="criarEquipa">

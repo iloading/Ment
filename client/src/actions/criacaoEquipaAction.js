@@ -78,14 +78,31 @@ export const eliminarMentor = (selected) => async (dispatch) => {
 
 export const criarNovaEquipa = (dados) => async (dispatch) => {
 
-    await criarEquipa(dados);
-
+    const criarNovaEquipaDB = await criarEquipa(dados);
     dispatch({
-        type: "CRIAR_NOVA_EQUIPA",
+        type: "SHOW_FEEDBACK",
         payload: {
-            dados: dados
+            message: criarNovaEquipaDB.data.success,
+            type: 'valid',
         }
     })
+    dispatch({
+        type: "EQUIPA_CRIADA",
+        payload: {
+            idEquipa: criarNovaEquipaDB.data.idEquipa
+        }
+    })
+
+
+}
+export const clearCriarEquipa = (dados) => async (dispatch) => {
+
+
+    dispatch({
+        type: "CLEAR_CRIAR_EQUIPA",
+    })
+
+
 }
 
 
