@@ -20,6 +20,10 @@ const criarEquipaReducer = (state = initState, action) => {
             return { ...state, mentores: { mentores: action.payload.mentores } }
         case 'SELECIONAR_MENTOR':
             return { ...state, dadosPreenchidos: { ...state.dadosPreenchidos, mentores: action.payload.mentores_selecionados } }
+        case 'ELIMINAR_MENTOR':
+            state.dadosPreenchidos.mentores.splice(action.payload.mentor_eliminado, 1);
+            return { ...state };
+
 
 
         default:

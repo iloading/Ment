@@ -10,6 +10,10 @@ import { loadUser } from "../../actions/userAction";
 import { Link } from 'react-router-dom'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { useContext } from 'react'
+import { useHistory } from 'react-router-dom'
+import AuthContext from "../../context/AuthContext";
+import { logout } from '../../API'
 
 export function FooterCore() {
 
@@ -50,6 +54,14 @@ function Footer() {
     }, [dispatch])
     const { user, status } = useSelector(state => state.user)
 
+    const { getLoggedIn } = useContext(AuthContext)
+    const history = useHistory();
+
+    const logOutButton = async () => {
+        await logout();
+        await getLoggedIn();
+        history.push('/login')
+    }
 
     return (
         <>
@@ -82,7 +94,7 @@ function Footer() {
                                 </div>
                             </Link>
                             <div id="sair">
-                                <img src={iconTerminar} alt="" />
+                                <img src={iconTerminar} alt="Sair da Conta" onClick={logOutButton} />
                             </div>
                         </div>
                     </div>

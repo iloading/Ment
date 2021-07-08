@@ -49,7 +49,7 @@ export const mudarEscola = (school) => async (dispatch) => {
     })
 }
 export const loadMentores = (pesquisa) => async (dispatch) => {
-    const listaMentores = await carregarMentores({ pesquisa: pesquisa });
+    await carregarMentores({ pesquisa: pesquisa });
     dispatch({
         type: "LOAD_MENTORES_ESCOLA",
         payload: {
@@ -58,11 +58,20 @@ export const loadMentores = (pesquisa) => async (dispatch) => {
     })
 }
 export const selecionarMentor = (selected) => async (dispatch) => {
-    console.log(selected);
+
     dispatch({
         type: "SELECIONAR_MENTOR",
         payload: {
             mentores_selecionados: selected
+        }
+    })
+}
+export const eliminarMentor = (selected) => async (dispatch) => {
+
+    dispatch({
+        type: "ELIMINAR_MENTOR",
+        payload: {
+            mentor_eliminado: selected
         }
     })
 }

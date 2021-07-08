@@ -12,12 +12,9 @@ const db = require('../config/db');
 router.post('/carregarMentores', validateToken, async (req, res) => {
 
     let { pesquisa } = req.body;
-    const pesquisaQuery = ("%" + pesquisa + "%")
 
-    console.log(pesquisaQuery);
-    console.log(req.userid);
     try {
-        const novaSessao = await db.query("SELECT user.id, user.email, user.name, avatar.url, avatar.alt FROM user INNER JOIN avatar ON avatar_id = avatar.id WHERE user.school_id = (SELECT school_id AS Teacher_school FROM user WHERE user.id = ?) AND (user.name LIKE ? OR user.email LIKE ?) AND user.id <> ?", [req.userid, pesquisaQuery, pesquisaQuery, req.userid], (err, result) => {
+        const novaSessao = await db.query("SELECT user.id, user.email, user.name, avatar.url, avatar.alt FROM user INNER JOIN avatar ON avatar_id = avatar.id WHERE user.school_id = (SELECT school_id AS Teacher_school FROM user WHERE user.id = ?) AND user.email = ? AND user.id <> ?", [req.userid, pesquisa, req.userid], (err, result) => {
             //Se der erro, devolver o mesmo
             if (err) {
                 console.log(err);

@@ -2,6 +2,26 @@
   .conteudoMain {
     overflow: hidden;
     height: 100%;
+    .css-1gyv358-control {
+      height: fit-content;
+    }
+    .css-ppyftn-control {
+      height: fit-content;
+    }
+    .eliminar_x {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &:hover {
+        img {
+          width: 25%;
+        }
+      }
+      img {
+        width: 20%;
+      }
+    }
     .tituloAdicionarAlunos {
       display: none;
     }

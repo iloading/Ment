@@ -5,14 +5,14 @@ import avatarUser from "../../img/criarSessoes/avatarEquipa.svg"
 import criarEquipa5_semBack from "../../img/criarEquipas/criarEquipa5_semBack.svg"
 import iconDefinicoes from "../../img/icons/icon_settings.svg";
 import iconAdicionar from "../../img/icons/icon_adicionar.svg";
-
+import x from '../../img/icons/eliminar_aluno_x.svg'
 import { Link } from "react-router-dom"
 import AsyncSelect from 'react-select/async';
 
 import { colourStyles } from './selectStyle';
 
 import { useDispatch, useSelector } from 'react-redux'
-import { selecionarMentor } from '../../actions/criacaoEquipaAction'
+import { selecionarMentor, eliminarMentor } from '../../actions/criacaoEquipaAction'
 import AsyncCreatableSelect from 'react-select/async-creatable';
 //BD
 import { carregarMentores } from '../../API'
@@ -39,6 +39,10 @@ function CriarEquipa5() {
     //Escolha de uma escola
     const handleChange = (e) => {
         dispatch(selecionarMentor(e))
+    }
+    const handleEliminar = (e) => {
+        console.log(e);
+        dispatch(eliminarMentor(e))
     }
     return (
         <article className="criarEquipa">
@@ -100,7 +104,7 @@ function CriarEquipa5() {
                                     id='inputRole'
                                     className='react-select-form'
                                     placeholder={'Pesquisar por Nome | Email'}
-                                /* value={dadosPreenchidos.school.map(school => ({ label: school.name, value: school.id }))} */
+                                    value={dadosPreenchidos.mentores.map(mentor => ({ label: mentor.label, value: mentor.value, info: mentor.info }))}
                                 />
                             </div>
                             <div id="id_titulo2">
@@ -110,14 +114,14 @@ function CriarEquipa5() {
                                 {dadosPreenchidos.mentores.length > 0 &&
                                     dadosPreenchidos.mentores.map(mentor =>
 
-                                        <div className="equipa1">
+                                        <div className="equipa1" key={mentor.info.id}>
                                             <img src={require(`../../img/avatar/${mentor.info.url}`).default} alt={mentor.info.alt} className="avatarEquipa" />
                                             <div className="texto">
                                                 <p className="tituloTexto">{mentor.info.name}</p>
                                                 <p className="escolaTexto">{mentor.info.email}</p>
 
                                             </div>
-                                            <div className="checkbox"></div>
+                                            <div className='eliminar_x' onClick={() => handleEliminar(dadosPreenchidos.mentores.indexOf(mentor))}><img src={x} alt="" /></div>
                                         </div>
 
                                     )
