@@ -7,8 +7,26 @@ import criarSessao3_semBack from "../../img/criarSessoes/criarSessao3_semBack.sv
 import iconDefinicoes from "../../img/icons/icon_settings.svg";
 
 import { Link } from "react-router-dom"
+//REDUX//
+import { preencherSituacaoProblema } from "../../actions/criacaoSessaoAction";
+
+import { useDispatch, useSelector } from 'react-redux'
 
 function CriarSessao6() {
+    const dispatch = useDispatch()
+    const { situacao_problema } = useSelector(state => state.criarSessao.dadosPreenchidos)
+
+    const situacao_problemaHandler = (e) => {
+
+        let situacao;
+        if (e.target.value === '') {
+            situacao = ''
+        } else {
+            situacao = e.target.value
+        }
+
+        dispatch(preencherSituacaoProblema(situacao))
+    }
     return (
         <article className="criarSessao">
             <section id="main" className="conteudoMain">
@@ -65,17 +83,32 @@ function CriarSessao6() {
                                 <div className="formulario">
                                     <label className="tituloFormulario">Situação problema</label>
 
-                                    <textarea type="text" className="textareaTexto" placeholder="Descrição da equipa"></textarea>
+                                    <textarea type="text" className="textareaTexto" placeholder="Descrição da equipa" value={situacao_problema} onChange={situacao_problemaHandler}></textarea>
                                 </div>
-                                <Link to='/criarsessao/7' className="decorationLinks">
-                                    <div className="botaoAzul widthBotao">
-                                        <button id="divBotao">
-                                            <div id="botao" >
-                                                <p id="textoBotao">Próximo passo</p>
-                                            </div>
-                                        </button>
-                                    </div>
-                                </Link>
+                                {situacao_problema !== '' ?
+                                    <Link to='/criarsessao/7' className="decorationLinks">
+                                        <div className="botaoAzul widthBotao">
+                                            <button id="divBotao">
+                                                <div id="botao" >
+                                                    <p id="textoBotao">Próximo passo</p>
+                                                </div>
+                                            </button>
+                                        </div>
+                                    </Link>
+                                    :
+                                    <Link to='/criarsessao/7' className="decorationLinks">
+                                        <div className="botaoAzul widthBotao">
+                                            <button id="divBotao" >
+                                                <div id="botao" >
+                                                    <p id="textoBotao">Preencher mais tarde</p>
+                                                </div>
+                                            </button>
+                                        </div>
+                                    </Link>
+
+
+                                }
+
                             </section>
 
                         </form>

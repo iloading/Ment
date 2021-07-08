@@ -23,6 +23,18 @@ const criarSessaoReducer = (state = initState, action) => {
             return { ...state, dadosPreenchidos: { ...state.dadosPreenchidos, conteudos: action.payload.conteudos } }
         case 'PREENCHER_DESCRICAO':
             return { ...state, dadosPreenchidos: { ...state.dadosPreenchidos, descricao: action.payload.descricao } }
+        case 'PREENCHER_SITUACAO_PROBLEMA':
+            return { ...state, dadosPreenchidos: { ...state.dadosPreenchidos, situacao_problema: action.payload.situacao_problema } }
+        case 'PREENCHER_REAIS':
+            return { ...state, dadosPreenchidos: { ...state.dadosPreenchidos, factos_reais: action.payload.reais } }
+        case 'PREENCHER_FICCIONAIS':
+            return { ...state, dadosPreenchidos: { ...state.dadosPreenchidos, factos_fic: action.payload.ficcionais } }
+        case 'PREENCHER_MENTORES':
+            return { ...state, dadosPreenchidos: { ...state.dadosPreenchidos, funcao_mentores: action.payload.funcao_mentores } }
+        case 'PREENCHER_MENTORANDOS':
+            return { ...state, dadosPreenchidos: { ...state.dadosPreenchidos, funcao_mentorandos: action.payload.funcao_mentorandos } }
+        case 'PREENCHER_RESULTADOS':
+            return { ...state, dadosPreenchidos: { ...state.dadosPreenchidos, resultados_esperados: action.payload.resultados_esperados } }
         case 'FETCH_INFO':
             return { ...state, grausDeEnsino: action.payload.grausEnsino, gruposDisciplinares: action.payload.disciplinas }
         case 'CLEAR_SESSAO':

@@ -7,8 +7,37 @@ import criarSessao3_semBack from "../../img/criarSessoes/criarSessao3_semBack.sv
 import iconDefinicoes from "../../img/icons/icon_settings.svg";
 
 import { Link } from "react-router-dom"
+//REDUX//
+import { preencherMentores, preencherMentorandos } from "../../actions/criacaoSessaoAction";
+
+import { useDispatch, useSelector } from 'react-redux'
 
 function CriarSessao8() {
+    const dispatch = useDispatch()
+    const { funcao_mentores, funcao_mentorandos } = useSelector(state => state.criarSessao.dadosPreenchidos)
+
+    const mentoresHandler = (e) => {
+
+        let mentores;
+        if (e.target.value === '') {
+            mentores = ''
+        } else {
+            mentores = e.target.value
+        }
+
+        dispatch(preencherMentores(mentores))
+    }
+    const mentorandosHandler = (e) => {
+
+        let mentorandos;
+        if (e.target.value === '') {
+            mentorandos = ''
+        } else {
+            mentorandos = e.target.value
+        }
+
+        dispatch(preencherMentorandos(mentorandos))
+    }
     return (
         <article className="criarSessao">
             <section id="main" className="conteudoMain">
@@ -65,21 +94,36 @@ function CriarSessao8() {
                                 <div className="formulario">
                                     <label className="tituloFormulario">Papel dos mentores</label>
 
-                                    <input type="text" className="inputTexto" placeholder="ex: Past tense, teorema de pitágoras"></input>
+                                    <input type="text" className="inputTexto" placeholder="ex: Past tense, teorema de pitágoras" value={funcao_mentores} onChange={mentoresHandler}></input>
 
                                     <label className="tituloFormulario">Papel dos mentorandos</label>
 
-                                    <input type="text" className="inputTexto" placeholder="ex: Past tense, teorema de pitágoras"></input>
+                                    <input type="text" className="inputTexto" placeholder="ex: Past tense, teorema de pitágoras" value={funcao_mentorandos} onChange={mentorandosHandler}></input>
                                 </div>
-                                <Link to='/criarsessao/9' className="decorationLinks">
-                                    <div className="botaoAzul widthBotao">
-                                        <button id="divBotao">
-                                            <div id="botao" >
-                                                <p id="textoBotao">Próximo passo</p>
-                                            </div>
-                                        </button>
-                                    </div>
-                                </Link>
+                                {(funcao_mentores !== '' || funcao_mentorandos !== '') ?
+                                    <Link to='/criarsessao/9' className="decorationLinks">
+                                        <div className="botaoAzul widthBotao">
+                                            <button id="divBotao">
+                                                <div id="botao" >
+                                                    <p id="textoBotao">Próximo passo</p>
+                                                </div>
+                                            </button>
+                                        </div>
+                                    </Link>
+                                    :
+                                    <Link to='/criarsessao/9' className="decorationLinks">
+                                        <div className="botaoAzul widthBotao">
+                                            <button id="divBotao" >
+                                                <div id="botao" >
+                                                    <p id="textoBotao">Preencher mais tarde</p>
+                                                </div>
+                                            </button>
+                                        </div>
+                                    </Link>
+
+
+                                }
+
                             </section>
 
                         </form>

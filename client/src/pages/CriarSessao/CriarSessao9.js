@@ -8,8 +8,32 @@ import iconDefinicoes from "../../img/icons/icon_settings.svg";
 
 import { Link } from "react-router-dom"
 
+//REDUX//
+import { preencherResultados } from "../../actions/criacaoSessaoAction";
+
+import { useDispatch, useSelector } from 'react-redux'
+import { criarNovaSessao } from "../../actions/criacaoSessaoAction";
 
 function CriarSessao9() {
+    const dispatch = useDispatch()
+    const { dadosPreenchidos } = useSelector(state => state.criarSessao)
+
+
+    const resultadosHandler = (e) => {
+
+        let resultados;
+        if (e.target.value === '') {
+            resultados = ''
+        } else {
+            resultados = e.target.value
+        }
+
+        dispatch(preencherResultados(resultados))
+    }
+    const submitHandler = (e) => {
+        dispatch(criarNovaSessao(dadosPreenchidos))
+
+    }
     return (
         <article className="criarSessao">
             <section id="main" className="conteudoMain">
@@ -66,15 +90,18 @@ function CriarSessao9() {
                                 <div className="formulario">
                                     <label className="tituloFormulario">O que se espera da sessão?</label>
 
-                                    <textarea type="text" className="textareaTexto" placeholder="Descrição da equipa"></textarea>
+                                    <textarea type="text" className="textareaTexto" placeholder="Descrição da equipa" value={dadosPreenchidos.resultados_esperados} onChange={resultadosHandler}></textarea>
                                 </div>
-                                <div /* to="/sessao" */ className="botaoAzul widthBotao" /* onClick={submitHandler} */>
-                                    <button id="divBotao">
-                                        <div id="botao" >
-                                            <p id="textoBotao">Criar sessão</p>
-                                        </div>
-                                    </button>
-                                </div>
+
+                                <Link to={`/perfilEquipa/${dadosPreenchidos.equipaEscolhida}`} className="decorationLinks">
+                                    <div className="botaoAzul widthBotao" onClick={submitHandler}>
+                                        <button id="divBotao">
+                                            <div id="botao" >
+                                                <p id="textoBotao">Criar sessão</p>
+                                            </div>
+                                        </button>
+                                    </div>
+                                </Link>
                             </section>
 
                         </form>

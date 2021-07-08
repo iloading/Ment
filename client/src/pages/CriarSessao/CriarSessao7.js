@@ -8,8 +8,37 @@ import iconDefinicoes from "../../img/icons/icon_settings.svg";
 
 import { Link } from "react-router-dom"
 
+//REDUX//
+import { preencherReais, preencherFiccionais } from "../../actions/criacaoSessaoAction";
+
+import { useDispatch, useSelector } from 'react-redux'
 
 function CriarSessao7() {
+    const dispatch = useDispatch()
+    const { factos_reais, factos_fic } = useSelector(state => state.criarSessao.dadosPreenchidos)
+
+    const reaisHandler = (e) => {
+
+        let reais;
+        if (e.target.value === '') {
+            reais = ''
+        } else {
+            reais = e.target.value
+        }
+
+        dispatch(preencherReais(reais))
+    }
+    const ficcionaisHandler = (e) => {
+
+        let fic;
+        if (e.target.value === '') {
+            fic = ''
+        } else {
+            fic = e.target.value
+        }
+
+        dispatch(preencherFiccionais(fic))
+    }
     return (
         <article className="criarSessao">
             <section id="main" className="conteudoMain">
@@ -66,21 +95,36 @@ function CriarSessao7() {
                                 <div className="formulario">
                                     <label className="tituloFormulario">Factos reais</label>
 
-                                    <input type="text" className="inputTexto" placeholder="ex: Past tense, teorema de pitágoras"></input>
+                                    <input type="text" className="inputTexto" placeholder="ex: Past tense, teorema de pitágoras" value={factos_reais} onChange={reaisHandler}></input>
 
                                     <label className="tituloFormulario">Factos ficcionais</label>
 
-                                    <input type="text" className="inputTexto" placeholder="ex: Past tense, teorema de pitágoras"></input>
+                                    <input type="text" className="inputTexto" placeholder="ex: Past tense, teorema de pitágoras" value={factos_fic} onChange={ficcionaisHandler}></input>
                                 </div>
-                                <Link to='/criarsessao/8' className="decorationLinks">
-                                    <div className="botaoAzul widthBotao">
-                                        <button id="divBotao">
-                                            <div id="botao" >
-                                                <p id="textoBotao">Próximo passo</p>
-                                            </div>
-                                        </button>
-                                    </div>
-                                </Link>
+                                {(factos_reais !== '' || factos_fic !== '') ?
+                                    <Link to='/criarsessao/8' className="decorationLinks">
+                                        <div className="botaoAzul widthBotao">
+                                            <button id="divBotao">
+                                                <div id="botao" >
+                                                    <p id="textoBotao">Próximo passo</p>
+                                                </div>
+                                            </button>
+                                        </div>
+                                    </Link>
+                                    :
+                                    <Link to='/criarsessao/8' className="decorationLinks">
+                                        <div className="botaoAzul widthBotao">
+                                            <button id="divBotao" >
+                                                <div id="botao" >
+                                                    <p id="textoBotao">Preencher mais tarde</p>
+                                                </div>
+                                            </button>
+                                        </div>
+                                    </Link>
+
+
+                                }
+
                             </section>
 
                         </form>

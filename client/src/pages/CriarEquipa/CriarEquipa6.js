@@ -76,13 +76,13 @@ function CriarEquipa6() {
 
 
 
-                                <Link className="botaoAzul" to="/" >
-                                    <button id="divBotao" disabled>
-                                        <div id="botao" >
-                                            <p id="textoBotao">Upload</p>
-                                        </div>
-                                    </button>
-                                </Link>
+                                {/* <Link className="botaoAzul" to="/" > */}
+                                <button id="divBotao" disabled>
+                                    <div id="botao" >
+                                        <p id="textoBotao">Upload - Indisponível de momento</p>
+                                    </div>
+                                </button>
+                                {/* </Link> */}
                                 <h3 className='criar_sem_foto' onClick={handleCriarEquipa}><u>Criar equipa sem fotografia</u></h3>
 
                             </section>

@@ -74,11 +74,7 @@ function CriarSessao1() {
                                     </div>
                                     <div className="botaoAzul">
                                         {minhasEquipas.length === 0 ?
-                                            <button id="divBotao" disabled>
-                                                <span id="botao" to='/criarsessao/2'>
-                                                    <p id="textoBotao">Associar uma equipa já existente</p>
-                                                </span>
-                                            </button>
+                                            ''
                                             :
                                             <button id="divBotao" >
                                                 <Link id="botao" to='/criarsessao/2'>
