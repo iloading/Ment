@@ -54,6 +54,7 @@ function CriarEquipa4() {
 
                                 <div>
                                     <p id="texto">Nesta etapa vamos simplesmente adicionar os alunos mentores que deseja à sua equipa. A qualquer altura esta listagem pode ser alterada, de forma a eliminar e adicionar novos alunos, se necessário.</p>
+                                    <p id="texto">De forma a proteger a identidade do corpo educativo, apenas é possível localizar, através do email exato, os alunos pertencentes a cada agrupamento se estes se encontrarem previamente registados na ment.</p>
                                 </div>
 
 
