@@ -9,6 +9,57 @@ const router = express.Router();
 const db = require('../config/db');
 
 
+
+router.post('/', validateToken, async (req, res) => {
+
+    let { nome, alias, descricao, school, mentores } = req.body
+    if (nome !== '' && alias !== '' && descricao !== '' && school.length > 0 && mentores.length > 0) {
+        try {
+            await db.query("INSERT INTO team (name, descripton, school_id, url) VALUES (?, ?, ?, ?)", [], (err, result) => {
+                //Se der erro, devolver o mesmo
+                if (err) {
+                    console.log(err);
+                    res.json({
+                        error: err
+                    });
+                } else {
+                    console.log(result);
+                    res.json({
+                        success: result
+                    })
+                }
+
+            })
+
+        } catch (error) {
+
+        } mentores.forEach(mentor => {
+            try {
+                db.query("INSERT INTO user_has_team (user_id, team_id, is_owner) VALUES (?, ?, 0)", [mentor.value,], (err, result) => {
+                    //Se der erro, devolver o mesmo
+                    if (err) {
+                        console.log(err);
+                        res.json({
+                            error: err
+                        });
+                    } else {
+                        console.log(result);
+                        res.json({
+                            success: result
+                        })
+                    }
+
+                })
+
+            } catch (error) {
+
+            }
+        });
+    }
+
+
+});
+
 router.post('/carregarMentores', validateToken, async (req, res) => {
 
     let { pesquisa } = req.body;

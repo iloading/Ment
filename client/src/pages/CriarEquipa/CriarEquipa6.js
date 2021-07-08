@@ -6,8 +6,17 @@ import criarEquipa6_semBack from "../../img/criarEquipas/criarEquipa6_semBack.sv
 import iconDefinicoes from "../../img/icons/icon_settings.svg";
 
 import { Link } from "react-router-dom"
-
+import { useDispatch, useSelector } from 'react-redux'
+import { criarNovaEquipa } from "../../actions/criacaoEquipaAction";
 function CriarEquipa6() {
+    const dispatch = useDispatch()
+
+
+    const { dadosPreenchidos } = useSelector(state => state.criarEquipa)
+
+    const handleCriarEquipa = () => {
+        dispatch(criarNovaEquipa(dadosPreenchidos))
+    }
     return (
 
         <article className="criarEquipa">
@@ -59,13 +68,13 @@ function CriarEquipa6() {
 
 
                                 <Link className="botaoAzul" to="/" >
-                                    <button id="divBotao">
+                                    <button id="divBotao" disabled>
                                         <div id="botao" >
                                             <p id="textoBotao">Upload</p>
                                         </div>
                                     </button>
                                 </Link>
-
+                                <h3 className='criar_sem_foto' onClick={handleCriarEquipa}><u>Criar equipa sem fotografia</u></h3>
 
                             </section>
 

@@ -1,4 +1,4 @@
-import { carregarEscolaOwner, carregarMentores } from '../API'
+import { carregarEscolaOwner, carregarMentores, criarEquipa } from '../API'
 
 
 
@@ -76,9 +76,9 @@ export const eliminarMentor = (selected) => async (dispatch) => {
     })
 }
 
-/* export const criarNovaSessao = (dados) => async (dispatch) => {
+export const criarNovaEquipa = (dados) => async (dispatch) => {
 
-    const minhasEquipasDB = await criarSessao(dados);
+    await criarEquipa(dados);
 
     dispatch({
         type: "CRIAR_NOVA_EQUIPA",
@@ -86,14 +86,7 @@ export const eliminarMentor = (selected) => async (dispatch) => {
             dados: dados
         }
     })
-} */
+}
 
-/* export const loadInfo = () => async (dispatch) => {
-    const grausEnsino = await listaGrausEnsino();
-    const gruposDisciplinares = await listaGruposDisciplinares();
-    dispatch({
-        type: "FETCH_INFO",
-        payload: { grausEnsino: grausEnsino.data.success, disciplinas: gruposDisciplinares.data.success }
-    })
-} */
+
 
