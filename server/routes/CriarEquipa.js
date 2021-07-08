@@ -37,7 +37,7 @@ router.post('/', validateToken, async (req, res) => {
                                 if (mentores.length > 0) {
                                     mentores.forEach(mentor => {
                                         try {
-                                            db.query("INSERT INTO user_has_team (user_id, team_id, is_owner) VALUES (?, ?, 0)", [mentor.value, result.insertId], (err, result) => {
+                                            db.query("INSERT INTO user_has_team (user_id, team_id, is_owner) VALUES (?, ?, 0)", [mentor.value, result1.insertId], (err, result) => {
                                                 //Se der erro, devolver o mesmo
                                                 if (err) {
                                                     console.log(err);
@@ -47,10 +47,7 @@ router.post('/', validateToken, async (req, res) => {
                                                 } else {
 
 
-                                                    res.json({
-                                                        success: 'A sua equipa foi criada com sucesso! O próximo passo é criar a primeira sessão.',
-                                                        idEquipa: result1.insertId
-                                                    })
+
                                                 }
 
                                             })
@@ -59,6 +56,10 @@ router.post('/', validateToken, async (req, res) => {
 
                                         }
                                     });
+                                    res.json({
+                                        success: 'A sua equipa foi criada com sucesso! O próximo passo é criar a primeira sessão.',
+                                        idEquipa: result1.insertId
+                                    })
                                 } else {
                                     res.json({
                                         success: 'A sua equipa foi criada com sucesso! O próximo passo é criar a primeira sessão.',

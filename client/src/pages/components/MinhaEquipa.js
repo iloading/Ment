@@ -12,8 +12,8 @@ function MinhaEquipa({ alias, name, schoolName, numero, equipa }) {
                     <div className="minhasEquipasCard">
                         <img src={minhasSessoes_desktop} alt="" className="iconTitulo" />
                         <div className="cardInfo">
-                            <label id="labelAno">{alias}</label>
-                            <p id="disciplina">{name}</p>
+                            <label id="labelAno">{name}</label>
+                            <p id="disciplina">{alias}</p>
                             <span id="escola">{schoolName}</span>
                         </div>
                     </div>
