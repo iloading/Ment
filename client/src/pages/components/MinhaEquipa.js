@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function MinhaEquipa({ alias, name, schoolName, numero, equipa }) {
 
-    console.log(equipa);
+
     return (
         <>
             {equipa &&
