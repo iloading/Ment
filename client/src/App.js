@@ -18,26 +18,30 @@ import MinhasEquipas from "./pages/MinhasEquipas";
 import PerfilEquipa from "./pages/PerfilEquipa";
 import Navbar from "./pages/components/Navbar"
 import Footer from "./pages/components/Footer"
-import { useContext } from 'react'
+import { useContext, useState, useEffect } from 'react'
 
 import AuthContext from "./context/AuthContext";
 import Feedback from './pages/components/Feedback'
 
 
 //REACT ROUTER
-import { Route, Switch, Redirect, useRouteMatch } from "react-router-dom";
+import { Route, Switch, Redirect, useRouteMatch, useLocation } from "react-router-dom";
 
 function App() {
   const { loggedIn } = useContext(AuthContext);
+  const location = useLocation();
+  const [isHomePage, setIsHomePage] = useState()
 
-  let isHomepage = window.location.pathname === "/"
+  useEffect(() => {
+    setIsHomePage(location.pathname === '/')
+  }, [location])
 
 
 
 
   return (
 
-    <main className={`App ${!isHomepage ? "layout" : "homepageLayout"}`}>
+    <main className={`App ${!isHomePage ? "layout" : "homepageLayout"}`}>
 
 
 

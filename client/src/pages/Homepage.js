@@ -10,6 +10,8 @@ import comoFunciona2 from "../img/comoFunciona2.svg";
 import comoFunciona3 from "../img/comoFunciona3.svg";
 import comoFunciona4 from "../img/comoFunciona4.svg";
 
+import { Link } from "react-router-dom";
+
 import { useHistory } from "react-router-dom"
 
 
@@ -18,6 +20,7 @@ import { useHistory } from "react-router-dom"
 function Homepage() {
     let history = useHistory();
     const redirectLogin = () => { history.push("/login") }
+    const redirectRegisto = () => { history.push("/registo") }
 
     return (
         <>
@@ -28,7 +31,8 @@ function Homepage() {
                     <img src={navLogo} alt="logo navbar" id="logo" />
 
                     <div id="login">
-                        <button type="button" className="botao btnRegisto" onClick={redirectLogin}>Registar</button>
+
+                        <button type="button" className="botao btnRegisto" onClick={redirectRegisto}>Registar</button>
                         <button type="button" className="botao btnLogin" onClick={redirectLogin}>Entrar</button>
                     </div>
 
