@@ -1,0 +1,419 @@
+.boasVindas {
+  overflow: auto;
+
+  .conteudoMain {
+    overflow: auto;
+    height: 100%;
+    .bemvindo_titulos {
+      h3 {
+        visibility: hidden;
+      }
+    }
+
+    .conteudoMid {
+      .formularioRegisto {
+        display: grid;
+        grid-template-columns: 1fr;
+
+        .registoImg {
+          position: relative;
+          text-align: center;
+          background-color: #f5f5f5;
+          border-radius: 4px;
+          height: 35vh;
+          img {
+            max-width: 100%;
+            max-height: 100%;
+          }
+
+          .setaTras {
+            position: absolute;
+            padding: 1.5rem;
+            text-align: initial;
+          }
+        }
+
+        #etapa1 {
+          /* Comentado porque tirei o paragrafo, não acho que seja necessario */
+          grid-template-rows: 3rem /* auto */ 1fr 8rem 5rem;
+        }
+        #etapa2 {
+          grid-template-rows: 3rem auto 1fr 1fr auto;
+          padding-bottom: 1.5rem;
+
+          .inputFormulario {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+          }
+          /* section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+          }
+          .botao {
+            align-items: center;
+          } */
+        }
+        #etapa3 {
+          padding-bottom: 1.5rem;
+        }
+        #etapa4_student {
+          grid-template-rows: 3rem auto 1fr auto;
+          padding-bottom: 1.5rem;
+        }
+        #etapa4_teacher {
+          grid-template-rows: 3rem auto 1fr 1fr auto;
+          padding-bottom: 1.5rem;
+        }
+        .formulario {
+          display: grid;
+          grid-template-columns: 1fr;
+          padding: 1.5rem 1.5rem 0rem 1.5rem;
+
+          .tituloPrincipal {
+            justify-content: center;
+            label {
+              font-size: $font-size-l;
+              color: $text-main-color;
+              font-weight: $font-weight-boldest;
+            }
+          }
+          .paragrafo {
+            margin-bottom: 1rem;
+            margin-top: 1rem;
+            .marginTexto {
+              margin-bottom: 1rem;
+            }
+            p {
+              color: $text-main-color;
+              font-weight: $font-weight-normal;
+            }
+          }
+          label {
+            font-size: $font-size-s;
+            font-weight: $font-weight-normal;
+            color: $text-main-color;
+          }
+          .react-select-form {
+            font-family: $font_family;
+            font-weight: 400;
+            font-size: 0.8rem;
+            margin-top: 1rem;
+            .css-g1d714-ValueContainer {
+              padding: 0;
+            }
+          }
+          .inputFormulario {
+            position: relative;
+            display: none;
+            input {
+              border: none;
+              border-radius: 4px;
+              height: 40px;
+              padding: 0 1rem 0 1rem;
+              background-color: $input-color-lightblue;
+              width: 100%;
+            }
+
+            div {
+              display: flex;
+              position: relative;
+              align-items: center;
+              margin-top: 1rem;
+
+              img {
+                position: absolute;
+                right: 5%;
+              }
+
+              input::placeholder {
+                color: lightgray;
+              }
+              input:focus {
+                outline: 0;
+              }
+            }
+
+            .error {
+              margin-top: 0.1rem;
+              margin-bottom: 0.5rem;
+              min-height: 20px;
+              color: red;
+              font-size: 0.8rem;
+              position: relative;
+              p {
+                position: absolute;
+              }
+              label {
+                font-size: $font-size-s;
+                font-weight: $font-weight-normal;
+                color: $text-main-color;
+              }
+            }
+          }
+
+          .botao {
+            text-align: center;
+            align-self: center;
+            width: 100%;
+            button {
+              border-radius: 5px;
+              border: none;
+              width: 90%;
+              padding: 1rem;
+              background-color: $button-type2-background;
+              font-size: $font-size-l;
+              color: white;
+              font-weight: $font-weight-bolder;
+              &:hover {
+                cursor: pointer;
+              }
+              &:disabled {
+                background-color: #f5f5f5;
+                cursor: not-allowed;
+                color: $text-type3-color;
+              }
+            }
+          }
+          .tituloFooter {
+            display: grid;
+
+            text-align: center;
+            margin-top: 0;
+            a {
+              text-decoration: none;
+              font-size: $font-size-xs;
+              font-weight: $font-weight-bolder;
+              color: $text-main-color;
+            }
+          }
+          .error {
+            margin-top: 0.1rem;
+            margin-bottom: 0.5rem;
+            min-height: 20px;
+            color: red;
+            font-size: 0.8rem;
+            position: relative;
+            p {
+              position: absolute;
+            }
+          }
+        }
+
+        .avatarSelect {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr 1fr;
+          grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+
+          justify-items: center;
+          align-items: center;
+          margin: 1.5rem 0;
+          position: relative;
+          img {
+            position: relative;
+            margin: 1vh;
+            height: 8vh;
+          }
+          .selectedAvatar {
+            background-color: $button-type2-background;
+            border-radius: 50%;
+            margin: 0px;
+            height: 10vh;
+            padding: 1vh;
+          }
+        }
+      }
+    }
+  }
+}
+
+.formularioRegisto_menu {
+  display: none;
+}
+.conteudoDireitaDesktop {
+  display: none;
+}
+@media only screen and (min-width: 1024px) {
+  .formularioRegisto_menu {
+    display: inherit;
+  }
+  .menu_principal_registo {
+    padding: 1rem;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr 3fr 1fr;
+    .asideLogoRegisto {
+      display: flex;
+      justify-content: center;
+      img {
+        width: 30%;
+      }
+    }
+  }
+  .boasVindas {
+    .conteudoMain {
+      display: grid;
+      grid-template-rows: auto 4rem 1fr;
+      padding-right: 4rem;
+      padding-top: 2rem;
+      margin: 0;
+      grid-row-gap: 1rem;
+      padding-left: 1rem;
+      padding-bottom: 1rem;
+
+      .bemvindo_titulos {
+        h3 {
+          visibility: hidden;
+        }
+      }
+      .icons {
+        .botaoLogin {
+          background-color: $button-type1-background;
+          color: $text-main-color;
+          border: none;
+          font-weight: $font-weight-boldest;
+          border-radius: 5px;
+          width: 50%;
+          min-width: 6rem;
+          min-height: 24px;
+          padding: 0.5rem;
+        }
+      }
+      .titulo {
+        display: grid;
+        grid-template-columns: 1.5fr;
+        grid-template-areas: "tituloPag";
+        align-items: center;
+        grid-column-gap: 2.5rem;
+
+        #tituloPag {
+          grid-area: tituloPag;
+          display: grid;
+          grid-template-columns: auto 24rem;
+          grid-template-areas: "conteudo .";
+          .gridAdicionar {
+            display: grid;
+            grid-template-columns: 1fr 1rem;
+            .imgCriarEquipas {
+              display: block;
+            }
+          }
+        }
+        .criarEquipaTitulo {
+          display: block;
+          .tituloCriarEquipas {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #042454;
+            margin-left: 0.5rem;
+          }
+        }
+
+        .desktop {
+          visibility: hidden;
+        }
+      }
+      .formularioCriarSessao {
+        header {
+          display: none;
+        }
+        #corpo {
+          #divBotao {
+            #botao {
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    }
+    .conteudoMid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      grid-template-areas: "conteudoEsquerda conteudoDireita";
+      grid-column-gap: 1rem;
+      /* overflow: hidden; */
+      height: 100%;
+
+      .conteudoEsquerda {
+        grid-area: conteudoEsquerda;
+        /* overflow: hidden; */
+        height: 100%;
+
+        .formularioRegisto {
+          header {
+            display: none;
+          }
+        }
+        .associarEquipa {
+          .headerAssociarEquipa {
+            display: none;
+          }
+        }
+        #corpo {
+          margin: 1rem 2rem 0rem 2rem;
+
+          #titulo {
+            display: none;
+          }
+          #texto {
+            margin-bottom: 1rem;
+            font-size: 1rem;
+          }
+          .formulario {
+            margin-bottom: 1rem;
+            grid-gap: 1rem;
+            .tituloFormulario {
+              margin-top: 0;
+            }
+          }
+          #divBotao {
+            background-color: white;
+          }
+        }
+      }
+      .conteudoDireitaDesktop {
+        display: grid;
+        grid-area: conteudoDireita;
+        text-align: center;
+        padding-left: 2rem;
+        grid-template-rows: 25rem;
+        grid-template-areas: "img";
+
+        .primeiraEtapa {
+          visibility: hidden;
+        }
+        .imgEquipa {
+          width: 90%;
+          justify-self: center;
+          align-self: center;
+          grid-area: img;
+        }
+
+        .botaoEtapaAnterior {
+          display: grid;
+          grid-template-columns: 4rem 1fr;
+          grid-template-areas: "icon botao";
+          background-color: #f8faff;
+          border-radius: 5px;
+          padding: 1.5rem;
+
+          .iconSeta {
+            width: 50%;
+            grid-area: icon;
+            align-self: center;
+          }
+          .textoBotao {
+            grid-area: botao;
+            align-self: center;
+            justify-self: start;
+            color: $text-main-color;
+            font-weight: $font-weight-more-bold;
+            font-size: 0.9375rem;
+            padding-left: 1rem;
+          }
+        }
+      }
+    }
+  }
+}

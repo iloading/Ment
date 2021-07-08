@@ -12,6 +12,7 @@ import Banco from "./pages/Banco";
 import Favoritos from "./pages/Favoritos";
 import Perfil from "./pages/Perfil";
 import Sessao from "./pages/Sessao";
+import BoasVindas from "./pages/BoasVindas";
 import CriarSessao from "./pages/CriarSessao/CriarSessao";
 import CriarEquipa from "./pages/CriarEquipa/CriarEquipa";
 import MinhasEquipas from "./pages/MinhasEquipas";
@@ -29,6 +30,8 @@ import { Route, Switch, Redirect } from "react-router-dom";
 
 function App() {
   const { loggedIn } = useContext(AuthContext);
+
+
 
 
 
@@ -53,7 +56,7 @@ function App() {
 
 
         <Route path='/registo'>
-          {loggedIn ? <Redirect to="/dashboard" /> : <Registo />}
+          {loggedIn ? <Redirect to="/boasvindas" /> : <Registo />}
 
         </Route>
         <Route path="/login">
@@ -78,6 +81,9 @@ function App() {
         </Route>
         <Route path="/perfil">
           <Perfil />
+        </Route>
+        <Route path="/boasvindas">
+          <BoasVindas />
         </Route>
         <Route path="/sessao/:id">
           <Sessao />

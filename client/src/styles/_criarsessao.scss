@@ -80,6 +80,9 @@
               }
             }
           }
+          .widthBotao {
+            width: 100%;
+          }
           button {
             &:disabled {
               display: grid;
@@ -326,6 +329,9 @@
           }
         }
       }
+    }
+    .widthBotao {
+      width: 100%;
     }
     button {
       &:disabled {

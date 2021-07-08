@@ -67,13 +67,15 @@ function CriarSessao6() {
 
                                     <textarea type="text" className="textareaTexto" placeholder="Descrição da equipa"></textarea>
                                 </div>
-                                <div className="botaoAzul">
-                                    <div id="divBotao">
-                                        <div id="botao">
-                                            <p id="textoBotao">Próximo passo</p>
-                                        </div>
-                                    </div>
-                                </div>
+                                <Link to='/criarsessao/7' className="decorationLinks">
+                                    <button className="botaoAzul widthBotao">
+                                        <button id="divBotao">
+                                            <div id="botao" >
+                                                <p id="textoBotao">Próximo passo</p>
+                                            </div>
+                                        </button>
+                                    </button>
+                                </Link>
                             </section>
 
                         </form>

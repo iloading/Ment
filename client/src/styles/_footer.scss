@@ -138,6 +138,10 @@
       grid-template-areas: "inicio" "banco" "criar" "equipa";
     }
 
+    #botoesOff {
+      display: none;
+    }
+
     #banco {
       justify-self: unset;
       grid-area: banco;
@@ -181,6 +185,9 @@
     }
     .asidePerfil {
       display: block;
+    }
+    #asidePerfilOff {
+      display: none;
     }
   }
 }
