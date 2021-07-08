@@ -95,7 +95,7 @@ function Dashboard() {
                             :
                             equipas.length === 1 ?
                                 <>
-                                    <MinhaEquipa key={equipas.id} alias={equipas[0].alias} name={equipas[0].name} schoolName={equipas[0].school_name} />
+                                    <MinhaEquipa key={equipas.id} alias={equipas[0].alias} name={equipas[0].name} schoolName={equipas[0].school_name} equipa={equipas[0]} />
                                     <div className="criarEquipa"></div>
                                 </>
                                 :
