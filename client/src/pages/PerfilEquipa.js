@@ -5,9 +5,12 @@ import avatar from "../img/avatar/avatar_Equipas.svg";
 
 import iconEquipa from "../img/icons/icon_equipa.svg";
 import iconOrdenar from "../img/icons/icon_ordenar.svg";
+import iconMaisAzul from "../img/icons/icon_maisAzul.svg";
 import iconTresPontos from "../img/icons/icon_trespontos_azul.svg";
 
 import Narrativa from "./components/Narrativa";
+
+import { Link } from 'react-router-dom'
 
 //REDUX//
 import { loadPerfilEquipa } from "../actions/perfilequipaAction";
@@ -73,9 +76,21 @@ function PerfilEquipa() {
                             </div>
                         </div>
 
-                        {status_sessoes === "completed" && sessoes.length === 0 ? <div>ola teste</div> : <div className="listaNarrativas">
-                            {sessoes.map(sessao => <Narrativa key={sessao.id} sessao={sessao} status={status_sessoes} />)}
-                        </div>
+                        {status_sessoes === "completed" && sessoes.length === 0 ?
+                            <Link to='/criarsessao' className="decorationLinks">
+                                <div className="equipaSessaoVazia">
+                                    <div className="equipaSessaoVazia_texto">
+                                        <p className="equipaSessaoVazia_texto1">Ainda não tem nenhuma sessão associada a esta equipa</p>
+                                        <p className="equipaSessaoVazia_texto2">Clique aqui para criar uma nova sessão</p>
+                                    </div>
+                                    <div className="equipaSessaoVazia_img">
+                                        <img src={iconMaisAzul} alt="" />
+                                    </div>
+                                </div>
+                            </Link> :
+                            <div className="listaNarrativas">
+                                {sessoes.map(sessao => <Narrativa key={sessao.id} sessao={sessao} status={status_sessoes} />)}
+                            </div>
 
 
                         }
