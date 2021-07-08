@@ -38,6 +38,7 @@
       min-height: 24px;
       padding: 0;
       padding: 1rem 2rem 1rem 2rem;
+      font-size: 0.8rem;
     }
 
     .btnRegisto {
@@ -61,6 +62,7 @@
       h1 {
         text-align: center;
         color: $text-main-color;
+        font-size: 3rem;
       }
       #texto1 {
         color: $text-type4-color;
@@ -76,6 +78,7 @@
       }
       .imagem1Homepage_mobile {
         display: block;
+        width: 70%;
       }
 
       img {
@@ -153,6 +156,7 @@
       h1 {
         text-align: center;
         color: $text-main-color;
+        font-size: 2.2rem;
       }
       #texto1 {
         color: $text-type4-color;
@@ -227,7 +231,7 @@
       justify-self: center;
       color: #042454;
       font-weight: 700;
-      font-size: 2.8rem;
+      font-size: 2.2rem;
     }
 
     .comoFuncionaCards {
@@ -237,15 +241,16 @@
 
       .card {
         display: grid;
-        grid-row-gap: 4rem;
+        grid-row-gap: 1.5rem;
         label {
           justify-self: center;
+          font-size: 1.5rem;
         }
         p {
           justify-self: center;
           color: #003bb9;
           font-weight: 400;
-          font-size: 1.2rem;
+          font-size: 1rem;
         }
 
         img {
@@ -404,17 +409,21 @@
 
 @media only screen and (min-width: 1024px) {
   .homepage {
+    grid-row-gap: 8rem;
     nav {
       grid-template-columns: 0.1fr 1fr 0.5fr 1fr 0.1fr;
-
+      img {
+        width: 100%;
+      }
       #login {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-column-gap: 1rem;
+        margin: 0 5rem 0 5rem;
         .botao {
           width: 100%;
-          padding: 1rem;
-          font-size: 1.2rem;
+          padding: 0.5rem;
+          font-size: 1rem;
         }
       }
     }
@@ -422,10 +431,16 @@
     .topInfo {
       display: grid;
       grid-template-columns: 1fr 1fr;
+      margin: 0 15%;
+      grid-column-gap: 5rem;
 
       .img_textos {
         display: grid;
         grid-gap: 3rem;
+        h1 {
+          text-align: left;
+          font-size: 5.5rem;
+        }
         .imagem1Homepage_mobile {
           display: none;
         }
@@ -434,30 +449,39 @@
       .imagem1Homepage_desktop {
         display: block;
         justify-self: center;
+        width: 100%;
       }
     }
 
     .construcaoPasso {
       display: grid;
       grid-template-columns: 1fr 1fr;
+      margin: 0 15%;
+      grid-column-gap: 5rem;
 
       .img_textos {
         .imagem2Homepage_mobile {
           display: none;
+        }
+        h1 {
+          text-align: end;
+          font-size: 3rem;
         }
       }
 
       .imagem2Homepage_desktop {
         display: block;
         justify-self: center;
+        align-self: center;
+        width: 60%;
       }
     }
 
     .comoFunciona {
       display: grid;
       grid-template-rows: auto 1fr auto;
-      margin: 4rem 2rem;
-      grid-row-gap: 4rem;
+      margin: 0 15%;
+      grid-row-gap: 3rem;
       label {
         justify-self: center;
         color: #042454;
@@ -473,9 +497,10 @@
 
         .card {
           display: grid;
-          grid-row-gap: 4rem;
+          grid-row-gap: 2.5rem;
           label {
             justify-self: center;
+            font-size: 1.5rem;
           }
           p {
             justify-self: center;
