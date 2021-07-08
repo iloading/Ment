@@ -7,8 +7,26 @@ import criarSessao3_semBack from "../../img/criarSessoes/criarSessao3_semBack.sv
 import iconDefinicoes from "../../img/icons/icon_settings.svg";
 
 import { Link } from "react-router-dom"
-
+//REDUX//
+import { preencherDescricao } from "../../actions/criacaoSessaoAction";
+import { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { colourStyles } from './selectStyle';
 function CriarSessao5() {
+    const dispatch = useDispatch()
+    const { descricao } = useSelector(state => state.criarSessao.dadosPreenchidos)
+
+    const descricaoHandler = (e) => {
+        console.log(e.target.value);
+        let Descricao;
+        if (e.target.value === '') {
+            Descricao = null
+        } else {
+            Descricao = e.target.value
+        }
+
+        dispatch(preencherDescricao(Descricao))
+    }
     return (
         <article className="criarSessao">
             <section id="main" className="conteudoMain">
@@ -65,17 +83,30 @@ function CriarSessao5() {
                                 <div className="formulario">
                                     <label className="tituloFormulario">Descrição</label>
 
-                                    <textarea type="text" className="textareaTexto" placeholder="Descrição da equipa"></textarea>
+                                    <textarea type="text" className="textareaTexto" placeholder="Descrição da equipa" value={descricao} onChange={descricaoHandler}></textarea>
                                 </div>
-                                <Link to='/criarsessao/6' className="decorationLinks">
-                                    <button className="botaoAzul widthBotao">
-                                        <button id="divBotao">
+                                {descricao !== '' ?
+                                    <Link to='/criarsessao/6' className="decorationLinks">
+                                        <button className="botaoAzul widthBotao" >
+                                            <button id="divBotao">
+                                                <div id="botao" >
+                                                    <p id="textoBotao">Próximo passo</p>
+                                                </div>
+                                            </button>
+                                        </button>
+                                    </Link>
+                                    :
+
+                                    <button className="botaoAzul widthBotao" disabled>
+                                        <button id="divBotao" disabled>
                                             <div id="botao" >
                                                 <p id="textoBotao">Próximo passo</p>
                                             </div>
                                         </button>
                                     </button>
-                                </Link>
+
+                                }
+
                             </section>
 
                         </form>

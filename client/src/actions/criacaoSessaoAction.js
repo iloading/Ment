@@ -59,6 +59,15 @@ export const preencherConteudos = (conteudos) => async (dispatch) => {
         }
     })
 }
+export const preencherDescricao = (descricao) => async (dispatch) => {
+
+    dispatch({
+        type: "PREENCHER_DESCRICAO",
+        payload: {
+            descricao: descricao
+        }
+    })
+}
 export const criarNovaSessao = (dados) => async (dispatch) => {
 
     await criarSessao(dados);
@@ -68,6 +77,10 @@ export const criarNovaSessao = (dados) => async (dispatch) => {
         payload: {
             dados: dados
         }
+    })
+    dispatch({
+        type: "CLEAR_SESSAO",
+
     })
 }
 export const loadInfo = () => async (dispatch) => {

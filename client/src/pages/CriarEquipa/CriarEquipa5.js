@@ -4,7 +4,7 @@ import setaAtras from "../../img/icons/icon_setaAtrasAzul.svg"
 
 import criarEquipa5_semBack from "../../img/criarEquipas/criarEquipa5_semBack.svg"
 import iconDefinicoes from "../../img/icons/icon_settings.svg";
-import iconAdicionar from "../../img/icons/icon_adicionar.svg";
+/* import iconAdicionar from "../../img/icons/icon_adicionar.svg"; */
 import x from '../../img/icons/eliminar_aluno_x.svg'
 import { Link } from "react-router-dom"
 import AsyncSelect from 'react-select/async';
@@ -65,9 +65,6 @@ function CriarEquipa5() {
                     <div className="tituloPag criarEquipaTitulo" id="tituloPag">
                         <div className="gridAdicionar">
                             <label className="tituloCriarEquipas">Adicionar alunos</label>
-                            <div className="imgCriarEquipas">
-                                <img src={iconAdicionar} alt="" />
-                            </div>
                         </div>
 
                     </div>
@@ -132,7 +129,7 @@ function CriarEquipa5() {
                             <Link className="botaoAzul" to="/criarequipa/6" >
                                 <button id="divBotao">
                                     <div id="botao" >
-                                        <p id="textoBotao">Próximo passo</p>
+                                        <p id="textoBotao">{dadosPreenchidos.mentores.length === 0 ? 'Continuar sem adicionar mentores' : 'Próximo passo'}</p>
                                     </div>
                                 </button>
                             </Link>

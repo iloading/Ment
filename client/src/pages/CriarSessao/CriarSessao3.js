@@ -9,7 +9,7 @@ import iconDefinicoes from "../../img/icons/icon_settings.svg";
 
 import { Link } from "react-router-dom"
 //REDUX//
-import { loadInfo, escolherGrauEscolaridade, escolherDisciplina, preencherNome, preencherConteudos, criarNovaSessao } from "../../actions/criacaoSessaoAction";
+import { loadInfo, escolherGrauEscolaridade, escolherDisciplina, preencherNome, preencherConteudos /* ,criarNovaSessao */ } from "../../actions/criacaoSessaoAction";
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { colourStyles } from './selectStyle';
@@ -59,9 +59,9 @@ function CriarSessao3() {
         }
         dispatch(preencherConteudos(conteudo))
     }
-    const submitHandler = (e) => {
+    /* const submitHandler = (e) => {
         dispatch(criarNovaSessao(dadosPreenchidos))
-    }
+    } */
     return (
         <article className="criarSessao">
             <section id="main" className="conteudoMain">
@@ -154,13 +154,13 @@ function CriarSessao3() {
                                     <input type="text" className="inputTexto" placeholder="ex: Past tense, teorema de pitágoras" onChange={conteudosHandler} value={dadosPreenchidos.conteudos}></input>
                                 </div>
                                 {(dadosPreenchidos.equipaEscolhida) && (dadosPreenchidos.grauEscolhido) && (dadosPreenchidos.DisciplinaEscolhida) && (dadosPreenchidos.nome) && (dadosPreenchidos.conteudos) ?
-                                    <button to="/criarsessao/4" className="botaoAzul" onClick={submitHandler}>
+                                    <Link to="/criarsessao/4" className="botaoAzul" >
                                         <button id="divBotao">
                                             <div id="botao" >
                                                 <p id="textoBotao">Próximo passo</p>
                                             </div>
                                         </button>
-                                    </button>
+                                    </Link>
                                     :
                                     <button id="divBotao" disabled>
                                         <div id="botao" >

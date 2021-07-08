@@ -83,13 +83,16 @@ function CriarSessao4() {
                                         </button>
                                     </button>
                                 </Link>
-                                <button /* to="/sessao" */ className="botaoAzul widthBotao" onClick={submitHandler}>
-                                    <button id="divBotao">
-                                        <div id="botao" >
-                                            <p id="textoBotao">Mais tarde</p>
-                                        </div>
+                                <Link to={`/perfilEquipa/${dadosPreenchidos.equipaEscolhida}`} className="decorationLinks">
+                                    <button className="botaoAzul widthBotao" onClick={submitHandler}>
+                                        <button id="divBotao">
+                                            <div id="botao" >
+                                                <p id="textoBotao">Mais tarde</p>
+                                            </div>
+                                        </button>
                                     </button>
-                                </button>
+                                </Link>
+
                             </section>
 
                         </form>

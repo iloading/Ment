@@ -7,8 +7,21 @@ import criarSessao1_semBack from "../../img/criarSessoes/criarSessao1_semBack.sv
 import iconDefinicoes from "../../img/icons/icon_settings.svg";
 
 import { Link } from 'react-router-dom'
+import { loadminhasEquipas } from "../../actions/minhasEquipasAction";
 
+
+
+import { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 function CriarSessao1() {
+    const dispatch = useDispatch()
+    useEffect(() => {
+        dispatch(loadminhasEquipas())
+
+
+    }, [dispatch])
+
+    const { minhasEquipas, status } = useSelector(state => state.minhasEquipas)
     return (
         <article className="criarSessao">
             <section id="main" className="conteudoMain">
@@ -47,30 +60,39 @@ function CriarSessao1() {
                                 <img src={criarSessao2} alt="criar sessao primeira imagem" />
 
                             </header>
+                            {status === 'completed' &&
+                                <section id="corpo">
+                                    <label id="titulo">Criar uma nova sessão</label>
 
-                            <section id="corpo">
-                                <label id="titulo">Criar uma nova sessão</label>
-
-                                <p id="texto">Para criar uma nova sessão é necessário ter pelo menos uma equipa criada. A partir deste ecrã associar a uma nova sessão uma equipa existente ou criar uma nova equipa!</p>
-                                <div className="botaoAzul">
-                                    <div id="divBotao">
-                                        <Link id="botao" to='/criarEquipa'>
-                                            <p id="textoBotao">Criar uma nova equipa</p>
-                                        </Link>
+                                    <p id="texto">Para criar uma nova sessão é necessário ter pelo menos uma equipa criada. A partir deste ecrã associar a uma nova sessão uma equipa existente ou criar uma nova equipa!</p>
+                                    <div className="botaoAzul">
+                                        <div id="divBotao">
+                                            <Link id="botao" to='/criarEquipa'>
+                                                <p id="textoBotao">Criar uma nova equipa</p>
+                                            </Link>
+                                        </div>
                                     </div>
-                                </div>
-                                <div className="botaoAzul">
-                                    <div id="divBotao">
-                                        <Link id="botao" to='/criarsessao/2'>
-                                            <p id="textoBotao">Associar uma equipa já existente</p>
-                                        </Link>
+                                    <div className="botaoAzul">
+                                        {minhasEquipas.length === 0 ?
+                                            <button id="divBotao" disabled>
+                                                <span id="botao" to='/criarsessao/2'>
+                                                    <p id="textoBotao">Associar uma equipa já existente</p>
+                                                </span>
+                                            </button>
+                                            :
+                                            <button id="divBotao" >
+                                                <Link id="botao" to='/criarsessao/2'>
+                                                    <p id="textoBotao">Associar uma equipa já existente</p>
+                                                </Link>
+                                            </button>}
+
+
                                     </div>
-                                </div>
 
 
 
-                            </section>
-
+                                </section>
+                            }
                         </form>
                     </div>
                     <div className="conteudoDireita">
