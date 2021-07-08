@@ -197,6 +197,32 @@
           }
         }
       }
+      .criarEquipa {
+        background-color: #f8faff;
+        margin-right: 2rem;
+        display: flex;
+        grid-template-areas: "img" "texto";
+        padding: 1rem;
+        grid-row-gap: 2rem;
+        width: 100%;
+        flex-direction: column;
+        justify-content: space-around;
+        .iconEstadoNegativo {
+          width: 50%;
+          grid-area: img;
+          align-self: center;
+          object-fit: fill;
+          justify-self: center;
+        }
+        .textoEstadoNegativo {
+          font-size: 1rem;
+          color: $text-main-color;
+          font-weight: 500;
+          grid-area: texto;
+          align-self: center;
+          text-align: center;
+        }
+      }
     }
   }
 }
@@ -500,6 +526,9 @@
               display: none;
             }
           }
+        }
+        .criarEquipa {
+          height: 60%;
         }
       }
     }
