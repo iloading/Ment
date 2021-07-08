@@ -25,17 +25,19 @@ import Feedback from './pages/components/Feedback'
 
 
 //REACT ROUTER
-import { Route, Switch, Redirect } from "react-router-dom";
+import { Route, Switch, Redirect, useRouteMatch } from "react-router-dom";
 
 function App() {
   const { loggedIn } = useContext(AuthContext);
+
+  let isHomepage = window.location.pathname === "/"
 
 
 
 
   return (
 
-    <main className="App layout">
+    <main className={`App ${!isHomepage ? "layout" : "homepageLayout"}`}>
 
 
 
