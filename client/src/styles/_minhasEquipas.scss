@@ -210,7 +210,7 @@
       padding-top: 2rem;
       margin: 0;
       grid-row-gap: 1rem;
-      overflow: hidden;
+
       .bemvindo_titulos {
         h3 {
           visibility: hidden;
@@ -275,11 +275,9 @@
         display: grid;
         grid-template-columns: 1.5fr 1fr;
         grid-column-gap: 1rem;
-        overflow: hidden;
+        overflow: auto;
 
         .listaMinhasEquipas {
-          overflow: scroll;
-          overflow-x: hidden;
           margin-right: 2rem;
           .cardMinhasEquipas {
             display: grid;
@@ -499,6 +497,22 @@
               }
             }
             .ocultarEquipas {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-width: 1024px) and (max-width: 1160px) {
+  .minhasEquipas {
+    .conteudoMain {
+      .conteudoMid {
+        .listaMinhasEquipas {
+          .cardMinhasEquipas {
+            grid-template-columns: 4rem 1fr 4rem;
+            .leftInfo {
               display: none;
             }
           }

@@ -1,14 +1,19 @@
 const initState = {
     sessoesEquipa: [],
-    status: 'idle'
+    equipa: null,
+    status_sessoes: 'idle',
+    status_equipa: 'idle'
 }
 
 const perfilequipaReducer = (state = initState, action) => {
     switch (action.type) {
-        case 'FETCH_PERFILEQUIPA':
-            return { ...state, sessoesEquipa: action.payload.sessoesEquipa, status: 'completed' }
-        case 'LOADING_PERFILEQUIPA':
+        case 'FETCH_SESSOES_EQUIPA':
+            return { ...state, sessoesEquipa: action.payload.sessoesEquipa, status_sessoes: 'completed' }
+        case 'LOADING_PERFIL_EQUIPA':
             return { ...state, status: 'loading' }
+        case 'FETCH_PERFIL_EQUIPA':
+            return { ...state, equipa: action.payload.equipa, status_equipa: 'completed' }
+
 
 
         default:

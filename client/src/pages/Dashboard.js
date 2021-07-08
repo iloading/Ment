@@ -14,6 +14,7 @@ import { loadDashboard } from "../actions/dashboardAction";
 import { loadDestaque } from "../actions/destaqueAction";
 
 
+
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
@@ -33,6 +34,7 @@ function Dashboard() {
 
         dispatch(loadDashboard())
         dispatch(loadDestaque())
+
 
     }, [dispatch])
 
@@ -89,11 +91,11 @@ function Dashboard() {
                     <div className={`minhasEquipas layout${equipas.length}`}>
 
                         {(equipas.length >= 2 ?
-                            equipas.map(equipa => <MinhaEquipa numero={equipas.indexOf(equipa)} alias={equipa.alias} name={equipa.name} schoolName={equipa.school_name} key={equipa.id} />)
+                            equipas.map(equipa => <MinhaEquipa key={equipa.id} numero={equipas.indexOf(equipa)} alias={equipa.alias} name={equipa.name} schoolName={equipa.school_name} equipa={equipa} />)
                             :
                             equipas.length === 1 ?
                                 <>
-                                    <MinhaEquipa alias={equipas[0].alias} name={equipas[0].name} schoolName={equipas[0].school_name} />
+                                    <MinhaEquipa key={equipas.id} alias={equipas[0].alias} name={equipas[0].name} schoolName={equipas[0].school_name} />
                                     <div className="criarEquipa"></div>
                                 </>
                                 :
@@ -109,7 +111,9 @@ function Dashboard() {
                         <div id="ajuda">
                             <div className="subTitulos">
                                 <h2>Tutoriais</h2>
-                                <label>Ver todos</label>
+                                <Link to="/tutorial" className="decorationLinks linkDireita">
+                                    <label>Ver todos</label>
+                                </Link>
                             </div>
                             <CarouselAjuda />
                         </div>
@@ -128,7 +132,10 @@ function Dashboard() {
                 <div id="ajudaMobile">
                     <div className="subTitulos">
                         <h2>Tutoriais</h2>
-                        <label>Ver todos</label>
+                        <Link to="/tutorial" className="decorationLinks linkDireita">
+                            <label>Ver todos</label>
+                        </Link>
+
                     </div>
                     <CarouselAjuda />
                 </div>

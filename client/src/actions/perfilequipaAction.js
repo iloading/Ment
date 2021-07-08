@@ -1,16 +1,23 @@
-import { perfilequipaInfo } from '../API'
+import { perfilequipaInfo, equipaInfo } from '../API'
 
 export const loadPerfilEquipa = (id) => async (dispatch) => {
     dispatch({
-        type: "LOADING_PERFILEQUIPA"
+        type: "LOADING_PERFIL_EQUIPA"
     })
 
     const sessoesEquipaDB = await perfilequipaInfo({ id: id });
-
+    const equipa = await equipaInfo({ id: id });
+    console.log(sessoesEquipaDB);
     dispatch({
-        type: "FETCH_PERFILEQUIPA",
+        type: "FETCH_SESSOES_EQUIPA",
         payload: {
             sessoesEquipa: sessoesEquipaDB.data.success
+        }
+    })
+    dispatch({
+        type: "FETCH_PERFIL_EQUIPA",
+        payload: {
+            equipa: equipa.data.success[0]
         }
     })
 }

@@ -126,6 +126,7 @@ label {
     grid-template-rows: 100vh;
     grid-template-areas: "menu main";
     grid-row-gap: 0;
+    overflow: hidden;
     #menu_principal {
       display: none;
     }
