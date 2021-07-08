@@ -92,6 +92,34 @@
           justify-self: center;
         }
       }
+      .equipaSessaoVazia {
+        display: grid;
+        grid-template-columns: 1fr 5rem;
+        grid-template-areas: "text img";
+        background-color: $button-type1-background;
+        border-radius: 5px;
+        padding: 1rem;
+        .equipaSessaoVazia_texto {
+          .equipaSessaoVazia_texto1 {
+            font-size: 1rem;
+            font-weight: 500;
+            color: $text-main-color;
+            grid-area: text;
+          }
+          .equipaSessaoVazia_texto2 {
+            font-size: 1rem;
+            font-weight: 300;
+            color: $text-type5-color;
+            grid-area: text;
+            padding-top: 0.2rem;
+          }
+        }
+        .equipaSessaoVazia_img {
+          justify-self: center;
+          align-self: center;
+          grid-area: img;
+        }
+      }
       .listaNarrativas {
         overflow: auto;
 
