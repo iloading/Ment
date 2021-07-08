@@ -119,9 +119,7 @@ function RegistoEtapa2({ dados, setDados, validadeFormulario2, setvalidadeFormul
                             <h3>Bom dia,</h3>
                             <h1>Registar</h1>
                         </div>
-                        <div className="icons">
-                            <button type="button" className="botaoLogin" onClick={redirectLogin}>Entrar</button>
-                        </div>
+
 
                     </div>
 

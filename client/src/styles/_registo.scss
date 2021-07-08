@@ -358,34 +358,10 @@
       }
       .conteudoDireitaDesktop {
         display: grid;
-        grid-template-rows: 6rem auto;
-        grid-template-areas: "botaoEtapa" "imgEquipa";
         grid-area: conteudoDireita;
         text-align: center;
         padding-left: 2rem;
-        .botaoEtapaAnterior {
-          display: grid;
-          grid-template-columns: 4rem 1fr;
-          grid-template-areas: "icon botao";
-          background-color: #f8faff;
-          border-radius: 5px;
-          padding: 1.5rem;
 
-          .iconSeta {
-            width: 50%;
-            grid-area: icon;
-            align-self: center;
-          }
-          .textoBotao {
-            grid-area: botao;
-            align-self: center;
-            justify-self: start;
-            color: $text-main-color;
-            font-weight: $font-weight-more-bold;
-            font-size: 0.9375rem;
-            padding-left: 1rem;
-          }
-        }
         .primeiraEtapa {
           visibility: hidden;
         }

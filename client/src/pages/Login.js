@@ -114,10 +114,7 @@ function Login() {
                             </article >
                         </div>
                         <div className="conteudoDireitaDesktop">
-                            <div className="botaoEtapaAnterior">
-                                <img src={setaAtras} className="iconSeta" alt="seta para retroceder" />
-                                <p className="textoBotao">Etapa anterior</p>
-                            </div>
+
                             <img src={registoImgLogin} className="imgEquipa" alt="criar equipa primeira imagem" />
                         </div>
                     </div>

@@ -3,6 +3,9 @@ import ResumoSessao from "./components/ResumoSessao"
 import RecursosSessao from "./components/RecursosSessao"
 import DetalhesSessao from "./components/DetalhesSessao"
 import iconDefinicoes from "../img/icons/icon_settings.svg";
+import iconShare from "../img/icons/icon_share.svg";
+import iconFavorito from "../img/icons/icon_favorito.svg";
+import iconLike from "../img/icons/icon_like.svg";
 
 //REACT ROUTER
 import { Route, Switch, useRouteMatch, Link } from "react-router-dom";
@@ -37,7 +40,7 @@ function Sessao() {
         <>
             {status === 'completed' &&
                 <article className="sessao">
-                    <SessionNav />
+                    <SessionNav sessao={sessao} status={status} />
                     <section id="main" className="conteudoMain">
                         <div id="bemvindo">
 
@@ -67,6 +70,11 @@ function Sessao() {
                                     <label >Detalhes</label>
                                 </div>
                             </Link>
+                            <div className="botoesDesktopSessao">
+                                <img src={iconShare} alt="" id="share" />
+                                <img src={iconFavorito} alt="" id="favorito" />
+                                <img src={iconLike} alt="" id="like" />
+                            </div>
 
                         </div>
 

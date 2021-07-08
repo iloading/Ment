@@ -21,6 +21,8 @@ function DetalhesSessao({ sessao, status }) {
                                     <div className="detalhes">
                                         <label className="titulo1">Plano Geral</label>
                                         <div className="caixaTexto">
+                                            <label className="detalhes_titulo">Factos Reais</label>
+                                            <span className="detalhes_texto">{factos_reais}</span>
                                             <label className="detalhes_titulo">Factos Ficcionais</label>
                                             <span className="detalhes_texto">{factos_ficcionais}</span>
                                             <label className="detalhes_titulo">Situação Problema</label>

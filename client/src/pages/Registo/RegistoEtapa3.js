@@ -70,9 +70,7 @@ function RegistoEtapa3({ dados, setDados, avataresBD, setAvataresBD }) {
                             <h3>Bom dia,</h3>
                             <h1>Registar</h1>
                         </div>
-                        <div className="icons">
-                            <button type="button" className="botaoLogin" onClick={redirectLogin}>Entrar</button>
-                        </div>
+
 
                     </div>
 
