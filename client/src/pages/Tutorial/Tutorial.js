@@ -133,10 +133,10 @@ function Tutorial() {
 
                     </div>
                     <div className="ajuda">
-                        <p>Bem vindo ao tutorial! Esta é uma zona onde o esperamos ver várias vezes.
-                            Esta zona foi criada para que, ao seu próprio ritmo, possa aprender sobre esta aventura que é a mentoria entre pares.
-                            O Tutorial encontra-se divido por várias etapas para uma fácil digestão e para encontrar facilmente os conteúdos que necessita.
-                            Cada uma das etapas tem pequenas dicas e ficheiros que pode descarregar para facilitar o seu trabalho e exemplificar vários procedimentos!</p>
+                        <p>Bem vindo ao tutorial! Esta é uma zona onde o esperamos ver várias vezes.</p>
+                        <p>Esta zona foi criada para que, ao seu próprio ritmo, possa aprender sobre esta aventura que é a mentoria entre pares.</p>
+                        <p>O Tutorial encontra-se divido por várias etapas para uma fácil digestão e para encontrar facilmente os conteúdos que necessita.</p>
+                        <p>Cada uma das etapas tem pequenas dicas e ficheiros que pode descarregar para facilitar o seu trabalho e exemplificar vários procedimentos!</p>
                     </div>
                 </div>
             </section>
