@@ -87,23 +87,23 @@ function CriarSessao5() {
                                 </div>
                                 {descricao !== '' ?
                                     <Link to='/criarsessao/6' className="decorationLinks">
-                                        <button className="botaoAzul widthBotao" >
+                                        <div className="botaoAzul widthBotao" >
                                             <button id="divBotao">
                                                 <div id="botao" >
                                                     <p id="textoBotao">Próximo passo</p>
                                                 </div>
                                             </button>
-                                        </button>
+                                        </div>
                                     </Link>
                                     :
 
-                                    <button className="botaoAzul widthBotao" disabled>
+                                    <div className="botaoAzul widthBotao" disabled>
                                         <button id="divBotao" disabled>
                                             <div id="botao" >
                                                 <p id="textoBotao">Próximo passo</p>
                                             </div>
                                         </button>
-                                    </button>
+                                    </div>
 
                                 }
 

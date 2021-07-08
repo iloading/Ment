@@ -72,13 +72,13 @@ function CriarSessao8() {
                                     <input type="text" className="inputTexto" placeholder="ex: Past tense, teorema de pitágoras"></input>
                                 </div>
                                 <Link to='/criarsessao/9' className="decorationLinks">
-                                    <button className="botaoAzul widthBotao">
+                                    <div className="botaoAzul widthBotao">
                                         <button id="divBotao">
                                             <div id="botao" >
                                                 <p id="textoBotao">Próximo passo</p>
                                             </div>
                                         </button>
-                                    </button>
+                                    </div>
                                 </Link>
                             </section>
 
