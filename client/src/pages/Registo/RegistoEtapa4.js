@@ -79,11 +79,20 @@ function RegistoEtapa4({ dados, setDados, validadeFormulario4, setvalidadeFormul
 
     //Verificar se está tudo preenchido
     useEffect(() => {
-        if (dados.school !== null && dados.course !== null) {
-            setvalidadeFormulario4(true)
-        } else {
-            setvalidadeFormulario4(false)
+        if (dados.role === 1) {
+            if (dados.school !== null && dados.course !== null) {
+                setvalidadeFormulario4(true)
+            } else {
+                setvalidadeFormulario4(false)
+            }
+        } else if (dados.role === 0) {
+            if (dados.school !== null) {
+                setvalidadeFormulario4(true)
+            } else {
+                setvalidadeFormulario4(false)
+            }
         }
+
     }, [dados, setvalidadeFormulario4])
 
     //Ao clicar no ultimo botão, efetuar o registo na BD
