@@ -70,6 +70,7 @@
                 width: 100%;
                 text-decoration: none;
                 margin-top: 0;
+                cursor: pointer;
 
                 #textoBotao {
                   font-weight: $font-weight-more-bold;
@@ -102,6 +103,7 @@
                 width: 100%;
                 opacity: 0.5;
                 margin-top: 0;
+                cursor: not-allowed;
 
                 #textoBotao {
                   font-weight: $font-weight-more-bold;
@@ -321,6 +323,7 @@
           border-radius: 0.3rem;
           padding: 1rem;
           width: 100%;
+          cursor: pointer;
 
           #textoBotao {
             font-weight: $font-weight-more-bold;
@@ -351,6 +354,7 @@
           padding: 1rem;
           width: 100%;
           opacity: 0.5;
+          cursor: not-allowed;
 
           #textoBotao {
             font-weight: $font-weight-more-bold;
@@ -495,6 +499,9 @@
             font-size: 0.9375rem;
             padding-left: 1rem;
           }
+        }
+        .cursorEtapaAnterior {
+          cursor: pointer;
         }
         .primeiraEtapa {
           visibility: hidden;
