@@ -10,8 +10,9 @@ import { loadUser } from "../../actions/userAction";
 import { Link } from 'react-router-dom'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useContext } from 'react'
-import { useHistory } from 'react-router-dom'
+import { useContext, useState } from 'react'
+import { useHistory, useLocation } from 'react-router-dom'
+
 import AuthContext from "../../context/AuthContext";
 import { logout } from '../../API'
 
@@ -48,6 +49,7 @@ export function FooterCore() {
 
 
 function Footer() {
+    const [isBoasVindas, setIsBoasVindas] = useState(false)
     const dispatch = useDispatch()
     useEffect(() => {
         dispatch(loadUser())
@@ -62,6 +64,12 @@ function Footer() {
         await getLoggedIn();
         history.push('/login')
     }
+    const location = useLocation();
+
+    useEffect(() => {
+        setIsBoasVindas(location.pathname === "/boasvindas")
+    }, [location.pathname])
+
 
     return (
         <>
@@ -73,14 +81,14 @@ function Footer() {
                     <img src={navLogo} alt="" />
                 </Link>
                 <div id="divBotoesMenu">
-                    <div id="botoesMenu">
+                    <div id={!isBoasVindas ? "botoesMenu" : "botoesOff"} >
                         <FooterCore />
                     </div>
                 </div>
 
 
                 {status === 'completed' &&
-                    <div className="asidePerfil" id="asidePerfil">
+                    <div className="asidePerfil" id={!isBoasVindas ? "asidePerfil" : "asidePerfilOff"} >
                         <div className="infoPerfil">
                             <Link to='/perfil' className="decorationLinks">
                                 <div id="avatar">

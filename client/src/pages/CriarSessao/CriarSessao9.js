@@ -68,13 +68,13 @@ function CriarSessao9() {
 
                                     <textarea type="text" className="textareaTexto" placeholder="Descrição da equipa"></textarea>
                                 </div>
-                                <div className="botaoAzul">
-                                    <div id="divBotao">
-                                        <div id="botao">
-                                            <p id="textoBotao">Próximo passo</p>
+                                <button /* to="/sessao" */ className="botaoAzul widthBotao" /* onClick={submitHandler} */>
+                                    <button id="divBotao">
+                                        <div id="botao" >
+                                            <p id="textoBotao">Criar sessão</p>
                                         </div>
-                                    </div>
-                                </div>
+                                    </button>
+                                </button>
                             </section>
 
                         </form>

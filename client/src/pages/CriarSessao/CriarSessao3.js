@@ -154,17 +154,17 @@ function CriarSessao3() {
                                     <input type="text" className="inputTexto" placeholder="ex: Past tense, teorema de pitágoras" onChange={conteudosHandler} value={dadosPreenchidos.conteudos}></input>
                                 </div>
                                 {(dadosPreenchidos.equipaEscolhida) && (dadosPreenchidos.grauEscolhido) && (dadosPreenchidos.DisciplinaEscolhida) && (dadosPreenchidos.nome) && (dadosPreenchidos.conteudos) ?
-                                    <button to="/criarsessao/3" className="botaoAzul" onClick={submitHandler}>
+                                    <button to="/criarsessao/4" className="botaoAzul" onClick={submitHandler}>
                                         <button id="divBotao">
                                             <div id="botao" >
-                                                <p id="textoBotao">Criar sessão</p>
+                                                <p id="textoBotao">Próximo passo</p>
                                             </div>
                                         </button>
                                     </button>
                                     :
                                     <button id="divBotao" disabled>
                                         <div id="botao" >
-                                            <p id="textoBotao">Criar sessão</p>
+                                            <p id="textoBotao">Próximo passo</p>
                                         </div>
                                     </button>
                                 }

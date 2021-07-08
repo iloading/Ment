@@ -8,7 +8,18 @@ import iconDefinicoes from "../../img/icons/icon_settings.svg";
 
 import { Link } from "react-router-dom"
 
+import { useDispatch, useSelector } from 'react-redux'
+import { criarNovaSessao } from "../../actions/criacaoSessaoAction";
+
 function CriarSessao4() {
+    const dispatch = useDispatch()
+
+    const submitHandler = (e) => {
+        dispatch(criarNovaSessao(dadosPreenchidos))
+
+    }
+
+    const { dadosPreenchidos } = useSelector(state => state.criarSessao)
     return (
         <article className="criarSessao">
             <section id="main" className="conteudoMain">
@@ -63,21 +74,22 @@ function CriarSessao4() {
                                     <p id="texto">Chegamos agora a uma fase onde vamos preencher alguns detalhes técnicos sobre a sessão. Pode escolher avançar esta fase e preencher mais tarde, ou preencher apenas os campos que quiser, com possibilidade de alteração a qualquer momento!</p>
                                 </div>
 
-
-                                <div className="botaoAzul">
-                                    <div id="divBotao">
-                                        <div id="botao">
-                                            <p id="textoBotao">Vamos preencher</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="botaoAzul">
-                                    <div id="divBotao">
-                                        <div id="botao">
+                                <Link to='/criarsessao/5' className="decorationLinks">
+                                    <button className="botaoAzul widthBotao">
+                                        <button id="divBotao">
+                                            <div id="botao" >
+                                                <p id="textoBotao">Preencher agora</p>
+                                            </div>
+                                        </button>
+                                    </button>
+                                </Link>
+                                <button /* to="/sessao" */ className="botaoAzul widthBotao" onClick={submitHandler}>
+                                    <button id="divBotao">
+                                        <div id="botao" >
                                             <p id="textoBotao">Mais tarde</p>
                                         </div>
-                                    </div>
-                                </div>
+                                    </button>
+                                </button>
                             </section>
 
                         </form>
