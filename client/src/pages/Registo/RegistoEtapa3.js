@@ -14,7 +14,7 @@ function RegistoEtapa3({ dados, setDados, avataresBD, setAvataresBD }) {
 
 
     const history = useHistory();
-    const redirectLogin = () => { history.push("/login") }
+
 
     useEffect(() => {
         window.scrollTo(0, 0);

@@ -75,7 +75,7 @@ function RegistoEtapa2({ dados, setDados, validadeFormulario2, setvalidadeFormul
 
 
     const history = useHistory();
-    const redirectLogin = () => { history.push("/login") }
+
 
     const handleChange = (e) => {
         setDados({ ...dados, role: e.value })

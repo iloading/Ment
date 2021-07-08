@@ -3,7 +3,7 @@ import setaAtrasBranca from "../../img/setaAtrasBranca.png"
 import setaAtras from "../../img/setaAtras.png"
 import iconDefinicoes from "../../img/icons/icon_settings.svg";
 import setaEsquerda from "../../img/setaEsquerda_cor.svg";
-import setaVoltar from "../../img/setaDireita_cor_etapas.svg";
+
 import setaAnterior from "../../img/setaEsquerda_cor_etapas.svg";
 
 import { Link } from "react-router-dom"

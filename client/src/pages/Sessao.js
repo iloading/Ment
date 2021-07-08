@@ -34,7 +34,7 @@ function Sessao() {
     }, [dispatch, id])
 
     const { sessaoInfo: sessao, status } = useSelector(state => state.sessao)
-    const { nome, descricao, subject, factos_ficcionais, factos_reais, situacao_problema, resultados_esperados, funcao_alunos_mentores, funcao_alunos_mentorandos, disciplina, ano } = sessao
+    const { nome } = sessao
 
     return (
         <>

@@ -2,7 +2,7 @@ import React from 'react'
 import iconDownload from "../../img/icons/icon_download.svg";
 
 function DetalhesSessao({ sessao, status }) {
-    const { nome, descricao, subject, factos_ficcionais, factos_reais, situacao_problema, resultados_esperados, funcao_alunos_mentores, funcao_alunos_mentorandos, disciplina, ano } = sessao
+    const { subject, factos_ficcionais, factos_reais, situacao_problema, resultados_esperados, funcao_alunos_mentores, funcao_alunos_mentorandos, ano } = sessao
     return (
         <>
 

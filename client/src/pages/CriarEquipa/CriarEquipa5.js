@@ -1,7 +1,7 @@
 import React from 'react'
 
 import setaAtras from "../../img/icons/icon_setaAtrasAzul.svg"
-import avatarUser from "../../img/criarSessoes/avatarEquipa.svg"
+
 import criarEquipa5_semBack from "../../img/criarEquipas/criarEquipa5_semBack.svg"
 import iconDefinicoes from "../../img/icons/icon_settings.svg";
 import iconAdicionar from "../../img/icons/icon_adicionar.svg";
@@ -13,7 +13,7 @@ import { colourStyles } from './selectStyle';
 
 import { useDispatch, useSelector } from 'react-redux'
 import { selecionarMentor, eliminarMentor } from '../../actions/criacaoEquipaAction'
-import AsyncCreatableSelect from 'react-select/async-creatable';
+
 //BD
 import { carregarMentores } from '../../API'
 

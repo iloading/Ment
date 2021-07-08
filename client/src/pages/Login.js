@@ -1,7 +1,7 @@
 import loginImg from "../img/loginImg.png";
 import icon_mail from "../img/icons/icon_mail.png";
 import icon_cadeado from "../img/icons/icon_cadeado.png";
-import setaAtras from "../img/icons/icon_setaAtrasAzul.svg"
+
 import navLogo from "../img/logo.svg";
 import registoImgLogin from "../img/registo/registo4Img_desktop.svg";
 import { useContext } from 'react'

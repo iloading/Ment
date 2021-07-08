@@ -6,7 +6,7 @@ import RegistoEtapa4 from "./RegistoEtapa4";
 /* import RegistoEtapa5 from "./RegistoEtapa5"; */
 
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { Route, Switch } from 'react-router-dom'
 
 

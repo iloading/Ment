@@ -12,7 +12,7 @@ import iconOrdenar from "../img/icons/icon_ordenar.svg";
 import iconSetaTras from "../img/icons/icon_setaAtrasAzul.svg"
 import iconCriar from "../img/icons/icon_plus.svg"
 import iconTituloEquipa from "../img/icons/icon_equipa.svg"
-import { useRef, useState } from "react";
+import { useState } from "react";
 
 
 import { loadminhasEquipas } from "../actions/minhasEquipasAction";

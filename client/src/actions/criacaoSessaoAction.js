@@ -61,7 +61,7 @@ export const preencherConteudos = (conteudos) => async (dispatch) => {
 }
 export const criarNovaSessao = (dados) => async (dispatch) => {
 
-    const minhasEquipasDB = await criarSessao(dados);
+    await criarSessao(dados);
     /* METER DISPATCH FEEDBACK DA BD */
     dispatch({
         type: "CRIAR_NOVA_SESSAO",

@@ -4,7 +4,7 @@ import error from '../../img/icons/feedback_error.svg'
 import alert from '../../img/icons/feedback_alert.svg'
 import x from '../../img/icons/feedback_x.svg'
 //REDUX//
-import { showFeedback, hideFeedback } from "../../actions/feedbackAction";
+import { /* showFeedback */ hideFeedback } from "../../actions/feedbackAction";
 
 
 

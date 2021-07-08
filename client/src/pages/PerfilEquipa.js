@@ -24,7 +24,7 @@ import { useDispatch, useSelector } from 'react-redux'
 
 
 function PerfilEquipa() {
-    let { path, url } = useRouteMatch()
+    let { url } = useRouteMatch()
     let id = url.split("/")[2]
     const dispatch = useDispatch()
     useEffect(() => {

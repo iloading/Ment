@@ -16,7 +16,7 @@ function CarouselSessao() {
 
 
 
-  let { path, url } = useRouteMatch();
+  let { url } = useRouteMatch();
 
 
 

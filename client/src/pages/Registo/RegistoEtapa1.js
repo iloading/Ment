@@ -154,7 +154,7 @@ function RegistoEtapa1({ validadeEmail, setValidadeEmail, validadeFormulario1, s
 
     let history = useHistory();
     const redirectBack = () => { history.goBack() }
-    const redirectLogin = () => { history.push("/login") }
+
 
 
 

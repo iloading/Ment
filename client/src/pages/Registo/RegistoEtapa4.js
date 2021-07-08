@@ -22,7 +22,7 @@ function RegistoEtapa4({ dados, setDados, validadeFormulario4, setvalidadeFormul
 
     const { getLoggedIn } = useContext(AuthContext)
     const history = useHistory();
-    const redirectLogin = () => { history.push("/login") }
+
     const [courses, setCourses] = useState([])
 
     //Grupos Disciplinares
@@ -90,7 +90,7 @@ function RegistoEtapa4({ dados, setDados, validadeFormulario4, setvalidadeFormul
     const onSubmit = async (e) => {
         try {
             e.preventDefault();
-            const resposta = await register(dados);
+            await register(dados);
 
             getLoggedIn();
         } catch (error) {
