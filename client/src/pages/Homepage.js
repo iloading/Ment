@@ -4,6 +4,8 @@ import navLogo from "../img/logo.svg";
 import home1 from "../img/home1.svg";
 import home2 from "../img/home2.svg";
 import home3 from "../img/home3.svg";
+import home4 from "../img/home4.svg";
+import home5 from "../img/home5.svg";
 import imgBanco from "../img/imgBanco.png";
 import comoFunciona1 from "../img/comoFunciona1.svg";
 import comoFunciona2 from "../img/comoFunciona2.svg";
@@ -108,16 +110,16 @@ function Homepage() {
                         <div className="card">
                             <label>Agilização</label>
                             <p>Estruturação faseada para melhor compreensão</p>
-                            <img src={home3} alt="" />
+                            <img src={home4} alt="" />
                         </div>
                         <div className="card">
                             <label>Partilha</label>
                             <p>Partilhe as sessões que criou com a comunidade</p>
-                            <img src={home3} alt="" />
+                            <img src={home5} alt="" />
                         </div>
 
                     </div>
-                    <button type="button" className="botaoRegisto gapBotao">Registar agora</button>
+                    <button type="button" className="botaoRegisto gapBotao" onClick={redirectRegisto}>Registar agora</button>
 
 
                 </section>
