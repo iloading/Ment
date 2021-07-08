@@ -47,7 +47,7 @@ function App() {
       <Switch>
 
         <Route path="/" exact>
-          <Homepage />
+          {loggedIn ? <Redirect to="/dashboard" /> : <Homepage />}
         </Route>
 
 
