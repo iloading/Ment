@@ -3,7 +3,7 @@ import MinhasEquipas from "./components/MinhasEquipas";
 
 import iconDefinicoes from "../img/icons/icon_settings.svg";
 import iconArquivar from "../img/icons/icon_arquivar.svg";
-
+import iconEstadoNegativo from "../img/estadosnegativos/estadoNegativoDashboard.svg";
 
 
 
@@ -111,11 +111,20 @@ function Banco() {
 
                 <div className="conteudoMid">
 
-                    <div className="listaMinhasEquipas">
+                    {status === "completed" && minhasEquipas.length === 0 ?
+                        <div className="criarEquipa">
+                            <img src={iconEstadoNegativo} className="iconEstadoNegativo" alt="" />
+                            <p className="textoEstadoNegativo">Ainda não existe nenhuma equipa!</p>
+                        </div>
 
-                        {status === "completed" && minhasEquipas.map(equipa => <MinhasEquipas key={equipa.id} equipa={equipa} status={status} />)}
 
-                    </div>
+                        :
+                        <div className="listaMinhasEquipas">
+
+                            {minhasEquipas.map(equipa => <MinhasEquipas key={equipa.id} equipa={equipa} status={status} />)}
+
+                        </div>
+                    }
 
                     <div className="coluna_direita_desktop">
 

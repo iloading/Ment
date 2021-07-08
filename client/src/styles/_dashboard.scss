@@ -448,6 +448,25 @@
         .criarEquipa {
           background-color: #f8faff;
           margin-right: 2rem;
+          display: grid;
+          grid-template-rows: 10rem 3rem;
+          grid-template-areas: "img" "texto";
+          padding: 1rem;
+          grid-row-gap: 2rem;
+          .iconEstadoNegativo {
+            width: 100%;
+            grid-area: img;
+            align-self: center;
+            justify-self: center;
+          }
+          .textoEstadoNegativo {
+            font-size: 1rem;
+            color: $text-main-color;
+            font-weight: 500;
+            grid-area: texto;
+            align-self: center;
+            text-align: center;
+          }
         }
 
         .minhasEquipasCard {

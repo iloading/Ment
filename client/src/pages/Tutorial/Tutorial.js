@@ -133,7 +133,10 @@ function Tutorial() {
 
                     </div>
                     <div className="ajuda">
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus sint iure dignissimos libero ab accusamus. Qui harum incidunt aliquam a modi saepe dicta non? Assumenda minima vel aut delectus ullam?</p>
+                        <p>Bem vindo ao tutorial! Esta é uma zona onde o esperamos ver várias vezes.
+                            Esta zona foi criada para que, ao seu próprio ritmo, possa aprender sobre esta aventura que é a mentoria entre pares.
+                            O Tutorial encontra-se divido por várias etapas para uma fácil digestão e para encontrar facilmente os conteúdos que necessita.
+                            Cada uma das etapas tem pequenas dicas e ficheiros que pode descarregar para facilitar o seu trabalho e exemplificar vários procedimentos!</p>
                     </div>
                 </div>
             </section>

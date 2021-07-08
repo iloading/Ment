@@ -7,7 +7,7 @@ import iconEquipa from "../img/icons/icon_equipa.svg";
 import iconOrdenar from "../img/icons/icon_ordenar.svg";
 import iconMaisAzul from "../img/icons/icon_maisAzul.svg";
 import iconTresPontos from "../img/icons/icon_trespontos_azul.svg";
-
+import iconDefinicoes from "../img/icons/icon_settings.svg";
 import Narrativa from "./components/Narrativa";
 
 import { Link } from 'react-router-dom'
@@ -52,6 +52,21 @@ function PerfilEquipa() {
 
                 <section id="main" className="conteudoMain">
 
+                    {/*DESKTOP*/}
+                    <div id="bemvindo">
+
+                        <div className="bemvindo_titulos">
+                            <h3>Bom dia,</h3>
+                            <h1>{equipa.name}</h1>
+                        </div>
+                        <div className="icons">
+                            <img src={iconDefinicoes} alt="" />
+                        </div>
+
+                    </div>
+
+
+
                     <div className="titulo">
                         <img src={iconEquipa} alt="" className="iconTitulo" />
                         <label className="tituloMain">{equipa.escola}</label>
@@ -67,37 +82,61 @@ function PerfilEquipa() {
 
                     </div>
 
-                    <div className="conteudoBotoes">
+                    <div className="conteudoMid">
+                        <div className="conteudoBotoes">
 
-                        <div className="titulo">
-                            <label className="tituloConteudo">Sessões da equipa</label>
-                            <div className="iconOrdenar" >
-                                <img src={iconOrdenar} alt="" />
+                            <div className="tituloMid">
+                                <label className="tituloConteudo">Todas as sessões</label>
+                                <div className="iconOrdenar" >
+                                    <img src={iconOrdenar} alt="" />
+                                </div>
                             </div>
-                        </div>
 
-                        {status_sessoes === "completed" && sessoes.length === 0 ?
-                            <Link to='/criarsessao' className="decorationLinks">
-                                <div className="equipaSessaoVazia">
-                                    <div className="equipaSessaoVazia_texto">
-                                        <p className="equipaSessaoVazia_texto1">Ainda não tem nenhuma sessão associada a esta equipa</p>
-                                        <p className="equipaSessaoVazia_texto2">Clique aqui para criar uma nova sessão</p>
+                            {status_sessoes === "completed" && sessoes.length === 0 ?
+                                <Link to='/criarsessao' className="decorationLinks">
+                                    <div className="equipaSessaoVazia">
+                                        <div className="equipaSessaoVazia_texto">
+                                            <p className="equipaSessaoVazia_texto1">Ainda não tem nenhuma sessão associada a esta equipa</p>
+                                            <p className="equipaSessaoVazia_texto2">Clique aqui para criar uma nova sessão</p>
+                                        </div>
+                                        <div className="equipaSessaoVazia_img">
+                                            <img src={iconMaisAzul} alt="" />
+                                        </div>
                                     </div>
-                                    <div className="equipaSessaoVazia_img">
-                                        <img src={iconMaisAzul} alt="" />
+                                </Link> :
+                                <div className="listaNarrativas">
+                                    {sessoes.map(sessao => <Narrativa key={sessao.id} sessao={sessao} status={status_sessoes} />)}
+                                </div>
+
+
+                            }
+
+
+
+                        </div>
+                        <div className="conteudoDireitaDesktopPerfilEquipa">
+                            <div className="infoPerfilDesktop">
+                                <div className="conteudoDireitaFirst">
+                                    <label>Avatar</label>
+                                    <img src={avatar} alt="" />
+
+
+                                </div>
+                                <div className="conteudoDireitaSecond">
+                                    <label>Quem somos?</label>
+                                    <div className="descricaoEquipa">
+                                        <label className="tituloCaixaConteudo">Membros</label>
+                                        <span>Boas</span>
+                                        <label className="tituloCaixaConteudo">Outras infos</label>
+                                        <span>Muterial</span>
+                                        <label className="tituloCaixaConteudo">Descrição</label>
+                                        <span>{equipa.descripton}</span>
                                     </div>
                                 </div>
-                            </Link> :
-                            <div className="listaNarrativas">
-                                {sessoes.map(sessao => <Narrativa key={sessao.id} sessao={sessao} status={status_sessoes} />)}
                             </div>
-
-
-                        }
-
-
-
+                        </div>
                     </div>
+
 
                 </section>
 

@@ -3,6 +3,7 @@ import CarouselAjuda from "./components/CarouselAjuda";
 import MinhaEquipa from "./components/MinhaEquipa";
 
 import iconEquipa from "../img/icons/icon_equipa.svg";
+import iconEstadoNegativo from "../img/estadosnegativos/estadoNegativoDashboard.svg";
 
 import iconbanco from "../img/icons/icon_banco.svg";
 
@@ -96,12 +97,21 @@ function Dashboard() {
                             equipas.length === 1 ?
                                 <>
                                     <MinhaEquipa key={equipas.id} alias={equipas[0].alias} name={equipas[0].name} schoolName={equipas[0].school_name} equipa={equipas[0]} />
-                                    <div className="criarEquipa"></div>
+                                    <div className="criarEquipa">
+                                        <img src={iconEstadoNegativo} className="iconEstadoNegativo" alt="" />
+                                        <p className="textoEstadoNegativo">Ainda não existe nenhuma equipa!</p>
+                                    </div>
                                 </>
                                 :
                                 <>
-                                    <div className="criarEquipa"></div>
-                                    <div className="criarEquipa"></div>
+                                    <div className="criarEquipa">
+                                        <img src={iconEstadoNegativo} className="iconEstadoNegativo" alt="" />
+                                        <p className="textoEstadoNegativo">Ainda não existe nenhuma equipa!</p>
+                                    </div>
+                                    <div className="criarEquipa">
+                                        <img src={iconEstadoNegativo} className="iconEstadoNegativo" alt="" />
+                                        <p className="textoEstadoNegativo">Ainda não existe nenhuma equipa!</p>
+                                    </div>
                                 </>
                         )
                         }
