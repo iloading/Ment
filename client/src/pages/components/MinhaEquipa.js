@@ -6,7 +6,7 @@ function MinhaEquipa({ alias, name, schoolName, numero, equipa }) {
     console.log(equipa);
 
     return (
-        <Link to={`/perfilEquipa/${equipa.id}`}>
+        <Link to={`/perfilEquipa/${equipa.id}`} className="decorationLinks">
             <div className="minhasEquipasCard">
                 <img src={minhasSessoes_desktop} alt="" className="iconTitulo" />
                 <div className="cardInfo">

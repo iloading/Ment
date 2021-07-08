@@ -69,7 +69,7 @@ function Login() {
                     </div>
                     <div className="conteudoMid">
                         <div className="conteudoEsquerda">
-                            <article className="login">
+                            <article >
                                 <div className="loginImg">
                                     <img src={loginImg} alt="imagem login" />
                                 </div>
