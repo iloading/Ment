@@ -3,6 +3,7 @@
 
   .conteudoMain {
     overflow: auto;
+    height: 100%;
     .bemvindo_titulos {
       h3 {
         visibility: hidden;
@@ -255,6 +256,7 @@
       grid-row-gap: 1rem;
       padding-left: 1rem;
       padding-bottom: 1rem;
+
       .bemvindo_titulos {
         h3 {
           visibility: hidden;

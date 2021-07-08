@@ -40,7 +40,7 @@ function RegistoEtapa4({ dados, setDados, validadeFormulario4, setvalidadeFormul
             }
             const levelsArrayFiltrados = uniqBy(levelsArray)
             /* Para cada nivel de ensino já no array, escolher as disciplinas que fazem parte desse mesmo nivel de ensino */
-            const courses = levelsArrayFiltrados.map((level) => ({ label: level.label, options: (coursesResult.data.success.filter((course) => course.level === level.label).map(({ name, idcourse, code }) => ({ label: `${code} - ${name}`, value: idcourse }))) }))
+            const courses = levelsArrayFiltrados.map((level) => ({ label: level.label, options: (coursesResult.data.success.filter((course) => course.level === level.label).map(({ name, id, code }) => ({ label: `${code} - ${name}`, value: id }))) }))
             /* Definir o resultado para o state */
             setCourses(courses);
         },

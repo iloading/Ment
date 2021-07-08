@@ -100,7 +100,7 @@ function RegistoEtapa3({ dados, setDados, avataresBD, setAvataresBD }) {
                                     <section className="avatarSelect">
 
 
-                                        {avataresBD && avataresBD.map((avatar) => <img src={require(`../../img/avatar/${avatar.url}`).default} alt={avatar.alt} className={dados.avatar === avatar.idavatar ? 'selectedAvatar' : ''} id={`avatar_${avatar.idavatar}`} onClick={(e) => avatarSelect(avatar.idavatar)} key={avatar.idavatar} />)}
+                                        {avataresBD && avataresBD.map((avatar) => <img src={require(`../../img/avatar/${avatar.url}`).default} alt={avatar.alt} className={dados.avatar === avatar.id ? 'selectedAvatar' : ''} id={`avatar_${avatar.id}`} onClick={(e) => avatarSelect(avatar.id)} key={avatar.id} />)}
 
 
 
