@@ -60,13 +60,13 @@ function CriarSessao9() {
                                 <label id="titulo">Resultados</label>
 
                                 <div>
-                                    <p id="texto">Último passo! O que espera desta sessão? Em termos de narrativa, o que conclui a sessão? (Por exemplo: os mentorandos descobrem o tesouro secreto)</p>
+                                    <p id="texto">Último passo! O que espera desta sessão? Em termos de narrativa, o que conclui a sessão? </p>
                                 </div>
 
                                 <div className="formulario">
                                     <label className="tituloFormulario">O que se espera da sessão?</label>
 
-                                    <textarea type="text" className="textareaTexto" placeholder="Descrição da equipa"></textarea>
+                                    <textarea type="text" className="textareaTexto" placeholder="ex: É esperado que os mentorandos consigam salvar o planeta Terra..."></textarea>
                                 </div>
                                 <div /* to="/sessao" */ className="botaoAzul widthBotao" /* onClick={submitHandler} */>
                                     <button id="divBotao">

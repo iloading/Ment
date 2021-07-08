@@ -31,7 +31,7 @@
 
         #corpo {
           margin: 1.5rem;
-          margin-top: 2.5rem;
+          margin-top: 0.5rem;
           display: grid;
           grid-gap: 1rem;
 
@@ -81,6 +81,9 @@
               }
             }
           }
+          .espacamentoBotao {
+            margin-top: 3rem;
+          }
           .widthBotao {
             width: 100%;
           }
@@ -120,7 +123,7 @@
 
             .tituloFormulario {
               font-size: $font-size-s;
-              font-weight: $font-weight-normal;
+              font-weight: 500;
               color: $text-main-color;
               margin-top: 1rem;
             }
@@ -136,6 +139,8 @@
 
             .inputTexto::placeholder {
               color: lightgray;
+              font-size: 1rem;
+              padding-left: 0.3rem;
             }
             .inputTexto:focus {
               outline: 0;
@@ -153,6 +158,8 @@
             }
             .textareaTexto::placeholder {
               color: lightgray;
+              font-size: 1rem;
+              padding-left: 0.3rem;
             }
             .textareaTexto:focus {
               outline: 0;
@@ -233,7 +240,7 @@
       margin: 1.5rem;
       #titulo2 {
         font-size: $font-size-s;
-        font-weight: $font-weight-normal;
+        font-weight: 500;
         color: $text-main-color;
       }
     }

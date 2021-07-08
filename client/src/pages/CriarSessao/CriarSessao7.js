@@ -57,7 +57,7 @@ function CriarSessao7() {
                             </header>
 
                             <section id="corpo">
-                                <label id="titulo">Dados técnicos</label>
+                                <label id="titulo">Processo de construção</label>
 
                                 <div>
                                     <p id="texto">Quais são os factos reais sobre esta sessão, e quais são apenas ficcionais?</p>
@@ -66,11 +66,11 @@ function CriarSessao7() {
                                 <div className="formulario">
                                     <label className="tituloFormulario">Factos reais</label>
 
-                                    <input type="text" className="inputTexto" placeholder="ex: Past tense, teorema de pitágoras"></input>
+                                    <textarea type="text" className="textareaTexto" placeholder="ex: Os planetas da galáxia..."></textarea>
 
                                     <label className="tituloFormulario">Factos ficcionais</label>
 
-                                    <input type="text" className="inputTexto" placeholder="ex: Past tense, teorema de pitágoras"></input>
+                                    <textarea type="text" className="textareaTexto" placeholder="ex: A colisão de um planeta com a Terra..."></textarea>
                                 </div>
                                 <Link to='/criarsessao/8' className="decorationLinks">
                                     <div className="botaoAzul widthBotao">

@@ -59,13 +59,13 @@ function CriarSessao6() {
                                 <label id="titulo">Situação problema</label>
 
                                 <div>
-                                    <p id="texto">Sobre que problema central a sessão gira à volta? (por exemplo: O aquecimento global)</p>
+                                    <p id="texto">Sobre que problema central a sessão gira à volta?</p>
                                 </div>
 
                                 <div className="formulario">
-                                    <label className="tituloFormulario">Situação problema</label>
 
-                                    <textarea type="text" className="textareaTexto" placeholder="Descrição da equipa"></textarea>
+
+                                    <textarea type="text" className="textareaTexto" placeholder="ex: A sessão tem por problemática central o impacto de um planeta com a Terra..."></textarea>
                                 </div>
                                 <Link to='/criarsessao/7' className="decorationLinks">
                                     <div className="botaoAzul widthBotao">

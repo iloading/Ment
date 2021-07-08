@@ -134,7 +134,7 @@
 
           .tituloFormulario {
             font-size: $font-size-s;
-            font-weight: $font-weight-normal;
+            font-weight: 500;
             color: $text-main-color;
           }
 
@@ -149,6 +149,8 @@
 
           .inputTexto::placeholder {
             color: lightgray;
+            font-size: 1rem;
+            padding-left: 0.3rem;
           }
           .inputTexto:focus {
             outline: 0;
@@ -165,6 +167,8 @@
           }
           .textareaTexto::placeholder {
             color: lightgray;
+            font-size: 1rem;
+            padding-left: 0.3rem;
           }
           .textareaTexto:focus {
             outline: 0;
@@ -255,7 +259,7 @@
       margin: 1.5rem;
       #titulo2 {
         font-size: $font-size-s;
-        font-weight: $font-weight-normal;
+        font-weight: 500;
         color: $text-main-color;
       }
     }

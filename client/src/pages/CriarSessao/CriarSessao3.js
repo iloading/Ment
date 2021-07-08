@@ -113,7 +113,7 @@ function CriarSessao3() {
                                 <div className="formulario">
                                     <label className="tituloFormulario">Nome da sessão</label>
 
-                                    <input type="text" className="inputTexto" placeholder="ex: Escape Room" onChange={nomeHandler} value={dadosPreenchidos.nome}></input>
+                                    <input type="text" className="inputTexto" placeholder="ex: Viagem Intergaláctica" onChange={nomeHandler} value={dadosPreenchidos.nome}></input>
                                 </div>
                                 <div className="formulario">
                                     <label className="tituloFormulario">Ano de Escolaridade dos mentorandos</label>
@@ -121,7 +121,7 @@ function CriarSessao3() {
                                     <Select
                                         options={grausDeEnsino.map(grau => ({ label: grau.year, value: grau.id }))}
                                         className='react-select-form'
-                                        placeholder={'Ex: 7ºano'}
+                                        placeholder={'ex: 7ºano'}
                                         isClearable={true}
                                         isSearchable={false} styles={colourStyles}
                                         onChange={(e) => selectGrauEscolaridade(e)}
@@ -138,7 +138,7 @@ function CriarSessao3() {
                                         options={gruposDisciplinares.map(grupo => ({ label: `${grupo.code} - ${grupo.name}`, value: grupo.id }))}
                                         className='react-select-form'
                                         styles={colourStyles}
-                                        placeholder={'Ex: Inglês, Matemática, etc...'}
+                                        placeholder={'ex: Inglês, Matemática, etc...'}
                                         isClearable={true}
                                         isSearchable={false}
                                         onChange={(e) => selectDisciplina(e)}
@@ -149,9 +149,9 @@ function CriarSessao3() {
                                 </div>
 
                                 <div className="formulario">
-                                    <label className="tituloFormulario">Counteúdos programáticos</label>
+                                    <label className="tituloFormulario">Conteúdos programáticos</label>
 
-                                    <input type="text" className="inputTexto" placeholder="ex: Past tense, teorema de pitágoras" onChange={conteudosHandler} value={dadosPreenchidos.conteudos}></input>
+                                    <textarea type="text" className="textareaTexto" placeholder="ex: Os planetas do sistema solar, atmosferas..." onChange={conteudosHandler} value={dadosPreenchidos.conteudos}></textarea>
                                 </div>
                                 {(dadosPreenchidos.equipaEscolhida) && (dadosPreenchidos.grauEscolhido) && (dadosPreenchidos.DisciplinaEscolhida) && (dadosPreenchidos.nome) && (dadosPreenchidos.conteudos) ?
                                     <Link to="/criarsessao/4" className="botaoAzul" >

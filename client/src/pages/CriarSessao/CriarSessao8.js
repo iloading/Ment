@@ -59,17 +59,18 @@ function CriarSessao8() {
                                 <label id="titulo">Papéis</label>
 
                                 <div>
-                                    <p id="texto">Para uma sessão funcionar corretamente é necessário explicitar os papéis dos mentores e dos mentorandos. Lembre-se de depositar nos mentores tarefas que os valorizem e se sintam motivados!</p>
+                                    <p id="texto">Para uma sessão funcionar corretamente é necessário explicitar os papéis dos mentores e dos mentorandos. </p>
+                                    <p id="texto">Lembre-se de depositar nos mentores tarefas que os valorizem e que os façam sentir motivados!</p>
                                 </div>
 
                                 <div className="formulario">
                                     <label className="tituloFormulario">Papel dos mentores</label>
 
-                                    <input type="text" className="inputTexto" placeholder="ex: Past tense, teorema de pitágoras"></input>
+                                    <textarea type="text" className="textareaTexto" placeholder="ex: No papel de super-heróis, guiar os mentorandos para salvarem o planeta Terra..."></textarea>
 
                                     <label className="tituloFormulario">Papel dos mentorandos</label>
 
-                                    <input type="text" className="inputTexto" placeholder="ex: Past tense, teorema de pitágoras"></input>
+                                    <textarea type="text" className="textareaTexto" placeholder="ex: No papel de astronautas, encontrarem uma forma de salvar a Terra..."></textarea>
                                 </div>
                                 <Link to='/criarsessao/9' className="decorationLinks">
                                     <div className="botaoAzul widthBotao">

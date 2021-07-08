@@ -125,7 +125,7 @@ function RegistoEtapa3({ dados, setDados, avataresBD, setAvataresBD }) {
                                 <img src={setaAtras} className="iconSeta" alt="seta para retroceder" />
                                 <p className="textoBotao">Etapa anterior</p>
                             </div>
-                            <img src={registoImgDesktop} className="imgEquipa" alt="criar equipa primeira imagem" />
+
                         </div>
                     </div>
                 </section>
