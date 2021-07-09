@@ -8,11 +8,11 @@ const app = express();
 app.use(express.json());
 
 /* app.use(cors({
-    origin: true,
+    origin: [],
     credentials: true,
 })); */
 // Add headers
-app.use(function (req, res, next) {
+app.use(function (req, res) {
 
     // Website you wish to allow to connect
     res.setHeader('Access-Control-Allow-Origin', `${req.headers.origin}`);
@@ -28,7 +28,7 @@ app.use(function (req, res, next) {
     res.setHeader('Access-Control-Allow-Credentials', true);
 
     // Pass to next layer of middleware
-    next();
+
 });
 app.use(cookieParser());
 
