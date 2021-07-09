@@ -171,9 +171,11 @@ function RegistoEtapa1({ validadeEmail, setValidadeEmail, validadeFormulario1, s
         <>
             <div className="formularioRegisto_menu">
                 <aside className="menu_principal_registo">
-                    <div className="asideLogoRegisto">
-                        <img src={navLogo} alt="" />
-                    </div>
+                    <Link to='/' className="decorationLinks logoCentro">
+                        <div className="asideLogoRegisto">
+                            <img src={navLogo} alt="" />
+                        </div>
+                    </Link>
                 </aside>
             </div>
             <div id="main" className="registo">

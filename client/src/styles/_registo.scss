@@ -232,6 +232,9 @@
 @media only screen and (min-width: 1024px) {
   .formularioRegisto_menu {
     display: inherit;
+    .logoCentro {
+      align-self: center;
+    }
   }
   .menu_principal_registo {
     padding: 1rem;
