@@ -13,7 +13,7 @@ app.use(cors({
 }));
 // Add headers
 app.use(function (req, res, next) {
-
+    console.log(req.headers.origin);
     // Website you wish to allow to connect
     res.setHeader('Access-Control-Allow-Origin', 'https://ment-9ad64.web.app/');
 
