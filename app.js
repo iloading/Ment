@@ -10,7 +10,7 @@ app.use(express.json());
 app.use(function (req, res) {
     console.log(req.headers.origin);
     cors({
-        'origin': true,
+        'origin': 'https://ment-9ad64.web.app/',
         'credentials': true,
         'optionsSuccessStatus': 204
     })
