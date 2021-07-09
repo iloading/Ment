@@ -49,7 +49,10 @@ app.use('/criarEquipa', criarEquipas);
     await res.send('We are on home')
 }) */
 
-
-app.listen(3001, () => {
-    console.log('Server is running on port 3001');
+let port = process.env.PORT;
+if (port == null || port == "") {
+    port = 3001;
+}
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
 });
