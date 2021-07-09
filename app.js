@@ -8,7 +8,7 @@ const app = express();
 app.use(express.json());
 
 app.use(cors({
-    origin: ['^(https?://(?:.+\.)?ment-9ad64\.web.app(?::\d{1,5})?)$'],
+    origin: ['https://ment-9ad64.web.app/'],
     credentials: true,
 }));
 // Add headers
