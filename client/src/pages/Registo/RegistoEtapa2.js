@@ -15,6 +15,8 @@ import { useEffect, useCallback } from "react"
 
 import { useHistory } from "react-router-dom"
 
+import { Link } from "react-router-dom"
+
 
 
 function RegistoEtapa2({ dados, setDados, validadeFormulario2, setvalidadeFormulario2 }) {
@@ -188,10 +190,12 @@ function RegistoEtapa2({ dados, setDados, validadeFormulario2, setvalidadeFormul
                             </Formik>
                         </div>
                         <div className="conteudoDireitaDesktop">
-                            <div className="botaoEtapaAnterior">
-                                <img src={setaAtras} className="iconSeta" alt="seta para retroceder" />
-                                <p className="textoBotao">Etapa anterior</p>
-                            </div>
+                            <Link to='/registo' className="decorationLinks">
+                                <div className="botaoEtapaAnterior">
+                                    <img src={setaAtras} className="iconSeta" alt="seta para retroceder" />
+                                    <p className="textoBotao">Etapa anterior</p>
+                                </div>
+                            </Link>
                             <img src={registoImgDesktop} className="imgEquipa" alt="criar equipa primeira imagem" />
                         </div>
                     </div>

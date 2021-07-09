@@ -10,6 +10,8 @@ import { colourStyles } from './selectStyle';
 import AsyncCreatableSelect from 'react-select/async-creatable';
 import Select from 'react-select';
 
+import { Link } from "react-router-dom"
+
 /* import * as Yup from 'yup'; */
 
 import { useHistory } from 'react-router-dom';
@@ -242,10 +244,12 @@ function RegistoEtapa4({ dados, setDados, validadeFormulario4, setvalidadeFormul
                             </form>
                         </div>
                         <div className="conteudoDireitaDesktop">
-                            <div className="botaoEtapaAnterior">
-                                <img src={setaAtras} className="iconSeta" alt="seta para retroceder" />
-                                <p className="textoBotao">Etapa anterior</p>
-                            </div>
+                            <Link to='/registo/3' className="decorationLinks">
+                                <div className="botaoEtapaAnterior">
+                                    <img src={setaAtras} className="iconSeta" alt="seta para retroceder" />
+                                    <p className="textoBotao">Etapa anterior</p>
+                                </div>
+                            </Link>
                             <img src={registoImgDesktop} className="imgEquipa" alt="criar equipa primeira imagem" />
                         </div>
                     </div>

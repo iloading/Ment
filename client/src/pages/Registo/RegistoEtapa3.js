@@ -7,6 +7,8 @@ import registoImgDesktop from "../../img/registo/registo3Img_desktop.svg";
 import { useEffect } from "react"
 import { useHistory } from "react-router-dom"
 
+import { Link } from "react-router-dom"
+
 //BD
 import { avatares } from '../../API';
 
@@ -121,10 +123,12 @@ function RegistoEtapa3({ dados, setDados, avataresBD, setAvataresBD }) {
                             </article>
                         </div>
                         <div className="conteudoDireitaDesktop">
-                            <div className="botaoEtapaAnterior">
-                                <img src={setaAtras} className="iconSeta" alt="seta para retroceder" />
-                                <p className="textoBotao">Etapa anterior</p>
-                            </div>
+                            <Link to='/registo/2' className="decorationLinks">
+                                <div className="botaoEtapaAnterior">
+                                    <img src={setaAtras} className="iconSeta" alt="seta para retroceder" />
+                                    <p className="textoBotao">Etapa anterior</p>
+                                </div>
+                            </Link>
 
                         </div>
                     </div>
