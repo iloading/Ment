@@ -45,9 +45,9 @@ const criarEquipas = require('./routes/CriarEquipa')
 app.use('/criarEquipa', criarEquipas);
 
 
-/* app.get('/', async (req, res) => {
+app.get('/', async (req, res) => {
     await res.send('We are on home')
-}) */
+})
 
 let port = process.env.PORT;
 if (port == null || port == "") {
