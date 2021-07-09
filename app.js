@@ -7,7 +7,10 @@ const app = express();
 
 app.use(express.json());
 
-app.use(cors());
+app.use(cors({
+    origin: ['https://ment-9ad64.web.app'],
+    credentials: true,
+}));
 // Add headers
 /* app.use(function (req, res, next) {
     // Website you wish to allow to connect
