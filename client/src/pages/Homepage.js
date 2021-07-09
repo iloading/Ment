@@ -6,6 +6,7 @@ import home2 from "../img/home2.svg";
 import home3 from "../img/home3.svg";
 import home4 from "../img/home4.svg";
 import home5 from "../img/home5.svg";
+import footer from "../img/homepageFooter.svg";
 import imgBanco from "../img/imgBanco.png";
 import comoFunciona1 from "../img/comoFunciona1.svg";
 import comoFunciona2 from "../img/comoFunciona2.svg";
@@ -34,6 +35,7 @@ function Homepage() {
 
                     <div id="login">
 
+
                         <button type="button" className="botao btnRegisto" onClick={redirectRegisto}>Registar</button>
                         <button type="button" className="botao btnLogin" onClick={redirectLogin}>Entrar</button>
                     </div>
@@ -43,7 +45,11 @@ function Homepage() {
                 </nav>
                 <section className="topInfo">
                     <div className="img_textos">
-                        <h1>Mentoria entre pares</h1>
+                        <div className="tituloMentoria">
+                            <label>Mentoria</label>
+                            <label className="continuacaoTitulo">entre pares</label>
+                        </div>
+
 
                         <div id="texto1">
 
@@ -73,7 +79,10 @@ function Homepage() {
                     <img src={home2} className="imagem2Homepage_desktop" alt="imagem homepage" />
 
                     <div className="img_textos">
-                        <h1>Construção passo-a-passo</h1>
+                        <div className="tituloMentoria">
+                            <label>Construção</label>
+                            <label className="continuacaoTitulo">passo-a-passo</label>
+                        </div>
 
                         <div id="texto1">
 
@@ -119,7 +128,7 @@ function Homepage() {
                         </div>
 
                     </div>
-                    <button type="button" className="botaoRegisto gapBotao" onClick={redirectRegisto}>Registar agora</button>
+                    <button type="button" className="botaoRegisto2 gapBotao" onClick={redirectRegisto}>Registar agora</button>
 
 
                 </section>
@@ -195,6 +204,7 @@ function Homepage() {
 
 
             </article>
+
         </>
     )
 }
