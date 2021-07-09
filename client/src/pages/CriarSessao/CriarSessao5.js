@@ -9,18 +9,18 @@ import iconDefinicoes from "../../img/icons/icon_settings.svg";
 import { Link } from "react-router-dom"
 //REDUX//
 import { preencherDescricao } from "../../actions/criacaoSessaoAction";
-import { useEffect } from 'react'
+
 import { useDispatch, useSelector } from 'react-redux'
-import { colourStyles } from './selectStyle';
+
 function CriarSessao5() {
     const dispatch = useDispatch()
     const { descricao } = useSelector(state => state.criarSessao.dadosPreenchidos)
 
     const descricaoHandler = (e) => {
-        console.log(e.target.value);
+
         let Descricao;
         if (e.target.value === '') {
-            Descricao = null
+            Descricao = ''
         } else {
             Descricao = e.target.value
         }
@@ -97,13 +97,15 @@ function CriarSessao5() {
                                     </Link>
                                     :
 
-                                    <div className="botaoAzul widthBotao" disabled>
-                                        <button id="divBotao" disabled>
-                                            <div id="botao" >
-                                                <p id="textoBotao">Próximo passo</p>
-                                            </div>
-                                        </button>
-                                    </div>
+                                    <Link to='/criarsessao/6' className="decorationLinks">
+                                        <div className="botaoAzul widthBotao" >
+                                            <button id="divBotao">
+                                                <div id="botao" >
+                                                    <p id="textoBotao">Preencher mais tarde</p>
+                                                </div>
+                                            </button>
+                                        </div>
+                                    </Link>
 
                                 }
 

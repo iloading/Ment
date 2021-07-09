@@ -7,8 +7,26 @@ import criarSessao3_semBack from "../../img/criarSessoes/criarSessao3_semBack.sv
 import iconDefinicoes from "../../img/icons/icon_settings.svg";
 
 import { Link } from "react-router-dom"
+//REDUX//
+import { preencherSituacaoProblema } from "../../actions/criacaoSessaoAction";
+
+import { useDispatch, useSelector } from 'react-redux'
 
 function CriarSessao6() {
+    const dispatch = useDispatch()
+    const { situacao_problema } = useSelector(state => state.criarSessao.dadosPreenchidos)
+
+    const situacao_problemaHandler = (e) => {
+
+        let situacao;
+        if (e.target.value === '') {
+            situacao = ''
+        } else {
+            situacao = e.target.value
+        }
+
+        dispatch(preencherSituacaoProblema(situacao))
+    }
     return (
         <article className="criarSessao">
             <section id="main" className="conteudoMain">
@@ -29,7 +47,7 @@ function CriarSessao6() {
                 <div className="titulo">
                     <div className="tituloPag criarEquipaTitulo" id="tituloPag">
                         <div className="gridAdicionar">
-                            <label className="tituloCriarEquipas desktop">Situação problema</label>
+                            <label className="tituloCriarEquipas desktop">Detalhes adicionais</label>
                             {/* <div className="imgCriarEquipas">
 <img src={iconAdicionar} alt="" />
 </div> */}
@@ -56,26 +74,43 @@ function CriarSessao6() {
                             </header>
 
                             <section id="corpo">
-                                <label id="titulo">Situação problema</label>
+
+                                <label id="titulo">Detalhes adicionais</label>
 
                                 <div>
-                                    <p id="texto">Sobre que problema central a sessão gira à volta?</p>
+                                    <p id="texto">Em torno de que problema central gira a sessão?</p>
                                 </div>
 
                                 <div className="formulario">
+                                    <label className="tituloFormulario">Situação Problema</label>
+                                    <textarea type="text" className="textareaTexto" placeholder="ex: A sessão tem por problemática central o impacto de um planeta com a Terra..." value={situacao_problema} onChange={situacao_problemaHandler}></textarea>
 
 
-                                    <textarea type="text" className="textareaTexto" placeholder="ex: A sessão tem por problemática central o impacto de um planeta com a Terra..."></textarea>
                                 </div>
-                                <Link to='/criarsessao/7' className="decorationLinks">
-                                    <div className="botaoAzul widthBotao">
-                                        <button id="divBotao">
-                                            <div id="botao" >
-                                                <p id="textoBotao">Próximo passo</p>
-                                            </div>
-                                        </button>
-                                    </div>
-                                </Link>
+                                {situacao_problema !== '' ?
+                                    <Link to='/criarsessao/7' className="decorationLinks">
+                                        <div className="botaoAzul widthBotao">
+                                            <button id="divBotao">
+                                                <div id="botao" >
+                                                    <p id="textoBotao">Próximo passo</p>
+                                                </div>
+                                            </button>
+                                        </div>
+                                    </Link>
+                                    :
+                                    <Link to='/criarsessao/7' className="decorationLinks">
+                                        <div className="botaoAzul widthBotao">
+                                            <button id="divBotao" >
+                                                <div id="botao" >
+                                                    <p id="textoBotao">Preencher mais tarde</p>
+                                                </div>
+                                            </button>
+                                        </div>
+                                    </Link>
+
+
+                                }
+
                             </section>
 
                         </form>

@@ -8,8 +8,32 @@ import iconDefinicoes from "../../img/icons/icon_settings.svg";
 
 import { Link } from "react-router-dom"
 
+//REDUX//
+import { preencherResultados } from "../../actions/criacaoSessaoAction";
+
+import { useDispatch, useSelector } from 'react-redux'
+import { criarNovaSessao } from "../../actions/criacaoSessaoAction";
 
 function CriarSessao9() {
+    const dispatch = useDispatch()
+    const { dadosPreenchidos } = useSelector(state => state.criarSessao)
+
+
+    const resultadosHandler = (e) => {
+
+        let resultados;
+        if (e.target.value === '') {
+            resultados = ''
+        } else {
+            resultados = e.target.value
+        }
+
+        dispatch(preencherResultados(resultados))
+    }
+    const submitHandler = (e) => {
+        dispatch(criarNovaSessao(dadosPreenchidos))
+
+    }
     return (
         <article className="criarSessao">
             <section id="main" className="conteudoMain">
@@ -30,7 +54,7 @@ function CriarSessao9() {
                 <div className="titulo">
                     <div className="tituloPag criarEquipaTitulo" id="tituloPag">
                         <div className="gridAdicionar">
-                            <label className="tituloCriarEquipas desktop">Resultados</label>
+                            <label className="tituloCriarEquipas desktop">Detalhes adicionais</label>
                             {/* <div className="imgCriarEquipas">
 <img src={iconAdicionar} alt="" />
 </div> */}
@@ -57,24 +81,27 @@ function CriarSessao9() {
                             </header>
 
                             <section id="corpo">
-                                <label id="titulo">Resultados</label>
+                                <label id="titulo">Detalhes adicionais</label>
 
                                 <div>
-                                    <p id="texto">Último passo! O que espera desta sessão? Em termos de narrativa, o que conclui a sessão? </p>
+                                    <p id="texto">Último passo! O que se espera desta sessão? Em termos de narrativa, o que conclui a sessão?</p>
                                 </div>
 
                                 <div className="formulario">
                                     <label className="tituloFormulario">O que se espera da sessão?</label>
 
-                                    <textarea type="text" className="textareaTexto" placeholder="ex: É esperado que os mentorandos consigam salvar o planeta Terra..."></textarea>
+                                    <textarea type="text" className="textareaTexto" placeholder="ex: É esperado que os mentorandos consigam salvar o planeta Terra..." value={dadosPreenchidos.resultados_esperados} onChange={resultadosHandler}></textarea>
                                 </div>
-                                <div /* to="/sessao" */ className="botaoAzul widthBotao" /* onClick={submitHandler} */>
-                                    <button id="divBotao">
-                                        <div id="botao" >
-                                            <p id="textoBotao">Criar sessão</p>
-                                        </div>
-                                    </button>
-                                </div>
+
+                                <Link to={`/perfilEquipa/${dadosPreenchidos.equipaEscolhida}`} className="decorationLinks">
+                                    <div className="botaoAzul widthBotao" onClick={submitHandler}>
+                                        <button id="divBotao">
+                                            <div id="botao" >
+                                                <p id="textoBotao">Criar sessão</p>
+                                            </div>
+                                        </button>
+                                    </div>
+                                </Link>
                             </section>
 
                         </form>
@@ -90,7 +117,7 @@ function CriarSessao9() {
                     </div>
                 </div>
             </section>
-        </article>
+        </article >
     )
 }
 

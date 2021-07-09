@@ -8,8 +8,37 @@ import iconDefinicoes from "../../img/icons/icon_settings.svg";
 
 import { Link } from "react-router-dom"
 
+//REDUX//
+import { preencherReais, preencherFiccionais } from "../../actions/criacaoSessaoAction";
+
+import { useDispatch, useSelector } from 'react-redux'
 
 function CriarSessao7() {
+    const dispatch = useDispatch()
+    const { factos_reais, factos_fic } = useSelector(state => state.criarSessao.dadosPreenchidos)
+
+    const reaisHandler = (e) => {
+
+        let reais;
+        if (e.target.value === '') {
+            reais = ''
+        } else {
+            reais = e.target.value
+        }
+
+        dispatch(preencherReais(reais))
+    }
+    const ficcionaisHandler = (e) => {
+
+        let fic;
+        if (e.target.value === '') {
+            fic = ''
+        } else {
+            fic = e.target.value
+        }
+
+        dispatch(preencherFiccionais(fic))
+    }
     return (
         <article className="criarSessao">
             <section id="main" className="conteudoMain">
@@ -30,7 +59,7 @@ function CriarSessao7() {
                 <div className="titulo">
                     <div className="tituloPag criarEquipaTitulo" id="tituloPag">
                         <div className="gridAdicionar">
-                            <label className="tituloCriarEquipas desktop">Dados técnicos</label>
+                            <label className="tituloCriarEquipas desktop">Detalhes adicionais</label>
                             {/* <div className="imgCriarEquipas">
 <img src={iconAdicionar} alt="" />
 </div> */}
@@ -57,30 +86,45 @@ function CriarSessao7() {
                             </header>
 
                             <section id="corpo">
-                                <label id="titulo">Processo de construção</label>
+                                <label id="titulo">Detalhes adicionais</label>
 
                                 <div>
-                                    <p id="texto">Quais são os factos reais sobre esta sessão, e quais são apenas ficcionais?</p>
+                                    <p id="texto">Quais são os factos reais, associados à narrativa desta sessão, e quais são os factos ficcionais?</p>
                                 </div>
 
                                 <div className="formulario">
                                     <label className="tituloFormulario">Factos reais</label>
 
-                                    <textarea type="text" className="textareaTexto" placeholder="ex: Os planetas da galáxia..."></textarea>
+                                    <input type="text" className="inputTexto" placeholder="ex: Os planetas da galáxia..." value={factos_reais} onChange={reaisHandler}></input>
 
                                     <label className="tituloFormulario">Factos ficcionais</label>
 
-                                    <textarea type="text" className="textareaTexto" placeholder="ex: A colisão de um planeta com a Terra..."></textarea>
+                                    <input type="text" className="inputTexto" placeholder="ex: A colisão de um planeta com a Terra..." value={factos_fic} onChange={ficcionaisHandler}></input>
                                 </div>
-                                <Link to='/criarsessao/8' className="decorationLinks">
-                                    <div className="botaoAzul widthBotao">
-                                        <button id="divBotao">
-                                            <div id="botao" >
-                                                <p id="textoBotao">Próximo passo</p>
-                                            </div>
-                                        </button>
-                                    </div>
-                                </Link>
+                                {(factos_reais !== '' || factos_fic !== '') ?
+                                    <Link to='/criarsessao/8' className="decorationLinks">
+                                        <div className="botaoAzul widthBotao">
+                                            <button id="divBotao">
+                                                <div id="botao" >
+                                                    <p id="textoBotao">Próximo passo</p>
+                                                </div>
+                                            </button>
+                                        </div>
+                                    </Link>
+                                    :
+                                    <Link to='/criarsessao/8' className="decorationLinks">
+                                        <div className="botaoAzul widthBotao">
+                                            <button id="divBotao" >
+                                                <div id="botao" >
+                                                    <p id="textoBotao">Preencher mais tarde</p>
+                                                </div>
+                                            </button>
+                                        </div>
+                                    </Link>
+
+
+                                }
+
                             </section>
 
                         </form>

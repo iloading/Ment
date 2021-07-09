@@ -1,530 +1,631 @@
-.homepage {
+.homepageLayout {
   display: grid;
-  grid-template-rows: auto 1fr auto auto auto;
-  grid-gap: 6rem;
-  overflow: auto;
-
-  nav {
-    display: grid;
-    grid-template-columns: 0.1fr 1fr 0.5fr 1fr 0.1fr;
-    grid-template-areas: ". logo . login .";
-    grid-row-gap: 5rem;
-    margin: 0;
-
-    #logo {
-      justify-self: left;
-      align-self: center;
-      grid-area: logo;
-    }
-
-    #login {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-column-gap: 1rem;
-      grid-area: login;
-      padding-top: 1rem;
-    }
-
-    img {
-      max-width: 10%;
-      min-width: 32px;
-    }
-
-    .botao {
-      border: none;
-      font-weight: $font-weight-boldest;
-      border-radius: 5px;
-      width: 100%;
-      min-height: 24px;
-      padding: 0;
-      padding: 1rem 2rem 1rem 2rem;
-      font-size: 0.8rem;
-    }
-
-    .btnRegisto {
-      background-color: #191847;
-      color: white;
-    }
-    .btnLogin {
-      color: $text-main-color;
-      background-color: #e0eaff;
-    }
-  }
-
-  .topInfo {
-    display: grid;
-    margin: 0 2rem;
-    grid-gap: 2rem;
-
-    .img_textos {
-      display: grid;
-      grid-gap: 3rem;
-      h1 {
-        text-align: center;
-        color: $text-main-color;
-        font-size: 3rem;
-      }
-      #texto1 {
-        color: $text-type4-color;
-        font-weight: $font-weight-boldest;
-      }
-      #texto2 {
-        text-align: left;
-        color: $text-type2-color;
-        font-weight: $font-weight-bold;
-      }
-      .imagem1Homepage {
-        width: 100%;
-      }
-      .imagem1Homepage_mobile {
-        display: block;
-        width: 70%;
-      }
-
-      img {
-        justify-self: center;
-        align-self: center;
-      }
-      .botaoRegisto {
-        color: white;
-        background-color: $button-type2-background;
-        border: none;
-        font-weight: $font-weight-bold;
-        font-size: $font-size-s;
-        width: 60%;
-        height: 55px;
-        justify-self: center;
-        border-radius: 5px;
-      }
-      h2 {
-        text-align: center;
-        color: $text-main-color;
-      }
-      a {
-        text-align: center;
-        font-weight: $font-weight-bolder;
-        margin-bottom: 3rem;
-      }
-      a:link {
-        color: $text-main-color;
-      }
-      a:visited {
-        color: $text-main-color;
-      }
-      li {
-        margin-bottom: 1rem;
-      }
-      .paragrafoComofunciona {
-        margin-bottom: 1rem;
-      }
-      .imageBox {
-        height: calc(50% + 50);
-        width: 100%;
-        background-color: #c1dee2;
-      }
-    }
-
-    .imagem1Homepage_desktop {
-      display: none;
-    }
-
-    /*
-    .angledShape {
-      transform: skew(0deg, -5deg);
-      background-color: #c1dee2;
-    }
-    .notangledShape {
-      transform: skew(0deg, 5deg);
-      bottom: 0;
-      padding: 3rem;
-    }
-    */
-  }
-
-  .construcaoPasso {
-    display: grid;
-    margin: 0 2rem;
-    grid-gap: 2rem;
-
-    .imagem2Homepage_desktop {
-      display: none;
-    }
-
-    .img_textos {
-      display: grid;
-      grid-gap: 3rem;
-      h1 {
-        text-align: center;
-        color: $text-main-color;
-        font-size: 2.2rem;
-      }
-      #texto1 {
-        color: $text-type4-color;
-        font-weight: $font-weight-boldest;
-      }
-      #texto2 {
-        text-align: left;
-        color: $text-type2-color;
-        font-weight: $font-weight-bold;
-      }
-      .imagem1Homepage {
-        width: 100%;
-      }
-      .imagem1Homepage_mobile {
-        display: block;
-      }
-
-      img {
-        justify-self: center;
-        align-self: center;
-      }
-      .botaoRegisto {
-        color: white;
-        background-color: $button-type2-background;
-        border: none;
-        font-weight: $font-weight-bold;
-        font-size: $font-size-s;
-        width: 60%;
-        height: 55px;
-        justify-self: center;
-        border-radius: 5px;
-      }
-      h2 {
-        text-align: center;
-        color: $text-main-color;
-      }
-      a {
-        text-align: center;
-        font-weight: $font-weight-bolder;
-        margin-bottom: 3rem;
-      }
-      a:link {
-        color: $text-main-color;
-      }
-      a:visited {
-        color: $text-main-color;
-      }
-      li {
-        margin-bottom: 1rem;
-      }
-      .paragrafoComofunciona {
-        margin-bottom: 1rem;
-      }
-      .imageBox {
-        height: calc(50% + 50);
-        width: 100%;
-        background-color: #c1dee2;
-      }
-
-      .imagem2Homepage_mobile {
-        display: block;
-      }
-    }
-  }
-
-  .comoFunciona {
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    margin: 4rem 2rem;
-    grid-row-gap: 4rem;
-    label {
-      justify-self: center;
-      color: #042454;
-      font-weight: 700;
-      font-size: 2.2rem;
-    }
-
-    .comoFuncionaCards {
-      display: grid;
-      grid-template-rows: 1fr 1fr 1fr;
-      grid-row-gap: 4rem;
-
-      .card {
-        display: grid;
-        grid-row-gap: 1.5rem;
-        label {
-          justify-self: center;
-          font-size: 1.5rem;
-        }
-        p {
-          justify-self: center;
-          color: #003bb9;
-          font-weight: 400;
-          font-size: 1rem;
-        }
-
-        img {
-          width: 80%;
-          justify-self: center;
-        }
-      }
-    }
-    .botaoRegisto {
-      color: white;
-      background-color: $button-type2-background;
-      border: none;
-      font-weight: $font-weight-bold;
-      font-size: $font-size-s;
-      width: 60%;
-      height: 55px;
-      justify-self: center;
-      border-radius: 5px;
-    }
-  }
-
-  // #apresentacaoBanco {
-  //   display: grid;
-  //   margin: 0 2rem;
-  //   grid-gap: 2rem;
-  //   grid-gap: 3rem;
-
-  //   img {
-  //     width: 100%;
-  //   }
-  // }
-  // #comoFunciona {
-  //   display: grid;
-  //   margin: 0 2rem;
-  //   grid-gap: 2rem;
-  //   grid-gap: 3rem;
-
-  //   #sectionComoFunciona {
-  //     display: grid;
-  //     grid-gap: 3.5rem;
-
-  //     #comoFuncionaTexto {
-  //       display: grid;
-  //       grid-template-columns: 0.8fr 0.4fr;
-  //       grid-template-areas: "texto imagem";
-
-  //       .textoCentroVertical {
-  //         align-self: center;
-  //       }
-
-  //       #textoComoFunciona {
-  //         grid-area: texto;
-  //         color: $text-main-color;
-  //       }
-
-  //       #textoComoFunciona2 {
-  //         grid-area: texto;
-  //         padding-top: 1.5rem;
-  //         color: $text-type4-color;
-  //       }
-
-  //       #imagem {
-  //         grid-area: imagem;
-  //         justify-self: right;
-  //       }
-  //     }
-  //     #comoFuncionaTexto2 {
-  //       display: grid;
-  //       grid-template-columns: 0.4fr 0.8fr;
-  //       grid-template-areas: "imagem texto";
-
-  //       .textoCentroVertical {
-  //         align-self: center;
-  //       }
-
-  //       #textoComoFunciona {
-  //         grid-area: texto;
-  //         color: $text-main-color;
-  //         text-align: right;
-  //       }
-
-  //       #textoComoFunciona2 {
-  //         grid-area: texto;
-  //         padding-top: 1.5rem;
-  //         color: $text-type4-color;
-  //         text-align: right;
-  //       }
-
-  //       #imagem {
-  //         grid-area: imagem;
-  //         justify-self: left;
-  //       }
-  //     }
-  //   }
-  // }
-  // #feedback {
-  //   display: grid;
-  //   margin: 0 2rem;
-  //   grid-gap: 2rem;
-  //   grid-gap: 3rem;
-  //   justify-items: center;
-  // }
-
-  // .gapTexto {
-  //   margin-top: 2rem;
-  // }
-
-  // .gapBotao {
-  //   margin-top: 7rem;
-  // }
-
-  // #carousel {
-  //   display: grid;
-  //   margin: 0 2rem;
-  //   grid-gap: 2rem;
-  //   margin: 0;
-  //   justify-items: center;
-  // }
-
-  // .carousel {
-  //   width: 90vw;
-
-  //   .carouselCards {
-  //     background-color: rgba($color: #aaaaaa, $alpha: 0.2);
-  //     border-radius: 20px;
-  //     padding: 1.5rem;
-  //     height: 30vh;
-  //     display: grid !important;
-  //     grid-template-columns: 0.5fr 1fr;
-  //   }
-
-  //   .imgCard {
-  //     display: grid;
-  //     align-items: center;
-  //   }
-
-  //   .slick-slide > div {
-  //     margin: 0 10px 30px;
-  //   }
-  //   .slick-list {
-  //     margin: 0 -10px;
-  //   }
-
-  //   .texto {
-  //     display: grid;
-  //     align-items: center;
-  //     grid-template-rows: auto 1fr;
-
-  //     label {
-  //       font-size: $font-size-l;
-  //       color: $text-main-color;
-  //     }
-  //   }
-  // }
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr auto;
 }
 
-@media only screen and (min-width: 1024px) {
+.divisao {
   .homepage {
+    display: grid;
+    grid-template-rows: auto 1fr auto auto auto auto;
+    padding: 0 4rem;
+    margin-top: 5.5%;
     grid-row-gap: 8rem;
+    grid-area: homepage;
+
     nav {
-      grid-template-columns: 0.1fr 1fr 0.5fr 1fr 0.1fr;
-      img {
-        width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: "logo  login";
+      padding: 0;
+      position: static;
+
+      #logo {
+        justify-self: left;
+        align-self: center;
+        grid-area: logo;
+        width: 20%;
+        max-width: inherit;
+        min-width: inherit;
       }
+
       #login {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-column-gap: 1rem;
-        margin: 0 5rem 0 5rem;
-        .botao {
-          width: 100%;
-          padding: 0.5rem;
-          font-size: 1rem;
-        }
+        grid-area: login;
+        justify-self: end;
+      }
+
+      .botao {
+        border: none;
+        font-weight: $font-weight-boldest;
+        border-radius: 10px;
+        padding: 0.5rem 2.5rem 0.5rem 2.5rem;
+        font-size: 1.2rem;
+        margin: auto;
+      }
+
+      .btnRegisto {
+        background-color: #191847;
+        color: white;
+        cursor: pointer;
+      }
+      .btnLogin {
+        color: $text-main-color;
+        background-color: #e0eaff;
+        cursor: pointer;
       }
     }
 
     .topInfo {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      margin: 0 15%;
-      grid-column-gap: 5rem;
 
       .img_textos {
         display: grid;
-        grid-gap: 3rem;
-        h1 {
-          text-align: left;
-          font-size: 5.5rem;
+
+        grid-row-gap: 4rem;
+
+        .tituloMentoria {
+          display: grid;
+          position: relative;
+          label {
+            color: $text-main-color;
+            font-size: 7rem;
+            font-weight: 700;
+            justify-self: center;
+          }
+
+          .continuacaoTitulo {
+            position: relative;
+            bottom: 25%;
+            justify-self: center;
+          }
         }
+
+        #texto1 {
+          justify-self: center;
+
+          ul {
+            display: grid;
+            grid-row-gap: 4rem;
+            color: #003bb9;
+            font-size: 2rem;
+            font-weight: 600;
+          }
+        }
+
+        .botaoRegisto {
+          color: white;
+          background-color: $button-type2-background;
+          border: none;
+          font-weight: 500;
+          font-size: 2rem;
+          justify-self: center;
+          border-radius: 10px;
+          width: 65%;
+          padding: 1.5rem 2rem 1.5rem 2rem;
+          margin-top: 3rem;
+          cursor: pointer;
+        }
+
         .imagem1Homepage_mobile {
-          display: none;
+          display: block;
         }
       }
-
       .imagem1Homepage_desktop {
-        display: block;
-        justify-self: center;
-        width: 100%;
+        display: none;
       }
     }
 
     .construcaoPasso {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      margin: 0 15%;
-      grid-column-gap: 5rem;
-
-      .img_textos {
-        .imagem2Homepage_mobile {
-          display: none;
-        }
-        h1 {
-          text-align: end;
-          font-size: 3rem;
-        }
-      }
+      padding-top: 3rem;
 
       .imagem2Homepage_desktop {
-        display: block;
-        justify-self: center;
-        align-self: center;
-        width: 60%;
+        display: none;
+      }
+      .img_textos {
+        display: grid;
+        grid-row-gap: 8rem;
+
+        .tituloMentoria {
+          display: grid;
+          position: relative;
+          label {
+            color: $text-main-color;
+            font-size: 4rem;
+            font-weight: 700;
+            justify-self: center;
+          }
+
+          .continuacaoTitulo {
+            position: relative;
+            bottom: 25%;
+            justify-self: center;
+          }
+        }
+        #texto1 {
+          justify-self: center;
+          ol {
+            display: grid;
+            grid-row-gap: 2rem;
+            color: #003bb9;
+            font-size: 1.5rem;
+            font-weight: 600;
+          }
+        }
+        .imagem2Homepage_mobile {
+          display: block;
+          justify-self: center;
+          width: 60%;
+        }
       }
     }
 
     .comoFunciona {
       display: grid;
-      grid-template-rows: auto 1fr auto;
-      margin: 0 15%;
-      grid-row-gap: 3rem;
+      grid-template-rows: auto 1fr;
+
+      padding-top: 3rem;
+      grid-row-gap: 5rem;
+
       label {
-        justify-self: center;
-        color: #042454;
+        color: $text-main-color;
+        font-size: 4rem;
         font-weight: 700;
-        font-size: 2.8rem;
+        justify-self: center;
+        text-align: center;
       }
 
       .comoFuncionaCards {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 1fr;
-        grid-column-gap: 2rem;
+        grid-template-columns: 1fr;
+        grid-row-gap: 5rem;
 
         .card {
           display: grid;
-          grid-row-gap: 2.5rem;
+          grid-row-gap: 4rem;
           label {
+            color: $text-main-color;
+            font-size: 3rem;
+            font-weight: 700;
             justify-self: center;
-            font-size: 1.5rem;
           }
           p {
             justify-self: center;
+            text-align: center;
             color: #003bb9;
+            font-size: 1.5rem;
             font-weight: 400;
-            font-size: 1.2rem;
           }
-
           img {
-            width: 80%;
             justify-self: center;
           }
         }
       }
-      .botaoRegisto {
+      .botaoRegisto2 {
         color: white;
         background-color: $button-type2-background;
         border: none;
-        font-weight: $font-weight-bold;
-        font-size: $font-size-s;
-        width: 26%;
-        height: 55px;
+        font-weight: 500;
+        font-size: 2rem;
         justify-self: center;
-        border-radius: 5px;
+        border-radius: 10px;
+        width: 65%;
+        padding: 1.5rem 2rem 1.5rem 2rem;
+        margin-top: 3rem;
+        cursor: pointer;
+      }
+    }
+  }
+}
+.homepageFooter {
+  img {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .divisao {
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-areas: ". homepage .";
+
+    .homepage {
+      display: grid;
+      grid-template-rows: auto 1fr auto auto auto auto;
+
+      margin-top: 5.5%;
+      grid-row-gap: 5rem;
+      grid-area: homepage;
+
+      nav {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "logo  login";
+        padding: 0;
+        position: static;
+
+        #logo {
+          justify-self: left;
+          align-self: center;
+          grid-area: logo;
+          width: 13.5%;
+          max-width: inherit;
+          min-width: inherit;
+        }
+
+        #login {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-column-gap: 1rem;
+          grid-area: login;
+          justify-self: end;
+          padding-right: 2rem;
+        }
+
+        .botao {
+          border: none;
+          font-weight: $font-weight-boldest;
+          border-radius: 5px;
+          padding: 0.5rem 2.5rem 0.5rem 2.5rem;
+          font-size: 1.2rem;
+          margin: auto;
+        }
+
+        .btnRegisto {
+          background-color: #191847;
+          color: white;
+          cursor: pointer;
+        }
+        .btnLogin {
+          color: $text-main-color;
+          background-color: #e0eaff;
+          cursor: pointer;
+        }
+      }
+
+      .topInfo {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding-left: 6rem;
+        grid-column-gap: 4rem;
+
+        .img_textos {
+          display: grid;
+          padding-right: 5rem;
+          grid-row-gap: 2rem;
+
+          .tituloMentoria {
+            display: grid;
+            position: relative;
+            label {
+              color: $text-main-color;
+              font-size: 5rem;
+              font-weight: 700;
+              justify-self: baseline;
+            }
+
+            .continuacaoTitulo {
+              position: relative;
+              bottom: 25%;
+              justify-self: baseline;
+            }
+          }
+
+          #texto1 {
+            ul {
+              display: grid;
+              grid-row-gap: 2rem;
+              color: #003bb9;
+              font-size: 1.2rem;
+              font-weight: 600;
+            }
+          }
+
+          .botaoRegisto {
+            color: white;
+            background-color: $button-type2-background;
+            border: none;
+            font-weight: 500;
+            font-size: 1.2rem;
+            justify-self: center;
+            border-radius: 5px;
+            width: 65%;
+            padding: 1.5rem 2rem 1.5rem 2rem;
+            margin-top: 1.2rem;
+            cursor: pointer;
+          }
+
+          .imagem1Homepage_mobile {
+            display: none;
+          }
+        }
+        .imagem1Homepage_desktop {
+          display: block;
+          width: 100%;
+          align-self: center;
+        }
+      }
+
+      .construcaoPasso {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding-left: 6rem;
+        padding-right: 6rem;
+        padding-top: 3rem;
+        grid-column-gap: 4rem;
+
+        .imagem2Homepage_desktop {
+          display: block;
+          justify-self: center;
+          align-self: center;
+          width: 55%;
+          margin-right: 2rem;
+        }
+        .img_textos {
+          display: grid;
+          grid-row-gap: 2rem;
+
+          .tituloMentoria {
+            display: grid;
+            position: relative;
+            label {
+              color: $text-main-color;
+              font-size: 3.5rem;
+              font-weight: 700;
+              justify-self: end;
+            }
+
+            .continuacaoTitulo {
+              position: relative;
+              bottom: 25%;
+              justify-self: end;
+            }
+          }
+          #texto1 {
+            justify-self: end;
+            ol {
+              display: grid;
+              grid-row-gap: 1.5rem;
+              color: #003bb9;
+              font-size: 1.2rem;
+              font-weight: 600;
+            }
+          }
+          .imagem2Homepage_mobile {
+            display: none;
+          }
+        }
+      }
+
+      .comoFunciona {
+        display: grid;
+        grid-template-rows: auto 1fr;
+        padding-left: 6rem;
+        padding-right: 6rem;
+        padding-top: 5rem;
+        grid-row-gap: 5rem;
+
+        label {
+          color: $text-main-color;
+          font-size: 3.5rem;
+          font-weight: 700;
+          justify-self: center;
+        }
+
+        .comoFuncionaCards {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          grid-column-gap: 3rem;
+
+          .card {
+            display: grid;
+            grid-row-gap: 3rem;
+            label {
+              color: $text-main-color;
+              font-size: 2rem;
+              font-weight: 700;
+              justify-self: center;
+            }
+            p {
+              justify-self: center;
+              text-align: center;
+              color: #003bb9;
+              font-size: 1.2rem;
+              font-weight: 400;
+            }
+            img {
+              justify-self: center;
+            }
+          }
+        }
+        .botaoRegisto2 {
+          color: white;
+          background-color: $button-type2-background;
+          border: none;
+          font-weight: 500;
+          font-size: 1.2rem;
+          justify-self: center;
+          border-radius: 5px;
+          width: 30%;
+          padding: 1.5rem 2rem 1.5rem 2rem;
+          margin-top: 1rem;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .homepageFooter {
+    img {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 750px) {
+  .divisao {
+    .homepage {
+      .topInfo {
+        display: grid;
+
+        .img_textos {
+          display: grid;
+
+          grid-row-gap: 4rem;
+
+          .tituloMentoria {
+            display: grid;
+            position: relative;
+            label {
+              color: $text-main-color;
+              font-size: 6rem;
+              font-weight: 700;
+              justify-self: center;
+            }
+
+            .continuacaoTitulo {
+              position: relative;
+              bottom: 25%;
+              justify-self: center;
+            }
+          }
+
+          #texto1 {
+            justify-self: center;
+
+            ul {
+              display: grid;
+              grid-row-gap: 3rem;
+              color: #003bb9;
+              font-size: 1.5rem;
+              font-weight: 600;
+            }
+          }
+
+          .botaoRegisto {
+            color: white;
+            background-color: $button-type2-background;
+            border: none;
+            font-weight: 500;
+            font-size: 1.5rem;
+            justify-self: center;
+            border-radius: 10px;
+            width: 60%;
+            padding: 1.5rem 2rem 1.5rem 2rem;
+            margin-top: 3rem;
+            cursor: pointer;
+          }
+
+          .imagem1Homepage_mobile {
+            display: block;
+          }
+        }
+        .imagem1Homepage_desktop {
+          display: none;
+        }
+      }
+
+      .construcaoPasso {
+        display: grid;
+        padding-top: 3rem;
+
+        .imagem2Homepage_desktop {
+          display: none;
+        }
+        .img_textos {
+          display: grid;
+          grid-row-gap: 8rem;
+
+          .tituloMentoria {
+            display: grid;
+            position: relative;
+            label {
+              color: $text-main-color;
+              font-size: 3rem;
+              font-weight: 700;
+              justify-self: center;
+            }
+
+            .continuacaoTitulo {
+              position: relative;
+              bottom: 25%;
+              justify-self: center;
+            }
+          }
+          #texto1 {
+            justify-self: center;
+            ol {
+              display: grid;
+              grid-row-gap: 2rem;
+              color: #003bb9;
+              font-size: 1.3rem;
+              font-weight: 600;
+            }
+          }
+          .imagem2Homepage_mobile {
+            display: block;
+            justify-self: center;
+            width: 50%;
+          }
+        }
+      }
+
+      .comoFunciona {
+        display: grid;
+        grid-template-rows: auto 1fr;
+
+        padding-top: 3rem;
+        grid-row-gap: 2.5rem;
+
+        label {
+          color: $text-main-color;
+          font-size: 3rem;
+          font-weight: 700;
+          justify-self: center;
+          text-align: center;
+        }
+
+        .comoFuncionaCards {
+          display: grid;
+          grid-template-columns: 1fr;
+          grid-row-gap: 5rem;
+
+          .card {
+            display: grid;
+            grid-row-gap: 3rem;
+            label {
+              color: $text-main-color;
+              font-size: 2rem;
+              font-weight: 700;
+              justify-self: center;
+            }
+            p {
+              justify-self: center;
+              text-align: center;
+              color: #003bb9;
+              font-size: 1.2rem;
+              font-weight: 400;
+            }
+            img {
+              justify-self: center;
+            }
+          }
+        }
+        .botaoRegisto2 {
+          color: white;
+          background-color: $button-type2-background;
+          border: none;
+          font-weight: 500;
+          font-size: 1.5rem;
+          justify-self: center;
+          border-radius: 10px;
+          width: 60%;
+          padding: 1.5rem 2rem 1.5rem 2rem;
+          margin-top: 3rem;
+          cursor: pointer;
+        }
       }
     }
   }

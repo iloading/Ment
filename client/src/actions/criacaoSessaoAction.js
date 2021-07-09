@@ -68,19 +68,68 @@ export const preencherDescricao = (descricao) => async (dispatch) => {
         }
     })
 }
+export const preencherSituacaoProblema = (situacao_problema) => async (dispatch) => {
+    dispatch({
+        type: "PREENCHER_SITUACAO_PROBLEMA",
+        payload: {
+            situacao_problema: situacao_problema
+        }
+    })
+}
+
+export const preencherReais = (reais) => async (dispatch) => {
+    dispatch({
+        type: "PREENCHER_REAIS",
+        payload: {
+            reais: reais
+        }
+    })
+}
+export const preencherFiccionais = (ficcionais) => async (dispatch) => {
+    dispatch({
+        type: "PREENCHER_FICCIONAIS",
+        payload: {
+            ficcionais: ficcionais
+        }
+    })
+}
+export const preencherMentores = (mentores) => async (dispatch) => {
+    dispatch({
+        type: "PREENCHER_MENTORES",
+        payload: {
+            funcao_mentores: mentores
+        }
+    })
+}
+export const preencherMentorandos = (mentorandos) => async (dispatch) => {
+    dispatch({
+        type: "PREENCHER_MENTORANDOS",
+        payload: {
+            funcao_mentorandos: mentorandos
+        }
+    })
+}
+export const preencherResultados = (resultados) => async (dispatch) => {
+    dispatch({
+        type: "PREENCHER_RESULTADOS",
+        payload: {
+            resultados_esperados: resultados
+        }
+    })
+}
 export const criarNovaSessao = (dados) => async (dispatch) => {
 
-    await criarSessao(dados);
+    const novaSessao = await criarSessao(dados);
     /* METER DISPATCH FEEDBACK DA BD */
     dispatch({
-        type: "CRIAR_NOVA_SESSAO",
+        type: "SHOW_FEEDBACK",
         payload: {
-            dados: dados
+            message: novaSessao.data.success,
+            type: 'valid',
         }
     })
     dispatch({
         type: "CLEAR_SESSAO",
-
     })
 }
 export const loadInfo = () => async (dispatch) => {
