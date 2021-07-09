@@ -7,7 +7,9 @@ var connection = mysql.createConnection({
 });
 
 connection.connect(function (err) {
-    if (err) throw err;
+    if (err) {
+        console.log(err);
+    };
 });
 
 module.exports = connection;
