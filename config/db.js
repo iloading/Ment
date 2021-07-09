@@ -1,10 +1,12 @@
 const mysql = require('mysql');
 var connection = mysql.createConnection({
-    user: 'bc6050a16ba73c',
-    host: 'us-cdbr-east-04.cleardb.com',
-    password: 'd16badb2',
-    database: 'heroku_8b30da5ebf6c579'
+    user: 'bb634438aacb2d',
+    host: 'eu-cdbr-west-01.cleardb.com',
+    password: '1d38da54',
+    database: 'heroku_acd41d977512a36'
 });
+
+/* mysql://bb634438aacb2d:1d38da54@eu-cdbr-west-01.cleardb.com/heroku_acd41d977512a36?reconnect=true */
 
 connection.connect(function (err) {
     if (err) {
