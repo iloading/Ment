@@ -101,6 +101,8 @@ function App() {
           <PerfilEquipa />
         </Route>
 
+
+
       </Switch>
 
     </main>
