@@ -169,7 +169,7 @@ router.post('/login', async (req, res) => {
                     const accessToken = createTokens(result[0])
 
                     /* maxAge = 365 dias */
-                    res.cookie('Ment-login-token', accessToken, { maxAge: 60 * 60 * 24 * 365 * 1000, httpOnly: true })
+                    res.cookie('Ment-login-token', accessToken, { maxAge: 60 * 60 * 24 * 365 * 1000, httpOnly: true, sameSite: 'none', secure: true })
                     /* const accessToken = createTokens(result.data) */
                     res.json({
                         success: 'LOGIN EFETUADO COM SUCESSO'
