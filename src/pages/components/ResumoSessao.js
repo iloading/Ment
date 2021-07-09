@@ -53,7 +53,7 @@ function ResumoSessao({ sessao, status }) {
                                 </div>
                             </div>
 
-                            <div className="conteudoComents">
+                            {/* <div className="conteudoComents">
                                 <div className="seccaoPlano">
                                     <label className="titulo">Comentários</label>
                                 </div>
@@ -97,7 +97,7 @@ function ResumoSessao({ sessao, status }) {
                                         <img src={imgComentario} alt="" />
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
 
 
                         </div>

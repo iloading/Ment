@@ -115,7 +115,7 @@ function Homepage() {
                         <div className="comoFuncionaCards">
                             <div className="card">
                                 <label>Banco</label>
-                                <p>Explores projetos realizados em todo o país</p>
+                                <p>Explore projetos realizados em todo o país</p>
                                 <img src={home3} alt="" />
                             </div>
                             <div className="card">

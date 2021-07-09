@@ -54,7 +54,7 @@ function DetalhesSessao({ sessao, status }) {
                                             <label className="detalhes_titulo">Equipa</label>
                                             <span className="detalhes_texto">Os Aventureiros</span>
                                             <label className="detalhes_titulo">Professor Responsável</label>
-                                            <span className="detalhes_texto">Xtor Miguel Vilelelelele</span>
+                                            <span className="detalhes_texto">Carlos Santos</span>
                                         </div>
 
 
