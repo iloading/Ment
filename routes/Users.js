@@ -122,7 +122,7 @@ router.post('/register', async (req, res) => {
 })
 //Verificar se o email já está registado durante o processo de registo
 router.post('/verify-email', async (req, res) => {
-    console.log(req.body);
+    console.log(`REQUEST BODY:   ${req.body}`);
     //Extrair o conteudo que vem no pedido de verificação
     const { email } = req.body;
 
