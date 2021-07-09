@@ -71,7 +71,9 @@ function CriarEquipa6() {
                                 <label id="titulo">Escolher foto</label>
 
                                 <div>
-                                    <p id="texto">A foto da equipa é a única identidade sobre a qual permitimos fazer o upload. A fotografia não é obrigatória, e caso o deseje, nós fornecemos uma automaticamente, apenas com as iniciais (prometemos que vai gostar). Se a sua equipa tiver uma identidade visual definida, pode fazer então o upload de um ficheiro. Ressalvamos apenas de novo a discrição necessária uma vez que estamos a lidar com alunos menores. Lembre-se de proteger a sua equipa acima de tudo.</p>
+                                    <p id="texto">A foto da equipa é a única identidade sobre a qual permitimos fazer o upload. A fotografia não é obrigatória, e caso o deseje, nós fornecemos uma automaticamente, apenas com as iniciais (prometemos que vai gostar).</p>
+                                    <p id="texto"> Se a sua equipa tiver uma identidade visual definida, pode fazer então o upload de um ficheiro. </p>
+                                    <p id="texto">Ressalvamos apenas de novo a discrição necessária uma vez que estamos a lidar com alunos menores. Lembre-se de proteger a sua equipa acima de tudo.</p>
                                 </div>
 
 
@@ -90,7 +92,7 @@ function CriarEquipa6() {
                         </form>
                     </div>
                     <div className="conteudoDireita">
-                        <div className="botaoEtapaAnterior">
+                        <div className="botaoEtapaAnterior cursorEtapaAnterior">
                             <img src={setaAtras} className="iconSeta" alt="seta para retroceder" />
                             <p className="textoBotao">Etapa anterior</p>
                         </div>

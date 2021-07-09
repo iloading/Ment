@@ -58,7 +58,7 @@ function CriarSessao8() {
                 <div className="titulo">
                     <div className="tituloPag criarEquipaTitulo" id="tituloPag">
                         <div className="gridAdicionar">
-                            <label className="tituloCriarEquipas desktop">Papéis</label>
+                            <label className="tituloCriarEquipas desktop">Detalhes adicionais</label>
                             {/* <div className="imgCriarEquipas">
 <img src={iconAdicionar} alt="" />
 </div> */}
@@ -85,20 +85,20 @@ function CriarSessao8() {
                             </header>
 
                             <section id="corpo">
-                                <label id="titulo">Papéis</label>
+                                <label id="titulo">Detalhes adicionais</label>
 
                                 <div>
-                                    <p id="texto">Para uma sessão funcionar corretamente é necessário explicitar os papéis dos mentores e dos mentorandos. Lembre-se de depositar nos mentores tarefas que os valorizem e se sintam motivados!</p>
+                                    <p id="texto">Para uma sessão funcionar corretamente é necessário explicitar os papéis dos mentores e dos mentorandos. </p>
                                 </div>
 
                                 <div className="formulario">
                                     <label className="tituloFormulario">Papel dos mentores</label>
 
-                                    <input type="text" className="inputTexto" placeholder="ex: Past tense, teorema de pitágoras" value={funcao_mentores} onChange={mentoresHandler}></input>
+                                    <input type="text" className="inputTexto" placeholder="ex: No papel de super-heróis, guiar os mentorandos para salvarem o planeta Terra..." value={funcao_mentores} onChange={mentoresHandler}></input>
 
                                     <label className="tituloFormulario">Papel dos mentorandos</label>
 
-                                    <input type="text" className="inputTexto" placeholder="ex: Past tense, teorema de pitágoras" value={funcao_mentorandos} onChange={mentorandosHandler}></input>
+                                    <input type="text" className="inputTexto" placeholder="ex: No papel de astronautas, encontrarem uma forma de salvar a Terra..." value={funcao_mentorandos} onChange={mentorandosHandler}></input>
                                 </div>
                                 {(funcao_mentores !== '' || funcao_mentorandos !== '') ?
                                     <Link to='/criarsessao/9' className="decorationLinks">
@@ -129,7 +129,7 @@ function CriarSessao8() {
                         </form>
                     </div>
                     <div className="conteudoDireita">
-                        <div className="botaoEtapaAnterior">
+                        <div className="botaoEtapaAnterior cursorEtapaAnterior">
                             <img src={setaAtras} className="iconSeta" alt="seta para retroceder" />
                             <p className="textoBotao">Etapa anterior</p>
                         </div>

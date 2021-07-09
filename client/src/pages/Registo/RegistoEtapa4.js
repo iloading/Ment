@@ -152,7 +152,7 @@ function RegistoEtapa4({ dados, setDados, validadeFormulario4, setvalidadeFormul
                                     </div>
                                     <img src={registo5Img} alt="registo quinta imagem" />
                                 </header>
-                                <div className="formulario" id={dados.role === 0 ? "etapa4_student" : "etapa4_teacher"}>
+                                <div className={`formulario`} id={(dados.role === 0 || dados.role === null) ? "etapa4_student" : "etapa4_teacher"}>
                                     <section className="tituloPrincipal">
                                         <label>Informações</label>
                                     </section>

@@ -87,6 +87,7 @@
               width: 100%;
               text-decoration: none;
               margin-top: 0;
+              cursor: pointer;
 
               #textoBotao {
                 font-weight: $font-weight-more-bold;
@@ -116,6 +117,7 @@
               width: 100%;
               opacity: 0.5;
               margin-top: 0;
+              cursor: not-allowed;
 
               #textoBotao {
                 font-weight: $font-weight-more-bold;
@@ -132,7 +134,7 @@
 
           .tituloFormulario {
             font-size: $font-size-s;
-            font-weight: $font-weight-normal;
+            font-weight: 500;
             color: $text-main-color;
           }
 
@@ -147,6 +149,8 @@
 
           .inputTexto::placeholder {
             color: lightgray;
+            font-size: 1rem;
+            padding-left: 0.3rem;
           }
           .inputTexto:focus {
             outline: 0;
@@ -163,6 +167,8 @@
           }
           .textareaTexto::placeholder {
             color: lightgray;
+            font-size: 1rem;
+            padding-left: 0.3rem;
           }
           .textareaTexto:focus {
             outline: 0;
@@ -253,7 +259,7 @@
       margin: 1.5rem;
       #titulo2 {
         font-size: $font-size-s;
-        font-weight: $font-weight-normal;
+        font-weight: 500;
         color: $text-main-color;
       }
     }
@@ -509,6 +515,7 @@
           width: 100%;
           text-decoration: none;
           margin-top: 0;
+          cursor: pointer;
 
           #textoBotao {
             font-weight: $font-weight-more-bold;
@@ -527,6 +534,7 @@
         margin: auto;
         width: 82%;
         margin-top: 1rem;
+
         #botao {
           color: $button-type1-background;
           justify-self: center;
@@ -538,6 +546,7 @@
           width: 100%;
           opacity: 0.5;
           margin-top: 0;
+          cursor: not-allowed;
 
           #textoBotao {
             font-weight: $font-weight-more-bold;
@@ -693,6 +702,9 @@
             font-size: 0.9375rem;
             padding-left: 1rem;
           }
+        }
+        .cursorEtapaAnterior {
+          cursor: pointer;
         }
         .primeiraEtapa {
           visibility: hidden;

@@ -74,31 +74,39 @@ function CriarSessao4() {
                                     <p id="texto">Chegamos agora a uma fase onde vamos preencher alguns detalhes técnicos sobre a sessão. Pode escolher avançar esta fase e preencher mais tarde, ou preencher apenas os campos que quiser, com possibilidade de alteração a qualquer momento!</p>
                                 </div>
 
-                                <Link to='/criarsessao/5' className="decorationLinks">
-                                    <div className="botaoAzul widthBotao">
-                                        <button id="divBotao">
+
+                                <div className="botaoAzul widthBotao">
+
+                                    <button id="divBotao">
+                                        <Link to='/criarsessao/5' className="decorationLinks">
                                             <div id="botao" >
                                                 <p id="textoBotao">Preencher agora</p>
                                             </div>
-                                        </button>
-                                    </div>
-                                </Link>
-                                <Link to={`/perfilEquipa/${dadosPreenchidos.equipaEscolhida}`} className="decorationLinks">
-                                    <div className="botaoAzul widthBotao" onClick={submitHandler}>
-                                        <button id="divBotao">
+                                        </Link>
+                                    </button>
+
+                                </div>
+
+
+                                <div className="botaoAzul widthBotao" onClick={submitHandler}>
+
+                                    <button id="divBotao">
+                                        <Link to={`/perfilEquipa/${dadosPreenchidos.equipaEscolhida}`} className="decorationLinks">
                                             <div id="botao" >
                                                 <p id="textoBotao">Mais tarde</p>
                                             </div>
-                                        </button>
-                                    </div>
-                                </Link>
+                                        </Link>
+                                    </button>
+
+                                </div>
+
 
                             </section>
 
                         </form>
                     </div>
                     <div className="conteudoDireita">
-                        <div className="botaoEtapaAnterior">
+                        <div className="botaoEtapaAnterior cursorEtapaAnterior">
                             <img src={setaAtras} className="iconSeta" alt="seta para retroceder" />
                             <p className="textoBotao">Etapa anterior</p>
                         </div>

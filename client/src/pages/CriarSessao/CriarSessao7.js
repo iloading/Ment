@@ -59,7 +59,7 @@ function CriarSessao7() {
                 <div className="titulo">
                     <div className="tituloPag criarEquipaTitulo" id="tituloPag">
                         <div className="gridAdicionar">
-                            <label className="tituloCriarEquipas desktop">Dados técnicos</label>
+                            <label className="tituloCriarEquipas desktop">Detalhes adicionais</label>
                             {/* <div className="imgCriarEquipas">
 <img src={iconAdicionar} alt="" />
 </div> */}
@@ -86,20 +86,20 @@ function CriarSessao7() {
                             </header>
 
                             <section id="corpo">
-                                <label id="titulo">Dados técnicos</label>
+                                <label id="titulo">Detalhes adicionais</label>
 
                                 <div>
-                                    <p id="texto">Quais são os factos reais sobre esta sessão, e quais são apenas ficcionais?</p>
+                                    <p id="texto">Quais são os factos reais, associados à narrativa desta sessão, e quais são os factos ficcionais?</p>
                                 </div>
 
                                 <div className="formulario">
                                     <label className="tituloFormulario">Factos reais</label>
 
-                                    <input type="text" className="inputTexto" placeholder="ex: Past tense, teorema de pitágoras" value={factos_reais} onChange={reaisHandler}></input>
+                                    <input type="text" className="inputTexto" placeholder="ex: Os planetas da galáxia..." value={factos_reais} onChange={reaisHandler}></input>
 
                                     <label className="tituloFormulario">Factos ficcionais</label>
 
-                                    <input type="text" className="inputTexto" placeholder="ex: Past tense, teorema de pitágoras" value={factos_fic} onChange={ficcionaisHandler}></input>
+                                    <input type="text" className="inputTexto" placeholder="ex: A colisão de um planeta com a Terra..." value={factos_fic} onChange={ficcionaisHandler}></input>
                                 </div>
                                 {(factos_reais !== '' || factos_fic !== '') ?
                                     <Link to='/criarsessao/8' className="decorationLinks">
@@ -130,7 +130,7 @@ function CriarSessao7() {
                         </form>
                     </div>
                     <div className="conteudoDireita">
-                        <div className="botaoEtapaAnterior">
+                        <div className="botaoEtapaAnterior cursorEtapaAnterior">
                             <img src={setaAtras} className="iconSeta" alt="seta para retroceder" />
                             <p className="textoBotao">Etapa anterior</p>
                         </div>

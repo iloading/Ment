@@ -83,7 +83,7 @@ function CriarSessao5() {
                                 <div className="formulario">
                                     <label className="tituloFormulario">Descrição</label>
 
-                                    <textarea type="text" className="textareaTexto" placeholder="Descrição da equipa" value={descricao} onChange={descricaoHandler}></textarea>
+                                    <textarea type="text" className="textareaTexto" placeholder="ex: Uma narrativa sobre uma viagem à nossa galáxia onde os alunos se deparam com um desafio que têm de solucionar para salvar o planeta..." value={descricao} onChange={descricaoHandler}></textarea>
                                 </div>
                                 {descricao !== '' ?
                                     <Link to='/criarsessao/6' className="decorationLinks">
@@ -114,7 +114,7 @@ function CriarSessao5() {
                         </form>
                     </div>
                     <div className="conteudoDireita">
-                        <div className="botaoEtapaAnterior">
+                        <div className="botaoEtapaAnterior cursorEtapaAnterior">
                             <img src={setaAtras} className="iconSeta" alt="seta para retroceder" />
                             <p className="textoBotao">Etapa anterior</p>
                         </div>

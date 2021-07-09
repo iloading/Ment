@@ -86,8 +86,9 @@ function CriarEquipa3() {
                                 <label id="titulo">Detalhes</label>
 
                                 <div>
-                                    <p id="texto">Uma equipa tem de obrigatoriamente estar associada a uma Escola!
-                                        De seguida, preencha uma breve descrição sobre a equipa! Esta descrição estará disponível publicamente, para tal aconselhamos brevidade e discrição de acordo com o RGPD em atuação.</p>
+                                    <p id="texto">Uma equipa tem de obrigatoriamente estar associada a uma Escola/Agrupamento.</p>
+                                    <p id="texto">De seguida, preencha uma breve descrição sobre a equipa.</p>
+                                    <p id="texto"> Esta descrição estará disponível publicamente, e por isso aconselhamos brevidade e discrição de acordo com o RGPD em atuação.</p>
                                 </div>
 
                                 <div className="formulario">
@@ -129,7 +130,7 @@ function CriarEquipa3() {
 
                                     <label className="tituloFormulario">Descrição</label>
 
-                                    <textarea type="text" className="textareaTexto" placeholder="Descrição da equipa" onChange={descricaoHandler} value={dadosPreenchidos.descricao}></textarea>
+                                    <textarea type="text" className="textareaTexto" placeholder="ex: A equipa mais divertida de Aveiro!..." onChange={descricaoHandler} value={dadosPreenchidos.descricao}></textarea>
                                 </div>
 
 
@@ -153,7 +154,7 @@ function CriarEquipa3() {
                         </form>
                     </div>
                     <div className="conteudoDireita">
-                        <div className="botaoEtapaAnterior">
+                        <div className="botaoEtapaAnterior cursorEtapaAnterior">
                             <img src={setaAtras} className="iconSeta" alt="seta para retroceder" />
                             <p className="textoBotao">Etapa anterior</p>
                         </div>

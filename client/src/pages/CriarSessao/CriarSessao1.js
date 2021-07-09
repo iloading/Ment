@@ -31,7 +31,7 @@ function CriarSessao1() {
 
                     <div className="bemvindo_titulos">
                         <h3>Bom dia,</h3>
-                        <h1>Criar Sessao</h1>
+                        <h1>Criar Sessão</h1>
                     </div>
                     <div className="icons">
                         <img src={iconDefinicoes} alt="" />
@@ -64,8 +64,9 @@ function CriarSessao1() {
                                 <section id="corpo">
                                     <label id="titulo">Criar uma nova sessão</label>
 
-                                    <p id="texto">Para criar uma nova sessão é necessário ter pelo menos uma equipa criada. A partir deste ecrã associar a uma nova sessão uma equipa existente ou criar uma nova equipa!</p>
-                                    <div className="botaoAzul">
+                                    <p id="texto">Para criar uma nova sessão é necessário ter pelo menos uma equipa criada.</p>
+                                    <p id="texto">A partir deste ecrã pode associar a sessão a uma equipa existente, ou criar uma nova equipa.</p>
+                                    <div className="botaoAzul espacamentoBotao">
                                         <div id="divBotao">
                                             <Link id="botao" to='/criarEquipa'>
                                                 <p id="textoBotao">Criar uma nova equipa</p>
@@ -92,7 +93,7 @@ function CriarSessao1() {
                         </form>
                     </div>
                     <div className="conteudoDireita">
-                        <div className="botaoEtapaAnterior primeiraEtapa">
+                        <div className="botaoEtapaAnterior primeiraEtapa cursorEtapaAnterior">
                             <img src={setaAtras} className="iconSeta" alt="seta para retroceder" />
                             <p className="textoBotao">Etapa anterior</p>
                         </div>

@@ -47,7 +47,7 @@ function CriarSessao6() {
                 <div className="titulo">
                     <div className="tituloPag criarEquipaTitulo" id="tituloPag">
                         <div className="gridAdicionar">
-                            <label className="tituloCriarEquipas desktop">Situação problema</label>
+                            <label className="tituloCriarEquipas desktop">Detalhes adicionais</label>
                             {/* <div className="imgCriarEquipas">
 <img src={iconAdicionar} alt="" />
 </div> */}
@@ -74,16 +74,18 @@ function CriarSessao6() {
                             </header>
 
                             <section id="corpo">
-                                <label id="titulo">Situação problema</label>
+
+                                <label id="titulo">Detalhes adicionais</label>
 
                                 <div>
-                                    <p id="texto">Sobre que problema central a sessão gira à volta? (por exemplo: O aquecimento global)</p>
+                                    <p id="texto">Em torno de que problema central gira a sessão?</p>
                                 </div>
 
                                 <div className="formulario">
-                                    <label className="tituloFormulario">Situação problema</label>
+                                    <label className="tituloFormulario">Situação Problema</label>
+                                    <textarea type="text" className="textareaTexto" placeholder="ex: A sessão tem por problemática central o impacto de um planeta com a Terra..." value={situacao_problema} onChange={situacao_problemaHandler}></textarea>
 
-                                    <textarea type="text" className="textareaTexto" placeholder="Descrição da equipa" value={situacao_problema} onChange={situacao_problemaHandler}></textarea>
+
                                 </div>
                                 {situacao_problema !== '' ?
                                     <Link to='/criarsessao/7' className="decorationLinks">
@@ -114,7 +116,7 @@ function CriarSessao6() {
                         </form>
                     </div>
                     <div className="conteudoDireita">
-                        <div className="botaoEtapaAnterior">
+                        <div className="botaoEtapaAnterior cursorEtapaAnterior">
                             <img src={setaAtras} className="iconSeta" alt="seta para retroceder" />
                             <p className="textoBotao">Etapa anterior</p>
                         </div>

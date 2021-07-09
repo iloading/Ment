@@ -69,7 +69,7 @@
         .formulario {
           display: grid;
           grid-template-columns: 1fr;
-          padding: 1.5rem 1.5rem 0rem 1.5rem;
+          padding: 0rem 1.5rem 0rem 1.5rem;
 
           .tituloPrincipal {
             justify-content: center;
@@ -80,7 +80,7 @@
             }
           }
           .paragrafo {
-            margin-bottom: 1rem;
+            margin-bottom: 3.5rem;
             p {
               color: $text-main-color;
               font-weight: $font-weight-normal;
@@ -88,7 +88,7 @@
           }
           label {
             font-size: $font-size-s;
-            font-weight: $font-weight-normal;
+            font-weight: 500;
             color: $text-main-color;
           }
           .react-select-form {

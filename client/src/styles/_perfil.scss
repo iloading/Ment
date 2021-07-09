@@ -68,48 +68,182 @@
         font-weight: $font-weight-normal;
       }
     }
-
-    .conteudoBotoes {
-      display: grid;
-      align-self: center;
-      grid-row-gap: 1.5rem;
-
-      .titulo {
-        width: 90%;
-        justify-self: center;
-
-        label {
-          color: $text-main-color;
-          font-weight: $font-weight-normal;
-          font-weight: 300;
-        }
-      }
-
-      .botao {
-        background-color: $button-type3-background;
-        border: 1px solid $button-type3-background;
-        border-radius: 0.3rem;
+    .conteudoMid {
+      .conteudoBotoes {
         display: grid;
-        grid-template-columns: 0.1fr 0.1fr 1fr;
-        grid-template-areas: ". imgEsquerda textoDireita";
-        padding: 0.5rem 0.5rem 0.5rem 0.5rem;
-        width: 90%;
-        justify-self: center;
+        align-self: center;
+        grid-row-gap: 1.5rem;
 
-        #img_esquerda {
-          grid-area: imgEsquerda;
-          align-self: center;
+        .tituloMid {
+          display: grid;
+          margin-top: 0.5rem;
+          grid-template-columns: auto;
+          grid-template-areas: "tituloConteudo";
+
+          .tituloConteudo {
+            color: $text-main-color;
+            font-size: 1.2rem;
+            font-weight: 600;
+            grid-area: tituloConteudo;
+          }
         }
 
-        #texto_Direita {
-          grid-area: textoDireita;
-          align-self: center;
+        .titulo {
+          width: 90%;
+          justify-self: center;
 
           label {
-            padding-left: 1rem;
-            font-weight: $font-weight-boldest;
-            font-size: $font-size-s;
             color: $text-main-color;
+            font-weight: $font-weight-normal;
+            font-weight: 300;
+          }
+        }
+
+        .botao {
+          background-color: $button-type3-background;
+          border: 1px solid $button-type3-background;
+          border-radius: 0.3rem;
+          display: grid;
+          grid-template-columns: 0.1fr 0.1fr 1fr;
+          grid-template-areas: ". imgEsquerda textoDireita";
+          padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+          width: 90%;
+          justify-self: center;
+
+          #img_esquerda {
+            grid-area: imgEsquerda;
+            align-self: center;
+          }
+
+          #texto_Direita {
+            grid-area: textoDireita;
+            align-self: center;
+
+            label {
+              padding-left: 1rem;
+              font-weight: $font-weight-boldest;
+              font-size: $font-size-s;
+              color: $text-main-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .perfil {
+    overflow: auto;
+    aside.menu_principal {
+      position: sticky;
+      top: 0;
+      left: 0;
+    }
+    .conteudoMain {
+      display: grid;
+      /* grid-template-rows: auto 4rem 1fr; */
+      padding-right: 4rem;
+      padding-top: 2rem;
+      margin: 0;
+
+      height: 100%;
+
+      .bemvindo_titulos {
+        h3 {
+          visibility: hidden;
+        }
+      }
+      .infoPerfil {
+        display: none;
+      }
+
+      .titulo {
+        display: none;
+      }
+
+      .conteudoMid {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+        grid-template-areas: "esquerda direita";
+        grid-column-gap: 2.5rem;
+        align-self: flex-start;
+        .conteudoBotoes {
+          grid-area: esquerda;
+          align-self: flex-start;
+        }
+        .conteudoDireitaDesktopPerfilEquipa {
+          grid-area: direita;
+          display: block;
+          .infoPerfilDesktop {
+            display: grid;
+            grid-template-rows: auto 1fr;
+            grid-template-areas: "first" "second";
+            align-self: center;
+
+            justify-items: center;
+            grid-row-gap: 1rem;
+
+            .conteudoDireitaFirst {
+              grid-area: first;
+              display: grid;
+              grid-template-rows: 2rem auto;
+              grid-row-gap: 3rem;
+              width: 100%;
+              img {
+                justify-self: center;
+                width: 45%;
+              }
+              label {
+                color: $text-main-color;
+                font-size: 1.2rem;
+                font-weight: 600;
+                margin-top: 0.5rem;
+                text-align: left;
+              }
+              span {
+                color: $text-type5-color;
+                font-size: $font-size-s;
+                font-weight: $font-weight-normal;
+                width: 60%;
+                text-align: center;
+              }
+            }
+            .conteudoDireitaSecond {
+              grid-area: second;
+              display: grid;
+              grid-template-rows: 2rem auto;
+              align-self: flex-start;
+              width: 100%;
+              grid-row-gap: 2rem;
+              margin-top: 3rem;
+              label {
+                color: $text-main-color;
+                font-size: 1.2rem;
+                font-weight: 600;
+                justify-self: start;
+              }
+              .descricaoEquipa {
+                background-color: $button-type1-background;
+                border-radius: 5px;
+                padding: 1rem;
+                display: grid;
+                grid-row-gap: 1rem;
+                .tituloCaixaConteudo {
+                  color: $text-main-color;
+                  font-size: $font-size-m;
+                  font-weight: 600;
+                }
+                span {
+                  color: $text-type5-color;
+                  font-size: $font-size-s;
+                  font-weight: $font-weight-normal;
+                  width: 60%;
+                  justify-self: start;
+                  margin-top: 0.5rem;
+                }
+              }
+            }
           }
         }
       }

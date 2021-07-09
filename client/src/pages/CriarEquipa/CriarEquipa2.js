@@ -60,14 +60,15 @@ function CriarEquipa2() {
                                 <label id="titulo">Definir um alias</label>
 
                                 <div>
-                                    <p id="texto">Nesta etapa sugerimos que forneça à sua equipa um "cognome":
-                                        Quando tiver diversas equipas a funcionar,  pode ser difícil encontrar aquela que pretende rapidamente apenas pela turma ou pela escola. Para facilitar tal processo sugerimos um "nome de atalho", que apenas será visível para si. Pode deixar em branco, se assim preferir.</p>
+                                    <p id="texto">Nesta etapa sugerimos que forneça à sua equipa um "cognome".</p>
+                                    <p id="texto">Quando tiver diversas equipas a funcionar,  pode ser difícil encontrar aquela que pretende rapidamente apenas pela turma ou pela escola. Para facilitar tal processo sugerimos um "nome de atalho", que apenas será visível para si.</p>
+                                    <p id="texto">Pode deixar em branco, se assim preferir.</p>
                                 </div>
 
                                 <div className="formulario">
                                     <label className="tituloFormulario">Nome do atalho</label>
 
-                                    <input type="text" className="inputTexto" placeholder="ex: Aquela turma do 7ºB" onChange={aliasHandler} value={dadosPreenchidos.alias}></input>
+                                    <input type="text" className="inputTexto" placeholder="ex: Aquela turma do 7ºB..." onChange={aliasHandler} value={dadosPreenchidos.alias}></input>
                                 </div>
 
 
@@ -91,7 +92,7 @@ function CriarEquipa2() {
                         </form>
                     </div>
                     <div className="conteudoDireita">
-                        <div className="botaoEtapaAnterior">
+                        <div className="botaoEtapaAnterior cursorEtapaAnterior">
                             <img src={setaAtras} className="iconSeta" alt="seta para retroceder" />
                             <p className="textoBotao">Etapa anterior</p>
                         </div>

@@ -54,7 +54,7 @@ function CriarSessao9() {
                 <div className="titulo">
                     <div className="tituloPag criarEquipaTitulo" id="tituloPag">
                         <div className="gridAdicionar">
-                            <label className="tituloCriarEquipas desktop">Resultados</label>
+                            <label className="tituloCriarEquipas desktop">Detalhes adicionais</label>
                             {/* <div className="imgCriarEquipas">
 <img src={iconAdicionar} alt="" />
 </div> */}
@@ -81,16 +81,16 @@ function CriarSessao9() {
                             </header>
 
                             <section id="corpo">
-                                <label id="titulo">Resultados</label>
+                                <label id="titulo">Detalhes adicionais</label>
 
                                 <div>
-                                    <p id="texto">Último passo! O que espera desta sessão? Em termos de narrativa, o que conclui a sessão? (Por exemplo: os mentorandos descobrem o tesouro secreto)</p>
+                                    <p id="texto">Último passo! O que se espera desta sessão? Em termos de narrativa, o que conclui a sessão?</p>
                                 </div>
 
                                 <div className="formulario">
                                     <label className="tituloFormulario">O que se espera da sessão?</label>
 
-                                    <textarea type="text" className="textareaTexto" placeholder="Descrição da equipa" value={dadosPreenchidos.resultados_esperados} onChange={resultadosHandler}></textarea>
+                                    <textarea type="text" className="textareaTexto" placeholder="ex: É esperado que os mentorandos consigam salvar o planeta Terra..." value={dadosPreenchidos.resultados_esperados} onChange={resultadosHandler}></textarea>
                                 </div>
 
                                 <Link to={`/perfilEquipa/${dadosPreenchidos.equipaEscolhida}`} className="decorationLinks">
@@ -107,7 +107,7 @@ function CriarSessao9() {
                         </form>
                     </div>
                     <div className="conteudoDireita">
-                        <div className="botaoEtapaAnterior">
+                        <div className="botaoEtapaAnterior cursorEtapaAnterior">
                             <img src={setaAtras} className="iconSeta" alt="seta para retroceder" />
                             <p className="textoBotao">Etapa anterior</p>
                         </div>
@@ -115,7 +115,7 @@ function CriarSessao9() {
                     </div>
                 </div>
             </section>
-        </article>
+        </article >
     )
 }
 
