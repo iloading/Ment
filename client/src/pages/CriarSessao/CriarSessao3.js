@@ -173,10 +173,12 @@ function CriarSessao3() {
                         </form>
                     </div>
                     <div className="conteudoDireita">
-                        <div className="botaoEtapaAnterior cursorEtapaAnterior">
-                            <img src={setaAtras} className="iconSeta" alt="seta para retroceder" />
-                            <p className="textoBotao">Etapa anterior</p>
-                        </div>
+                        <Link to='/criarsessao/2' className="decorationLinks">
+                            <div className="botaoEtapaAnterior cursorEtapaAnterior">
+                                <img src={setaAtras} className="iconSeta" alt="seta para retroceder" />
+                                <p className="textoBotao">Etapa anterior</p>
+                            </div>
+                        </Link>
                         <img src={criarSessao3_semBack} className="imgEquipa" alt="criar equipa segunda imagem" />
                     </div>
                 </div>
