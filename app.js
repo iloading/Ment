@@ -9,8 +9,7 @@ app.use(express.json());
 
 app.use(
     cors({
-        'origin': 'https://ment-9ad64.web.app',
-        'credentials': true
+        'origin': 'https://ment-9ad64.web.app'
     })
 );
 
