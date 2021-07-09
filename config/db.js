@@ -1,9 +1,9 @@
 const mysql = require('mysql');
-var connection = mysql.createConnection({
+var connection = mysql.createPool({
     user: 'bb634438aacb2d',
     host: 'eu-cdbr-west-01.cleardb.com',
     password: '1d38da54',
-    database: 'heroku_acd41d977512a36?reconnect=true'
+    database: 'heroku_acd41d977512a36'
 });
 
 /* mysql://bb634438aacb2d:1d38da54@eu-cdbr-west-01.cleardb.com/heroku_acd41d977512a36?reconnect=true */
