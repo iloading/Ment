@@ -54,6 +54,8 @@
     .barraProgresso {
       display: block;
       border-radius: 10px;
+      padding-left: 1rem;
+      padding-right: 2rem;
       label {
         font-size: 1rem;
         font-weight: 400;
@@ -142,6 +144,8 @@
       color: #042454;
       font-weight: 700;
       font-size: 1.2rem;
+      padding-left: 1rem;
+      margin-top: 1rem;
     }
     .conteudoResumo {
       display: grid;
@@ -209,6 +213,11 @@
       .conteudoPlano {
         display: grid;
         grid-row-gap: 1rem;
+
+        .titulo {
+          padding-left: 1rem;
+        }
+
         .factos {
           display: grid;
           padding: 2rem;
@@ -239,6 +248,10 @@
       .conteudoComents {
         display: grid;
         grid-row-gap: 1rem;
+
+        .titulo {
+          padding-left: 1rem;
+        }
 
         .ListaComentarios {
           .cardComentario {

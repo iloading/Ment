@@ -18,6 +18,9 @@ nav {
     justify-self: end;
     align-self: center;
     grid-area: perfil;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
   }
 
   img {

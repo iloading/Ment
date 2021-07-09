@@ -18,15 +18,14 @@
 
     .titulo {
       display: grid;
-      grid-template-columns: 1.5rem auto;
-      grid-template-areas: "iconTitulo tituloMain";
+      grid-template-columns: auto;
+      grid-template-areas: "tituloMain";
       align-items: center;
 
       label {
         font-size: $font-size-m;
         font-weight: $font-weight-boldest;
         color: $text-main-color;
-        margin-left: 0.5rem;
       }
 
       img {

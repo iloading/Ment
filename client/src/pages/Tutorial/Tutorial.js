@@ -1,9 +1,8 @@
 import React from 'react'
-import setaAtras from "../../img/setaAtras.png"
+import setaAtras from "../../img/icons/icon_setaAtrasAzul.svg"
 import setaDireita from "../../img/setaDireita.png";
 
 import iconDefinicoes from "../../img/icons/icon_settings.svg";
-import iconOrdenar from "../../img/icons/icon_ordenar.svg";
 
 import { Link } from "react-router-dom"
 
@@ -37,7 +36,7 @@ function Tutorial() {
                         <label className="tituloEtapas_mobile" >Tutorial</label>
 
 
-                        <img src={iconOrdenar} alt="" id="iconOrdenar" />
+
                     </div>
 
 
@@ -45,7 +44,7 @@ function Tutorial() {
                         <label>O que posso aprender?</label>
                     </div>
 
-                    <img src={iconOrdenar} alt="" id="iconOrdenar_mobile" />
+
 
 
                 </div>

@@ -1,7 +1,6 @@
 import registo3Img from "../../img/registo/registo3Img.png";
 import setaAtras from "../../img/icons/icon_setaAtrasAzul.svg"
 import navLogo from "../../img/logo.svg";
-import registoImgDesktop from "../../img/registo/registo3Img_desktop.svg";
 
 
 import { useEffect } from "react"
