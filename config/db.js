@@ -11,6 +11,9 @@ connection.connect(function (err) {
         console.log(err);
     };
 });
+*/
+const { Prohairesis } = require('prohairesis')
+const env = require('./env');
 
+const connection = new Prohairesis(env.CLEARDB_DATABASE_URL)
 module.exports = connection;
- */

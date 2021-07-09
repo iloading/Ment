@@ -2,10 +2,7 @@ const cookieParser = require('cookie-parser');
 const express = require('express');
 const cors = require('cors');
 
-const { Prohairesis } = require('prohairesis')
-const env = require('./env');
 
-const db = new Prohairesis(env.CLEARDB_DATABASE_URL)
 const app = express();
 
 app.use(express.json());
