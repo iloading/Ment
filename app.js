@@ -8,7 +8,9 @@ const app = express();
 app.use(express.json());
 
 app.use(
-    cors()
+    cors({
+        'origin': 'https://ment-9ad64.web.app/',
+    })
 );
 /* app.options('*', cors()) */
 // Add headers
