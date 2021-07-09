@@ -11,9 +11,10 @@ app.use(
     cors({
         'origin': 'https://ment-9ad64.web.app/',
         'credentials': true,
-        'optionsSuccessStatus': 204
+        'optionsSuccessStatus': 200
     })
 );
+app.options('*', cors())
 // Add headers
 /* app.use(function (req, res) {
 
