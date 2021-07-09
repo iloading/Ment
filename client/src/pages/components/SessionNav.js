@@ -23,6 +23,15 @@ function Navbar({ sessao, status }) {
                         <img src={iconLike} alt="" id="like" />
                     </div>
 
+                    <div className="areaDownload">
+                        <div className="barraProgresso">
+                            <label>Complete os detalhes da sessão</label>
+                            <div className="progressBar">
+                                <div><p>50%</p></div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div className="navegacao">
                         <label className="titulo" id="titulo">{sessao.nome}</label>
 

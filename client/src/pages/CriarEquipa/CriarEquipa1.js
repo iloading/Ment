@@ -90,10 +90,12 @@ function CriarEquipa1() {
                         </form>
                     </div>
                     <div className="conteudoDireita">
+
                         <div className="botaoEtapaAnterior primeiraEtapa cursorEtapaAnterior">
                             <img src={setaAtras} className="iconSeta" alt="seta para retroceder" />
                             <p className="textoBotao">Etapa anterior</p>
                         </div>
+
                         <img src={criarEquipa1_semBack} className="imgEquipa" alt="criar equipa primeira imagem" />
                     </div>
                 </div>

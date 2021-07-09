@@ -92,10 +92,12 @@ function CriarEquipa6() {
                         </form>
                     </div>
                     <div className="conteudoDireita">
-                        <div className="botaoEtapaAnterior cursorEtapaAnterior">
-                            <img src={setaAtras} className="iconSeta" alt="seta para retroceder" />
-                            <p className="textoBotao">Etapa anterior</p>
-                        </div>
+                        <Link to='/criarequipa/5' className="decorationLinks">
+                            <div className="botaoEtapaAnterior cursorEtapaAnterior">
+                                <img src={setaAtras} className="iconSeta" alt="seta para retroceder" />
+                                <p className="textoBotao">Etapa anterior</p>
+                            </div>
+                        </Link>
                         <img src={criarEquipa6_semBack} className="imgEquipa" alt="criar equipa primeira imagem" />
                     </div>
                 </div>

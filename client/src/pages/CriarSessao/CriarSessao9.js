@@ -107,10 +107,12 @@ function CriarSessao9() {
                         </form>
                     </div>
                     <div className="conteudoDireita">
-                        <div className="botaoEtapaAnterior cursorEtapaAnterior">
-                            <img src={setaAtras} className="iconSeta" alt="seta para retroceder" />
-                            <p className="textoBotao">Etapa anterior</p>
-                        </div>
+                        <Link to='/criarsessao/8' className="decorationLinks">
+                            <div className="botaoEtapaAnterior cursorEtapaAnterior">
+                                <img src={setaAtras} className="iconSeta" alt="seta para retroceder" />
+                                <p className="textoBotao">Etapa anterior</p>
+                            </div>
+                        </Link>
                         <img src={criarSessao9_semBack} className="imgEquipa" alt="criar equipa segunda imagem" />
                     </div>
                 </div>

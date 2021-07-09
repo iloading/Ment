@@ -111,6 +111,15 @@ function ResumoSessao({ sessao, status }) {
                                     <img src={iconDownload} alt="" />
                                 </div>
                             </div>
+                            <div className="titulos_top">
+                                <label>Progresso</label>
+                            </div>
+                            <div className="barraProgresso">
+                                <label>Complete os detalhes da sessão</label>
+                                <div className="progressBar">
+                                    <div><p>50%</p></div>
+                                </div>
+                            </div>
 
                         </div>
 

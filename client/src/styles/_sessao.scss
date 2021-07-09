@@ -44,6 +44,46 @@
     }
   }
 
+  .areaDownload {
+    height: fit-content;
+    display: grid;
+    grid-row-gap: 1.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 2.5rem;
+
+    .barraProgresso {
+      display: block;
+      border-radius: 10px;
+      label {
+        font-size: 1rem;
+        font-weight: 400;
+        color: $text-main-color;
+        margin-bottom: 1rem;
+      }
+      .progressBar {
+        border: 1px solid #e0eaff;
+        border-radius: 10px;
+        margin-top: 1rem;
+        /* (height of inner div) / 2 + padding */
+
+        div {
+          background-color: #042454;
+          width: 50%;
+          /* Adjust with JavaScript */
+          height: 20px;
+          border-radius: 10px;
+          text-align: center;
+          color: white;
+          font-size: 0.7rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          font-weight: 300;
+        }
+      }
+    }
+  }
+
   .navegacao {
     display: grid;
     grid-template-rows: 1fr 1fr;
@@ -475,6 +515,9 @@
       .descarregar {
         display: none;
       }
+      .barraProgresso {
+        display: none;
+      }
     }
   }
 }
@@ -631,7 +674,7 @@
         .areaDownload {
           height: fit-content;
           display: grid;
-          grid-row-gap: 2.5rem;
+          grid-row-gap: 1.5rem;
           .descarregar {
             display: block;
 
@@ -648,6 +691,37 @@
               label {
                 color: #042454;
                 font-weight: 400;
+              }
+            }
+          }
+          .barraProgresso {
+            display: block;
+            border-radius: 10px;
+            label {
+              font-size: 1rem;
+              font-weight: 400;
+              color: $text-main-color;
+              margin-bottom: 1rem;
+            }
+            .progressBar {
+              border: 1px solid #e0eaff;
+              border-radius: 10px;
+              margin-top: 1rem;
+              /* (height of inner div) / 2 + padding */
+
+              div {
+                background-color: #042454;
+                width: 50%;
+                /* Adjust with JavaScript */
+                height: 20px;
+                border-radius: 10px;
+                text-align: center;
+                color: white;
+                font-size: 0.7rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                font-weight: 300;
               }
             }
           }
