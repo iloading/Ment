@@ -98,8 +98,7 @@ function Dashboard() {
                                 <>
                                     <MinhaEquipa key={equipas.id} alias={equipas[0].alias} name={equipas[0].name} schoolName={equipas[0].school_name} equipa={equipas[0]} />
                                     <div className="criarEquipa">
-                                        <img src={iconEstadoNegativo} className="iconEstadoNegativo" alt="" />
-                                        <p className="textoEstadoNegativo">Ainda não existe nenhuma equipa!</p>
+
                                     </div>
                                 </>
                                 :
