@@ -9,10 +9,11 @@ app.use(express.json());
 
 app.use(function (req, res) {
     console.log(req.headers.origin);
-    /*  cors({
-         origin: [`${req.headers.origin}`],
-         credentials: true,
-     }) */
+    cors({
+        'origin': true,
+        'credentials': true,
+        'optionsSuccessStatus': 204
+    })
 });
 // Add headers
 /* app.use(function (req, res) {
