@@ -109,7 +109,7 @@ router.post('/register', async (req, res) => {
                 const accessToken = createTokens({ id: result.insertId })
 
                 /* maxAge = 365 dias */
-                res.cookie('Ment-login-token', accessToken, { maxAge: 60 * 60 * 24 * 365 * 1000, httpOnly: true })
+                res.cookie('Ment-login-token', accessToken, { maxAge: 60 * 60 * 24 * 365 * 1000, httpOnly: true, sameSite: 'none', secure: true })
                 /* const accessToken = createTokens(result.data) */
 
                 res.json({
@@ -225,7 +225,7 @@ router.get('/loggedIn', (req, res) => {
 
 router.get('/logout', (req, res) => {
     res.cookie('Ment-login-token', '', {
-        httpOnly: true,
+        httpOnly: true, sameSite: 'none', secure: true,
         expires: new Date(0),
     }).send()
 })
