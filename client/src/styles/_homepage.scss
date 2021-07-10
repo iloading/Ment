@@ -35,7 +35,7 @@
         border: none;
         font-weight: $font-weight-boldest;
         border-radius: 5px;
-        padding: 0.2rem 1.5rem 0.2rem 1.5rem;
+        padding: 0.5rem 1.5rem 0.5rem 1.5rem;
         font-size: 0.8rem;
         margin: auto;
       }
@@ -97,8 +97,8 @@
           font-size: 2rem;
           justify-self: center;
           border-radius: 10px;
-          width: 70%;
-          padding: 1.5rem 2rem 1.5rem 2rem;
+          width: 90%;
+          padding: 1rem 2rem 1rem 2rem;
           margin-top: 3rem;
           cursor: pointer;
           margin: auto;
@@ -116,9 +116,11 @@
         }
         #exit1 {
           grid-area: div1;
+          cursor: pointer;
         }
         #exit2 {
           grid-area: div2;
+          cursor: pointer;
         }
         .carouselHome {
           padding: 1rem 2rem;
@@ -278,8 +280,8 @@
         font-size: 2rem;
         justify-self: center;
         border-radius: 10px;
-        width: 65%;
-        padding: 1.5rem 2rem 1.5rem 2rem;
+        width: 90%;
+        padding: 1rem 2rem 1rem 2rem;
         margin-top: 3rem;
         cursor: pointer;
       }
