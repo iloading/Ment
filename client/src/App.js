@@ -13,6 +13,7 @@ import Favoritos from "./pages/Favoritos";
 import Perfil from "./pages/Perfil";
 import Sessao from "./pages/Sessao";
 import BoasVindas from "./pages/BoasVindas";
+import EditarSessao from "./pages/EditarSessao";
 import CriarSessao from "./pages/CriarSessao/CriarSessao";
 import CriarEquipa from "./pages/CriarEquipa/CriarEquipa";
 import MinhasEquipas from "./pages/MinhasEquipas";
@@ -99,6 +100,9 @@ function App() {
         </Route>
         <Route path="/criarequipa">
           <CriarEquipa />
+        </Route>
+        <Route path="/editarsessao">
+          <EditarSessao />
         </Route>
         <Route path="/minhasEquipas">
           <MinhasEquipas />

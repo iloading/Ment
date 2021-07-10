@@ -137,14 +137,11 @@
       }
       .criarEquipa {
         background-color: #f8faff;
-
-        display: grid;
-        grid-template-rows: 10rem;
-        grid-template-areas: "img";
         padding: 1rem;
+        display: flex;
+        flex-direction: column;
 
         .iconEstadoNegativo {
-          width: 100%;
           grid-area: img;
           align-self: center;
           justify-self: center;
@@ -481,13 +478,13 @@
         .criarEquipa {
           background-color: #f8faff;
           margin-right: 2rem;
-          display: grid;
-          grid-template-rows: 10rem;
-          grid-template-areas: "img";
           padding: 1rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
 
           .iconEstadoNegativo {
-            width: 100%;
+            max-width: 100%;
             grid-area: img;
             align-self: center;
             justify-self: center;

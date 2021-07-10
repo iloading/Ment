@@ -95,11 +95,11 @@ function CriarSessao7() {
                                 <div className="formulario">
                                     <label className="tituloFormulario">Factos reais</label>
 
-                                    <input type="text" className="inputTexto" placeholder="ex: Os planetas da galáxia..." value={factos_reais} onChange={reaisHandler}></input>
+                                    <textarea type="text" className="textareaTexto" placeholder="ex: Os planetas da galáxia..." value={factos_reais} onChange={reaisHandler}></textarea>
 
                                     <label className="tituloFormulario">Factos ficcionais</label>
 
-                                    <input type="text" className="inputTexto" placeholder="ex: A colisão de um planeta com a Terra..." value={factos_fic} onChange={ficcionaisHandler}></input>
+                                    <textarea type="text" className="textareaTexto" placeholder="ex: A colisão de um planeta com a Terra..." value={factos_fic} onChange={ficcionaisHandler}></textarea>
                                 </div>
                                 {(factos_reais !== '' || factos_fic !== '') ?
                                     <Link to='/criarsessao/8' className="decorationLinks">
