@@ -39,15 +39,6 @@ function CarouselSessao() {
             <label >Detalhes</label>
           </div>
         </Link>
-
-
-
-
-
-
-
-
-
       </Slider>
     </div>
   );

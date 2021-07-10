@@ -15,43 +15,40 @@ function ResumoSessao({ sessao, status }) {
 
                         <div className="conteudoResumo">
                             <div className="titulos_top_mobile">
-                                <label>Descrição</label>
+                                <label>{nome}</label>
+                                <img className="imgSessao" src={iconSessoes} alt="" />
                             </div>
 
-                            <div className="conteudoMid">
 
-                                <div className="cardDescricao">
-                                    <div className="topInfo">
-                                        <div className="titulos">
-                                            <label>{nome}</label>
-                                            <p>{subject}</p>
-                                            <span>{ano}</span>
-                                        </div>
-                                        <img className="imgSessao" src={iconSessoes} alt="" />
-                                    </div>
-                                    <div className="bottomInfo">
-                                        <p>{descricao}</p>
-                                    </div>
+
+
+
+                            <div className="resumoInfo">
+                                <div className="tituloMateria">
+                                    <label>Conteúdos</label>
+                                    <p>{subject}</p>
+                                </div>
+                                <div className="tituloAno">
+                                    <label>Ano</label>
+                                    <span>{ano}</span>
                                 </div>
 
-                            </div>
-                            <div className="conteudoPlano">
+                                <div className="bottomInfo">
+                                    <label>Descrição</label>
+                                    <p>{descricao}</p>
+                                </div>
 
-                                <label className="titulo">Plano Geral</label>
+                                <div className="factos_reais">
+                                    <label className="tituloFactos">Factos Reais</label>
+                                    <label className="textoFactos">{factos_reais}</label>
+                                </div>
 
-                                <div className="factos">
-
-                                    <div className="factos_reais">
-                                        <label className="tituloFactos">Factos Reais</label>
-                                        <label className="textoFactos">{factos_reais}</label>
-                                    </div>
-
-                                    <div className="unidadeCurricolar">
-                                        <label className="tituloFactos">Factos Ficcionais</label>
-                                        <label className="textoFactos">{factos_ficcionais}</label>
-                                    </div>
+                                <div className="unidadeCurricolar">
+                                    <label className="tituloFactos">Factos Ficcionais</label>
+                                    <label className="textoFactos">{factos_ficcionais}</label>
                                 </div>
                             </div>
+
 
                             <div className="conteudoComents">
                                 <div className="seccaoPlano">
@@ -111,14 +108,13 @@ function ResumoSessao({ sessao, status }) {
                                     <img src={iconDownload} alt="" />
                                 </div>
                             </div>
+
                             <div className="titulos_top">
-                                <label>Progresso</label>
+                                <label>Tornar a sessão pública</label>
                             </div>
-                            <div className="barraProgresso">
-                                <label>Complete os detalhes da sessão</label>
-                                <div className="progressBar">
-                                    <div><p>50%</p></div>
-                                </div>
+                            <div className="botaoUpload">
+
+                                <label>Partilhar</label>
                             </div>
 
                         </div>

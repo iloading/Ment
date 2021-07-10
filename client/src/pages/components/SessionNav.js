@@ -5,13 +5,14 @@ import iconFavorito from "../../img/icons/icon_favorito.svg";
 import iconLike from "../../img/icons/icon_like.svg";
 import Carousel from "../components/CarouselSessao"
 
-import { Link, useHistory } from 'react-router-dom'
+import { Link, useHistory, useRouteMatch } from 'react-router-dom'
 
 
 function Navbar({ sessao, status }) {
 
     let history = useHistory();
     const redirectBack = () => { history.goBack() }
+    let { url } = useRouteMatch();
 
     return (
         <>
@@ -26,20 +27,41 @@ function Navbar({ sessao, status }) {
                         <img src={iconLike} alt="" id="like" />
                     </div>
 
-                    <div className="areaDownload">
+                    {/* <div className="areaDownload">
                         <div className="barraProgresso">
                             <label>Complete os detalhes da sessão</label>
                             <div className="progressBar">
                                 <div><p>50%</p></div>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
 
                     <div className="navegacao">
                         <label className="titulo" id="titulo">{sessao.nome}</label>
 
+                        <div className="botoesNavegacao">
 
-                        <Carousel />
+                            <Link to={`${url}/resumo`}>
+                                <div className="cards">
+                                    <label >Resumo</label>
+                                </div>
+                            </Link>
+                            <Link to={`${url}/recursos`}>
+                                <div className="cards">
+                                    <label >Recursos</label>
+                                </div>
+                            </Link>
+                            <Link to={`${url}/detalhes`}>
+                                <div className="cards">
+                                    <label >Detalhes</label>
+                                </div>
+                            </Link>
+
+
+                        </div>
+
+
+
 
 
                     </div>

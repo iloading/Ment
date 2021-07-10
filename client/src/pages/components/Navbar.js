@@ -11,6 +11,7 @@ function Navbar() {
 
     const { user, status } = useSelector(state => state.user)
 
+
     return (
         <>
             {status === 'completed' &&

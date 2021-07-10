@@ -6,6 +6,7 @@ import iconDefinicoes from "../img/icons/icon_settings.svg";
 import iconShare from "../img/icons/icon_share.svg";
 import iconFavorito from "../img/icons/icon_favorito.svg";
 import iconLike from "../img/icons/icon_like.svg";
+import iconSessoes from "../img/icons/icon_sessoes.png";
 
 //REACT ROUTER
 import { Route, Switch, useRouteMatch, Link, useHistory } from "react-router-dom";
@@ -48,12 +49,23 @@ function Sessao() {
                         <div id="bemvindo">
 
                             <div className="bemvindo_titulos">
-                                <h3>Bom dia,</h3>
-                                <h1>{nome}</h1>
+
+
+                                <img className="imgSessao" src={iconSessoes} alt="" />
+
+
+                                <div>
+                                    <h3>Bom dia,</h3>
+                                    <h1>{nome}</h1>
+                                </div>
+
+
                             </div>
+
                             <div className="icons">
                                 <img src={iconDefinicoes} alt="" />
                             </div>
+
 
                         </div>
 

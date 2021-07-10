@@ -1,8 +1,9 @@
 import React from 'react'
 import iconDownload from "../../img/icons/icon_download.svg";
+import iconSessoes from "../../img/icons/icon_sessoes.png";
 
 function RecursosSessao({ sessao, status }) {
-    /* const { nome, descricao, subject, factos_ficcionais, factos_reais, situacao_problema, resultados_esperados, funcao_alunos_mentores, funcao_alunos_mentorandos, disciplina, ano } = sessao */
+    const { nome, descricao, subject, factos_ficcionais, factos_reais, situacao_problema, resultados_esperados, funcao_alunos_mentores, funcao_alunos_mentorandos, disciplina, ano } = sessao
     return (
         <>
 
@@ -12,6 +13,11 @@ function RecursosSessao({ sessao, status }) {
                     <div className="conteudo">
 
                         <div className="conteudoRecursos">
+                            <div className="titulos_top_mobile">
+                                <label>{nome}</label>
+                                <img className="imgSessao" src={iconSessoes} alt="" />
+                            </div>
+
                             <div className="titulos_top">
                                 <label>Ficheiros principais</label>
 
