@@ -294,6 +294,14 @@
         cursor: pointer;
       }
     }
+    .videoPromocional_Mobile {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+    .videoPromocional_Desktop {
+      display: none;
+    }
   }
 }
 .homepageFooter {
@@ -585,6 +593,14 @@
           margin-top: 1rem;
           cursor: pointer;
         }
+      }
+      .videoPromocional_Desktop {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+      }
+      .videoPromocional_Mobile {
+        display: none;
       }
     }
   }

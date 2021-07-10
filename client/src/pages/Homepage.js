@@ -204,15 +204,27 @@ function Homepage() {
 
                     </div>
 
+                    <div className="videoPromocional_Mobile">
+                        <iframe width="460" height="258,75" src="https://www.youtube.com/embed/tnwSiW-uoO0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+
+                        </iframe>
+                    </div>
+
+                    <div className="videoPromocional_Desktop">
+                        <iframe width="950" height="534,38" src="https://www.youtube.com/embed/tnwSiW-uoO0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+
+                        </iframe>
+                    </div>
+
 
                 </div>
 
 
 
             </article>
-            {/* <article className="homepageFooter">
+            <article className="homepageFooter">
                 <img src={footer} alt="" />
-            </article> */}
+            </article>
 
 
         </>
