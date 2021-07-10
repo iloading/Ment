@@ -94,11 +94,11 @@ function CriarSessao8() {
                                 <div className="formulario">
                                     <label className="tituloFormulario">Papel dos mentores</label>
 
-                                    <input type="text" className="inputTexto" placeholder="ex: No papel de super-heróis, guiar os mentorandos para salvarem o planeta Terra..." value={funcao_mentores} onChange={mentoresHandler}></input>
+                                    <textarea type="text" className="textareaTexto" placeholder="ex: No papel de super-heróis, guiar os mentorandos para salvarem o planeta Terra..." value={funcao_mentores} onChange={mentoresHandler}></textarea>
 
                                     <label className="tituloFormulario">Papel dos mentorandos</label>
 
-                                    <input type="text" className="inputTexto" placeholder="ex: No papel de astronautas, encontrarem uma forma de salvar a Terra..." value={funcao_mentorandos} onChange={mentorandosHandler}></input>
+                                    <textarea type="text" className="textareaTexto" placeholder="ex: No papel de astronautas, encontrarem uma forma de salvar a Terra..." value={funcao_mentorandos} onChange={mentorandosHandler}></textarea>
                                 </div>
                                 {(funcao_mentores !== '' || funcao_mentorandos !== '') ?
                                     <Link to='/criarsessao/9' className="decorationLinks">

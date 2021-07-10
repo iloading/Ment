@@ -1,0 +1,549 @@
+.editarSessao {
+  .conteudoMain {
+    .titulo {
+      display: none;
+      .desktop {
+        display: none;
+      }
+    }
+    .conteudoMid {
+      .formularioCriarSessao {
+        display: grid;
+        grid-template-columns: 1fr;
+
+        header {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          .setaTras {
+            padding: 1.5rem 1.5rem 0rem 1.5rem;
+            align-self: center;
+          }
+          .iconFechar {
+            padding: 1.5rem 1.5rem 0rem 1.5rem;
+            align-self: center;
+            justify-self: end;
+          }
+        }
+
+        #corpo {
+          padding: 1.5rem 1.5rem 0rem 1.5rem;
+          display: grid;
+          grid-gap: 2rem;
+
+          #titulo {
+            font-size: 1.375rem;
+            font-weight: $font-weight-more-bold;
+            color: $text-main-color;
+          }
+          #texto {
+            font-size: $font-size-m;
+            font-weight: $font-weight-normal;
+            color: $text-main-color;
+            margin-bottom: 0.5rem;
+            margin-top: 1rem;
+          }
+          .botaoAzul {
+            background-color: white;
+            border: none;
+            margin-bottom: 1rem;
+            text-decoration: none;
+            margin-top: 2rem;
+
+            #divBotao {
+              display: grid;
+              padding: 0;
+              border: 0;
+              margin: auto;
+              width: 90%;
+              #botao {
+                color: $button-type1-background;
+                justify-self: center;
+                text-align: center;
+                background-color: $button-type2-background;
+                border: 1px solid $button-type2-background;
+                border-radius: 0.3rem;
+                padding: 1rem;
+                width: 100%;
+                text-decoration: none;
+                margin-top: 0;
+                cursor: pointer;
+
+                #textoBotao {
+                  font-weight: $font-weight-more-bold;
+                  font-size: 1.375rem;
+                  color: white;
+                  text-decoration: none;
+                }
+              }
+            }
+          }
+          .espacamentoBotao {
+            margin-top: 3rem;
+          }
+          .widthBotao {
+            width: 100%;
+          }
+          button {
+            &:disabled {
+              display: grid;
+              padding: 0;
+              border: 0;
+              margin: auto;
+              width: 82%;
+              margin-top: 1rem;
+              #botao {
+                color: $button-type1-background;
+                justify-self: center;
+                text-align: center;
+                background-color: $button-type2-background;
+                border: 1px solid $button-type2-background;
+                border-radius: 0.3rem;
+                padding: 1rem;
+                width: 100%;
+                opacity: 0.5;
+                margin-top: 0;
+                cursor: not-allowed;
+
+                #textoBotao {
+                  font-weight: $font-weight-more-bold;
+                  font-size: 1.375rem;
+                  color: white;
+                }
+              }
+            }
+          }
+
+          .formulario {
+            display: grid;
+            grid-gap: 1rem;
+
+            .tituloFormulario {
+              font-size: $font-size-s;
+              font-weight: 500;
+              color: $text-main-color;
+              margin-top: 1rem;
+            }
+
+            .inputTexto {
+              border: none;
+              border-radius: 4px;
+              height: 40px;
+              padding: 0 1rem 0 1rem;
+              background-color: $input-color-lightblue;
+              width: 100%;
+            }
+
+            .inputTexto::placeholder {
+              color: lightgray;
+              font-size: 1rem;
+              padding-left: 0.3rem;
+            }
+            .inputTexto:focus {
+              outline: 0;
+            }
+            .textareaTexto {
+              border: none;
+              border-radius: 4px;
+              height: 40px;
+              padding: 1rem;
+              background-color: $input-color-lightblue;
+              width: 100%;
+              height: 8rem;
+              resize: none;
+            }
+            .textareaTexto::placeholder {
+              color: lightgray;
+              font-size: 1rem;
+              padding-left: 0.3rem;
+            }
+            .textareaTexto:focus {
+              outline: 0;
+            }
+          }
+          #linkFooter {
+            display: grid;
+            align-items: center;
+            text-align: center;
+            margin-top: 0;
+            a {
+              text-decoration: none;
+              font-size: $font-size-xs;
+              font-weight: $font-weight-bolder;
+              color: $text-main-color;
+            }
+          }
+        }
+      }
+    }
+    .conteudoDireita {
+      display: none;
+    }
+  }
+
+  .associarEquipa {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    .headerAssociarEquipa {
+      display: grid;
+      grid-template-columns: 0.1fr 0.5fr 1fr 0.5fr 0.1fr;
+      grid-template-areas: ". seta associar criar .";
+      margin-top: 1.5rem;
+      margin-bottom: 3rem;
+      #seta {
+        align-self: center;
+        grid-area: seta;
+        justify-self: left;
+      }
+      #titulo {
+        align-self: center;
+        grid-area: associar;
+        justify-self: center;
+        color: $text-main-color;
+        font-weight: $font-weight-boldest;
+        font-size: 1.375rem;
+      }
+      #criarEquipa {
+        align-self: center;
+        grid-area: criar;
+        justify-self: right;
+      }
+    }
+
+    #inputPesquisar {
+      display: grid;
+      grid-template-columns: 0.09fr auto 0.09fr;
+      grid-template-areas: ". input .";
+      #inputPesquisa {
+        border: none;
+        border-radius: 4px;
+        height: 40px;
+        padding: 0 1rem 0 1rem;
+        background-color: $input-color-lightblue;
+        width: 100%;
+        grid-area: input;
+      }
+      #inputPesquisa::placeholder {
+        color: lightgray;
+      }
+      #inputPesquisa:focus {
+        outline: 0;
+      }
+    }
+    #id_titulo2 {
+      display: grid;
+      margin: 1.5rem;
+      #titulo2 {
+        font-size: $font-size-s;
+        font-weight: 500;
+        color: $text-main-color;
+      }
+    }
+    .listaEquipas {
+      margin: 1.5rem;
+
+      .equipas {
+        grid-area: equipa1;
+        display: grid;
+        grid-template-columns: 7rem 1fr 6rem;
+        grid-template-areas: "imagem texto checkbox";
+        border: 1px solid #f8faff;
+        background-color: #f8faff;
+        border-radius: 4px;
+        margin-bottom: 2rem;
+
+        .avatarEquipa {
+          width: 100%;
+          grid-area: imagem;
+          justify-self: center;
+          align-self: center;
+          padding-top: 1rem;
+          padding-bottom: 1rem;
+        }
+        .texto {
+          grid-area: texto;
+          justify-self: left;
+          align-self: center;
+          padding-top: 1rem;
+          padding-bottom: 1rem;
+          padding-left: 1rem;
+          .tituloTexto {
+            color: #042454;
+            font-size: 0.9375rem;
+            font-weight: $font-weight-more-bold;
+            margin: 0.2rem 0 0.2rem 0;
+          }
+          .escolaTexto {
+            color: #003bb9;
+            font-size: 0.8125rem;
+            font-weight: $font-weight-boldest;
+            font-style: italic;
+            margin: 0.2rem 0 0.2rem 0;
+          }
+          .anoTexto {
+            color: #0066ff;
+            font-size: 0.625rem;
+            font-weight: $font-weight-boldest;
+            font-style: italic;
+            margin: 0.2rem 0 0.2rem 0;
+          }
+        }
+        .checkbox {
+          grid-area: checkbox;
+          justify-self: center;
+          align-self: center;
+          min-height: 31%;
+          min-width: 35%;
+          background-color: #ffffff;
+          border: 1px solid #cccccc;
+          border-radius: 100%;
+          &.selected {
+            background-color: rgba(4, 36, 84, 0.5);
+          }
+        }
+      }
+    }
+
+    .botaoAzul {
+      background-color: white;
+      border: none;
+      margin: 1rem;
+      text-decoration: none;
+
+      #divBotao {
+        display: grid;
+        padding: 0;
+        border: 0;
+        margin: auto;
+        width: 90%;
+        #botao {
+          color: $button-type1-background;
+          justify-self: center;
+          text-align: center;
+          background-color: $button-type2-background;
+          border: 1px solid $button-type2-background;
+          border-radius: 0.3rem;
+          padding: 1rem;
+          width: 100%;
+          cursor: pointer;
+
+          #textoBotao {
+            font-weight: $font-weight-more-bold;
+            font-size: 1.375rem;
+            color: white;
+          }
+        }
+      }
+    }
+    .widthBotao {
+      width: 100%;
+    }
+    button {
+      &:disabled {
+        display: grid;
+        padding: 0;
+        border: 0;
+        margin: auto;
+        width: 85%;
+        margin-top: 1rem;
+        #botao {
+          color: $button-type1-background;
+          justify-self: center;
+          text-align: center;
+          background-color: $button-type2-background;
+          border: 1px solid $button-type2-background;
+          border-radius: 0.3rem;
+          padding: 1rem;
+          width: 100%;
+          opacity: 0.5;
+          cursor: not-allowed;
+
+          #textoBotao {
+            font-weight: $font-weight-more-bold;
+            font-size: 1.375rem;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .editarSessao {
+    .conteudoMain {
+      display: grid;
+      grid-template-rows: auto 4rem 1fr;
+      padding-right: 4rem;
+      padding-top: 2rem;
+      margin: 0;
+      grid-row-gap: 1rem;
+      padding-left: 1rem;
+      padding-bottom: 1rem;
+      height: 100%;
+      .bemvindo_titulos {
+        h3 {
+          visibility: hidden;
+        }
+      }
+      .titulo {
+        display: grid;
+        grid-template-columns: 1.5fr;
+        grid-template-areas: "tituloPag";
+        align-items: center;
+        grid-column-gap: 2.5rem;
+
+        #tituloPag {
+          grid-area: tituloPag;
+          display: grid;
+          grid-template-columns: auto 24rem;
+          grid-template-areas: "conteudo .";
+          .gridAdicionar {
+            display: grid;
+            grid-template-columns: 1fr 1rem;
+            .imgCriarEquipas {
+              display: block;
+            }
+          }
+        }
+        .criarEquipaTitulo {
+          display: block;
+          .tituloCriarEquipas {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #042454;
+            margin-left: 0.5rem;
+          }
+        }
+
+        .desktop {
+          display: block;
+        }
+      }
+
+      .conteudoMid {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+        grid-template-areas: "conteudoEsquerda conteudoDireita";
+        grid-column-gap: 1rem;
+        overflow: auto;
+        height: 100%;
+
+        .conteudoEsquerda {
+          grid-area: conteudoEsquerda;
+          /* overflow: hidden; */
+          height: 100%;
+
+          .formularioCriarSessao {
+            header {
+              display: none;
+            }
+            #corpo {
+              padding-top: 0;
+              #divBotao {
+                #botao {
+                  text-decoration: none;
+                }
+              }
+            }
+          }
+          .associarEquipa {
+            .headerAssociarEquipa {
+              display: none;
+            }
+          }
+          #corpo {
+            margin: 0 2rem 0rem 2rem;
+
+            #titulo {
+              display: none;
+            }
+            #texto {
+              margin-bottom: 1rem;
+              font-size: 1rem;
+            }
+            .formulario {
+              margin-bottom: 1rem;
+              grid-gap: 1rem;
+              .tituloFormulario {
+                margin-top: 0;
+              }
+            }
+            #divBotao {
+              background-color: white;
+            }
+          }
+        }
+        .conteudoDireita {
+          display: grid;
+          grid-template-rows: 6rem auto;
+          grid-template-areas: "botaoEtapa" "imgEquipa";
+          grid-area: conteudoDireita;
+          text-align: center;
+          padding-left: 2rem;
+
+          .botaoAzul {
+            background-color: white;
+            border: none;
+            text-decoration: none;
+
+            #divBotao {
+              display: grid;
+              padding: 0;
+              border: 0;
+              margin: auto;
+              width: 90%;
+              #botao {
+                color: $button-type1-background;
+                justify-self: center;
+                text-align: center;
+                background-color: $button-type2-background;
+                border: 1px solid $button-type2-background;
+                border-radius: 0.3rem;
+                padding: 1rem;
+                width: 100%;
+                cursor: pointer;
+
+                #textoBotao {
+                  font-weight: $font-weight-more-bold;
+                  font-size: 1.375rem;
+                  color: white;
+                }
+              }
+            }
+          }
+          .widthBotao {
+            width: 100%;
+          }
+          button {
+            &:disabled {
+              display: grid;
+              padding: 0;
+              border: 0;
+              margin: auto;
+              width: 85%;
+              #botao {
+                color: $button-type1-background;
+                justify-self: center;
+                text-align: center;
+                background-color: $button-type2-background;
+                border: 1px solid $button-type2-background;
+                border-radius: 0.3rem;
+                padding: 1rem;
+                width: 100%;
+                opacity: 0.5;
+                cursor: not-allowed;
+
+                #textoBotao {
+                  font-weight: $font-weight-more-bold;
+                  font-size: 1.375rem;
+                  color: white;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
