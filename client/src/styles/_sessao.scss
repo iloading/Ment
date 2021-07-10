@@ -25,7 +25,7 @@
 
   .barraSocial {
     display: grid;
-    grid-template-columns: 1fr 0.2fr 0.2fr 0.2fr;
+    grid-template-columns: 1fr 0.2fr 0.2fr 0.2fr 0.2fr;
     align-self: center;
     top: 0;
     z-index: 10;
@@ -33,12 +33,19 @@
 
     #share {
       justify-self: center;
+      width: 1.5rem;
     }
     #favorito {
       justify-self: center;
+      width: 1.5rem;
     }
     #like {
       justify-self: center;
+      width: 1.5rem;
+    }
+    #editar {
+      justify-self: center;
+      width: 1.5rem;
     }
   }
 
@@ -559,19 +566,26 @@
         }
         .botoesDesktopSessao {
           display: grid;
-          grid-template-columns: 1fr 1fr 1fr;
-          grid-template-areas: "share favorito like";
+          grid-template-columns: 1fr 1fr 1fr 1fr;
+          grid-template-areas: "share favorito like editar";
           justify-self: end;
           align-self: center;
           grid-column-gap: 2rem;
           #share {
             grid-area: share;
+            width: 1.8rem;
           }
           #favorito {
             grid-area: favorito;
+            width: 1.8rem;
           }
           #like {
             grid-area: like;
+            width: 1.8rem;
+          }
+          #editar {
+            grid-area: editar;
+            width: 1.8rem;
           }
         }
       }

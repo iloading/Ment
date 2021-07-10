@@ -3,6 +3,7 @@ import setaAtras from "../../img/icons/icon_setaAtrasAzul.svg";
 import iconShare from "../../img/icons/icon_share.svg";
 import iconFavorito from "../../img/icons/icon_favorito.svg";
 import iconLike from "../../img/icons/icon_like.svg";
+import iconEditar from "../../img/icons/icon_editar.svg";
 import Carousel from "../components/CarouselSessao"
 
 import { Link, useHistory, useRouteMatch } from 'react-router-dom'
@@ -25,6 +26,7 @@ function Navbar({ sessao, status }) {
                         <img src={iconShare} alt="" id="share" />
                         <img src={iconFavorito} alt="" id="favorito" />
                         <img src={iconLike} alt="" id="like" />
+                        <img src={iconEditar} alt="" id="editar" />
                     </div>
 
                     {/* <div className="areaDownload">

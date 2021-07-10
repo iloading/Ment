@@ -6,6 +6,7 @@ import iconDefinicoes from "../img/icons/icon_settings.svg";
 import iconShare from "../img/icons/icon_share.svg";
 import iconFavorito from "../img/icons/icon_favorito.svg";
 import iconLike from "../img/icons/icon_like.svg";
+import iconEditar from "../img/icons/icon_editar.svg";
 import iconSessoes from "../img/icons/icon_sessoes.png";
 
 //REACT ROUTER
@@ -90,6 +91,7 @@ function Sessao() {
                                 <img src={iconShare} alt="" id="share" />
                                 <img src={iconFavorito} alt="" id="favorito" />
                                 <img src={iconLike} alt="" id="like" />
+                                <img src={iconEditar} alt="" id="editar" />
                             </div>
 
                         </div>
