@@ -156,7 +156,6 @@
         }
       }
     }
-
     .layout0 {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -177,25 +176,24 @@
       grid-template-rows: 1fr;
       margin-bottom: 2rem;
       grid-column-gap: 1rem;
-      .numero2 {
-        display: none;
-      }
-      .numero3 {
-        display: none;
-      }
     }
     .layout3 {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr;
+      grid-template-rows: 1fr 1fr;
       margin-bottom: 2rem;
-      grid-column-gap: 1rem;
-      .numero2 {
-        display: none;
-      }
+      grid-gap: 1rem;
+
       .numero3 {
         display: none;
       }
+    }
+    .layout4 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      margin-bottom: 2rem;
+      grid-gap: 1rem;
     }
 
     #ajudaMobile {
@@ -547,6 +545,13 @@
         .equipa3 {
           display: none;
         }
+      }
+      .layout0 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1.5fr;
+        grid-template-rows: 1fr;
+        margin-bottom: 2rem;
+        grid-column-gap: 1rem;
       }
       .layout1 {
         display: grid;
