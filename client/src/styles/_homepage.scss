@@ -586,6 +586,11 @@
           cursor: pointer;
         }
       }
+      .videoPromocional {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+      }
     }
   }
   .homepageFooter {

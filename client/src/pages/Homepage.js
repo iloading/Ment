@@ -204,6 +204,12 @@ function Homepage() {
 
                     </div>
 
+                    <div className="videoPromocional">
+                        <iframe width="950" height="534,38" src="https://www.youtube.com/embed/tnwSiW-uoO0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+
+                        </iframe>
+                    </div>
+
 
                 </div>
 
