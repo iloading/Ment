@@ -9,8 +9,8 @@ import iconEstadoNegativo from "../img/estadosnegativos/estadoNegativoDashboard.
 
 
 import iconOrdenar from "../img/icons/icon_ordenar.svg";
-import iconSetaTras from "../img/icons/icon_setaAtrasAzul.svg"
-import iconCriar from "../img/icons/icon_plus.svg"
+
+import iconCriar from "../img/icons/icon_maisAzul.svg"
 import iconTituloEquipa from "../img/icons/icon_equipa.svg"
 import { useState } from "react";
 
@@ -80,9 +80,9 @@ function Banco() {
                 {/*DESKTOP*/}
 
                 <div className="goBack_criarEquipa">
-                    <Link to='./dashboard' className="decorationLinks">
+                    {/* <Link to='./dashboard' className="decorationLinks">
                         <img src={iconSetaTras} alt="" />
-                    </Link>
+                    </Link> */}
                     <Link to='/criarequipa' className="decorationLinks">
                         <div>
                             <img src={iconCriar} alt="" />

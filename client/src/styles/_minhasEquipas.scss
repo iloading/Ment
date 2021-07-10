@@ -9,8 +9,8 @@
     height: 100%;
 
     .goBack_criarEquipa {
-      display: grid;
-      grid-template-columns: 1fr auto;
+      display: flex;
+      justify-content: flex-end;
 
       img {
         align-self: center;
@@ -22,14 +22,15 @@
         grid-column-gap: 0.5rem;
         padding: 0.3rem 0.8rem 0.3rem 0.8rem;
         border-radius: 5px;
-        background-color: #f5f5f5;
+        background-color: #e0eaff;
+        grid-area: botao;
         img {
           align-self: center;
           justify-self: center;
         }
 
         label {
-          color: #a6a6a6;
+          color: #042454;
           font-weight: 600;
           align-self: center;
           justify-self: center;
