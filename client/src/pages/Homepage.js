@@ -19,6 +19,7 @@ import { Link } from "react-router-dom";
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useHistory } from "react-router-dom"
+import { useState } from "react"
 
 
 
@@ -28,7 +29,7 @@ function Homepage() {
     const redirectLogin = () => { history.push("/login") }
     const redirectRegisto = () => { history.push("/registo") }
 
-    const [isVisible, setVisible] = React.useState(true);
+    const [isVisible, setVisible] = useState(false);
 
     function toggle() {
         setVisible(!isVisible);
@@ -40,7 +41,7 @@ function Homepage() {
         <>
 
 
-            <article className="divisao">
+            <article className="divisao" style={isVisible ? { height: `100vh`, overflow: 'hidden' } : {}}>
                 <div className="homepage">
 
 
@@ -79,27 +80,28 @@ function Homepage() {
                             </div>
                             <img src={home1} className="imagem1Homepage_mobile" alt="imagem homepage" />
 
-                            <motion.card style={{
-                                width: `65%`,
-                                cursor: "pointer",
+                            <motion.div className='botaoTutorial' style={{
+
+
                             }}
                             >
                                 <AnimatePresence>
                                     {isVisible && (
-                                        <motion.cardOverlay
+                                        <motion.div
                                             style={{
                                                 width: `100%`,
                                                 height: `100%`,
-                                                display: "flex",
-                                                position: "absolute",
-                                                flexDirection: "column",
+                                                display: "grid",
+                                                position: "fixed",
+                                                gridTemplateAreas: `"div1""carousel""div2"`,
                                                 top: 0,
                                                 left: 0,
                                                 right: 0,
                                                 zIndex: '10',
                                                 backdropFilter: `blur(10px) grayscale(1) brightness(70%)`,
-
+                                                overflow: "hidden",
                                                 justifyContent: "center",
+                                                gridTemplateRows: "1fr auto 1fr"
 
 
 
@@ -109,22 +111,28 @@ function Homepage() {
                                             initial={{ scale: 0, opacity: 1 }}
                                             animate={{ scale: 1 }}
                                             exit={{ scale: 0 }}
-                                        >
 
-                                            <img onClick={toggle} src={sair} alt="" className="sairModal" />
-                                            <div className="carouselHome">
+                                        >
+                                            <div id="exit1" onClick={toggle}><img src={sair} alt="exit Tutorial" className="sairModal" /></div>
+
+                                            <div className="carouselHome" style={{
+                                                zIndex: '11',
+
+                                            }} onClick={function name(params) {
+
+                                            }}>
                                                 <CarouselHomePage />
                                             </div>
+                                            <div id="exit2" onClick={toggle}></div>
 
 
 
-
-                                        </motion.cardOverlay>
+                                        </motion.div>
                                     )}
 
                                 </AnimatePresence>
                                 <button type="button" className="botaoRegisto gapBotao" onClick={toggle}>Como funciona?</button>
-                            </motion.card>
+                            </motion.div>
 
 
 

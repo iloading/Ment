@@ -13,7 +13,35 @@ function CarouselHomePage() {
         infinite: true,
         slidesToShow: 3,
         rows: 1,
-        slidesToScroll: 3,
+        slidesToScroll: 1,
+        responsive: [
+
+
+
+            {
+                breakpoint: 700,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    arrows: true
+                }
+            },
+            {
+                breakpoint: 1000,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    arrows: true
+                }
+            },
+
+
+
+
+
+
+
+        ]
 
 
     };

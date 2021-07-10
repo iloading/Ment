@@ -97,15 +97,86 @@
           font-size: 2rem;
           justify-self: center;
           border-radius: 10px;
-          width: 65%;
+          width: 70%;
           padding: 1.5rem 2rem 1.5rem 2rem;
           margin-top: 3rem;
           cursor: pointer;
+          margin: auto;
         }
 
         .imagem1Homepage_mobile {
           display: block;
           width: 100%;
+        }
+        .sairModal {
+          width: 5%;
+          position: absolute;
+          top: 5%;
+          right: 5%;
+        }
+        #exit1 {
+          grid-area: div1;
+        }
+        #exit2 {
+          grid-area: div2;
+        }
+        .carouselHome {
+          padding: 1rem 5rem;
+          z-index: 11;
+          grid-area: carousel;
+          overflow: hidden;
+
+          .carouselCards {
+            width: 100%;
+            .imgModal {
+              width: 100%;
+              justify-self: center;
+              border-radius: 10px;
+            }
+            .slick-slider {
+              .slick-prev:before {
+                color: #042454;
+              }
+              .slick-next:before {
+                color: #042454;
+              }
+              .slick-next {
+                right: -35px;
+              }
+              .slick-prev {
+                left: -35px;
+              }
+              .slick-slide {
+                padding: 1rem;
+              }
+              .card {
+                background-color: white;
+                border-radius: 10px;
+                display: grid !important;
+                grid-template-rows: auto auto 1fr;
+                height: 65vh;
+
+                label {
+                  padding: 0 2rem;
+                  color: #042454;
+                  font-size: 1.5rem;
+                  font-weight: 700;
+                  padding: 1rem 2rem 1rem 2rem;
+                }
+                p {
+                  padding: 0 2rem 1rem;
+                  font-weight: 400;
+                }
+              }
+            }
+          }
+        }
+
+        .botaoTutorial {
+          width: 100%;
+          overflow: none;
+          display: flex;
+          align-items: center;
         }
       }
       .imagem1Homepage_desktop {
@@ -291,7 +362,7 @@
         .img_textos {
           display: grid;
           padding-right: 5rem;
-          grid-row-gap: 2rem;
+          grid-row-gap: 3rem;
 
           .tituloMentoria {
             display: grid;
@@ -345,11 +416,12 @@
             right: 5%;
           }
           .carouselHome {
-            margin: 1rem 5rem;
+            padding: 1rem 5rem;
             .carouselCards {
               .imgModal {
                 width: 100%;
                 justify-self: center;
+                border-radius: 10px;
               }
               .slick-slider {
                 .slick-prev:before {
@@ -371,7 +443,8 @@
                   background-color: white;
                   border-radius: 10px;
                   display: grid !important;
-                  grid-template-rows: 1fr auto 1fr;
+                  grid-template-rows: auto auto 1fr;
+                  height: 65vh;
 
                   label {
                     padding: 0 2rem;
@@ -387,6 +460,12 @@
                 }
               }
             }
+          }
+          .botaoTutorial {
+            width: 65%;
+            overflow: none;
+            display: grid;
+            justify-self: center;
           }
         }
         .imagem1Homepage_desktop {
