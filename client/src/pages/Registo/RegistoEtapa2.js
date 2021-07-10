@@ -30,7 +30,7 @@ function RegistoEtapa2({ dados, setDados, validadeFormulario2, setvalidadeFormul
     const options = [
 
         { value: 0, label: 'Aluno Mentor' },
-        { value: 1, label: 'Professor' }
+        { value: 1, label: 'Docente' }
     ]
 
 
@@ -152,7 +152,7 @@ function RegistoEtapa2({ dados, setDados, validadeFormulario2, setvalidadeFormul
                                             <label>Os seus dados</label>
                                         </section>
                                         <section className="paragrafo">
-                                            <p>Nesta etapa por favor introduza o seu primeiro e último nome, e o seu cargo (professor ou aluno). Este último passo é permanente e influencia as funcionalidades disponíveis para si na aplicação. Por favor preencha cautelosamente.</p>
+                                            <p>Nesta etapa por favor introduza o seu primeiro e último nome, e o seu cargo (docente ou mentor). Este último passo é permanente e influencia as funcionalidades disponíveis para si na aplicação. Por favor preencha cautelosamente.</p>
                                         </section>
                                         <section className="inputFormulario">
 

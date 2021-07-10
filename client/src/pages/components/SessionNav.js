@@ -5,19 +5,22 @@ import iconFavorito from "../../img/icons/icon_favorito.svg";
 import iconLike from "../../img/icons/icon_like.svg";
 import Carousel from "../components/CarouselSessao"
 
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 
 
 function Navbar({ sessao, status }) {
+
+    let history = useHistory();
+    const redirectBack = () => { history.goBack() }
 
     return (
         <>
             {status === "completed" &&
                 <section className='navbar'>
                     <div className="barraSocial" id="barraSocial">
-                        <Link to='../dashboard' className="decorationLinks">
+                        <div onClick={redirectBack}>
                             <img src={setaAtras} alt="" />
-                        </Link>
+                        </div>
                         <img src={iconShare} alt="" id="share" />
                         <img src={iconFavorito} alt="" id="favorito" />
                         <img src={iconLike} alt="" id="like" />

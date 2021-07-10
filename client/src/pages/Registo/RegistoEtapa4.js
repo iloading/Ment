@@ -226,7 +226,7 @@ function RegistoEtapa4({ dados, setDados, validadeFormulario4, setvalidadeFormul
                                                 styles={colourStyles}
                                                 placeholder={'Selecione o seu Grupo Disciplinar'}
                                                 isClearable={true}
-                                                isSearchable={false}
+                                                isSearchable={true}
                                                 onChange={(e) => handleChangeCourse(e)}
                                             >
 

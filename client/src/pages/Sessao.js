@@ -8,8 +8,9 @@ import iconFavorito from "../img/icons/icon_favorito.svg";
 import iconLike from "../img/icons/icon_like.svg";
 
 //REACT ROUTER
-import { Route, Switch, useRouteMatch, Link } from "react-router-dom";
+import { Route, Switch, useRouteMatch, Link, useHistory } from "react-router-dom";
 import { useEffect } from 'react'
+
 
 import { useDispatch, useSelector } from 'react-redux'
 //REDUX//
@@ -35,6 +36,8 @@ function Sessao() {
 
     const { sessaoInfo: sessao, status } = useSelector(state => state.sessao)
     const { nome } = sessao
+
+
 
     return (
         <>

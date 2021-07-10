@@ -13,6 +13,34 @@ function CarouselAjuda() {
         slidesToShow: 1,
         rows: 2,
         slidesToScroll: 1,
+        slidesPerRow: 1,
+
+        responsive: [
+            {
+                breakpoint: 1280,
+                settings: {
+                    dots: true,
+                    infinite: true,
+                    slidesToShow: 1,
+                    rows: 1,
+                    slidesToScroll: 1,
+                    slidesPerRow: 1,
+
+                }
+            },
+            {
+                breakpoint: 1024,
+                settings: {
+                    dots: true,
+                    infinite: true,
+                    slidesToShow: 1,
+                    rows: 2,
+                    slidesToScroll: 1,
+                    slidesPerRow: 1,
+
+                }
+            },
+        ]
 
 
     };

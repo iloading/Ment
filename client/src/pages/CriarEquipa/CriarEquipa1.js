@@ -4,7 +4,7 @@ import criarEquipa1_semBack from "../../img/criarEquipas/criarEquipa1_semBack.sv
 import criarEquipa1 from "../../img/criarEquipas/criarEquipa1.svg"
 import iconDefinicoes from "../../img/icons/icon_settings.svg";
 
-import { Link } from "react-router-dom"
+import { Link, useHistory } from "react-router-dom"
 import { preencherNome } from '../../actions/criacaoEquipaAction'
 //REDUX//
 
@@ -16,6 +16,10 @@ function CriarEquipa1() {
     const nomeHandler = (e) => {
         dispatch(preencherNome(e.target.value))
     }
+
+    let history = useHistory();
+    const redirectBack = () => { history.goBack() }
+
     return (
         <article className="criarEquipa">
             <section id="main" className="conteudoMain">
@@ -47,8 +51,8 @@ function CriarEquipa1() {
                             <header className="criarSessaoImg">
 
 
-                                <div className="setaTras">
-                                    <Link to="../" id="seta"><img src={setaAtras} alt="setaAtras" /></Link>
+                                <div className="setaTras" onClick={redirectBack}>
+                                    <img src={setaAtras} alt="setaAtras" />
                                 </div>
 
                                 <img src={criarEquipa1} alt="criar equipa primeira imagem" />

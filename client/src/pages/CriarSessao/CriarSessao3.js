@@ -10,7 +10,7 @@ import iconDefinicoes from "../../img/icons/icon_settings.svg";
 import { Link } from "react-router-dom"
 //REDUX//
 import { loadInfo, escolherGrauEscolaridade, escolherDisciplina, preencherNome, preencherConteudos /* ,criarNovaSessao */ } from "../../actions/criacaoSessaoAction";
-import { useEffect } from 'react'
+import { useEffect, useCallback, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { colourStyles } from './selectStyle';
 
@@ -29,7 +29,22 @@ function CriarSessao3() {
 
     const { grausDeEnsino, gruposDisciplinares, dadosPreenchidos } = useSelector(state => state.criarSessao)
 
+    const [courses, setCourses] = useState([])
 
+
+    function uniqBy(a) {
+        let niveisDeEnsino = new Set();
+        return a.filter(item => {
+            return niveisDeEnsino.has(item.label) ? false : niveisDeEnsino.add(item.label);
+        });
+    }
+    useEffect(() => {
+        const levelsArrayFiltrados = uniqBy(gruposDisciplinares.map((course) => ({ label: course.level })))
+        /* Para cada nivel de ensino já no array, escolher as disciplinas que fazem parte desse mesmo nivel de ensino */
+        const courses = levelsArrayFiltrados.map((level) => ({ label: level.label, options: (gruposDisciplinares.filter((course) => course.level === level.label).map(({ name, id, code }) => ({ label: `${code} - ${name}`, value: id }))) }))
+        /* Definir o resultado para o state */
+        setCourses(courses);
+    }, [gruposDisciplinares])
 
 
     const selectGrauEscolaridade = (e) => {
@@ -135,7 +150,7 @@ function CriarSessao3() {
                                     <label className="tituloFormulario">Disciplina</label>
 
                                     <Select
-                                        options={gruposDisciplinares.map(grupo => ({ label: `${grupo.code} - ${grupo.name}`, value: grupo.id }))}
+                                        options={courses}
                                         className='react-select-form'
                                         styles={colourStyles}
                                         placeholder={'ex: Inglês, Matemática, etc...'}
