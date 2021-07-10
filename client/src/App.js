@@ -33,9 +33,12 @@ function App() {
   const { loggedIn } = useContext(AuthContext);
   const location = useLocation();
   const [isHomePage, setIsHomePage] = useState()
+  const [hideNav, setHideNav] = useState()
 
   useEffect(() => {
     setIsHomePage(location.pathname === '/')
+    setHideNav(location.pathname.startsWith('/sessao') || location.pathname.startsWith('/criarsessao') || location.pathname.startsWith('/tutorial') || location.pathname.startsWith('/minhasEquipas') || location.pathname.startsWith('/criarEquipa') || location.pathname.startsWith('/editarsessao'));
+    window.scrollTo(0, 0)
   }, [location])
 
 
@@ -50,7 +53,10 @@ function App() {
 
 
       <Feedback />
-      {loggedIn ? <> <Navbar /><Footer /> </> : <></>
+      {loggedIn ? <>
+        {!hideNav ? <Navbar /> : ''}
+        <Footer />
+      </> : <></>
       }
 
 
