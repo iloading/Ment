@@ -13,6 +13,7 @@ import Favoritos from "./pages/Favoritos";
 import Perfil from "./pages/Perfil";
 import Sessao from "./pages/Sessao";
 import BoasVindas from "./pages/BoasVindas";
+import EditarSessao from "./pages/EditarSessao";
 import CriarSessao from "./pages/CriarSessao/CriarSessao";
 import CriarEquipa from "./pages/CriarEquipa/CriarEquipa";
 import MinhasEquipas from "./pages/MinhasEquipas";
@@ -26,7 +27,7 @@ import Feedback from './pages/components/Feedback'
 
 
 //REACT ROUTER
-import { Route, Switch, Redirect, useRouteMatch, useLocation } from "react-router-dom";
+import { Route, Switch, Redirect, useLocation } from "react-router-dom";
 
 function App() {
   const { loggedIn } = useContext(AuthContext);
@@ -71,7 +72,8 @@ function App() {
 
 
         <Route path="/dashboard">
-          <Dashboard />
+          {!loggedIn ? <Redirect to="/login" /> : <Dashboard />}
+
         </Route>
         <Route path="/tutorial" exact>
           <Tutorial />
@@ -80,31 +82,43 @@ function App() {
           <Etapa />
         </Route>
         <Route path="/banco">
-          <Banco />
+          {!loggedIn ? <Redirect to="/login" /> : <Banco />}
         </Route>
         <Route path="/favoritos">
-          <Favoritos />
+          {!loggedIn ? <Redirect to="/login" /> : <Favoritos />}
+
         </Route>
         <Route path="/perfil">
-          <Perfil />
+          {!loggedIn ? <Redirect to="/login" /> : <Perfil />}
+
         </Route>
         <Route path="/boasvindas">
-          <BoasVindas />
+          {!loggedIn ? <Redirect to="/login" /> : <BoasVindas />}
+
         </Route>
         <Route path="/sessao/:id">
-          <Sessao />
+          {!loggedIn ? <Redirect to="/login" /> : <Sessao />}
+
         </Route>
         <Route path="/criarsessao">
-          <CriarSessao />
+          {!loggedIn ? <Redirect to="/login" /> : <CriarSessao />}
+
         </Route>
         <Route path="/criarequipa">
-          <CriarEquipa />
+          {!loggedIn ? <Redirect to="/login" /> : <CriarEquipa />}
+
+        </Route>
+        <Route path="/editarsessao">
+          {!loggedIn ? <Redirect to="/login" /> : <EditarSessao />}
+
         </Route>
         <Route path="/minhasEquipas">
-          <MinhasEquipas />
+          {!loggedIn ? <Redirect to="/login" /> : <MinhasEquipas />}
+
         </Route>
         <Route path="/perfilequipa/:id">
-          <PerfilEquipa />
+          {!loggedIn ? <Redirect to="/login" /> : <PerfilEquipa />}
+
         </Route>
 
 

@@ -12,7 +12,7 @@ router.post('/', validateToken, async (req, res) => {
 
 
     try {
-        const users = await db.query("SELECT team.id, team.name, school.name AS school_name, descripton, school_id, url, is_archived, alias, created_at, updated_at FROM team INNER JOIN user_has_team ON team_id = team.id INNER JOIN school ON school.id = team.school_id WHERE user_id = ? AND is_owner = 1 AND is_archived = 0 LIMIT 4", [req.userid], (err, result) => {
+        const users = await db.query("SELECT team.id, team.name, school.name AS school_name, descripton, school_id, url, is_archived, alias, created_at, updated_at FROM team INNER JOIN user_has_team ON team_id = team.id INNER JOIN school ON school.id = team.school_id WHERE user_id = ? AND is_archived = 0 LIMIT 4", [req.userid], (err, result) => {
             //Se der erro, devolver o mesmo
             if (err) {
                 console.log(err);
