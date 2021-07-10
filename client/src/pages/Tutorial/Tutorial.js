@@ -25,10 +25,7 @@ function Tutorial() {
 
 
                 <div className="navTutorial">
-                    <Link to="/dashboard" id="seta">
-                        <img src={setaAtras} alt="setaAtras" />
 
-                    </Link>
 
                     <div className="tituloListaEtapas" id="tituloListaEtapas">
 

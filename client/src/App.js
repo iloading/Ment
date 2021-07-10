@@ -37,7 +37,7 @@ function App() {
 
   useEffect(() => {
     setIsHomePage(location.pathname === '/')
-    setHideNav(location.pathname.startsWith('/sessao') || location.pathname.startsWith('/criarsessao') || location.pathname.startsWith('/tutorial') || location.pathname.startsWith('/minhasEquipas') || location.pathname.startsWith('/criarEquipa') || location.pathname.startsWith('/editarsessao'));
+    setHideNav(location.pathname.startsWith('/sessao') || location.pathname.startsWith('/criarsessao') || location.pathname.startsWith("/tutorial/0") || location.pathname.startsWith("/tutorial/1") || location.pathname.startsWith("/tutorial/2") || location.pathname.startsWith("/tutorial/3") || location.pathname.startsWith("/tutorial/4") || location.pathname.startsWith("/tutorial/5") || location.pathname.startsWith("/tutorial/6") || location.pathname.startsWith('/minhasEquipas') || location.pathname.startsWith('/criarEquipa') || location.pathname.startsWith('/editarsessao'));
     window.scrollTo(0, 0)
   }, [location])
 
