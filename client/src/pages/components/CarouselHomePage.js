@@ -10,10 +10,11 @@ function CarouselHomePage() {
 
     const settings = {
         dots: true,
-        infinite: true,
+        infinite: false,
         slidesToShow: 3,
         rows: 1,
         slidesToScroll: 1,
+        arrows: true,
         responsive: [
 
 
@@ -23,7 +24,7 @@ function CarouselHomePage() {
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
-                    arrows: true
+                    arrows: false
                 }
             },
             {
@@ -31,7 +32,7 @@ function CarouselHomePage() {
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 1,
-                    arrows: true
+                    arrows: false
                 }
             },
 
