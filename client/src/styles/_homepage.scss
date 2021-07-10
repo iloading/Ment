@@ -1,3 +1,6 @@
+.homepageLayout {
+  width: fit-content;
+}
 .divisao {
   .homepage {
     display: grid;
@@ -6,6 +9,7 @@
     margin-top: 5.5%;
     grid-row-gap: 4rem;
     grid-area: homepage;
+    width: fit-content;
 
     nav {
       display: grid;
@@ -169,6 +173,10 @@
                   padding: 0 2rem 1rem;
                   font-weight: 400;
                 }
+              }
+              .slick-dots {
+                position: relative;
+                bottom: 0;
               }
             }
           }
