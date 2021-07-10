@@ -153,7 +153,7 @@ router.post('/login', async (req, res) => {
     await db.query('SELECT id, password FROM user WHERE email = ?', [email], (err, result) => {
         //Se nao houver, devolver erro
         if (result.length == 0) {
-            res.status(400).json({ error: "O email que inseriu não existe" });
+            res.status(400).json({ error: "Email ou password incorretos" });
         } else {
             //Se houver, comparar a password
             bcrypt.compare(password, result[0].password).then((match) => {
@@ -161,7 +161,7 @@ router.post('/login', async (req, res) => {
                 if (!match) {
                     //Devolver erro
                     res.status(400).json({
-                        error: "Password Incorreta"
+                        error: "Email ou password incorretos"
                     })
                 } else {
                     //Se estiver correta, efetuar o login

@@ -11,8 +11,9 @@ import * as Yup from 'yup';
 
 import AuthContext from "../context/AuthContext";
 import { login } from '../API'
+import { useDispatch } from 'react-redux'
 function Login() {
-
+    const dispatch = useDispatch()
     const { getLoggedIn } = useContext(AuthContext)
 
     const initialValues = {
@@ -29,11 +30,15 @@ function Login() {
             getLoggedIn();
         } catch (error) {
 
+            dispatch({
+                type: "SHOW_FEEDBACK",
+                payload: {
+                    message: error.response.data.error,
+                    type: 'error',
+                }
+            })
         }
-        /* axios.post("http://localhost:3001/auth/login", data).then((res) => {
-            console.log("Server Response: " + (res.data.success || res.data.error));
-            
-        }) */
+
 
     }
     return (
