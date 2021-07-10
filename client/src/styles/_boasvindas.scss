@@ -12,9 +12,10 @@
 
     .conteudoMid {
       .formularioRegisto {
+        grid-template-rows: auto 1fr;
         display: grid;
         grid-template-columns: 1fr;
-
+        height: 100vh;
         .registoImg {
           position: relative;
           text-align: center;

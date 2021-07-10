@@ -45,7 +45,7 @@ function Sessao() {
         <>
             {status === 'completed' &&
                 <article id="main" className="sessao">
-                    <SessionNav sessao={sessao} status={status} />
+                    <SessionNav sessao={sessao} status={status} id={id} />
                     <section className="conteudoMain">
                         <div id="bemvindo">
 
@@ -91,7 +91,10 @@ function Sessao() {
                                 <img src={iconShare} alt="" id="share" />
                                 <img src={iconFavorito} alt="" id="favorito" />
                                 <img src={iconLike} alt="" id="like" />
-                                <img src={iconEditar} alt="" id="editar" />
+                                <Link to={`/sessao/${id}/editarsessao`}>
+                                    <img src={iconEditar} alt="" id="editar" />
+                                </Link>
+
                             </div>
 
                         </div>

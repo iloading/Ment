@@ -53,7 +53,7 @@ function Etapa1() {
                         <div>
                             <div className="principal">
                                 <h2 id="titulo2">2. Construção</h2>
-                                <p id="texto1fundoClaro">Inicío do processo de construção da mnarrativa que dará o mote às atividades da sessão de mentoria, atendendo aos conteúdos programáticos selecionados:</p>
+                                <p id="texto1fundoClaro">Inicío do processo de construção da narrativa que dará o mote às atividades da sessão de mentoria, atendendo aos conteúdos programáticos selecionados:</p>
                                 <ul id="texto2fundoClaro">
                                     <li>esta narrativa deve ser criada pelos mentores, com o apoio do professor, <strong>com base em factos reais e ficcionais, e encerrar um desafio</strong> a lançar e resolver na sessão de mentoria;</li>
                                     <li>durante o processo de criação, é fundamental que os mentores sejam estimulados a usar a sua criatividade e espírito crítico e que integrem conhecimentos adquiridos com outros que possam adquirir no processo de pesquisa / partilha de ideias;</li>

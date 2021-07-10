@@ -213,13 +213,13 @@ router.get('/loggedIn', (req, res) => {
     try {
         const accessToken = req.cookies['Ment-login-token']
 
-        if (!accessToken) return res.json(false)
+        if (!accessToken) return res.send(false)
 
         verify(accessToken, process.env.JWT_SECRECT);
         res.send(true)
 
     } catch (e) {
-        return res.json(false)
+        return res.send(false)
     }
 })
 

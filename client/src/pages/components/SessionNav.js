@@ -9,7 +9,7 @@ import Carousel from "../components/CarouselSessao"
 import { Link, useHistory, useRouteMatch } from 'react-router-dom'
 
 
-function Navbar({ sessao, status }) {
+function Navbar({ sessao, status, id }) {
 
     let history = useHistory();
     const redirectBack = () => { history.goBack() }
@@ -26,7 +26,9 @@ function Navbar({ sessao, status }) {
                         <img src={iconShare} alt="" id="share" />
                         <img src={iconFavorito} alt="" id="favorito" />
                         <img src={iconLike} alt="" id="like" />
-                        <img src={iconEditar} alt="" id="editar" />
+                        <Link to={`/sessao/${id}/editarsessao`}>
+                            <img src={iconEditar} alt="" id="editar" />
+                        </Link>
                     </div>
 
                     {/* <div className="areaDownload">

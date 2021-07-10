@@ -12,7 +12,7 @@ router.post('/', validateToken, async (req, res) => {
     let { id: sessao_id } = req.body;
 
     try {
-        const sessao = await db.query("SELECT narrative.id, narrative.name, narrative.description, narrative.subject,narrative.factos_ficcionais, narrative.factos_reais,narrative.situacao_problema, narrative.resultados_esperados, narrative.funcao_alunos_mentores, narrative.funcao_alunos_mentorandos, course.name AS disciplina, grade.year FROM narrative INNER JOIN course ON course.id = narrative.course_id INNER JOIN grade ON grade.id = narrative.grade_id WHERE narrative.id = ?;", [sessao_id], (err, result) => {
+        const sessao = await db.query("SELECT narrative.id, narrative.name, narrative.description, narrative.subject,narrative.factos_ficcionais, narrative.factos_reais,narrative.situacao_problema, narrative.resultados_esperados, narrative.funcao_alunos_mentores, narrative.funcao_alunos_mentorandos, course.name AS disciplina, course.id AS disciplina_id, course.level AS disciplina_level,  grade.year FROM narrative INNER JOIN course ON course.id = narrative.course_id INNER JOIN grade ON grade.id = narrative.grade_id WHERE narrative.id = ?;", [sessao_id], (err, result) => {
             //Se der erro, devolver o mesmo
             if (err) {
                 console.log(err);

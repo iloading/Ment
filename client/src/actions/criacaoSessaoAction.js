@@ -140,4 +140,3 @@ export const loadInfo = () => async (dispatch) => {
         payload: { grausEnsino: grausEnsino.data.success, disciplinas: gruposDisciplinares.data.success }
     })
 }
-
