@@ -1,16 +1,10 @@
-.homepageLayout {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr auto;
-}
-
 .divisao {
   .homepage {
     display: grid;
     grid-template-rows: auto 1fr auto auto auto auto;
-    padding: 0 4rem;
+    padding: 0 2rem;
     margin-top: 5.5%;
-    grid-row-gap: 8rem;
+    grid-row-gap: 4rem;
     grid-area: homepage;
 
     nav {
@@ -24,7 +18,7 @@
         justify-self: left;
         align-self: center;
         grid-area: logo;
-        width: 20%;
+
         max-width: inherit;
         min-width: inherit;
       }
@@ -40,9 +34,9 @@
       .botao {
         border: none;
         font-weight: $font-weight-boldest;
-        border-radius: 10px;
-        padding: 0.5rem 2.5rem 0.5rem 2.5rem;
-        font-size: 1.2rem;
+        border-radius: 5px;
+        padding: 0.2rem 1.5rem 0.2rem 1.5rem;
+        font-size: 0.8rem;
         margin: auto;
       }
 
@@ -71,9 +65,9 @@
           position: relative;
           label {
             color: $text-main-color;
-            font-size: 7rem;
+            font-size: 3rem;
             font-weight: 700;
-            justify-self: center;
+            text-align: center;
           }
 
           .continuacaoTitulo {
@@ -88,9 +82,9 @@
 
           ul {
             display: grid;
-            grid-row-gap: 4rem;
+            grid-row-gap: 2rem;
             color: #003bb9;
-            font-size: 2rem;
+            font-size: 1rem;
             font-weight: 600;
           }
         }
@@ -103,14 +97,86 @@
           font-size: 2rem;
           justify-self: center;
           border-radius: 10px;
-          width: 65%;
+          width: 70%;
           padding: 1.5rem 2rem 1.5rem 2rem;
           margin-top: 3rem;
           cursor: pointer;
+          margin: auto;
         }
 
         .imagem1Homepage_mobile {
           display: block;
+          width: 100%;
+        }
+        .sairModal {
+          width: 5%;
+          position: absolute;
+          top: 5%;
+          right: 5%;
+        }
+        #exit1 {
+          grid-area: div1;
+        }
+        #exit2 {
+          grid-area: div2;
+        }
+        .carouselHome {
+          padding: 1rem 5rem;
+          z-index: 11;
+          grid-area: carousel;
+          overflow: hidden;
+
+          .carouselCards {
+            width: 100%;
+            .imgModal {
+              width: 100%;
+              justify-self: center;
+              border-radius: 10px;
+            }
+            .slick-slider {
+              .slick-prev:before {
+                color: #042454;
+              }
+              .slick-next:before {
+                color: #042454;
+              }
+              .slick-next {
+                right: -35px;
+              }
+              .slick-prev {
+                left: -35px;
+              }
+              .slick-slide {
+                padding: 1rem;
+              }
+              .card {
+                background-color: white;
+                border-radius: 10px;
+                display: grid !important;
+                grid-template-rows: auto auto 1fr;
+                height: 65vh;
+
+                label {
+                  padding: 0 2rem;
+                  color: #042454;
+                  font-size: 1.5rem;
+                  font-weight: 700;
+                  padding: 1rem 2rem 1rem 2rem;
+                }
+                p {
+                  padding: 0 2rem 1rem;
+                  font-weight: 400;
+                }
+              }
+            }
+          }
+        }
+
+        .botaoTutorial {
+          width: 100%;
+          overflow: none;
+          display: flex;
+          align-items: center;
         }
       }
       .imagem1Homepage_desktop {
@@ -127,16 +193,16 @@
       }
       .img_textos {
         display: grid;
-        grid-row-gap: 8rem;
+        grid-row-gap: 4rem;
 
         .tituloMentoria {
           display: grid;
           position: relative;
           label {
             color: $text-main-color;
-            font-size: 4rem;
+            font-size: 2rem;
             font-weight: 700;
-            justify-self: center;
+            text-align: center;
           }
 
           .continuacaoTitulo {
@@ -151,7 +217,7 @@
             display: grid;
             grid-row-gap: 2rem;
             color: #003bb9;
-            font-size: 1.5rem;
+            font-size: 1rem;
             font-weight: 600;
           }
         }
@@ -168,11 +234,11 @@
       grid-template-rows: auto 1fr;
 
       padding-top: 3rem;
-      grid-row-gap: 5rem;
+      grid-row-gap: 2rem;
 
       label {
         color: $text-main-color;
-        font-size: 4rem;
+        font-size: 2rem;
         font-weight: 700;
         justify-self: center;
         text-align: center;
@@ -185,10 +251,10 @@
 
         .card {
           display: grid;
-          grid-row-gap: 4rem;
+          grid-row-gap: 2rem;
           label {
             color: $text-main-color;
-            font-size: 3rem;
+            font-size: 1.5rem;
             font-weight: 700;
             justify-self: center;
           }
@@ -196,7 +262,7 @@
             justify-self: center;
             text-align: center;
             color: #003bb9;
-            font-size: 1.5rem;
+            font-size: 1rem;
             font-weight: 400;
           }
           img {
@@ -229,7 +295,7 @@
 @media only screen and (min-width: 1024px) {
   .divisao {
     display: grid;
-    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-columns: 0.1fr 1fr 0.1fr;
     grid-template-areas: ". homepage .";
 
     .homepage {
@@ -239,6 +305,7 @@
       margin-top: 5.5%;
       grid-row-gap: 5rem;
       grid-area: homepage;
+      padding: 0;
 
       nav {
         display: grid;
@@ -295,7 +362,7 @@
         .img_textos {
           display: grid;
           padding-right: 5rem;
-          grid-row-gap: 2rem;
+          grid-row-gap: 3rem;
 
           .tituloMentoria {
             display: grid;
@@ -304,7 +371,8 @@
               color: $text-main-color;
               font-size: 5rem;
               font-weight: 700;
-              justify-self: baseline;
+
+              text-align: left;
             }
 
             .continuacaoTitulo {
@@ -332,19 +400,77 @@
             font-size: 1.2rem;
             justify-self: center;
             border-radius: 5px;
-            width: 65%;
+            width: 100%;
             padding: 1.5rem 2rem 1.5rem 2rem;
-            margin-top: 1.2rem;
+            margin-top: 0;
             cursor: pointer;
           }
 
           .imagem1Homepage_mobile {
             display: none;
           }
+          .sairModal {
+            width: 2%;
+            position: absolute;
+            top: 5%;
+            right: 5%;
+          }
+          .carouselHome {
+            padding: 1rem 5rem;
+            .carouselCards {
+              .imgModal {
+                width: 100%;
+                justify-self: center;
+                border-radius: 10px;
+              }
+              .slick-slider {
+                .slick-prev:before {
+                  color: #042454;
+                }
+                .slick-next:before {
+                  color: #042454;
+                }
+                .slick-next {
+                  right: -35px;
+                }
+                .slick-prev {
+                  left: -35px;
+                }
+                .slick-slide {
+                  padding: 1rem;
+                }
+                .card {
+                  background-color: white;
+                  border-radius: 10px;
+                  display: grid !important;
+                  grid-template-rows: auto auto 1fr;
+                  height: 65vh;
+
+                  label {
+                    padding: 0 2rem;
+                    color: #042454;
+                    font-size: 1.5rem;
+                    font-weight: 700;
+                    padding: 1rem 2rem 1rem 2rem;
+                  }
+                  p {
+                    padding: 0 2rem 1rem;
+                    font-weight: 400;
+                  }
+                }
+              }
+            }
+          }
+          .botaoTutorial {
+            width: 65%;
+            overflow: none;
+            display: grid;
+            justify-self: center;
+          }
         }
         .imagem1Homepage_desktop {
           display: block;
-          width: 100%;
+          width: 70%;
           align-self: center;
         }
       }
@@ -375,13 +501,7 @@
               color: $text-main-color;
               font-size: 3.5rem;
               font-weight: 700;
-              justify-self: end;
-            }
-
-            .continuacaoTitulo {
-              position: relative;
-              bottom: 25%;
-              justify-self: end;
+              text-align: end;
             }
           }
           #texto1 {
@@ -438,6 +558,7 @@
             }
             img {
               justify-self: center;
+              width: 100%;
             }
           }
         }
@@ -460,173 +581,6 @@
   .homepageFooter {
     img {
       width: 100%;
-    }
-  }
-}
-
-@media screen and (max-width: 1024px) and (min-width: 750px) {
-  .divisao {
-    .homepage {
-      .topInfo {
-        display: grid;
-
-        .img_textos {
-          display: grid;
-
-          grid-row-gap: 4rem;
-
-          .tituloMentoria {
-            display: grid;
-            position: relative;
-            label {
-              color: $text-main-color;
-              font-size: 6rem;
-              font-weight: 700;
-              justify-self: center;
-            }
-
-            .continuacaoTitulo {
-              position: relative;
-              bottom: 25%;
-              justify-self: center;
-            }
-          }
-
-          #texto1 {
-            justify-self: center;
-
-            ul {
-              display: grid;
-              grid-row-gap: 3rem;
-              color: #003bb9;
-              font-size: 1.5rem;
-              font-weight: 600;
-            }
-          }
-
-          .botaoRegisto {
-            color: white;
-            background-color: $button-type2-background;
-            border: none;
-            font-weight: 500;
-            font-size: 1.5rem;
-            justify-self: center;
-            border-radius: 10px;
-            width: 60%;
-            padding: 1.5rem 2rem 1.5rem 2rem;
-            margin-top: 3rem;
-            cursor: pointer;
-          }
-
-          .imagem1Homepage_mobile {
-            display: block;
-          }
-        }
-        .imagem1Homepage_desktop {
-          display: none;
-        }
-      }
-
-      .construcaoPasso {
-        display: grid;
-        padding-top: 3rem;
-
-        .imagem2Homepage_desktop {
-          display: none;
-        }
-        .img_textos {
-          display: grid;
-          grid-row-gap: 8rem;
-
-          .tituloMentoria {
-            display: grid;
-            position: relative;
-            label {
-              color: $text-main-color;
-              font-size: 3rem;
-              font-weight: 700;
-              justify-self: center;
-            }
-
-            .continuacaoTitulo {
-              position: relative;
-              bottom: 25%;
-              justify-self: center;
-            }
-          }
-          #texto1 {
-            justify-self: center;
-            ol {
-              display: grid;
-              grid-row-gap: 2rem;
-              color: #003bb9;
-              font-size: 1.3rem;
-              font-weight: 600;
-            }
-          }
-          .imagem2Homepage_mobile {
-            display: block;
-            justify-self: center;
-            width: 50%;
-          }
-        }
-      }
-
-      .comoFunciona {
-        display: grid;
-        grid-template-rows: auto 1fr;
-
-        padding-top: 3rem;
-        grid-row-gap: 2.5rem;
-
-        label {
-          color: $text-main-color;
-          font-size: 3rem;
-          font-weight: 700;
-          justify-self: center;
-          text-align: center;
-        }
-
-        .comoFuncionaCards {
-          display: grid;
-          grid-template-columns: 1fr;
-          grid-row-gap: 5rem;
-
-          .card {
-            display: grid;
-            grid-row-gap: 3rem;
-            label {
-              color: $text-main-color;
-              font-size: 2rem;
-              font-weight: 700;
-              justify-self: center;
-            }
-            p {
-              justify-self: center;
-              text-align: center;
-              color: #003bb9;
-              font-size: 1.2rem;
-              font-weight: 400;
-            }
-            img {
-              justify-self: center;
-            }
-          }
-        }
-        .botaoRegisto2 {
-          color: white;
-          background-color: $button-type2-background;
-          border: none;
-          font-weight: 500;
-          font-size: 1.5rem;
-          justify-self: center;
-          border-radius: 10px;
-          width: 60%;
-          padding: 1.5rem 2rem 1.5rem 2rem;
-          margin-top: 3rem;
-          cursor: pointer;
-        }
-      }
     }
   }
 }

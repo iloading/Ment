@@ -1,5 +1,5 @@
 import React from 'react'
-import Carousel from "./components/Carousel";
+import CarouselHomePage from "./components/CarouselHomePage";
 import navLogo from "../img/logo.svg";
 import home1 from "../img/home1.svg";
 import home2 from "../img/home2.svg";
@@ -13,9 +13,13 @@ import comoFunciona2 from "../img/comoFunciona2.svg";
 import comoFunciona3 from "../img/comoFunciona3.svg";
 import comoFunciona4 from "../img/comoFunciona4.svg";
 
+import sair from "../img/icons/eliminar_aluno_x.svg"
+
 import { Link } from "react-router-dom";
 
+import { motion, AnimatePresence } from "framer-motion";
 import { useHistory } from "react-router-dom"
+import { useState } from "react"
 
 
 
@@ -25,9 +29,19 @@ function Homepage() {
     const redirectLogin = () => { history.push("/login") }
     const redirectRegisto = () => { history.push("/registo") }
 
+    const [isVisible, setVisible] = useState(false);
+
+    function toggle() {
+        setVisible(!isVisible);
+    }
+
     return (
+
+
         <>
-            <article className="divisao">
+
+
+            <article className="divisao" style={isVisible ? { height: `100vh`, overflow: 'hidden' } : {}}>
                 <div className="homepage">
 
 
@@ -47,8 +61,8 @@ function Homepage() {
                     <div className="topInfo">
                         <div className="img_textos">
                             <div className="tituloMentoria">
-                                <label>Mentoria</label>
-                                <label className="continuacaoTitulo">entre pares</label>
+                                <label>Mentoria entre pares</label>
+
                             </div>
 
 
@@ -65,7 +79,62 @@ function Homepage() {
 
                             </div>
                             <img src={home1} className="imagem1Homepage_mobile" alt="imagem homepage" />
-                            <button type="button" className="botaoRegisto gapBotao">Como funciona?</button>
+
+                            <motion.div className='botaoTutorial' style={{
+
+
+                            }}
+                            >
+                                <AnimatePresence>
+                                    {isVisible && (
+                                        <motion.div
+                                            style={{
+                                                width: `100%`,
+                                                height: `100%`,
+                                                display: "grid",
+                                                position: "fixed",
+                                                gridTemplateAreas: `"div1""carousel""div2"`,
+                                                top: 0,
+                                                left: 0,
+                                                right: 0,
+                                                zIndex: '10',
+                                                backdropFilter: `blur(10px) grayscale(1) brightness(70%)`,
+                                                overflow: "hidden",
+                                                justifyContent: "center",
+                                                gridTemplateRows: "1fr auto 1fr"
+
+
+
+
+
+                                            }}
+                                            initial={{ scale: 0, opacity: 1 }}
+                                            animate={{ scale: 1 }}
+                                            exit={{ scale: 0 }}
+
+                                        >
+                                            <div id="exit1" onClick={toggle}><img src={sair} alt="exit Tutorial" className="sairModal" /></div>
+
+                                            <div className="carouselHome" style={{
+                                                zIndex: '11',
+
+                                            }} onClick={function name(params) {
+
+                                            }}>
+                                                <CarouselHomePage />
+                                            </div>
+                                            <div id="exit2" onClick={toggle}></div>
+
+
+
+                                        </motion.div>
+                                    )}
+
+                                </AnimatePresence>
+                                <button type="button" className="botaoRegisto gapBotao" onClick={toggle}>Como funciona?</button>
+                            </motion.div>
+
+
 
                         </div>
 
@@ -81,8 +150,8 @@ function Homepage() {
 
                         <div className="img_textos">
                             <div className="tituloMentoria">
-                                <label>Construção</label>
-                                <label className="continuacaoTitulo">passo-a-passo</label>
+                                <label>Construção passo-a-passo</label>
+
                             </div>
                             <img src={home2} className="imagem2Homepage_mobile" alt="imagem homepage" />
 
@@ -141,9 +210,9 @@ function Homepage() {
 
 
             </article>
-            <article className="homepageFooter">
+            {/* <article className="homepageFooter">
                 <img src={footer} alt="" />
-            </article>
+            </article> */}
 
 
         </>
