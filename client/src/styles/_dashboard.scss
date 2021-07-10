@@ -142,6 +142,7 @@
         flex-direction: column;
 
         .iconEstadoNegativo {
+          max-width: 100%;
           grid-area: img;
           align-self: center;
           justify-self: center;
