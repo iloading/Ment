@@ -38,7 +38,7 @@ router.post('/equipa', validateToken, async (req, res) => {
     let { id: team_id } = req.body;
 
     try {
-        const perfilequipa = await db.query("SELECT team.id, team.name, descripton, school.name AS escola FROM team INNER JOIN school ON school_id = school.id WHERE team.id = ?;", [team_id], (err, result) => {
+        const perfilequipa = await db.query("SELECT team.id, team.name, descripton, school.name AS escola, (SELECT COUNT(team_id) FROM user_has_team WHERE user_has_team.team_id = team.id) AS numero_participantes FROM team INNER JOIN school ON school_id = school.id WHERE team.id = ?;", [team_id], (err, result) => {
             //Se der erro, devolver o mesmo
             if (err) {
                 console.log(err);

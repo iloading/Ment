@@ -52,6 +52,8 @@
       img {
         margin-top: 1rem;
         width: 25%;
+        border-radius: 50%;
+        border: 3px solid #042454;
       }
 
       label {
@@ -229,6 +231,8 @@
               img {
                 justify-self: center;
                 width: 45%;
+                border-radius: 50%;
+                border: 3px solid #042454;
               }
               label {
                 color: $text-main-color;
@@ -274,7 +278,7 @@
                   color: $text-type5-color;
                   font-size: $font-size-s;
                   font-weight: $font-weight-normal;
-                  width: 60%;
+                  width: 100%;
                   justify-self: start;
                   margin-top: 0.5rem;
                 }

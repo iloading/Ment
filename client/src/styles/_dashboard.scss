@@ -102,11 +102,13 @@
 
       .minhasEquipasCard {
         display: grid;
-        grid-template-rows: auto 1fr;
+        grid-template-rows: 7rem 1fr;
         border-radius: 10px;
-
+        background-color: #f8faff;
         img {
           width: 100%;
+          height: 7rem;
+          object-fit: cover;
         }
 
         .cardInfo {
@@ -507,6 +509,7 @@
 
           img {
             width: 100%;
+            object-fit: cover;
           }
 
           .cardInfo {
