@@ -38,6 +38,18 @@ export const escolherGrauEscolaridade = (id) => async (dispatch) => {
     })
 }
 
+export const alterarGrauEscolaridade = (id) => async (dispatch) => {
+
+    dispatch({
+        type: "ALTERAR_GRAU",
+        payload: {
+            id: id
+        }
+    })
+}
+
+
+
 export const escolherDisciplina = (id) => async (dispatch) => {
 
     dispatch({

@@ -39,7 +39,7 @@ const criarSessaoReducer = (state = initState, action) => {
             return { ...state, grausDeEnsino: action.payload.grausEnsino, gruposDisciplinares: action.payload.disciplinas }
         case 'CLEAR_SESSAO':
             return {
-                ...state, dadosPreenchidos: { equipaEscolhida: null, grauEscolhido: null, DisciplinaEscolhida: null, nome: '', conteudos: '' },
+                ...state, dadosPreenchidos: { eequipaEscolhida: null, grauEscolhido: null, DisciplinaEscolhida: null, nome: '', conteudos: '', descricao: '', situacao_problema: '', factos_reais: '', factos_fic: '', resultados_esperados: '', funcao_mentores: '', funcao_mentorandos: '' },
                 minhasEquipas: { equipas: null, status: 'idle' },
             }
 

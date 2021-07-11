@@ -1,5 +1,8 @@
 .editarSessao {
+  overflow: hidden;
   .conteudoMain {
+    height: 100%;
+    overflow: auto;
     .titulo {
       display: none;
       .desktop {
@@ -7,6 +10,7 @@
       }
     }
     .conteudoMid {
+      overflow: hidden;
       .formularioCriarSessao {
         display: grid;
         grid-template-columns: 1fr;
@@ -426,12 +430,12 @@
         grid-template-columns: 1.5fr 1fr;
         grid-template-areas: "conteudoEsquerda conteudoDireita";
         grid-column-gap: 1rem;
-        overflow: auto;
+        overflow: hidden;
         height: 100%;
 
         .conteudoEsquerda {
           grid-area: conteudoEsquerda;
-          /* overflow: hidden; */
+          overflow: auto;
           height: 100%;
 
           .formularioCriarSessao {

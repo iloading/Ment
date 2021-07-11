@@ -19,14 +19,14 @@ function RecursosSessao({ sessao, status }) {
                             </div>
 
                             <div className="titulos_top">
-                                <label>Ficheiros principais</label>
+                                <label>Recursos Fornecidos</label>
 
                             </div>
                             <div className="ficheirosPrincipais">
-                                <label className="titulo1">Ficheiros principais</label>
+                                <label className="titulo1">Recursos Fornecidos</label>
                                 <div className="ficheiros">
                                     <div className="caixaFicheiros">
-                                        <label className="ficheiro_nome">Narrativa - "London Culture"</label>
+                                        <label className="ficheiro_nome">Narrativa - '{nome}'</label>
                                         <img src={iconDownload} alt="" className="ficheiro_icon" />
                                     </div>
                                     <div className="caixaFicheiros">
@@ -44,7 +44,7 @@ function RecursosSessao({ sessao, status }) {
                                 <label className="titulo2">Conteúdo adicional</label>
                                 <div className="ficheiros">
                                     <div className="caixaFicheiros">
-                                        <label className="ficheiro_nome">Exercícios Icebreakers</label>
+                                        <label className="ficheiro_nome">Exercícios</label>
                                         <img src={iconDownload} alt="" className="ficheiro_icon" />
                                     </div>
 
@@ -63,7 +63,13 @@ function RecursosSessao({ sessao, status }) {
                                     <img src={iconDownload} alt="" />
                                 </div>
                             </div>
+                            <div className="titulos_top">
+                                <label>Tornar a sessão pública</label>
+                            </div>
+                            <div className="botaoUpload">
 
+                                <label>Partilhar</label>
+                            </div>
                         </div>
                     </div>
                 </>

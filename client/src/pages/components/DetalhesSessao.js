@@ -3,7 +3,7 @@ import iconDownload from "../../img/icons/icon_download.svg";
 import iconSessoes from "../../img/icons/icon_sessoes.png";
 
 function DetalhesSessao({ sessao, status }) {
-    const { subject, factos_ficcionais, factos_reais, situacao_problema, resultados_esperados, funcao_alunos_mentores, funcao_alunos_mentorandos, ano, nome } = sessao
+    const { subject, factos_ficcionais, factos_reais, situacao_problema, resultados_esperados, funcao_alunos_mentores, funcao_alunos_mentorandos, ano, nome, disciplina } = sessao
     return (
         <>
 
@@ -44,15 +44,15 @@ function DetalhesSessao({ sessao, status }) {
 
                                     </div>
 
-                                    <div className="detalhes">
+                                    {/* <div className="detalhes">
                                         <label className="titulo2">Detalhes</label>
                                         <div className="caixaTexto">
                                             <label className="detalhes_titulo">Ano da escolaridade</label>
                                             <span className="detalhes_texto">{ano}</span>
                                             <label className="detalhes_titulo">Unidade Curricular</label>
-                                            <span className="detalhes_texto">{subject}</span>
+                                            <span className="detalhes_texto">{disciplina}</span>
                                             <label className="detalhes_titulo">Matéria Abordada</label>
-                                            <span className="detalhes_texto">Organizational structure of the British Isles </span>
+                                            <span className="detalhes_texto">{subject} </span>
                                             <label className="detalhes_titulo">Agrupamento</label>
                                             <span className="detalhes_texto">Agrupamento de Escolas Carlos Amarante</span>
                                             <label className="detalhes_titulo">Escola</label>
@@ -64,7 +64,7 @@ function DetalhesSessao({ sessao, status }) {
                                         </div>
 
 
-                                    </div>
+                                    </div> */}
 
 
 
@@ -88,6 +88,13 @@ function DetalhesSessao({ sessao, status }) {
                                     <label>Descarregar a pasta</label>
                                     <img src={iconDownload} alt="" />
                                 </div>
+                            </div>
+                            <div className="titulos_top">
+                                <label>Tornar a sessão pública</label>
+                            </div>
+                            <div className="botaoUpload">
+
+                                <label>Partilhar</label>
                             </div>
 
                         </div>

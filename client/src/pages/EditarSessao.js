@@ -4,22 +4,24 @@ import iconFechar from "../img/icons/icon_fechar.svg"
 
 import Select from 'react-select';
 //REACT ROUTER
-import { useRouteMatch, Link } from "react-router-dom";
+import { useRouteMatch, Link, useHistory } from "react-router-dom";
 import { useEffect, useState } from 'react'
 
 
 
 import { useDispatch, useSelector } from 'react-redux'
 //REDUX//
-import { alterarNome, alterarConteudos, alterarDescricao, alterarSituacaoProblema, alterarReais, alterarFiccionais, alterarMentores, alterarMentorandos, alterarResultados, escolherGrauEscolaridade, alterarDisciplina } from "../actions/sessaoAction";
+import { alterarNome, alterarConteudos, alterarDescricao, alterarSituacaoProblema, alterarReais, alterarFiccionais, alterarMentores, alterarMentorandos, alterarResultados, alterarGrauEscolaridade, alterarDisciplina } from "../actions/sessaoAction";
 import { colourStyles } from '../pages/CriarSessao/selectStyle';
 import { loadSessao, loadGrausGrupos } from '../actions/sessaoAction'
+import { editarSessaoAction } from "./../actions/editarSessaoAction";
 
 
 function EditarSessao() {
     let { url } = useRouteMatch();
     let id = url.split("/")[2]
     const dispatch = useDispatch()
+
     useEffect(() => {
         dispatch(loadSessao(id))
         dispatch(loadGrausGrupos())
@@ -27,14 +29,15 @@ function EditarSessao() {
     }, [dispatch, id])
 
     const { sessaoInfo: sessao, status, grausDeEnsino, gruposDisciplinares } = useSelector(state => state.sessao)
-    const { nome, subject, descricao, situacao_problema, factos_reais, factos_ficcionais, funcao_alunos_mentores, funcao_alunos_mentorandos, resultados_esperados, disciplina_level, disciplina_id, ano } = sessao
+    const { nome, subject, descricao, situacao_problema, factos_reais, factos_ficcionais, funcao_alunos_mentores, funcao_alunos_mentorandos, resultados_esperados, disciplina_level, disciplina_id, ano, nova_disciplina_id } = sessao
 
 
     const [courses, setCourses] = useState()
     const [currentCourse, setcurrentCourse] = useState()
     const [currentYear, setcurrentYear] = useState()
 
-
+    const history = useHistory()
+    const redirectBack = () => { history.goBack() }
 
     function uniqBy(a) {
         let niveisDeEnsino = new Set();
@@ -174,13 +177,24 @@ function EditarSessao() {
 
     const selectGrauEscolaridade = (e) => {
 
-        dispatch(escolherGrauEscolaridade(e))
+        dispatch(alterarGrauEscolaridade(e))
     }
     const selectDisciplina = (e) => {
 
         dispatch(alterarDisciplina(e))
     }
 
+    const { status: feedbackStatus, type } = useSelector(state => state.feedback)
+    const submitHandler = (e) => {
+
+        dispatch(editarSessaoAction({ dados: sessao, id: id }))
+
+    }
+    useEffect(() => {
+        if (feedbackStatus && type === 'valid') {
+            history.push(`/sessao/${id}`)
+        }
+    }, [feedbackStatus, type])
     return (
 
         <>
@@ -196,9 +210,9 @@ function EditarSessao() {
                                 <h1>Editar Sessão</h1>
                             </div>
                             <div className="icons">
-                                <Link to='/criarsessao/6' className="iconFechar">
+                                <div onClick={redirectBack} className="iconFechar">
                                     <img src={iconFechar} alt="seta atras" />
-                                </Link>
+                                </div>
                             </div>
 
                         </div>
@@ -222,13 +236,13 @@ function EditarSessao() {
                                     <header className="criarSessaoImg">
 
 
-                                        <Link to='/criarsessao/6' className="setaTras">
-                                            <img src={setaAtras} alt="seta atras" />
-                                        </Link>
-
-                                        <Link to='/criarsessao/6' className="iconFechar">
+                                        {/*  <div onClick={redirectBack} className="iconFechar">
                                             <img src={iconFechar} alt="seta atras" />
-                                        </Link>
+                                        </div> */}
+
+                                        <div onClick={redirectBack} className="iconFechar">
+                                            <img src={iconFechar} alt="seta atras" />
+                                        </div>
 
 
                                     </header>
@@ -290,25 +304,32 @@ function EditarSessao() {
                                             <label className="tituloFormulario">O que se espera da sessão</label>
                                             <textarea type="text" className="textareaTexto" onChange={resultadosHandler} value={resultados_esperados} />
                                         </div>
-                                        <Link className="botaoAzul" to="/criarequipa/2" >
+                                        {/* <Link className="botaoAzul" to="/criarequipa/2" >
                                             <button id="divBotao">
                                                 <div id="botao" >
                                                     <p id="textoBotao">Guardar</p>
                                                 </div>
                                             </button>
-                                        </Link>
+                                        </Link> */}
                                     </section>
                                 </form>
                             </div>
                             <div className="conteudoDireita">
 
-                                <Link className="botaoAzul" to="/criarequipa/2" >
+                                <span className="botaoAzul" onClick={submitHandler} >
                                     <button id="divBotao">
                                         <div id="botao" >
                                             <p id="textoBotao">Guardar</p>
                                         </div>
                                     </button>
-                                </Link>
+                                </span>
+                                <span className="botaoAzul" onClick={redirectBack} >
+                                    <button id="divBotao">
+                                        <div id="botao" >
+                                            <p id="textoBotao">Cancelar sem guardar</p>
+                                        </div>
+                                    </button>
+                                </span>
                             </div>
                         </div>
 

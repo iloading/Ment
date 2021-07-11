@@ -52,3 +52,7 @@ export const minhasEquipasInfo = (id) => axios.post('http://localhost:3001/minha
 //-----------CRIAR EQUIPA
 export const carregarMentores = (pesquisa) => axios.post('http://localhost:3001/criarEquipa/carregarMentores/', pesquisa);
 export const criarEquipa = (dados) => axios.post('http://localhost:3001/criarEquipa/', dados);
+
+//-----------EDITAR SESSAO
+export const editarSessao = (dados) => axios.post('http://localhost:3001/sessao/editarSessao/', dados);
+
