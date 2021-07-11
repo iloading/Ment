@@ -93,7 +93,7 @@ function CriarSessao9() {
                                     <textarea type="text" className="textareaTexto" placeholder="ex: É esperado que os mentorandos consigam salvar o planeta Terra..." value={dadosPreenchidos.resultados_esperados} onChange={resultadosHandler}></textarea>
                                 </div>
 
-                                <Link to={`/perfilEquipa/${dadosPreenchidos.equipaEscolhida}`} className="decorationLinks">
+                                <Link to={`/minhasEquipas/perfilEquipa/${dadosPreenchidos.equipaEscolhida}`} className="decorationLinks">
                                     <div className="botaoAzul widthBotao" onClick={submitHandler}>
                                         <button id="divBotao">
                                             <div id="botao" >

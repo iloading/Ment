@@ -11,7 +11,7 @@ function MinhasEquipas({ equipa, status }) {
 
     return (
 
-        <Link to={`/perfilEquipa/${equipa.id}`}>
+        <Link to={`/minhasEquipas/perfilEquipa/${equipa.id}`}>
             <div className="cardMinhasEquipas">
                 <img src={iconEquipa} alt="" id="iconEquipa" />
                 <div className="midInfo">

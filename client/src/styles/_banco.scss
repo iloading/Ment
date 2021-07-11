@@ -1,4 +1,5 @@
 .banco {
+  overflow: auto;
   .conteudoMain {
     display: grid;
     grid-template-rows: 3rem 3rem 1fr;
@@ -168,7 +169,6 @@
 
 @media only screen and (min-width: 1024px) {
   .banco {
-    overflow: auto;
     aside.menu_principal {
       position: sticky;
       top: 0;
