@@ -2,7 +2,7 @@ import React from 'react'
 import iconDownload from "../../img/icons/icon_download.svg";
 import iconSessoes from "../../img/icons/icon_sessoes.png";
 
-function DetalhesSessao({ sessao, status }) {
+function DetalhesSessao({ sessao, status, toggle }) {
     const { subject, factos_ficcionais, factos_reais, situacao_problema, resultados_esperados, funcao_alunos_mentores, funcao_alunos_mentorandos, ano, nome, disciplina } = sessao
     return (
         <>
@@ -92,7 +92,7 @@ function DetalhesSessao({ sessao, status }) {
                             <div className="titulos_top">
                                 <label>Tornar a sessão pública</label>
                             </div>
-                            <div className="botaoUpload">
+                            <div className="botaoUpload" onClick={toggle}>
 
                                 <label>Partilhar</label>
                             </div>

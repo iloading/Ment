@@ -19,7 +19,11 @@ import { useDispatch, useSelector } from 'react-redux'
 
 import { loadSessao } from '../actions/sessaoAction'
 
+import modalImg from "../img/modalHome/etapa_0.gif";
+import { motion, AnimatePresence } from "framer-motion";
 
+
+import { useState } from "react"
 
 
 
@@ -45,11 +49,18 @@ function Sessao() {
         })
     }
 
+    const [isVisible, setVisible] = useState(false);
+
+    function toggle() {
+        setVisible(!isVisible);
+    }
+
+
     return (
         <>
             {status === 'completed' &&
                 <article id="main" className="sessao">
-                    <SessionNav sessao={sessao} status={status} id={id} />
+                    <SessionNav sessao={sessao} status={status} id={id} toggle={toggle} />
                     <section className="conteudoMain">
                         <div id="bemvindo">
 
@@ -106,18 +117,76 @@ function Sessao() {
 
                         <Switch>
                             <Route exact path={[path, `${path}/resumo`]}>
-                                <ResumoSessao sessao={sessao} status={status} />
+                                <ResumoSessao sessao={sessao} status={status} toggle={toggle} />
                             </Route>
                             <Route path={`${path}/recursos`}>
-                                <RecursosSessao sessao={sessao} status={status} />
+                                <RecursosSessao sessao={sessao} status={status} toggle={toggle} />
                             </Route>
                             <Route path={`${path}/detalhes`}>
-                                <DetalhesSessao sessao={sessao} status={status} />
+                                <DetalhesSessao sessao={sessao} status={status} toggle={toggle} />
                             </Route>
                         </Switch>
 
 
+                        <motion.div className='botaoAtencao' style={{
 
+
+                        }}
+                        >
+                            <AnimatePresence>
+                                {isVisible && (
+                                    <motion.div
+                                        style={{
+                                            width: `100%`,
+                                            height: `100%`,
+                                            display: "grid",
+                                            position: "fixed",
+                                            gridTemplateAreas: `"div1""carousel""div2"`,
+                                            top: 0,
+                                            left: 0,
+                                            right: 0,
+                                            zIndex: '10',
+                                            backdropFilter: `blur(10px) grayscale(1) brightness(70%)`,
+                                            overflow: "hidden",
+                                            justifyContent: "center",
+                                            gridTemplateRows: "1fr auto 1fr"
+
+
+
+
+
+                                        }}
+                                        initial={{ scale: 0, opacity: 1 }}
+                                        animate={{ scale: 1 }}
+                                        exit={{ scale: 0 }}
+
+                                    >
+                                        <div id="exit1" onClick={toggle}></div>
+
+                                        <div className="CardPosition" style={{
+                                            zIndex: '11',
+
+                                        }} onClick={function name(params) {
+
+                                        }}>
+                                            <div className="cardAtencao">
+                                                <img src={modalImg} alt="" />
+
+                                                <p>Sensibilize os seus alunos / um grupo de alunos voluntários para o processo de mentoria entre pares, em particular entre alunos de níveis diferentes, e crie uma equipa de mentores.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div id="exit2" onClick={toggle}></div>
+
+
+
+                                    </motion.div>
+                                )}
+
+                            </AnimatePresence>
+
+
+                        </motion.div>
                     </section>
 
                 </article>

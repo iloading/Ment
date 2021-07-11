@@ -2,7 +2,7 @@ import React from 'react'
 import iconDownload from "../../img/icons/icon_download.svg";
 import iconSessoes from "../../img/icons/icon_sessoes.png";
 
-function RecursosSessao({ sessao, status }) {
+function RecursosSessao({ sessao, status, toggle }) {
     const { nome, descricao, subject, factos_ficcionais, factos_reais, situacao_problema, resultados_esperados, funcao_alunos_mentores, funcao_alunos_mentorandos, disciplina, ano } = sessao
     return (
         <>
@@ -66,7 +66,7 @@ function RecursosSessao({ sessao, status }) {
                             <div className="titulos_top">
                                 <label>Tornar a sessão pública</label>
                             </div>
-                            <div className="botaoUpload">
+                            <div className="botaoUpload" onClick={toggle}>
 
                                 <label>Partilhar</label>
                             </div>
