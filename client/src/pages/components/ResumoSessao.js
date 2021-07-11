@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import iconSessoes from "../../img/icons/icon_sessoes.png";
-import imgComentario from "../../img/avatar/avatar_11.png"
-import imgComentario2 from "../../img/avatar/avatar_12.png"
+import imgComentario from "../../img/avatar/avatar_11.svg"
+import imgComentario2 from "../../img/avatar/avatar_12.svg"
 import iconDownload from "../../img/icons/icon_download.svg";
 import { loadUser } from "../../actions/userAction";
 import { useDispatch, useSelector } from 'react-redux'
