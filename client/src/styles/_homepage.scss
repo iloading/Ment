@@ -135,7 +135,7 @@
           .carouselCards {
             width: 100%;
             .imgModal {
-              width: 100%;
+              width: 60%;
               justify-self: center;
               border-radius: 10px;
             }
@@ -159,8 +159,7 @@
                 background-color: white;
                 border-radius: 10px;
                 display: grid !important;
-                grid-template-rows: auto auto 1fr;
-                height: 65vh;
+                grid-template-rows: auto auto 15rem;
 
                 label {
                   padding: 0 2rem;
@@ -437,7 +436,7 @@
             padding: 1rem 5rem;
             .carouselCards {
               .imgModal {
-                width: 100%;
+                width: 60%;
                 justify-self: center;
                 border-radius: 10px;
               }
@@ -461,8 +460,7 @@
                   background-color: white;
                   border-radius: 10px;
                   display: grid !important;
-                  grid-template-rows: auto auto 1fr;
-                  height: 65vh;
+                  grid-template-rows: auto auto 20rem;
 
                   label {
                     padding: 0 2rem;
