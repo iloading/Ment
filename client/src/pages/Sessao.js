@@ -39,7 +39,11 @@ function Sessao() {
     const { sessaoInfo: sessao, status } = useSelector(state => state.sessao)
     const { nome } = sessao
 
-
+    const editarHandler = () => {
+        dispatch({
+            type: "HIDE_FEEDBACK",
+        })
+    }
 
     return (
         <>
@@ -91,7 +95,7 @@ function Sessao() {
                                 <img src={iconShare} alt="" id="share" />
                                 <img src={iconFavorito} alt="" id="favorito" />
                                 <img src={iconLike} alt="" id="like" />
-                                <Link to={`/sessao/${id}/editarsessao`}>
+                                <Link to={`/sessao/${id}/editarsessao`} onClick={editarHandler}>
                                     <img src={iconEditar} alt="" id="editar" />
                                 </Link>
 

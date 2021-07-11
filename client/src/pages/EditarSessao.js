@@ -37,7 +37,10 @@ function EditarSessao() {
     const [currentYear, setcurrentYear] = useState()
 
     const history = useHistory()
-    const redirectBack = () => { history.goBack() }
+    const redirectBack = (e) => {
+        e.preventDefault();
+        history.goBack()
+    }
 
     function uniqBy(a) {
         let niveisDeEnsino = new Set();
@@ -186,7 +189,10 @@ function EditarSessao() {
 
     const { status: feedbackStatus, type } = useSelector(state => state.feedback)
     const submitHandler = (e) => {
-
+        e.preventDefault();
+        dispatch({
+            type: "HIDE_FEEDBACK",
+        })
         dispatch(editarSessaoAction({ dados: sessao, id: id }))
 
     }
