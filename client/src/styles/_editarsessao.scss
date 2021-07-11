@@ -14,6 +14,43 @@
       .formularioCriarSessao {
         display: grid;
         grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+
+        .botoesGuardarSair {
+          display: grid;
+          grid-template-columns: 1fr auto;
+          grid-template-areas: ". botoes";
+          padding: 1rem;
+
+          #posicaoBotoes {
+            grid-area: botoes;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            grid-column-gap: 1rem;
+          }
+          #divBotao {
+            background-color: #042454;
+            color: white;
+            cursor: pointer;
+            border: none;
+            font-weight: 600;
+            border-radius: 5px;
+            padding: 0.5rem 2.5rem 0.5rem 2.5rem;
+            font-size: 0.8rem;
+            margin: auto;
+          }
+          #divBotaoVermelho {
+            background-color: #cb5c5c;
+            color: white;
+            cursor: pointer;
+            border: none;
+            font-weight: 600;
+            border-radius: 5px;
+            padding: 0.5rem 2.5rem 0.5rem 2.5rem;
+            font-size: 0.8rem;
+            margin: auto;
+          }
+        }
 
         header {
           display: grid;
@@ -439,6 +476,7 @@
           height: 100%;
 
           .formularioCriarSessao {
+            grid-template-rows: 1fr;
             header {
               display: none;
             }
@@ -514,8 +552,26 @@
                   color: white;
                 }
               }
+              #botaoVermelho {
+                background-color: #cb5c5c;
+                color: $button-type1-background;
+                justify-self: center;
+                text-align: center;
+                border: 1px solid #cb5c5c;
+                border-radius: 0.3rem;
+                padding: 1rem;
+                width: 100%;
+                cursor: pointer;
+
+                #textoBotao {
+                  font-weight: $font-weight-more-bold;
+                  font-size: 1.375rem;
+                  color: white;
+                }
+              }
             }
           }
+
           .widthBotao {
             width: 100%;
           }
