@@ -209,11 +209,11 @@ function EditarSessao() {
                                 <h3>Bom dia,</h3>
                                 <h1>Editar Sessão</h1>
                             </div>
-                            <div className="icons">
+                            {/* <div className="icons">
                                 <div onClick={redirectBack} className="iconFechar">
                                     <img src={iconFechar} alt="seta atras" />
                                 </div>
-                            </div>
+                            </div> */}
 
                         </div>
 
@@ -233,16 +233,32 @@ function EditarSessao() {
                         <div className="conteudoMid">
                             <div className="conteudoEsquerda">
                                 <form className="formularioCriarSessao">
-                                    <header className="criarSessaoImg">
+                                    <header className="botoesGuardarSair">
 
 
                                         {/*  <div onClick={redirectBack} className="iconFechar">
                                             <img src={iconFechar} alt="seta atras" />
                                         </div> */}
 
-                                        <div onClick={redirectBack} className="iconFechar">
+                                        {/* <div onClick={redirectBack} className="iconFechar">
                                             <img src={iconFechar} alt="seta atras" />
-                                        </div>
+                                        </div> */}
+                                        <span id="posicaoBotoes">
+                                            <span className="botaoAzul" onClick={submitHandler} >
+                                                <button id="divBotao">
+                                                    <div id="botao" >
+                                                        <p id="textoBotao">Guardar</p>
+                                                    </div>
+                                                </button>
+                                            </span>
+                                            <span className="botaoAzul" onClick={redirectBack} >
+                                                <button id="divBotaoVermelho">
+                                                    <div id="botao" >
+                                                        <p id="textoBotao">Cancelar</p>
+                                                    </div>
+                                                </button>
+                                            </span>
+                                        </span>
 
 
                                     </header>
@@ -325,8 +341,8 @@ function EditarSessao() {
                                 </span>
                                 <span className="botaoAzul" onClick={redirectBack} >
                                     <button id="divBotao">
-                                        <div id="botao" >
-                                            <p id="textoBotao">Cancelar sem guardar</p>
+                                        <div id="botaoVermelho" >
+                                            <p id="textoBotao">Cancelar</p>
                                         </div>
                                     </button>
                                 </span>
