@@ -26,7 +26,7 @@ function ResumoSessao({ sessao, status }) {
                         <div className="conteudoResumo">
                             <div className="titulos_top_mobile">
                                 <label>{nome}</label>
-                                <img className="imgSessao" src={iconSessoes} alt="" />
+                                <img className="imgSessao" src={require(`../../img/disciplinas/${sessao.disciplina_url}`).default} alt={sessao.disciplina} />
                             </div>
 
 
