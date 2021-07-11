@@ -27,11 +27,12 @@ function EditarSessao() {
     }, [dispatch, id])
 
     const { sessaoInfo: sessao, status, grausDeEnsino, gruposDisciplinares } = useSelector(state => state.sessao)
-    const { nome, subject, descricao, situacao_problema, factos_reais, factos_ficcionais, funcao_alunos_mentores, funcao_alunos_mentorandos, resultados_esperados, disciplina_level, disciplina_id } = sessao
+    const { nome, subject, descricao, situacao_problema, factos_reais, factos_ficcionais, funcao_alunos_mentores, funcao_alunos_mentorandos, resultados_esperados, disciplina_level, disciplina_id, ano } = sessao
 
 
     const [courses, setCourses] = useState()
     const [currentCourse, setcurrentCourse] = useState()
+    const [currentYear, setcurrentYear] = useState()
 
 
 
@@ -47,6 +48,7 @@ function EditarSessao() {
         const levelsArrayFiltrados = uniqBy(gruposDisciplinares.map((course) => ({ label: course.level })))
         /* Para cada nivel de ensino já no array, escolher as disciplinas que fazem parte desse mesmo nivel de ensino */
         const courses = levelsArrayFiltrados.map((level) => ({ label: level.label, options: (gruposDisciplinares.filter((course) => course.level === level.label).map(({ name, id, code }) => ({ label: `${code} - ${name}`, value: id }))) }))
+
         /* Definir o resultado para o state */
         setCourses(courses);
 
@@ -54,6 +56,7 @@ function EditarSessao() {
 
     }, [gruposDisciplinares, disciplina_level])
 
+    //Ler e gravar qual é a disciplina que a sessão tinha originalment
     useEffect(() => {
 
         if (courses?.length > 0) {
@@ -63,14 +66,15 @@ function EditarSessao() {
             // setcourseOptionIndex(optionIndex);
             setcurrentCourse(courses[labelIndex].options[optionIndex]);
         }
+        if (grausDeEnsino?.length > 0) {
+            const grauEscolhido = [grausDeEnsino[grausDeEnsino.map((e) => e.year).indexOf(ano)]].map(e => ({ label: e.year, value: e.id }))[0]
 
-    }, [courses, disciplina_level, disciplina_id])
+            setcurrentYear(grauEscolhido);
+            /* .map(e => ({ label: e.id, value: e.year })); */
+        }
+    }, [courses, disciplina_level, disciplina_id, grausDeEnsino, ano])
 
-    // useEffect(() => {
-    //     const courseOriginalmenteEscolhido = gruposDisciplinares.filter((e) => e.name === sessao.disciplina).map((grupo) => ({ label: `${grupo.code} - ${grupo.name}`, value: grupo.id }));
-    //     setCourseOriginal(courseOriginalmenteEscolhido)
-    // }, [input])
-
+    //INPUT HANDLERS  
     const nomeHandler = (e) => {
         let Nome;
         if (e.target.value === '') {
@@ -165,7 +169,6 @@ function EditarSessao() {
         } else {
             resultados = e.target.value
         }
-        console.log(resultados);
         dispatch(alterarResultados(resultados))
     }
 
@@ -190,7 +193,7 @@ function EditarSessao() {
 
                             <div className="bemvindo_titulos">
                                 <h3>Bom dia,</h3>
-                                <h1>Criar Sessão</h1>
+                                <h1>Editar Sessão</h1>
                             </div>
                             <div className="icons">
                                 <Link to='/criarsessao/6' className="iconFechar">
@@ -236,15 +239,17 @@ function EditarSessao() {
                                             <input type="text" className="inputTexto" value={nome} onChange={nomeHandler} />
 
                                             <label className="tituloFormulario">Ano de escolaridade dos mentorandos</label>
-                                            <Select
-                                                options={grausDeEnsino.map(grau => ({ label: grau.year, value: grau.id }))}
-                                                className='react-select-form'
-                                                placeholder={'ex: 7ºano'}
-                                                isClearable={true}
-                                                isSearchable={false} styles={colourStyles}
-                                                onChange={(e) => selectGrauEscolaridade(e)}
-                                                defaultValue={sessao.ano}
-                                            ></Select>
+                                            {currentYear &&
+                                                <Select
+                                                    options={grausDeEnsino.map(grau => ({ label: grau.year, value: grau.id }))}
+                                                    className='react-select-form'
+                                                    placeholder={'ex: 7ºano'}
+                                                    isClearable={true}
+                                                    isSearchable={false} styles={colourStyles}
+                                                    onChange={(e) => selectGrauEscolaridade(e)}
+                                                    defaultValue={currentYear}
+                                                ></Select>
+                                            }
 
                                             <label className="tituloFormulario">Disciplina</label>
                                             {currentCourse &&
