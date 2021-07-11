@@ -115,6 +115,7 @@ function Login() {
                                         </section>
                                         <section className="tituloFooter">
                                             <Link to='/registo'><span><u> Necessita de criar conta? Clique aqui</u></span></Link>
+                                            <span>Esqueceu-se da palavra-passe? Recupere <u> aqui</u></span>
                                         </section>
                                     </Form>
                                 </Formik>
