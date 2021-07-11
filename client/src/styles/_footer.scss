@@ -109,14 +109,21 @@
         display: grid;
         grid-template-columns: auto 1fr auto;
         grid-template-areas: "avatar info sair";
-
+        .decorationLinks {
+          display: flex;
+        }
         #avatar {
           grid-area: avatar;
-          align-self: center;
-
-          text-align: center;
+          /* align-self: center; */
+          /* width: 50%; */
+          /* text-align: center; */
           display: flex;
-          justify-content: center;
+          /* justify-content: center; */
+          width: fit-content;
+          img {
+            width: 100%;
+            max-width: 4rem;
+          }
         }
         #info {
           grid-area: info;
@@ -225,7 +232,7 @@
   }
 }
 
-@media only screen and (min-width: 1024px) and (max-width: 1087px) {
+/* @media only screen and (min-width: 1024px) and (max-width: 1087px) {
   #avatar {
     padding-left: 1rem;
     width: 90%;
@@ -233,4 +240,4 @@
       max-width: 2.5rem;
     }
   }
-}
+} */

@@ -1,5 +1,5 @@
 import React from 'react'
-import minhasSessoes_desktop from "../../img/Equipas/1.png";
+import minhasSessoes_desktop from "../../img/avatar/avatar_Equipas.svg";
 import { Link } from "react-router-dom";
 
 function MinhaEquipa({ alias, name, schoolName, numero, equipa }) {

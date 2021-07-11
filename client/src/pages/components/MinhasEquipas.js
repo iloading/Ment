@@ -1,5 +1,6 @@
 import React from 'react'
-import iconEquipa from "../../img/Equipas/icon_equipa.svg";
+/* import iconEquipa from "../../img/Equipas/icon_equipa.svg"; */
+import iconEquipa from "../../img/avatar/avatar_Equipas.svg";
 import icon3pontos from "../../img/icons/icon_3pontos.svg";
 import iconParticipantes from "../../img/icons/icon_equipa_azul.svg";
 import iconSetaEntrar from "../../img/setaDireita_cor.png"

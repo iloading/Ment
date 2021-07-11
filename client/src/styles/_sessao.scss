@@ -241,7 +241,7 @@
             margin: 1rem;
 
             img {
-              width: 70%;
+              max-width: 3rem;
               align-self: center;
             }
 
@@ -283,7 +283,7 @@
             margin: 1rem;
 
             img {
-              width: 70%;
+              max-width: 4rem;
               align-self: end;
               justify-self: end;
             }
@@ -306,11 +306,12 @@
               .comentario {
                 display: grid;
                 background-color: #e0eaff;
-                padding: 1rem;
+
                 align-items: center;
                 border-radius: 5px;
 
                 input {
+                  height: 100%;
                   background-color: #e0eaff;
                   padding: 0.2rem 0.8rem 0.2rem 0.8rem;
                   border: none;

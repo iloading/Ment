@@ -12,17 +12,17 @@ import { Link } from "react-router-dom";
 
 function Narrativa({ destaque, sessao, sessaoEquipa, status }) {
 
-
+    console.log(sessao);
     return (
 
         <>
             {status === "completed" && sessao &&
 
                 <Link to={`/sessao/${sessao.id}`} className="narrativa">
-                    <img src={iconSessoes} alt="" className="iconSessoes" />
+                    <img src={require(`../../img/disciplinas/${sessao.disciplina_url}`).default} alt={sessao.disciplina} className="iconSessoes" />
                     <div className="textoCards">
                         <label>{sessao.name}</label>
-                        <p>{sessao.team_name}</p>
+                        <p>{sessao.disciplina}</p>
                         <span>{sessao.year} | {sessao.subject}</span>
                     </div>
 

@@ -76,7 +76,7 @@ function PerfilEquipa() {
                     </div>
 
                     <div className="infoPerfil">
-                        <img src={avatar} alt="" />
+                        <img src={avatar} alt="imagem da equipa" />
                         <label>{equipa.name}</label>
                         <span>{equipa.descripton}</span>
 
@@ -117,7 +117,7 @@ function PerfilEquipa() {
                         <div className="conteudoDireitaDesktopPerfilEquipa">
                             <div className="infoPerfilDesktop">
                                 <div className="conteudoDireitaFirst">
-                                    <label>Avatar</label>
+                                    <label></label>
                                     <img src={avatar} alt="" />
 
 
@@ -126,9 +126,8 @@ function PerfilEquipa() {
                                     <label>Quem somos?</label>
                                     <div className="descricaoEquipa">
                                         <label className="tituloCaixaConteudo">Membros</label>
-                                        <span>Boas</span>
-                                        <label className="tituloCaixaConteudo">Outras infos</label>
-                                        <span>Muterial</span>
+                                        <span>{equipa.numero_participantes}{equipa.numero_participantes > 1 ? ' membros' : ' membro'}</span>
+
                                         <label className="tituloCaixaConteudo">Descrição</label>
                                         <span>{equipa.descripton}</span>
                                     </div>
