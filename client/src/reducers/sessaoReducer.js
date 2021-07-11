@@ -29,6 +29,8 @@ const sessaoReducer = (state = initState, action) => {
             return { ...state, sessaoInfo: { ...state.sessaoInfo, factos_reais: action.payload.reais } }
         case 'ALTERAR_FICCIONAIS':
             return { ...state, sessaoInfo: { ...state.sessaoInfo, factos_ficcionais: action.payload.ficcionais } }
+        case 'ALTERAR_DISCIPLINA':
+            return { ...state, sessaoInfo: { ...state.sessaoInfo, DisciplinaEscolhida: action.payload.id } }
         case 'ALTERAR_MENTORES':
             return { ...state, sessaoInfo: { ...state.sessaoInfo, funcao_alunos_mentores: action.payload.funcao_alunos_mentores } }
         case 'ALTERAR_MENTORANDOS':

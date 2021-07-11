@@ -1,23 +1,23 @@
 import React from 'react'
 import setaAtras from "../img/icons/icon_setaAtrasEditarSessao.svg"
 import iconFechar from "../img/icons/icon_fechar.svg"
-import iconDefinicoes from "../img/icons/icon_settings.svg";
+
 import Select from 'react-select';
 //REACT ROUTER
-import { Route, Switch, useRouteMatch, Link, useHistory } from "react-router-dom";
+import { useRouteMatch, Link } from "react-router-dom";
 import { useEffect, useState } from 'react'
 
 
 
 import { useDispatch, useSelector } from 'react-redux'
 //REDUX//
-import { alterarNome, alterarConteudos, alterarDescricao, alterarSituacaoProblema, alterarReais, alterarFiccionais, alterarMentores, alterarMentorandos, alterarResultados, escolherGrauEscolaridade, escolherDisciplina } from "../actions/sessaoAction";
+import { alterarNome, alterarConteudos, alterarDescricao, alterarSituacaoProblema, alterarReais, alterarFiccionais, alterarMentores, alterarMentorandos, alterarResultados, escolherGrauEscolaridade, alterarDisciplina } from "../actions/sessaoAction";
 import { colourStyles } from '../pages/CriarSessao/selectStyle';
 import { loadSessao, loadGrausGrupos } from '../actions/sessaoAction'
 
 
 function EditarSessao() {
-    let { path, url } = useRouteMatch();
+    let { url } = useRouteMatch();
     let id = url.split("/")[2]
     const dispatch = useDispatch()
     useEffect(() => {
@@ -27,7 +27,7 @@ function EditarSessao() {
     }, [dispatch, id])
 
     const { sessaoInfo: sessao, status, grausDeEnsino, gruposDisciplinares } = useSelector(state => state.sessao)
-    const { nome, subject, descricao, situacao_problema, factos_reais, factos_ficcionais, funcao_alunos_mentores, funcao_alunos_mentorandos, resultados_esperados, ano, disciplina, disciplina_level, disciplina_id } = sessao
+    const { nome, subject, descricao, situacao_problema, factos_reais, factos_ficcionais, funcao_alunos_mentores, funcao_alunos_mentorandos, resultados_esperados, disciplina_level, disciplina_id } = sessao
 
 
     const [courses, setCourses] = useState()
@@ -175,7 +175,7 @@ function EditarSessao() {
     }
     const selectDisciplina = (e) => {
 
-        dispatch(escolherDisciplina(e))
+        dispatch(alterarDisciplina(e))
     }
 
     return (

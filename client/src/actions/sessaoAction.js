@@ -47,6 +47,15 @@ export const escolherDisciplina = (id) => async (dispatch) => {
         }
     })
 }
+export const alterarDisciplina = (id) => async (dispatch) => {
+
+    dispatch({
+        type: "ALTERAR_DISCIPLINA",
+        payload: {
+            id: id
+        }
+    })
+}
 export const alterarConteudos = (conteudos) => async (dispatch) => {
 
     dispatch({
