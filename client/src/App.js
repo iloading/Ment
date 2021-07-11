@@ -34,13 +34,13 @@ function App() {
   const location = useLocation();
   const [isHomePage, setIsHomePage] = useState()
   const [hideNav, setHideNav] = useState()
-  const [hideFooter, sethideFooteH] = useState()
+  const [hideFooter, sethideFooter] = useState()
   useEffect(() => {
     setIsHomePage(location.pathname === '/')
     setHideNav(location.pathname.startsWith('/sessao') || location.pathname.startsWith('/criarsessao') || location.pathname.startsWith("/tutorial/0") || location.pathname.startsWith("/tutorial/1") || location.pathname.startsWith("/tutorial/2") || location.pathname.startsWith("/tutorial/3") || location.pathname.startsWith("/tutorial/4") || location.pathname.startsWith("/tutorial/5") || location.pathname.startsWith("/tutorial/6") || location.pathname.startsWith('/criarEquipa') || location.pathname.startsWith('/editarsessao') || location.pathname.startsWith('/boasvindas'));
-    sethideFooteH(location.pathname.startsWith('/boasvindas'));
+    sethideFooter(location.pathname.startsWith('/boasvindas'));
     window.scrollTo(0, 0)
-    console.log(loggedIn);
+
   }, [location, loggedIn])
 
 
@@ -122,14 +122,15 @@ function App() {
             {!loggedIn ? <Redirect to="/login" /> : <Sessao />}
 
           </Route>
+          <Route path="/minhasEquipas/perfilequipa/:id">
+            {!loggedIn ? <Redirect to="/login" /> : <PerfilEquipa />}
+
+          </Route>
           <Route path="/minhasEquipas">
             {!loggedIn ? <Redirect to="/login" /> : <MinhasEquipas />}
 
           </Route>
-          <Route path="/perfilequipa/:id">
-            {!loggedIn ? <Redirect to="/login" /> : <PerfilEquipa />}
 
-          </Route>
 
 
 

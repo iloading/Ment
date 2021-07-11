@@ -21,7 +21,7 @@ function CriarEquipa6() {
 
     useEffect(() => {
         if (novaEquipa !== null) {
-            history.push(`/perfilEquipa/${novaEquipa}`)
+            history.push(`/minhasEquipas/perfilEquipa/${novaEquipa}`)
             dispatch(clearCriarEquipa(dadosPreenchidos))
         }
     }, [novaEquipa, history])

@@ -33,6 +33,25 @@
   .iconFooter {
     cursor: pointer;
     text-decoration: none;
+
+    .navegacao {
+      position: absolute;
+      background-color: #042454;
+      width: 200%;
+
+      bottom: 0rem;
+      left: -50%;
+      border-radius: 15%;
+      cursor: auto;
+    }
+    .navegacao_mobile {
+      width: 200%;
+      height: 5px;
+      border-radius: 15%;
+    }
+    .navegacao_desktop {
+      display: none;
+    }
     label {
       cursor: pointer;
       display: none;
@@ -162,6 +181,20 @@
       display: grid;
       grid-template-columns: auto 1fr;
       grid-column-gap: 1rem;
+
+      .navegacao {
+        position: absolute;
+        background-color: #042454;
+        height: 0px;
+        width: 15px;
+        left: -10px;
+        top: 0;
+        border-radius: 15%;
+      }
+      .navegacao_desktop {
+        display: inherit;
+        top: inherit;
+      }
       label {
         display: block;
         align-self: center;

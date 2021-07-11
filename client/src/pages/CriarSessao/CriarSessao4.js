@@ -91,7 +91,7 @@ function CriarSessao4() {
                                 <div className="botaoAzul widthBotao" onClick={submitHandler}>
 
                                     <button id="divBotao">
-                                        <Link to={`/perfilEquipa/${dadosPreenchidos.equipaEscolhida}`} className="decorationLinks">
+                                        <Link to={`/minhasEquipas/perfilEquipa/${dadosPreenchidos.equipaEscolhida}`} className="decorationLinks">
                                             <div id="botao" >
                                                 <p id="textoBotao">Mais tarde</p>
                                             </div>

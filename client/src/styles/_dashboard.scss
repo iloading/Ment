@@ -1,4 +1,5 @@
 .dashboard {
+  overflow: auto;
   .conteudoMain {
     display: grid;
     grid-row-gap: 1rem;
@@ -298,7 +299,6 @@
 
 @media only screen and (min-width: 1024px) {
   .dashboard {
-    overflow: auto;
     .conteudoMain {
       display: grid;
       grid-template-rows: 0.5fr 4rem 1.5fr 0.3fr 1fr;
