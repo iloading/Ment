@@ -52,7 +52,7 @@ function Sessao() {
                             <div className="bemvindo_titulos">
 
 
-                                <img className="imgSessao" src={iconSessoes} alt="" />
+                                <img className="imgSessao" src={require(`../img/disciplinas/${sessao.disciplina_url}`).default} alt={sessao.disciplina} />
 
 
                                 <div>

@@ -7,7 +7,7 @@ export const loadPerfilEquipa = (id) => async (dispatch) => {
 
     const sessoesEquipaDB = await perfilequipaInfo({ id: id });
     const equipa = await equipaInfo({ id: id });
-    console.log(sessoesEquipaDB);
+
     dispatch({
         type: "FETCH_SESSOES_EQUIPA",
         payload: {
