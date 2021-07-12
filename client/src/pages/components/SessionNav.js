@@ -4,16 +4,25 @@ import iconShare from "../../img/icons/icon_share.svg";
 import iconFavorito from "../../img/icons/icon_favorito.svg";
 import iconLike from "../../img/icons/icon_like.svg";
 import iconEditar from "../../img/icons/icon_editar.svg";
+import iconTornarPublico from "../../img/icons/icon_upload.svg";
 import Carousel from "../components/CarouselSessao"
+import modalImg from "../../img/modalHome/etapa_0.gif";
 
 import { Link, useHistory, useRouteMatch } from 'react-router-dom'
 
+import { motion, AnimatePresence } from "framer-motion";
+import sair from "../../img/icons/eliminar_aluno_x.svg"
 
-function Navbar({ sessao, status, id }) {
+import { useState } from "react"
+
+
+
+function Navbar({ sessao, status, id, toggle }) {
 
     let history = useHistory();
     const redirectBack = () => { history.goBack() }
     let { url } = useRouteMatch();
+
 
     return (
         <>
@@ -26,6 +35,20 @@ function Navbar({ sessao, status, id }) {
                         <img src={iconShare} alt="" id="share" />
                         <img src={iconFavorito} alt="" id="favorito" />
                         <img src={iconLike} alt="" id="like" />
+                        <img src={iconTornarPublico} alt="" id="tornarPublico" onClick={toggle} />
+
+
+
+
+
+
+
+
+
+
+
+
+
                         <Link to={`/sessao/${id}/editarsessao`}>
                             <img src={iconEditar} alt="" id="editar" />
                         </Link>

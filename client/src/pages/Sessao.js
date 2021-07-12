@@ -7,6 +7,7 @@ import iconShare from "../img/icons/icon_share.svg";
 import iconFavorito from "../img/icons/icon_favorito.svg";
 import iconLike from "../img/icons/icon_like.svg";
 import iconEditar from "../img/icons/icon_editar.svg";
+import modalAtencao from "../img/modalAtencao.gif";
 import iconSessoes from "../img/icons/icon_sessoes.png";
 
 //REACT ROUTER
@@ -19,7 +20,11 @@ import { useDispatch, useSelector } from 'react-redux'
 
 import { loadSessao } from '../actions/sessaoAction'
 
+import modalImg from "../img/modalHome/etapa_0.gif";
+import { motion, AnimatePresence } from "framer-motion";
 
+
+import { useState } from "react"
 
 
 
@@ -45,11 +50,18 @@ function Sessao() {
         })
     }
 
+    const [isVisible, setVisible] = useState(false);
+
+    function toggle() {
+        setVisible(!isVisible);
+    }
+
+
     return (
         <>
             {status === 'completed' &&
                 <article id="main" className="sessao">
-                    <SessionNav sessao={sessao} status={status} id={id} />
+                    <SessionNav sessao={sessao} status={status} id={id} toggle={toggle} />
                     <section className="conteudoMain">
                         <div id="bemvindo">
 
@@ -106,18 +118,96 @@ function Sessao() {
 
                         <Switch>
                             <Route exact path={[path, `${path}/resumo`]}>
-                                <ResumoSessao sessao={sessao} status={status} />
+                                <ResumoSessao sessao={sessao} status={status} toggle={toggle} />
                             </Route>
                             <Route path={`${path}/recursos`}>
-                                <RecursosSessao sessao={sessao} status={status} />
+                                <RecursosSessao sessao={sessao} status={status} toggle={toggle} />
                             </Route>
                             <Route path={`${path}/detalhes`}>
-                                <DetalhesSessao sessao={sessao} status={status} />
+                                <DetalhesSessao sessao={sessao} status={status} toggle={toggle} />
                             </Route>
                         </Switch>
 
 
+                        <motion.div className='botaoAtencao' style={{
 
+
+                        }}
+                        >
+                            <AnimatePresence>
+                                {isVisible && (
+                                    <motion.div
+                                        style={{
+                                            width: `100%`,
+                                            height: `100%`,
+                                            display: "grid",
+                                            position: "fixed",
+                                            gridTemplateAreas: `"div1""carousel""div2"`,
+                                            top: 0,
+                                            left: 0,
+                                            right: 0,
+                                            zIndex: '10',
+                                            backdropFilter: `blur(10px) grayscale(1) brightness(70%)`,
+                                            overflow: "hidden",
+                                            justifyContent: "center",
+                                            gridTemplateRows: "1fr auto 1fr"
+
+
+
+
+
+                                        }}
+                                        initial={{ scale: 0, opacity: 1 }}
+                                        animate={{ scale: 1 }}
+                                        exit={{ scale: 0 }}
+
+                                    >
+                                        <div id="exit1" onClick={toggle}></div>
+
+                                        <div className="CardPosition" style={{
+                                            zIndex: '11',
+
+                                        }} onClick={function name(params) {
+
+                                        }}>
+
+                                            <div id="exit3" onClick={toggle}></div>
+
+                                            <div className="cardAtencao">
+                                                <img src={modalAtencao} alt="" />
+
+                                                <p>Atenção! Está prestes a submeter uma sessão no banco público. Qualquer pessoa pode, a partir deste ponto visualizar e descarregar todos os detalhes desta sessão.</p>
+                                                <p> Para tal pedimos-lhe que verifique se todas as informações se encontram de acordo com o RGPD e não violam a segurança e/ou privacidade de todos os envolvidos.</p>
+
+                                                <span className="botaoAzul"  >
+                                                    <button id="divBotao">
+                                                        <div id="botao" >
+                                                            <p id="textoBotao">Publicar</p>
+                                                        </div>
+                                                    </button>
+                                                </span>
+                                                <span className="botaoAzul"  >
+                                                    <button id="divBotao">
+                                                        <div id="botaoVermelho" >
+                                                            <p id="textoBotao">Cancelar</p>
+                                                        </div>
+                                                    </button>
+                                                </span>
+                                            </div>
+                                            <div id="exit4" onClick={toggle}></div>
+
+                                        </div>
+                                        <div id="exit2" onClick={toggle}></div>
+
+
+
+                                    </motion.div>
+                                )}
+
+                            </AnimatePresence>
+
+
+                        </motion.div>
                     </section>
 
                 </article>

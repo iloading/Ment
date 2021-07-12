@@ -5,7 +5,7 @@ import imgComentario2 from "../../img/avatar/avatar_12.svg"
 import iconDownload from "../../img/icons/icon_download.svg";
 import { loadUser } from "../../actions/userAction";
 import { useDispatch, useSelector } from 'react-redux'
-function ResumoSessao({ sessao, status }) {
+function ResumoSessao({ sessao, status, toggle }) {
 
     const { nome, descricao, subject, factos_ficcionais, factos_reais, ano, disciplina } = sessao
 
@@ -129,7 +129,7 @@ function ResumoSessao({ sessao, status }) {
                             <div className="titulos_top">
                                 <label>Tornar a sessão pública</label>
                             </div>
-                            <div className="botaoUpload">
+                            <div className="botaoUpload" onClick={toggle}>
 
                                 <label>Partilhar</label>
                             </div>

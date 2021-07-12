@@ -25,7 +25,7 @@
 
   .barraSocial {
     display: grid;
-    grid-template-columns: 1fr 0.2fr 0.2fr 0.2fr 0.2fr;
+    grid-template-columns: 1fr 0.2fr 0.2fr 0.2fr 0.2fr 0.2fr;
     align-self: center;
     top: 0;
     z-index: 10;
@@ -47,6 +47,10 @@
       justify-self: center;
       width: 1.5rem;
     }
+    #tornarPublico {
+      justify-self: center;
+      width: 1.5rem;
+    }
 
     a {
       display: grid;
@@ -63,18 +67,7 @@
     margin-bottom: 2.5rem;
 
     .botaoUpload {
-      display: grid;
-      background-color: #042454;
-      border-radius: 5px;
-      padding: 1rem;
-      justify-self: center;
-      width: 60%;
-      label {
-        justify-self: center;
-        color: white;
-        font-size: 1.2rem;
-        font-weight: 500;
-      }
+      display: none;
     }
   }
 
@@ -454,7 +447,7 @@
 
     .conteudoDetalhes {
       display: grid;
-      grid-template-rows: auto 1fr;
+      grid-template-rows: 4rem 1fr;
       grid-row-gap: 1rem;
       padding: 0 1rem 1rem 1rem;
 
@@ -513,6 +506,86 @@
       }
       .barraProgresso {
         display: none;
+      }
+    }
+
+    .botaoAtencao {
+      display: grid;
+      justify-self: center;
+      .CardPosition {
+        display: grid;
+        grid-template-columns: 1fr 5fr 1fr;
+        grid-template-areas: "div1 modal div2";
+        margin: 0;
+        padding: 0;
+
+        .cardAtencao {
+          display: grid;
+          grid-area: modal;
+          background-color: white;
+          border-radius: 10px;
+          grid-row-gap: 2rem;
+          padding: 1rem;
+          img {
+            width: 50%;
+            max-width: 15rem;
+            justify-self: center;
+          }
+          #exit3 {
+            grid-area: div1;
+          }
+          #exit4 {
+            grid-area: div2;
+          }
+
+          .botaoAzul {
+            background-color: white;
+            border: none;
+            text-decoration: none;
+
+            #divBotao {
+              display: grid;
+              padding: 0;
+              border: 0;
+              margin: auto;
+              width: 60%;
+              #botao {
+                color: $button-type1-background;
+                justify-self: center;
+                text-align: center;
+                background-color: $button-type2-background;
+                border: 1px solid $button-type2-background;
+                border-radius: 0.3rem;
+                padding: 0.3rem;
+                width: 100%;
+                cursor: pointer;
+
+                #textoBotao {
+                  font-weight: $font-weight-more-bold;
+                  font-size: 1.375rem;
+                  color: white;
+                }
+              }
+              #botaoVermelho {
+                background-color: #cb5c5c;
+                color: $button-type1-background;
+                justify-self: center;
+                text-align: center;
+                border: 1px solid #cb5c5c;
+                border-radius: 0.3rem;
+                padding: 0.3rem;
+                width: 100%;
+                cursor: pointer;
+
+                #textoBotao {
+                  font-weight: $font-weight-more-bold;
+                  font-size: 1.375rem;
+                  color: white;
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -729,6 +802,86 @@
               color: white;
               font-size: 1.2rem;
               font-weight: 500;
+            }
+          }
+        }
+      }
+
+      .botaoAtencao {
+        display: grid;
+        justify-self: center;
+        .CardPosition {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          grid-template-areas: "div1 modal div2";
+          margin: 0;
+          padding: 0;
+
+          .cardAtencao {
+            display: grid;
+            grid-area: modal;
+            background-color: white;
+            border-radius: 10px;
+            grid-row-gap: 2rem;
+            padding: 1rem;
+            img {
+              width: 50%;
+              max-width: 15rem;
+              justify-self: center;
+            }
+            #exit3 {
+              grid-area: div1;
+            }
+            #exit4 {
+              grid-area: div2;
+            }
+
+            .botaoAzul {
+              background-color: white;
+              border: none;
+              text-decoration: none;
+
+              #divBotao {
+                display: grid;
+                padding: 0;
+                border: 0;
+                margin: auto;
+                width: 50%;
+                #botao {
+                  color: $button-type1-background;
+                  justify-self: center;
+                  text-align: center;
+                  background-color: $button-type2-background;
+                  border: 1px solid $button-type2-background;
+                  border-radius: 0.3rem;
+                  padding: 1rem;
+                  width: 100%;
+                  cursor: pointer;
+
+                  #textoBotao {
+                    font-weight: $font-weight-more-bold;
+                    font-size: 1.375rem;
+                    color: white;
+                  }
+                }
+                #botaoVermelho {
+                  background-color: #cb5c5c;
+                  color: $button-type1-background;
+                  justify-self: center;
+                  text-align: center;
+                  border: 1px solid #cb5c5c;
+                  border-radius: 0.3rem;
+                  padding: 1rem;
+                  width: 100%;
+                  cursor: pointer;
+
+                  #textoBotao {
+                    font-weight: $font-weight-more-bold;
+                    font-size: 1.375rem;
+                    color: white;
+                  }
+                }
+              }
             }
           }
         }
