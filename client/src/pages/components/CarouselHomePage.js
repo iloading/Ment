@@ -8,6 +8,7 @@ import etapa2 from "../../img/modalHome/etapa_2.gif"
 import etapa3 from "../../img/modalHome/etapa_3.gif"
 import etapa4 from "../../img/modalHome/etapa_4.gif"
 import etapa5 from "../../img/modalHome/etapa_5.gif"
+import etapa6 from "../../img/modalHome/etapa_6.gif"
 import seta from "../../img/setaDireita_cor.png";
 import { Link } from "react-router-dom";
 
@@ -88,6 +89,17 @@ function CarouselHomePage() {
                     <img src={etapa5} alt="" className="imgModal" />
                     <label>Etapa 5</label>
                     <p>Estimule a reflexão de alunos mentores e mentorandos acerca da experiência de participação no projeto, mediante o preenchimento de um breve questionário, após a sessão de mentoria.</p>
+                </div>
+                <div className="card2">
+                    <img src={etapa6} alt="" className="imgModal" />
+                    <div className="botaoIrLogin">
+                        <Link to="/registo">
+
+                            <label >Registo</label>
+                        </Link>
+                    </div>
+
+
                 </div>
             </Slider>
         </div>
