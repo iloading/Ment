@@ -61,9 +61,11 @@ function Sessao() {
     }
     const { status: feedbackStatus, type } = useSelector(state => state.feedback)
     const history = useHistory()
+
     useEffect(() => {
         if (feedbackStatus && type === 'valid') {
             if (isVisible === true) {
+                dispatch(loadSessao(id))
                 toggle()
             }
         }
