@@ -18,9 +18,12 @@ function Feedback() {
     }
     useEffect(() => {
         if (status) {
-            setTimeout(() => {
+            let timer = setTimeout(() => {
                 dispatch(hideFeedback());
             }, 5000);
+            return () => {
+                clearTimeout(timer)
+            }
         }
 
     }, [status, dispatch])
