@@ -25,7 +25,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 
-
+import { preencherNome } from '../actions/criacaoEquipaAction'
 
 
 
@@ -45,14 +45,19 @@ function Banco() {
 
 
     const dispatch = useDispatch()
+
     useEffect(() => {
         dispatch(loadminhasEquipas())
 
 
     }, [dispatch])
 
+    const { dadosPreenchidos } = useSelector(state => state.criarEquipa)
     const { minhasEquipas, status } = useSelector(state => state.minhasEquipas)
 
+    const nomeHandler = (e) => {
+        dispatch(preencherNome(e.target.value))
+    }
 
 
     return (
@@ -130,13 +135,19 @@ function Banco() {
 
                         <div className="areaCriarEquipa">
                             <div className="search">
-                                <input type="text" placeholder="Inserir nome da equipa..." />
-                                <img src={iconCriar} alt="" />
+                                <input type="text" placeholder="Inserir nome da equipa..." onChange={nomeHandler} value={dadosPreenchidos.nome} />
+                                <img src={iconCriar} alt="icon criar equipa" />
                             </div>
-                            <button>
-                                Criar
-                            </button>
-
+                            {dadosPreenchidos.nome ?
+                                <Link to='/criarEquipa/1'>
+                                    <button className='botao_criar_equipa'>
+                                        Criar
+                                    </button>
+                                </Link>
+                                : <button disabled className='botao_criar_equipa'>
+                                    Criar
+                                </button>
+                            }
 
                         </div>
 

@@ -159,6 +159,14 @@
       .coluna_direita_desktop {
         .areaCriarEquipa {
           display: none;
+          .botao_criar_equipa {
+            cursor: pointer;
+            background-color: #042454;
+            &:disabled {
+              cursor: not-allowed;
+              background-color: rgba(4, 36, 84, 0.5);
+            }
+          }
         }
         .areaEquipasArquivadas {
           .tituloEquipasArquivadas {
