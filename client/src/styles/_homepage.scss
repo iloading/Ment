@@ -176,6 +176,31 @@ iframe {
                   font-weight: 400;
                 }
               }
+              .card2 {
+                background-color: white;
+                border-radius: 10px;
+                display: grid !important;
+                grid-template-rows: auto 18.8rem;
+
+                .botaoIrLogin {
+                  margin: 3rem;
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: center;
+
+                  a {
+                    background-color: #042454;
+                    padding: 1rem;
+                    border-radius: 5px;
+                    color: white;
+                    text-decoration: none;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                  }
+                }
+              }
+
               .slick-dots {
                 position: relative;
                 bottom: 0;
@@ -475,6 +500,30 @@ iframe {
                   p {
                     padding: 0 2rem 1rem;
                     font-weight: 400;
+                  }
+                }
+                .card2 {
+                  background-color: white;
+                  border-radius: 10px;
+                  display: grid !important;
+                  grid-template-rows: auto 23.78rem;
+
+                  .botaoIrLogin {
+                    margin: 3rem;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+
+                    a {
+                      background-color: #042454;
+                      padding: 1rem;
+                      border-radius: 5px;
+                      color: white;
+                      text-decoration: none;
+                      display: flex;
+                      flex-direction: row;
+                      justify-content: center;
+                    }
                   }
                 }
               }
