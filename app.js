@@ -1,15 +1,17 @@
 const cookieParser = require('cookie-parser');
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
+
 /* const mysql = require('mysql2') */
 const db = require('./config/db');
 const app = express();
 
 app.use(express.json());
-/* app.use(cors({
-    origin: ['http://localhost:3000'],
+app.use(cors({
+    origin: ['http://localhost:3000', 'http://localhost:8080', 'https://git.heroku.com/ment-eu.git'],
     credentials: true,
-})); */
+}));
 app.use(cookieParser());
 
 
@@ -57,7 +59,7 @@ if (process.env.NODE_ENV === 'production') {
         res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
     });
 }
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 5000 || 3000 || 8080;
 app.listen(port, () => console.log(`Listening on port ${port}`));
 
 
