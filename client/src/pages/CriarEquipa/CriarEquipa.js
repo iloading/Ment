@@ -13,12 +13,12 @@ function CriarEquipa() {
         <>
             <Switch>
 
-                <Route path={['/criarequipa/1', '/criarequipa']} exact>{<CriarEquipa1 />}</Route>
-                <Route path='/criarequipa/2'>{<CriarEquipa2 />}</Route>
-                <Route path='/criarequipa/3'>{<CriarEquipa3 />}</Route>
-                <Route path='/criarequipa/4'>{<CriarEquipa4 />}</Route>
-                <Route path='/criarequipa/5'>{<CriarEquipa5 />}</Route>
-                <Route path='/criarequipa/6'>{<CriarEquipa6 />}</Route>
+                <Route path={['/criarEquipa/1', '/criarEquipa']} exact>{<CriarEquipa1 />}</Route>
+                <Route path='/criarEquipa/2'>{<CriarEquipa2 />}</Route>
+                <Route path='/criarEquipa/3'>{<CriarEquipa3 />}</Route>
+                <Route path='/criarEquipa/4'>{<CriarEquipa4 />}</Route>
+                <Route path='/criarEquipa/5'>{<CriarEquipa5 />}</Route>
+                <Route path='/criarEquipa/6'>{<CriarEquipa6 />}</Route>
 
 
             </Switch>

@@ -73,7 +73,7 @@ function CriarEquipa2() {
 
 
                                 {dadosPreenchidos.alias !== '' ?
-                                    <Link className="botaoAzul" to="/criarequipa/3" >
+                                    <Link className="botaoAzul" to="/criarEquipa/3" >
                                         <button id="divBotao">
                                             <div id="botao" >
                                                 <p id="textoBotao">Próximo passo</p>
@@ -92,7 +92,7 @@ function CriarEquipa2() {
                         </form>
                     </div>
                     <div className="conteudoDireita">
-                        <Link to='/criarequipa' className="decorationLinks">
+                        <Link to='/criarEquipa' className="decorationLinks">
                             <div className="botaoEtapaAnterior cursorEtapaAnterior">
                                 <img src={setaAtras} className="iconSeta" alt="seta para retroceder" />
                                 <p className="textoBotao">Etapa anterior</p>

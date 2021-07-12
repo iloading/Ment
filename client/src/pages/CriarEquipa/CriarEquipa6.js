@@ -92,7 +92,7 @@ function CriarEquipa6() {
                         </form>
                     </div>
                     <div className="conteudoDireita">
-                        <Link to='/criarequipa/5' className="decorationLinks">
+                        <Link to='/criarEquipa/5' className="decorationLinks">
                             <div className="botaoEtapaAnterior cursorEtapaAnterior">
                                 <img src={setaAtras} className="iconSeta" alt="seta para retroceder" />
                                 <p className="textoBotao">Etapa anterior</p>

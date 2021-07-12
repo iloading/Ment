@@ -326,7 +326,7 @@ function EditarSessao() {
                                             <label className="tituloFormulario">O que se espera da sessão</label>
                                             <textarea type="text" className="textareaTexto" onChange={resultadosHandler} value={resultados_esperados} />
                                         </div>
-                                        {/* <Link className="botaoAzul" to="/criarequipa/2" >
+                                        {/* <Link className="botaoAzul" to="/criarEquipa/2" >
                                             <button id="divBotao">
                                                 <div id="botao" >
                                                     <p id="textoBotao">Guardar</p>

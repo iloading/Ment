@@ -83,7 +83,7 @@ function Banco() {
                     {/* <Link to='./dashboard' className="decorationLinks">
                         <img src={iconSetaTras} alt="" />
                     </Link> */}
-                    <Link to='/criarequipa' className="decorationLinks">
+                    <Link to='/criarEquipa' className="decorationLinks">
                         <div>
                             <img src={iconCriar} alt="" />
                             <label>Nova equipa</label>

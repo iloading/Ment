@@ -59,7 +59,7 @@ function CriarEquipa4() {
 
 
 
-                                <Link className="botaoAzul" to="/criarequipa/5" >
+                                <Link className="botaoAzul" to="/criarEquipa/5" >
                                     <button id="divBotao">
                                         <div id="botao" >
                                             <p id="textoBotao">Adicionar alunos</p>
@@ -72,7 +72,7 @@ function CriarEquipa4() {
                         </form>
                     </div>
                     <div className="conteudoDireita">
-                        <Link to='/criarequipa/3' className="decorationLinks">
+                        <Link to='/criarEquipa/3' className="decorationLinks">
                             <div className="botaoEtapaAnterior cursorEtapaAnterior">
                                 <img src={setaAtras} className="iconSeta" alt="seta para retroceder" />
                                 <p className="textoBotao">Etapa anterior</p>

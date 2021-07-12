@@ -135,7 +135,7 @@ function CriarEquipa3() {
 
 
                                 {dadosPreenchidos.descricao !== '' ?
-                                    <Link className="botaoAzul" to="/criarequipa/4" >
+                                    <Link className="botaoAzul" to="/criarEquipa/4" >
                                         <button id="divBotao">
                                             <div id="botao" >
                                                 <p id="textoBotao">Próximo passo</p>
@@ -154,7 +154,7 @@ function CriarEquipa3() {
                         </form>
                     </div>
                     <div className="conteudoDireita">
-                        <Link to='/criarequipa/2' className="decorationLinks">
+                        <Link to='/criarEquipa/2' className="decorationLinks">
                             <div className="botaoEtapaAnterior cursorEtapaAnterior">
                                 <img src={setaAtras} className="iconSeta" alt="seta para retroceder" />
                                 <p className="textoBotao">Etapa anterior</p>

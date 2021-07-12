@@ -126,7 +126,7 @@ function CriarEquipa5() {
                                 }
                             </div>
 
-                            <Link className="botaoAzul" to="/criarequipa/6" >
+                            <Link className="botaoAzul" to="/criarEquipa/6" >
                                 <button id="divBotao">
                                     <div id="botao" >
                                         <p id="textoBotao">{dadosPreenchidos.mentores.length === 0 ? 'Continuar sem adicionar mentores' : 'Próximo passo'}</p>
@@ -138,7 +138,7 @@ function CriarEquipa5() {
                         </section>
                     </div>
                     <div className="conteudoDireita">
-                        <Link to='/criarequipa/4' className="decorationLinks">
+                        <Link to='/criarEquipa/4' className="decorationLinks">
                             <div className="botaoEtapaAnterior cursorEtapaAnterior">
                                 <img src={setaAtras} className="iconSeta" alt="seta para retroceder" />
                                 <p className="textoBotao">Etapa anterior</p>
