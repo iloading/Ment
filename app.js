@@ -15,41 +15,52 @@ app.use(cookieParser());
 
 // Routes
 const usersRoute = require('./routes/Users')
-app.use('/auth', usersRoute);
+app.use('/api/auth', usersRoute);
 
 const dashboardRoute = require('./routes/Dashboard')
-app.use('/dashboardInfo', dashboardRoute);
+app.use('/api/dashboardInfo', dashboardRoute);
 
 const bancoRoute = require('./routes/Banco')
-app.use('/bancoInfo', bancoRoute);
+app.use('/api/bancoInfo', bancoRoute);
 
 const destaqueRoute = require('./routes/Destaque')
-app.use('/destaqueInfo', destaqueRoute);
+app.use('/api/destaqueInfo', destaqueRoute);
 
 const perfilequipaRoute = require('./routes/PerfilEquipa')
-app.use('/perfilequipaInfo', perfilequipaRoute);
+app.use('/api/perfilequipaInfo', perfilequipaRoute);
 
 const criarSessao = require('./routes/CriarSessao')
-app.use('/criarSessao', criarSessao);
+app.use('/api/criarSessao', criarSessao);
 
 const perfil = require('./routes/Perfil')
-app.use('/perfil', perfil);
+app.use('/api/perfil', perfil);
 
 const sessao = require('./routes/Sessao')
-app.use('/sessao', sessao);
+app.use('/api/sessao', sessao);
 
 const minhasEquipas = require('./routes/MinhasEquipas')
-app.use('/minhasequipas', minhasEquipas);
+app.use('/api/minhasequipas', minhasEquipas);
 
 const criarEquipas = require('./routes/CriarEquipa')
-app.use('/criarEquipa', criarEquipas);
+app.use('/api/criarEquipa', criarEquipas);
 
 
 /* app.get('/', async (req, res) => {
     await res.send('We are on home')
 }) */
 
+if (process.env.NODE_ENV === 'production') {
+    // Serve any static files
+    app.use(express.static(path.join(__dirname, 'client/build')));
+    // Handle React routing, return all requests to React app
+    app.get('*', function (req, res) {
+        res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+    });
+}
+const port = process.env.PORT || 5000;
+app.listen(port, () => console.log(`Listening on port ${port}`));
 
-app.listen(3001, () => {
+
+/* app.listen(3001, () => {
     console.log('Server is running on port 3001');
-});
+}); */
