@@ -7,6 +7,7 @@ import iconShare from "../img/icons/icon_share.svg";
 import iconFavorito from "../img/icons/icon_favorito.svg";
 import iconLike from "../img/icons/icon_like.svg";
 import iconEditar from "../img/icons/icon_editar.svg";
+import modalAtencao from "../img/modalAtencao.gif";
 import iconSessoes from "../img/icons/icon_sessoes.png";
 
 //REACT ROUTER
@@ -169,12 +170,32 @@ function Sessao() {
                                         }} onClick={function name(params) {
 
                                         }}>
-                                            <div className="cardAtencao">
-                                                <img src={modalImg} alt="" />
 
-                                                <p>Sensibilize os seus alunos / um grupo de alunos voluntários para o processo de mentoria entre pares, em particular entre alunos de níveis diferentes, e crie uma equipa de mentores.
-                                                </p>
+                                            <div id="exit3" onClick={toggle}></div>
+
+                                            <div className="cardAtencao">
+                                                <img src={modalAtencao} alt="" />
+
+                                                <p>Atenção! Está prestes a submeter uma sessão no banco público. Qualquer pessoa pode, a partir deste ponto visualizar e descarregar todos os detalhes desta sessão.</p>
+                                                <p> Para tal pedimos-lhe que verifique se todas as informações se encontram de acordo com o RGPD e não violam a segurança e/ou privacidade de todos os envolvidos.</p>
+
+                                                <span className="botaoAzul"  >
+                                                    <button id="divBotao">
+                                                        <div id="botao" >
+                                                            <p id="textoBotao">Publicar</p>
+                                                        </div>
+                                                    </button>
+                                                </span>
+                                                <span className="botaoAzul"  >
+                                                    <button id="divBotao">
+                                                        <div id="botaoVermelho" >
+                                                            <p id="textoBotao">Cancelar</p>
+                                                        </div>
+                                                    </button>
+                                                </span>
                                             </div>
+                                            <div id="exit4" onClick={toggle}></div>
+
                                         </div>
                                         <div id="exit2" onClick={toggle}></div>
 
