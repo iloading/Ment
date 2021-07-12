@@ -1,12 +1,12 @@
 const mysql = require('mysql');
 var connection = mysql.createPool({
     connectionLimit: 10,
-    user: 'b3191462907f3e',
-    host: 'us-cdbr-east-04.cleardb.com',
-    password: '7d998fce',
-    database: 'heroku_dfe5f5554d42927'
+    user: 'bb634438aacb2d',
+    host: 'eu-cdbr-west-01.cleardb.com',
+    password: '1d38da54',
+    database: 'heroku_acd41d977512a36'
 });
-mysql://b3191462907f3e:7d998fce@us-cdbr-east-04.cleardb.com/heroku_dfe5f5554d42927?reconnect=true
+
 /* mysql://bb634438aacb2d:1d38da54@eu-cdbr-west-01.cleardb.com/heroku_acd41d977512a36?reconnect=true */
 
 /* connection.connect(function (err, suc) {
