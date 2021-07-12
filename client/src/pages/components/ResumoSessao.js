@@ -1,20 +1,21 @@
 import React, { useEffect } from 'react'
-import iconSessoes from "../../img/icons/icon_sessoes.png";
+
 import imgComentario from "../../img/avatar/avatar_11.svg"
 import imgComentario2 from "../../img/avatar/avatar_12.svg"
 import iconDownload from "../../img/icons/icon_download.svg";
 import { loadUser } from "../../actions/userAction";
 import { useDispatch, useSelector } from 'react-redux'
+
 function ResumoSessao({ sessao, status, toggle }) {
 
-    const { nome, descricao, subject, factos_ficcionais, factos_reais, ano, disciplina } = sessao
+    const { nome, descricao, subject, ano, disciplina } = sessao
 
 
     const dispatch = useDispatch()
     useEffect(() => {
         dispatch(loadUser())
     }, [dispatch])
-    const { user, status: userStatus } = useSelector(state => state.user)
+    const { user /* ,status: userStatus */ } = useSelector(state => state.user)
     return (
         <>
             {status === 'completed' &&
@@ -125,7 +126,7 @@ function ResumoSessao({ sessao, status, toggle }) {
                                     <img src={iconDownload} alt="" />
                                 </div>
                             </div>
-                            {sessao.is_public === 0 &&
+                            {sessao.is_public === 0 && sessao.isOwner === 1 &&
                                 <>
                                     <div className="titulos_top">
                                         <label>Tornar a sessão pública</label>

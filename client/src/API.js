@@ -45,6 +45,7 @@ export const criarSessao = (dados) => axios.post('http://localhost:3001/criarSes
 
 //-----------Sessao
 export const sessaoInfo = (id) => axios.post('http://localhost:3001/sessao/', id);
+/* export const isOwner = (id) => axios.post('http://localhost:3001/sessao/isOwner', id); */
 
 //-----------Minhas Equipas
 export const minhasEquipasInfo = (id) => axios.post('http://localhost:3001/minhasequipas/', id);

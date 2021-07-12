@@ -4,7 +4,8 @@ import iconFechar from "../img/icons/icon_fechar.svg"
 
 import Select from 'react-select';
 //REACT ROUTER
-import { useRouteMatch, Link, useHistory } from "react-router-dom";
+import { useRouteMatch, Link, useHistory, Redirect } from "react-router-dom";
+
 import { useEffect, useState } from 'react'
 
 
@@ -13,8 +14,9 @@ import { useDispatch, useSelector } from 'react-redux'
 //REDUX//
 import { alterarNome, alterarConteudos, alterarDescricao, alterarSituacaoProblema, alterarReais, alterarFiccionais, alterarMentores, alterarMentorandos, alterarResultados, alterarGrauEscolaridade, alterarDisciplina } from "../actions/sessaoAction";
 import { colourStyles } from '../pages/CriarSessao/selectStyle';
-import { loadSessao, loadGrausGrupos } from '../actions/sessaoAction'
+import { loadSessao, loadGrausGrupos, checkIsOwner } from '../actions/sessaoAction'
 import { editarSessaoAction } from "./../actions/editarSessaoAction";
+import { showFeedback } from "./../actions/feedbackAction";
 
 
 function EditarSessao() {
@@ -24,11 +26,21 @@ function EditarSessao() {
 
     useEffect(() => {
         dispatch(loadSessao(id))
-        dispatch(loadGrausGrupos())
-
     }, [dispatch, id])
 
     const { sessaoInfo: sessao, status, grausDeEnsino, gruposDisciplinares } = useSelector(state => state.sessao)
+
+    useEffect(() => {
+        if (sessao.isOwner === 1) {
+            dispatch(loadSessao(id))
+            dispatch(loadGrausGrupos())
+        } else if (sessao.isOwner === 0 || sessao.isOwner === -1) {
+            dispatch(showFeedback('Não possui permissões para aceder a essa página. A mesma é de acesso exclusivo ao criador da sessão', 'error'))
+        }
+    }, [dispatch, sessao.isOwner, id])
+
+
+
     const { nome, subject, descricao, situacao_problema, factos_reais, factos_ficcionais, funcao_alunos_mentores, funcao_alunos_mentorandos, resultados_esperados, disciplina_level, disciplina_id, ano, nova_disciplina_id } = sessao
 
 
@@ -204,7 +216,8 @@ function EditarSessao() {
     return (
 
         <>
-            {status === 'completed' &&
+            {(sessao.isOwner === 0 || sessao.isOwner === -1) ? (<Redirect to={`/sessao/${id}`} />) :
+                status === 'completed' &&
                 <article className="editarSessao">
                     <section id="main" className="conteudoMain">
 
@@ -358,6 +371,7 @@ function EditarSessao() {
                     </section>
                 </article>
             }
+
         </>
     )
 }

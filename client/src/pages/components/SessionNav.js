@@ -23,12 +23,11 @@ function Navbar({ sessao, status, id, toggle }) {
     const redirectBack = () => { history.goBack() }
     let { url } = useRouteMatch();
 
-
     return (
         <>
             {status === "completed" &&
                 <section className='navbar'>
-                    <div className="barraSocial" id="barraSocial">
+                    <div className={`barraSocial ${((sessao.is_public === 1 && sessao.isOwner === 1)) ? 'barraSocial_1' : ''}${(sessao.is_public === 1 && sessao.isOwner === 0) ? 'barraSocial_2' : ''}${(sessao.isOwner === 0 || sessao.isOwner === -1) ? ' barraSocial_2' : ''}`} id="barraSocial">
                         <div onClick={redirectBack}>
                             <img src={setaAtras} alt="" />
                         </div>
@@ -37,22 +36,11 @@ function Navbar({ sessao, status, id, toggle }) {
                         <img src={iconFavorito} alt="" id="favorito" />
                         <img src={iconLike} alt="" id="like" />
 
-                        {sessao.is_public === 0 && <img src={iconTornarPublico} alt="" id="tornarPublico" onClick={toggle} />}
-
-
-
-
-
-
-
-
-
-
-
-
-                        <Link to={`/sessao/${id}/editarsessao`}>
+                        {sessao.is_public === 0 && sessao.isOwner === 1 && <img src={iconTornarPublico} alt="" id="tornarPublico" onClick={toggle} />}
+                        {sessao.isOwner === 1 && <Link to={`/sessao/${id}/editarsessao`}>
                             <img src={iconEditar} alt="" id="editar" />
-                        </Link>
+                        </Link>}
+
                     </div>
 
                     {/* <div className="areaDownload">

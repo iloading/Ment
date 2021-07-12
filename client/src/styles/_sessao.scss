@@ -30,7 +30,12 @@
     top: 0;
     z-index: 10;
     padding: 1rem;
-
+    &.barraSocial_1 {
+      grid-template-columns: 1fr 0.2fr 0.2fr 0.2fr 0.2fr;
+    }
+    &.barraSocial_2 {
+      grid-template-columns: 1fr 0.2fr 0.2fr 0.2fr;
+    }
     #share {
       justify-self: center;
       width: 1.5rem;

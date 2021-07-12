@@ -8,13 +8,47 @@ export const loadSessao = (id) => async (dispatch) => {
 
     const sessaoDB = await sessaoInfo({ id: id });
 
+    if (sessaoDB.data.error) {
+        dispatch({
+            type: "IS_OWNER",
+            payload: sessaoDB.data.error
 
-    dispatch({
-        type: "FETCH_SESSAO",
-        payload: sessaoDB.data.success[0]
+        })
+        dispatch({
+            type: "IS_PUBLIC",
+            payload: sessaoDB.data.error
 
-    })
+        })
+        dispatch({
+            type: "SHOW_FEEDBACK",
+            payload: {
+                message: sessaoDB.data.error.message,
+                type: 'error'
+            }
+        })
+    } if (sessaoDB.data.success) {
+
+        dispatch({
+            type: "IS_OWNER",
+            payload: sessaoDB.data.success
+
+        })
+        dispatch({
+            type: "IS_PUBLIC",
+            payload: sessaoDB.data.success
+
+        })
+        dispatch({
+            type: "FETCH_SESSAO",
+            payload: sessaoDB.data.success
+        })
+    }
+    /* if (condition) {
+        
+    } */
+
 }
+
 
 
 

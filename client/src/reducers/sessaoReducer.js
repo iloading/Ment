@@ -1,5 +1,5 @@
 const initState = {
-    sessaoInfo: { nome: null, descricao: null, subject: null, factos_ficcionais: null, factos_reais: null, situacao_problema: null, resultados_esperados: null, funcao_alunos_mentores: null, funcao_alunos_mentorandos: null, disciplina: null, disciplina_code: null, disciplina_level: null, disciplina_id: null, ano: null, is_public: null },
+    sessaoInfo: { nome: null, descricao: null, subject: null, factos_ficcionais: null, factos_reais: null, situacao_problema: null, resultados_esperados: null, funcao_alunos_mentores: null, funcao_alunos_mentorandos: null, disciplina: null, disciplina_code: null, disciplina_level: null, disciplina_id: null, ano: null, is_public: null, isOwner: null },
     status: 'idle',
     grausDeEnsino: [],
     gruposDisciplinares: []
@@ -9,8 +9,9 @@ const sessaoReducer = (state = initState, action) => {
 
     switch (action.type) {
         case 'FETCH_SESSAO':
-
-            return { ...state, sessaoInfo: { nome: action.payload.name, descricao: action.payload.description, subject: action.payload.subject, factos_ficcionais: action.payload.factos_ficcionais, factos_reais: action.payload.factos_reais, situacao_problema: action.payload.situacao_problema, resultados_esperados: action.payload.resultados_esperados, funcao_alunos_mentores: action.payload.funcao_alunos_mentores, funcao_alunos_mentorandos: action.payload.funcao_alunos_mentorandos, disciplina: action.payload.disciplina, disciplina_code: action.payload.disciplina_code, disciplina_level: action.payload.disciplina_level, disciplina_id: action.payload.disciplina_id, disciplina_url: action.payload.disciplina_url, nova_disciplina_id: action.payload.disciplina_id, ano: action.payload.year, ano_id: action.payload.ano_id, is_public: action.payload.is_public }, status: 'completed' }
+            let { sessao } = action.payload;
+            console.log(sessao[0]);
+            return { ...state, sessaoInfo: { ...state.sessaoInfo, nome: sessao[0].name, descricao: sessao[0].description, subject: sessao[0].subject, factos_ficcionais: sessao[0].factos_ficcionais, factos_reais: sessao[0].factos_reais, situacao_problema: sessao[0].situacao_problema, resultados_esperados: sessao[0].resultados_esperados, funcao_alunos_mentores: sessao[0].funcao_alunos_mentores, funcao_alunos_mentorandos: sessao[0].funcao_alunos_mentorandos, disciplina: sessao[0].disciplina, disciplina_code: sessao[0].disciplina_code, disciplina_level: sessao[0].disciplina_level, disciplina_id: sessao[0].disciplina_id, disciplina_url: sessao[0].disciplina_url, nova_disciplina_id: sessao[0].disciplina_id, ano: sessao[0].year, ano_id: sessao[0].ano_id, is_public: sessao[0].is_public }, status: 'completed' }
         case 'LOADING_SESSAO':
             return { ...state, status: 'loading' }
         case 'ALTERAR_NOME':
@@ -41,6 +42,11 @@ const sessaoReducer = (state = initState, action) => {
             return { ...state, sessaoInfo: { ...state.sessaoInfo, resultados_esperados: action.payload.resultados_esperados } }
         case 'FETCH_GRAUS_GRUPOS':
             return { ...state, grausDeEnsino: action.payload.grausDeEnsino, gruposDisciplinares: action.payload.disciplinas }
+        case 'IS_OWNER':
+            return { ...state, sessaoInfo: { ...state.sessaoInfo, isOwner: action.payload.is_owner } }
+        case 'IS_PUBLIC':
+            console.log(action.payload.is_public);
+            return { ...state, sessaoInfo: { ...state.sessaoInfo, is_public: action.payload.is_public } }
 
 
         default:

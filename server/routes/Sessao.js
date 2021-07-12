@@ -8,30 +8,106 @@ const router = express.Router();
 //Conexao à BD
 const db = require('../config/db');
 
+
 router.post('/', validateToken, async (req, res) => {
     let { id: sessao_id } = req.body;
 
     try {
-        const sessao = await db.query("SELECT narrative.id, narrative.name, narrative.description, narrative.subject,narrative.factos_ficcionais, narrative.factos_reais,narrative.situacao_problema, narrative.resultados_esperados, narrative.funcao_alunos_mentores, narrative.funcao_alunos_mentorandos, course.name AS disciplina, course.url AS disciplina_url, course.id AS disciplina_id, course.level AS disciplina_level,  grade.year, grade.id AS ano_id, is_public FROM narrative INNER JOIN course ON course.id = narrative.course_id INNER JOIN grade ON grade.id = narrative.grade_id WHERE narrative.id = ?;", [sessao_id], (err, result) => {
+        //VERIFICAR SE O UTILIZADOR PERTENCE À EQUIPA E QUE CARGO OCUPA
+        const isOwner = await db.query("SELECT is_owner FROM user_has_team WHERE user_has_team.team_id = (SELECT team_id FROM narrative WHERE id = ?) AND user_has_team.user_id = ? ", [sessao_id, req.userid], (err, resultOwner) => {
             //Se der erro, devolver o mesmo
             if (err) {
                 console.log(err);
                 res.json({
                     error: err
                 });
-            } else {
+            } else if (resultOwner.length === 0) {
+                /* SE O USER NAO ESTIVER NA EQUIPA  */
+                const isPublic = async () => {
+                    const sessao = await db.query("SELECT is_public FROM narrative WHERE id = ?", [sessao_id], (err, resultPublic) => {
+                        //Se der erro, devolver o mesmo
 
-                res.json({
-                    success: result
-                })
+                        if (err) {
+                            console.log(err);
+                            res.json({
+                                error: err
+                            });
+                        } else if (resultPublic[0]?.is_public === 1) {
+                            /* SE A SESSAO QUE ESTIVER A TENTAR ACEDER FOR PUBLICA FAZ O PEDIDO NORMAL */
+                            const pedidoNormal = async () => {
+                                const sessao = await db.query("SELECT narrative.id, narrative.name, narrative.description, narrative.subject,narrative.factos_ficcionais, narrative.factos_reais,narrative.situacao_problema, narrative.resultados_esperados, narrative.funcao_alunos_mentores, narrative.funcao_alunos_mentorandos, course.name AS disciplina, course.url AS disciplina_url, course.id AS disciplina_id, course.level AS disciplina_level,  grade.year, grade.id AS ano_id, is_public FROM narrative INNER JOIN course ON course.id = narrative.course_id INNER JOIN grade ON grade.id = narrative.grade_id WHERE narrative.id = ?;", [sessao_id], (err, result) => {
+                                    //Se der erro, devolver o mesmo
+                                    if (err) {
+                                        console.log(err);
+                                        res.json({
+                                            error: err
+                                        });
+                                    } else {
+                                        console.log('AQUI3');
+                                        res.json({
+                                            success: {
+                                                sessao: result,
+                                                is_owner: -1,
+                                                is_public: 1
+                                            }
+                                        })
+                                    }
+
+                                })
+                            }
+                            pedidoNormal();
+                        } else {
+                            console.log('AQUI2');
+                            /* SE A SESSAO QUE ESTIVER A TENTAR ACEDER FOR PRIVADA */
+                            res.json({
+                                error: {
+                                    is_owner: -1,
+                                    is_public: 0,
+                                    message: 'Esta sessão é privada e ainda não pertences à equipa! Fala com o responsável para que possas ter acesso a estes conteúdos'
+                                }
+
+                            })
+
+
+                        }
+
+
+
+                    })
+                }
+                isPublic();
+
+            } else {
+                /* SE ELE ESTIVER NA EQUIPA */
+                const pedidoNormal = async () => {
+                    const sessao = await db.query("SELECT narrative.id, narrative.name, narrative.description, narrative.subject,narrative.factos_ficcionais, narrative.factos_reais,narrative.situacao_problema, narrative.resultados_esperados, narrative.funcao_alunos_mentores, narrative.funcao_alunos_mentorandos, course.name AS disciplina, course.url AS disciplina_url, course.id AS disciplina_id, course.level AS disciplina_level,  grade.year, grade.id AS ano_id, is_public FROM narrative INNER JOIN course ON course.id = narrative.course_id INNER JOIN grade ON grade.id = narrative.grade_id WHERE narrative.id = ?;", [sessao_id], (err, result) => {
+                        //Se der erro, devolver o mesmo
+                        if (err) {
+                            console.log(err);
+                            res.json({
+                                error: err
+                            });
+                        } else {
+                            console.log('AQUI');
+                            res.json({
+                                success: { sessao: result, is_owner: resultOwner[0].is_owner }
+                            })
+                        }
+
+                    })
+                }
+                pedidoNormal();
             }
 
+
+
+
         })
-
     } catch (error) {
-
+        console.log(error);
     }
 })
+
 router.post('/editarSessao', validateToken, async (req, res) => {
 
     let { nome, nova_disciplina_id, subject, ano_id, descricao = '', situacao_problema = '', factos_reais = '', factos_ficcionais = '', resultados_esperados = '', funcao_alunos_mentores = '', funcao_alunos_mentorandos = '' } = req.body.dados;
