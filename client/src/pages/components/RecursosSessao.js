@@ -63,13 +63,17 @@ function RecursosSessao({ sessao, status, toggle }) {
                                     <img src={iconDownload} alt="" />
                                 </div>
                             </div>
-                            <div className="titulos_top">
-                                <label>Tornar a sessão pública</label>
-                            </div>
-                            <div className="botaoUpload" onClick={toggle}>
+                            {sessao.is_public === 0 &&
+                                <>
+                                    <div className="titulos_top">
+                                        <label>Tornar a sessão pública</label>
+                                    </div>
+                                    <div className="botaoUpload" onClick={toggle}>
 
-                                <label>Partilhar</label>
-                            </div>
+                                        <label>Partilhar</label>
+                                    </div>
+                                </>
+                            }
                         </div>
                     </div>
                 </>

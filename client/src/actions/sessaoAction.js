@@ -1,5 +1,5 @@
 
-import { sessaoInfo, listaGrausEnsino, listaGruposDisciplinares } from '../API'
+import { sessaoInfo, listaGrausEnsino, listaGruposDisciplinares, publicarSessao } from '../API'
 
 export const loadSessao = (id) => async (dispatch) => {
     dispatch({
@@ -147,3 +147,27 @@ export const loadGrausGrupos = () => async (dispatch) => {
         payload: { grausDeEnsino: grausEnsino.data.success, disciplinas: gruposDisciplinares.data.success }
     })
 }
+export const publicarSessaoBanco = (id) => async (dispatch) => {
+
+    const publicar = await publicarSessao(id);
+
+    if (publicar.data.error) {
+        dispatch({
+            type: "SHOW_FEEDBACK",
+            payload: {
+                message: publicar.data.error,
+                type: 'error',
+            }
+        })
+    } else {
+        dispatch({
+            type: "SHOW_FEEDBACK",
+            payload: {
+                message: publicar.data.success,
+                type: 'valid',
+            }
+        })
+    }
+}
+
+

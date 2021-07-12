@@ -18,7 +18,7 @@ import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 //REDUX//
 
-import { loadSessao } from '../actions/sessaoAction'
+import { loadSessao, publicarSessaoBanco } from '../actions/sessaoAction'
 
 import modalImg from "../img/modalHome/etapa_0.gif";
 import { motion, AnimatePresence } from "framer-motion";
@@ -56,7 +56,18 @@ function Sessao() {
         setVisible(!isVisible);
     }
 
-
+    function publicarSessao() {
+        dispatch(publicarSessaoBanco({ id: id }))
+    }
+    const { status: feedbackStatus, type } = useSelector(state => state.feedback)
+    const history = useHistory()
+    useEffect(() => {
+        if (feedbackStatus && type === 'valid') {
+            if (isVisible === true) {
+                toggle()
+            }
+        }
+    }, [feedbackStatus, type, isVisible])
     return (
         <>
             {status === 'completed' &&
@@ -167,8 +178,6 @@ function Sessao() {
                                         <div className="CardPosition" style={{
                                             zIndex: '11',
 
-                                        }} onClick={function name(params) {
-
                                         }}>
 
                                             <div id="exit3" onClick={toggle}></div>
@@ -181,14 +190,14 @@ function Sessao() {
 
                                                 <span className="botaoAzul"  >
                                                     <button id="divBotao">
-                                                        <div id="botao" >
+                                                        <div id="botao" onClick={publicarSessao}>
                                                             <p id="textoBotao">Publicar</p>
                                                         </div>
                                                     </button>
                                                 </span>
                                                 <span className="botaoAzul"  >
                                                     <button id="divBotao">
-                                                        <div id="botaoVermelho" >
+                                                        <div id="botaoVermelho" onClick={toggle}>
                                                             <p id="textoBotao">Cancelar</p>
                                                         </div>
                                                     </button>

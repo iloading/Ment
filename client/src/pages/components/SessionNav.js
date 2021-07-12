@@ -33,10 +33,11 @@ function Navbar({ sessao, status, id, toggle }) {
                             <img src={setaAtras} alt="" />
                         </div>
                         <img src={iconShare} alt="" id="share" />
+
                         <img src={iconFavorito} alt="" id="favorito" />
                         <img src={iconLike} alt="" id="like" />
-                        <img src={iconTornarPublico} alt="" id="tornarPublico" onClick={toggle} />
 
+                        {sessao.is_public === 0 && <img src={iconTornarPublico} alt="" id="tornarPublico" onClick={toggle} />}
 
 
 

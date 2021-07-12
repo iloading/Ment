@@ -55,4 +55,5 @@ export const criarEquipa = (dados) => axios.post('http://localhost:3001/criarEqu
 
 //-----------EDITAR SESSAO
 export const editarSessao = (dados) => axios.post('http://localhost:3001/sessao/editarSessao/', dados);
+export const publicarSessao = (id) => axios.post('http://localhost:3001/sessao/publicarSessao/', id);
 
