@@ -36,8 +36,8 @@ function Sessao() {
     let id = url.split("/")[2]
     const dispatch = useDispatch()
     useEffect(() => {
-        console.log(id);
-        console.log('PEDIDO LOADSESSAO');
+
+
         dispatch(loadSessao(id))
         /*  dispatch(checkIsOwner(id)) */
     }, [dispatch, id])

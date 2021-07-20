@@ -118,7 +118,7 @@ function Footer() {
     const logOutButton = async () => {
         await logout();
         await getLoggedIn();
-        history.push('/login')
+        history.push('/')
     }
     const location = useLocation();
 
